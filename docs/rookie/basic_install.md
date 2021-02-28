@@ -233,7 +233,18 @@ pacman -S amd-ucode     #AMD
 ```bash
 pacman -S grub efibootmgr   #grub是启动引导器，efibootmgr被 grub 脚本用来将启动项写入 NVRAM。
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB #取名为GRUB 并将grubx64.efi安装到之前的指定位置
-grub-mkconfig -o /boot/grub/grub.cfg    #生成GRUB所需的配置文件
+```
+
+接下来编辑/etc/default/grub 文件，去掉`GRUB_CMDLINE_LINUX_DEFAULT`一行中最后的 quiet 参数，这样是为了后续如果出现系统错误，方便排错。不会 vim 的同学注意视频中的操作。
+
+```bash
+vim /etc/default/grub
+```
+
+最后生成 GRUB 所需的配置文件
+
+```bash
+grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
 > 在某些主板安装完成后，你会发现没有启动条目。这是因为某些主板的 UEFI 固件在显示 UEFI NVRAM 引导条目之前，需要在特定的位置存放可引导文件，不支持自定义存放 efi 文件(如微星 Z170-A Gaming PRO)。解决方案是在默认启动路径下安装 GRUB。重新插入安装优盘，挂载目录，chroot 到/mnt，然后你可以直接把已经生成好的 efi 文件移动到默认目录下，如下代码所示。只有安装完成后你的主板不出现启动条目才需要尝试如下命令，正常安装无需执行。[官方参考文档](https://wiki.archlinux.org/index.php/GRUB#Default/fallback_boot_path)
