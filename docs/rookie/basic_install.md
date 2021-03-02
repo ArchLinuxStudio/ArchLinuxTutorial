@@ -1,6 +1,6 @@
 # Arch Linux 基础安装二十步
 
-从安装最基础的 ArchLinux 系统开始，由于当前已经是 2021 年，安装将全部以 UEFI+GPT 的形式进行，传统 BIOS 方式不再赘述。  
+本文从安装最基础的无图形化 ArchLinux 系统开始，由于当前 UEFI 已普及十余年，安装将全部以 UEFI+GPT 的形式进行，传统 BIOS 方式不再赘述。  
 官方文档: [安装指南](https://wiki.archlinux.org/index.php/Installation_guide)  
 相关视频链接： [2020ArchLinux 安装教程](https://www.bilibili.com/video/BV1qf4y1D7Da/) 视频中可看到全部操作步骤 强烈建议观看视频配合文字学习。
 
@@ -107,8 +107,10 @@ vim /etc/pacman.d/mirrorlist    #不会vim的同学，此处注意视频中的vi
 
 - 根目录： `/` 100G
 - EFI： `/boot` 300M
-- 交换分区: `swap` 2G
+- 交换分区: `swap` 4G
 - 用户主目录： `/home` 剩余全部 越大越好
+
+下面依次进行转换 gpt 以及分区的操作。
 
 ```bash
 lsblk                       #显示分区情况
@@ -185,8 +187,10 @@ arch-chroot /mnt
 
 ### 14.时区
 
+在/etc 下用/usr 中合适的时区创建符号连接
+
 ```bash
-ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime     #为/usr下合适的时区在/etc下创建符号连接
+ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 ```
 
 ### 15.硬件时间设置
