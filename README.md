@@ -17,3 +17,7 @@
 - Linux 的相关知识
 - 中国用户常用的软件安装与配置
 - 特定领域，如媒体制作、编程等软件与环境的配置
+
+## Star 历史
+
+[![Stargazers over time](https://starchart.cc/ArchLinuxStudio/ArchLinuxTutorial.svg)](https://starchart.cc/ArchLinuxStudio/ArchLinuxTutorial)
