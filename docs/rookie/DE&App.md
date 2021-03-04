@@ -15,16 +15,16 @@ pacman -Syyu    #升级系统中全部包
 
 #### 2.准备非 root 用户
 
-添加用户，比如新增加的用户叫 wallen
+添加用户，比如新增加的用户叫 testuser
 
 ```bash
-useradd -m -G wheel -s /bin/bash wallen  #wheel附加组可sudo进行提权 -m同时创建用户家目录
+useradd -m -G wheel -s /bin/bash testuser  #wheel附加组可sudo进行提权 -m同时创建用户家目录
 ```
 
-设置新用户 wallen 的密码
+设置新用户 testuser 的密码
 
 ```bash
-passwd wallen
+passwd testuser
 ```
 
 编辑 sudo 文件
@@ -132,7 +132,7 @@ sudo pacman -S yay                                                          #yay
 检查家目录下的各个常见目录是否已经创建，若没有则需手动创建。
 
 ```bash
-cd /home/wallen
+cd /home/testuser
 mkdir Desktop Documents Downloads Music Pictures Videos
 ```
 

@@ -185,9 +185,35 @@ cat /mnt/etc/fstab
 arch-chroot /mnt
 ```
 
-### 14.时区
+### 14.设置主机名与时区
 
-在/etc 下用/usr 中合适的时区创建符号连接
+首先在`/etc/hostname`设置主机名
+
+```bash
+vim /etc/hostname
+```
+
+加入你想为主机取的主机名，这里比如叫 myarch。
+
+接下来在`/etc/hosts`设置与其匹配的条目。
+
+```
+vim /etc/hosts
+```
+
+加入如下内容
+
+```bash
+127.0.0.1	localhost
+::1		    localhost
+127.0.1.1	myarch.localdomain	myarch
+```
+
+> 某些情况下如不设置主机名，在 KDE 下可能会存在网络情况变更时无法启动 GUI 应用的问题，在终端中出现形如`No protocol specified qt.qpa.xcb: could not connect to display`的错误。这种情况极为少见，群主只遇到过一次网友反馈。相关参考链接:[[1]](https://bbs.archlinux.org/viewtopic.php?id=241338)，[[2]](https://bbs.archlinux.org/viewtopic.php?id=243674)
+
+---
+
+随后设置时区，在/etc/localtime 下用/usr 中合适的时区创建符号连接。
 
 ```bash
 ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime

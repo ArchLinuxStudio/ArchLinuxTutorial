@@ -11,7 +11,7 @@
 此处只介绍最基本的，最必要的 Linux 知识点与小技巧 。
 
 1. 在 Linux 中，文件目录结构与 Windows 完全不同。Windows 存在 C 盘，D 盘等盘符，而在 Linux 中不存在这些划分，最上层的目录是根目录，路径为 _/_ ，并以一个树形结构从此向下一级一级区分。
-2. 对于 Linux 的树形文件结构，存在相对路径与绝对路径之分。绝对路径是代表从根路径 _/_ 开始的完整路径，如`/home/wallen/Download`。相对路径代表从当前目录，到目标目录的一个部分路径。比如当前你所在的目录为`/home/wallen`，那么切换到绝对路径`/home/wallen/Download`的相对路径即为`./Download`。其中`./`代表从当前目录，再向下寻找。另外，`..`这种两个句点代表的是向上层寻找，比如你当前所在的路径为`/home/wallen/Download`，向上寻找到`/home/wallen/Desktop`的相对路径即为`../Desktop`。
+2. 对于 Linux 的树形文件结构，存在相对路径与绝对路径之分。绝对路径是代表从根路径 _/_ 开始的完整路径，如`/home/testuser/Download`。相对路径代表从当前目录，到目标目录的一个部分路径。比如当前你所在的目录为`/home/testuser`，那么切换到绝对路径`/home/testuser/Download`的相对路径即为`./Download`。其中`./`代表从当前目录，再向下寻找。另外，`..`这种两个句点代表的是向上层寻找，比如你当前所在的路径为`/home/testuser/Download`，向上寻找到`/home/testuser/Desktop`的相对路径即为`../Desktop`。
 3. 简单来说，Linux 中存在两类用户。第一类用户即为 root 用户，也成为超级用户，它拥有系统中最高的权限。第二类用户就是除了 root 用户的普通用户，他们可以拥有不同等级的权限。任何时候都应该避免始终用 root 用户操作你的系统。
 4. 理论上来说，任何图形化界面中的操作都可以用对应的命令行命令完成。如果你打开某个程序报错，不妨试试找到它的对应启动命令，在终端中执行此命令，并观察它运行时的错误日志输出，查阅相关资料，解决问题。
 
@@ -22,7 +22,7 @@
 ```bash
 ls /some_path       #查看某个文件夹下的文件与子文件夹 /代表根目录，是Linux最顶端的路径，是绝对路径
 pwd                 #查看当前终端所在路径
-cd /home/wallen     #切换目录命令，将当前终端切换到某一个路径下
+cd /home/testuser   #切换目录命令，将当前终端切换到某一个路径下
 cp ./a.cpp ./b.cpp  #复制命令 将当前路径下的a.cpp复制一份为b.cpp ./代表当前文件夹所在路径，是相对路径
 cp -r ./a ./b       #复制整体文件夹
 rm b.cpp            #删除命令 删除b.cpp
@@ -30,7 +30,7 @@ mv a.cpp b.cpp      #移动(重命名)命令 将a.cpp更名为b.cpp
 mkdir new_folder    #新建文件夹new_folder
 ```
 
-拓展链接：推荐阅读在线书籍 [Linux 命令行与 Shell 脚本教程](https://archlinuxstudio.github.io/ShellTutorial/#/)。 群主也提供了与此书配套的教学视频 [Linux 命令行与 Shell 教程](https://bilibili.com)<sup>TODO</sup>。
+拓展链接：推荐阅读在线书籍 [Linux 命令行与 Shell 脚本教程](https://archlinuxstudio.github.io/ShellTutorial/#/)。 群主也将提供与此书配套的教学视频 [Linux 命令行与 Shell 教程](https://bilibili.com)<sup>TODO</sup>。
 
 ## Pacman 包管理
 
