@@ -3,7 +3,7 @@
 在游戏之前，先确保 cpu 处于性能模式。在终端中，输入下列代码：
 
 ```bash
-echo performance | sudo tee /sys/devices/system/cpu/cpu\*/cpufreq/scaling_governor
+echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
 ```
 
 现在电源应该处于 High Performance 模式了。
@@ -11,7 +11,7 @@ echo performance | sudo tee /sys/devices/system/cpu/cpu\*/cpufreq/scaling_govern
 如果希望将设置改回 Power Save 模式，那么只需要输入下列代码即可
 
 ```bash
-echo powersave | sudo tee /sys/devices/system/cpu/cpu\*/cpufreq/scaling_governor。
+echo powersave | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
 ```
 
 群主的电脑配置如下，供参考，本节中所有主观的体验均以此配置为准。
