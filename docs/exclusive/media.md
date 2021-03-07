@@ -8,7 +8,11 @@
 - [弹幕库](https://www.danmaku.live/) 这个历史比较复杂，v1 版本的仓库在[这里](https://github.com/pandaGao/bilibili-live-helper)，但是作者说不更新了。v2 版本的作者目前没有开源，并且说以后[不会更新了](https://t.bilibili.com/378501835576827480)。AUR 搜索:`bilibili-live-helper-bin`
 - [bilibili-live-chat](https://github.com/Tsuk1ko/bilibili-live-chat) 还没试过，据说是很多弹幕软件的基础。直接在 web 上使用。
 
-## 视频剪辑与特效
+## 视频制作剪辑与特效
+
+在 KDE 的系统设置中，找到工作区行为->桌面特效，在无障碍功能中勾选`鼠标定位`与`鼠标点击动效`两项，并使用。这两项设置在视频制作中可以突出的显示鼠标位置与点击效果，对于视频制作来说相当有用。
+
+对于键盘的输入，可以安装包`screenkey`，它可以将键盘的键入显示在显示屏上，对于视频的制作同样相当有用。
 
 - [shotcut](https://www.archlinux.org/packages/community/x86_64/shotcut/)
 - [kdenlive](https://www.archlinux.org/packages/extra/x86_64/kdenlive/)
