@@ -63,6 +63,7 @@ sudo pacman -S steam
 - [地铁 Last Light Redux](https://store.steampowered.com/app/287390/Metro_Last_Light_Redux/) 经典的地铁系列。
 - [星露谷物语](https://store.steampowered.com/app/413150/Stardew_Valley/) 二次元像素风农场模拟器。
 - [饥荒](https://store.steampowered.com/app/219740/Dont_Starve/) 中文显示有问题，需要订阅并启用中文 mod,如[这个](https://steamcommunity.com/sharedfiles/filedetails/?id=874857181&searchtext=%E4%B8%AD%E6%96%87)
+- [Oxygen Not Included(缺氧)](https://store.steampowered.com/app/457140/Oxygen_Not_Included/) 同样是Klei出品，2D模拟经营类游戏。
 - [泰拉瑞亚](https://store.steampowered.com/app/105600/Terraria/) 不用介绍了吧？
 - [全战三国](https://store.steampowered.com/app/779340/Total_War_THREE_KINGDOMS/) 全战系列的三国篇。
 - [骑马与砍杀](https://store.steampowered.com/app/22100/Mount__Blade/) 最爱骑砍。
@@ -72,6 +73,8 @@ sudo pacman -S steam
 - [Portal 系列](https://store.steampowered.com/app/400/Portal/) V 社著名解谜游戏。
 - [监狱建造师](https://store.steampowered.com/app/233450/Prison_Architect/) 好玩的坐牢游戏。
 - [Surviving Mars](https://store.steampowered.com/app/464920/Surviving_Mars/) 好玩的火星生存游戏。
+- [Factorio(异星工厂)](https://store.steampowered.com/app/427520/Factorio/) 模拟经营，策略类游戏，自带100%汉化。喜欢自动化的玩家可以一试。(并且对显卡要求不高，该条目的贡献者用着UHD630如是说道)
+- [Rise to Ruins](https://store.steampowered.com/app/328080/Rise_to_Ruins/) 类似RimWorld模式的像素风模拟经营游戏。
 
 ### Steam Play 组
 
