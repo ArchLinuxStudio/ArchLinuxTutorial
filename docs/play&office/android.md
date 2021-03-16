@@ -2,9 +2,30 @@
 
 [官方文档](https://wiki.archlinux.org/index.php/android)
 
-## 刷机过程
-
 前排提示：买手机最好买知名度大的品牌，较热门的机型，这样在刷机时可以方便的找到官方的 twrp 和知名的 ROM 包，如魔趣，lineageOS，cdDroid, Resurrection Remix. 等。如果是较冷门的品牌，官方可能没有提供 ROM，只能在网上自行寻找个人改造过的 twrp 和上述 ROM 包的 unofficial ROM(比如乐视的[这个](https://forum.xda-developers.com/t/rom-7-1-2-mtk-x620-unofficial-beta-lineageos-14-1-leeco-le2-pro-02-april-2019.3724749/)和[这个](https://github.com/zaoqi-android/Le_X62X_AOSP6.0))。这种个人改造版本的安全性比较难说，而且还可能有更多的 bug。也有可能你翻遍全网，也找不到冷门机型能用（指好用的、非硬件提供商的官方 ROM）的 twrp 和 ROM。硬件方面，一般推荐买高通骁龙的 cpu,不要买联发科的，因为更多 ROM 的版本都是适配高通硬件的。
+
+首先需要安装 linux 上的安卓工具包
+
+```bash
+sudo pacman -S android-tools
+```
+
+## 解锁 bootloader
+
+再次提醒要购买或使用有可能解锁 bootloader 的手机品牌。如华为，vivo 等这类官方就不给解锁的手机品牌，就无需再往下看了。
+
+一般来说像小米这种品牌，官方会提供解锁 bootloader 的途径和工具，但是这些工具基本只能在 windows 下用。这时候你就只能用一台 windows 操作，或者使用虚拟机。
+
+除此之外，如果你能获取，或通过很 hack 的方式拿到 bootloader 的解锁码，那么也可以使用 adb 在 fastboot 模式下进行解锁。
+
+```bash
+$ adb reboot bootloader #手机先链接电脑，重启到fastboot
+$ fastboot oem unlock xxxxxxx #在fastboot模式下解锁，要加上正确的bl码才能解锁，否则会报错
+FAILED (remote: 'check password failed!')
+fastboot: error: Command failed
+```
+
+## 刷入 twrp 并进行刷机
 
 没有官方 twrp 的设备，可以在[unofficialtwrp](https://unofficialtwrp.com/devices/)查看下是否有。
 
@@ -15,10 +36,6 @@
 - https://androidfilehost.com/ 搜索 开发代号 + 你想要的系统名字
 
 一般 twrp 的版本和 ROM 包有对应关系，刷机前先确认你的两个版本是兼容的，否则刷机过程可能报奇怪的错误，如 unable to mount /system
-
-```bash
-sudo pacman -S android-tools #安装linux上的安卓刷机工具包
-```
 
 去下载你机型对应的 twrp。在[官网](https://twrp.me/Devices/)搜索你的机型，下载。如果没有看到你的机型说明官方不支持，你需要自行搜索别人修改的版本。将手机连接电脑，注意要连到 USB2.0 的接口，否则可能有兼容性问题。
 
@@ -32,9 +49,14 @@ fastboot flash recovery ./path/of/your-twrp.img
 
 剩下的步骤就是普通的进入 twrp,双清，刷机即可。
 
-## 排错
+> 有时双清或者进入 twrp 可能看到报错，用高级清理，从 ext4 改一下格式，再改回 ext4 可能就解决了
 
-有时双清或者进入 twrp 可能看到报错，用高级清理，从 ext4 改一下格式，再改回 ext4 可能就解决了
+更多命令：
+
+```bash
+$ adb shell #打开adb shell
+$ adb root #在手机已经root的情况下打开root权限的adb shell
+```
 
 ## 有关华为设备
 
@@ -49,14 +71,6 @@ fastboot flash recovery ./path/of/your-twrp.img
 
 所以 nova3e 这个机型基本不可能了，除非华为重新开放 bl 申请。之后试试更老一点的机型 nova2。
 
-相关命令：
+## Ref
 
-```bash
-$ adb reboot bootloader #重启到bootloader
-$ fastboot oem unlock xxxxxxx #在fastboot模式下解锁，要加上正确的bl码才能解锁，否则会报错
-FAILED (remote: 'check password failed!')
-fastboot: error: Command failed
-
-$ adb shell #打开adb shell
-$ adb root #在手机已经root的情况下打开root权限的adb shell
-```
+- [小米刷机教程](http://www.romleyuan.com/news/readnews?newsid=938)
