@@ -12,7 +12,7 @@ sudo pacman -S android-tools
 
 ## 解锁 bootloader
 
-再次提醒要购买或使用有可能解锁 bootloader 的手机品牌。如华为，vivo 等这类官方就不给解锁的手机品牌，就无需再往下看了。
+再次提醒要购买或使用有可能解锁 bootloader 的手机品牌。华为，vivo 等这类官方就不给解锁的手机品牌，就无需再往下看了。
 
 一般来说像小米这种品牌，官方会提供解锁 bootloader 的途径和工具，但是这些工具基本只能在 windows 下用。这时候你就只能用一台 windows 操作，或者使用虚拟机。
 
@@ -45,7 +45,7 @@ fastboot: error: Command failed
 fastboot flash recovery ./path/of/your-twrp.img
 ```
 
-看到终端执行完毕的时候，就可以让手机重启了。这里注意，执行`fastboot reboot`可以重启，但是在某些机型上，貌似重启不会加载刷入的 img，如乐视的 le2 x620 这样重启进入 recovery 会报错不是官方系统什么的。在手机上通过硬件按键重启进入 recovery 则可以通过。
+看到终端执行完毕的时候，就可以让手机重启了。这里注意，执行`fastboot reboot`可以重启，但是许多设备会在首次启动时自动覆盖替换你刷入的自定义 recovery，如乐视的 le2 x620 这样直接重启会报错不是官方系统什么的。为防止这种情况，在手机上通过硬件按键重启进入 recovery，TWRP 将给 ROM 打 patch，以防止 ROM 替换 TWRP。[[1]](https://twrp.me/xiaomi/xiaomimi5.html)
 
 剩下的步骤就是普通的进入 twrp,双清，刷机即可。
 
