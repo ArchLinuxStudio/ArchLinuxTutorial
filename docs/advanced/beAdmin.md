@@ -149,3 +149,38 @@ unar xxx.zip
 ## 磁盘容量不足的处理方式
 
 一般使用 LVM 安装 Linux 系统则不用担心这种情况发生。但是我们使用的是传统的 ext4 经典分区方式。这种情况下一般建议在安装的开始就将根目录设置的大一些，如 100G。如果/home 分区大小不够了，可以新安装一块硬盘，将其挂载到你想要的位置，再按照`基础安装`的步骤中重新 genfstab 一下就行了。
+
+## 制作 windows10 启动盘
+
+在以往，在 linux 下制作一个 win10 启动盘还是很简单的，但是随着近几年微软的更新，其 iso 安装镜像中存在一个名为`install.wim`的文件，其大小已经超出了 4GB,超出了 fat32 所要求的单个文件最大 4GB 的限制。这使得必须用额外的步骤才能制作一个启动盘。
+
+首先和基础安装中的部分步骤类似，首先用 parted 命令创建 U 盘的分区 label 为 gpt。接下来用 cfdisk 命令创建新分区，在 Type 中选择 Microsoft basic data。接下来使用 mkfs.vfat 命令格式化所创建的分区。这样 U 盘就准备好了。
+
+接下来下载 win10 的 iso 镜像并解压。在某些文件管理器中，你会得到如下错误。
+
+```bash
+This disc contains a "UDF" file system and requires an operating system
+that supports the ISO-13346 "UDF" file system specification.w
+```
+
+这种情况下则需要手动挂载并复制出来
+
+```bash
+mount -o loop /path/of/windows10.iso /mnt/your/mountpoint
+```
+
+得到复制出来的文件后，最后要进行的就是压缩 install.wim 文件，这里需要首先安装一个包
+
+```bash
+sudo pacman -S wimlib
+```
+
+接下来进行压缩，这一步会持续较长时间，耐心等待。完成后可以看到文件已经被压缩到了 3.x GB。
+
+```bash
+sudo wimlib-imagex optimize install.wim --solid
+```
+
+最后把全部文件复制到 U 盘中即可。
+
+Ref: [[1]](https://www.dedoimedo.com/computers/windows-10-usb-media-linux.html)
