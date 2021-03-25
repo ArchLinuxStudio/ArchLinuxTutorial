@@ -1,4 +1,4 @@
-# Arch Linux 安装使用教程 <!-- {docsify-ignore-all} -->
+# Arch Linux 安装使用教程 - ArchWiki - Arch Linux Studio <!-- {docsify-ignore-all} -->
 
 Arch Linux 安装使用教程，包含从 archlinux 安装，KDE 桌面安装，到 Linux 显卡驱动，常用软件等你可能需要的全部内容。让 Arch Linux 成为你的常用系统吧！
 
