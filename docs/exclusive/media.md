@@ -31,6 +31,24 @@ https://documents.blackmagicdesign.com/SupportNotes/DaVinci_Resolve_15_Supported
 - [gimp](https://www.archlinux.org/packages/extra/x86_64/gimp/)
 - [inkscape](https://www.archlinux.org/packages/extra/x86_64/inkscape/)
 
+## 字幕制作
+
+一般情况来讲，一个视频加上外带的 srt 字幕是较为普遍的情况。这里描述如何为 youtube 视频加入字幕。  
+首先要进行视频字幕的下载，这里可以使用一个 chrome 拓展：[YouTube™ 双字幕](https://chrome.google.com/webstore/detail/youtube-dual-subtitles/hkbdddpiemdeibjoknnofflfgbgnebcm)，即可下载你所需要的字幕文件。如果你有更方便的下载方式，欢迎告诉群主。  
+接下来进行字幕与视频的重新烧录。MKVToolNix 只能做那种分离的字幕，但是 B 站要上传烧录好的，为了更好的兼容性，建议始终将视频和文件重新烧录。使用 ffmpeg 进行操作：
+
+```bash
+ffmpeg -i input.mp4 -vf subtitles=input.srt output.mp4
+```
+
+如果需要制作双语字幕(同时显示，而不是分字幕轨道)，可以使用两次 ffmpeg 命令，第一次添加主字幕，第二次添加副字幕。第一次操作使用 MarginV 进行垂直方向的区分。更多参数可以自行参考 ffmpeg 文档。
+
+```bash
+ffmpeg -i hack.mp4 -strict -2 -vf subtitles=hack_zh.srt:force_style='Fontsize=20\,Fontname=FZYBKSJW--GB1-0\,MarginV=30\,Bold=-1\,BorderStyle=1' -qscale:v 3 hack_with_zh.mp4
+ffmpeg -i hack_with_zh.mp4 -strict -2 -vf subtitles=hack_en.srt:force_style
+='Fontsize=15\,Fontname=FZYBKSJW--GB1-0\,Bold=-1\,BorderStyle=1' -qscale:v 3 hack_with_double_subtitles.mp4
+```
+
 <!--
 #### 声卡驱动
 
