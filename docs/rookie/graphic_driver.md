@@ -92,7 +92,7 @@ __GLX_VENDOR_LIBRARY_NAME="nvidia"
 __VK_LAYER_NV_optimus="NVIDIA_only"
 ```
 
-> 对于 AMD 核显+N 卡独显的同学，optimus-manager 对于这套组合的支持已经开发完成合入 master，但是目前还没有进行发布版本，可以尝试自行编译 master,但不推荐，可以等等，或者使用 PRIME 方案。开发者也说他没有相关设备，无法测试。这个组合在目前可能仍存在一些未知问题。
+> 对于 AMD 核显+N 卡独显的同学，optimus-manager 对于这套组合的支持目前已经发布，最新可用版本为 1.4。
 
 ---
 
