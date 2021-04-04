@@ -65,9 +65,9 @@ _系统设置_ > _显示和监控_ > _混成器_ 开启混成器
 sudo pacman -S kvantum-qt5
 ```
 
-在[这里](https://www.pling.com/p/1325246/)下载 Layan 的 Kvantum 主题，并解压。打开 Kvantum Manager,选择主题并安装，接下来在`Change/Delete Theme`中选择 Layan,Use this theme 即可。
+在[这里](https://www.pling.com/p/1325246/)下载 Layan 的 Kvantum 主题，并解压。打开 Kvantum Manager,选择主题并安装，接下来在`Change/Delete Theme`中选择 Layan,Use this theme。最后在系统设置的颜色，应用程序风格和窗口装饰中选择 kvantum 即可。
 
-最后在系统设置的颜色中选择 Kvantum,在应用程序风格中选择 kvantum 即可。
+> 如果透明的效果没有显示，确保 KDE 的全局缩放比例为整数倍。或者尝试切换混成器中 openGL 的设置。
 
 ---
 
