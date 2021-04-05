@@ -140,6 +140,8 @@ sudo pacman -S giflib lib32-giflib libpng lib32-libpng libldap lib32-libldap gnu
 
 如果你玩国服，群主在 lutris 上传了国服的安装脚本，目前还没通过审核。
 
+关于插件，可以在官方的 [Mod Hub](https://wgmods.net/) 下载，使用方式和 windows 上是相同的，个人习惯更换背景音乐为 Old Memories。如果习惯使用坦克世界盒子，也可以安装在同一个容器里，经过测试，除了没有效率值之外，其他功能是可以正常使用的。
+
 ## 原生 wine
 
 安装使用原生 [wine](https://wiki.archlinux.org/index.php/Wine) 也可运行 windows 游戏，但是很多情况下需要你自行处理 windows 下的依赖问题，常用的工具是[winetricks](https://archlinux.org/packages/multilib/x86_64/winetricks/)。这种方式费时费力，只运行无需处理依赖的小游戏或者 gal 还好。
