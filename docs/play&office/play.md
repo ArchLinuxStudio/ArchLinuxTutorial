@@ -1,5 +1,16 @@
 # 娱乐软件
 
+群主的电脑配置如下，供参考，本节中所有主观的体验均以此配置为准。
+
+```bash
+CPU: Intel i7-6700K (8) @ 4.200GHz
+GPU: NVIDIA GeForce GTX 1070
+Memory: 32GB 2666
+Disk: PLEXTOR PX-1TM9PeG
+```
+
+## 性能提升
+
 在游戏之前，如果有强烈的性能需要，可先确保 cpu 处于性能模式。在终端中，输入下列代码：
 
 ```bash
@@ -12,15 +23,6 @@ echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governo
 
 ```bash
 echo powersave | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
-```
-
-群主的电脑配置如下，供参考，本节中所有主观的体验均以此配置为准。
-
-```bash
-CPU: Intel i7-6700K (8) @ 4.200GHz
-GPU: NVIDIA GeForce GTX 1070
-Memory: 32GB 2666
-Disk: PLEXTOR PX-1TM9PeG
 ```
 
 ## 网游网络加速
@@ -149,3 +151,17 @@ sudo pacman -S giflib lib32-giflib libpng lib32-libpng libldap lib32-libldap gnu
 ## 性能监控
 
 和微星的 Afterburner 软件中性能显示的部分类似，linux 上也有一款同类软件可以监控游戏中的电脑性能，名为[MangoHud](https://github.com/flightlessmango/MangoHud)。使用方式可参见此项目的 readme。此外，官方提供图形化的参数设置软件 [GOverlay](https://github.com/benjamimgois/goverlay#arch--manjaro--other-arch-derivatives),可以自行选择安装。
+
+## 可选内核更换
+
+一般来说，采用了 fsync 的 patch 的内核游戏性能会更好。尤其在一些采用.Net 的 wine 游戏中，fsync 会有明显的性能提升[[1]](https://github.com/ValveSoftware/Proton/issues/3706#issuecomment-636632984)。目前 Linux 内核并没有加入 fsync 功能，可以更换 zen 内核。
+
+```bash
+sudo pacman -S linux-zen linux-zen-headers
+```
+
+安装完毕后重新更新一下 grub 即可。
+
+```bash
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
