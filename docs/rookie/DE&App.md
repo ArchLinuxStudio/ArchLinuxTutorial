@@ -114,6 +114,7 @@ sudo pacman -S adobe-source-han-serif-cn-fonts wqy-zenhei                   #安
 sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra  #安装谷歌开源字体及表情
 sudo pacman -S firefox chromium                                             #安装常用的火狐、谷歌浏览器
 sudo pacman -S ark                                                          #与dolphin同用右键解压
+sudo pacman -S packagekit-qt5 packagekit appstream-qt appstream             #确保Discover(软件中心）可用 需重启
 sudo pacman -S gwenview                                                     #图片查看器
 sudo pacman -S steam                                                        #稍后看完显卡驱动再使用
 ```

@@ -34,10 +34,10 @@ exit                            #成功后exit退出
 ## 3.测试网络
 
 ```bash
-ping www.baidu.com
+ping www.gnu.org
 ```
 
-若能看到数据返回，即说明已经联网，ctrl+c 终止退出当前命令。如果还是无法连接，使用 `ip link set xxx up` 命令确认你已经激活了对应的网卡，再重新继续网络链接与测试。若看到类似`Operation not possible due to RF-kill`的报错，继续尝试`rfkill unblock wifi`来解锁无线网卡。
+稍等片刻，若能看到数据返回，即说明已经联网，ctrl+c 终止退出当前命令。如果还是无法连接，使用 `ip link set xxx up` 命令确认你已经激活了对应的网卡，再重新继续网络链接与测试。若看到类似`Operation not possible due to RF-kill`的报错，继续尝试`rfkill unblock wifi`来解锁无线网卡。[[1]](https://wiki.archlinux.org/index.php/Network_configuration/Wireless#Check_the_driver_status)
 
 ## 4.禁用 reflector
 
