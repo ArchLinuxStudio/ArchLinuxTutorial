@@ -39,13 +39,12 @@ proxychains systemsettings5 #通过代理打开系统设置
 
 ## 桌面插件
 
-在任务栏右下角右键，选择编辑面板，添加部件。
+在任务栏空白处右键，选择编辑面板，添加部件。
 
-Netspeed widget 网速组件，这个很实用
-simple monitor 系统信息  
-resources monitor cpu 内存任务栏组件  
-thermal monitor 温度任务栏组件  
-todolist 任务组件
+- Netspeed widget 网速组件，这个很实用
+- simple monitor 系统信息
+- resources monitor cpu 内存任务栏组件
+- todolist 任务组件
 
 然后把你经常使用的软件固定在任务栏即可，和群主一样的配置即可完成。
 
