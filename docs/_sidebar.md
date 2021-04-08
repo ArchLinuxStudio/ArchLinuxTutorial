@@ -1,4 +1,4 @@
-- [**引言**](/)
+- [**Arch Linux 安装使用教程 - ArchTutorial - Arch Linux Studio**](/)
 
 - 新手上路
 
