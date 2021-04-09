@@ -69,6 +69,12 @@ sudo pacman -S flameshot
 - [feh](https://www.archlinux.org/packages/extra/x86_64/feh/)
 - [nomacs](https://www.archlinux.org/packages/community/x86_64/nomacs/)
 
+## 常用系统组件
+
+- [Kcalc](https://archlinux.org/packages/extra/x86_64/kcalc/) 计算器
+- [Kamoso](https://archlinux.org/packages/extra/x86_64/kamoso/) 相机
+- [KTimer](https://archlinux.org/packages/extra/x86_64/ktimer/) 倒计时执行器
+
 ## 远程协助
 
 - [teamviewer](https://aur.archlinux.org/packages/teamviewer/)<sup>AUR</sup>
