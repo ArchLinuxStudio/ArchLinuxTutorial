@@ -46,7 +46,7 @@ WPS 请按官方文档安装。需要注意的是，由于分发问题，2020 �
 
 - [Typora](https://typora.io/)[^archlinuxcn]
 
-```
+```bash
 sudo pacman -S typora
 ```
 
