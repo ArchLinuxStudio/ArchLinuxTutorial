@@ -202,7 +202,7 @@ sudo pacman -S fcitx5-rime
 
 4. 安装 🍀️ 四叶草拼音输入方案
 
-```
+```bash
 yay -S rime-cloverpinyin
 ```
 
