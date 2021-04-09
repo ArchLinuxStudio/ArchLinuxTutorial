@@ -42,6 +42,14 @@ sudo pacman -S libreoffice-fresh   #尝鲜版
 
 WPS 请按官方文档安装。需要注意的是，由于分发问题，2020 下半年 WPS 已从 archlinuxcn 移除，安装请务必从 AUR 安装。
 
+## Markdown 编辑器
+
+- [Typora](https://typora.io/)[^archlinuxcn]
+
+```
+sudo pacman -S typora
+```
+
 ## 截图
 
 flameshot

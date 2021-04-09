@@ -68,6 +68,45 @@ sudo pacman -S kvantum-qt5
 
 > 如果透明的效果没有显示，确保 KDE 的全局缩放比例为整数倍。或者尝试切换混成器中 openGL 的设置。
 
+## Fcitx5 输入法皮肤
+
+1. 下载用于转换搜狗皮肤的 Python 脚本
+
+```bash
+git clone https://github.com/fkxxyz/ssfconv.git
+cd ssfconv
+```
+
+2. 下载[搜狗皮肤](https://pinyin.sogou.com/skins/)
+
+建议不要下载过于复杂的皮肤，以免转换后效果不佳
+
+3. 安装相关 Python 依赖
+
+```bash
+sudo pacman -S python-pip # 安装 Python 包管理工具
+pip install pycrypto numpy # 安装相关 Python 依赖
+```
+
+4. 转换皮肤
+
+```bash
+python ssfconv -t fcitx5 搜狗皮肤名.ssf Fcitx5皮肤名
+```
+
+5. 复制到用户皮肤目录
+
+```bash
+mkdir -p ~/.local/share/fcitx5/themes/
+cp -r Fcitx5皮肤名  ~/.local/share/fcitx5/themes/
+```
+
+6. 使用该皮肤
+
+_系统设置_ > _区域设置_ > _输入法_ > _附加组件_ > _经典用户界面（Classic User Interface）_
+
+点击配置，在主题的下拉列表里，选择转换的 Fcitx5 皮肤并应用
+
 ---
 
 其余 KDE 桌面有很多配置项，大家可以自行探索。
