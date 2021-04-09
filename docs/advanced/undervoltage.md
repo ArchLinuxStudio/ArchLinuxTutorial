@@ -22,6 +22,12 @@
 
 在调整完电压，apply 之后，可以尝试使用 [s-tui](https://archlinux.org/packages/community/any/s-tui/) 这个工具进行烤机测试，同时观察温度、频率、TDP 的数据。
 
+在调整到一个合适的降压配置后，开启其对应 service 即可。
+
+```bash
+sudo systemctl enable --now intel-undervolt
+```
+
 ### 英特尔 四代酷睿 Haswell 之前的 cpu
 
 arch 官方文档中提到，二代酷睿及以前的 cpu 可使用 PHC 的方式进行降压。经测试，在 i7-2760QM 上不能直接使用，需要在内核启动参数中加入`intel_pstate=disable`才能正确识别到 phc 的 driver，[参考 1](https://wiki.archlinux.org/index.php/CPU_frequency_scaling)，可用命令`cpupower frequency-info`验证。接下来进行降压尝试，按照 archwiki 的操作始终不能更改 phc_vid 文件，其中内容始终为 0,即便已经用 vim 将其更改为其他值。也许是 cpu/主板 BIOS 不支持降频。翻阅了 phc-intel 的官方文档，其说明只支持酷睿，酷睿 2 及之前的 cpu 系列，不支持酷睿 i,这与 archwiki 的描述相矛盾。
@@ -55,4 +61,4 @@ grep . /sys/class/powercap/intel-rapl/intel-rapl:0/*
 
 Ref: [[1]](https://askubuntu.com/questions/1231091/tee-constraint-0-power-limit-uw-no-data-available),[[2]](https://miloserdov.org/?p=1932),[[3]](https://zhuanlan.zhihu.com/p/25537264)
 
-此外，intel-undervolt 也可直接进行功率墙限制。
+此外，intel-undervolt 也可直接进行功率墙限制。如看到`package power limit is locked`,则说明这台电脑不可更改功率墙。
