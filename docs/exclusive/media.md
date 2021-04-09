@@ -35,6 +35,10 @@ https://documents.blackmagicdesign.com/SupportNotes/DaVinci_Resolve_15_Supported
 
 - [blender](https://archlinux.org/packages/community/x86_64/blender/)
 
+## 音频
+
+- [Kwave](https://archlinux.org/packages/extra/x86_64/kwave/)
+
 ## 字幕制作
 
 一般情况来讲，一个视频加上外带的 srt 字幕是较为普遍的情况。这里描述如何为 youtube 视频加入字幕。  
