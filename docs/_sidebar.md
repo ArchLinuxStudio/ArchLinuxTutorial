@@ -1,8 +1,8 @@
-- [**Arch Linux 安装使用教程 - ArchTutorial - Arch Linux Studio**](/)
+- [**Arch Linux 安装使用教程 - ArchTutorial**](/)
 
 - 新手上路
 
-  - [安装前的准备](/rookie/pre_install)
+  - [安装前的准备](/rookie/archlinux_pre_install)
   - [基础安装](/rookie/basic_install)
   - [桌面环境与必要应用](/rookie/DE&App)
   - [显卡驱动](/rookie/graphic_driver)

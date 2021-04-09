@@ -11,11 +11,13 @@
 ls /sys/firmware/efi/efivars
 ```
 
-若输出了一堆东西，说明已在 UEFI 模式。否则请确认你的启动方式是否为 UEFI。
+若输出了一堆东西，即 efi 变量，则说明已在 UEFI 模式。否则请确认你的启动方式是否为 UEFI。
 
 ## 2.连接网络
 
-无线连接:
+### 无线连接:
+
+无线连接使用 iwctl 进行：
 
 ```bash
 iwctl                           #进入交互式命令行
@@ -26,7 +28,8 @@ station wlan0 connect CMCC-5AQ7 #进行连接 输入密码即可
 exit                            #成功后exit退出
 ```
 
-有线连接:  
+### 有线连接:
+
 正常来说，只要插上一个已经联网的路由器分出的网线(DHCP)，直接就能联网。
 
 可以等待几秒等网络建立链接后再进行下步测试网络的操作。
@@ -64,26 +67,32 @@ vim /etc/pacman.d/mirrorlist    #不会vim的同学，此处注意视频中的vi
 
 ## 7.分区
 
-这里总共设置四个分区，可以满足绝大多数人的需求。
+这里总共设置四个分区，可以满足绝大多数人的需求。此步骤会清除磁盘中全部内容，请事先确认。
 
+- EFI 分区： `/efi` 800M
 - 根目录： `/` 100G
-- EFI： `/efi` 800M
 - 交换分区: `swap` 4G
 - 用户主目录： `/home` 剩余全部 越大越好
 
-下面依次进行转换 gpt 以及分区的操作。
+首先将磁盘转换为 gpt 类型
 
 ```bash
 lsblk                       #显示分区情况
 parted /dev/sdx             #执行parted，进行磁盘类型变更
-(parted)mktable
+(parted)mktable             #输入mktable
 New disk label type? gpt    #输入gpt 将磁盘类型转换为gpt 如磁盘有数据会警告，输入yes即可
 quit                        #最后quit退出parted命令行交互
-cfdisk  /dev/sdx            #来执行分区操作,分配各个分区大小，类型
-fdisk -l                    #复查磁盘情况
+
 ```
 
-cfdisk 分区的详细操作见视频中的教学。一般建议将 EFI 分区设置为磁盘的第一个分区，据说有些主板如果不将 EFI 设置为第一个分区，可能有不兼容的问题。
+接下来使用 cfdisk 命令对磁盘分区
+
+```bash
+cfdisk /dev/sdx #来执行分区操作,分配各个分区大小，类型
+fdisk -l #复查磁盘情况
+```
+
+cfdisk 分区的详细操作见视频中的操作。一般建议将 EFI 分区设置为磁盘的第一个分区，据说有些主板如果不将 EFI 设置为第一个分区，可能有不兼容的问题。
 
 ## 8.格式化
 
@@ -124,7 +133,7 @@ pacstrap /mnt base base-devel linux linux-firmware  #base-devel在AUR包的安�
 pacstrap /mnt dhcpcd iwd vim sudo bash-completion   #一个有线所需 一个无线所需 一个编辑器  一个提权工具 一个补全工具 iwd也需要dhcpcd
 ```
 
-## 11.生产 fstab
+## 11.生成 fstab 文件
 
 fstab 用来定义磁盘分区
 
@@ -165,9 +174,9 @@ vim /etc/hosts
 加入如下内容
 
 ```bash
-127.0.0.1	localhost
-::1		    localhost
-127.0.1.1	myarch.localdomain	myarch
+127.0.0.1   localhost
+::1         localhost
+127.0.1.1   myarch.localdomain	myarch
 ```
 
 > 某些情况下如不设置主机名，在 KDE 下可能会存在网络情况变更时无法启动 GUI 应用的问题，在终端中出现形如`No protocol specified qt.qpa.xcb: could not connect to display`的错误。这种情况极为少见，群主只遇到过一次网友反馈。相关参考链接:[[1]](https://bbs.archlinux.org/viewtopic.php?id=241338)，[[2]](https://bbs.archlinux.org/viewtopic.php?id=243674)

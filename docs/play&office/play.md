@@ -165,3 +165,5 @@ sudo pacman -S linux-zen linux-zen-headers
 ```bash
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
+
+> 如果你使用英伟达显卡，记得更换驱动为相应的 dkms 版本。一般来说较新的显卡安装 nvidia-dkms 即可。
