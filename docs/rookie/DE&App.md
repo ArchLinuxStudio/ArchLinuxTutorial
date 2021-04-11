@@ -102,13 +102,19 @@ pacman -Syyu
 
 ## 6.安装基础功能包
 
-进入桌面后，搜索 konsole。它是 KDE 桌面环境默认的命令行终端。  
-接下来我们进行网络配置与连接，并安装一些基础功能包。
+进入桌面后，搜索 konsole。它是 KDE 桌面环境默认的命令行终端。
+
+首先先进行桌面环境中的网络设置：
 
 ```bash
 sudo systemctl disable iwd                                                  #确保iwd开机处于关闭状态，其无线连接会与NetworkManager冲突
 sudo systemctl stop iwd                                                     #同上，立即关闭iwd
 sudo systemctl enable --now NetworkManager                                  #确保先启动NetworkManager，并进行网络连接 若iwd已经与NetworkManager冲突 则执行完上一步重启一下电脑即可。
+```
+
+接下来安装一些基础功能包。
+
+```bash
 sudo pacman -S ntfs-3g                                                      #识别NTFS格式的硬盘
 sudo pacman -S adobe-source-han-serif-cn-fonts wqy-zenhei                   #安装几个开源中文字体 一般装上文泉驿就能解决大多wine应用中文方块的问题
 sudo pacman -S noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra  #安装谷歌开源字体及表情
@@ -119,7 +125,7 @@ sudo pacman -S gwenview                                                     #图
 sudo pacman -S steam                                                        #稍后看完显卡驱动再使用
 ```
 
-接下来要安装 archlinuxcn 源的相关步骤，
+最后要安装 archlinuxcn 源的相关步骤。
 
 ```bash
 sudo pacman -S archlinuxcn-keyring                                          #cn源中的签名(archlinuxcn-keyring在archLinuxCn)
@@ -168,13 +174,11 @@ XMODIFIERS DEFAULT=\@im=fcitx5
 SDL_IM_MODULE DEFAULT=fcitx
 ```
 
-打开 _系统设置_ > _区域设置_ > _输入法_
+打开 _系统设置_ > _区域设置_ > _输入法_，点击`添加输入法`，找到简体中文下的 Pinyin ，点击添加即可加入拼音输入法。
 
-点击`添加输入法`，找到简体中文下的 Pinyin ，点击添加
+接下来点击 _Pinyin_ 右侧的配置按钮，点选`云拼音`和`在程序中显示预编辑文本` 最后应用。
 
-找到 _配置附加组件_
-拉到下面找到 _Pinyin_ 点选`云拼音`和`在程序中显示预编辑文本` 最后应用  
-找到 _classic user interface_ 在主题里选择一个你喜欢的颜色 最后应用
+回到输入法设置，点击`配置附加组件`，找到 _classic user interface_ 在主题里选择一个你喜欢的颜色 最后应用。
 
 注销，重新登陆，就可以发现已经可以在各个软件中输入中文了
 

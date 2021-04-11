@@ -23,11 +23,11 @@ proxychains systemsettings5 #通过代理打开系统设置
 
 ## 窗口装饰
 
-在应用程序样式，窗口装饰中，获取新窗口装饰，搜索 layan，并应用即可。
+在 _系统设置_ > _外观_ > _窗口装饰_ 中，获取新窗口装饰，搜索 layan，并应用即可。
 
 ## 系统图标
 
-如果主题中的图标不能满足你，那么可以选择一些自定义的图标。_系统设置_ > _图标_ > _图标_ > _获取新图标主题_ ，搜索图标名 Tela-icon-theme，进行安装设置即可。
+如果主题中的图标不能满足你，那么可以选择一些自定义的图标。_系统设置_ > _外观_ > _图标_ > _获取新图标主题_ ，搜索图标名 Tela-icon-theme，进行安装设置即可。
 
 ## SDDM 主题
 
@@ -35,7 +35,7 @@ proxychains systemsettings5 #通过代理打开系统设置
 
 ## 欢迎屏幕(splashscreen)
 
-可以对在登录界面后的欢迎屏幕进行美化。 _系统设置_ > _开机和关机_ > _欢迎屏幕_ > _获取新欢迎屏幕_ ，搜索 miku 进行设置即可。这个`Snowy Night Miku`是群主搜索到的最好看的二刺猿属性的初始界面了，强烈建议安装。另外，还有一个大佬做了一些二次元主题的欢迎屏幕，但是质量一般，这里是他的[主页](https://www.pling.com/u/thevladsoft/)。
+可以对在登录界面后的欢迎屏幕进行美化。 _系统设置_ > _外观_ > _欢迎屏幕_ > _获取新欢迎屏幕_ ，搜索 miku 进行设置即可。这个`Snowy Night Miku`是群主搜索到的最好看的二刺猿属性的初始界面了，强烈建议安装。另外，还有一个大佬做了一些二次元主题的欢迎屏幕，但是质量一般，这里是他的[主页](https://www.pling.com/u/thevladsoft/)。
 
 ## 桌面插件
 
@@ -64,7 +64,7 @@ _系统设置_ > _显示和监控_ > _混成器_ 开启混成器
 sudo pacman -S kvantum-qt5
 ```
 
-在[这里](https://www.pling.com/p/1325246/)下载 Layan 的 Kvantum 主题，并解压。打开 Kvantum Manager,选择主题并安装，接下来在`Change/Delete Theme`中选择 Layan,Use this theme。最后在系统设置的颜色，应用程序风格和窗口装饰中选择 kvantum 即可。
+在[这里](https://www.pling.com/p/1325246/)下载 Layan 的 Kvantum 主题，并解压。打开 Kvantum Manager,选择主题并安装，接下来在`Change/Delete Theme`中选择 Layan,Use this theme。最后在系统设置，外观中的应用程序风格中选择 kvantum 即可。
 
 > 如果透明的效果没有显示，确保 KDE 的全局缩放比例为整数倍。或者尝试切换混成器中 openGL 的设置。
 

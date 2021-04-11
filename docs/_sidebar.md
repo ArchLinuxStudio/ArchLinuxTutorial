@@ -1,4 +1,4 @@
-- [**Arch Linux 安装使用教程 - ArchTutorial**](/)
+- [**Arch Linux 安装使用教程 - ArchTutorial - Arch Linux Studio**](/)
 
 - 新手上路
 
@@ -10,7 +10,7 @@
 - 进阶
 
   - [成为合格的系统管理员](/advanced/beAdmin)
-  - [魔法加油站](/advanced/fxckGFW)
+  - [科学上网与翻墙](/advanced/fxckGFW)
   - [透明代理](/advanced/transparentProxy)
   - [功耗控制](/advanced/undervoltage)
   - [系统美化](/advanced/beauty)

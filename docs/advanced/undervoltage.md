@@ -34,7 +34,7 @@ arch 官方文档中提到，二代酷睿及以前的 cpu 可使用 PHC 的方�
 
 对于夹在中间的三代酷睿 lvy bridge，[有项目](https://github.com/tiziw/iuvolt)称可以使用 intel-undervolt 的原理进行降压，但是经测试失败了，尝试用 PHC 的方式依旧失败。目前应该没有什么好的办法可以降压三代酷睿。
 
-对于此范围内的老设备降压，我将不会花费更多时间探索。如果你知道有办法可以正确降压，可以告诉群主。
+对于此范围内的老设备降压，我将不会花费更多时间探索。如果你知道有办法可以正确降压，欢迎提交 PR,或[进群讨论](https://t.me/kdwu1fan)。
 
 ref: [[1]](https://www.reddit.com/r/intel/comments/8ubdsg/undervolting_intel_i5_3230m/) [[2]](https://forum.thinkpads.com/viewtopic.php?t=128707)
 

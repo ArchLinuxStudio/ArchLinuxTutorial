@@ -1,4 +1,4 @@
-# 魔法加油站
+# 科学上网与翻墙
 
 本节描述如何在 linux 下进行科学上网。不论你是否是程序员，你肯定需要这个东西。
 
@@ -24,8 +24,11 @@ sudo pacman -S qv2ray v2ray
 
   ```bash
   export https_proxy=http://127.0.0.1:8889
+  export http_proxy=http://127.0.0.1:8889
   export all_proxy=http://127.0.0.1:8889
   ```
+
+  > 不同终端命令所识别的环境变量名不同，如 all_proxy 对 curl 生效，而对 wget 则不生效，具体可查看各个命令的 man page。
 
 - code OSS  
    code => preference => settings  
