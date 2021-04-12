@@ -43,7 +43,7 @@
 5. （重要）如果启用了 udp 的透明代理（dns 也是 udp），则给 v2ray 二进制文件加上相应的特权：
 
    ```
-   sudo setcap "cap_net_admin,cap_net_bind_service=ep" /path/of/your/v2ray
+   sudo setcap "cap_net_admin,cap_net_bind_service=ep" /usr/bin/v2ray
    ```
 
    否则 udp 的透明代理可能会出问题。
