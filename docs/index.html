@@ -169,6 +169,13 @@
         props.id = decodeURI(location.hash.split("?")[0]); //如果不切分，在docsify里面的各个段落都会生成新的评论issue
       }
     </script>
-    <script></script>
+    <script>
+      function change_search_plugin_order() {
+        let search_plugin = document.getElementsByClassName("search")[0];
+        let app_name = document.getElementsByClassName("app-name")[0];
+        search_plugin.parentNode.insertBefore(app_name, search_plugin);
+      }
+      setTimeout(change_search_plugin_order, 1);
+    </script>
   </body>
 </html>
