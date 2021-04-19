@@ -36,7 +36,7 @@ Jetbrains 家的全家桶基本都有支持可以在源中或 AUR 中自行搜�
 
 ## 桌面应用编程
 
-目前桌面开发较为流行的是 electron 和 Qt 应用。electron 可直接用 OSS Code 进行开发，Qt 应用使用[Qt Creator](https://www.archlinux.org/packages/extra/x86_64/qtcreator/)进行开发。
+目前桌面开发较为流行的是 electron 和 Qt 应用。electron 可直接用 OSS Code 进行开发，Qt 应用使用 [Qt Creator](https://www.archlinux.org/packages/extra/x86_64/qtcreator/) 进行开发。
 
 ## 机器学习
 
