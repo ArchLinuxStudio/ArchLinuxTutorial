@@ -12,6 +12,7 @@
   - [成为合格的系统管理员](/advanced/beAdmin)
   - [科学上网与翻墙](/advanced/fxckGFW)
   - [透明代理](/advanced/transparentProxy)
+  - [常见问题排除与解决](/advanced/troubleshooting)
   - [功耗控制](/advanced/undervoltage)
   - [系统美化](/advanced/beauty)
 
