@@ -1,11 +1,12 @@
 # 办公软件
 
-本章记录日常办公需要用到的软件及配置。同时包括 QQ 等即时通讯软件的配置与使用。
+本章记录日常办公需要用到的软件及配置。同时包括 QQ 等即时通讯软件和影音软件的配置与使用。
 
 ## 音视频播放器
 
 ```bash
 sudo pacman -S netease-cloud-music  #网易云音乐(ArchLinuxCN)
+yay -S yesplaymusic-electron #目前最强第三方网易云客户端
 yay -S qqmusic-bin #QQ音乐
 sudo pacman -S vlc #VLC 播放器
 sudo pacman -S mpv #MPV 播放器
