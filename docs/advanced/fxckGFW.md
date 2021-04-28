@@ -71,3 +71,14 @@ sudo pacman -S qv2ray v2ray
 起因在于其意在取消对 xray 的支持，并在检测到 xray 时导致程序崩溃。xray 从诞生起始终在社区中存在争议。而社区中另外一位仓库 owner 认为这种处理方式太过偏激，不同意这种举措。在交流无果后此 owner 取消了其仓库权限，并将其移除 qv2ray workgroup。这种做法显然是其在感情上无法接受的，随后其注销了 github 帐号并宣布退出开发。而随后 xray 频道发表的公告明显带有严重的主观感情色彩，没有客观的描述事件本身，利用断章取义的方式诋毁开源软件和社区。此公告没有任何实际意义，只会加剧误解的程度。
 
 这种结果是任何一个 linux 用户都不愿看到的，希望 qv2ray 开发组可以重新开启交流，得出一个折中的方案。以防万一，这里也记录一种 qv2ray 的替代方案。
+
+V2rayA 是一个浏览器客户端，在 linux 下支持全局代理，非常方便。可以直接在 AUR 进行安装。安装后需启动服务
+
+```bash
+yay -S v2raya
+sudo systemctl enable --now v2raya
+```
+
+随后在菜单中搜索 v2raya，点击即可打开浏览器页面。在其中加入订阅即可使用。在设置中建议开启全局透明代理，同时开始防止 DNS 劫持功能，否则可能会拿不到被 dns 污染的资源(如 github raw)。
+
+更多使用方法请看[官方文档](https://github.com/v2rayA/v2rayA/wiki)与[项目地址](https://github.com/v2rayA/v2rayA)
