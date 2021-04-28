@@ -121,7 +121,7 @@ df -h # 以人类可读格式显示文件系统磁盘使用情况统计
 图形化界面直观查看磁盘占用情况
 
 ```bash
-sudo pacman -S flameshot
+sudo pacman -S filelight
 ```
 
 cpu 与显卡：  
