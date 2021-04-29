@@ -110,6 +110,20 @@ sudo smartctl -A /dev/sda   #硬盘
 sudo smartctl -d sat -A /dev/sdc #usb设备
 ```
 
+磁盘空间分析：
+
+```bash
+df -h # 以人类可读格式显示文件系统磁盘使用情况统计
+```
+
+使用 [Filelight](https://archlinux.org/packages/extra/x86_64/filelight/)
+
+图形化界面直观查看磁盘占用情况
+
+```bash
+sudo pacman -S filelight
+```
+
 cpu 与显卡：  
 如下两款是目前找到的，最佳的图形化查看 cpu 与显卡信息的软件。
 
