@@ -58,10 +58,13 @@ sudo pacman -S flameshot
 
 ## 网盘存储
 
-- [稳定版坚果云](https://aur.archlinux.org/packages/nutstore/)<sup>AUR</sup> 可直接使用 [web 版本](https://www.jianguoyun.com/d/home#/) [最新版坚果云](https://aur.archlinux.org/packages/nutstore-experimental/)<sup>AUR</sup>
-- [Mega](https://aur.archlinux.org/packages/megasync/)<sup>AUR</sup> 可直接使用 [web 版本](https://mega.nz/fm/dashboard)
+**不要使用任何中国国内的网盘存储你的个人数据，他们可以根据"相关条款与规定"，或者"自我阉割"随意处置你的所有数据，只推荐用国内网盘存储无关紧要的数据。**
+
+- [Mega](https://aur.archlinux.org/packages/megasync/)<sup>AUR</sup> 国外注重隐私的老牌网盘，也可直接使用 [web 版本](https://mega.nz/fm/dashboard)
+- [onedrive](https://aur.archlinux.org/packages/onedrive-abraunegg/)<sup>AUR</sup> 微软创办的网盘业务，linux 下存在一个命令行客户端
 - [超星网盘](http://i.mooc.chaoxing.com/space/index?t=1600061701200) 据说免费 100G 未验证
-- [百度网盘](https://aur.archlinux.org/packages/baidunetdisk-bin/) 辣鸡
+- [稳定版坚果云](https://aur.archlinux.org/packages/nutstore/)<sup>AUR</sup>，也可直接使用 [web 版本](https://www.jianguoyun.com/d/home#/)。如果稳定版的界面存在问题，可使用[最新实验版坚果云](https://aur.archlinux.org/packages/nutstore-experimental/)<sup>AUR</sup>
+- [百度网盘](https://aur.archlinux.org/packages/baidunetdisk-bin/)<sup>AUR</sup> 臭名昭著的百度网盘
 
 ## 图片浏览
 
