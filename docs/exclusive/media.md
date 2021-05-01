@@ -12,7 +12,7 @@ b 站直播时的弹幕可以使用[弹幕库](https://www.danmaku.live/),这个
 
 > bilibili-live-chat 需要使用有浏览器插件集成的 obs,arch 仓库中默认的 obs-studio 是无此功能的，如需使用 bilibili-live-chat，请安装 AUR 中的[obs-studio-browser](https://aur.archlinux.org/packages/obs-studio-browser/)
 
-如果你使用英伟达的显卡，可以使用 NVENC 编码器，这将大大降低直播或录制过程中 cpu 的压力，详情可见[NVIDIA NVENC OBS 指南](https://www.nvidia.cn/geforce/guides/broadcasting-guide/)
+如果你使用较新的英伟达显卡，可以使用 NVENC 编码器，这将大大降低直播或录制过程中 cpu 的压力，详情可见[NVIDIA NVENC OBS 指南](https://www.nvidia.cn/geforce/guides/broadcasting-guide/)
 
 ## 视频制作剪辑与特效
 
