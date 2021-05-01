@@ -4,11 +4,15 @@
 
 ## 直播推流及辅助软件
 
-- [obs-studio](https://www.archlinux.org/packages/community/x86_64/obs-studio/) 直播以及视频录制
-- [弹幕库](https://www.danmaku.live/) 这个历史比较复杂，v1 版本的仓库在[这里](https://github.com/pandaGao/bilibili-live-helper)，但是作者说不更新了。v2 版本的作者目前没有开源，并且说以后[不会更新了](https://t.bilibili.com/378501835576827480)。AUR 搜索:`bilibili-live-helper-bin`
-- [bilibili-live-chat](https://github.com/Tsuk1ko/bilibili-live-chat) 一个浏览器的弹幕实现，风格仿照 youtube 的弹幕风格，也是很多弹幕软件的基础，直接在 web 上使用。
+直播以及录制在 linux 上使用[obs-studio](https://www.archlinux.org/packages/community/x86_64/obs-studio/)完成，用法与 windows 下基本一致。
+
+b 站直播时的弹幕可以使用[弹幕库](https://www.danmaku.live/),这个历史比较复杂，v1 版本的仓库在[这里](https://github.com/pandaGao/bilibili-live-helper)，但是作者说不更新了。v2 版本的作者目前没有开源，并且说以后[也不会更新了](https://t.bilibili.com/378501835576827480)。AUR 搜索:`bilibili-live-helper-bin`。
+
+除此之外还有一个[bilibili-live-chat](https://github.com/Tsuk1ko/bilibili-live-chat),这是一个浏览器的弹幕实现，风格仿照 youtube 的弹幕风格，也是很多弹幕软件的基础，直接在 web 上使用。
 
 > bilibili-live-chat 需要使用有浏览器插件集成的 obs,arch 仓库中默认的 obs-studio 是无此功能的，如需使用 bilibili-live-chat，请安装 AUR 中的[obs-studio-browser](https://aur.archlinux.org/packages/obs-studio-browser/)
+
+如果你使用英伟达的显卡，可以使用 NVENC 编码器，这将大大降低直播或录制过程中 cpu 的压力，详情可见[NVIDIA NVENC OBS 指南](https://www.nvidia.cn/geforce/guides/broadcasting-guide/)
 
 ## 视频制作剪辑与特效
 
