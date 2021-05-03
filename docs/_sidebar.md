@@ -19,6 +19,7 @@
 - 娱乐与办公
 
   - [办公日常](/play&office/office)
+  - [视频影音](/play&office/media)
   - [游戏娱乐](/play&office/play)
   - [安卓刷机](/play&office/android)
 
