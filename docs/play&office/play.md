@@ -38,7 +38,41 @@ echo powersave | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
 注意，如果不进行代理设置，启动器的下载速度将很慢。推荐使用全局透明代理。在安装使用中若出现问题可自行查看[AUR 仓库地址](https://aur.archlinux.org/packages/minecraft-launcher)下的评论。
 
 ```bash
-sudo pacman -S minecraft-launcher #我的世界官服起动器(ArchLinuxCN)
+sudo pacman -S minecraft-launcher #我的世界官服启动器(ArchLinuxCN)
+```
+
+但是比较了解我的世界的人都知道，官启比较难用。我们推荐使用[HMCL](https://hmcl.huangyuhui.net/)（Hello Minecraft! Launcher）启动器。
+
+[GitHub](https://github.com/huanghongxun/HMCL) [MCBBS](https://www.mcbbs.net/thread-142335-1-1.html)
+
+配置教程（注意：我们使用HMCL-3.3.172版本演示，其余版本类似）：
+
+我们先下载HMCL启动器本体：
+
+```bash
+aria2c http://ci.huangyuhui.net/job/HMCL/172/artifact/HMCL/build/libs/HMCL-3.3.172.jar #下载启动器本体
+```
+
+然后配置java，我们推荐使用Java8，因为HMCL仅支持Java8与Java10：
+
+```bash
+yay -S jre8 #安装jre8,一般仅玩就用jre即可，如要开发请安装jdk
+archlinux-java status #列出系统上的Java版本
+sudo archlinux-java set java-8-jre/jre #设定默认Java版本
+```
+
+启动：
+
+```bash
+java -jar HMCL-3.3.172.jar
+```
+
+如果要是能正常启动那就成功啦~~~
+
+我们也可以去安装社区上的HMCL，自动配置：
+
+```bash
+sudo pacman -S hmcl
 ```
 
 ## Steam
