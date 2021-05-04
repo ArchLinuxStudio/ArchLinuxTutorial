@@ -41,3 +41,11 @@ yay -S downgrade
 ```
 
 安装此包即可，使用方法也很简单，downgrade 后加上需要降级的包名即可，随后会提示你选择需要降级到的版本，点选即可。
+
+### 升级系统时出现形如`error: failed to update core (unable to lock database)`的错误
+
+可能存在升级系统时异常关机或程序异常退出的情况，移除 pacman 的 db 锁即可
+
+```bash
+sudo rm /var/lib/pacman/db.lck
+```
