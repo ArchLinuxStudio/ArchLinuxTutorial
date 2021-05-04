@@ -70,7 +70,24 @@ pacman -S plasma-meta konsole dolphin  #安装plasma-meta元软件包以及终�
 systemctl enable sddm
 ```
 
-## 5.开启 32 位支持库与 ArchLinuxCN 支持库
+## 5.设置交换文件 swap
+
+在桌面环境中，交换分区或文件用来实现休眠(hibernate)的功能，即将当前环境保存在磁盘的交换文件或分区部分。除此之外，某些特定软件需要 swap 才可以正确运行。交换文件与分区性能相同，且交换文件更为灵活，可随时变更大小，增加与删除。[[1]](https://wiki.archlinux.org/title/Swap#Swap_file)
+
+```bash
+dd if=/dev/zero of=/swapfile bs=1M count=16384 status=progress #创建16G的交换空间 大小根据需要自定
+chmod 600 /swapfile #设置正确的权限
+mkswap /swapfile #格式化swap文件
+swapon /swapfile #启用swap文件
+```
+
+最后，向/etc/fstab 中追加如下内容：
+
+```bash
+/swapfile none swap defaults 0 0
+```
+
+## 6.开启 32 位支持库与 ArchLinuxCN 支持库
 
 ```bash
 vim /etc/pacman.conf
@@ -100,7 +117,7 @@ pacman -Syyu
 
 重启电脑，即可看到欢迎界面，输入新用户的密码即可登录桌面
 
-## 6.安装基础功能包
+## 7.安装基础功能包
 
 进入桌面后，搜索 konsole。它是 KDE 桌面环境默认的命令行终端。
 
@@ -134,7 +151,7 @@ sudo pacman -S yay                                                          #yay
 
 若安装 archlinuxcn-keyring 时报错，是由于密钥环的问题，可先按照[此链接](https://www.archlinuxcn.org/gnupg-2-1-and-the-pacman-keyring/)执行其中的命令，再安装 archlinuxcn-keyring
 
-## 7.检查家目录
+## 8.检查家目录
 
 检查家目录下的各个常见目录是否已经创建，若没有则需手动创建。
 
@@ -143,7 +160,7 @@ cd /home/testuser
 mkdir Desktop Documents Downloads Music Pictures Videos
 ```
 
-## 8.设置系统为中文
+## 9.设置系统为中文
 
 打开 _System Settings_ > _Regional Settings_ > _Language_ 中选择中文加入，再拖拽到第一位，Apply。
 
@@ -151,7 +168,7 @@ mkdir Desktop Documents Downloads Music Pictures Videos
 
 > 很多人会错误的更改 _System Settings_ > _Regional Settings_ > _Formats_ 中的值为中文蒙古，默认，或者其他值，这会导致系统中一半英文一般中文。这里的值要保持默认的 en_US 或 zh_CN,或者改为你在 locale.gen 中添加的任意一种语言。
 
-## 9.安装输入法
+## 10.安装输入法
 
 [Fcitx5 官方文档](<https://wiki.archlinux.org/index.php/Fcitx5_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)>)  
 中文及日文输入法均体验良好。
@@ -182,54 +199,53 @@ SDL_IM_MODULE DEFAULT=fcitx
 
 注销，重新登陆，就可以发现已经可以在各个软件中输入中文了
 
-## 10.启动蓝牙(若有)
+## 11.启动蓝牙(若有)
 
 ```bash
 sudo systemctl enable --now bluetooth
 ```
 
-## 11.字体设置
+## 12.字体设置
 
 个人的设置是英文使用 Hack，中文使用 Noto Sans CJK SC。可以在系统设置->字体中进行设置。有关用户全局级别更改日文异型字的设置，可参考[官方文档](<https://wiki.archlinux.org/index.php/Localization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)/Simplified_Chinese_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#%E4%BF%AE%E6%AD%A3%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%E6%98%BE%E7%A4%BA%E4%B8%BA%E5%BC%82%E4%BD%93%EF%BC%88%E6%97%A5%E6%96%87%EF%BC%89%E5%AD%97%E5%BD%A2>)
 
-## 12.休眠设置
+## 13.休眠(hibernate)设置(可选步骤)
 
-注：若您的 Arch 上没有休眠功能请跳过此步。
+KDE 自身提供开箱即用的睡眠功能(sleep)，即将系统挂起到内存，消耗少量的电量。休眠(hibernate)会将系统挂起到交换分区或文件，几乎不消耗电量。如果 sleep 睡眠功能已可满足你的需求，不需要休眠到硬盘的功能，则可略过此步。
 
-Arch 的休眠功能需要设置后才能使用，我们介绍使用 systemd 休眠，需要 swap 分区或者 swap 文件，大小要大于等于系统内存。
+挂起到硬盘的映像大小一般最大为物理内存的 2/5,其值在/sys/power/image_size 中确定，故如果想使用休眠功能，swap 大小一般设置为物理内存的一半即可。[[1]](https://wiki.archlinux.org/title/Power_management/Suspend_and_hibernate#About_swap_partition/file_size)
 
-1. 在 bootloader 中增加 resume 内核参数
+首先确认 swap 文件所在分区的 UUID 以及 swap 文件的偏移值
 
-首先需要确定 swap 分区在哪个分区下，输入 ``lsblk`` 来获取。下面以 ``/dev/sda2`` 演示。
-
-我们编辑 ``/etc/default/grub`` 文件，在 ``GRUB_CMDLINE_LINUX_DEFAULT`` 添加 ``resume=/dev/sda2`` 。
-
-即：
-
-```
-GRUB_CMDLINE_LINUX_DEFAULT="quiet" #原本
-GRUB_CMDLINE_LINUX_DEFAULT="quiet resume=/dev/sda2" #添加后
+```bash
+sudo findmnt -no UUID -T /swapfile #确认UUID
+sudo filefrag -v /swapfile #确认物理偏移值 第一行数据中的physical_offset一列的值即为所需要的数据
 ```
 
-然后我们更新 grub 配置：
+随后将这两个参数加入内核启动参数中
+
+```
+sudo vim /etc/default/grub
+```
+
+找到 `GRUB_CMDLINE_LINUX_DEFAULT` 一行，在其值后添加类似如下两项数据，内容根据你自身的 UUID 以及偏移值确定。参数以空格分隔。
+
+```conf
+resume=UUID=9a940a0a-fa72-4973-9ccc-3eb93ad73b37 resume_offset=6418432
+```
+
+配置完成后需要更新 grub 配置：
 
 ```bash
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-2. 配置 initranfs 的 resume 钩子
+---
 
-添加 resume 钩子，我们编辑 ``/etc/mkinitcpio.conf`` ，在 HOOKS 行添加 resume 钩子：
+除此之外，还需配置 initranfs 的 resume 钩子：
 
-```conf
-HOOKS="base udev autodetect modconf block filesystems keyboard fsck" #原本
-HOOKS="base udev resume autodetect modconf block filesystems keyboard fsck" #添加后
-```
-
-然后我们重新生成 initramfs 镜像：
+添加 resume 钩子，编辑 `/etc/mkinitcpio.conf` ，在 HOOKS 行添加 `resume`值，注意，`resume` 需要加入在 udev 后。最后重新生成 initramfs 镜像：
 
 ```bash
-sudo mkinitcpio -p linux
+sudo mkinitcpio -P
 ```
-
-正常情况下您的休眠功能就可以使用啦。

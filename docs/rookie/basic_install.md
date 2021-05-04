@@ -71,7 +71,6 @@ vim /etc/pacman.d/mirrorlist    #不会vim的同学，此处注意视频中的vi
 
 - EFI 分区： `/efi` 800M
 - 根目录： `/` 100G
-- 交换分区: `swap` 4G
 - 用户主目录： `/home` 剩余全部 越大越好
 
 > 这里根目录的大小仅为参考，一般来说日常使用的 linux 分配 100G 已经够用了。根目录最小建议不小于 50G，根目录过小会造成无法更新系统软件包等问题。
@@ -104,8 +103,6 @@ cfdisk 分区的详细操作见视频中的操作。一般建议将 EFI 分区�
 #磁盘若有数据会问 'proceed any way?' y回车 即可
 mkfs.ext4  /dev/sdax            #格式化根目录和home目录的两个分区
 mkfs.vfat  /dev/sdax            #格式化efi分区
-mkswap -f /dev/sdax             #格式化swap
-swapon /dev/sdax                #打开swap分区
 ```
 
 ## 9.挂载
