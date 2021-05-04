@@ -219,19 +219,19 @@ KDE 自身提供开箱即用的睡眠功能(sleep)，即将系统挂起到内存
 
 ```bash
 sudo findmnt -no UUID -T /swapfile #确认UUID
-sudo filefrag -v /swapfile #确认物理偏移值 第一行数据中的physical_offset一列的值即为所需要的数据
+sudo filefrag -v /swapfile #确认物理偏移值 第一行数据中的 physical_offset 一列的值即为所需要的数据（包括句号 ..）
 ```
 
 随后将这两个参数加入内核启动参数中
 
-```
+```bash
 sudo vim /etc/default/grub
 ```
 
 找到 `GRUB_CMDLINE_LINUX_DEFAULT` 一行，在其值后添加类似如下两项数据，内容根据你自身的 UUID 以及偏移值确定。参数以空格分隔。
 
 ```conf
-resume=UUID=9a940a0a-fa72-4973-9ccc-3eb93ad73b37 resume_offset=6418432
+resume=UUID=9a940a0a-fa72-4973-9ccc-3eb93ad73b37 resume_offset=6418432..
 ```
 
 配置完成后需要更新 grub 配置：
@@ -244,7 +244,15 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 除此之外，还需配置 initranfs 的 resume 钩子：
 
-添加 resume 钩子，编辑 `/etc/mkinitcpio.conf` ，在 HOOKS 行添加 `resume`值，注意，`resume` 需要加入在 udev 后。最后重新生成 initramfs 镜像：
+添加 resume 钩子，编辑 `/etc/mkinitcpio.conf` ，在 HOOKS 行添加 `resume` 值，注意，`resume` 需要加入在 udev 后。若使用了 LVM 分区，`resume` 需要加入在 lvm2 后。
+
+使用 Intel CPU 并且为触摸板加载 `intel_lpss_pci` 模块的笔记本电脑，可能会在唤醒时发生内核崩溃（Caps Lock 灯闪烁），黑屏并无法成功唤醒。此时需要编辑 `/etc/mkinitcpio.conf`，在 MODULES 行添加 `intel_lpss_pci` 值
+
+```conf
+MODULES=(intel_lpss_pci)
+```
+
+最后重新生成 initramfs 镜像：
 
 ```bash
 sudo mkinitcpio -P
