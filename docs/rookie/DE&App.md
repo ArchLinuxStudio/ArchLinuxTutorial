@@ -191,3 +191,45 @@ sudo systemctl enable --now bluetooth
 ## 11.字体设置
 
 个人的设置是英文使用 Hack，中文使用 Noto Sans CJK SC。可以在系统设置->字体中进行设置。有关用户全局级别更改日文异型字的设置，可参考[官方文档](<https://wiki.archlinux.org/index.php/Localization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)/Simplified_Chinese_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#%E4%BF%AE%E6%AD%A3%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%E6%98%BE%E7%A4%BA%E4%B8%BA%E5%BC%82%E4%BD%93%EF%BC%88%E6%97%A5%E6%96%87%EF%BC%89%E5%AD%97%E5%BD%A2>)
+
+## 12.休眠设置
+
+注：若您的 Arch 上没有休眠功能请跳过此步。
+
+Arch 的休眠功能需要设置后才能使用，我们介绍使用 systemd 休眠，需要 swap 分区或者 swap 文件，大小要大于等于系统内存。
+
+1. 在 bootloader 中增加 resume 内核参数
+
+首先需要确定 swap 分区在哪个分区下，输入 ``lsblk`` 来获取。下面以 ``/dev/sda2`` 演示。
+
+我们编辑 ``/etc/default/grub`` 文件，在 ``GRUB_CMDLINE_LINUX_DEFAULT`` 添加 ``resume=/dev/sda2`` 。
+
+即：
+
+```
+GRUB_CMDLINE_LINUX_DEFAULT="quiet" #原本
+GRUB_CMDLINE_LINUX_DEFAULT="quiet resume=/dev/sda2" #添加后
+```
+
+然后我们更新 grub 配置：
+
+```bash
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+2. 配置 initranfs 的 resume 钩子
+
+添加 resume 钩子，我们编辑 ``/etc/mkinitcpio.conf`` ，在 HOOKS 行添加 resume 钩子：
+
+```conf
+HOOKS="base udev autodetect modconf block filesystems keyboard fsck" #原本
+HOOKS="base udev resume autodetect modconf block filesystems keyboard fsck" #添加后
+```
+
+然后我们重新生成 initramfs 镜像：
+
+```bash
+sudo mkinitcpio -p linux
+```
+
+正常情况下您的休眠功能就可以使用啦。
