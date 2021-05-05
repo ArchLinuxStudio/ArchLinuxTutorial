@@ -62,3 +62,48 @@ grep . /sys/class/powercap/intel-rapl/intel-rapl:0/*
 Ref: [[1]](https://askubuntu.com/questions/1231091/tee-constraint-0-power-limit-uw-no-data-available),[[2]](https://miloserdov.org/?p=1932),[[3]](https://zhuanlan.zhihu.com/p/25537264)
 
 此外，intel-undervolt 也可直接进行功率墙限制。如看到`package power limit is locked`,则说明这台电脑不可更改功率墙。
+
+## 使用 TLP 延长电池寿命
+
+多年来，Linux 在电池优化方面取得了很大进步，但仍然有一些可选步骤改善笔记本电脑的电池寿命。TLP 作为一款自由开源的高级电源管理工具提供开箱即用的默认配置。同时也可以高度定制化，以满足特定需求。
+
+### 安装与配置
+
+1. 安装相关软件包
+
+另外需要安装 [smartmontools](https://archlinux.org/packages/extra/x86_64/smartmontools/) 以显示 `tlp-stat` 中的 S.M.A.R.T. 数据。
+
+```bash
+sudo pacman -S tlp tlp-rdw
+yay -S tlpui # 可选安装图形界面
+```
+
+2. 相关服务设置
+
+```bash
+systemctl enable tlp.service
+systemctl enable NetworkManager-dispatcher.service
+systemctl mask systemd-rfkill.service # 屏蔽以下服务以避免冲突，确保 TLP 无线设备的开关选项可以正确运行
+systemctl mask systemd-rfkill.socket
+```
+
+3. 手动启动 TLP
+
+安装后，TLP 将在开机时自动启动。为了避免第一次重启系统，可以使用以下命令手动启动：
+
+```bash
+sudo tlp start
+```
+
+还可以使用此命令在编辑配置后应用更改。所有 TLP 设置都存储在 `/etc/default/tlp` 中。一般情况下默认配置即可满足需求。更多信息请参阅[官方文档](https://linrunner.de/tlp/settings/index.html)和 [archwiki](<https://wiki.archlinux.org/title/TLP_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)>)。若安装了 [TLPUI](https://aur.archlinux.org/packages/tlpui/)<sup>AUR</sup> 可在图形界面进行相关配置。语言可在 _菜单栏_ > _Language_ 更改。
+
+### 使用 TLP 显示相关系统信息
+
+```bash
+sudo tlp-stat -b # 显示电池信息
+sudo tlp-stat -d # 显示磁盘信息
+sudo tlp-stat -e # 显示 PCI 设备信息
+sudo tlp-stat -g # 显示图形卡信息
+sudo tlp-stat -p # 显示处理器信息
+tlp-stat -s # 显示系统数据信息 / 验证 TLP 服务运行状况
+```
