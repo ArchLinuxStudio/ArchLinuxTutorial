@@ -1,7 +1,7 @@
   <p align="center">
   <img width="240" height="80" align="center" src="https://www.archlinux.org/static/logos/archlinux-logo-dark-1200dpi.b42bd35d5916.png" alt="ArchLinuxStudio_ArchLinuxTutorial"/>
   </br>
-  <h1 style="text-align: center;">Arch Linux 安装使用教程 </h1> 
+  <h1 align="center">Arch Linux 安装使用教程 </h1> 
   本书包含从 archlinux安装，科学上网，翻墙，到显卡驱动，日常软件如 QQ 和微信，另附媒体制作，编程等你可能需要的全部内容。让 Arch Linux 成为你的常用系统吧！
   </br>
   提供在线网页文档，承诺健在即更新。
