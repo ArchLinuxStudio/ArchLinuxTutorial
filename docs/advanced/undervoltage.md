@@ -71,7 +71,7 @@ Ref: [[1]](https://askubuntu.com/questions/1231091/tee-constraint-0-power-limit-
 
 1. 安装相关软件包
 
-另外需要安装 [smartmontools](https://archlinux.org/packages/extra/x86_64/smartmontools/) 以显示 `tlp-stat` 中的 S.M.A.R.T. 数据。
+另外需要安装 [smartmontools](https://archlinux.org/packages/extra/x86_64/smartmontools/) 以显示 `tlp-stat` 中的 S.M.A.R.T. 数据。若是 ThinkPad 机型请查阅[官方文档安装说明](https://linrunner.de/tlp/installation/arch.html#thinkpads-only)。
 
 ```bash
 sudo pacman -S tlp tlp-rdw
@@ -81,10 +81,10 @@ yay -S tlpui # 可选安装图形界面
 2. 相关服务设置
 
 ```bash
-systemctl enable tlp.service
-systemctl enable NetworkManager-dispatcher.service
-systemctl mask systemd-rfkill.service # 屏蔽以下服务以避免冲突，确保 TLP 无线设备的开关选项可以正确运行
-systemctl mask systemd-rfkill.socket
+sudo systemctl enable tlp.service
+sudo systemctl enable NetworkManager-dispatcher.service
+sudo systemctl mask systemd-rfkill.service # 屏蔽以下服务以避免冲突，确保 TLP 无线设备的开关选项可以正确运行
+sudo systemctl mask systemd-rfkill.socket
 ```
 
 3. 手动启动 TLP
@@ -95,7 +95,7 @@ systemctl mask systemd-rfkill.socket
 sudo tlp start
 ```
 
-还可以使用此命令在编辑配置后应用更改。所有 TLP 设置都存储在 `/etc/default/tlp` 中。一般情况下默认配置即可满足需求。更多信息请参阅[官方文档](https://linrunner.de/tlp/settings/index.html)和 [archwiki](<https://wiki.archlinux.org/title/TLP_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)>)。若安装了 [TLPUI](https://aur.archlinux.org/packages/tlpui/)<sup>AUR</sup> 可在图形界面进行相关配置。语言可在 _菜单栏_ > _Language_ 更改。
+还可以使用此命令在编辑配置后应用更改。所有 TLP 设置都存储在 `/etc/default/tlp` 中。一般情况下默认配置即可满足需求。此外为防止 `Btrfs` 文件系统损坏，需要另外设置：`SATA_LINKPWR_ON_BAT=max_performance`。更多信息请参阅[官方文档](https://linrunner.de/tlp/settings/index.html)和 [archwiki](<https://wiki.archlinux.org/title/TLP_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)>)。若安装了 [TLPUI](https://aur.archlinux.org/packages/tlpui/)<sup>AUR</sup> 可在图形界面进行相关配置。语言可在 _菜单栏_ > _Language_ 更改。
 
 ### 使用 TLP 显示相关系统信息
 
