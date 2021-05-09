@@ -111,20 +111,20 @@
     <script>
       window.$docsify = {
         loadNavbar: true,
-        search: "auto",
-        name: "Arch Linux安装使用教程",
+        search: 'auto',
+        name: 'Arch Linux安装使用教程',
         loadSidebar: true,
         auto2top: true,
-        logo: "./arch.svg",
+        logo: './arch.svg',
         topMargin: 90,
         notFoundPage: true,
         subMaxLevel: 4,
-        themeColor: "rgb(23,147,209)",
-        repo: "https://github.com/ArchLinuxStudio/ArchLinuxTutorial",
-        formatUpdated: "{YYYY}-{MM}-{DD}",
+        themeColor: 'rgb(23,147,209)',
+        repo: 'https://github.com/ArchLinuxStudio/ArchLinuxTutorial',
+        formatUpdated: '{YYYY}-{MM}-{DD}',
         pagination: {
-          previousText: "上一节",
-          nextText: "下一节",
+          previousText: '上一节',
+          nextText: '下一节',
           crossChapter: true,
           crossChapterText: true,
         },
@@ -132,15 +132,15 @@
           function (hook, vm) {
             hook.beforeEach(function (html) {
               var url =
-                "https://github.com/ArchLinuxStudio/ArchLinuxTutorial/blob/master/docs/" +
+                'https://github.com/ArchLinuxStudio/ArchLinuxTutorial/blob/master/docs/' +
                 vm.route.file;
-              var editHtml = "[📝 编辑本文](" + url + ")\n";
+              var editHtml = '[📝 编辑本文](' + url + ')\n';
 
               return (
-                "<span>更新日期 {docsify-updated}</span> " +
-                "\n" +
+                '<span>更新日期 {docsify-updated}</span> ' +
+                '\n' +
                 html +
-                "\n----\n" +
+                '\n----\n' +
                 editHtml
               );
             });
@@ -156,28 +156,28 @@
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
     <script>
       let props = {
-        clientID: "296c581fc4b2a837a1e3",
-        clientSecret: "7e7f0ad1809fa4a1915430ade04835f6849ab56a",
-        repo: "ArchLinuxTutorialComments",
-        owner: "ArchLinuxStudio",
-        admin: ["wallena3"],
+        clientID: '296c581fc4b2a837a1e3',
+        clientSecret: '7e7f0ad1809fa4a1915430ade04835f6849ab56a',
+        repo: 'ArchLinuxTutorialComments',
+        owner: 'ArchLinuxStudio',
+        admin: ['wallena3'],
         // facebook-like distraction free mode
         distractionFreeMode: false,
-        id: decodeURI(location.hash.split("?")[0]),
+        id: decodeURI(location.hash.split('?')[0]),
         proxy:
-          "https://ifuckgfw.com:7788/https://github.com/login/oauth/access_token",
+          'https://ifuckgfw.com:7788/https://github.com/login/oauth/access_token',
       };
       let gitalk = new Gitalk(props);
       // 哈希路由切换时 重新加载Gitalk
-      window.addEventListener("hashchange", onHashChange);
+      window.addEventListener('hashchange', onHashChange);
       function onHashChange() {
-        props.id = decodeURI(location.hash.split("?")[0]); //如果不切分，在docsify里面的各个段落都会生成新的评论issue
+        props.id = decodeURI(location.hash.split('?')[0]); //如果不切分，在docsify里面的各个段落都会生成新的评论issue
       }
     </script>
     <script>
       function change_search_plugin_order() {
-        let search_plugin = document.getElementsByClassName("search")[0];
-        let app_name = document.getElementsByClassName("app-name")[0];
+        let search_plugin = document.getElementsByClassName('search')[0];
+        let app_name = document.getElementsByClassName('app-name')[0];
         search_plugin.parentNode.insertBefore(app_name, search_plugin);
       }
       setTimeout(change_search_plugin_order, 1);

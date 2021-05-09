@@ -49,3 +49,15 @@ yay -S downgrade
 ```bash
 sudo rm /var/lib/pacman/db.lck
 ```
+
+### 手动开关混成器
+
+有时混成器会因为某些原因需要手动开启或关闭，但是目前在 KDE 下混成器在设置里无法在不关机的情况下直接关闭，下面命令提供手动开关混成器的效果。[[1]](https://unix.stackexchange.com/questions/597736/disabling-kwin-compositor-from-command-line)
+
+```bash
+qdbus org.kde.KWin /Compositor suspend  #禁用
+
+qdbus org.kde.KWin /Compositor resume   #开启
+
+
+```
