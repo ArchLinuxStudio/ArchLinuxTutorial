@@ -140,33 +140,6 @@ sudo pacman -S dmidecode
 sudo dmidecode
 ```
 
-## 磁盘空间清理
-
-有时需要对磁盘空间进行清理，以免磁盘空间不足，保证系统的正常运行。首先应结合上文对磁盘空间占用情况进行分析，随后采取对应的有效应对措施。下面介绍一些通用措施。
-
-### 清理 `yay` 缓存
-
-如果使用 `yay` 来安装 AUR 中的软件包的话，可以清理 `yay` 的缓存目录。
-
-```bash
-rm -rf ~/.cache/yay
-```
-
-### 清理软件包缓存及孤立包
-
-执行以下命令清理软件包文件缓存及删除孤立软件包。
-
-```bash
-sudo pacman -Rns $(pacman -Qtdq) # 如上文所述，删除孤立软件包
-paccache -r # 删除已安装和未安装包的所有缓存版本，但最近 3 个版本除外
-sudo pacman -Sc # 删除当前未安装的所有缓存包和未使用的同步数据库（可选）
-sudo pacman -Scc # 从缓存中删除所有文件，这是最激进的方法，不会在缓存文件夹中留下任何内容（一般不使用）
-```
-
-### 考虑快照大小
-
-此外，若使用了 RSYNC 方式的 `Timeshift` 快照，还应考虑 `Timeshift` 快照占用情况。一般来说 RSYNC 方式的快照大小略大于当前实际使用大小。因为虽然 RSYNC 方式的快照是增量的，但历史最久远的快照依然是完整备份，随后是增量的。而简单来说增量大小取决于历史最久远的快照和最新快照之间的差异。通过 `Timeshift` 自动清理历史最久远的快照是简单有效的方法。
-
 ## 文件传输与系统备份
 
 有一点 Linux 经验的同学应该知道[scp](<https://wiki.archlinux.org/index.php/SCP_and_SFTP#Secure_copy_protocol_(SCP)>)这个命令。它常被用来在服务器间传输文件。但是目前它应该被更现代的工具[rsync](https://wiki.archlinux.org/index.php/Rsync)替代，其拥有即时压缩，差量传输等新特性。同时，`rsync`也被用来进行备份操作。
