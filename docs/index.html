@@ -3,23 +3,16 @@
   <head>
     <meta charset="UTF-8" />
 
-    <title>Arch Linux安装使用教程 - ArchTutorial - Arch Linux Studio</title>
+    <title>archlinux 安装与使用简明教程</title>
 
     <meta
       name="description"
-      content="Arch Linux安装使用教程，包含从 archlinux安装，科学上网，翻墙，到显卡驱动，日常软件如 QQ 和微信，另附媒体制作，编程等你可能需要的全部内容。让 Arch Linux 成为你的常用系统吧！"
+      content="archlinux 安装与使用简明教程，包含从 archlinux 安装、显卡驱动、日常软件配置、媒体制作、编程等你可能需要的全部内容。让 archlinux 成为你的常用系统吧！"
     />
-
-    <!-- GSC -->
-    <meta
-      name="google-site-verification"
-      content="I9AUrsDVI86dZZUEJ2wSX4torsBJsq0bihBPHd_Efx4"
-    />
-
-    <meta name="author" content="wallena3 Kagarino Kirie " />
+    <meta name="author" content="wallena3, ice-kylin" />
     <meta
       name="keywords"
-      content="ArchLinux安装,ArchLinux教程,显卡驱动,v2ray,shadowsocks,翻墙,科学上网,Linux"
+      content="archlinux 安装,archlinux 教程,archlinux,显卡驱动,Linux"
     />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta
@@ -27,52 +20,23 @@
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
     />
 
-    <!-- Facebook Meta Tags -->
-    <meta
-      property="og:url"
-      content="https://archlinuxstudio.github.io/ArchLinuxTutorial/#/"
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Arch Linux安装使用教程" />
-    <meta
-      property="og:description"
-      content="Arch Linux安装使用教程 包含从安装/魔法上网/美化/日常/娱乐/编程的全部"
-    />
-    <meta
-      property="og:image"
-      content="https://avatars.githubusercontent.com/u/17615884?s=400&amp;v=4"
-    />
-    <meta property="og:site_name" content="ArchLinuxStudio" />
-
-    <!-- Twitter Meta Tags -->
-    <meta name="twitter:card" content="summary" />
-    <meta property="twitter:domain" content="archlinuxstudio.github.io" />
-    <meta
-      property="twitter:url"
-      content="https://archlinuxstudio.github.io/ArchLinuxTutorial/#/"
-    />
-    <meta name="twitter:title" content="Arch Linux安装使用教程" />
-    <meta
-      name="twitter:description"
-      content="Arch Linux安装使用教程 包含从安装/魔法上网/美化/日常/娱乐/编程的全部"
-    />
-    <meta
-      name="twitter:image"
-      content="https://avatars.githubusercontent.com/u/17615884?s=400&amp;v=4"
-    />
-
     <link rel="shortcut icon" href="./arch.png" />
     <link
       rel="stylesheet"
       href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css"
     />
-    <link
-      rel="stylesheet"
-      href="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css"
-    />
+
     <style>
       .sidebar {
         padding: 0 0 0 0;
+      }
+
+      .sidebar::-webkit-scrollbar {
+        width: 0;
+      }
+
+      .sidebar {
+        scrollbar-width: none;
       }
 
       .app-name {
@@ -89,39 +53,39 @@
       .seo-pic {
         display: none;
       }
-    </style>
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "NewsArticle",
-        "headline": "Arch Linux安装使用教程 - ArchTutorial - Arch Linux Studio",
-        "image": [
-          "https://archlinux.org/static/logos/archlinux-logo-dark-90dpi.ebdee92a15b3.png",
-          "https://archlinux.org/static/logos/archlinux-logo-black-90dpi.0c696e9c0d84.png",
-          "https://archlinuxstudio.github.io/ArchLinuxTutorial/arch_seo.png"
-        ],
-        "datePublished": "2020-09-01T08:00:00+08:00",
-        "dateModified": "2021-04-03T09:20:00+08:00"
+
+      ::-webkit-scrollbar-thumb {
+        border: 3px solid transparent;
+        border-radius: 5px;
+        background-color: #c1c1c1;
+        background-clip: padding-box;
       }
-    </script>
+
+      ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+      }
+    </style>
   </head>
   <body>
-    <img src="./arch.svg" alt="Arch Linux安装使用教程" class="seo-pic" />
+    <img src="./arch.svg" alt="archlinux 安装与使用简明教程" class="seo-pic" />
     <div id="app">加载中...</div>
     <script>
       window.$docsify = {
         loadNavbar: true,
-        search: 'auto',
-        name: 'Arch Linux安装使用教程',
+        search: "auto",
+        name: "archlinux 安装与使用简明教程",
         loadSidebar: true,
         auto2top: true,
         logo: './arch.svg',
         topMargin: 90,
         notFoundPage: true,
         subMaxLevel: 4,
-        themeColor: 'rgb(23,147,209)',
-        repo: 'https://github.com/ArchLinuxStudio/ArchLinuxTutorial',
-        formatUpdated: '{YYYY}-{MM}-{DD}',
+        themeColor: "rgb(250,101,148)",
+        repo: "https://github.com/NakanoMikuOrg/ArchLinuxTutorial",
+        formatUpdated: "{YYYY}-{MM}-{DD}",
+        coverpage: true,
+        onlyCover: true,
         pagination: {
           previousText: '上一节',
           nextText: '下一节',
@@ -132,7 +96,7 @@
           function (hook, vm) {
             hook.beforeEach(function (html) {
               var url =
-                'https://github.com/ArchLinuxStudio/ArchLinuxTutorial/blob/master/docs/' +
+                "https://github.com/NakanoMikuOrg/ArchLinuxTutorial/tree/master/docs/" +
                 vm.route.file;
               var editHtml = '[📝 编辑本文](' + url + ')\n';
 
@@ -150,30 +114,8 @@
     </script>
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/gitalk.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/docsify-pagination@2/dist/docsify-pagination.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
-    <script>
-      let props = {
-        clientID: '296c581fc4b2a837a1e3',
-        clientSecret: '7e7f0ad1809fa4a1915430ade04835f6849ab56a',
-        repo: 'ArchLinuxTutorialComments',
-        owner: 'ArchLinuxStudio',
-        admin: ['wallena3'],
-        // facebook-like distraction free mode
-        distractionFreeMode: false,
-        id: decodeURI(location.hash.split('?')[0]),
-        proxy:
-          'https://ifuckgfw.com:7788/https://github.com/login/oauth/access_token',
-      };
-      let gitalk = new Gitalk(props);
-      // 哈希路由切换时 重新加载Gitalk
-      window.addEventListener('hashchange', onHashChange);
-      function onHashChange() {
-        props.id = decodeURI(location.hash.split('?')[0]); //如果不切分，在docsify里面的各个段落都会生成新的评论issue
-      }
-    </script>
     <script>
       function change_search_plugin_order() {
         let search_plugin = document.getElementsByClassName('search')[0];
