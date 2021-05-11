@@ -151,6 +151,66 @@ rsync -a bar/ me@server:/home/me/   # -a 标记实现目录复制等 比scp -r �
 
 关于全盘备份，请阅读[官方文档](https://wiki.archlinux.org/index.php/Rsync#Full_system_backup)
 
+## 使用 Timeshift 进行系统快照
+
+使用 [Timeshift](https://aur.archlinux.org/packages/timeshift/)<sup>AUR</sup> 定期对系统进行快照，在系统升级出现异常或者其它问题并且无法回退时，可以使用快照对系统进行还原，大大减小了重新安装系统的风险。
+
+### 安装 Timeshift
+
+```bash
+yay -S timeshift
+```
+
+### 配置 Timeshift
+
+1. 因为我们的文件系统格式为 ext4 类型，快照类型选择 `RSYNC`。
+2. 快照位置选择较大的分区，快照将保存在此分区的 `/timeshift` 目录下。
+3. 在快照等级内根据实际情况选择**定期**备份即可。
+4. 用户主目录可选全部包含，或者选择排除一切，在下一项中进行更详细配置。其中 `root` 默认全备份（即使选择排除一切）。
+5. 若用户主目录选择排除一切，在包含/排除模式中建议进行如下配置（注意顺序，可拖拽移动顺序）：
+   - `+ /home/user/.config/***` # 注意是 `***`
+   - `+ /home/user/.local/***`
+   - `- /home/user/.**`
+   - `- /home/user/**`
+   - `- /root/**`
+6. 完成向导即可。
+
+### 从快照中恢复
+
+> 其实 Timeshift 还能恢复到其它硬盘用作系统迁移，通过 arch 安装盘重新安装引导即可，这里不再赘述。
+
+#### 若能够进入桌面环境
+
+直接打开 Timeshift，选择快照后根据提示还原即可。
+
+#### 若无法进入桌面环境
+
+1. 通过 `Ctrl + Alt + F2 ~ F6` 进入 tty 终端。
+
+2. ```bash
+   sudo timeshift --list # 获取快照列表
+   sudo timeshift --restore --snapshot '20XX-XX-XX_XX-XX-XX' --skip-grub # 选择一个快照进行还原，并跳过 GRUB 安装，一般来说 GRUB 不需要重新安装
+   ```
+
+3. 根据提示继续，完成还原。
+
+#### 若无法进入系统
+
+此时系统一般已经完全奔溃，可以通过 `Live CD` 进行还原。（若使用 arch 安装盘请连接网络和配置好源后安装 timeshift，然后通过命令行方式还原）
+
+1. 进入 Live 系统后打开 Timeshift，点击设置按钮，设置为原来快照的存储位置。
+2. 选择快照后根据提示还原即可。
+
+或者通过命令行进行还原，但需要首先设置原来快照存储的位置：
+
+```bash
+sudo timeshift --restore --snapshot-device /dev/sdbx
+```
+
+后续步骤同[若无法进入桌面环境](#若无法进入桌面环境)。
+
+> RSYNC 方式的 Timeshift 快照应考虑快照对空间的占用情况。一般来说 RSYNC 方式的快照大小略大于当前实际使用大小。因为虽然 RSYNC 方式的快照是增量的，但历史最久远的快照依然是完整备份，随后是增量的。而简单来说增量大小取决于历史最久远的快照和最新快照之间的差异。通过 Timeshift 自动清理历史最久远的快照是简单有效的方法。
+
 ## 文件解压缩
 
 除了众所周知的 tar 命令，我们在之前安装过的 ark 包可以配合 dolphin 文件管理器轻松的右键直接解压缩，其可选依赖提供了各个压缩格式的支持，可以自行选择安装。需要注意的是解压 windows 下的压缩包，可能会乱码。使用 unar 可以避免这个问题。
