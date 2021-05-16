@@ -12,7 +12,7 @@
 
 准备一个 2G 以上的优盘，刻录一个安装启动盘。安装镜像 iso 在[下载页面](https://archlinux.org/download/)下载，建议通过磁力链接或 torrent 下载。
 
-Windows 下推荐使用[ventoy](https://www.ventoy.net/cn/doc_start.html)或者[Rufus](https://rufus.ie/)或者[Power ISO](https://www.poweriso.com/download.php)进行优盘刻录。三者皆为免费使用的软件。具体操作请自行查阅，都非常简单。
+Windows 下推荐使用[ventoy](https://www.ventoy.net/cn/doc_start.html)或者[Rufus](https://rufus.ie/)或者[Power ISO](https://www.poweriso.com/download.php)<sup>专有</sup>进行优盘刻录。三者皆为免费使用的软件。具体操作请自行查阅，都非常简单。
 
 Linux 下可以直接用 dd 命令进行刻录。注意 of 的参数为 sdx,不是 sdx1 sdx2 等。
 

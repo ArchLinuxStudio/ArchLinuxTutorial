@@ -139,7 +139,7 @@ sudo pacman -S firefox chromium                                             #安
 sudo pacman -S ark                                                          #与dolphin同用右键解压 注意可同时安装可选解压支持项
 sudo pacman -S packagekit-qt5 packagekit appstream-qt appstream             #确保Discover(软件中心）可用 需重启
 sudo pacman -S gwenview                                                     #图片查看器
-sudo pacman -S steam                                                        #稍后看完显卡驱动再使用
+sudo pacman -S steam                                                        #稍后看完显卡驱动再使用 专有软件
 ```
 
 最后要安装 archlinuxcn 源的相关步骤。
