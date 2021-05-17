@@ -2,20 +2,23 @@
 
 本章记录日常办公需要用到的软件及配置。同时包括 QQ 等即时通讯软件和网盘、远程协助等软件的配置与使用。
 
-> QQ 与微信等中国国内知名闭源专有 IM 软件均存在不同程度的间谍行为(实际上不仅仅是 IM 软件，几乎所有你能见到的中国国内大型互联网 APP 均有间谍行为，美其名曰:用户行为监测或用户画像描述)。收集用户信息，扫描用户手机存储内容，监控粘贴版内容，记录手机安装 APP 列表等行为几乎已经成为业内公开的秘密。
+> QQ 与微信等中国国内知名闭源专有 IM 软件均存在不同程度的间谍行为(实际上不仅仅是 IM 软件，几乎所有你能见到的中国国内大型互联网 APP 均有间谍行为，美其名曰:用户行为监测或用户画像描述)。收集用户信息，扫描用户手机存储内容，监控粘贴版内容，记录手机安装 APP 列表等无耻行为几乎已经成为业内公开的秘密。
 
 > 希望所有人抵制或放弃此类恶意专有软件是不现实的，如果你不能舍弃使用这些软件，我们只能希望你可以在一个较为安全的隔离环境中使用它们，如一个不存在任何敏感个人信息的隔离物理设备中使用。使用开源的，注重隐私的通讯软件始终是正确的选择。
 
 ## 即时通讯
 
-安装 wine 版本前先确保[字体](https://wiki.archlinux.org/index.php/Localization/Chinese#Fonts)的安装，否则汉字均为方块。一般 qq 安装文泉驿字体([wqy-microhei](https://archlinux.org/packages/?name=wqy-microhei))即可解决方块问题。
-
-深度于 2020 下半年放出了 deepin-wine5，基于这个最新版的 deepinwine 的 AUR 包一般都比原有的稳定。
+我们强烈建议你使用开源的通讯软件，这是为了你自身的自由，也是为了身边人的自由。telegram，中文名一般称为电报，是一个在世界广泛应用的开源通讯软件，注重隐私保护和单人通讯加密。
 
 ```bash
-sudo pacman -S telegram-desktop #全球流行的即时通信软件 俗称电报
-yay -S slack-desktop            #优秀的团队合作交流软件
-yay -S deepin.com.qq.im.light　 #基于deepin wine5的qq轻聊版 强烈推荐安装  需要字体
+sudo pacman -S telegram-desktop
+```
+
+中国常见的通讯软件在 ArchLinux 下也可使用。qq 轻聊版，qq 正式版，微信等可按如下安装。使用前先确保[字体](https://wiki.archlinux.org/index.php/Localization/Chinese#Fonts)的安装，否则汉字均为方块。一般 qq 安装文泉驿字体([wqy-microhei](https://archlinux.org/packages/?name=wqy-microhei))即可解决方块问题。深度于 2020 下半年放出了 deepin-wine5，基于这个最新版的 deepinwine 的 AUR 包一般都比原有的稳定。
+
+```bash
+yay -S slack-desktop            #常见的团队合作交流软件
+yay -S deepin.com.qq.im.light　 #基于deepin wine5的qq轻聊版
 yay -S linuxqq                  #腾讯官方出版的辣鸡linuxqq 疯狂闪退 网上方式均无效 不建议安装
 yay -S com.qq.im.deepin         #基于deepin wine5的qq
 yay -S com.qq.weixin.deepin     #基于deepin wine5的wechat
@@ -26,7 +29,7 @@ yay -S wechat-uos               #2020年末最新的uos版本原生微信的arch
 
 ## 办公套件
 
-主要两个选择是 [WPS](<https://wiki.archlinux.org/index.php/WPS_Office_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)>) 与 [LibreOffice](https://wiki.archlinux.org/index.php/LibreOffice)。LibreOffice 目前的安装已经非常简单。
+主要两个选择是 [WPS](<https://wiki.archlinux.org/index.php/WPS_Office_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)>) 与 [LibreOffice](https://wiki.archlinux.org/index.php/LibreOffice)。我们建议你使用开源的 LibreOffice， 其目前的安装已经非常简单。
 
 ```bash
 sudo pacman -S libreoffice-still   #稳定版
@@ -47,7 +50,7 @@ sudo pacman -S flameshot
 
 ## 网盘存储
 
-**不要使用任何中国国内的网盘存储你的个人数据，他们可以根据"相关条款与规定"，或者"自我阉割"的精神觉悟随意处置你的所有数据，只推荐用国内网盘存储无关紧要的数据。**
+> 不要使用任何中国国内的网盘存储你的个人数据，他们可以根据"相关条款与规定"，或者"自我阉割"的精神觉悟随意处置你的所有数据，在仔细阅读过他们的用户协议后，你会觉得毛骨悚然。只推荐用国内网盘存储无关紧要的数据。
 
 - [Mega](https://aur.archlinux.org/packages/megasync/)<sup>AUR</sup> 国外注重隐私的老牌网盘，也可直接使用 [web 版本](https://mega.nz/fm/dashboard)
 - [onedrive](https://aur.archlinux.org/packages/onedrive-abraunegg/)<sup>AUR</sup> 微软创办的网盘业务，linux 下存在一个命令行客户端
@@ -66,11 +69,12 @@ sudo pacman -S flameshot
 
 - [Kcalc](https://archlinux.org/packages/extra/x86_64/kcalc/) 计算器
 - [Kamoso](https://archlinux.org/packages/extra/x86_64/kamoso/) 相机
+- [Cheese](https://archlinux.org/packages/extra/x86_64/kamoso/) 茄子相机
 - [KTimer](https://archlinux.org/packages/extra/x86_64/ktimer/) 倒计时执行器
 
 ## 远程协助
 
-[teamviewer](https://aur.archlinux.org/packages/teamviewer/)<sup>AUR</sup>一般即可满足绝大多数需求。需要注意安装后需按照提示启动服务
+你可以使用开源的[freerdp](https://archlinux.org/packages/community/x86_64/freerdp/)，或者使用[teamviewer](https://aur.archlinux.org/packages/teamviewer/)<sup>AUR</sup>一般即可满足绝大多数需求。需要注意安装后需按照提示启动服务。
 
 ```bash
 sudo systemctl enable --now teamviewerd
