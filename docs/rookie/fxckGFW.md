@@ -93,6 +93,6 @@ sudo systemctl enable --now v2raya
 
 在五月，Qv2ray 原主要开发者在 Shadowsocks-NET 组织下开始了[新的 Qv2ray 分支](https://github.com/Shadowsocks-NET/Qv2ray)并继续维护，至于哪个分支后续的维护更佳，可以静观其变。
 
----
+## 更加全面的系统级全局代理
 
-可以看到，为各个软件单独设置代理还是较为麻烦。如果这种方式可以满足你的需求，那么你可以到此为止。如果你需要更全面的流量代理，可以阅读随后的[透明代理](advanced/transparentProxy)一文。
+由以上各部分可以看到，为各个软件单独设置代理还是较为麻烦。如果这种方式可以满足你的需求，那么你可以到此为止。如果你需要更全面的流量代理，可以阅读进阶章节中的[透明代理](advanced/transparentProxy)一文。

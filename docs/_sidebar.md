@@ -6,14 +6,15 @@
   - [基础安装](/rookie/basic_install)
   - [桌面环境与必要应用](/rookie/DE&App)
   - [科学上网与翻墙](/rookie/fxckGFW)
-  - [全局代理](/rookie/transparentProxy)
   - [显卡驱动](/rookie/graphic_driver)
 
 - 进阶
 
   - [成为合格的系统管理员](/advanced/beAdmin)
+  - [全局代理](/advanced/transparentProxy)
   - [常见问题排除与解决](/advanced/troubleshooting)
   - [功耗控制](/advanced/undervoltage)
+  - [其他可选配置](/advanced/others)
   - [系统美化](/advanced/beauty)
 
 - 娱乐与办公
