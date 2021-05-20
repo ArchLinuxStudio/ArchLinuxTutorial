@@ -32,6 +32,12 @@ ref: [[1](https://forum.manjaro.org/t/a-stop-job-is-running-for-user-manager-for
 
 一般使用 LVM 安装 Linux 系统则不用担心这种情况发生。但是我们使用的是传统的 ext4 经典分区方式。这种情况下一般建议在安装的开始就将根目录设置的大一些，如 100G。如果/home 分区大小不够了，可以新安装一块硬盘，将其挂载到你想要的位置，再按照`基础安装`的步骤中重新 genfstab 一下就行了。
 
+除此之外，如果根目录容量不足，可以不定期清理一下 pacman 的缓存，详见[archwiki](https://wiki.archlinux.org/title/Pacman#Cleaning_the_package_cache)。太长不看的可以直接用下面这一行命令清理没有安装的所有缓存的包，和没有被使用的同步数据库。
+
+```bash
+sudo pacman -Sc
+```
+
 ### 软件的降级
 
 在 archlinux 上 偶尔会出现某一个包的最新版本有各种问题的情况，此时需要降级该包以正常使用，包可以是普通软件，也可以是内核。

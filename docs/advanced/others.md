@@ -8,11 +8,13 @@ KDE 自身提供开箱即用的睡眠功能(sleep)，即将系统挂起到内存
 
 挂起到硬盘的映像大小一般最大为物理内存的 2/5,其值在/sys/power/image_size 中确定，故如果想使用休眠功能，swap 大小一般设置为物理内存的一半即可。[[1]](https://wiki.archlinux.org/title/Power_management/Suspend_and_hibernate#About_swap_partition/file_size)
 
+如果你需要休眠功能，那么 swap 文件不能位于/home 下，否则无法休眠。[[1]](https://wiki.archlinux.org/title/Power_management_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)/Suspend_and_hibernate_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#%E4%BC%91%E7%9C%A0%E5%88%B0%E4%BA%A4%E6%8D%A2%E6%96%87%E4%BB%B6)
+
 首先确认 swap 文件所在分区的 UUID 以及 swap 文件的偏移值
 
 ```bash
 sudo findmnt -no UUID -T /swapfile #确认UUID
-sudo filefrag -v /swapfile #确认物理偏移值 第一行数据中的 physical_offset 一列的值即为所需要的数据
+sudo filefrag -v /swapfile #确认物理偏移值 第一行数据中的第四列的值即为所需要的数据(包含两个句号)
 ```
 
 随后将这两个参数加入内核启动参数中
@@ -24,7 +26,7 @@ sudo vim /etc/default/grub
 找到 `GRUB_CMDLINE_LINUX_DEFAULT` 一行，在其值后添加类似如下两项数据，内容根据你自身的 UUID 以及偏移值确定。参数以空格分隔。
 
 ```conf
-resume=UUID=9a940a0a-fa72-4973-9ccc-3eb93ad73b37 resume_offset=6418432
+resume=UUID=9a940a0a-fa72-4973-9ccc-3eb93ad73b37 resume_offset=6418432..
 ```
 
 配置完成后需要更新 grub 配置：

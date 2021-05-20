@@ -75,10 +75,10 @@ systemctl enable sddm
 在桌面环境中，交换分区或文件用来实现休眠(hibernate)的功能，即将当前环境保存在磁盘的交换文件或分区部分。除此之外，某些特定软件需要 swap 才可以正确运行。交换文件与分区性能相同，且交换文件更为灵活，可随时变更大小，增加与删除。[[1]](https://wiki.archlinux.org/title/Swap#Swap_file)
 
 ```bash
-dd if=/dev/zero of=/swapfile bs=1M count=16384 status=progress #创建16G的交换空间 大小根据需要自定
-chmod 600 /swapfile #设置正确的权限
-mkswap /swapfile #格式化swap文件
-swapon /swapfile #启用swap文件
+sudo dd if=/dev/zero of=/swapfile bs=1M count=16384 status=progress #创建16G的交换空间 大小根据需要自定
+sudo chmod 600 /swapfile #设置正确的权限
+sudo mkswap /swapfile #格式化swap文件
+sudo swapon /swapfile #启用swap文件
 ```
 
 最后，向/etc/fstab 中追加如下内容：
