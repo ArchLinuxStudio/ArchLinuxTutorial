@@ -9,7 +9,7 @@
 ```bash
 sudo pacman -S netease-cloud-music #官方网易云音乐(ArchLinuxCN)
 yay -S yesplaymusic-electron #目前最强第三方网易云客户端
-yay -S cocomusic #存在隐藏下载功能的客户读
+yay -S cocomusic #存在隐藏下载功能的客户端
 yay -S qqmusic-bin #QQ 音乐
 ```
 
