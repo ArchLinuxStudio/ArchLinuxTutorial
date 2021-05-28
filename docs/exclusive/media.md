@@ -45,6 +45,10 @@ https://documents.blackmagicdesign.com/SupportNotes/DaVinci_Resolve_15_Supported
 
 - [Kwave](https://archlinux.org/packages/extra/x86_64/kwave/)
 
+## UI/UX 设计
+
+可使用 figma 在线版，或者使用一个非官方的 Linux figma 桌面端软件[figma-linux](https://github.com/Figma-Linux/figma-linux)
+
 ## 字幕制作
 
 一般情况来讲，一个视频加上外带的 srt 字幕是较为普遍的情况。这里描述如何为 youtube 视频加入字幕。  
