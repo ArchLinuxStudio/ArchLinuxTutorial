@@ -13,7 +13,7 @@ systemctl stop reflector.service
 
 ## 2.再次确保是否为 UEFI 模式
 
-在一系列的信息刷屏后，可以看到已经以 root 登陆安装系统了，此时第一个执行的命令是：
+在一系列的信息刷屏后，可以看到已经以 root 登陆安装系统了，此时可以执行的命令：
 
 ```bash
 ls /sys/firmware/efi/efivars
