@@ -59,7 +59,7 @@ https://documents.blackmagicdesign.com/SupportNotes/DaVinci_Resolve_15_Supported
 ffmpeg -i input.mp4 -vf subtitles=input.srt output.mp4
 ```
 
-如果需要制作双语字幕(同时显示，而不是分字幕轨道)，可以使用两次 ffmpeg 命令，第一次添加主字幕，第二次添加副字幕。第一次操作使用 MarginV 进行垂直方向的区分。更多参数可以自行参考 ffmpeg 文档。
+如果需要制作双语字幕(同时显示，而不是分字幕轨道)，在 youtube 选择自动翻译后，点击中文，如视频支持，会出现双语字幕的文件下载。如视频不支持双语字幕下载，可以使用两次 ffmpeg 命令，第一次添加主字幕，第二次添加副字幕。第一次操作使用 MarginV 进行垂直方向的区分。更多参数可以自行参考 ffmpeg 文档。
 
 ```bash
 ffmpeg -i hack.mp4 -strict -2 -vf subtitles=hack_zh.srt:force_style='Fontsize=20\,Fontname=FZYBKSJW--GB1-0\,MarginV=30\,Bold=-1\,BorderStyle=1' -qscale:v 3 hack_with_zh.mp4
