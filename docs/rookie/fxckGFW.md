@@ -15,7 +15,7 @@
 不论你是从机场处获得节点或者任何其他地方获得，如果你已经有了形如`vmess://`或`ss://`前缀的节点，那么可以直接使用 linux 上非常好用的 [Qv2ray](https://qv2ray.net/) 进行科学上网。它是跨平台的，你在 Windows 与 macOS 上均可使用。安装如下几个包：
 
 ```bash
-sudo pacman -S qv2ray v2ray
+sudo pacman -S qv2ray-dev-git v2ray
 ```
 
 你需要按照官方文档导入已有的链接，其余细节请详细阅读 Qv2ray 的文档。
