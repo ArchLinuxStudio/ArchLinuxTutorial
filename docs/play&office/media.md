@@ -2,15 +2,26 @@
 
 本节记录在 arch linux 上观看影视，收听音乐等相关信息。
 
-## 音视频播放器
+## 在线听歌与音频播放器
 
-网络音乐收听可以使用官方网易云音乐，qq 音乐，或者一些资源整合类型的第三方客户端，它们的资源是全网整合，一般较为完整。官方客户端已经多年没有更新。
+网络音乐收听可以使用网易或腾讯出品的[网易云音乐](https://aur.archlinux.org/packages/netease-cloud-music/)，[qq 音乐](https://aur.archlinux.org/packages/qqmusic-bin/)，但它们都年久失修，或者质量惨不忍睹。显然这些大公司是不会愿意向 Linux 桌面投放精力的，我们更推荐你来使用维护更到位的自由软件。
+
+yesplaymusic 是一款全平台的开源听歌软件，颜值高、无社交功能，并且是全网资源整合，推荐使用
 
 ```bash
-sudo pacman -S netease-cloud-music #官方网易云音乐(ArchLinuxCN)
-yay -S yesplaymusic-electron #目前最强第三方网易云客户端
-yay -S cocomusic #存在隐藏下载功能的客户端
-yay -S qqmusic-bin #QQ 音乐
+yay -S yesplaymusic
+```
+
+listen1 是一款老牌的听歌软件，功能完善，同样资源全网整合，推荐使用
+
+```bash
+yay -S listen1-desktop-appimage
+```
+
+最后推荐一款附带隐藏下载功能的听歌软件 cocomusic,大家可自行探索。
+
+```bash
+yay -S cocomusic
 ```
 
 ## 视频播放器
