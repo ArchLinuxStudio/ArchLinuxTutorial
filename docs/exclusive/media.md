@@ -46,6 +46,7 @@ https://documents.blackmagicdesign.com/SupportNotes/DaVinci_Resolve_15_Supported
 - [Kwave](https://archlinux.org/packages/extra/x86_64/kwave/)
 - [audacity](https://archlinux.org/packages/community/x86_64/audacity/)
 - [lmms](https://archlinux.org/packages/community/x86_64/lmms/)
+- [carla](https://archlinux.org/packages/community/x86_64/carla/)
 
 ## UI/UX 设计
 
