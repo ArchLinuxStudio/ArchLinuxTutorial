@@ -20,6 +20,8 @@ sudo pacman -S qv2ray-dev-git v2ray
 
 你需要按照官方文档导入已有的链接，其余细节请详细阅读 Qv2ray 的文档。
 
+> 需要注意的是，最新的 qv2ray 已经将机场的默认订阅类型改为规范:SIP008。如果你的机场订阅类型为 base64,则需要在分组->订阅设置->订阅类型 中，将 SIP008 改为 base64,否则你将拿不到任何订阅链接中的节点。
+
 如果你不使用原生 shadowsocks/v2ray 而是其余方式，请在 AUR 搜索关键字 qv2ray-plugin，在[结果](https://aur.archlinux.org/packages/?O=0&K=qv2ray-plugin)中选取你所需要的对应插件进行安装。
 
 在节点链接后，Qv2ray 会自行为你设置系统代理。注意，`系统设置`中的代理配置在 KDE 桌面环境中并不是所有应用都会遵守，经过测试，chrome/chromium 浏览器与 steam 会遵循 KDE 的系统代理设置。没有遵循系统设置代理的应用还需要单独进行代理配置。下面说明几种常用的软件中配置代理的方式。
