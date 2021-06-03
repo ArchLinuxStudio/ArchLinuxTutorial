@@ -18,6 +18,12 @@ listen1 是一款老牌的听歌软件，功能完善，同样资源全网整合
 yay -S listen1-desktop-appimage
 ```
 
+[Electron Netease Cloud Music](https://github.com/Rocket1184/electron-netease-cloud-music) 是一款用Electron和Vue编写的网易云音乐Linux客户端，支持歌曲下载，播放器最小化，自动签到等实用功能，使用体验非常好，强烈推荐
+
+```bash
+sudo pacman -S electron-netease-cloud-music
+```
+
 最后推荐一款附带隐藏下载功能的听歌软件 cocomusic,大家可自行探索。
 
 ```bash
