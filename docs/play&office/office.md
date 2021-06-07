@@ -40,6 +40,10 @@ sudo pacman -S libreoffice-fresh   #尝鲜版
 
 WPS 请按官方文档安装。需要注意的是，由于分发问题，2020 下半年 WPS 已从 archlinuxcn 移除，安装请务必从 AUR 安装。
 
+## 电子书
+
+pdf 可直接用浏览器打开，也可选用其他专用的阅读软件，如[okular](https://archlinux.org/packages/extra/x86_64/okular/)或者[calibre](https://archlinux.org/packages/community/x86_64/calibre/)。okular 在打开大型 epub 时会非常卡顿。
+
 ## 截图
 
 推荐使用 flameshot[火焰截图](https://www.bilibili.com/video/BV1LK4y1s7wX/)
