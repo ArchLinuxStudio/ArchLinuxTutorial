@@ -5,7 +5,7 @@
     "email": "wallena3@gmail.com",
     "url": "https://github.com/wallena3"
   },
-  "version": "0.2.0-pre",
+  "version": "0.3.0",
   "private": false,
   "dependencies": {
     "docsify-cli": "^4.4.3"
