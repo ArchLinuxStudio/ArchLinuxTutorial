@@ -26,6 +26,30 @@
 - 中国用户常用的软件安装与配置
 - 特定领域，如媒体制作、编程等软件与环境的配置
 
+## 配套视频分 P 列表
+
+有第三方视频作者为本教程制作了讲解视频，欢迎与文档对照收看，效果更好，效率更高。
+
+0. linux 与自由软件运动
+1. arch linux 基础的安装,不含 KDE 桌面
+2. KDE 桌面环境及常用软件安装
+3. 网络加速与系统代理
+4. 显卡驱动的安装
+
+5. 一些必须知道的 linux 知识与命令。系统的日常维护。
+6. 透明代理
+7. 常见问题
+8. 功耗控制
+9. 系统美化。
+
+10. 办公日常软件
+11. 视频影音软件
+12. 游戏娱乐
+13. 安卓刷机
+
+14. 直播与自媒体
+15. 编程软件
+
 ## Star 历史
 
 [![Stargazers over time](https://starchart.cc/ArchLinuxStudio/ArchLinuxTutorial.svg)](https://starchart.cc/ArchLinuxStudio/ArchLinuxTutorial)
