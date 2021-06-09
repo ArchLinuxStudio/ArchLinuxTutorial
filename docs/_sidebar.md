@@ -26,7 +26,7 @@
 
 - 专有领域
 
-  - [直播与自媒体](/exclusive/media)
+  - [直播与多媒体制作](/exclusive/media)
   - [编程](/exclusive/code)
 
 - [贡献文档与代码](contribution.md)
