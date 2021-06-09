@@ -67,6 +67,25 @@ sudo pacman -S kvantum-qt5
 
 > 如果透明的效果没有显示，确保 KDE 的全局缩放比例为整数倍。或者尝试切换混成器中 openGL 的设置。
 
+## GRUB 主题
+GRUB 的主题需要一定配置，所以可能会有些繁琐。
+可惜的是， Layan 没有 GRUB 主题，我们在这里使用 Distro 演示。
+在[这里](https://www.pling.com/p/1482847/)下载 Distro 的 GRUB 主题并解压。接下来 `cd` 进解压出来的文件夹，打开 konsole 输入
+```bash
+sudo cp . /usr/share/grub/themes/Distro  -rf
+```
+以将主题放置在系统的 GRUB 默认文件夹内。
+接着编辑 `/etc/default/grub` 文件，找到 `#GRUB_THEME=` 一行，将前面的注释去掉，并指向主题的 `theme.txt` 文件。即
+```bash
+#GRUB_THEME=
+GRUB_THEME="/usr/share/grub/themes/Distro/theme.txt" #修改后
+```
+然后再在终端输入
+```bash
+grub-mkconfig -o /boot/grub/grub.cfg
+```
+更新 GRUB ，并重启即可。
+
 ---
 
 其余 KDE 桌面有很多配置项，大家可以自行探索。
