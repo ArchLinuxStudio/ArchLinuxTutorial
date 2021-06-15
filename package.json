@@ -1,0 +1,17 @@
+{
+  "name": "arch_linux_tutorial",
+  "author": {
+    "name": "KagarinoKiriee",
+    "url": "https://github.com/KagarinoKiriee"
+  },
+  "version": "0.3.0",
+  "private": false,
+  "dependencies": {
+    "docsify-cli": "^4.4.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "docsify serve docs"
+  },
+  "license": "CC-BY-SA-4.0"
+}
