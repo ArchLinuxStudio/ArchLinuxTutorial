@@ -47,6 +47,8 @@ proxychains systemsettings5 #通过代理打开系统设置
 
 然后把你经常使用的软件固定在任务栏即可。
 
+KDE Plasma 5.22.1 更新后，需要额外安装 ksysguard 才能确保桌面插件的正常运行。[[1]](https://github.com/dfaust/plasma-applet-netspeed-widget/issues/28)
+
 ## 混成器
 
 _系统设置_ > _显示和监控_ > _混成器_ 开启混成器
