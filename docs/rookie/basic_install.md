@@ -178,7 +178,7 @@ vim /etc/hosts
 127.0.1.1   myarch.localdomain	myarch
 ```
 
-> 某些情况下如不设置主机名，在 KDE 下可能会存在网络情况变更时无法启动 GUI 应用的问题，在终端中出现形如`No protocol specified qt.qpa.xcb: could not connect to display`的错误。这种情况极为少见，群主只遇到过一次网友反馈。相关参考链接:[[1]](https://bbs.archlinux.org/viewtopic.php?id=241338)，[[2]](https://bbs.archlinux.org/viewtopic.php?id=243674)
+> 某些情况下如不设置主机名，在 KDE 下可能会存在网络情况变更时无法启动 GUI 应用的问题，在终端中出现形如`No protocol specified qt.qpa.xcb: could not connect to display`的错误，这种情况较为少见。相关参考链接:[[1]](https://bbs.archlinux.org/viewtopic.php?id=241338)，[[2]](https://bbs.archlinux.org/viewtopic.php?id=243674)
 
 ---
 
