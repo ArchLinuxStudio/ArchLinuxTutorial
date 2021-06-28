@@ -32,6 +32,9 @@
 
 - [1:GNU/Linux 与自由软件运动](https://www.bilibili.com/video/BV1dB4y1T7Zb/)
 - [2:安装前的准备](https://www.bilibili.com/video/BV1V64y1d7N7/)
+- [3:ArchLinux 基础安装](https://www.bilibili.com/video/BV1Jy4y1M74E)
+- [4:安装 KDE 与常用软件](https://www.bilibili.com/video/BV1Fv411H7x2)
+- [5:科学上网与翻墙](https://www.youtube.com/watch?v=HNfT8uz7qEM)
 
 ## Star 历史
 
