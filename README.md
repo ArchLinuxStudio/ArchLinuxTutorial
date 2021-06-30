@@ -35,6 +35,7 @@
 - [3:ArchLinux 基础安装](https://www.bilibili.com/video/BV1Jy4y1M74E)
 - [4:安装 KDE 与常用软件](https://www.bilibili.com/video/BV1Fv411H7x2)
 - [5:科学上网与翻墙](https://www.youtube.com/watch?v=HNfT8uz7qEM)
+- [6:显卡驱动安装综述](https://www.bilibili.com/video/BV1p44y1q746)
 
 ## Star 历史
 
