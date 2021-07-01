@@ -36,6 +36,7 @@
 - [4:安装 KDE 与常用软件](https://www.bilibili.com/video/BV1Fv411H7x2)
 - [5:科学上网与翻墙](https://www.youtube.com/watch?v=HNfT8uz7qEM)
 - [6:显卡驱动安装综述](https://www.bilibili.com/video/BV1p44y1q746)
+- [7:成为合格的系统管理员](https://www.bilibili.com/video/BV1N64y1b73Z)
 
 ## Star 历史
 
