@@ -37,6 +37,7 @@
 - [5:科学上网与翻墙](https://www.youtube.com/watch?v=HNfT8uz7qEM)
 - [6:显卡驱动安装综述](https://www.bilibili.com/video/BV1p44y1q746)
 - [7:成为合格的系统管理员](https://www.bilibili.com/video/BV1N64y1b73Z)
+- [8:配置全局代理 翻墙更轻松](https://www.youtube.com/watch?v=m0ctfPF-2_I)
 
 ## Star 历史
 
