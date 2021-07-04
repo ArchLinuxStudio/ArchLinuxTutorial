@@ -40,7 +40,7 @@
 - [8:配置全局代理 翻墙更轻松](https://www.youtube.com/watch?v=m0ctfPF-2_I)
 - [9:功耗控制](https://www.bilibili.com/video/BV1664y1Q7cS)
 - [10:系统美化](https://www.bilibili.com/video/BV1GX4y1w748)
-
+- [11:故障排除](https://www.bilibili.com/video/BV1PM4y1M75j)
 ## Star 历史
 
 [![Stargazers over time](https://starchart.cc/ArchLinuxStudio/ArchLinuxTutorial.svg)](https://starchart.cc/ArchLinuxStudio/ArchLinuxTutorial)
