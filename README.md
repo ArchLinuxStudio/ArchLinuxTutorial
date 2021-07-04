@@ -39,6 +39,7 @@
 - [7:成为合格的系统管理员](https://www.bilibili.com/video/BV1N64y1b73Z)
 - [8:配置全局代理 翻墙更轻松](https://www.youtube.com/watch?v=m0ctfPF-2_I)
 - [9:功耗控制](https://www.bilibili.com/video/BV1664y1Q7cS)
+- [10:系统美化](https://www.bilibili.com/video/BV1GX4y1w748)
 
 ## Star 历史
 
