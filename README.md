@@ -41,6 +41,7 @@
 - [9:功耗控制](https://www.bilibili.com/video/BV1664y1Q7cS)
 - [10:系统美化](https://www.bilibili.com/video/BV1GX4y1w748)
 - [11:故障排除](https://www.bilibili.com/video/BV1PM4y1M75j)
+- [12:办公日常](https://www.bilibili.com/video/BV1xv411H7DY)
 ## Star 历史
 
 [![Stargazers over time](https://starchart.cc/ArchLinuxStudio/ArchLinuxTutorial.svg)](https://starchart.cc/ArchLinuxStudio/ArchLinuxTutorial)
