@@ -42,6 +42,10 @@
 - [10:系统美化](https://www.bilibili.com/video/BV1GX4y1w748)
 - [11:故障排除](https://www.bilibili.com/video/BV1PM4y1M75j)
 - [12:办公日常](https://www.bilibili.com/video/BV1xv411H7DY)
+- [13:视频影音](https://www.bilibili.com/video/BV11M4y1M7tf/)
+- [14:游戏娱乐](https://www.bilibili.com/video/BV16g411u7WQ/)
+- [15:安卓刷机](https://www.bilibili.com/video/BV1jw411d7g2/)
+
 ## Star 历史
 
 [![Stargazers over time](https://starchart.cc/ArchLinuxStudio/ArchLinuxTutorial.svg)](https://starchart.cc/ArchLinuxStudio/ArchLinuxTutorial)
