@@ -31,11 +31,12 @@ yay -S wechat-uos               #2020年末最新的uos版本原生微信的arch
 
 ## 办公套件
 
-主要两个选择是 [WPS](<https://wiki.archlinux.org/index.php/WPS_Office_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)>)<sup>AUR</sup> 与 [LibreOffice](https://wiki.archlinux.org/index.php/LibreOffice)。我们建议你使用开源的 LibreOffice， 其目前的安装已经非常简单。
+主要三个选择是 [WPS](<https://wiki.archlinux.org/index.php/WPS_Office_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)>)<sup>AUR</sup> 与 [LibreOffice](https://wiki.archlinux.org/index.php/LibreOffice)以及[onlyoffice](<https://aur.archlinux.org/packages/onlyoffice-bin/)>)<sup>AUR</sup> 我们建议你使用开源的 LibreOffice 以及 onlyoffice 其目前的安装已经非常简单。
 
 ```bash
 sudo pacman -S libreoffice-still   #稳定版
 sudo pacman -S libreoffice-fresh   #尝鲜版
+yay -S onlyoffice-bin
 ```
 
 WPS 请按官方文档安装。需要注意的是，由于分发问题，2020 下半年 WPS 已从 archlinuxcn 移除，安装请务必从 AUR 安装。
