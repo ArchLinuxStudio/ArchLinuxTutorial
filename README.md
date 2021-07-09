@@ -45,6 +45,8 @@
 - [13:视频影音](https://www.bilibili.com/video/BV11M4y1M7tf/)
 - [14:游戏娱乐](https://www.bilibili.com/video/BV16g411u7WQ/)
 - [15:安卓刷机](https://www.bilibili.com/video/BV1jw411d7g2/)
+- [16:直播与多媒体](https://www.bilibili.com/video/BV1854y1n7zS/)
+- [17:編程軟件](https://www.bilibili.com/video/BV1164y1b7kC/)
 
 ## Star 历史
 
