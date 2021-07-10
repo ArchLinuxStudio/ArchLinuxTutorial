@@ -115,3 +115,9 @@
 
 - 终端 wget/curl/npm/yarn 访问被墙的 https 资源(如 github raw)报错 443
   DNS 的问题，打开 Qv2ray 的 DNS 拦截和 cgproxy 的 dns 选项。或者 export https_proxy 环境变量。
+
+---
+
+Ref:
+
+1. [漫谈各种黑科技式 DNS 技术在代理环境中的应用](https://tachyondevel.medium.com/%E6%BC%AB%E8%B0%88%E5%90%84%E7%A7%8D%E9%BB%91%E7%A7%91%E6%8A%80%E5%BC%8F-dns-%E6%8A%80%E6%9C%AF%E5%9C%A8%E4%BB%A3%E7%90%86%E7%8E%AF%E5%A2%83%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8-62c50e58cbd0)
