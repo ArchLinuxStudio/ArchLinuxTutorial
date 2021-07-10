@@ -93,8 +93,39 @@ sudo systemctl enable --now v2raya
 
 更新：
 
-在五月，Qv2ray 原主要开发者在 Shadowsocks-NET 组织下开始了[新的 Qv2ray 分支](https://github.com/Shadowsocks-NET/Qv2ray)并继续维护，至于哪个分支后续的维护更佳，可以静观其变。
+在五月，Qv2ray 原主要开发者在 Shadowsocks-NET 组织下开始了[新的 Qv2ray 分支](https://github.com/Shadowsocks-NET/Qv2ray)并继续维护，至于哪个分支后续的维护更佳，可以静观其变。在七月，最新开发已转至一个[个人分支](https://github.com/moodyhunter/QvPersonal)。
+
+## 编译安装 QvPersonal3.0
+
+最新 3.0 版本的 Qv2ray pre release 已经发布，可以编译安装。由于其为 pre release，请谨慎酌情使用。编译前先按照 readme 安装好所需依赖。
+
+首先删除旧版 qv2ray 以及不兼容的配置
+
+```bash
+rm -rf ~/.config/qv2ray
+sudo pacman -R qv2ray-dev-git
+```
+
+接下来进行编译安装
+
+```bash
+git clone git@github.com:moodyhunter/QvPersonal.git --recursive
+cd QvPersonal
+mkdir build
+cd build/
+cmake -DCMAKE_INSTALL_PREFIX=/usr ..
+cmake --build . --parallel 8
+sudo cmake --install .
+```
+
+在 Plugins 中，选择 V2ray Core Plugin，并进行 V2ray 的设置。现在你已经可以使用。
 
 ## 更加全面的系统级全局代理
 
 由以上各部分可以看到，为各个软件单独设置代理还是较为麻烦。如果这种方式可以满足你的需求，那么你可以到此为止。如果你把 Linux 作为主力使用，那么强烈建议你配置透明代理，可以阅读进阶章节中的[透明代理](advanced/transparentProxy)一文。
+
+---
+
+Ref:
+
+1. [CMake_package_guidelines](https://wiki.archlinux.org/title/CMake_package_guidelines#Prefix_and_library_install_directories)
