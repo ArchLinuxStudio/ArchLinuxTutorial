@@ -50,4 +50,4 @@ Jetbrains 家的全家桶基本都有支持可以在源中或 AUR 中自行搜�
 
 ## 逆向工程
 
-逆向工程中很知名的软件 IDA 也可安装，分为[免费版](https://aur.archlinux.org/packages/ida-free/)<sup>AUR</sup>与[收费版](https://aur.archlinux.org/packages/ida-pro/)<sup>AUR</sup>。除此之外再介绍一个好用的十六进制编辑器[Bless](https://archlinux.org/packages/community/any/bless/)。
+逆向工程中很知名的软件 IDA 也可安装，分为[免费版](https://aur.archlinux.org/packages/ida-free/)<sup>AUR</sup>与[收费版](https://aur.archlinux.org/packages/ida-pro/)<sup>AUR</sup>。另外也可安装知名的[ghidra](https://archlinux.org/packages/community/x86_64/ghidra/)。除此之外再介绍一个好用的十六进制编辑器[Bless](https://archlinux.org/packages/community/any/bless/)。
