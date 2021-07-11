@@ -122,6 +122,13 @@ sudo cmake --install .
 
 > 在 Qv2ray3.0 中 VMESS MD5 与非 0 的 AlterID 的形式已不被支持，若你的机场或节点下发的 AlterID 是非 0 是无法使用的。如果服务端支持，你可将 AlterID 改为 0 来使用 VMessAEAD 形式。
 
+卸载 Qv 3.0
+
+```bash
+cd QvPersonal/build
+sudo xargs rm < install_manifest.txt
+```
+
 ## 更加全面的系统级全局代理
 
 由以上各部分可以看到，为各个软件单独设置代理还是较为麻烦。如果这种方式可以满足你的需求，那么你可以到此为止。如果你把 Linux 作为主力使用，那么强烈建议你配置透明代理，可以阅读进阶章节中的[透明代理](advanced/transparentProxy)一文。
