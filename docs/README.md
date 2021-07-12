@@ -35,4 +35,26 @@ Arch Linux 安装使用教程，每月实时更新！包含从 archlinux 安装�
 
 Arch Linux 可以以超高的自由度来定制自己的系统，并且其拥有最完善的[文档](https://wiki.archlinux.org/index.php/Main_page)，使得绝大多数问题都可以通过查看官方文档的方式解决。正是由于其软件更新的策略的激进，就使得用户必须常常对系统进行更新，如果你不能经常照顾系统升级的话，也许你不应该使用 Arch Linux。较长时间段内没有升级可能会造成各种问题（俗称 `滚挂了`），虽然大多数问题可以通过救援手段事后补救，但还是常常更新得好。同时，关注 Arch Linux 的[新闻列表](https://archlinux.org/news/)可以帮助你得知最新的升级注意事项。
 
+## 配套视频分 P 列表
+
+有第三方视频作者为本教程制作了讲解视频，欢迎与文档对照收看，效果更好，效率更高。视频可能出现更新不及时的情况，如果遇到分歧，请以文档为准。
+
+- [1:GNU/Linux 与自由软件运动](https://www.bilibili.com/video/BV1dB4y1T7Zb/)
+- [2:安装前的准备](https://www.bilibili.com/video/BV1V64y1d7N7/)
+- [3:ArchLinux 基础安装](https://www.bilibili.com/video/BV1Jy4y1M74E)
+- [4:安装 KDE 与常用软件](https://www.bilibili.com/video/BV1Fv411H7x2)
+- [5:科学上网与翻墙](https://www.youtube.com/watch?v=HNfT8uz7qEM)
+- [6:显卡驱动安装综述](https://www.bilibili.com/video/BV1p44y1q746)
+- [7:成为合格的系统管理员](https://www.bilibili.com/video/BV1N64y1b73Z)
+- [8:配置全局代理 翻墙更轻松](https://www.youtube.com/watch?v=m0ctfPF-2_I)
+- [9:功耗控制](https://www.bilibili.com/video/BV1664y1Q7cS)
+- [10:系统美化](https://www.bilibili.com/video/BV1GX4y1w748)
+- [11:故障排除](https://www.bilibili.com/video/BV1PM4y1M75j)
+- [12:办公日常](https://www.bilibili.com/video/BV1xv411H7DY)
+- [13:视频影音](https://www.bilibili.com/video/BV11M4y1M7tf/)
+- [14:游戏娱乐](https://www.bilibili.com/video/BV16g411u7WQ/)
+- [15:安卓刷机](https://www.bilibili.com/video/BV1jw411d7g2/)
+- [16:直播与多媒体](https://www.bilibili.com/video/BV1854y1n7zS/)
+- [17:編程軟件](https://www.bilibili.com/video/BV1164y1b7kC/)
+
 <!-- windows是最好的Linux发行版？It's only a joke -->
