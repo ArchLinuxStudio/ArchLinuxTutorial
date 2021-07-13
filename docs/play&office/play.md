@@ -11,7 +11,7 @@ Disk: PLEXTOR PX-1TM9PeG
 
 ## 性能提升
 
-在游戏之前，如果有强烈的性能需要，可先确保 cpu 处于性能模式。注意此模式会让 cpu 处于最高性能状态、风扇狂转，如果你的散热撑不住甚至会降频，得不偿失，斟酌使用。在终端中，输入下列代码：
+在游戏之前，如果有强烈的性能需要，可先确保 cpu 处于性能模式[[1]](https://support.feralinteractive.com/docs/zh_cn/threekingdomstw/1.0.15/linux/faqs/?access=zooevrj6xb&utm_source=game_linux&utm_medium=link&utm_campaign=game_linux_threekingdomstw_support#i_linux_cpu_governor)。注意此模式会让 cpu 处于最高性能状态、风扇狂转，如果你的散热撑不住甚至会降频，得不偿失，斟酌使用。在终端中，输入下列代码：
 
 ```bash
 echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
