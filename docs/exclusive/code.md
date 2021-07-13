@@ -6,11 +6,13 @@
 
 对于前端来说，一般需要浏览器以及 IDE 即可，附加一些网络工具。
 
-关于 IDE(或编辑器),可以使用 [OSS code](https://www.archlinux.org/packages/community/x86_64/code/) (微软 [Visual Studio Code](https://aur.archlinux.org/packages/visual-studio-code-bin/)<sup>AUR</sup> 的开源版本)，[webstrom](https://aur.archlinux.org/packages/webstorm/)<sup>AUR</sup> 或者 [atom](https://archlinux.org/packages/community/x86_64/atom/)。
+关于 IDE(或编辑器),可以使用 [OSS code](https://www.archlinux.org/packages/community/x86_64/code/)，[vscodium-bin](https://aur.archlinux.org/packages/vscodium-bin/)，或者 [atom](https://archlinux.org/packages/community/x86_64/atom/)。
 
-浏览器方面有 [firefox](https://archlinux.org/packages/extra/x86_64/firefox/)，[chromium](https://archlinux.org/packages/extra/x86_64/chromium/)， [opera](https://archlinux.org/packages/community/x86_64/opera/) ，[vivaldi](https://archlinux.org/packages/community/x86_64/vivaldi/)，[firefox-developer-edition](https://www.archlinux.org/packages/community/x86_64/firefox-developer-edition/)，[Edge](https://aur.archlinux.org/packages/microsoft-edge-dev-bin/)<sup>AUR</sup>，以及[google-chrome](https://aur.archlinux.org/packages/google-chrome/)<sup>AUR</sup>等众多软件可供选择。
+> 微软公司 Visual Studio Code 的二进制构建实际为专有软件。很多人在此存在误解。如此偷梁换柱的手段越来越被更多公司发掘使用。
 
-网络工具常使用 [charles](https://aur.archlinux.org/packages/charles/)<sup>AUR</sup>，[postman](https://aur.archlinux.org/packages/postman-bin/)<sup>AUR</sup>以及 [wireshark-qt](https://archlinux.org/packages/community/x86_64/wireshark-qt/)。
+浏览器方面有 [firefox](https://archlinux.org/packages/extra/x86_64/firefox/)，[chromium](https://archlinux.org/packages/extra/x86_64/chromium/)，[firefox-developer-edition](https://www.archlinux.org/packages/community/x86_64/firefox-developer-edition/)，等众多软件可供选择。
+
+网络工具常使用 [charles](https://aur.archlinux.org/packages/charles/)<sup>AUR</sup>，以及 [wireshark-qt](https://archlinux.org/packages/community/x86_64/wireshark-qt/)。
 
 至于 [yarn](https://www.archlinux.org/packages/community/any/yarn/)、[npm](https://www.archlinux.org/packages/community/any/npm/) 等前端常用工具，也均可用 pacman 安装。
 
