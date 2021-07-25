@@ -203,3 +203,5 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
 > 如果你使用英伟达显卡，记得更换驱动为相应的 dkms 版本。一般来说较新的显卡安装 nvidia-dkms 即可。
+
+最近的 steam 官方的 proton 不能正确检测系统的 fsync,依然以 esync 模式启动游戏。更换 GE 版本的 proton 可以正确检测并使用 fsync 模式启动游戏。
