@@ -2,7 +2,7 @@
 
 本章记录日常办公需要用到的软件及配置。同时包括 QQ 等即时通讯软件和网盘、远程协助等软件的配置与使用。
 
-> QQ 与微信等中国国内知名闭源专有 IM 软件均存在不同程度的间谍行为(实际上不仅仅是 IM 软件，几乎所有你能见到的中国国内大型互联网 APP 均有间谍行为，美其名曰:用户行为监测或用户画像描述)。收集用户信息，扫描用户手机存储内容，监控粘贴版内容，记录手机安装 APP 列表等无耻行为几乎已经成为业内公开的秘密。
+> QQ 与微信等中国国内知名闭源专有 IM 软件均存在不同程度的间谍行为(实际上不仅仅是 IM 软件，几乎所有你能见到的中国国内大型互联网 APP 均有间谍行为，美其名曰:用户行为监测或用户画像描述)。收集用户信息，扫描用户手机存储内容，监控粘贴版内容，记录手机安装 APP 列表等无耻行为几乎已经成为业内公开的秘密。同时，腾讯一直以来不遗余力的封杀第三方客户端，导致始终没有一个稳定可用的版本。腾讯与 2020 年出品了官方版本 LinuxQQ，其品质可以用惨不忍睹形容。**我们不建议你使用 QQ 或微信这类专有间谍通讯软件作为你的主要通讯方式。本教程亦不提供任何支持。**
 
 > 欧盟与近些年出台了[GDPR 通用数据保护条例](https://en.wikipedia.org/wiki/General_Data_Protection_Regulation)，国内各大知名互联网软件公司在开发海外版软件时均需严格遵守上传数据、用户隐私等规定。然而在开发中国国内版时，则尽可能上传其能获取到的全部用户个人隐私数据，这是无耻且邪恶的。我们希望尽可能多的人抵制使用这种专有软件。
 
@@ -16,13 +16,8 @@
 sudo pacman -S telegram-desktop
 ```
 
-中国常见的通讯软件在 ArchLinux 下也可使用。qq 轻聊版，qq 正式版，微信等可按如下安装。使用前先确保[字体](https://wiki.archlinux.org/index.php/Localization/Chinese#Fonts)的安装，否则汉字均为方块。一般 qq 安装文泉驿字体([wqy-microhei](https://archlinux.org/packages/?name=wqy-microhei))即可解决方块问题。深度于 2020 下半年放出了 deepin-wine5，基于这个最新版的 deepinwine 的 AUR 包一般都比原有的稳定。再次提醒，**我们不建议你使用 QQ 或微信这类专有间谍通讯软件作为你的主要通讯方式。**
-
 ```bash
 yay -S slack-desktop            #常见的团队合作交流软件
-yay -S deepin.com.qq.im.light　 #基于deepin wine5的qq轻聊版
-yay -S linuxqq                  #腾讯官方出版的辣鸡linuxqq 疯狂闪退 网上方式均无效 不建议安装
-yay -S com.qq.im.deepin         #基于deepin wine5的qq
 yay -S com.qq.weixin.deepin     #基于deepin wine5的wechat
 yay -S wechat-uos               #2020年末最新的uos版本原生微信的arch移植版本
 ```
