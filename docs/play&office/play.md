@@ -158,6 +158,32 @@ sudo pacman -S giflib lib32-giflib libpng lib32-libpng libldap lib32-libldap gnu
 
 安装使用原生 [Wine](https://wiki.archlinux.org/index.php/Wine) 也可运行 windows 游戏，但是很多情况下需要你自行处理 Windows 下的依赖问题，常用的工具是 [winetricks](https://archlinux.org/packages/multilib/x86_64/winetricks/)。这种方式费时费力，只运行无需处理依赖的小游戏或者 gal 还好。
 
+## 性能监控
+
+和微星的 Afterburner 软件中性能显示的部分类似，Linux 上也有一款同类软件可以监控游戏中的电脑性能，名为[MangoHud](https://github.com/flightlessmango/MangoHud)。使用方式可参见此项目的 readme。此外，官方提供图形化的参数设置软件 [GOverlay](https://github.com/benjamimgois/goverlay#arch--manjaro--other-arch-derivatives)，可以自行选择安装。
+
+## 可选内核更换
+
+一般来说，采用了 fsync 的 patch 的内核游戏性能会更好。尤其在一些采用.Net 的 wine 游戏中，fsync 会有明显的性能提升[[1]](https://github.com/ValveSoftware/Proton/issues/3706#issuecomment-636632984)。目前 Linux 内核并没有加入 fsync 功能，可以更换 zen 内核。
+
+```bash
+sudo pacman -S linux-zen linux-zen-headers
+```
+
+安装完毕后重新更新一下 grub 即可。
+
+```bash
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+> 如果你使用英伟达显卡，记得更换驱动为相应的 dkms 版本。一般来说较新的显卡安装 nvidia-dkms 即可。
+
+最近的 steam 官方的 proton 不能正确检测系统的 fsync,依然以 esync 模式启动游戏。更换 GE 版本的 proton 可以正确检测并使用 fsync 模式启动游戏。
+
+## snap
+
+snap 中存在一些高质量的游戏包，如 cncnet 可以进行红警 2 的联机游戏。按照[官方 wiki](https://wiki.archlinux.org/title/Snap)安装 snap 并启动服务。接下来按照[snap 红警的 readme](https://github.com/mmtrt/cncra2yr)安装并进行设置。游戏的本体文件可以前往[红警之家下载](http://www.uc129.com/yuanchuang/)。注意,cncnet 是自己实现了一个启动器，然后调用游戏本体，这其中 cncnet 一定进行了某些 patch。直接执行游戏本体会有各种问题，目前还未找到较好的解决办法。cncnet 不能进行战役游戏。
+
 ## 游戏手柄
 
 一般情况下手柄通过数据线连接计算机即可直接使用。支持无线的手柄（DUALSHOCK® 3、DUALSHOCK® 4、Xbox 360、Xbox One、8BitDo 等）也可以通过蓝牙直接连接，无需额外操作。
@@ -183,25 +209,3 @@ sudo pacman -S giflib lib32-giflib libpng lib32-libpng libldap lib32-libldap gnu
 3. 重启计算机，插入 Xbox 无线适配器并和 Xbox 手柄配对即可
 
 实际体验和 Windows 下并无差异。对延迟敏感的音游（如 [喵斯快跑](https://store.steampowered.com/app/774171/Muse_Dash/)）在游戏设置中微调偏移值即可。
-
-## 性能监控
-
-和微星的 Afterburner 软件中性能显示的部分类似，Linux 上也有一款同类软件可以监控游戏中的电脑性能，名为[MangoHud](https://github.com/flightlessmango/MangoHud)。使用方式可参见此项目的 readme。此外，官方提供图形化的参数设置软件 [GOverlay](https://github.com/benjamimgois/goverlay#arch--manjaro--other-arch-derivatives)，可以自行选择安装。
-
-## 可选内核更换
-
-一般来说，采用了 fsync 的 patch 的内核游戏性能会更好。尤其在一些采用.Net 的 wine 游戏中，fsync 会有明显的性能提升[[1]](https://github.com/ValveSoftware/Proton/issues/3706#issuecomment-636632984)。目前 Linux 内核并没有加入 fsync 功能，可以更换 zen 内核。
-
-```bash
-sudo pacman -S linux-zen linux-zen-headers
-```
-
-安装完毕后重新更新一下 grub 即可。
-
-```bash
-sudo grub-mkconfig -o /boot/grub/grub.cfg
-```
-
-> 如果你使用英伟达显卡，记得更换驱动为相应的 dkms 版本。一般来说较新的显卡安装 nvidia-dkms 即可。
-
-最近的 steam 官方的 proton 不能正确检测系统的 fsync,依然以 esync 模式启动游戏。更换 GE 版本的 proton 可以正确检测并使用 fsync 模式启动游戏。
