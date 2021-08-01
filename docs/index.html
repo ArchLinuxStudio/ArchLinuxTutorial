@@ -170,6 +170,16 @@
                 editHtml
               );
             });
+
+            hook.mounted(function () {
+              // 添加网站运行时间
+              let dom = Docsify.dom;
+              let runTimeNode = dom.create('div');
+              runTimeNode.className = 'runtime';
+              runTimeNode.style =
+                'color: #8590a6;max-width: 80%;margin: 0 auto 20px;padding: 0 15px 0 15px;';
+              dom.appendTo(dom.find('.content'), runTimeNode);
+            });
           },
         ],
       };
@@ -219,6 +229,56 @@
         search_plugin.parentNode.insertBefore(app_name, search_plugin);
       }
       setTimeout(change_search_plugin_order, 1);
+    </script>
+
+    <!-- 添加网站运行时间统计 -->
+    <script>
+      function siteTime() {
+        setTimeout(siteTime, 1000);
+        let seconds = 1000;
+        let minutes = seconds * 60;
+        let hours = minutes * 60;
+        let days = hours * 24;
+        let today = new Date();
+        let todayYear = today.getFullYear();
+        let todayMonth = today.getMonth() + 1;
+        let todayDate = today.getDate();
+        let todayHour = today.getHours();
+        let todayMinute = today.getMinutes();
+        let todaySecond = today.getSeconds();
+
+        let t1 = Date.UTC(2020, 09, 1, 0, 0, 0);
+        let t2 = Date.UTC(
+          todayYear,
+          todayMonth,
+          todayDate,
+          todayHour,
+          todayMinute,
+          todaySecond
+        );
+        let diff = t2 - t1;
+        let diffDays = Math.floor(diff / days);
+        let diffHours = Math.floor((diff - diffDays * days) / hours);
+        let diffMinutes = Math.floor(
+          (diff - diffDays * days - diffHours * hours) / minutes
+        );
+        let diffSeconds = Math.floor(
+          (diff - diffDays * days - diffHours * hours - diffMinutes * minutes) /
+            seconds
+        );
+        Docsify.dom.find('.runtime').innerHTML =
+          'ArchLinux Studio已运行 ' +
+          diffDays +
+          ' 天 ' +
+          diffHours +
+          ' 小时 ' +
+          diffMinutes +
+          ' 分 ' +
+          diffSeconds +
+          ' 秒';
+      }
+      // 先让网页加载完，否则 Docsify.dom.find('.runtime') == null
+      setTimeout(siteTime, 500);
     </script>
   </body>
 </html>
