@@ -48,15 +48,15 @@ sudo pacman -S flameshot
 
 快捷键的命令是`flameshot gui`，可在 KDE 设置中加入设置快捷键为你所熟悉的键位。或者尝试另一种流行的 KDE 出品的截图软件 [spectacle](https://archlinux.org/packages/extra/x86_64/spectacle/)
 
-## 网盘存储
+## 下载存储
 
-> 不要使用任何中国国内的网盘存储你的个人数据，他们可以根据"相关条款与规定"，或者"自我阉割"的精神觉悟随意处置你的所有数据，在仔细阅读过他们的用户协议后，你会觉得毛骨悚然。只推荐用国内网盘存储无关紧要的数据。
+> 不要使用任何墙国国内的网盘存储你的个人数据，他们可以根据"相关条款与规定"，或者"自我阉割"的精神觉悟随意处置你的所有数据，在仔细阅读过他们的用户协议后，你会觉得毛骨悚然。墙国网盘只能用来存储无关紧要的垃圾数据。
 
-- [Mega](https://aur.archlinux.org/packages/megasync/)<sup>AUR</sup> 国外注重隐私的老牌网盘，也可直接使用 [web 版本](https://mega.nz/fm/dashboard)
+> 不要使用迅雷、旋风等墙国类似软件。关于 BT 的原理及迅雷的恶行可参考文章[为什么国内 BT 环境如此恶劣？](https://zhuanlan.zhihu.com/p/87193566)
+
+- [Mega](https://aur.archlinux.org/packages/megasync/)<sup>AUR</sup> 新西兰注重隐私的老牌网盘，也可直接使用 [web 版本](https://mega.nz/fm/dashboard)
 - [onedrive](https://aur.archlinux.org/packages/onedrive-abraunegg/)<sup>AUR</sup> 微软创办的网盘业务，linux 下存在一个命令行客户端
-- [超星网盘](http://i.mooc.chaoxing.com/space/index?t=1600061701200) 高校网盘，据说免费 100G 未验证
-- [稳定版坚果云](https://aur.archlinux.org/packages/nutstore/)<sup>AUR</sup>，也可直接使用 [web 版本](https://www.jianguoyun.com/d/home#/)。如果稳定版的界面存在问题，可使用[最新实验版坚果云](https://aur.archlinux.org/packages/nutstore-experimental/)<sup>AUR</sup>
-- [百度网盘](https://aur.archlinux.org/packages/baidunetdisk-bin/)<sup>AUR</sup> 臭名昭著的百度网盘
+- [qbtorrent-enhance-version](https://aur.archlinux.org/packages/qbittorrent-enhanced/)<sup>AUR</sup> 老牌 BT 客户端增强版，支持填入 tracker 的 URL 网址进行拉取，配合[TrackersListCollection 项目](https://github.com/XIU2/TrackersListCollection)使用更佳。
 
 ## 图片浏览
 
