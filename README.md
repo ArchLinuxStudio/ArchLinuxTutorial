@@ -51,3 +51,7 @@
 ## Star 历史
 
 [![Stargazers over time](https://starchart.cc/ArchLinuxStudio/ArchLinuxTutorial.svg)](https://starchart.cc/ArchLinuxStudio/ArchLinuxTutorial)
+
+## 捐赠
+
+USDT: 0xb8916cf64a2e260176d83a62600844f06dffa8dd
