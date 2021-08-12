@@ -58,7 +58,7 @@ sudo pacman -S mesa lib32-mesa xf86-video-nouveau
 
 **在同时拥有核芯显卡和英伟达独立显卡的笔记本上安装驱动是大多数人关注的事情，这里着重讲述。**
 
-> 再次提醒请按照本书前置章节配置好系统后再进行，不要多个教程混看，**尤其是一些过时的教程**。尤其需要注意的是确保 base-devel 包的安装以及配置好科学上网的翻墙软件，以及使用 X11 模式。
+> 再次提醒请按照本书前置章节配置好系统后再进行，不要多个教程混看，**尤其是一些过时的教程**。尤其需要注意的是确保 base-devel 包的安装以及配置好科学上网软件，以及使用 X11 模式。
 
 [英伟达双显卡模式官方文档](https://wiki.archlinux.org/index.php/NVIDIA_Optimus) /// [optimus-manager 官方文档](https://github.com/Askannz/optimus-manager/wiki)
 

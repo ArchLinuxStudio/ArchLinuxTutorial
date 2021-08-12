@@ -2,7 +2,7 @@
 <img width="240" height="80" align="left" style="float: left; margin: 0 10px 0 0;" src="https://www.archlinux.org/static/logos/archlinux-logo-dark-1200dpi.b42bd35d5916.png" alt="ArchLinuxStudio_ArchLinuxTutorial"/>
 </br>
 <h1>Arch Linux 安装使用教程 </h1> 
-每月实时更新！本书包含从 archlinux安装，科学上网，翻墙，到显卡驱动，日常软件如微信，另附媒体制作，编程等你可能需要的全部内容。让 Arch Linux 成为你的常用系统吧！
+每月实时更新！本书包含从 archlinux安装，科学上网，魔法充能，到显卡驱动，日常软件如微信，另附媒体制作，编程等你可能需要的全部内容。让 Arch Linux 成为你的常用系统吧！
 </br>
 提供在线网页文档，承诺健在即更新。
 </p>
@@ -20,7 +20,7 @@
 
 为推动自由软件运动而撰写的 ArchLinux 中文教程。你可以通过本教程学会:
 
-- Linux 下的翻墙与科学上网设置
+- Linux 下的魔法的学习
 - ArchLinux 的安装与 KDE 桌面环境的安装
 - Linux 的相关知识
 - 中国用户常用的软件安装与配置
@@ -34,10 +34,10 @@
 - [2:安装前的准备](https://www.bilibili.com/video/BV1V64y1d7N7/)
 - [3:ArchLinux 基础安装](https://www.bilibili.com/video/BV1Jy4y1M74E)
 - [4:安装 KDE 与常用软件](https://www.bilibili.com/video/BV1Fv411H7x2)
-- [5:科学上网与翻墙](https://www.youtube.com/watch?v=HNfT8uz7qEM)
+- [5:魔法学院](https://www.youtube.com/watch?v=HNfT8uz7qEM)
 - [6:显卡驱动安装综述](https://www.bilibili.com/video/BV1p44y1q746)
 - [7:成为合格的系统管理员](https://www.bilibili.com/video/BV1N64y1b73Z)
-- [8:配置全局代理 翻墙更轻松](https://www.youtube.com/watch?v=m0ctfPF-2_I)
+- [8:真理学院](https://www.youtube.com/watch?v=m0ctfPF-2_I)
 - [9:功耗控制](https://www.bilibili.com/video/BV1664y1Q7cS)
 - [10:系统美化](https://www.bilibili.com/video/BV1GX4y1w748)
 - [11:故障排除](https://www.bilibili.com/video/BV1PM4y1M75j)

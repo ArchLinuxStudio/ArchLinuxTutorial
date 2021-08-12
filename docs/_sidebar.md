@@ -5,7 +5,7 @@
   - [安装前的准备](/rookie/archlinux_pre_install)
   - [基础安装](/rookie/basic_install)
   - [桌面环境与必要应用](/rookie/DE&App)
-  - [科学上网与翻墙](/rookie/fxckGFW)
+  - [魔法学院](/rookie/fxckGFW)
   - [显卡驱动](/rookie/graphic_driver)
 
 - 进阶

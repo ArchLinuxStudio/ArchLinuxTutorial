@@ -1,6 +1,6 @@
 # Arch Linux 安装使用教程 - ArchTutorial - Arch Linux Studio <!-- {docsify-ignore-all} -->
 
-Arch Linux 安装使用教程，每月实时更新！包含从 archlinux 安装，科学上网，翻墙，显卡驱动，日常软件如微信，另附媒体制作，编程等你可能需要的全部内容。让 Arch Linux 成为你的常用系统吧！
+Arch Linux 安装使用教程，每月实时更新！包含从 archlinux 安装，科学上网，魔法充能，显卡驱动，日常软件如微信，另附媒体制作，编程等你可能需要的全部内容。让 Arch Linux 成为你的常用系统吧！
 
 本书提供多年使用 Linux 的一些经验，并教与需要的人。与 Linux 密不可分的另一部分: [GNU](https://www.gnu.org/home.zh-cn.html)  
 新同学请确保你已经按照步骤完成了`新手上路`章节中的全部内容后再向下阅读，否则可能会出现问题。
@@ -43,10 +43,10 @@ Arch Linux 可以以超高的自由度来定制自己的系统，并且其拥有
 - [2:安装前的准备](https://www.bilibili.com/video/BV1V64y1d7N7/)
 - [3:ArchLinux 基础安装](https://www.bilibili.com/video/BV1Jy4y1M74E)
 - [4:安装 KDE 与常用软件](https://www.bilibili.com/video/BV1Fv411H7x2)
-- [5:科学上网与翻墙](https://www.youtube.com/watch?v=HNfT8uz7qEM)
+- [5:魔法学院](https://www.youtube.com/watch?v=HNfT8uz7qEM)
 - [6:显卡驱动安装综述](https://www.bilibili.com/video/BV1p44y1q746)
 - [7:成为合格的系统管理员](https://www.bilibili.com/video/BV1N64y1b73Z)
-- [8:配置全局代理 翻墙更轻松](https://www.youtube.com/watch?v=m0ctfPF-2_I)
+- [8:真理学院](https://www.youtube.com/watch?v=m0ctfPF-2_I)
 - [9:功耗控制](https://www.bilibili.com/video/BV1664y1Q7cS)
 - [10:系统美化](https://www.bilibili.com/video/BV1GX4y1w748)
 - [11:故障排除](https://www.bilibili.com/video/BV1PM4y1M75j)
