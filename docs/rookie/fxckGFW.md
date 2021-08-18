@@ -78,7 +78,7 @@ sudo pacman -S qv2ray-dev-git v2ray
 
 起因在于其意在取消对 xray 的支持，并在检测到错误配置的 xray 时导致程序崩溃。xray 从诞生起始终在社区中存在争议。而社区中另外一位仓库 owner 认为这种处理方式太过偏激，不同意这种举措。在交流无果后此 owner 取消了其仓库权限，并将其移除 qv2ray workgroup。这种做法显然是其在感情上无法接受的，随后其注销了 github 帐号并宣布退出开发。而随后 xray 频道发表的公告明显带有严重的主观感情色彩，没有客观的描述事件本身，顺便借题发挥式的中伤开源软件。此公告没有任何实际意义，只会加剧误解的程度。
 
-这种结果是任何一个 linux 用户都不愿看到的，希望 qv2ray 开发组可以重新开启交流，得出一个折中的方案。以防万一，这里也记录一种 qv2ray 的替代方案。
+Qv2ray 项目已经 archived，这里记录一种 qv2ray 的替代方案。
 
 V2rayA 是一个浏览器客户端，在 linux 下支持全局代理，非常方便。可以直接在 AUR 进行安装。安装后需启动服务
 
@@ -91,13 +91,9 @@ sudo systemctl enable --now v2raya
 
 更多使用方法请看[官方文档](https://github.com/v2rayA/v2rayA/wiki)与[项目地址](https://github.com/v2rayA/v2rayA)
 
-更新：
-
-在五月，Qv2ray 原主要开发者在 Shadowsocks-NET 组织下开始了[新的 Qv2ray 分支](https://github.com/Shadowsocks-NET/Qv2ray)并继续维护，至于哪个分支后续的维护更佳，可以静观其变。在七月，最新开发已转至一个[个人分支](https://github.com/moodyhunter/QvPersonal)。
-
 ## 编译安装 QvPersonal3.0
 
-最新 3.0 版本的 Qv2ray pre release 已经发布，可以编译安装。由于其为 pre release，请谨慎酌情使用。编译前先按照 readme 安装好所需依赖。
+最新 3.0 版本的 Qv2ray pre release 已经发布，，最新开发已转至一个[个人分支](https://github.com/moodyhunter/QvPersonal)，可以编译安装。由于其为 pre release，请谨慎酌情使用。编译前先按照 readme 安装好所需依赖。
 
 首先删除旧版 qv2ray 以及不兼容的配置
 
