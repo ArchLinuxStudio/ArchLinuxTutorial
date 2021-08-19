@@ -10,7 +10,11 @@
 
 ## 2.刻录启动优盘
 
-准备一个 2G 以上的优盘，刻录一个安装启动盘。安装镜像 iso 在[下载页面](https://archlinux.org/download/)下载，建议通过磁力链接或 torrent 下载。
+准备一个 2G 以上的优盘，刻录一个安装启动盘。安装镜像 iso 在[下载页面](https://archlinux.org/download/)下载，建议通过磁力链接或 torrent 下载。下载完成后，推荐进行对镜像进行 MD5 校验，以保证下载的镜像是完整，无错误的。执行以下命令，确保输出和下载网页上的 MD5 值一致。具体镜像名根据名字自行修改。
+
+```
+md5sum archlinux-202x.0x.01-x86_64.iso
+```
 
 Windows 下推荐使用[ventoy](https://www.ventoy.net/cn/doc_start.html)或者[Rufus](https://rufus.ie/)或者[Power ISO](https://www.poweriso.com/download.php)<sup>专有</sup>进行优盘刻录。三者皆为免费使用的软件。具体操作请自行查阅，都非常简单。
 

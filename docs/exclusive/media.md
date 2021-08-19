@@ -67,6 +67,8 @@ ffmpeg -i hack_with_zh.mp4 -strict -2 -vf subtitles=hack_en.srt:force_style
 ='Fontsize=15\,Fontname=FZYBKSJW--GB1-0\,Bold=-1\,BorderStyle=1' -qscale:v 3 hack_with_double_subtitles.mp4
 ```
 
+除此之外，ffmpeg 还可以进行转码等诸多操作，是一个非常强大的工具，其也是很多音视频软件的重要组件。关于 ffmpeg 更多可自行查询。
+
 ## 视觉小说的素材提取
 
 目前一般常用的为 [GARbro](https://github.com/morkt/GARbro)，但是其在 linux 下通过 wine 无法正常使用。这里提供一个跨平台的 gal game 内容提取工具[arc_unpacker](https://aur.archlinux.org/packages/arc_unpacker-git/)。详细用法可自行查看其 github。

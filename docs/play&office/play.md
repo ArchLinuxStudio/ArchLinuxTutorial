@@ -9,22 +9,6 @@ Memory: 32GB 2666
 Disk: PLEXTOR PX-1TM9PeG
 ```
 
-## 性能提升
-
-在游戏之前，如果有强烈的性能需要，可先确保 cpu 处于性能模式[[1]](https://support.feralinteractive.com/docs/zh_cn/threekingdomstw/1.0.15/linux/faqs/?access=zooevrj6xb&utm_source=game_linux&utm_medium=link&utm_campaign=game_linux_threekingdomstw_support#i_linux_cpu_governor)。注意此模式会让 cpu 处于最高性能状态、风扇狂转，如果你的散热撑不住甚至会降频，得不偿失，斟酌使用。在终端中，输入下列代码：
-
-```bash
-echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
-```
-
-现在电源应该处于 High Performance 模式了。
-
-如果希望将设置改回 Power Save 模式，那么只需要输入下列代码即可：
-
-```bash
-echo powersave | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
-```
-
 ## 网游网络加速
 
 对于在 Linux 上玩网游，网络加速一直是一个难题，尤其是在玩一些外服网游的时候。这里提供一些思路来在 Linux 下对网游加速。
@@ -209,3 +193,7 @@ snap 中存在一些高质量的游戏包，如 cncnet 可以进行红警 2 的�
 3. 重启计算机，插入 Xbox 无线适配器并和 Xbox 手柄配对即可
 
 实际体验和 Windows 下并无差异。对延迟敏感的音游（如 [喵斯快跑](https://store.steampowered.com/app/774171/Muse_Dash/)）在游戏设置中微调偏移值即可。
+
+## 性能提升
+
+在进行某些游戏时，如《Total War: THREE KINGDOMS》，如遇到性能问题，可尝试调节 cpu 频率调节器[[1]](https://support.feralinteractive.com/docs/zh_cn/threekingdomstw/1.0.15/linux/faqs/?access=zooevrj6xb&utm_source=game_linux&utm_medium=link&utm_campaign=game_linux_threekingdomstw_support#i_linux_cpu_governor)。注意此模式会让 cpu 处于最高性能状态、风扇狂转，如果你的散热撑不住甚至会降频，得不偿失，斟酌使用。
