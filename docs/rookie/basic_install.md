@@ -214,6 +214,19 @@ locale-gen
 echo 'LANG=en_US.UTF-8'  > /etc/locale.conf
 ```
 
+多语言用户可以使用 `localectl` 配置语言环境。英中日三语者可以按如下配置，注意需要添加英式英语 `en_GB`，因为很多程序（包括 `pacman`）只支持英式英语不支持美式英语。使用桌面环境设置语言时也需要注意这一点。否则会出现系统 UI 和一些程序使用美式英语，其他程序不使用英式英语直接使用中文的情况。
+
+```bash
+localectl set-locale LANG=en_US.UTF-8 LANGUAGE=en_US:en_GB:en:zh_CN:zh_HK:zh_TW:zh:ja
+```
+
+配置完 `/etc/locale.conf` 内容应该是这样的：
+
+```bash
+LANG=en_US.UTF-8
+LANGUAGE=en_US:en_GB:en:zh_CN:zh_HK:zh_TW:zh:ja
+```
+
 ## 16.为 root 用户设置密码
 
 ```bash
