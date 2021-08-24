@@ -18,8 +18,6 @@ sudo pacman -S telegram-desktop
 
 ```bash
 yay -S slack-desktop            #常见的团队合作交流软件
-yay -S com.qq.weixin.deepin     #基于deepin wine5的wechat
-yay -S wechat-uos               #2020年末最新的uos版本原生微信的arch移植版本
 ```
 
 除此之外 对于另外一些手机通讯软件在电脑上的投屏可以尝试使用[scrcpy](https://aur.archlinux.org/packages/scrcpy/)<sup>AUR</sup>。
