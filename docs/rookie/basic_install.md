@@ -1,7 +1,6 @@
 # Arch Linux 基础安装
 
-本节从安装最基础的无图形化 ArchLinux 系统开始。[官方安装指南](https://wiki.archlinux.org/index.php/Installation_guide)  
-相关视频链接： [ArchLinux 安装使用教程](https://www.bilibili.com/video/BV1Jy4y1M74E) 视频中可看到全部操作步骤 强烈建议观看视频配合文字学习。
+本节从安装最基础的无图形化 ArchLinux 系统开始。[官方安装指南](https://wiki.archlinux.org/index.php/Installation_guide)
 
 ## 1.禁用 reflector
 

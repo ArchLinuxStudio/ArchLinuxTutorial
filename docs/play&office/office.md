@@ -38,7 +38,7 @@ pdf 可直接用浏览器打开，也可选用其他专用的阅读软件，如[
 
 ## 截图
 
-推荐使用 flameshot[火焰截图](https://www.bilibili.com/video/BV1LK4y1s7wX/)
+推荐使用 flameshot 火焰截图
 
 ```
 sudo pacman -S flameshot

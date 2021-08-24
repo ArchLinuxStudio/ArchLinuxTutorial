@@ -30,23 +30,23 @@
 
 有第三方视频作者为本教程制作了讲解视频，欢迎与文档对照收看，效果更好，效率更高。视频可能出现更新不及时的情况，如果遇到分歧，请以文档为准。
 
-- [1:GNU/Linux 与自由软件运动](https://www.bilibili.com/video/BV1dB4y1T7Zb/)
-- [2:安装前的准备](https://www.bilibili.com/video/BV1V64y1d7N7/)
-- [3:ArchLinux 基础安装](https://www.bilibili.com/video/BV1Jy4y1M74E)
-- [4:安装 KDE 与常用软件](https://www.bilibili.com/video/BV1Fv411H7x2)
+- [1:GNU/Linux 与自由软件运动](https://www.youtube.com/watch?v=oabwNGWRtL0)
+- [2:安装前的准备](https://www.youtube.com/watch?v=FzKp-Z_Yn4U)
+- [3:ArchLinux 基础安装](https://www.youtube.com/watch?v=TZe8L3fzqZ8)
+- [4:安装 KDE 与常用软件](https://www.youtube.com/watch?v=BfqbFrE--Bc)
 - [5:魔法学院](https://www.youtube.com/watch?v=HNfT8uz7qEM)
-- [6:显卡驱动安装综述](https://www.bilibili.com/video/BV1p44y1q746)
-- [7:成为合格的系统管理员](https://www.bilibili.com/video/BV1N64y1b73Z)
+- [6:显卡驱动安装综述](https://www.youtube.com/watch?v=k5KsKLofOHs)
+- [7:成为合格的系统管理员](https://www.youtube.com/watch?v=h8sWpIicNt0)
 - [8:真理学院](https://www.youtube.com/watch?v=m0ctfPF-2_I)
-- [9:功耗控制](https://www.bilibili.com/video/BV1664y1Q7cS)
-- [10:系统美化](https://www.bilibili.com/video/BV1GX4y1w748)
-- [11:故障排除](https://www.bilibili.com/video/BV1PM4y1M75j)
-- [12:办公日常](https://www.bilibili.com/video/BV1xv411H7DY)
-- [13:视频影音](https://www.bilibili.com/video/BV11M4y1M7tf/)
-- [14:游戏娱乐](https://www.bilibili.com/video/BV16g411u7WQ/)
-- [15:安卓刷机](https://www.bilibili.com/video/BV1jw411d7g2/)
-- [16:直播与多媒体](https://www.bilibili.com/video/BV1854y1n7zS/)
-- [17:編程軟件](https://www.bilibili.com/video/BV1164y1b7kC/)
+- [9:功耗控制](https://www.youtube.com/watch?v=N04x1Y51Q2M)
+- [10:系统美化](https://www.youtube.com/watch?v=FRN61XPiTyE)
+- [11:故障排除](https://www.youtube.com/watch?v=MHm6JMsnVjw)
+- [12:办公日常](https://www.youtube.com/watch?v=5Wu4U-trG18)
+- [13:视频影音](https://www.youtube.com/watch?v=I8ufGO39NQc)
+- [14:游戏娱乐](https://www.youtube.com/watch?v=oakycLgKt54)
+- [15:安卓刷机](https://www.youtube.com/watch?v=ek16poKw1MQ)
+- [16:直播与多媒体](https://www.youtube.com/watch?v=d2ZLMpdVrkk)
+- [17:編程軟件](https://www.youtube.com/watch?v=LOtxFQO82XE)
 
 ## Star 历史
 

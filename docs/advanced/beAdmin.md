@@ -31,7 +31,7 @@ mkdir new_folder    # 新建文件夹new_folder
 sudo some command   # 使普通用户以root权限执行某些命令
 ```
 
-拓展链接：推荐阅读在线进阶书籍 [Linux 命令行与 Shell 脚本教程](https://archlinuxstudio.github.io/ShellTutorial/#/)。 随后也将提供与此书配套的教学视频 [Linux 命令行与 Shell 教程](https://bilibili.com)<sup>TODO</sup>。
+拓展链接：推荐阅读在线进阶书籍 [Linux 命令行与 Shell 脚本教程](https://archlinuxstudio.github.io/ShellTutorial/#/)。 随后也将提供与此书配套的教学视频 [Linux 命令行与 Shell 教程](https://www.youtube.com/channel/UCVO7lXKucA6z3O37WV7FG5w/videos)<sup>TODO</sup>。
 
 ## Pacman 包管理
 
