@@ -91,39 +91,24 @@ sudo systemctl enable --now v2raya
 
 更多使用方法请看[官方文档](https://github.com/v2rayA/v2rayA/wiki)与[项目地址](https://github.com/v2rayA/v2rayA)
 
-## 编译安装 QvPersonal3.0
+## Qv2ray 3.0
 
-最新 3.0 版本的 Qv2ray pre release 已经发布，，最新开发已转至一个[个人分支](https://github.com/moodyhunter/QvPersonal)，可以编译安装。由于其为 pre release，请谨慎酌情使用。编译前先按照 readme 安装好所需依赖。
-
-首先删除旧版 qv2ray 以及不兼容的配置
+Qv2ray 最新版本已经转至 Shadowsocks-NET 项目组下，这里是[项目地址](https://github.com/Shadowsocks-NET/Qv2ray)。使用前首先删除旧版 qv2ray 以及不兼容的配置。同时需要注意，Qv2ray 3.0 与旧版插件不兼容。
 
 ```bash
 rm -rf ~/.config/qv2ray
 sudo pacman -R qv2ray-dev-git
 ```
 
-接下来进行编译安装
+接下来可安装其 AUR 包
 
 ```bash
-git clone git@github.com:moodyhunter/QvPersonal.git --recursive
-cd QvPersonal
-mkdir build
-cd build/
-cmake -DCMAKE_INSTALL_PREFIX=/usr ..
-cmake --build . --parallel 8
-sudo cmake --install .
+yay -S qv2ray-static-bin-nightly
 ```
 
-在 Plugins 中，选择 V2ray Core Plugin，并进行 V2ray 的设置。现在你已经可以使用。
+安装后在 Plugins 中，选择 V2ray Core Plugin，并进行 V2ray 的设置。现在你已经可以使用。
 
 > 在 Qv2ray3.0 中 VMESS MD5 与非 0 的 AlterID 的形式已不被支持，若你的机场或节点下发的 AlterID 是非 0 是无法使用的。如果服务端支持，你可将 AlterID 改为 0 来使用 VMessAEAD 形式。
-
-卸载 Qv 3.0
-
-```bash
-cd QvPersonal/build
-sudo xargs rm < install_manifest.txt
-```
 
 ## 更加全面的系统级全局代理
 
