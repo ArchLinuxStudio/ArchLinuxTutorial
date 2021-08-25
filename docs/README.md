@@ -6,7 +6,7 @@ Arch Linux 安装使用教程，每月实时更新！包含从 archlinux 安装�
 新同学请确保你已经按照步骤完成了`新手上路`章节中的全部内容后再向下阅读，否则可能会出现问题。
 
 - 本书特点
-  - Linux 二次元电报交流群:[篝ノ雾枝的咕咕小屋](https://t.me/kdwu1fan)。
+  - Linux 二次元电报交流群:[篝ノ雾枝的咕咕小屋](https://t.me/FSF_Ministry_of_Truth)。
   - 无废话，只给出一套对于大多数人较为合适的路线，不会面面俱到。本书是 tutorial,不是 reference，定位与 wiki.archlinux.org 不同。
   - 本书使用 docsify 以及 gitalk 开发，并且网站源码全部开源，可放心留言讨论。
   - 本书会持续更新。每月随时根据最新 arch linux 动态更新。[鼓励志愿者提交更新](/contribution.md)。
