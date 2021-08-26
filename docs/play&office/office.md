@@ -36,6 +36,21 @@ yay -S onlyoffice-bin
 
 pdf 可直接用浏览器打开，也可选用其他专用的阅读软件，如[okular](https://archlinux.org/packages/extra/x86_64/okular/)或者[calibre](https://archlinux.org/packages/community/x86_64/calibre/)。okular 在打开大型 epub 时会非常卡顿,并且图片模糊不清，[Foliate](https://archlinux.org/packages/community/x86_64/foliate/) 是阅读 epub 的更加选择。
 
+## 文献管理
+
+JabRef 是 java 编写的并且与 LaTeX 协作较好的开源文献管理软件，可以与 vim, Emacs 协作，并通过 bib 格式管理文献。
+
+```
+yay -S jabref
+```
+
+Zotero 是一个开源的 Electron 应用，其可以通过 VSCode 插件和 vim 插件进行引用。beta 版本具有笔记和内置 PDF 阅读器功能。
+
+```
+yay -S zotero
+yay -S zotero-beta #具有笔记和内置 PDF 阅读器
+```
+
 ## 截图
 
 推荐使用 flameshot 火焰截图
