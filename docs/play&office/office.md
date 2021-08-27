@@ -36,6 +36,14 @@ yay -S onlyoffice-bin
 
 pdf 可直接用浏览器打开，也可选用其他专用的阅读软件，如[okular](https://archlinux.org/packages/extra/x86_64/okular/)或者[calibre](https://archlinux.org/packages/community/x86_64/calibre/)。okular 在打开大型 epub 时会非常卡顿,并且图片模糊不清，[Foliate](https://archlinux.org/packages/community/x86_64/foliate/) 是阅读 epub 的更加选择。
 
+## RSS 阅读器
+
+RSS 阅读器	newsflash 是 feedreader 的精神继承者，支持本地 RSS 源和 RSS API 的读取，由 Rust 写成。 目前 feedreader 已经不再维护。
+
+```
+sudo pacman -S newsflash
+```
+
 ## 文献管理
 
 JabRef 是 java 编写的并且与 LaTeX 协作较好的开源文献管理软件，可以与 vim, Emacs 协作，并通过 bib 格式管理文献。
