@@ -32,6 +32,10 @@ b 站直播时的弹幕可以使用[弹幕库](https://www.danmaku.live/),这个
 
 在 linux 上的修饰图片可用[gimp](https://www.archlinux.org/packages/extra/x86_64/gimp/)。如果你需要配合数位板绘图，可使用[krita](https://www.archlinux.org/packages/extra/x86_64/krita/)，krita 同时也提供一定的制图功能。矢量图片操作可使用 [inkscape](https://www.archlinux.org/packages/extra/x86_64/inkscape/)
 
+[hugin](https://archlinux.org/packages/community/x86_64/hugin/)是一个可以对图片进行景深进行合成、对图片进行拼接的开源软件，可以以此替代 PhotoShop 的自动对齐图层和自动合并图层。
+
+至于格式转换，可以使用 [imagemagick](https://archlinux.org/packages/extra/x86_64/imagemagick/) 的 convert 功能进行图片格式之间的转换。
+
 ## 建模
 
 可使用强大的 3D 建模软件[blender](https://archlinux.org/packages/community/x86_64/blender/)
