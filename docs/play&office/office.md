@@ -33,25 +33,20 @@ yay -S onlyoffice-bin
 ```
 ## 笔记本
 
-Joplin 是一个简单的 markdown 笔记本，具有标签和层级等基础功能。并且具有 cli 和 desktop 两个版本。
+Joplin 是一个简单的 markdown 笔记本，具有标签和层级等基础功能。并且具有 cli 和 desktop 两个版本。其 LICENSE 为 MIT 。
 
 ```
 yay -S joplin # cli
 yay -S joplin-desktop # desktop
 ```
 
-Trilium 是一个开源的 electron 笔记软件，它支持 markdown 还有 evernote 格式的导入，并且支持 markdown 和 html 的导出格式。其本身具有标签、无限层级、关系图以及历史记录等功能，基于 CKEditor 所见即所得的 markdown 编辑器。并且支持在服务器上自己搭建。s er
+Trilium 是一个开源的 electron 笔记软件，它支持 markdown 还有 evernote 格式的导入，并且支持 markdown 和 html 的导出格式。其本身具有标签、无限层级、关系图以及历史记录等功能，基于 CKEditor 所见即所得的 markdown 编辑器。并且支持在服务器上自己搭建。其 LICENSE 为 AGPL 3.0 。
 
 ```
 yay -S trilium-bin
 yay -S trilium-server-bin
 ```
 
-logseq 则与 Trilium 具有类似的功能，是一个声称隐私优先的笔记工具，也为 electron 应用，不过其为商业公司产品并不支持自建。
-
-```
-yay -S logseq-desktop
-```
 
 ## 电子书
 
