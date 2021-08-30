@@ -31,6 +31,7 @@ sudo pacman -S libreoffice-still   #稳定版
 sudo pacman -S libreoffice-fresh   #尝鲜版
 yay -S onlyoffice-bin
 ```
+
 ## 笔记本
 
 Joplin 是一个简单的 markdown 笔记本，具有标签和层级等基础功能。并且具有 cli 和 desktop 两个版本。其 LICENSE 为 MIT 。
@@ -47,14 +48,13 @@ yay -S trilium-bin
 yay -S trilium-server-bin
 ```
 
-
 ## 电子书
 
 pdf 可直接用浏览器打开，也可选用其他专用的阅读软件，如[okular](https://archlinux.org/packages/extra/x86_64/okular/)或者[calibre](https://archlinux.org/packages/community/x86_64/calibre/)。okular 在打开大型 epub 时会非常卡顿,并且图片模糊不清，[Foliate](https://archlinux.org/packages/community/x86_64/foliate/) 是阅读 epub 的更加选择。
 
 ## RSS 阅读器
 
-RSS 阅读器	newsflash 是 feedreader 的精神继承者，支持本地 RSS 源和 RSS API 的读取，由 Rust 写成。 目前 feedreader 已经不再维护。
+RSS 阅读器 newsflash 是 feedreader 的精神继承者，支持本地 RSS 源和 RSS API 的读取，由 Rust 写成。 目前 feedreader 已经不再维护。也可使用 liferea。
 
 ```
 sudo pacman -S newsflash
