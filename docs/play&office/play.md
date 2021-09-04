@@ -1,39 +1,25 @@
 # 娱乐软件
 
-群主的电脑配置如下，供参考，本节中所有主观的体验均以此配置为准。
-
-```bash
-CPU: Intel i7-6700K (8) @ 4.200GHz
-GPU: NVIDIA GeForce GTX 1070
-Memory: 32GB 2666
-Disk: PLEXTOR PX-1TM9PeG
-```
-
 ## 网游网络加速
 
 对于在 Linux 上玩网游，网络加速一直是一个难题，尤其是在玩一些外服网游的时候。这里提供一些思路来在 Linux 下对网游加速。
 
 - 一些机场会提供网游游戏节点，这些节点专门为游戏优化，限制流量并且提高倍率，一般可以得到较好的加速效果。在 Linux 中配合 [透明代理](/advanced/transparentProxy)，同时开启对 UDP 流量的代理加速，即可以得到优化网游网速的效果。
-- 一些中端或者高端的路由器，会内置一些市面上常见的网游加速器，如果你的路由器有这个功能，那可以直接使用路由器内置的加速器加速本机的网游流量。不要使用网易 uu 路由器加速插件，它会错误的将 Linux PC 识别为安卓手机，根据它的逻辑，如果设备被识别为手机，那只能加速手游。
-- 据网友说，wine 运行的网游加速器也能加速 Linux 中运行的网游，此条我未成功，未验证。
+- 一些中端或者高端的路由器，会内置一些市面上常见的网游加速器，如果你的路由器有这个功能，那可以直接使用路由器内置的加速器加速本机的网游流量。或者你也可以使用 openwrt 配合安装支持 openwrt 的加速器插件。不要使用网易 uu 路由器加速插件，它会错误的将 Linux PC 识别为安卓手机，根据它的逻辑，如果设备被识别为手机，那只能加速手游而不能加速 PC 游戏。
+- 据网友说，wine 运行的网游加速器也能加速 Linux 中运行的网游，此条未成功，未验证。
 
-## 我的世界
+## 原生仓库游戏
 
-注意，如果不进行代理设置，启动器的下载速度将很慢。推荐使用全局透明代理。在安装使用中若出现问题可自行查看 [AUR 仓库地址](https://aur.archlinux.org/packages/minecraft-launcher) 下的评论。
+Arch Linux 官方仓库和 AUR 中存在一些原生支持的游戏，列举如下
 
-```bash
-sudo pacman -S minecraft-launcher #我的世界官服启动器（ArchLinuxCN）
-```
-
-除了官方启动器，还有一部分人使用 [HMCL](https://hmcl.huangyuhui.net/)（Hello Minecraft! Launcher）第三方启动器。[GitHub 地址](https://github.com/huanghongxun/HMCL) [MC BBS](https://www.mcbbs.net/thread-142335-1-1.html)
-
-```bash
-yay -S hmcl
-```
+- [shattered-pixel-dungeon](https://aur.archlinux.org/packages/shattered-pixel-dungeon/) 破碎像素地牢 生存游戏
+- [0ad](https://archlinux.org/packages/community/x86_64/0ad/) 被誉为开源帝国时代
+- [我的世界](https://aur.archlinux.org/packages/minecraft-launcher) 还有一部分人使用第三方启动器 [HMCL](https://aur.archlinux.org/packages/hmcl/)
+- [openra](https://archlinux.org/packages/community/any/openra/) 红警 1 的开源实现
 
 ## Steam
 
-群主的 SteamID: 144736794 。由于游戏实在太多，个人肯定无法完成购买全部。如有需要可以进行联络，群主可以测试在 Linux 上的可运行性。
+作者的 SteamID: 144736794 。由于游戏实在太多，个人肯定无法完成购买全部。如有需要可以进行联络，可以代为测试游戏在 Linux 上的可运行性。
 
 [官方文档](https://wiki.archlinux.org/index.php/Steam)
 
@@ -47,7 +33,7 @@ yay -S hmcl
 sudo pacman -S steam
 ```
 
-下面的清单是群主自身测试过，或者玩过的，在 Linux 下拥有`完美体验或者表现良好`的游戏列表，分为原生组和 [Steam Play](https://wiki.archlinux.org/index.php/Steam#Proton_Steam-Play) 组两类。关于非 Linux 平台的游戏，通过 Steam Play 运行的可玩程度，可通过[protondb](https://www.protondb.com/)这个网站进行查询。如果玩某个游戏出现问题，在这个网站里你也可以找到玩家 post 的各个游戏的修正方式。有时最新版 Proton 可能存在问题，这时自行尝试其他版本即可。
+下面的清单是作者自身测试过，或者玩过的，在 Linux 下拥有`完美体验或者表现良好`的游戏列表，分为原生组和 [Steam Play](https://wiki.archlinux.org/index.php/Steam#Proton_Steam-Play) 组两类。关于非 Linux 平台的游戏，通过 Steam Play 运行的可玩程度，可通过[protondb](https://www.protondb.com/)这个网站进行查询。如果玩某个游戏出现问题，在这个网站里你也可以找到玩家 post 的各个游戏的修正方式。有时最新版 Proton 可能存在问题，这时自行尝试其他版本即可。
 
 另外，github 上还存在一些官方 proton 的 fork 版本，如 [Proton GE](https://github.com/GloriousEggroll/proton-ge-custom)，可以支持一些额外的，官方暂不支持或支持不完善的游戏。使用方式也很简单，根据官方文档，下载 release 的压缩包到指定位置，重启 steam 后即可选择特定版本的 GE proton。
 
