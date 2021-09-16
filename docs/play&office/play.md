@@ -19,7 +19,7 @@ Arch Linux 官方仓库和 AUR 中存在一些原生支持的游戏，列举如�
 
 ## Steam
 
-作者的 SteamID: 144736794 。由于游戏实在太多，个人肯定无法完成购买全部。如有需要可以进行联络，可以代为测试游戏在 Linux 上的可运行性。
+由于游戏实在太多，个人肯定无法完成购买全部。如有需要可以进行联络，可以代为测试游戏在 Linux 上的可运行性。
 
 [官方文档](https://wiki.archlinux.org/index.php/Steam)
 
@@ -33,7 +33,7 @@ Arch Linux 官方仓库和 AUR 中存在一些原生支持的游戏，列举如�
 sudo pacman -S steam
 ```
 
-下面的清单是作者自身测试过，或者玩过的，在 Linux 下拥有`完美体验或者表现良好`的游戏列表，分为原生组和 [Steam Play](https://wiki.archlinux.org/index.php/Steam#Proton_Steam-Play) 组两类。关于非 Linux 平台的游戏，通过 Steam Play 运行的可玩程度，可通过[protondb](https://www.protondb.com/)这个网站进行查询。如果玩某个游戏出现问题，在这个网站里你也可以找到玩家 post 的各个游戏的修正方式。有时最新版 Proton 可能存在问题，这时自行尝试其他版本即可。
+下面的清单是在 Linux 下拥有`完美体验或者表现良好`的游戏列表，分为原生组和 [Steam Play](https://wiki.archlinux.org/index.php/Steam#Proton_Steam-Play) 组两类。关于非 Linux 平台的游戏，通过 Steam Play 运行的可玩程度，可通过[protondb](https://www.protondb.com/)这个网站进行查询。如果玩某个游戏出现问题，在这个网站里你也可以找到玩家 post 的各个游戏的修正方式。有时最新版 Proton 可能存在问题，这时自行尝试其他版本即可。
 
 另外，github 上还存在一些官方 proton 的 fork 版本，如 [Proton GE](https://github.com/GloriousEggroll/proton-ge-custom)，可以支持一些额外的，官方暂不支持或支持不完善的游戏。使用方式也很简单，根据官方文档，下载 release 的压缩包到指定位置，重启 steam 后即可选择特定版本的 GE proton。
 
