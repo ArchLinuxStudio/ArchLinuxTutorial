@@ -89,7 +89,7 @@ sudo systemctl enable --now v2raya
 
 随后在菜单中搜索 v2raya，点击即可打开浏览器页面。在其中加入订阅即可使用。在设置中建议开启全局透明代理，同时开始防止 DNS 劫持功能，否则可能会拿不到被 dns 污染的资源(如 github raw)。
 
-更多使用方法请看[官方文档](https://github.com/v2rayA/v2rayA/wiki)与[项目地址](https://github.com/v2rayA/v2rayA)
+更多使用方法请看[官方文档](https://v2raya.org/)与[项目地址](https://github.com/v2rayA/v2rayA)
 
 ## Qv2ray 3.0
 
