@@ -122,3 +122,20 @@ sudo pacman -S flameshot
 ```bash
 sudo systemctl enable --now teamviewerd
 ```
+
+## 本地文件检索
+
+- 您可以使用 kde 桌面环境下的 [krunner](https://wiki.archlinux.org/title/KRunner) 检索存储在电脑本地的文件
+  - 默认使用 alt+space 快捷键打开 krunner 的搜索栏
+  - 当然 krunner 的功能不止文件检索一种，可点击 krunner 搜索栏左侧的配置按钮进入配置页面，自定义更多配置，比如单位转换，启动软件，打开浏览器书签等实用的功能
+
+- 如果 krunner 在文件检索方面仍不能完全满足您对检索速度和实时性易用性方面的需求，您还可以尝试 [fsearch](https://aur.archlinux.org/packages/fsearch-git/)，一款实时性强，检索速度快且易用的本地文件检索工具
+
+```bash
+# 安装方式
+sudo pacman -S fsearch-git
+```
+
+- 您可以通过给 fsearch 配置快捷键的方式让平常使用中的文件检索更加方便，配置快捷键的方式大致如下
+
+- 依次找到“系统设置”-->“工作区”-->“快捷键”-->“自定义快捷键”，点击“编辑”-->“新建”-->“全局快捷键”-->“命令/URL”，定义一个新的动作名字为“FSearch”,点击右侧“触发器”-->“快捷键”，当框中的字符显示为“输入...”时，直接按键盘上你想要配置的组合键，笔者这里配置为了“meta+f”，再点击“动作”，“命令/URL”填写为“/usr/bin/fsearch”，最后“应用”该配置即可
