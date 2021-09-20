@@ -2,6 +2,15 @@
 
 本节将列出多媒体制作方向的各类优质软件，包括做直播，视频剪辑，图像编辑与绘制等方向所需的软件。
 
+## 录制电脑屏幕
+
+推荐 [simplescreenrecorder](https://www.maartenbaert.be/simplescreenrecorder/)
+
+```bash
+# 安装方式
+sudo pacman -S simplescreenrecorder
+```
+
 ## 直播推流及弹幕姬辅助软件
 
 直播以及录制在 linux 上使用[obs-studio](https://www.archlinux.org/packages/community/x86_64/obs-studio/)完成，用法与 windows 下基本一致。
