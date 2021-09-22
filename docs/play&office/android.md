@@ -2,6 +2,10 @@
 
 [官方文档](https://wiki.archlinux.org/index.php/android)
 
+## 为什么要刷机
+
+在目前市面上可见的各个手机品牌中，除了其自己魔改的闭源安卓手机系统外，几乎任何一个品牌都会预装上一系列的出厂应用，如浏览器，通讯录，应用市场等。这些应用均为闭源软件，由各个手机厂商开发提供。这里就存在严重的问题，这些魔改系统以及闭源应用软件可能会进行各种间谍功能，对使用者进行监控以及审计。据报告，小米以及华为手机均会对用户的搜索以及浏览进行上报，匹配到关键词如"西藏自由"，"台湾独立"，"民主自由"等词即会进行加密上报，这些关键词可能有成百上千个。由于此类原因，使得使用者必须对手机的系统进行重新刷入，选择一个开源可靠的 ROM 刷入手机可以保障自己的隐私及安全。在硬件层面，也存在审计与监控的可能性，但是目前尚未知明确且可靠的报告，如有条件，可选择非人身所在国家品牌的手机。
+
 前排提示：买手机最好买知名度大的品牌，较热门的机型，这样在刷机时可以方便的找到官方的 twrp 和知名的 ROM 包，如[魔趣](https://download.mokeedev.com/)，[LineageOS](https://lineageos.org/)，[crDroid](https://crdroid.net/), [Resurrection Remix](https://resurrectionremix.com/)，[PixelExperience](https://download.pixelexperience.org/devices)等。如果是较冷门的品牌，官方可能没有提供 ROM，只能在网上自行寻找个人改造过的 twrp 和上述 ROM 包的 unofficial ROM(比如乐视的[这个](https://forum.xda-developers.com/t/rom-7-1-2-mtk-x620-unofficial-beta-lineageos-14-1-leeco-le2-pro-02-april-2019.3724749/)和[这个](https://github.com/zaoqi-android/Le_X62X_AOSP6.0))。这种个人改造版本的安全性比较难说，而且还可能有更多的 bug。也有可能你翻遍全网，也找不到冷门机型能用（指好用的、非硬件提供商的官方 ROM）的 twrp 和 ROM。硬件方面，一般推荐买高通骁龙的 cpu,不要买联发科的，因为更多 ROM 的版本都是适配高通硬件的。
 
 首先需要安装 linux 上的安卓工具包
