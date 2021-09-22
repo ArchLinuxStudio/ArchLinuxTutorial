@@ -95,6 +95,10 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 更新 GRUB ，并重启即可。
 
+## 开机动画
+
+[Plymouth](https://fedoraproject.org/wiki/Releases/FeatureBetterStartup) 是一个来自于Fedora社区的提供美化启动图形界面的功能的项目，如有需要，可以参考[官方文档](https://wiki.archlinux.org/title/Plymouth_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87))进行配置。不建议新手在此项配置上花费太多时间。
+
 ---
 
 其余 KDE 桌面有很多配置项，大家可以自行探索。
