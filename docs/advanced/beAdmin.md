@@ -35,7 +35,7 @@ sudo some command   # 使普通用户以root权限执行某些命令
 
 ## Pacman 包管理
 
-在 Arch Linux 上安装的软件都通过 Pacman 来进行管理。你可以把它理解为一个软件管理器，可以进行软件的安装，删除，查询等。
+Pacman 是 Arch Linux 的包管理器，它用于安装、删除、查询软件等。
 
 ```bash
 sudo pacman -S package_name     # 安装软件包
