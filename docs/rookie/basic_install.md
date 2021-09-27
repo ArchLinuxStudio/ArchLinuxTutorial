@@ -24,6 +24,26 @@ ls /sys/firmware/efi/efivars
 
 ### 无线连接:
 
+先检查无线连接是否被禁用：
+
+```bash
+rfkill list # 检查无线设备状态
+```
+
+如果看到 Wireless LAN 有 blocked: yes，说明无线连接被禁用。
+
+```
+0: phy0: Wireless LAN
+	Soft blocked: yes
+	Hard blocked: yes
+```
+
+启用无线连接：
+
+```bash
+rfkill unblock wifi
+```
+
 无线连接使用 iwctl 进行：
 
 ```bash
@@ -34,6 +54,8 @@ station wlan0 get-networks      #列出网络 比如想连接CMCC-5AQ7这个无�
 station wlan0 connect CMCC-5AQ7 #进行连接 输入密码即可
 exit                            #成功后exit退出
 ```
+
+如果 `device list` 输出的 `Powered` 为 `off`（断电），则需要使用 `rfkill` 来启用 WIFI。
 
 ### 有线连接:
 
