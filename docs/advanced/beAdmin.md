@@ -39,6 +39,8 @@ sudo some command   # 使普通用户以root权限执行某些命令
 
 ```bash
 sudo pacman -S package_name     # 安装软件包
+sudo pacman -Syu package_name   # 升级系统并安装软件包，Arch Linux 不支持部分升级，建议用此命令先升级再安装
+sudo pacman -Syu                # 升级系统
 sudo pacman -Syyu               # 升级系统 yy标记强制刷新 u标记升级动作
 sudo pacman -R package_name     # 删除软件包
 sudo pacman -Rs package_name    # 删除软件包，及其所有没有被其他已安装软件包使用的依赖包
