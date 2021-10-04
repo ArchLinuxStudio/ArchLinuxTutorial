@@ -22,7 +22,11 @@ sudo pacman -S mesa lib32-mesa vulkan-intel lib32-vulkan-intel
 
 ### AMD 核芯显卡
 
-对于具有核芯显卡的 AMD 处理器，需要先确定核显架构(Architecture)是什么，再决定安装什么驱动。推荐在 [techpowerup 网站](https://www.techpowerup.com/)进行查询，信息非常全面。在确定了显卡架构后，再根据架构对照[这个文档](https://wiki.archlinux.org/index.php/Xorg#AMD)决定安装什么驱动。**对于 GCN2.0 及以下架构的老显卡，直接安装开源 ATI 驱动即可，原本闭源的老旧的 Catalyst 驱动在 2021 年已被废弃。GCN2.0 及以下架构的老显卡也不要使用开源的 AMPGPU 驱动，因为其仅处于实验性质，需要各种自定义内核编译选项与配置，非常麻烦，得不偿失。**对于新型号，即 GCN3 架构及更新型的核心显卡，直接安装开源驱动 AMDGPU 即可。
+对于具有核芯显卡的 AMD 处理器，需要先确定核显架构(Architecture)是什么，再决定安装什么驱动。推荐在 [techpowerup 网站](https://www.techpowerup.com/)进行查询，信息非常全面。在确定了显卡架构后，再根据架构对照[这个文档](https://wiki.archlinux.org/index.php/Xorg#AMD)决定安装什么驱动。**对于 GCN2.0 及以下架构的老显卡，直接安装开源 ATI 驱动即可，原本闭源的老旧的 Catalyst 驱动在 2021 年已被废弃。GCN2.0 及以下架构的老显卡也不要使用开源的 AMDGPU 驱动，因为其仅处于实验性质，需要各种自定义内核编译选项与配置，非常麻烦，得不偿失。**对于新型号，即 GCN3 架构及更新型的核心显卡，直接安装开源驱动 AMDGPU 即可，也就是以下这几个包。
+
+```bash
+sudo pacman -S mesa lib32-mesa xf86-video-amdgpu vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib32-libva-mesa-driver mesa-vdpau lib32-mesa-vdpau
+```
 
 - 比如你的笔记本 cpu 是目前常见的 AMD R7 4800U，那么它的核显为 Vega 8。通过查询，可知其为 GCN 5.0 架构，那么对照 arch 官方文档，你可选择安装 AMDGPU 开源驱动。
 - 再比如你的台式机 cpu 是目前常见的 锐龙 5 3400G，那么它的核显为 Vega 11。通过查询，可知其为 GCN 5.0 架构，那么对照 arch 官方文档，你可选择安装 AMDGPU 开源驱动。
