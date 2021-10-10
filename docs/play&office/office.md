@@ -10,17 +10,23 @@
 
 ## 即时通讯
 
-我们强烈建议你使用开源的通讯软件，这是为了你自身的自由，也是为了身边人的自由。telegram，中文名一般称为电报，是一个在世界广泛应用的开源通讯软件，注重隐私保护和单人通讯加密。
+我们强烈建议你使用开源的通讯软件，这是为了你自身的自由，也是为了身边人的自由。
 
+- telegram，中文名一般称为电报，是一个在世界广泛应用的开源通讯软件，注重隐私保护和单人通讯加密。
 ```bash
 sudo pacman -S telegram-desktop
 ```
-
+- irc，因特网中继聊天，是一种古老的交流方式，在开源社区中仍被广泛使用，常用的客户端有 WeeChat，以及 Emacs 的 erc。
 ```bash
-yay -S slack-desktop            #常见的团队合作交流软件
+yay -S weechat          
+```
+- slack，一个常见的团队合作交流软件
+```bash
+yay -S slack-desktop            
 ```
 
 除此之外 对于另外一些手机通讯软件在电脑上的投屏可以尝试使用[scrcpy](https://aur.archlinux.org/packages/scrcpy/)<sup>AUR</sup>。
+也可以使用 KDE Connect 在电脑上获取 Android 通知。
 
 ## 办公套件
 
