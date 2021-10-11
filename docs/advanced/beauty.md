@@ -27,7 +27,12 @@ proxychains systemsettings5 #通过代理打开系统设置
 
 ## 系统图标
 
-如果主题中的图标不能满足你，那么可以选择一些自定义的图标。_系统设置_ > _外观_ > _图标_ > _获取新图标主题_ ，搜索图标名 Tela-icon-theme，进行安装设置即可。
+如果主题中的图标不能满足你，那么可以选择一些自定义的图标。_系统设置_ > _外观_ > _图标_ > _获取新图标主题_ ，搜索图标名 Tela-icon-theme，进行安装设置即可。也可以通过 archlinuxcn 仓库安装。
+
+```bash
+sudo pacman -S tela-icon-theme-git
+sudo pacman -S tela-circle-icon-theme-git # 圆角版
+```
 
 ## SDDM 主题
 
