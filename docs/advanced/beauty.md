@@ -95,6 +95,19 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 更新 GRUB ，并重启即可。
 
+archlinuxcn 仓库也有很多 GRUB 主题，可以通过以下命令查找与安装。
+
+```bash
+pacman -Ss grub theme
+sudo pacman -S grub-theme-whitesur-white-1080p-git
+```
+
+GRUB 主题也是安装在 `/usr/share/grub/themes/`，所以配置方法和前面类似。也就是把 `/etc/default/grub` 的 `GRUB_THEME=` 修改为 `GRUB_THEME="/usr/share/grub/themes/whitesur-white-1080p/theme.txt"`，再执行
+
+```bash
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
+
 ## 开机动画
 
 [Plymouth](https://fedoraproject.org/wiki/Releases/FeatureBetterStartup) 是一个来自于Fedora社区的提供美化启动图形界面的功能的项目，如有需要，可以参考[官方文档](https://wiki.archlinux.org/title/Plymouth_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87))进行配置。不建议新手在此项配置上花费太多时间。
