@@ -45,7 +45,7 @@ sudo pacman -S steam
 
 - [武装突袭 3](https://store.steampowered.com/app/107410/Arma_3/) 完美运行。
 - [CS GO](https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/)
-  在 2021 年 gperftools 更新后，始终无法正常运行。可以尝试添加`-nojoy`参数或者拷贝系统 libtcmalloc_minimal.so 到游戏目录下[1](https://github.com/ValveSoftware/csgo-osx-linux/issues/2659#issuecomment-869013496)。这两种方式也有可能无效，依然无法运行，需要等 Steam 修复。
+  在 2021 年后，csgo 始终无法正常运行。崩溃问题初步判断为视频播放解码出错，解决方案见此[链接](https://github.com/ValveSoftware/csgo-osx-linux/issues/2659#issuecomment-934357559)。注意需要同时加上全屏 fullscreen 参数。
 - [十字军之王 3](https://store.steampowered.com/app/1158310/Crusader_Kings_III/) 经典的中世纪模拟器 第三部已经有官方中文了。若启动器闪退启动不了游戏，可以执行游戏目录的./binary/ck3 启动游戏。
 - [Dota2](https://store.steampowered.com/app/570/Dota_2/) 完美运行，提供 openGL 与 Vulkan 两种方案。目前已经可以输入中文。
 - [RimWorld](https://store.steampowered.com/app/294100/RimWorld/) 一款非常好玩的生存建设类游戏。
