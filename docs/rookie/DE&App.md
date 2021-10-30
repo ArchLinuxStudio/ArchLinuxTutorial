@@ -89,6 +89,22 @@ swapon /swapfile #启用swap文件
 
 KDE 自身提供开箱即用的睡眠功能(suspend)，即将系统挂起到内存，消耗少量的电量。休眠(hibernate)会将系统挂起到交换分区或文件，几乎不消耗电量。sleep 睡眠功能已可满足绝大多数人的需求，如果你一定需要休眠功能，可以参考[官方文档](https://wiki.archlinux.org/title/Power_management/Suspend_and_hibernate)设置休眠相关步骤。
 
+swappiness sysctl 参数代表了内核对于交换空间的喜好程度。Swappiness 的值为 0 到 200 之间 (在Linux内核版本低于5.8时最大值为100)，默认值为60。Swappiness 越高内核越倾向于使用交换空间。内存充足时使用较低的值（例如 10）可以提高响应能力。
+
+```bash
+# 查看 swappiness
+sysctl vm.swappiness
+# 临时设置 swappiness 为 10
+sudo sysctl -w vm.swappiness=10
+```
+
+如果要永久设置 swappiness，就编辑 `/etc/sysctl.d/99-swappiness.conf`，加入以下内容：
+
+```
+vm.swappiness=10
+```
+
+
 ## 6.开启 32 位支持库与 ArchLinuxCN 支持库
 
 ```bash
