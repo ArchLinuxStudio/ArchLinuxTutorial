@@ -210,6 +210,13 @@ export EDITOR='vim'
 sudo systemctl enable --now bluetooth
 ```
 
+如果要连接蓝牙音频设备，需要安装 `pulseaudio-bluetooth` 并重启 `pulseaudio`。
+
+```bash
+sudo pacman -S pulseaudio-bluetooth
+pulseaudio -k
+```
+
 <!-- ## 11.异型字体设置
 
 个人的设置是英文使用 Hack，中文使用 Noto Sans CJK SC。可以在系统设置->外观->字体中进行设置。如遇到`门复关`等字形现实为日型字体，有关用户全局级别更改日文异型字的设置，可参考[官方文档](<https://wiki.archlinux.org/index.php/Localization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)/Simplified_Chinese_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#%E4%BF%AE%E6%AD%A3%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%E6%98%BE%E7%A4%BA%E4%B8%BA%E5%BC%82%E4%BD%93%EF%BC%88%E6%97%A5%E6%96%87%EF%BC%89%E5%AD%97%E5%BD%A2>) -->
