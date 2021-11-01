@@ -44,6 +44,12 @@ sudo pacman -S mesa lib32-mesa xf86-video-amdgpu vulkan-radeon lib32-vulkan-rade
 sudo pacman -S nvidia nvidia-settings lib32-nvidia-utils #必须安装
 ```
 
+如果是 GeForce 630 以上到 GeForce 920 以下的老卡，安装 [nvidia-470xx-dkms](https://aur.archlinux.org/packages/nvidia-470xx-dkms/)<sup>AUR</sup>及其 32 位支持包。
+
+```bash
+yay -S nvidia-470xx-dkms nvidia-settings lib32-nvidia-470xx-utils
+```
+
 如果是 GeForce 630 以下到 GeForce 400 系列的老卡，安装 [nvidia-390xx-dkms](https://aur.archlinux.org/packages/nvidia-390xx-dkms/)<sup>AUR</sup>及其 32 位支持包。
 
 ```bash
