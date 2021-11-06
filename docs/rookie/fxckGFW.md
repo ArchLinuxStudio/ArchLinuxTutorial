@@ -95,6 +95,8 @@ sudo systemctl enable --now v2raya
 
 Qv2ray 最新版本已经转至 Shadowsocks-NET 项目组下，这里是[项目地址](https://github.com/Shadowsocks-NET/Qv2ray)。使用前首先删除旧版 qv2ray 以及不兼容的配置。同时需要注意，Qv2ray 3.0 与旧版插件不兼容。
 
+> Qv2ray 3.0 目前发开进度并不活跃，且最新发布为 RC 版本，可能存在一些小问题(如在 KDE 下任务栏右键存在误呼出的问题)，请斟酌使用。
+
 ```bash
 rm -rf ~/.config/qv2ray
 sudo pacman -R qv2ray-dev-git
