@@ -144,6 +144,8 @@ sudo pacman -S gwenview                                                     #图
 sudo pacman -S steam                                                        #稍后看完显卡驱动再使用 专有软件
 ```
 
+> 不要安装过多字体：在字体超过 255 种时，某些 QT 程序(如 Qv2ray)可能无法正确显示某些表情和符号，详见链接[1](https://wiki.archlinux.org/title/fonts#Emoji_and_symbols)。
+
 最后要安装 archlinuxcn 源的相关步骤。
 
 ```bash
