@@ -188,6 +188,16 @@ XMODIFIERS=@im=fcitx
 SDL_IM_MODULE=fcitx
 ```
 
+除了/etc/environment 外, environment.d 支持更多enviroment编辑位置，具体可以看environment.d的文档
+
+常使用的位置有
+
+* /etc/environment
+* /etc/environment.d/\*.conf
+* ~/.config/environment.d/\*.conf(需要de支持systemd启动，该位置为用户级位置)
+
+建立~/.config/environment.d文件夹，文件夹下新建inputmethod.conf,将上述内容写到conf里也有一样的效果
+
 打开 _系统设置_ > _区域设置_ > _输入法_，先点击`运行Fcitx`即可，拼音为默认添加项。如你还需要更多输入法如五笔，则再点击`添加输入法`，找到简体中文下的五笔 ，点击添加即可加入五笔输入法。
 
 接下来点击 _拼音_ 右侧的配置按钮，点选`云拼音`和`在程序中显示预编辑文本` 最后应用。
