@@ -188,21 +188,27 @@ XMODIFIERS=@im=fcitx
 SDL_IM_MODULE=fcitx
 ```
 
-除了/etc/environment 外, environment.d 支持更多enviroment编辑位置，具体可以看environment.d的文档
+除了/etc/environment 外, environment.d 支持更多enviroment编辑位置，具体可以看[environment.d](https://man.archlinux.org/man/environment.d.5)的文档
 
 常使用的位置有
+```
+ /etc/environment
+ /etc/environment.d/*.conf
+ ~/.config/environment.d/*.conf
+ ```
 
-* /etc/environment
-* /etc/environment.d/\*.conf
-* ~/.config/environment.d/\*.conf(需要de支持systemd启动，该位置为用户级位置)
-
-第三个位置gnome和kde现在是支持的，不过kde还存在一点小毛病，但是这里只涉及到输入法变量，所以不碍事。
+第三个位置需要de支持systemd启动，该位置为用户级位置, gnome和kde现在是支持的，不过kde还存在一点小毛病，但是这里只涉及到输入法变量，所以不碍事。
 
 建立~/.config/environment.d文件夹，文件夹下新建inputmethod.conf,将上述内容写到conf里也有一样的效果
 
+```bash
+mkdir ~/.config/environment.d
+touch ~/.config/environment.d/inputmethod.conf
+```
+
 Ps : 关于用户级位置设置PATH变量，kde暂时存在问题，是无法设置的，所以PATH变量在kde下没有变化是正常的。
 
-检查输入法是否设置成功，可以在重启后终端执行 _fcitx5-diagnose_ 进行检查，正常的话，除了emacs和qt4有点问题，其他都是绿色的，通过的
+检查输入法是否设置成功，可以在重启后终端执行 _fcitx5-diagnose_ 进行检查，正常的话，除了emacs和qt4有点问题，其他都是绿色的，通过的。
 
 打开 _系统设置_ > _区域设置_ > _输入法_，先点击`运行Fcitx`即可，拼音为默认添加项。如你还需要更多输入法如五笔，则再点击`添加输入法`，找到简体中文下的五笔 ，点击添加即可加入五笔输入法。
 
