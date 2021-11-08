@@ -179,7 +179,7 @@ sudo pacman -S fcitx5-pinyin-zhwiki #中文维基百科词库
 sudo pacman -S fcitx5-material-color #主题
 ```
 
-设置环境变量 编辑文件 `sudo vim /etc/environment` 加入以下内容。konsole 以及 dophin 都需要这些环境变量，倒是 chrome 和 firefox 都不需要就可以输入中文
+设置环境变量 编辑文件 `sudo vim /etc/environment` 加入以下内容。konsole 以及 dolphin 都需要这些环境变量，倒是 chrome 和 firefox 都不需要就可以输入中文
 
 ```bash
 GTK_IM_MODULE=fcitx
