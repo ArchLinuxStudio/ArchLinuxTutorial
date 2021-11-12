@@ -217,7 +217,26 @@ ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 hwclock --systohc
 ```
 
-## 15.设置 Locale
+## 15. 设置 DNS
+
+一般来说，如今大多电脑连接的路由器是可以自动处理 DNS 的，如果你的路由器不能处理，则需要额外进行 DNS 的设置。同时，如果使用 ISP 提供的默认 DNS,你的网络访问记录将存在泄露或被当局监视的风险。如下的配置将固定使用谷歌的 DNS,但是网络访问速度将会下降。
+
+编辑/etc/resolv.conf，将如下内容加入其中
+
+```bash
+nameserver 8.8.8.8
+nameserver 2001:4860:4860::8888
+nameserver 8.8.4.4
+nameserver 2001:4860:4860::8844
+```
+
+如果你的路由器可以自动处理 DNS,resolvconf 会在每次网络连接时用路由器的设置覆盖本机/etc/resolv.conf 中的设置，执行如下命令加入不可变标志，使其不能覆盖如上加入的配置[1](https://wiki.archlinux.org/title/Domain_name_resolution#Overwriting_of_/etc/resolv.conf)。
+
+```bash
+chattr +i /etc/resolv.conf
+```
+
+## 16.设置 Locale
 
 Locale 决定了软件使用的语言、书写习惯和字符集。
 
@@ -235,20 +254,20 @@ locale-gen
 echo 'LANG=en_US.UTF-8'  > /etc/locale.conf
 ```
 
-## 16.为 root 用户设置密码
+## 17.为 root 用户设置密码
 
 ```bash
 passwd root
 ```
 
-## 17.安装微码
+## 18.安装微码
 
 ```bash
 pacman -S intel-ucode   #Intel
 pacman -S amd-ucode     #AMD
 ```
 
-## 18.安装引导程序
+## 19.安装引导程序
 
 ```bash
 pacman -S grub efibootmgr   #grub是启动引导器，efibootmgr被 grub 脚本用来将启动项写入 NVRAM。
@@ -274,7 +293,7 @@ mkdir -p /efi/EFI/BOOT
 mv /efi/EFI/GRUB/grubx64.efi /efi/EFI/BOOT/BOOTX64.EFI
 ```
 
-## 19.完成安装
+## 20.完成安装
 
 ```bash
 exit                # 退回安装环境#
