@@ -13,5 +13,5 @@
   "scripts": {
     "start": "docsify serve docs"
   },
-  "license": "CC-BY-SA-4.0"
+  "license": "CC-BY-NC-ND-4.0"
 }
