@@ -2,15 +2,7 @@
 
 本节从安装最基础的无图形化 ArchLinux 系统开始。[官方安装指南](https://wiki.archlinux.org/index.php/Installation_guide)
 
-## 1.禁用 reflector
-
-2020 年新版 archliveiso 加入了 reflector 服务，它会自己更新 mirrorlist。在特定情况下，它会误删某些有用的源信息。这里启动后的第一件事就是将其禁用。也许它是一个好用的工具，但是很明显，它并不适合在安装的时候面向新手启用，尤其在中国。
-
-```bash
-systemctl stop reflector.service
-```
-
-## 2.再次确保是否为 UEFI 模式
+## 1.再次确保是否为 UEFI 模式
 
 在一系列的信息刷屏后，可以看到已经以 root 登陆安装系统了，此时可以执行的命令：
 
@@ -20,29 +12,9 @@ ls /sys/firmware/efi/efivars
 
 若输出了一堆东西，即 efi 变量，则说明已在 UEFI 模式。否则请确认你的启动方式是否为 UEFI。
 
-## 3.连接网络
+## 2.连接网络
 
 ### 无线连接:
-
-先检查无线连接是否被禁用：
-
-```bash
-rfkill list # 检查无线设备状态
-```
-
-如果看到 Wireless LAN 有 blocked: yes，说明无线连接被禁用。
-
-```
-0: phy0: Wireless LAN
-	Soft blocked: yes
-	Hard blocked: yes
-```
-
-启用无线连接：
-
-```bash
-rfkill unblock wifi
-```
 
 无线连接使用 iwctl 进行：
 
@@ -55,7 +27,25 @@ station wlan0 connect CMCC-5AQ7 #进行连接 输入密码即可
 exit                            #成功后exit退出
 ```
 
-如果 `device list` 输出的 `Powered` 为 `off`（断电），则需要使用 `rfkill` 来启用 WIFI。
+无线设备有时会被禁用，如果 `device list` 输出的 Powered 字段为 off（断电），则需要使用 `rfkill` 来启用 WIFI。若无法正确建立连接，先检查无线设备状态
+
+```bash
+rfkill list
+```
+
+如果看到 blocked: yes 字样，说明无线连接被禁用，首先再次确保硬件无线开关属于开启状态。
+
+其次尝试启用无线连接[[1]](https://wiki.archlinux.org/index.php/Network_configuration/Wireless#Check_the_driver_status)：
+
+```bash
+ip link set wlan0 up #比如无线网卡看到叫 wlan0
+```
+
+若看到类似`Operation not possible due to RF-kill`的报错，继续尝试`rfkill unblock wifi`来解锁无线网卡。
+
+```bash
+rfkill unblock wifi
+```
 
 ### 有线连接:
 
@@ -63,30 +53,35 @@ exit                            #成功后exit退出
 
 可以等待几秒等网络建立链接后再进行下步测试网络的操作。
 
-## 4.测试网络
+## 3.测试网络
 
 ```bash
 ping www.gnu.org
 ```
 
-稍等片刻，若能看到数据返回，即说明已经联网，ctrl+c 终止退出当前命令。如果还是无法连接，使用 `ip link set xxx up` 命令确认你已经激活了对应的网卡，再重新继续网络链接与测试。若看到类似`Operation not possible due to RF-kill`的报错，继续尝试`rfkill unblock wifi`来解锁无线网卡。[[1]](https://wiki.archlinux.org/index.php/Network_configuration/Wireless#Check_the_driver_status)
-
-## 5.更新系统时钟
+## 4.更新系统时钟
 
 ```bash
 timedatectl set-ntp true    #将系统时间与网络时间进行同步
 timedatectl status          #检查服务状态
 ```
 
-## 6.更换国内镜像源加快下载速度
+## 5.更换国内镜像源加快下载速度
+
+目前 reflector 会为你选择速度合适的镜像源，一般为亚洲镜像点，如有需要，可以自行再添加所需的镜像源：
 
 ```bash
-vim /etc/pacman.d/mirrorlist    #不会vim的同学，此处注意视频中的vim操作步骤
+vim /etc/pacman.d/mirrorlist
 ```
 
-放在最上面的是会使用的更新源,把中科大 ustc 的或者清华的放在最上面。
+放在最上面的行是会使用的更新源,可以选择添加中科大或者清华的放在最上面。
 
-## 7.分区
+```
+Server = https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch
+Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
+```
+
+## 6.分区
 
 这里总共设置三个分区，可以满足绝大多数人的需求。此步骤会清除磁盘中全部内容，请事先确认。
 
@@ -116,7 +111,7 @@ fdisk -l #复查磁盘情况
 
 cfdisk 分区的详细操作见视频中的操作。一般建议将 EFI 分区设置为磁盘的第一个分区，据说有些主板如果不将 EFI 设置为第一个分区，可能有不兼容的问题。
 
-## 8.格式化
+## 7.格式化
 
 这里的 sdax 只是例子，具体根据你的实际情况来，请注意视频中的操作。
 
@@ -126,7 +121,7 @@ mkfs.ext4  /dev/sdax            #格式化根目录和home目录的两个分区
 mkfs.vfat  /dev/sdax            #格式化efi分区
 ```
 
-## 9.挂载
+## 8.挂载
 
 在挂载时，挂载是有顺序的，需要从根目录开始挂载  
 这里的 sdax 只是例子，具体根据你的实际情况来，请注意视频中的操作。
@@ -139,21 +134,21 @@ mkdir /mnt/efi
 mount /dev/sdax /mnt/efi
 ```
 
-## 10.安装系统
+## 9.安装系统
 
 基础包
 
 ```bash
-pacstrap /mnt base base-devel linux linux-firmware  #base-devel在AUR包的安装是必须的
+pacstrap /mnt base base-devel linux linux-headers linux-firmware  #base-devel在AUR包的安装是必须的
 ```
 
 功能性软件
 
 ```bash
-pacstrap /mnt dhcpcd iwd vim sudo bash-completion   #一个有线所需 一个无线所需 一个编辑器  一个提权工具 一个补全工具 iwd也需要dhcpcd
+pacstrap /mnt dhcpcd iwd vim bash-completion   #一个有线所需 一个无线所需 一个编辑器 一个补全工具 iwd也需要dhcpcd
 ```
 
-## 11.生成 fstab 文件
+## 10.生成 fstab 文件
 
 fstab 用来定义磁盘分区
 
@@ -167,7 +162,7 @@ genfstab -U /mnt >> /mnt/etc/fstab
 cat /mnt/etc/fstab
 ```
 
-## 12.change root
+## 11.change root
 
 把环境切换到新系统的/mnt 下
 
@@ -175,7 +170,7 @@ cat /mnt/etc/fstab
 arch-chroot /mnt
 ```
 
-## 13.设置主机名与时区
+## 12.设置主机名与时区
 
 首先在`/etc/hostname`设置主机名
 
@@ -209,7 +204,7 @@ vim /etc/hosts
 ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 ```
 
-## 14.硬件时间设置
+## 13.硬件时间设置
 
 将系统时间同步到硬件时间
 
@@ -217,7 +212,7 @@ ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 hwclock --systohc
 ```
 
-## 15. 设置 DNS
+## 14. 设置 DNS
 
 一般来说，如今大多电脑连接的路由器是可以自动处理 DNS 的，如果你的路由器不能处理，则需要额外进行 DNS 的设置。同时，如果使用 ISP 提供的默认 DNS,你的网络访问记录将存在泄露或被当局监视的风险。如下的配置将固定使用谷歌的 DNS,但是网络访问速度将会下降。
 
@@ -236,7 +231,7 @@ nameserver 2001:4860:4860::8844
 chattr +i /etc/resolv.conf
 ```
 
-## 16.设置 Locale
+## 15.设置 Locale
 
 Locale 决定了软件使用的语言、书写习惯和字符集。
 
@@ -254,27 +249,27 @@ locale-gen
 echo 'LANG=en_US.UTF-8'  > /etc/locale.conf
 ```
 
-## 17.为 root 用户设置密码
+## 16.为 root 用户设置密码
 
 ```bash
 passwd root
 ```
 
-## 18.安装微码
+## 17.安装微码
 
 ```bash
 pacman -S intel-ucode   #Intel
 pacman -S amd-ucode     #AMD
 ```
 
-## 19.安装引导程序
+## 18.安装引导程序
 
 ```bash
 pacman -S grub efibootmgr   #grub是启动引导器，efibootmgr被 grub 脚本用来将启动项写入 NVRAM。
-grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB #取名为GRUB 并将grubx64.efi安装到之前的指定位置
+grub-install --target=x86_64-efi --efi-directory=/efi --removable
 ```
 
-接下来编辑/etc/default/grub 文件，去掉`GRUB_CMDLINE_LINUX_DEFAULT`一行中最后的 quiet 参数，同时把 log level 的数值从 3 改成 5。这样是为了后续如果出现系统错误，方便排错。同时加入 nowatchdog 参数，这可以显著提高开关机速度。不会 vim 的同学注意视频中的操作。
+接下来编辑/etc/default/grub 文件，去掉`GRUB_CMDLINE_LINUX_DEFAULT`一行中最后的 quiet 参数，同时把 log level 的数值从 3 改成 5。这样是为了后续如果出现系统错误，方便排错。同时在同一行加入 nowatchdog 参数，这可以显著提高开关机速度。不会 vim 的同学注意视频中的操作。
 
 ```bash
 vim /etc/default/grub
@@ -286,14 +281,9 @@ vim /etc/default/grub
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-> 在某些主板安装完成后，你会发现没有启动条目。这是因为某些主板的 UEFI 固件在显示 UEFI NVRAM 引导条目之前，需要在特定的位置存放可引导文件，不支持自定义存放 efi 文件(如微星 Z170-A Gaming PRO)。解决方案是在默认启动路径下安装 GRUB。重新插入安装优盘，挂载目录，chroot 到/mnt，然后你可以直接把已经生成好的 efi 文件移动到默认目录下，如下代码所示。只有安装完成后你的主板不出现启动条目才需要尝试如下命令，正常安装无需执行。[官方参考文档](https://wiki.archlinux.org/index.php/GRUB#Default/fallback_boot_path)
+> 我们在之前的命令中指定--removable 参数已经可以解决一些主板 NVRAM 的兼容性问题。如不加此参数，在某些主板安装完成后，你会发现没有 nvme 启动条目。这是因为某些主板的 UEFI 固件在显示 UEFI NVRAM 引导条目之前，需要在特定的位置存放可引导文件，不支持自定义存放 efi 文件(如微星 Z170-A Gaming PRO)[[1]](https://wiki.archlinux.org/index.php/GRUB#Default/fallback_boot_path)。除此之外，如果你的主板是一些较老的型号，如 intel 9 系列以下或者较老 AMD 的主板，它们很可能不支持从 nvme 启动系统，虽然可以通过修改 BIOS 加入 NVME 支持模块来解决，但这不在本文讨论范围内。
 
-```bash
-mkdir -p /efi/EFI/BOOT
-mv /efi/EFI/GRUB/grubx64.efi /efi/EFI/BOOT/BOOTX64.EFI
-```
-
-## 20.完成安装
+## 19.完成安装
 
 ```bash
 exit                # 退回安装环境#
@@ -317,4 +307,4 @@ iwctl               #和之前的方式一样，连接无线网络
 
 到此为止，一个基础的，无 UI 界面的 Arch Linux 已经安装完成了。紧接着下一节，我们来安装图形界面。
 
-> archlinux 在 2021 年 4 月在安装镜像中内置了一个[安装脚本](https://archlinux.org/packages/extra/any/archinstall/)，其就是类似一个一键安装脚本，提供一些选项，即可快速安装。其和所有一键安装脚本类似，提供自动化，且不灵活的安装过程。缺陷为：只提供有限的文件系统格式、只可限定在一个磁盘、不能指定源、只提供有限的桌面选择、自动分区不可手动干预、输入错误直接崩溃退出、仅支持 UEFI 等。不建议使用这种安装脚本，除了以上各种原因，初学者也无法在这种安装过程中学到任何东西。如果你因为任何原因需要快速启动一个基础的 archlinux 环境，那么可以尝试此脚本。
+> archlinux 在 2021 年 4 月在安装镜像中内置了一个[安装脚本](https://archlinux.org/packages/extra/any/archinstall/)，提供一些选项，即可快速安装。其和所有一键安装脚本类似，提供自动化，且不灵活的安装过程。缺陷为：只提供有限的文件系统格式、只可限定在一个磁盘、不能指定源、只提供有限的桌面选择、自动分区不可手动干预、仅支持 UEFI 等。不建议使用这种安装脚本，除了以上各种原因，初学者也无法在这种安装过程中学到任何东西。如果你因为任何原因需要快速启动一个基础的 archlinux 环境，那么可以尝试此脚本。
