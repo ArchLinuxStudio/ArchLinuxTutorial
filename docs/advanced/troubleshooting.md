@@ -75,3 +75,11 @@ qdbus org.kde.KWin /Compositor resume   #开启
 
 
 ```
+
+### 屏幕溢出: overscan
+
+在连接一些老式的显示设备时，可能与出现[overscan](https://en.wikipedia.org/wiki/Overscan)的现象，简单来说就是电视屏幕四圈会有一圈溢出了，不显示出来。对于英特尔核芯显卡，可以选择 intel panel fitter 的方式[[1]](https://askubuntu.com/questions/508358/overscanning-picture-problem-using-hdmi-with-intel-graphics)。最后就是要加入到一个 service 里开机自动启动，并且是在 DE 加载完成后执行[[2]](https://unix.stackexchange.com/questions/397853/how-to-set-a-systemd-unit-to-start-after-loading-the-desktop)。
+
+```
+sudo intel_panel_fitter -p A -x 1230 -y 700
+```
