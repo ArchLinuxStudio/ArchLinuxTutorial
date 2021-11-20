@@ -42,7 +42,7 @@ proxychains systemsettings5 #通过代理打开系统设置
 在任务栏空白处右键，选择编辑面板，添加部件。
 
 - Netspeed widget 网速组件，这个很实用
-- simple monitor 系统信息
+- simple system monitor 系统信息
 - todolist 任务组件
 
 然后把你经常使用的软件固定在任务栏即可。
