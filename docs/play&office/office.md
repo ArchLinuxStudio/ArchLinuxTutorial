@@ -12,7 +12,13 @@
 
 我们强烈建议你使用开源的通讯软件，这是为了你自身的自由，也是为了身边人的自由。
 
-- telegram，中文名一般称为电报，是一个在世界广泛应用的开源通讯软件，注重隐私保护和单人通讯加密。使用 telegram 请务必使用虚拟电话注册，以及关闭本机联系人功能。
+- telegram，中文名一般称为电报，是一个在世界广泛应用的开源通讯软件，注重隐私保护和单人通讯加密。使用 telegram 请务必使用虚拟电话注册，同时需要如下设置:  
+  Who can see my phone number 为 Nobody；  
+  Who can find me by my number 为 My contacts；  
+  把 Sync contact 关掉；  
+  选择 Delete synced contacts;
+
+这样设置后即使之前有联系人，也无法再次关联到你。
 
 ```bash
 sudo pacman -S telegram-desktop
