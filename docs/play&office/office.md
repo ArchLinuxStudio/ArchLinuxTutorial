@@ -13,16 +13,27 @@
 我们强烈建议你使用开源的通讯软件，这是为了你自身的自由，也是为了身边人的自由。
 
 - telegram，中文名一般称为电报，是一个在世界广泛应用的开源通讯软件，注重隐私保护和单人通讯加密。
+
 ```bash
 sudo pacman -S telegram-desktop
 ```
-- irc，因特网中继聊天，是一种古老的交流方式，在开源社区中仍被广泛使用，常用的客户端有 WeeChat，以及 Emacs 的 erc。
+
+- qTox 是一款基于 tox 制作的端对端加密即时通讯工具。tox 最初的想法就是创建一个即时通讯工具，无需使用中央服务器即可运行，并且点对点，端到端加密，保证用户通信的保密性和安全性。
+
 ```bash
-yay -S weechat          
+sudo pacman -S qtox
 ```
-- slack，一个常见的团队合作交流软件
+
+- element 一款基于开源 Matrix 协议的去中心化即时通讯应用。
+
 ```bash
-yay -S slack-desktop            
+sudo pacman -S element-desktop
+```
+
+- irc，因特网中继聊天，是一种古老的交流方式，在开源社区中仍被广泛使用，常用的客户端有 WeeChat，以及 Emacs 的 erc。
+
+```bash
+yay -S weechat
 ```
 
 除此之外 对于另外一些手机通讯软件在电脑上的投屏可以尝试使用[scrcpy](https://aur.archlinux.org/packages/scrcpy/)<sup>AUR</sup>。
