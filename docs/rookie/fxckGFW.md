@@ -8,8 +8,6 @@
 
 ## 已有科学上网的节点的情况
 
-此处提供一个机场推荐，机场用于获得节点。可以点击[此处](https://foxicloud.com/#/register?code=cLoCawdD)注册后可直接购买。如果你尚无科学上网手段，可以访问此[墙内链接](https://geilicloud.com/#/register?code=cLoCawdD)进行购买
-
 不论你是从机场处获得节点或者任何其他地方获得，如果你已经有了形如`vmess://`或`ss://`前缀的节点，那么可以直接使用 linux 上非常好用的 [Qv2ray](https://qv2ray.net/) 进行科学上网。它是跨平台的，你在 Windows 与 macOS 上均可使用。安装如下几个包：
 
 ```bash
