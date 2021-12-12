@@ -89,27 +89,13 @@ swapon /swapfile #启用swap文件
 
 KDE 自身提供开箱即用的睡眠功能(suspend)，即将系统挂起到内存，消耗少量的电量。休眠(hibernate)会将系统挂起到交换分区或文件，几乎不消耗电量。sleep 睡眠功能已可满足绝大多数人的需求，如果你一定需要休眠功能，可以参考[官方文档](https://wiki.archlinux.org/title/Power_management/Suspend_and_hibernate)设置休眠相关步骤。
 
-## 6.开启 32 位支持库与 ArchLinuxCN 支持库
+## 6.开启 32 位支持库
 
 ```bash
 vim /etc/pacman.conf
 ```
 
-去掉[multilib]一节中两行的注释，来开启 32 位库支持。  
-在文档结尾处加入下面的文字，来开启 ArchLinuxCN 源。
-
-```bash
-[archlinuxcn]
-Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch
-```
-
-上面服务器的地址是中科大的，也可用下面清华的。
-
-```bash
-Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
-```
-
-[此处](https://github.com/archlinuxcn/mirrorlist-repo#arch-linux-cn-community-repo-mirrors-list)为 archlinuxcn 全部仓库地址 可以根据自己实际情况另行选择。
+去掉[multilib]一节中两行的注释，来开启 32 位库支持。
 
 最后:wq 保存退出，刷新 pacman 数据库
 
@@ -142,18 +128,10 @@ sudo pacman -S ark                                                          #与
 sudo pacman -S packagekit-qt5 packagekit appstream-qt appstream             #确保Discover(软件中心）可用 需重启
 sudo pacman -S gwenview                                                     #图片查看器
 sudo pacman -S steam                                                        #稍后看完显卡驱动再使用 专有软件
+sudo pacman -S git
 ```
 
 > 不要安装过多字体：在字体超过 255 种时，某些 QT 程序可能无法正确显示某些表情和符号，详见链接[1](https://wiki.archlinux.org/title/fonts#Emoji_and_symbols)。
-
-最后要安装 archlinuxcn 源的相关步骤。
-
-```bash
-sudo pacman -S archlinuxcn-keyring                                          #cn源中的签名(archlinuxcn-keyring在archLinuxCn)
-sudo pacman -S yay                                                          #yay命令可以让用户安装AUR中的软件(yay在archLinuxCn)
-```
-
-若安装 archlinuxcn-keyring 时报错，是由于密钥环的问题，可先按照[此链接](https://www.archlinuxcn.org/gnupg-2-1-and-the-pacman-keyring/)执行其中的命令，再安装 archlinuxcn-keyring
 
 ## 8.设置系统为中文
 
@@ -165,7 +143,19 @@ sudo pacman -S yay                                                          #yay
 
 > 很多人会错误的更改 _System Settings_ > _Regional Settings_ > _Formats_ 中的值为中文蒙古(mn_CN)，默认，或者其他值，这会导致系统中一半英文一半中文。这里的值要保持默认的 en_US 或 zh_CN,或者改为你在 locale.gen 中添加的任意一种语言。
 
-## 9.安装输入法
+## 9.安装 yay
+
+AUR 为 archlinux user repository。任何用户都可以上传自己制作的 AUR 包，这也是 Arch Linux 可用软件众多的原因。由于任何人都可上传，也存在对应的风险，一般选用大众认可的包即可。
+
+使用 [yay](https://github.com/Jguer/yay) 可以安装 AUR 中的包。执行如下命令安装 yay。
+
+```bash
+git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si
+```
+
+> 一般简单来说使用 bin 包会较少遇到网络封锁的问题，经测试 yay-bin 包可在中国大陆拉取。如你在此过程中卡住可以尝试 ctrl+c 终止命令后重新尝试下载，也可尝试更换手机热点的网络环境再次进行下载，后文同理。
+
+## 10.安装输入法
 
 [Fcitx5 官方文档](<https://wiki.archlinux.org/index.php/Fcitx5_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)>)  
 中文及日文输入法均体验良好。
@@ -174,7 +164,7 @@ sudo pacman -S yay                                                          #yay
 sudo pacman -S fcitx5-im #基础包组
 sudo pacman -S fcitx5-chinese-addons #官方中文输入引擎
 sudo pacman -S fcitx5-anthy #日文输入引擎
-sudo pacman -S fcitx5-pinyin-moegirl #萌娘百科词库 二刺猿必备(ArchLinuxCn)
+yay -S fcitx5-pinyin-moegirl #萌娘百科词库
 sudo pacman -S fcitx5-pinyin-zhwiki #中文维基百科词库
 sudo pacman -S fcitx5-material-color #主题
 ```
@@ -196,7 +186,7 @@ SDL_IM_MODULE=fcitx
 
 注销，重新登陆，就可以发现已经可以在各个软件中输入中文了
 
-## 10.配置系统默认编辑器
+## 11.配置系统默认编辑器
 
 默认情况下，Arch Linux 在一些终端编辑场景使用 vi 编辑器，但是我们使用 vim。如果不做一个额外配置，在 git 等场景下，在终端调用编辑器会出错。编辑~/.bashrc 文件，加入如下内容，将 vim 设置为默认 EDITOR
 
@@ -204,7 +194,7 @@ SDL_IM_MODULE=fcitx
 export EDITOR='vim'
 ```
 
-## 11.启动蓝牙(若有)
+## 12.启动蓝牙(若有)
 
 如果你有蓝牙设备，需要启用蓝牙服务。随后在系统设置中进行添加设备与连接即可。
 

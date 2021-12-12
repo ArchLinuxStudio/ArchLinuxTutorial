@@ -8,17 +8,22 @@
 
 ## 已有科学上网的节点的情况
 
-不论你是从机场处获得节点或者任何其他地方获得，如果你已经有了形如`vmess://`或`ss://`前缀的节点，那么可以直接使用 linux 上非常好用的 [Qv2ray](https://qv2ray.net/) 进行科学上网。它是跨平台的，你在 Windows 与 macOS 上均可使用。安装如下几个包：
+不论你是从机场处获得节点或者任何其他地方获得，如果你已经有了形如`vmess://`或`ss://`前缀的节点，那么可以直接使用 linux 上非常好用的 [Qv2ray](https://qv2ray.net/) 进行科学上网。它是跨平台的。Qv2ray 最新版本 3.0 已经转至 Shadowsocks-NET 项目组下，这里是[项目地址](https://github.com/Shadowsocks-NET/Qv2ray)。
+
+安装如下几个包：
 
 ```bash
-sudo pacman -S qv2ray-dev-git v2ray
+sudo pacman -S v2ray
+yay -S qv2ray-static-bin-nightly
 ```
+
+安装后在 Plugins 中，选择 V2ray Core Plugin，并进行 V2ray 的设置。现在你已经可以使用。
+
+> 在 Qv2ray3.0 中 VMESS MD5 与非 0 的 AlterID 的形式已不被支持，若你的机场或节点下发的 AlterID 是非 0 是无法使用的。如果服务端支持，你可将 AlterID 改为 0 来使用 VMessAEAD 形式。
 
 你需要按照官方文档导入已有的链接，其余细节请详细阅读 Qv2ray 的文档。
 
 > 需要注意的是，最新的 qv2ray 已经将机场的默认订阅类型改为规范:SIP008。如果你的机场订阅类型为 base64,则需要在分组->订阅设置->订阅类型 中，将 SIP008 改为 base64,否则你将拿不到任何订阅链接中的节点。
-
-如果你不使用原生 shadowsocks/v2ray 而是其余方式，请在 AUR 搜索关键字 qv2ray-plugin，在[结果](https://aur.archlinux.org/packages/?O=0&K=qv2ray-plugin)中选取你所需要的对应插件进行安装。
 
 在节点链接后，Qv2ray 会自行为你设置系统代理。注意，`系统设置`中的代理配置在 KDE 桌面环境中并不是所有应用都会遵守，经过测试，chrome/chromium 浏览器与 steam 会遵循 KDE 的系统代理设置。没有遵循系统设置代理的应用还需要单独进行代理配置。下面说明几种常用的软件中配置代理的方式。
 
@@ -48,15 +53,7 @@ sudo pacman -S qv2ray-dev-git v2ray
   sudo vim /etc/proxychains.conf
   ```
 
-  把配置文件中最后一行改为本地代理的 ip 和端口，如`socks5 127.0.0.1 1089`  
-  同时搜索`proxy_dns`， 在这一行前添加#注释掉此行，否则使用 proxychains 启动 yay 会报错  
-  使用代理方式为在单一命令前添加 proxychains
-
-  ```bash
-  proxychains yay -S crossover
-  ```
-
-  拓展链接: [windows 版本 proxychains 的自述文档](https://github.com/shunf4/proxychains-windows/blob/master/README_zh-Hans.md)
+  把配置文件中最后一行改为本地代理的 ip 和端口，如`socks5 127.0.0.1 1089`
 
 ## 没有节点，需要自建的节点的情况
 
@@ -66,20 +63,18 @@ sudo pacman -S qv2ray-dev-git v2ray
 - [防御 GFW 主动探测的实用指南](https://gfw.report/blog/ss_advise/zh/)
 - [Shadowsocks 是如何被检测和封锁的](https://gfw.report/talks/imc20/zh/)
 
-备用手段：建议自建备用，或持有多个机场。不想花钱的或者自备一下[lantern](https://aur.archlinux.org/packages/lantern-bin/)这类软件以防万一。还有一些电报群组有共享的链接资源，如[这个](https://t.me/wtovpn)或者[这个](https://t.me/TG_Mtproxy_1)。
+备用手段：建议自建备用，或持有多个机场。不想花钱的或者自备一下[lantern](https://aur.archlinux.org/packages/lantern-bin/)以防万一。还有一些电报群组有共享的链接资源，如[这个](https://t.me/wtovpn)或者[这个](https://t.me/TG_Mtproxy_1)。使用公共节点需要自行承担可能的风险。
 
-## 有关 qv2ray 的替代
+## 更加全面的系统级全局代理
 
-2021 年 4 月 28 日，qv2ray 迄今为止的代码量最大贡献者 gcc 宣布退出开发。
+由以上各部分可以看到，为各个软件单独设置代理是很麻烦的。如果你把 Linux 作为主力使用，那么配置透明代理也是必须的，可以阅读随后的[透明代理](advanced/transparentProxy)一节。
 
-起因在于其意在取消对 xray 的支持，并在检测到错误配置的 xray 时导致程序崩溃。xray 从诞生起始终在社区中存在争议。而社区中另外一位仓库 owner 认为这种处理方式太过偏激，不同意这种举措。在交流无果后此 owner 取消了其仓库权限，并将其移除 qv2ray workgroup。这种做法显然是其在感情上无法接受的，随后其注销了 github 帐号并宣布退出开发。而随后 xray 频道发表的公告明显带有严重的主观感情色彩，没有客观的描述事件本身，顺便借题发挥式的中伤开源软件。此公告没有任何实际意义，只会加剧误解的程度。
-
-Qv2ray 项目已经 archived，这里记录一种 qv2ray 的替代方案。
+## 备选方案 V2rayA
 
 V2rayA 是一个浏览器客户端，在 linux 下支持全局代理，非常方便。可以直接在 AUR 进行安装。安装后需启动服务
 
 ```bash
-yay -S v2raya v2ray
+yay -S v2raya-bin
 sudo systemctl enable --now v2raya
 ```
 
@@ -87,33 +82,22 @@ sudo systemctl enable --now v2raya
 
 更多使用方法请看[官方文档](https://v2raya.org/)与[项目地址](https://github.com/v2rayA/v2rayA)
 
-## Qv2ray 3.0
+## 常见问题
 
-Qv2ray 最新版本已经转至 Shadowsocks-NET 项目组下，这里是[项目地址](https://github.com/Shadowsocks-NET/Qv2ray)。使用前首先删除旧版 qv2ray 以及不兼容的配置。同时需要注意，Qv2ray 3.0 与旧版插件不兼容。
-
-> Qv2ray 3.0 目前开发进度并不活跃，且最新发布为 RC 版本，可能存在一些小问题(如在 KDE 下任务栏右键存在误呼出的问题)，请斟酌使用。
+- 如果你先前使用过 2.x 的旧版本 Qv2ray ，需要首先删除旧版 Qv2ray 以及不兼容的配置。同时需要注意，Qv2ray 3.0 与旧版插件不兼容。
 
 ```bash
 rm -rf ~/.config/qv2ray
 sudo pacman -R qv2ray-dev-git
 ```
 
-接下来可安装其 AUR 包
+- 如果你不使用常见的 ss/vmess 而是其余方式，目前 Qv2ray 3.0 并不支持，如有需要可以选择安装 2.7 版本的 `qv2ray-dev-git` 并安装对应插件。请在 AUR 搜索关键字 qv2ray-plugin，在[结果](https://aur.archlinux.org/packages/?O=0&K=qv2ray-plugin)中选取你所需要的对应插件进行安装。注意，安装此包需要翻墙，你可以使用终端代理，或者后续讲述的透明代理。
 
-```bash
-yay -S qv2ray-static-bin-nightly
-```
-
-安装后在 Plugins 中，选择 V2ray Core Plugin，并进行 V2ray 的设置。现在你已经可以使用。
-
-> 在 Qv2ray3.0 中 VMESS MD5 与非 0 的 AlterID 的形式已不被支持，若你的机场或节点下发的 AlterID 是非 0 是无法使用的。如果服务端支持，你可将 AlterID 改为 0 来使用 VMessAEAD 形式。
-
-## 更加全面的系统级全局代理
-
-由以上各部分可以看到，为各个软件单独设置代理还是较为麻烦。如果这种方式可以满足你的需求，那么你可以到此为止。如果你把 Linux 作为主力使用，那么强烈建议你配置透明代理，可以阅读进阶章节中的[透明代理](advanced/transparentProxy)一文。
+- proxychains 不能够支持 yay 以及其他一些程序，详见[Incompatible with proxychains](https://github.com/Jguer/yay/issues/429)。这种情况可以考虑终端代理或者透明代理，更推荐透明代理。
 
 ---
 
 Ref:
 
 1. [CMake_package_guidelines](https://wiki.archlinux.org/title/CMake_package_guidelines#Prefix_and_library_install_directories)
+2. [windows 版本 proxychains 的自述文档](https://github.com/shunf4/proxychains-windows/blob/master/README_zh-Hans.md)
