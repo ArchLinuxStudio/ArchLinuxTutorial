@@ -63,7 +63,11 @@ yay -S qv2ray-static-bin-nightly
 - [防御 GFW 主动探测的实用指南](https://gfw.report/blog/ss_advise/zh/)
 - [Shadowsocks 是如何被检测和封锁的](https://gfw.report/talks/imc20/zh/)
 
-备用手段：建议自建备用，或持有多个机场。不想花钱的或者自备一下[lantern](https://aur.archlinux.org/packages/lantern-bin/)以防万一。还有一些电报群组有共享的链接资源，如[这个](https://t.me/wtovpn)或者[这个](https://t.me/TG_Mtproxy_1)。使用公共节点需要自行承担可能的风险。
+备用手段：建议自建备用，或持有多个机场以防失联。
+
+不想花钱的也可安装[lantern](https://aur.archlinux.org/packages/lantern-bin/)和[塞风](https://psiphon3.com/zh/index.html)以防万一。它们都是自由软件。lantern 在 archlinux 下可直接安装使用。当你被威权国家进行互联网封锁时，可以非常方便的发送空邮件到get@psiphon3.com以获取塞风下载链接来应急。
+
+还有一些电报群组有共享的链接资源，如[这个](https://t.me/wtovpn)或者[这个](https://t.me/TG_Mtproxy_1)。使用公共节点需要自行承担可能的风险。
 
 ## 更加全面的系统级全局代理
 
