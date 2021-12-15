@@ -116,6 +116,8 @@
 - 终端 wget/curl/npm/yarn 访问被墙的 https 资源(如 github raw)报错 443
   DNS 的问题，打开 Qv2ray 的 DNS 拦截和 cgproxy 的 dns 选项。或者 export https_proxy 环境变量。
 
+- 使用 docker/libvirt 时与 cgproxy 不能正常使用。解决方法见[cgproxy issue3](https://github.com/springzfx/cgproxy/issues/3#issuecomment-637309706)
+
 ---
 
 Ref:

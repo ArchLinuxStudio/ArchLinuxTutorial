@@ -104,7 +104,7 @@ prime-run some_program #使用prime-run前缀来用独显运行某些程序
 
 电源控制做的事情是，在只用核显的模式下，确保正确关闭独立显卡。而在混合模式下，绝大多数情况下 Nvidia 模块实际是始终开启的，电源控制并不生效。这件事情其实很复杂，因为对于不同的显卡型号，以及笔记本型号的组合，可行的方案都是不同的。笼统来说，最广泛适用的办法是 bbswitch。但仍不建议上来就按照此方式安装使用，因为某些特定的硬件就是会出问题，也就是黑屏。这里建议按照 optimus-manager 官方的文档一步一步来，按步骤尝试，最后找到属于你自己的电脑合适的电源管理方式。**此[文档](https://github.com/Askannz/optimus-manager/wiki/A-guide--to-power-management-options)必须详细阅读！**
 
-针对大多数笔记本适用的 Bbswitch,此处进行安装使用的讲解。首先安装包 bbswitch。
+针对大多数笔记本适用的 Bbswitch,此处进行安装使用的讲解。首先安装包 bbswitch。若使用其它内核，则安装包 bbswitch-dkms。
 
 ```bash
 sudo pacman -S bbswitch #安装 bbswitch 切换方式
