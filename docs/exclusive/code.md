@@ -16,7 +16,7 @@
 
 至于 [yarn](https://www.archlinux.org/packages/community/any/yarn/)、[npm](https://www.archlinux.org/packages/community/any/npm/) 等前端常用工具，也均可用 pacman 安装。
 
-> OSS code 存在的问题：[官方 wiki](https://wiki.archlinux.org/index.php/Visual_Studio_Code)。一个普遍问题是删文件 UI 会卡住很久，原因是 electron 在 linux 下默认使用 `gio` 删除，但是 KDE 用户一般都不装这个。解决办法是把 `ELECTRON_TRASH=kioclient5` 环境变量加在~/.pam_environment 里。
+<!-- > OSS code 存在的问题：[官方 wiki](https://wiki.archlinux.org/index.php/Visual_Studio_Code)。一个普遍问题是删文件 UI 会卡住很久，原因是 electron 在 linux 下默认使用 `gio` 删除，但是 KDE 用户一般都不装这个。解决办法是把 `ELECTRON_TRASH=kioclient5` 环境变量加在~/.pam_environment 里。 -->
 
 ## 后端编程
 
@@ -49,6 +49,16 @@ Jetbrains 家的全家桶基本都有支持可以在源中或 AUR 中自行搜�
 ## 机器学习与深度学习
 
 针对机器学习方面的编程，IDE 可使用同后端编程中一样的软件。机器学习常用的[jupyter-notebook](https://archlinux.org/packages/community/any/jupyter-notebook/) 以及所需要的相关库如[numpy](https://archlinux.org/packages/extra/x86_64/python-numpy/)、[sklearn](https://archlinux.org/packages/community/x86_64/python-scikit-learn/)、[pandas](https://archlinux.org/packages/community/x86_64/python-pandas/)等，也均可在源中找到。同时,[tensorflow](https://archlinux.org/packages/community/x86_64/tensorflow/)、[pytorch](https://archlinux.org/packages/?sort=&q=python-pytorch&maintainer=&flagged=)以及其相关的 cuda 支持包等深度学习相关的包也均可安装使用。
+
+## 科学计算
+
+[SageMath](https://www.sagemath.org/)(原名 Sage)是免费的、开源的数学软件，支持代数、几何、数论、密码学、数值计算和相关领域的研究和教学。Sage 的开发模式和 Sage 本身的技术都非常强调开放性、社区性、合作性和协作性：我们在制造汽车，而不是重新发明轮子。Sagemath 的总体目标是为"4M"（即 Maple、Mathematica、Magma 和 Matlab）提供一个可行的、免费的、开源的替代品。
+
+SageMath 为目前科学计算领域的大多数开源软件/库统一重写了接口，提供了一种类兼容 python 的语法，可以说集开源数学软件之大成。目前已可部分替代"4M"。
+
+[Arch Wiki](https://wiki.archlinux.org/title/SageMath)
+
+[中文教程及文档](https://www.osgeo.cn/sagemath/index.html)
 
 ## 逆向工程
 

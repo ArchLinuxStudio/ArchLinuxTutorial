@@ -32,6 +32,10 @@ b 站直播时的弹幕可以使用[弹幕库](https://www.danmaku.live/),这个
 
 在 linux 上的修饰图片可用[gimp](https://www.archlinux.org/packages/extra/x86_64/gimp/)。如果你需要配合数位板绘图，可使用[krita](https://www.archlinux.org/packages/extra/x86_64/krita/)，krita 同时也提供一定的制图功能。矢量图片操作可使用 [inkscape](https://www.archlinux.org/packages/extra/x86_64/inkscape/)
 
+[Aseprite](https://www.aseprite.org/) 是一款像素艺术绘制工具,可以使用 yay 安装包[aseprite](https://aur.archlinux.org/packages/aseprite/)。
+
+[RawTherapee](https://archlinux.org/packages/community/x86_64/rawtherapee/) 是一个自由开源的跨平台 RAW 格式图像处理程序。
+
 [hugin](https://archlinux.org/packages/community/x86_64/hugin/)是一个可以对图片进行景深进行合成、对图片进行拼接的开源软件，可以以此替代 PhotoShop 的自动对齐图层和自动合并图层。
 
 至于格式转换，可以使用 [imagemagick](https://archlinux.org/packages/extra/x86_64/imagemagick/) 的 convert 功能进行图片格式之间的转换。
@@ -40,14 +44,21 @@ b 站直播时的弹幕可以使用[弹幕库](https://www.danmaku.live/),这个
 
 可使用强大的 3D 建模软件[blender](https://archlinux.org/packages/community/x86_64/blender/)
 
+- [Sweet Home 3D](https://archlinux.org/packages/community/x86_64/sweethome3d/) Sweet Home 3D 是一款免费的家装辅助设计软件。它能帮您通过二维的家居平面图来设计和布置您的家具，还可以用三维的视角浏览整个装修布局的全貌。
+- [Synfig Studio](https://archlinux.org/packages/community/x86_64/synfigstudio/) Synfig Studio 是一款免费开源的 2D 动画软件，用于使用矢量和位图图稿创建电影质量的动画。
+
 ## 音频
 
 专业的音频制作可使用如下软件。
 
-- [Kwave](https://archlinux.org/packages/extra/x86_64/kwave/)
-- [audacity](https://archlinux.org/packages/community/x86_64/audacity/)
-- [lmms](https://archlinux.org/packages/community/x86_64/lmms/)
+- [Kwave](https://archlinux.org/packages/extra/x86_64/kwave/) Kwave 是 KDE 开发的一款自由开源的音频编辑软件，可以录制、播放、导入和编辑许多音频文件，包括多声道文件。
+- [lmms](https://archlinux.org/packages/community/x86_64/lmms/) LMMS 是免费自由开源并且跨平台的作曲工具。通过制作旋律和节拍，合成和混合音频，安排音频片段等方法创作音乐。
 - [carla](https://archlinux.org/packages/community/x86_64/carla/)
+- [Ardour](https://archlinux.org/packages/community/x86_64/ardour/) Ardour 是一款自由开源的让你可以在 Linux 上录音、编辑和混音的软件。
+- [vcvrack](https://aur.archlinux.org/packages/vcvrack-bin/) VCV Rack 是一款开源可视化、模块化的音响合成器。
+- [Mixxx](https://archlinux.org/packages/community/x86_64/mixxx/) Mixxx 集成了 DJ 使用数字音乐文件进行创造性现场混音所需的工具。
+- [MuseScore](https://archlinux.org/packages/community/x86_64/lmms/) MuseScore 是 Muse Group 开发的一个跨平台的自由开源制谱软件。
+- [SoundConverter](https://archlinux.org/packages/community/any/soundconverter/) SoundConverter 是 GNOME 桌面的音频文件转换器（这不影响在 Plasma 桌面环境下使用）。
 
 ## UI/UX 设计
 
