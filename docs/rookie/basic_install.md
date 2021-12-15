@@ -22,8 +22,8 @@ ls /sys/firmware/efi/efivars
 iwctl                           #进入交互式命令行
 device list                     #列出设备名，比如无线网卡看到叫 wlan0
 station wlan0 scan              #扫描网络
-station wlan0 get-networks      #列出网络 比如想连接CMCC-5AQ7这个无线
-station wlan0 connect CMCC-5AQ7 #进行连接 输入密码即可
+station wlan0 get-networks      #列出网络 比如想连接YOUR-WIRELESS-NAME这个无线
+station wlan0 connect YOUR-WIRELESS-NAME #进行连接 输入密码即可
 exit                            #成功后exit退出
 ```
 
@@ -66,24 +66,38 @@ timedatectl set-ntp true    #将系统时间与网络时间进行同步
 timedatectl status          #检查服务状态
 ```
 
-## 5.更换国内镜像源加快下载速度
+## 5.镜像源的选择
 
-目前 reflector 会为你选择速度合适的镜像源，一般为亚洲镜像点，如有需要，可以自行再添加所需的镜像源：
+目前 reflector 会为你选择速度合适的镜像源，一般为亚洲镜像点，无需手动对其进行修改控制。
+
+---
+
+如有自行指定镜像源的需要，可以先禁用 reflector 服务
+
+```bash
+systemctl stop reflector.service
+```
+
+接下来编辑 mirrorlist
 
 ```bash
 vim /etc/pacman.d/mirrorlist
 ```
 
-放在最上面的行是会使用的更新源,可以选择添加中科大或者清华的放在最上面。
+mirrorlist 中放在最上面的行是会使用的更新源,添加中科大或者清华的放在最上面即可。
 
 ```
 Server = https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch
 Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
 ```
 
+---
+
+如果你想要使用 reflector 服务进行更详细的控制，可参考[ArchWiki reflector](https://wiki.archlinux.org/title/Reflector)
+
 ## 6.分区
 
-这里总共设置三个分区，可以满足绝大多数人的需求。此步骤会清除磁盘中全部内容，请事先确认。
+这里总共设置三个分区，是一个**我们认为**较为通用的方案[[1]](https://wiki.archlinux.org/title/EFI_system_partition#Mount_the_partition)。此步骤会清除磁盘中全部内容，请事先确认。
 
 - EFI 分区： `/efi` 800M
 - 根目录： `/` 100G
@@ -281,7 +295,7 @@ vim /etc/default/grub
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-> 我们在之前的命令中指定--removable 参数已经可以解决一些主板 NVRAM 的兼容性问题。如不加此参数，在某些主板安装完成后，你会发现没有 nvme 启动条目。这是因为某些主板的 UEFI 固件在显示 UEFI NVRAM 引导条目之前，需要在特定的位置存放可引导文件，不支持自定义存放 efi 文件(如微星 Z170-A Gaming PRO)[[1]](https://wiki.archlinux.org/index.php/GRUB#Default/fallback_boot_path)。除此之外，如果你的主板是一些较老的型号，如 intel 9 系列以下或者较老 AMD 的主板，它们很可能不支持从 nvme 启动系统，虽然可以通过修改 BIOS 加入 NVME 支持模块来解决，但这不在本文讨论范围内。
+> 我们在之前的命令中指定--removable 参数已经可以解决一些主板 NVRAM 的兼容性问题。如不加此参数，在某些主板安装完成后，你会发现没有 nvme 启动条目。这是因为某些主板的 UEFI 固件在显示 UEFI NVRAM 引导条目之前，需要在特定的位置存放可引导文件，不支持自定义存放 efi 文件[[1]](https://wiki.archlinux.org/index.php/GRUB#Default/fallback_boot_path)。除此之外，如果你的主板是一些较老的型号，如 intel 9 系列以下或者较老 AMD 的主板，它们很可能不支持从 nvme 启动系统，虽然可以通过修改 BIOS 加入 NVME 支持模块来解决，但这不在本文讨论范围内。
 
 ## 19.完成安装
 

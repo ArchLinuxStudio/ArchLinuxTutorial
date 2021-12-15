@@ -18,7 +18,7 @@ pacman -Syyu    #升级系统中全部包
 添加用户，比如新增加的用户叫 testuser
 
 ```bash
-useradd -m -G wheel -s /bin/bash testuser  #wheel附加组可sudo进行提权 -m同时创建用户家目录
+useradd -m -G wheel -s /bin/bash testuser  #wheel附加组可sudo，以root用户执行命令 -m同时创建用户家目录
 ```
 
 设置新用户 testuser 的密码
@@ -75,7 +75,7 @@ systemctl enable sddm
 在桌面环境中，交换分区或文件用来实现休眠(hibernate)的功能，即将当前环境保存在磁盘的交换文件或分区部分。除此之外，某些特定软件需要 swap 才可以正确运行。交换文件与分区性能相同，且交换文件更为灵活，可随时变更大小，增加与删除。[[1]](https://wiki.archlinux.org/title/Swap#Swap_file)
 
 ```bash
-dd if=/dev/zero of=/swapfile bs=1M count=16384 status=progress #创建16G的交换空间 大小根据需要自定
+dd if=/dev/zero of=/swapfile bs=1M count=4096 status=progress #创建4G的交换空间 大小根据需要自定
 chmod 600 /swapfile #设置正确的权限
 mkswap /swapfile #格式化swap文件
 swapon /swapfile #启用swap文件
@@ -147,13 +147,16 @@ sudo pacman -S git
 
 AUR 为 archlinux user repository。任何用户都可以上传自己制作的 AUR 包，这也是 Arch Linux 可用软件众多的原因。由于任何人都可上传，也存在对应的风险，一般选用大众认可的包即可。
 
-使用 [yay](https://github.com/Jguer/yay) 可以安装 AUR 中的包。执行如下命令安装 yay。
+使用 [yay](https://github.com/Jguer/yay) 可以安装 AUR 中的包。由于[中国大陆政府封锁 Github](https://zh.wikipedia.org/wiki/%E5%AF%B9GitHub%E7%9A%84%E5%AE%A1%E6%9F%A5%E5%92%8C%E5%B0%81%E9%94%81#%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD)的原因，你很可能没有办法用正常的方式安装 yay，所以 ArchLinuxStudio 提供一份可以直接安装的 bin 包以供你使用。
+
+执行如下命令安装 yay。
 
 ```bash
-git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si
+wget https://archlinuxstudio.github.io/ArchLinuxTutorial/res/yay-bin-11.0.2-1-x86_64.pkg.tar.zst
+sudo pacman -U yay-bin-11.0.2-1-x86_64.pkg.tar.zst
 ```
 
-> 一般简单来说使用 bin 包会较少遇到网络封锁的问题，经测试 yay-bin 包可在中国大陆拉取。如你在此过程中卡住可以尝试 ctrl+c 终止命令后重新尝试下载，也可尝试更换手机热点的网络环境再次进行下载，后文安装 Qv2ray 时同理。当你配置好全局代理后，你将不再需要担心任何网络封锁问题。
+> github.io 也被中国大陆政府封锁，只是封锁力度暂时还没有很大。如你在此过程中卡住可以尝试 ctrl+c 终止命令后重新尝试下载，也可尝试更换手机热点的网络环境再次进行下载，后文安装 Qv2ray 时同理。当你配置好全局代理后，你将不再需要担心任何网络封锁问题。
 
 ## 10.安装输入法
 
@@ -164,7 +167,7 @@ git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si
 sudo pacman -S fcitx5-im #基础包组
 sudo pacman -S fcitx5-chinese-addons #官方中文输入引擎
 sudo pacman -S fcitx5-anthy #日文输入引擎
-yay -S fcitx5-pinyin-moegirl #萌娘百科词库
+yay -S fcitx5-pinyin-moegirl #萌娘百科词库 由于中国大陆政府对github封锁，你可能在此卡住。如卡住，可根据后文设置好代理后再安装
 sudo pacman -S fcitx5-pinyin-zhwiki #中文维基百科词库
 sudo pacman -S fcitx5-material-color #主题
 ```
@@ -188,7 +191,7 @@ SDL_IM_MODULE=fcitx
 
 ## 11.配置系统默认编辑器
 
-默认情况下，Arch Linux 在一些终端编辑场景使用 vi 编辑器，但是我们使用 vim。如果不做一个额外配置，在 git 等场景下，在终端调用编辑器会出错。编辑~/.bashrc 文件，加入如下内容，将 vim 设置为默认 EDITOR
+默认情况下，Arch Linux 在一些终端编辑场景使用 vi 编辑器，但是我们使用 vim。如果不做一个额外配置，在 git 等场景下，在终端调用编辑器会出错。编辑`sudo vim /etc/profile` 文件，加入如下内容，将 vim 设置为默认 EDITOR
 
 ```bash
 export EDITOR='vim'
