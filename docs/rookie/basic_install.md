@@ -2,11 +2,12 @@
 
 本节从安装最基础的无图形化 ArchLinux 系统开始。[官方安装指南](https://wiki.archlinux.org/index.php/Installation_guide)
 
-## 1.再次确保是否为 UEFI 模式
+## 1.设置终端字体并再次确保是否为 UEFI 模式
 
 在一系列的信息刷屏后，可以看到已经以 root 登陆安装系统了，此时可以执行的命令：
 
 ```bash
+setfont ter-132n
 ls /sys/firmware/efi/efivars
 ```
 
