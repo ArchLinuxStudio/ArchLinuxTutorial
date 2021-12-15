@@ -213,6 +213,16 @@ sudo pacman -S pulseaudio-bluetooth
 pulseaudio -k
 ```
 
+## 13.启用打印机(若有)
+
+如果你有打印机设备，需要安装打印机软件包并启用打印机服务，并在ArchWiki查找安装你的[打印机驱动](https://wiki.archlinux.org/title/CUPS/Printer-specific_problems)，随后在打印机设置中正确选择型号即可使用。
+
+```bash
+sudo pacman -S cups cups-pdf print-manager 
+sudo systemctl enable --now cups
+sudo pacman -S skanlite    #如果你的打印机没有扫描功能则无需安装这个包
+```
+
 <!-- ## 11.异型字体设置
 
 个人的设置是英文使用 Hack，中文使用 Noto Sans CJK SC。可以在系统设置->外观->字体中进行设置。如遇到`门复关`等字形现实为日型字体，有关用户全局级别更改日文异型字的设置，可参考[官方文档](<https://wiki.archlinux.org/index.php/Localization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)/Simplified_Chinese_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#%E4%BF%AE%E6%AD%A3%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%E6%98%BE%E7%A4%BA%E4%B8%BA%E5%BC%82%E4%BD%93%EF%BC%88%E6%97%A5%E6%96%87%EF%BC%89%E5%AD%97%E5%BD%A2>) -->
