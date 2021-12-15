@@ -191,17 +191,18 @@ SDL_IM_MODULE=fcitx
 
 ## 11.配置系统默认编辑器
 
-默认情况下，Arch Linux 在一些终端编辑场景使用 vi 编辑器，但是我们使用 vim。如果不做一个额外配置，在 git 等场景下，在终端调用编辑器会出错。编辑`sudo vim /etc/profile` 文件，加入如下内容，将 vim 设置为默认 EDITOR
+默认情况下，Arch Linux 在一些终端编辑场景使用 vi 编辑器，但是我们使用 vim。如果不做一个额外配置，在 git 等场景下，在终端调用编辑器会出错。编辑`sudo vim /etc/profile`文件，加入如下内容，将 vim 设置为默认 EDITOR
 
 ```bash
 export EDITOR='vim'
 ```
 
-## 12.启动蓝牙(若有)
+## 12.启用蓝牙(若有)
 
-如果你有蓝牙设备，需要启用蓝牙服务。随后在系统设置中进行添加设备与连接即可。
+如果你有蓝牙设备，需要安装蓝牙软件包并启用蓝牙服务。随后在系统设置中进行添加设备与连接即可。
 
 ```bash
+sudo pacman -S bluez bluez-utils
 sudo systemctl enable --now bluetooth
 ```
 
