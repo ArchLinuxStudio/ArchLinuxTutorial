@@ -13,6 +13,8 @@ Arch Linux 安装使用教程，每月实时更新！包含从 Arch Linux 安装
   - 如有必要，相关位置都会贴上 arch linux 相关官方文档作为参考。
   - 不支持任何双系统。
 
+> **本书采用 CC BY-NC-ND 4.0 协议[[1]](https://github.com/ArchLinuxStudio/ArchLinuxTutorial/issues/68)。欢迎提交Pull requests，但是禁止商业用途与演绎。**
+
 > 请不要在上述群组以外的任何群组反馈本文档相关问题。这会为它们带来困扰以及不愉快的心情。
 
 #### 为什么使用 Linux？
