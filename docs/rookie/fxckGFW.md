@@ -31,7 +31,7 @@ vmess://xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 ---
 
-如果你不想花任何费用，可安装[lantern](https://aur.archlinux.org/packages/lantern-bin/)和[赛风](https://psiphon3.com/zh/index.html)这类软件。它们都是自由软件。
+如果你不想花任何费用，可安装[lantern](https://aur.archlinux.org/packages/lantern-bin/)和[赛风](https://psiphon3.com/zh/index.html)这类软件，lantern免费用户每月有500M流量，赛风会在连接一段时间后进行限速。
 
 其中 lantern 在 archlinux 下可直接安装使用。因为 lantern 提供了没有被墙的 amazonaws 下载链接，通过 yay 安装即可。
 
