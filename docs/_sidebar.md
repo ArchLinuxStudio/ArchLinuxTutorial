@@ -11,7 +11,7 @@
 
 - 进阶
 
-  - [成为合格的系统管理员](/advanced/beAdmin)
+  - [成为不合格的系统管理员](/advanced/beAdmin)
   - [功耗控制](/advanced/undervoltage)
   - [系统美化](/advanced/beauty)
   - [常见问题排除与解决](/advanced/troubleshooting)

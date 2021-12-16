@@ -50,7 +50,7 @@ Arch Linux 可以以超高的自由度来定制自己的系统，并且其拥有
 - [4:安装 KDE 与常用软件](https://www.youtube.com/watch?v=BfqbFrE--Bc)
 - [5:魔法学院](https://www.youtube.com/watch?v=HNfT8uz7qEM)
 - [6:显卡驱动安装综述](https://www.youtube.com/watch?v=k5KsKLofOHs)
-- [7:成为合格的系统管理员](https://www.youtube.com/watch?v=h8sWpIicNt0)
+- [7:成为不合格的系统管理员](https://www.youtube.com/watch?v=h8sWpIicNt0)
 - [8:真理学院](https://www.youtube.com/watch?v=m0ctfPF-2_I)
 - [9:功耗控制](https://www.youtube.com/watch?v=N04x1Y51Q2M)
 - [10:系统美化](https://www.youtube.com/watch?v=FRN61XPiTyE)
