@@ -35,7 +35,7 @@ EDITOR=vim visudo
 
 找到这样的一行,把前面的注释符号#去掉，`:wq`保存并退出即可。
 
-```bash
+```sudoers
 #%wheel ALL=(ALL) ALL
 ```
 
@@ -46,7 +46,7 @@ ALL= 代表在所有主机上都生效(如果把同样的`sudoers`文件下发�
 ALL 代表可以执行任意命令
 一个更详细的例子:
 
-```bash
+```sudoers
 %mailadmin   snow,rain=(root) /usr/sbin/postfix, /usr/sbin/postsuper, /usr/bin/doveadm
 nobody       ALL=(root) NOPASSWD: /usr/sbin/rndc reload
 ```
