@@ -27,13 +27,13 @@ useradd -m -G wheel -s /bin/bash testuser  #wheel附加组可sudo，以root用�
 passwd testuser
 ```
 
-编辑 sudo 文件
+编辑 sudoers 配置文件
 
 ```bash
-EDITOR=vim visudo
+EDITOR=vim visudo  # 需要以 root 用户运行 visudo 命令
 ```
 
-找到这样的一行,把前面的注释符号#去掉，`:wq`保存并退出即可。
+找到下面这样的一行，把前面的注释符号 `#` 去掉，`:wq` 保存并退出即可。
 
 ```sudoers
 #%wheel ALL=(ALL) ALL
