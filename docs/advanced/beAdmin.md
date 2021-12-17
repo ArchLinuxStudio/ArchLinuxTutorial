@@ -102,6 +102,63 @@ systemctl daemon-reload dhcpcd  # 重新载入 systemd 配置 扫描新增或变
 
 拓展链接: [systemctl 官方文档](https://wiki.archlinux.org/index.php/Systemd#Basic_systemctl_usage) [systemd 配置文件样例解释](https://www.freedesktop.org/software/systemd/man/systemd.service.html#Examples)
 
+## 编辑系统配置文件
+
+#### 用 sudoedit 编辑配置文件
+
+在前面的“[桌面环境与常用应用](../rookie/DE%26App.md)”一节中，我们已经多次编辑了系统配置文件。它们的特点是对系统中的所有用户生效、归 root 用户所有、并且只有 root 用户才拥有写入的权限，这就需要我们用 sudo 提升到 root 权限才能编辑它们。很容易想到用 sudo 命令去运行文本编辑器，以 vim 为例：
+
+```shell
+sudo vim 你要编辑的文件的路径
+```
+
+但是这样却不是最好的方式，因为它违反了“[最小权限原则](https://zh.wikipedia.org/wiki/%E6%9C%80%E5%B0%8F%E6%9D%83%E9%99%90%E5%8E%9F%E5%88%99)”。因为当我们用 sudo 执行一个命令时，整个进程都会获得 root 权限。也就是说，vim 的所有操作、甚至包括所有的 vim 插件都会在 root 权限下运行，这通常来说是非常危险的。有的文本编辑器甚至会在检测到自身以 root 权限运行的时候拒绝运行，以避免做出危险的操作。
+
+反过来考虑，只是编辑一个文件不需要那么强大的权限，我们只需要拥有对这一个配置文件的读写权限就足够了。而 `sudoedit`（或 `sudo -e`，二者是完全等效的）是编辑一个系统配置文件的最佳实践。
+
+```shell
+EDITOR=vim sudoedit 要编辑的文件
+```
+
+sudodit 命令大致是这样工作的：它会先创建一份普通用户有权编辑的临时文件，把要编辑的文件以 root 权限复制到这个临时文件中，接着根据 EDITOR 等环境变量，**以普通用户的权限**运行文本编辑器。在文本编辑器编辑完成并退出后，它会再次以 root 权限用这个编辑好的临时文件去覆盖掉原先的配置文件。
+
+关于 sudoedit 的更多信息，详见 [sudo 的手册](https://man.archlinux.org/man/sudo.8.en#e)。
+
+#### 配置文件的语法高亮
+
+严格来说这不是一个关于 sudoedit 的问题，而是一个关于文本编辑器的问题，但是它经常在用 sudoedit 编辑文件时遇到。
+
+因为 sudoedit 会创建一个随机名称的临时文件，文本编辑器可能不认识这个文件名，不知道该启用什么语法的高亮显示。这时候就需要我们主动告诉文本编辑器该使用什么语法，以 vim 为例，可以在命令行模式下用如下设置语法：
+
+```vim
+:set syntax=文件的语法
+```
+
+另一个问题是如何知道语法的名称。一方面我们可以用搜索引擎搜索，或者在 vim 的内置插件里寻找，不过对于那些普通用户也能读取的配置文件，可以直接用 vim 去查看它，这时候 vim 会以只读模式打开文件，但是会根据文件名启用语法高亮。这样只需要在命令行模式下运行：
+
+```vim
+:set syntax
+```
+
+即可查看当前 vim 所使用的高亮语法。
+
+#### 编辑 sudoers 配置文件
+
+在前面我们编辑过 sudoers 配置文件。sudoers 算是系统配置文件中的一个特例，编辑它的最佳实践不是使用 `sudoedit`，而是 `visudo` 命令。
+
+```shell
+sudo visudo  # visudo 需要使用 root 权限运行。默认编辑 /etc/sudoers
+sudo visudo -f 要编辑的sudoers文件的路径  # 也可以指定文件路径
+```
+
+visudo 与 sudoedit 类似的是，它也会把要编辑的配置文件先复制到一个临时文件，再调用文本编辑器编辑，而不同的是，在开始编辑之前 visudo 还会锁定正在编辑的 sudoers 文件，以此避免两个人同时对它编辑；并且会在编辑完成之后检查 sudoers 的语法，如果发现错误则会拒绝这次编辑的结果。
+
+这是因为，如果在 sudoers 文件中遇到语法错误，sudo 为了安全性，会让整个 sudoers 配置文件都不生效。这样的话，如果普通用户不慎改坏了 sudoers 文件，则有可能失去使用 sudo 命令的权限，就好像“关上了大门并把自己关在了外面”，这时候就需要直接用 root 用户登录甚至需要 live USB 急救才行。而 visudo 检查 sudoers 语法就可以很大程度上避免这种情况发生。
+
+另一方面，visudo 需要使用 root 身份运行，这意味着它的文本编辑器实际上也是以 root 身份运行的，这一点与 sudoedit 不同。为了安全，可以配置为只使用某些受限制的“安全的”文本编辑器来编辑 sudoers 文件。详见 [ArchWiki](https://wiki.archlinux.org/title/Sudo#Using_visudo) 以及 [sudoers 手册](https://man.archlinux.org/man/sudoers.5)中的 editor 一节和 [env_editor](https://man.archlinux.org/man/sudoers.5#env_editor) 一节。
+
+关于 visudo 的更多内容详见[手册](https://man.archlinux.org/man/visudo.8)。
+
 ## 文件传输与系统备份
 
 有一点 Linux 经验的同学应该知道[scp](<https://wiki.archlinux.org/index.php/SCP_and_SFTP#Secure_copy_protocol_(SCP)>)这个命令。它常被用来在服务器间传输文件。但是目前它应该被更现代的工具[rsync](https://wiki.archlinux.org/index.php/Rsync)替代，其拥有即时压缩，差量传输等新特性。同时，`rsync`也被用来进行备份操作。
