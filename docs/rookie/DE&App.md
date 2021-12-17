@@ -1,6 +1,6 @@
 # 桌面环境与常用应用
 
-官方文档: [安装后的工作](https://wiki.archlinux.org/index.php/General_recommendations)  
+官方文档: [安装后的工作](https://wiki.archlinux.org/index.php/General_recommendations)
 本节只介绍最基本的，能使系统真正意义上可用所需的组件
 
 注: 文档中带有 <sup>AUR</sup> 角标的软件代表是用户自行打包的第三方软件[AUR](https://aur.archlinux.org/)，不在 Arch 官方支持范围内，可能会出现更新不及时、无法安装、使用出错等各种问题。如果不是实在没有官方支持的同类软件，则不建议使用。
@@ -40,10 +40,10 @@ EDITOR=vim visudo
 ```
 
 这里稍微解释一下
-%wheel 代表是 wheel 组，百分号是前缀  
-ALL= 代表在所有主机上都生效(如果把同样的`sudoers`文件下发到了多个主机上)  
-(ALL) 代表可以成为任意目标用户  
-ALL 代表可以执行任意命令  
+%wheel 代表是 wheel 组，百分号是前缀
+ALL= 代表在所有主机上都生效(如果把同样的`sudoers`文件下发到了多个主机上)
+(ALL) 代表可以成为任意目标用户
+ALL 代表可以执行任意命令
 一个更详细的例子:
 
 ```bash
@@ -51,7 +51,7 @@ ALL 代表可以执行任意命令
 nobody       ALL=(root) NOPASSWD: /usr/sbin/rndc reload
 ```
 
-组 mailadmin 可以作为 root 用户，执行一些邮件服务器控制命令。可以在 "snow" 和 "rain"这两台主机上执行  
+组 mailadmin 可以作为 root 用户，执行一些邮件服务器控制命令。可以在 "snow" 和 "rain"这两台主机上执行
 用户 nobody 可以以 root 用户执行`rndc reload`命令。可以在所有主机上执行。同时可以不输入密码。(正常来说 sudo 都是要求输入调用方的密码的)
 
 ## 3.安装 KDE Plasma 桌面环境
@@ -160,7 +160,7 @@ sudo pacman -U yay-bin-11.0.2-1-x86_64.pkg.tar.zst
 
 ## 10.安装输入法
 
-[Fcitx5 官方文档](<https://wiki.archlinux.org/index.php/Fcitx5_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)>)  
+[Fcitx5 官方文档](<https://wiki.archlinux.org/index.php/Fcitx5_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)>)
 中文及日文输入法均体验良好。
 
 ```bash
