@@ -147,7 +147,7 @@ sudo pacman -S git
 
 AUR 为 archlinux user repository。任何用户都可以上传自己制作的 AUR 包，这也是 Arch Linux 可用软件众多的原因。由于任何人都可上传，也存在对应的风险，一般选用大众认可的包即可。
 
-使用 [yay](https://github.com/Jguer/yay) 可以安装 AUR 中的包。由于[中国大陆政府封锁 Github](https://zh.wikipedia.org/wiki/%E5%AF%B9GitHub%E7%9A%84%E5%AE%A1%E6%9F%A5%E5%92%8C%E5%B0%81%E9%94%81#%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD)的原因，你很可能没有办法用正常的方式安装 yay，所以 ArchLinuxStudio 提供一份可以直接安装的 bin 包以供你使用。
+使用 [yay](https://github.com/Jguer/yay) 可以安装 AUR 中的包。由于[中国大陆政府封锁 Github](https://zh.wikipedia.org/wiki/%E5%AF%B9GitHub%E7%9A%84%E5%AE%A1%E6%9F%A5%E5%92%8C%E5%B0%81%E9%94%81#%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD)的原因，你很可能没有办法用 yay 官方仓库中正常的方式安装 yay，所以 ArchLinuxStudio 提供一份可以直接安装的 bin 包以供你在安装时暂时使用。
 
 执行如下命令安装 yay。
 
@@ -156,7 +156,7 @@ wget https://archlinuxstudio.github.io/ArchLinuxTutorial/res/yay-bin-11.0.2-1-x8
 sudo pacman -U yay-bin-11.0.2-1-x86_64.pkg.tar.zst
 ```
 
-> github.io 也被中国大陆政府封锁，只是封锁力度暂时还没有很大。如你在此过程中卡住可以尝试 ctrl+c 终止命令后重新尝试下载，也可尝试更换手机热点的网络环境再次进行下载，后文安装 Qv2ray 时同理。当你配置好全局代理后，你将不再需要担心任何网络封锁问题。我们将持续为本书读者提供突破互联网审查的可靠流程。
+> github.io 也被中国大陆政府封锁，只是封锁力度暂时还没有很大。如你在下载过程中卡住，可以尝试 ctrl+c 终止命令后重新尝试下载，也可尝试更换手机热点的网络环境再次进行下载，后文安装 Qv2ray 时同理。当你配置好全局代理后，你将不再需要担心任何网络封锁问题。我们将持续为本书读者提供突破互联网审查的可靠流程。
 
 ## 10.安装输入法
 

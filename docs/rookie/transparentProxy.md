@@ -2,7 +2,7 @@
 
 全局代理，也即透明代理。本节所述为真正的系统级别的代理，而不是仅仅针对浏览器中全部网址的"全局代理"。
 
-本文原本收集自 [Qv2ray 用户组](https://t.me/qv2ray)，`非群主书写`，群主仅在其基础上进行更新与修正。[项目源地址](https://github.com/springzfx/cgproxy)。
+本文主体原本收集自 [Qv2ray 用户组](https://t.me/qv2ray)，并非原创，我们仅在其基础上进行更新与修正。[项目源地址](https://github.com/springzfx/cgproxy)。
 
 ## 安装与设置
 
