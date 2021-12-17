@@ -172,7 +172,7 @@ sudo pacman -S fcitx5-pinyin-zhwiki #中文维基百科词库
 sudo pacman -S fcitx5-material-color #主题
 ```
 
-设置环境变量 编辑文件 `sudo vim /etc/environment` 加入以下内容。konsole 以及 dolphin 都需要这些环境变量，倒是 chrome 和 firefox 都不需要就可以输入中文
+设置环境变量：编辑文件 `EDITOR=vim sudoedit /etc/environment` 加入以下内容。konsole 以及 dolphin 都需要这些环境变量，倒是 chrome 和 firefox 都不需要就可以输入中文
 
 ```bash
 GTK_IM_MODULE=fcitx
@@ -191,11 +191,13 @@ SDL_IM_MODULE=fcitx
 
 ## 11.配置系统默认编辑器
 
-默认情况下，Arch Linux 在一些终端编辑场景使用 vi 编辑器，但是我们使用 vim。如果不做一个额外配置，在 git 等场景下，在终端调用编辑器会出错。编辑`sudo vim /etc/profile`文件，加入如下内容，将 vim 设置为默认 EDITOR
+默认情况下，Arch Linux 在一些终端编辑场景使用 vi 编辑器，但是我们使用 vim。如果不做一个额外配置，在 git 等场景下，在终端调用编辑器会出错。编辑 `EDITOR=vim sudoedit /etc/profile` 文件，加入如下内容，将 vim 设置为默认 EDITOR
 
 ```bash
 export EDITOR='vim'
 ```
+
+这样就不用在每次执行命令时都指定一遍 `EDITOR=vim` 了。
 
 ## 12.启用蓝牙(若有)
 
