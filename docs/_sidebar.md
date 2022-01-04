@@ -27,8 +27,7 @@
 
 - 专有领域
 
-  <!-- - [虚拟货币挖矿](/exclusive/mine) -->
-
+  - [虚拟货币挖矿](/exclusive/mine)
   - [直播与多媒体制作](/exclusive/media)
   - [编程](/exclusive/code)
 
