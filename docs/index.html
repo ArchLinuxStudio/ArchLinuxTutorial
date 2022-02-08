@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>Arch Linux 安装使用教程 - ArchTutorial - Arch Linux Studio</title>
+
+    <meta
+      name="description"
+      content="Arch Linux 安装使用教程，每日实时更新！包含从 archlinux 安装，魔法充能，到显卡驱动，日常软件的使用等，另附媒体制作，编程等你可能需要的全部内容。让 Arch Linux 成为你的常用系统吧！"
+    />
+
+    <!-- GSC -->
+    <meta
+      name="google-site-verification"
+      content="I9AUrsDVI86dZZUEJ2wSX4torsBJsq0bihBPHd_Efx4"
+    />
+
+    <meta name="author" content="Arch Linux Studio" />
+    <meta
+      name="keywords"
+      content="Arch Linux安装,ArchLinux教程,显卡驱动,v2ray,shadowsocks,翻墙,科学上网,Linux"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+
+    <!-- Facebook Meta Tags -->
+    <meta
+      property="og:url"
+      content="https://archlinuxstudio.github.io/ArchLinuxTutorial/#/"
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Arch Linux 安装使用教程 - ArchTutorial - Arch Linux Studio"
+    />
+    <meta
+      property="og:description"
+      content="Arch Linux 安装使用教程 包含从 安装/魔法上网/美化/日常/娱乐/编程的全部"
+    />
+    <meta
+      property="og:image"
+      content="https://avatars.githubusercontent.com/u/17615884?s=400&amp;v=4"
+    />
+    <meta property="og:site_name" content="ArchLinuxStudio" />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary" />
+    <meta property="twitter:domain" content="archlinuxstudio.github.io" />
+    <meta
+      property="twitter:url"
+      content="https://archlinuxstudio.github.io/ArchLinuxTutorial/#/"
+    />
+    <meta
+      name="twitter:title"
+      content="Arch Linux 安装使用教程 - ArchTutorial - Arch Linux Studio"
+    />
+    <meta
+      name="twitter:description"
+      content="Arch Linux 安装使用教程 包含从 安装/魔法上网/美化/日常/娱乐/编程的全部"
+    />
+    <meta
+      name="twitter:image"
+      content="https://avatars.githubusercontent.com/u/17615884?s=400&amp;v=4"
+    />
+
+    <link rel="icon" href="favicon.ico" type="image/vnd.microsoft.icon" />
+    <link
+      rel="shortcut icon"
+      type="image/vnd.microsoft.icon"
+      href="favicon.ico"
+    />
+    <link rel="stylesheet" href="./vue.css" />
+    <!-- <link rel="stylesheet" href="./fonts.googleapis.css" /> -->
+    <!-- <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/docsify/lib/themes/vue.css"
+    /> -->
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.css"
+    />
+    <style>
+      .sidebar {
+        padding: 0 0 0 0;
+      }
+
+      .app-name {
+        padding-top: 10px;
+
+        border-bottom: 4px solid rgb(0, 136, 204);
+        background-color: rgb(51, 51, 51);
+      }
+
+      .app-name-link img {
+        width: 70%;
+      }
+
+      .seo-pic {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <img
+      src="./arch.svg"
+      alt="Arch Linux 安装使用教程 - ArchTutorial - Arch Linux Studio"
+      class="seo-pic"
+    />
+    <div id="app">
+      Arch Linux 安装使用教程 包含从 安装/魔法上网/美化/日常/娱乐/编程的全部...
+    </div>
+    <script>
+      window.$docsify = {
+        loadNavbar: true,
+        search: {
+          placeholder: '搜索...',
+        },
+        name: 'Arch Linux 安装使用教程 - ArchTutorial - Arch Linux Studio',
+        loadSidebar: true,
+        auto2top: true,
+        logo: './arch.svg',
+        topMargin: 90,
+        notFoundPage: true,
+        subMaxLevel: 4,
+        themeColor: 'rgb(23,147,209)',
+        repo: 'https://github.com/ArchLinuxStudio/ArchLinuxTutorial',
+        formatUpdated: '{YYYY}-{MM}-{DD}',
+        pagination: {
+          previousText: '上一节',
+          nextText: '下一节',
+          crossChapter: true,
+          crossChapterText: true,
+        },
+        plugins: [
+          function (hook, vm) {
+            hook.beforeEach(function (html) {
+              let edit_url =
+                'https://github.com/ArchLinuxStudio/ArchLinuxTutorial/blob/master/docs/' +
+                vm.route.file;
+              let editHtml = '[📝 编辑本文](' + edit_url + ')\n';
+
+              let client_id = '296c581fc4b2a837a1e3';
+              let client_secret = '7e7f0ad1809fa4a1915430ade04835f6849ab56a';
+
+              let date_url =
+                'https://api.github.com/repos/ArchLinuxStudio/ArchLinuxTutorial/commits?per_page=1&path=docs/' +
+                vm.config.basePath +
+                encodeURIComponent(vm.route.file);
+
+              fetch(date_url, {
+                headers: {
+                  Authorization: `${client_id}:${client_secret}`,
+                },
+              })
+                .then((response) => {
+                  return response.json();
+                })
+                .then((commits) => {
+                  let modified = commits[0]['commit']['committer'][
+                    'date'
+                  ].slice(0, 10);
+                  document.getElementById('last-modified').textContent =
+                    '更新日期: ' + modified;
+                });
+
+              return (
+                '<span id="last-modified">更新日期: 获取中</span>' +
+                '\n' +
+                html +
+                '\n----\n' +
+                editHtml
+              );
+            });
+
+            hook.mounted(function () {
+              // 添加网站运行时间
+              let dom = Docsify.dom;
+              let runTimeNode = dom.create('div');
+              runTimeNode.className = 'runtime';
+              runTimeNode.style =
+                'color: #8590a6;max-width: 80%;margin: 0 auto 20px;padding: 0 15px 0 15px;';
+              dom.appendTo(dom.find('.content'), runTimeNode);
+            });
+          },
+        ],
+      };
+    </script>
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/gitalk.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify-pagination@2/dist/docsify-pagination.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+    <script src="https://unpkg.com/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js"></script>
+    <script>
+      addBackToTop({
+        diameter: 56,
+        backgroundColor: 'rgb(23,147,209)',
+        textColor: '#fff',
+      });
+    </script>
+
+    <script>
+      let client_id = '296c581fc4b2a837a1e3';
+      let client_secret = '7e7f0ad1809fa4a1915430ade04835f6849ab56a';
+
+      let props = {
+        clientID: client_id,
+        clientSecret: client_secret,
+        repo: 'ArchLinuxTutorialComments',
+        owner: 'ArchLinuxStudio',
+        admin: ['ryosukeeeeee'],
+        // facebook-like distraction free mode
+        distractionFreeMode: false,
+        id: decodeURI(location.hash.split('?')[0]),
+        proxy:
+          'https://ifuckgfw.com:7788/https://github.com/login/oauth/access_token',
+      };
+      let gitalk = new Gitalk(props);
+      // 哈希路由切换时 重新加载Gitalk
+      window.addEventListener('hashchange', onHashChange);
+      function onHashChange() {
+        props.id = decodeURI(location.hash.split('?')[0]); //如果不切分，在docsify里面的各个段落都会生成新的评论issue
+      }
+    </script>
+    <script>
+      function change_search_plugin_order() {
+        let search_plugin = document.getElementsByClassName('search')[0];
+        let app_name = document.getElementsByClassName('app-name')[0];
+        search_plugin.parentNode.insertBefore(app_name, search_plugin);
+      }
+      setTimeout(change_search_plugin_order, 1);
+    </script>
+
+    <!-- 添加网站运行时间统计 -->
+    <script>
+      function siteTime() {
+        setTimeout(siteTime, 1000);
+        let seconds = 1000;
+        let minutes = seconds * 60;
+        let hours = minutes * 60;
+        let days = hours * 24;
+        let today = new Date();
+        let todayYear = today.getFullYear();
+        let todayMonth = today.getMonth() + 1;
+        let todayDate = today.getDate();
+        let todayHour = today.getHours();
+        let todayMinute = today.getMinutes();
+        let todaySecond = today.getSeconds();
+
+        let t1 = Date.UTC(2020, 09, 1, 0, 0, 0);
+        let t2 = Date.UTC(
+          todayYear,
+          todayMonth,
+          todayDate,
+          todayHour,
+          todayMinute,
+          todaySecond
+        );
+        let diff = t2 - t1;
+        let diffDays = Math.floor(diff / days);
+        let diffHours = Math.floor((diff - diffDays * days) / hours);
+        let diffMinutes = Math.floor(
+          (diff - diffDays * days - diffHours * hours) / minutes
+        );
+        let diffSeconds = Math.floor(
+          (diff - diffDays * days - diffHours * hours - diffMinutes * minutes) /
+            seconds
+        );
+        Docsify.dom.find('.runtime').innerHTML =
+          'Arch Linux Studio已运行 ' +
+          diffDays +
+          ' 天 ' +
+          diffHours +
+          ' 小时 ' +
+          diffMinutes +
+          ' 分 ' +
+          diffSeconds +
+          ' 秒';
+      }
+      // 先让网页加载完，否则 Docsify.dom.find('.runtime') == null
+      setTimeout(siteTime, 500);
+    </script>
+  </body>
+</html>
