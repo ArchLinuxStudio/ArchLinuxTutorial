@@ -40,4 +40,16 @@ Arch Linux 安装使用教程，每日实时更新！包含从 Arch Linux 安装
 
 Arch Linux 可以以超高的自由度来定制自己的系统，并且其拥有最完善的[文档](https://wiki.archlinux.org/index.php/Main_page)，使得绝大多数问题都可以通过查看官方文档的方式解决。正是由于其软件更新的策略的激进，如果条件允许，建议使用者经常对 Arch Linux 进行更新。较长时间段内没有升级可能会造成各种问题（俗称 `滚挂了`），虽然大多数问题可以通过救援手段事后补救，但还是常常更新得好。同时，关注 Arch Linux 的[新闻列表](https://archlinux.org/news/)可以帮助你得知最新的升级注意事项。
 
+## 支持与捐赠
+
+如果本书对你有所帮助，请推荐给你身边有所需要的朋友们，这是对我们最大的支持！
+
+如果能接受到虚拟货币捐赠，我们将非常感谢。有你的支持，ArchLinuxStudio 社区将变得更加充实与活跃。
+
+[![Donate with Bitcoin](https://en.cryptobadges.io/badge/big/1Lth3oca4WnMnTnwHBcDLkEqniA2pBxkeC?showBalance=true)](https://en.cryptobadges.io/donate/1Lth3oca4WnMnTnwHBcDLkEqniA2pBxkeC)
+
+[![Donate with Ethereum](https://en.cryptobadges.io/badge/big/0x5A218a8d570d9947f42e0a4916ece7a60A181c2d?showBalance=true)](https://en.cryptobadges.io/donate/0x5A218a8d570d9947f42e0a4916ece7a60A181c2d)
+
+[![Donate with Litecoin](https://en.cryptobadges.io/badge/big/LdJXzaSzzrAxfKJdj5effRLcC7k1TbuXJ8?showBalance=true)](https://en.cryptobadges.io/donate/LdJXzaSzzrAxfKJdj5effRLcC7k1TbuXJ8)
+
 <!-- windows是最好的Linux发行版？It's only a BORING joke. -->

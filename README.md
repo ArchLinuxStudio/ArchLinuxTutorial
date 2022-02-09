@@ -14,6 +14,9 @@
 [![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 [![Lines](https://img.shields.io/tokei/lines/github/ArchLinuxStudio/ArchLinuxTutorial)](https://img.shields.io/tokei/lines/github/ArchLinuxStudio/ArchLinuxTutorial)
 [![lastcommit](https://img.shields.io/github/last-commit/ArchLinuxStudio/ArchLinuxTutorial)](https://img.shields.io/github/last-commit/ArchLinuxStudio/ArchLinuxTutorial)
+[![Donate with Bitcoin](https://en.cryptobadges.io/badge/micro/1Lth3oca4WnMnTnwHBcDLkEqniA2pBxkeC)](https://en.cryptobadges.io/donate/1Lth3oca4WnMnTnwHBcDLkEqniA2pBxkeC)
+[![Donate with Ethereum](https://en.cryptobadges.io/badge/micro/0x5A218a8d570d9947f42e0a4916ece7a60A181c2d)](https://en.cryptobadges.io/donate/0x5A218a8d570d9947f42e0a4916ece7a60A181c2d)
+[![Donate with Litecoin](https://en.cryptobadges.io/badge/micro/LdJXzaSzzrAxfKJdj5effRLcC7k1TbuXJ8)](https://en.cryptobadges.io/donate/LdJXzaSzzrAxfKJdj5effRLcC7k1TbuXJ8)
 
 <!-- shields not support telegram online count now, use sample discord instead temporarily -->
 
@@ -32,6 +35,18 @@
 > **本书采用 CC BY-NC-ND 4.0 协议[[1]](https://github.com/ArchLinuxStudio/ArchLinuxTutorial/issues/68)。欢迎提交Pull requests，但是禁止商业用途与演绎。任何"下游文档"都是未经授权且违反协议的。**
 
 > 请不要在上述群组以外的任何群组反馈本文档相关问题。这会为它们带来困扰以及不愉快的心情。
+
+## 支持与捐赠
+
+如果本书对你有所帮助，请推荐给你身边有所需要的朋友们，这是对我们最大的支持！
+
+如果能接受到虚拟货币捐赠，我们将非常感谢。有你的支持，ArchLinuxStudio 社区将变得更加充实与活跃。
+
+[![Donate with Bitcoin](https://en.cryptobadges.io/badge/big/1Lth3oca4WnMnTnwHBcDLkEqniA2pBxkeC?showBalance=true)](https://en.cryptobadges.io/donate/1Lth3oca4WnMnTnwHBcDLkEqniA2pBxkeC)
+
+[![Donate with Ethereum](https://en.cryptobadges.io/badge/big/0x5A218a8d570d9947f42e0a4916ece7a60A181c2d?showBalance=true)](https://en.cryptobadges.io/donate/0x5A218a8d570d9947f42e0a4916ece7a60A181c2d)
+
+[![Donate with Litecoin](https://en.cryptobadges.io/badge/big/LdJXzaSzzrAxfKJdj5effRLcC7k1TbuXJ8?showBalance=true)](https://en.cryptobadges.io/donate/LdJXzaSzzrAxfKJdj5effRLcC7k1TbuXJ8)
 
 ## Star 历史
 
