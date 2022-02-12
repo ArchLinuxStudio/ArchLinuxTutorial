@@ -1,5 +1,7 @@
 # Arch Linux 安装使用教程 - ArchTutorial - Arch Linux Studio <!-- {docsify-ignore-all} -->
 
+## 本书采用 CC BY-NC-ND 4.0 协议[[1]](https://github.com/ArchLinuxStudio/ArchLinuxTutorial/issues/68)。欢迎提交Pull requests，但是禁止商业用途与演绎。任何"下游文档"都是未经授权且违反协议的。
+
 Arch Linux 安装使用教程，每日实时更新！包含从 Arch Linux 安装，科学上网，透明代理，显卡驱动，日常软件的使用等，另附媒体制作，编程等你可能需要的全部内容。让 Arch Linux 成为你的常用系统吧！
 
 本书提供我们多年使用 Linux 的一些经验，并教与需要的人。与 Linux 密不可分的另一部分: [GNU](https://www.gnu.org/home.zh-cn.html)  

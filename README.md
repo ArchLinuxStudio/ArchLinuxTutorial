@@ -1,7 +1,10 @@
 <p align="center">
 <img width="240" height="80" align="left" style="float: left; margin: 0 10px 0 0;" src="https://www.archlinux.org/static/logos/archlinux-logo-dark-1200dpi.b42bd35d5916.png" alt="ArchLinuxStudio_ArchLinuxTutorial"/>
 </br>
-<h1>Arch Linux 安装使用教程</h1> 
+<h1>Arch Linux 安装使用教程</h1>
+
+<h2>本书采用 CC BY-NC-ND 4.0 协议[[1]](https://github.com/ArchLinuxStudio/ArchLinuxTutorial/issues/68)。欢迎提交Pull requests，但是禁止商业用途与演绎。任何"下游文档"都是未经授权且违反协议的。</h2>
+
 每日实时更新！本书包含从 Arch Linux 安装，科学上网，魔法充能，到显卡驱动，日常软件的使用等，另附媒体制作，编程等你可能需要的全部内容。让 Arch Linux 成为你的常用系统吧！提供在线网页文档。
 
 本项目隶属于 ArchLinuxStudio，一个加拿大社区组织。ArchLinuxStudio 不是官方 ArchLinux 本身。
