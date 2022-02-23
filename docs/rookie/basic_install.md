@@ -2,6 +2,14 @@
 
 本节从安装最基础的无图形化 ArchLinux 系统开始。[官方安装指南](https://wiki.archlinux.org/index.php/Installation_guide)
 
+## 0.禁用 reflector
+
+reflector 会为你选择速度合适的镜像源，但其结果并不准确，同时会清空配置文件中的内容，对于新人来讲并不适用，我们首先对其进行禁用。
+
+```bash
+systemctl stop reflector.service
+```
+
 ## 1.再次确保是否为 UEFI 模式
 
 在一系列的信息刷屏后，可以看到已经以 root 登陆安装系统了，此时可以执行的命令：
@@ -113,28 +121,20 @@ mount /dev/sdax /mnt/home
 
 ## 7.镜像源的选择
 
-目前 reflector 会为你选择速度合适的镜像源，包括亚洲镜像点，一般来说无需手动对其进行修改控制。
-
-使用`cat /etc/pacman.d/mirrorlist`命令查看镜像列表，其中的首行是将会使用的镜像源，如果其速度不佳，可以手动指定镜像源。完整的镜像源列表可参考官方[镜像源生成器](https://archlinux.org/mirrorlist/)。
-
-如果需要手动指定镜像源，先禁用 reflector 服务
-
-```bash
-systemctl stop reflector.service
-```
-
-接下来编辑 mirrorlist
+使用如下命令编辑镜像列表：
 
 ```bash
 vim /etc/pacman.d/mirrorlist
 ```
 
-mirrorlist 中放在最上面的行是会使用的更新源,添加中科大或者清华的放在最上面即可。
+其中的首行是将会使用的镜像源。添加中科大或者清华的放在最上面即可。
 
 ```
 Server = https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch
 Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
 ```
+
+如果其速度不佳，可以手动指定其他镜像源。完整的镜像源列表可参考官方[镜像源生成器](https://archlinux.org/mirrorlist/)。
 
 > 这里使用中国境内的镜像源以提高访问速度。然而这存在问题，镜像源(如 arch linux 清华镜像源)以及第三方源(如 archlinux-cn)可以知道你的 ip 是什么，什么时候更新了系统，什么时候检查了系统，什么时候更新了什么软件，你安装的软件列表是什么。在威权国家的镜像源维护者完全有可能根据威权当局的要求提供这些数据，很多维护者在网络上几乎是实名上网的，他们没有任何抵抗能力，进一步的，威权国家可以根据这些元数据与你产生的其他元数据进行比对，从而对你进行进一步的定位与辨识。简单举一个例子，要求维护者提供或监视安装了 v2ray/qv2ray 等软件包的使用者的 ip,以及安装时间，以及其全部软件列表。
 

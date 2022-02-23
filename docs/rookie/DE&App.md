@@ -70,7 +70,7 @@ pacman -S plasma-meta konsole dolphin  #安装plasma-meta元软件包以及终�
 systemctl enable sddm
 ```
 
-## 5.设置交换文件 swap
+## 5.设置交换文件 swap(可选)
 
 在桌面环境中，交换分区或文件用来实现休眠(hibernate)的功能，即将当前环境保存在磁盘的交换文件或分区部分。除此之外，某些特定软件需要 swap 才可以正确运行。交换文件与分区性能相同，且交换文件更为灵活，可随时变更大小，增加与删除。[[1]](https://wiki.archlinux.org/title/Swap#Swap_file)
 
@@ -128,7 +128,7 @@ sudo pacman -S ark                                                          #与
 sudo pacman -S p7zip unrar unarchiver lzop lrzip                            #安装ark可选依赖
 sudo pacman -S packagekit-qt5 packagekit appstream-qt appstream             #确保Discover(软件中心）可用 需重启
 sudo pacman -S gwenview                                                     #图片查看器
-sudo pacman -S git wget kate                                                #一些工具
+sudo pacman -S git wget kate bind                                                #一些工具
 ```
 
 > 不要安装过多字体：在字体超过 255 种时，某些 QT 程序可能无法正确显示某些表情和符号，详见链接[2](https://wiki.archlinux.org/title/fonts#Emoji_and_symbols)。
