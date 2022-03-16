@@ -43,8 +43,10 @@ t-rex 可从[github 下载地址](https://github.com/trexminer/T-Rex/releases)�
 
 需要注意的是，t-rex 运行后会在本机 127.0.0.1:4067 开启控制面板，你可在其中进行各类信息的查看。如果想要在其他机器访问挖矿机器面板，则需额外指定`--api-bind-http 0.0.0.0:4067`参数，这样一来你就可以达到目的。
 
-使用英伟达显卡挖矿也需要额外对风扇转速进行设置，否则风扇不会根据温度来调整转速，即使温度较高，也近会运行在较低的转速，这个问题在进行深度学习等操作时仍然存在。目前我们只确定可以通过图形化界面的 Nvidia-settings 进行转速设置，尚未找到有效的，不需要安装桌面环境，直接可在终端中进行风扇转速调整的方法。这是由于英伟达显卡的设置依赖 Xorg 造成的。在此提供一些资料以供参考，但是我们未能在 Arch Linux 上找到有效的，可以成功实施的解决方案。如果你成功在 Arch Linux 上完成了在无 Xorg 的环境下，纯终端配置风扇转速，欢迎你提交 pull request。
+使用英伟达显卡挖矿也需要额外对风扇转速进行设置，否则风扇不会根据温度来调整转速，即使温度较高，也近会运行在较低的转速，这个问题在进行深度学习等操作时仍然存在。如果你启动了图形化界面，则可通过 nvidia-settings 进行转速设置。英伟达显卡的转速设置依赖 X server 造成的，所以默认情况下，如果不启动 X server 则无法进行风扇调速。此时可以使用工具[coolgpus](https://github.com/andyljones/coolgpus)，其工作原理是，它会为每个 GPU 设置一个临时 X server。然后，它每隔几秒钟循环查看一次 GPU，并根据它们的温度设置风扇速度。当脚本终止时，它会将风扇的控制权返回给驱动程序并清理 X server。
 
+- https://ximikang.icu/2021/03/09/ubuntu%E7%B3%BB%E7%BB%9F%E8%B0%83%E8%8A%82GPU%E9%A3%8E%E6%89%87%E8%BD%AC%E9%80%9F
+- https://www.codeleading.com/article/26244997267/
 - https://forums.developer.nvidia.com/t/set-fan-speed-without-an-x-server-solved/35627
 - https://forums.developer.nvidia.com/t/fan-speed-without-x-headless-powermizer-drops-card-to-p8/37917
 - https://github.com/boris-dimitrov/set_gpu_fans_public
@@ -91,6 +93,28 @@ xmrig -o rx-asia.unmineable.com:3333 -u TRX:TWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.mi
 ## 提现
 
 在达到要求体现的最小限额后，你即可在矿池发起提现。提现有一定等待时间，需要耐心等待。
+
+## 防火墙防护
+
+如果你在内网环境中启用一些监控面板以便使用，则需要注意开启防火墙防护，因为你的内网中的设备，可能存在恶意软件，对网络中的端口、服务进行扫描、监视并上报。
+
+这里采用 ufw 工具进行防火墙防护。第一，因为其使用简单，第二，因为 ufw 与 v2raya 无冲突，可正常使用。firewalld 默认情况下无法与 v2raya 同时正常使用。
+
+```bash
+sudo pacman -S ufw
+sudo systemctl enable --now ufw
+
+sudo ufw default deny #默认拒绝
+
+sudo ufw allow from YOUR_TRUST_LAN_IP #只允许你信任的内网 ip 连接
+sudo ufw allow ssh #允许 ssh 以便内网以及外网通过 nps 的ssh连接
+sudo ufw allow 8024 #允许 nps 的默认网桥通信端口工作
+
+sudo ufw enable #设置完成后启用
+sudo ufw status #检查状态
+```
+
+Ref: https://wiki.archlinux.org/title/Uncomplicated_Firewall
 
 ---
 
