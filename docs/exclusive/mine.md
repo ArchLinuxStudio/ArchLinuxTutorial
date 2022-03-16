@@ -118,6 +118,55 @@ Ref: https://wiki.archlinux.org/title/Uncomplicated_Firewall
 
 ---
 
+## 以root用户自启动挖矿脚本
+
+如果你是晚上宿舍断电的学生党，那么这一小节可能会对你有所帮助。
+
+在一般情况下，自启动脚本会以当前登录用户为权限进行运行，因此，最简单，但也是最不推荐的方法便是，设置默认登录账户为root账户
+
+由于这个做法非常不安全，因此本小节不详细展开；确有相关需求的读者可以自行研究
+
+这里我们利用crontab实用程序达成上述目的。
+
+首先切换到root用户
+
+```
+sudo su
+```
+
+然后编辑当前用户(即root用户)的crontab定时程序
+
+```
+crontab -e
+```
+
+你有可能能看到一个空文件；请放心，这是预期的。此外，上述命令默认将会调用vi而非vim，若要修改crontab的默认编辑器请使用如下命令
+
+```
+
+```
+
+向打开的这个文件当中写入
+
+```
+@reboot xmrig -o rx-asia.unmineable.com:3333 -u TRX:TWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.miner3 -p x --1g
+```
+其中@reboot表示每当开机时，后面的指令即为“每当开机时”所执行的命令。为了“美观“，你也可以将该指令保存到文件```miner.sh```当中
+
+然后向crontab中写入
+
+```
+@reboot /the/path/to/your/script/miner.sh
+```
+
+如果需要删除crontab程序，只需
+
+```
+crontab -e
+```
+然后直接删除@reboot行即可
+
+
 ## 附加说明
 
 TRON 网络自身会屏蔽一些 IP 地址，经过我们验证的有亚洲香港，新加坡，未经过我们验证的可能也有其他地区。如果你使用这些被屏蔽的地区的代理来使用 TRON 网络，操作 TRON 钱包，你可能会遇到如下的问题。在你想要给某人发送 TRON 钱包中的货币时，如 USDT,你的余额可能从你的余额的实际数值突然跳转至 0，这将使你无法继续发送货币给对方，解决办法如下。
