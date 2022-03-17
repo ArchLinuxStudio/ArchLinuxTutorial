@@ -210,7 +210,7 @@ SDL_IM_MODULE=fcitx
 
 -------------------------------------------------------
 - RIME
-中州韵输入法引擎（英语：Rime Input Method Engine，又称Rime 输入法）是由佛振编写的开源中文输入法，目前项目网站、源代码均托管在GitHub[注 1]。基于同一个核心架构，该输入法分为三个官方发行版：Linux 发行版中州韵（ibus-rime）、Windows发行版小狼毫（Weasel）、macOS 发行版鼠须管（Squirrel）。另有数个第三方发行版：Linux 发行版fcitx-rime、Windows发行版PRIME、macOS 发行版XIME、Android发行版同文输入法（Trime）、iOS发行版iRime。
+中州韵输入法引擎（英语：Rime Input Method Engine，又称Rime 输入法）是由佛振编写的开源中文输入法，目前项目网站、源代码均托管在GitHub。基于同一个核心架构，该输入法分为三个官方发行版：Linux 发行版中州韵（ibus-rime）、Windows发行版小狼毫（Weasel）、macOS 发行版鼠须管（Squirrel）。另有数个第三方发行版：Linux 发行版fcitx-rime、Windows发行版PRIME、macOS 发行版XIME、Android发行版同文输入法（Trime）、iOS发行版iRime。
 
 这里介绍一下fcitx5-rime的安装方式
 '''bash
