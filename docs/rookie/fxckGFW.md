@@ -139,6 +139,29 @@ sudo systemctl enable --now v2raya
   把配置文件中最后一行改为本地代理的 ip 和端口，如`socks5 127.0.0.1 1089`
 
   proxychains 不能够支持 yay 以及其他一些程序，详见[Incompatible with proxychains](https://github.com/Jguer/yay/issues/429)。这种情况可以使用透明代理。
+  
+## Clash
+
+Clash是一种新的客户端，它支持V2Ray的订阅链接。可以用AUR安装
+
+clash-for-windows是clash的一种图形化前端，它名字是”for-windows“，实际上是可以同时在Windows/Linux/MacOSX等平台使用的跨平台前端
+
+ArchLinux 用户可以用AUR安装Clash
+```bash
+yay -S clash-for-windows-bin
+```
+，但是在墙内安装速度其慢无比(自测需要半个小时)，如果没有耐心下载的话，可以在配置完其他代理后再布置，或使用镜像地址。
+和Qv2ray不同，Clash的默认代理端口是7890.
+- 订阅
+Clash的订阅是通过Profile完成的，点击Profile栏，顶部有一个文本框"Download from URL"，粘贴订阅地址，然后点击右边的按钮download，即可下载
+- 设置代理规则
+在Proxies栏中，选择选项Rule，是规则代理。
+
+选项Global是全局，而选项Direct是直连，可以以此更改代理模式。
+同时，在下面的界面可以通过简单操作来修改代理服务器
+
+打开Clash Dashboard,在General一栏勾选Start With Linux即可设置自启动
+
 
 ## 4. 更加全面的系统级全局代理
 
