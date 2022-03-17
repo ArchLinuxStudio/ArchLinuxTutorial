@@ -208,6 +208,17 @@ SDL_IM_MODULE=fcitx
 
 注销，重新登陆，就可以发现已经可以在各个软件中输入中文了
 
+-------------------------------------------------------
+- RIME
+中州韵输入法引擎（英语：Rime Input Method Engine，又称Rime 输入法）是由佛振编写的开源中文输入法，目前项目网站、源代码均托管在GitHub。基于同一个核心架构，该输入法分为三个官方发行版：Linux 发行版中州韵（ibus-rime）、Windows发行版小狼毫（Weasel）、macOS 发行版鼠须管（Squirrel）。另有数个第三方发行版：Linux 发行版fcitx-rime、Windows发行版PRIME、macOS 发行版XIME、Android发行版同文输入法（Trime）、iOS发行版iRime。
+
+这里介绍一下fcitx5-rime的安装方式
+'''bash
+sudo pacman -S fcitx5-rime #不是fcitx-rime，因为fcitx与fcitx5有版本冲突 
+'''
+然后打开 打开 _系统设置_ > _区域设置_ > _输入法_ >,点击添加输入法，找到RIME，即可添加RIME输入法。
+RIME输入法默认是繁体字按 <key>Ctrl</key>+<key>~</key>,即可打开选单，使用键盘上的<key>←</key><key>→</key>，选择朙月拼音·简化字,回车。
+
 ## 12.配置系统默认编辑器
 
 默认情况下，Arch Linux 在一些终端编辑场景使用 vi 编辑器，但是我们使用 vim。如果不做一个额外配置，在 git 等场景下，在终端调用编辑器会出错。编辑 `EDITOR=vim sudoedit /etc/profile` 文件，加入如下内容，将 vim 设置为默认 EDITOR
