@@ -57,7 +57,7 @@ t-rex 可从[github 下载地址](https://github.com/trexminer/T-Rex/releases)�
 
 在使用 AMD 显卡进行挖矿时，需要注意目前各个挖矿算法对于 AMD 开源 mesa 驱动支持非常不到位，我们尝试过多款常见的 AMD 挖矿软件均无法运行，显示段错误。解决方案是使用专有 AMD 驱动 [opencl-amd](https://aur.archlinux.org/packages/opencl-amd/)。然而在 AUR 中最新版本的 opencl-amd 驱动仍无法作用，解决方案是使用[旧版的 20.45 版本的驱动程序](https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=opencl-amd&id=99929da87153c0f36a2a9497c38221c12307ecfc)。将 PKGBUILD 下载后使用 makepkg 生成包并安装。使用其他 AMD 挖矿程序时均需要此操作。
 
-接下来需要对 AMD 显卡的风扇风速进行设定。安装软件 amdgpu-fan 并启用服务即可。amdgpu-fan 会根据显卡温度自动调整风扇转速。
+接下来需要对 AMD 显卡的风扇风速进行设定。安装软件 amdgpu-fan 并启用服务即可。amdgpu-fan 会根据显卡温度自动调整风扇转速。注意，[AUR 当前的版本](https://github.com/zzkW35/amdgpu-fan/issues/2)存在开机无法自动启动生效的问题，根据[Issue](https://github.com/zzkW35/amdgpu-fan/issues/2)描述，其上游[源仓库](https://github.com/chestm007/amdgpu-fan)不存在此问题。
 
 ```
 yay -S amdgpu-fan
