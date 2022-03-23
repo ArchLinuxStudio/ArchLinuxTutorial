@@ -116,6 +116,27 @@ sudo ufw status #检查状态
 
 Ref: https://wiki.archlinux.org/title/Uncomplicated_Firewall
 
+## 辅助命令
+
+你可用如下命令查看识别到的显卡编号，此命令将列出真正被系统识别可用的显卡编号。
+
+```bash
+ls /sys/class/drm | grep "^card[[:digit:]]$"
+```
+
+你可用如下命令查看各个显卡设备的详情
+
+```bash
+sudo lspci -vnn | grep VGA -A 12
+```
+
+你可用[speedtest-cli](https://archlinux.org/packages/community/any/speedtest-cli/)在终端下测试网速情况
+
+```bash
+sudo pacman -S speedtest-cli
+speedtest-cli
+```
+
 ---
 
 ## 附加说明
