@@ -255,7 +255,7 @@ pacman -S amd-ucode     #AMD
 
 ```bash
 pacman -S grub efibootmgr   #grub是启动引导器，efibootmgr被 grub 脚本用来将启动项写入 NVRAM。
-grub-install --target=x86_64-efi --efi-directory=/efi --removable
+grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
 ```
 
 接下来编辑/etc/default/grub 文件，去掉`GRUB_CMDLINE_LINUX_DEFAULT`一行中最后的 quiet 参数，同时把 log level 的数值从 3 改成 5。这样是为了后续如果出现系统错误，方便排错。同时在同一行加入 nowatchdog 参数，这可以显著提高开关机速度。不会 vim 的读者注意视频中的操作。
@@ -270,7 +270,14 @@ vim /etc/default/grub
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-> 我们在之前的命令中指定--removable 参数已经可以解决一些主板 NVRAM 的兼容性问题。如不加此参数，在某些主板安装完成后，你会发现没有 nvme 启动条目。这是因为某些主板的 UEFI 固件在显示 UEFI NVRAM 引导条目之前，需要在特定的位置存放可引导文件，不支持自定义存放 efi 文件[[6]](https://wiki.archlinux.org/index.php/GRUB#Default/fallback_boot_path)。除此之外，如果你的主板是一些较老的型号，如 intel 9 系列以下或者较老 AMD 的主板，它们很可能不支持从 nvme 启动系统，虽然可以通过修改 BIOS 加入 NVME 支持模块来解决，但这不在本文讨论范围内。
+> 我们在之前的命令中指定了 bootloader-id 为 GRUB，这一般不会出现问题。然而在某些主板安装完成后，你会发现没有 nvme 启动条目。这是因为某些主板的 UEFI 固件在显示 UEFI NVRAM 引导条目之前，需要在特定的位置存放可引导文件，不支持自定义存放 efi 文件[[6]](https://wiki.archlinux.org/index.php/GRUB#Default/fallback_boot_path)。解决方式是使用`--removable` 参数解决一些主板 NVRAM 的兼容性问题。
+
+```bash
+grub-install --target=x86_64-efi --efi-directory=/efi --removable
+grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+除此之外，如果你的主板是一些较老的型号，如 intel 9 系列以下或者较老 AMD 的主板，它们很可能不支持从 nvme 启动系统，虽然可以通过修改 BIOS 加入 NVME 支持模块来解决，但这不在本文讨论范围内。
 
 ## 17.完成安装
 
