@@ -43,7 +43,7 @@ t-rex 可从[github 下载地址](https://github.com/trexminer/T-Rex/releases)�
 
 需要注意的是，t-rex 运行后会在本机 127.0.0.1:4067 开启控制面板，你可在其中进行各类信息的查看。如果想要在其他机器访问挖矿机器面板，则需额外指定`--api-bind-http 0.0.0.0:4067`参数，这样一来你就可以达到目的。
 
-使用英伟达显卡挖矿也需要额外对风扇转速进行设置，否则风扇不会根据温度来调整转速，即使温度较高，也近会运行在较低的转速，这个问题在进行深度学习等操作时仍然存在。如果你启动了图形化界面，则可通过 nvidia-settings 进行转速设置。英伟达显卡的转速设置依赖 X server 造成的，所以默认情况下，如果不启动 X server 则无法进行风扇调速。此时可以使用工具[coolgpus](https://github.com/andyljones/coolgpus)，其工作原理是，它会为每个 GPU 设置一个临时 X server。然后，它每隔几秒钟循环查看一次 GPU，并根据它们的温度设置风扇速度。当脚本终止时，它会将风扇的控制权返回给驱动程序并清理 X server。
+使用英伟达显卡挖矿也需要额外对风扇转速进行设置，否则风扇不会根据温度来调整转速，即使温度较高，也近会运行在较低的转速，这个问题在进行深度学习等操作时仍然存在。如果你启动了图形化界面，则可通过 nvidia-settings 进行转速设置。英伟达显卡的转速设置依赖 X server 造成的，所以默认情况下，如果不启动 X server 则无法进行风扇调速。此时可以使用工具[coolgpus](https://github.com/andyljones/coolgpus)，其工作原理是，它会为每个 GPU 设置一个临时 X server。然后，它每隔几秒钟循环查看一次 GPU，并根据它们的温度设置风扇速度。当脚本终止时，它会将风扇的控制权返回给驱动程序并清理 X server。pip 安装的 coolgpus 位于`~/.local/bin/coolgpus`。
 
 - https://ximikang.icu/2021/03/09/ubuntu%E7%B3%BB%E7%BB%9F%E8%B0%83%E8%8A%82GPU%E9%A3%8E%E6%89%87%E8%BD%AC%E9%80%9F
 - https://www.codeleading.com/article/26244997267/
