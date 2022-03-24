@@ -1,16 +1,30 @@
-# 虚拟货币挖矿
+# 加密货币挖矿
 
-本节描述如何在 Arch Linux 中进行虚拟货币挖矿。
+本节描述如何在 Arch Linux 中进行加密货币挖矿。一提到加密货币与挖矿，很多中国读者对加密货币与挖矿有着很深的误解与偏见，这实际上与其国家政府及其控制的媒体、自媒体的宣传导向有关。我们不希望我们的读者被蒙蔽，所以在本文中将进行一些解释。
 
-## 背景
+为什么有人反对加密货币？第一，加密货币在某些威权政府中被视为会威胁其独裁统治的存在，是极其危险与不可控的，所以要进行全面禁止。第二，加密货币已经形成相当庞大的交易市场，其已经对传统的金融行业产生了一定的影响与冲击，所以以巴菲特为首的部分商界代表公开反对加密货币。第三，加密货币在恐怖主义、诈骗与洗钱方面的应用，以及加密货币不环保等较为边缘的理由。
 
-一提到虚拟货币与挖矿，很多人对虚拟货币矿工恨之入骨，并对虚拟货币本身持怀疑和否认态度，当然，这和其所在国家政府的宣传导向有关，可以理解。对于虚拟货币矿工而言，他们当中的大多数人确实只为利润而从事这个行业，而对于我们来说，进行虚拟货币挖矿有两个主要理由。第一点，进行虚拟货币挖矿，以及后续的交易，可以帮助你避免无处不在的支付监控和管制，帮助你保证自己的隐私安全。第二点，使用虚拟货币可以当作另外的一种资产，当你所在的国家法币缺乏信用、并限制你获取外汇时，虚拟货币可以作为风险抵御的一种手段。
+我们为何支持加密货币？第一，使用加密货币对于无处不在的监视与审计进行反抗。在一些国家中，各种应用广泛的支付手段已经被完全绑定实名，以及进行了全面的监视与审查，个人隐私丝毫没有保障。使用加密货币可以很好的保护你自身的隐私。即使不使用 XMR 等能够高度保证隐私的加密货币，仅仅只使用(正确的使用)普通加密货币也能在很大程度上保障你个人的隐私。第二，加密货币可以作为对抗法币的不稳定性，资产多样化的一种工具。即使很多政府以及各类名流不断的对加密货币进行禁止和否定，加密货币依然安然度过了十余个年头。法币是否稳定？这个问题读者可以自行思考一些国家二十年来法币购买力的变化，一些国家全面禁止加密货币起因何在？读者们应该能够有自己的理解。持有在全世界广泛流通的加密货币，能够提升你在抵御法币风险时的能力，保障自身的权益。第三，即使没有加密货币，恐怖主义、诈骗与洗钱仍然广泛存在于世界，不能因为加密货币可以用于这些用途，就将其归罪与加密货币，这是荒唐的逻辑，提出此类观点的人或组织一般都存在其他的目的。
+
+我们为何支持加密货币挖矿？由于我们的读者大多来自中国，他们通过正规且安全的渠道购买加密货币的手段已经越来越少，从 2022 年目前来看，他们可以获取加密货币的途径只有以下几种：
+
+- 使用仍允许中国用户进行交易的交易所进行买入
+- 线下交易
+- 通过挖矿获取
+
+通过简单的搜索即可发现，目前仍可使用的交易所，某些具有强劲的政府背景，这样的交易所几乎无法保证安全。即使你可以通过此类交易所进行买入与转出，与你实名认证相关的持有、交易、提现到链的记录也可以被轻松获取。实际上，你不应该使用任何中心化交易所。
+
+线下交易则是更难，而且风险更高的方式，这一点应该无需赘述。
+
+所以综上所述，挖矿是对于处在被压迫的国家或地区的人们**唯一**安全且方便的获取加密货币的方式。
+
+如果你对于加密货币一无所知，可以参考[币安学院](https://academy.binance.com/zh/search?page=1)的系列文章入门，数百篇从低阶到高阶的文章可以供你阅读。
 
 ## 注意事项
 
-由于个别国家对于虚拟货币的全面禁止与管制，如果你在这些个别国家从事挖矿，则需要注意如下几点：
+在进行挖矿前，在安全方面与使用方面，均有一些重要事项需要提前提醒：
 
-- 在进行挖矿的设备上使用全局代理，包括代理 DNS。这不仅能够使你连接到矿池等网站，也可以帮助你隐藏自己正在访问虚拟货币相关网站的动作，从而避开 ISP 或者政府相关部门的监视。这里可以使用 v2raya，它可以使你通过浏览器远程管理挖矿设备的网络，而不用在挖矿设备上安装任何图形化界面程序。
+- 由于个别国家对于加密货币的全面禁止与管制，在进行挖矿的设备上需要使用全局代理，包括代理 DNS。这不仅能够使你连接到矿池等网站，也可以帮助你隐藏自己正在访问加密货币相关网站的动作，从而避开 ISP 或者政府相关部门的监视。这里可以使用 v2raya，它可以使你通过浏览器远程管理挖矿设备的网络，而不用在挖矿设备上安装任何图形化界面程序。
 - 在添加新设备之后，可能需要移除主板 BIOS 电池来放电，注意在放电后系统时间会重置，这会导致 v2ray 无法使用。这种情况下记得先重新校准系统时间。
 - 控制你进行挖矿场所的电费使用情况在一个合理范围内。如果电费使用情况过于离谱，可能会引起某些政府部门的怀疑和监视。
 - 主板 BIOS 设置中，需要开启`Above 4G Decoding`选项以支持多张(一般为 4 张以上)图形显示卡。此设置一般存在于 PCIE 设置中。此设置启用芯片组 64bit 兼容性硬件物理寻址，在关闭时 BIOS 只能使用 32bit 硬件物理寻址。
@@ -21,22 +35,32 @@
 
 ## 选择矿池
 
-在获得自己的虚拟货币地址后，要进行矿池的选择。简单来说，虚拟货币矿工自行进行挖矿，效率是较为低下的。加入矿池，并进行分成是更具效率的挖矿方式。矿池有非常多，有着各自不同的手续费收取方式以及收取比例。本文选择[unmineable](https://unmineable.com/)矿池，其一个优点为完全不需要注册即可使用。
+在获得自己的加密货币地址后，要进行矿池的选择。简单来说，加密货币矿工自行进行挖矿，效率是较为低下的。加入矿池，并进行分成是更具效率的挖矿方式。矿池有非常多，有着各自不同的手续费收取方式以及收取比例。对于新手来讲，选择[unmineable](https://unmineable.com/)矿池是不错的选择，它的界面简单易用。
 
-在进入矿池后，可以选择你需要进行挖矿的币种。注意，这里的币种选择不是你实际进行此币种的挖矿操作，而是你进行 Ethereum 的挖矿，然后 unmineable 矿池将收益转化成你所选择的币种再支付给你。
+在进入矿池后，可以选择你需要进行挖矿的币种。注意，这里可以选择的一些实际不能挖矿的币种，不是你实际进行此币种的挖矿操作，而是你进行 Ethereum 等可以挖掘币种的挖矿，然后 unmineable 矿池将收益转化成你所选择的币种再支付给你。
 
 ## 使用工具挖矿
 
-挖矿工具也有很多以供选择，本文主要讲述 xmrig 用于 CPU 挖矿，LoLMiner/NBminer 进行 AMD GPU 挖矿、以及 t-rex 进行 Nvidia GPU 挖矿。一般来说，使用 GPU 挖矿效率更高。
+挖矿工具也有很多以供选择，本文主要讲述 xmrig 用于 CPU 挖矿，LoLMiner 进行 AMD GPU 挖矿、以及 t-rex 进行 Nvidia GPU 挖矿。[ethminer](https://github.com/ethereum-mining/ethminer)则是使用 GPL-3.0 协议的自由软件，是一款通用的以太坊挖矿软件。一般来说，使用 GPU 进行 Ethereum 挖矿效率更高。
 
-### t-rex
+### xmrig
 
-使用 Nvidia 显卡挖矿时，需要首先安装 cuda。
-
-t-rex 可从[github 下载地址](https://github.com/trexminer/T-Rex/releases)自行下载，也可从 [AUR](https://aur.archlinux.org/packages/trex-bin/) 安装。在安装完成后，可以使用如下命令进行挖矿。如下命令在亚洲矿池使用 ethash 进行 TRX 的挖矿。
+xmrig 可从[github 下载地址](https://github.com/xmrig/xmrig/releases)自行下载，也可从 [AUR](https://aur.archlinux.org/packages/?O=0&SeB=nd&K=xmrig&outdated=&SB=n&SO=a&PP=50&do_Search=Go) 安装。xmrig 是使用 GPL-3.0 许可的自由软件。xmrig-cuda 是 xmrig cuda backends 的插件，你可以根据需要自行选择。在安装完成后，可以使用如下命令进行挖矿。如下命令在亚洲矿池使用 RandomX 进行 TRX 的挖矿。
 
 ```bash
-./t-rex -a ethash -o ethash-asia.unmineable.com:3333 -u TRX:TWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.miner1#31ee-jt8k -p x
+xmrig -o rx-asia.unmineable.com:3333 -u TRX:TWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.miner1 -p x --1g
+```
+
+其中部分参数含义同上， --1g 参数为开启 1g 大页面的支持。
+
+### T-Rex
+
+使用 Nvidia 显卡挖矿时，需要首先安装 [cuda](https://archlinux.org/packages/community/x86_64/cuda/)。
+
+T-Rex 可从[github 下载地址](https://github.com/trexminer/T-Rex/releases)自行下载，也可从 [AUR](https://aur.archlinux.org/packages/trex-bin/) 安装。T-Rex 是专有软件。在安装完成后，可以使用如下命令进行挖矿。如下命令在亚洲矿池使用 ethash 进行 TRX 的挖矿。
+
+```bash
+./t-rex -a ethash -o ethash-asia.unmineable.com:3333 -u TRX:TWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.miner1 -p x
 ```
 
 其中-a 参数指定算法。-o 指定矿池的 ip 和端口号，这些参数你可以在矿池页面找到。-u 参数指定币种、收币地址、主机名、以及优惠码，其中收币地址需要更换成你自身的地址，而使用优惠码可以减免 0.25%的手续费。
@@ -55,7 +79,9 @@ t-rex 可从[github 下载地址](https://github.com/trexminer/T-Rex/releases)�
 
 ### lolMiner
 
-在使用 AMD 显卡进行挖矿时，需要注意目前各个挖矿算法对于 AMD 开源 mesa 驱动支持非常不到位，我们尝试过多款常见的 AMD 挖矿软件均无法运行，显示段错误。解决方案是使用专有 AMD 驱动 [opencl-amd](https://aur.archlinux.org/packages/opencl-amd/)。然而在 AUR 中最新版本的 opencl-amd 驱动仍无法作用，解决方案是使用[旧版的 20.45 版本的驱动程序](https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=opencl-amd&id=99929da87153c0f36a2a9497c38221c12307ecfc)。将 PKGBUILD 下载后使用 makepkg 生成包并安装。使用其他 AMD 挖矿程序时均需要此操作。
+lolMiner 是专有软件。
+
+在使用 AMD 显卡进行挖矿时，如果你使用 AMD 开源 mesa 驱动则有可能无法运行挖矿软件。解决方案是使用专有 AMD 驱动 [opencl-amd](https://aur.archlinux.org/packages/opencl-amd/)。然而在 AUR 中最新版本的 opencl-amd 驱动仍可能无法作用，如果你遇到此问题，解决方案是使用[旧版的 20.45 版本的驱动程序](https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=opencl-amd&id=99929da87153c0f36a2a9497c38221c12307ecfc)。将 PKGBUILD 下载后使用 makepkg 生成包并安装。使用其他 AMD 挖矿程序时均可能需要此操作。
 
 接下来需要对 AMD 显卡的风扇风速进行设定。安装软件 amdgpu-fan 并启用服务即可。amdgpu-fan 会根据显卡温度自动调整风扇转速。注意，[AUR 当前的版本](https://github.com/zzkW35/amdgpu-fan/issues/2)存在开机无法自动启动生效的问题，根据[Issue](https://github.com/zzkW35/amdgpu-fan/issues/2)描述，其上游[源仓库](https://github.com/chestm007/amdgpu-fan)不存在此问题。
 
@@ -69,30 +95,12 @@ sudo systemctl enable --now amdgpu-fan
 下载 [lolMiner](https://github.com/Lolliedieb/lolMiner-releases) 并运行：
 
 ```bash
-./lolMiner --algo ETHASH --pool ethash-asia.unmineable.com:3333 --user ETH:0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.arcccc1#tosi-6k1y --ethstratum ETHPROXY pause --apihost 0.0.0.0  --apiport  2233
+./lolMiner --algo ETHASH --pool ethash-asia.unmineable.com:3333 --user ETH:0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.miner1 --ethstratum ETHPROXY pause --apihost 0.0.0.0  --apiport YOUR_PORT
 ```
-
-### nbminer
-
-下载 [nbminer](https://github.com/NebuTech/NBMiner/releases) 并运行：
-
-```bash
-./nbminer -a ethash -o stratum+tcp://ethash-asia.unmineable.com:3333 -u ETH:0xxxxxxxxxxxxxxxxxxxxxxxxx.arcccc1#tosi-6k1y -log
-```
-
-### xmrig
-
-xmrig 可从[github 下载地址](https://github.com/xmrig/xmrig/releases)自行下载，也可从 [AUR](https://aur.archlinux.org/packages/?O=0&SeB=nd&K=xmrig&outdated=&SB=n&SO=a&PP=50&do_Search=Go) 安装。注意，其有多个版本可供选择，如 xmrig-donateless 是去除内置 1%捐赠的版本，xmrig-cuda 是 xmrig cuda backends 的插件，你可以根据需要自行选择。在安装完成后，可以使用如下命令进行挖矿。如下命令在亚洲矿池使用 RandomX 进行 TRX 的挖矿。
-
-```bash
-xmrig -o rx-asia.unmineable.com:3333 -u TRX:TWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.miner2#31ee-jt8k -p x --1g
-```
-
-其中部分参数含义同上， --1g 参数为开启 1g 大页面的支持。
 
 ## 提现
 
-在达到要求体现的最小限额后，你即可在矿池发起提现。提现有一定等待时间，需要耐心等待。
+在达到要求提现的最小限额后，你即可在矿池发起提现。提现有一定等待时间，需要耐心等待。
 
 ## 防火墙防护
 
@@ -147,7 +155,7 @@ TRON 网络自身会屏蔽一些 IP 地址，经过我们验证的有亚洲香�
 
 1. 先从你的原有钱包里导出 TRON 钱包的私钥。
 2. 在设置中重新下载备份文件。
-3. 使用一个你未曾使用过虚拟货币钱包如 Guarda 的浏览器，重新进入钱包，选择"Restore or Import"选项
+3. 使用一个你未曾使用过加密货币钱包如 Guarda 的浏览器，重新进入钱包，选择"Restore or Import"选项
 4. 选择"Import by currency"，然后将刚刚得到的 TRON 钱包的私钥填入其中
 
 做完如上步骤后，再发送 USDT 即可一切正常。
