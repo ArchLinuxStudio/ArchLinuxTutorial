@@ -44,7 +44,7 @@ steam 上的游戏可分为有 Linux 原生支持的，以及通过[Steam Play](
 
 ## Lutris
 
-Lutris 基于 Wine，提供了大量游戏在 Linux 下的解决方案。其为你已经配置好了 Wine 相关的一切配置，你只需要安装游玩即可。一般极少需要额外配置。进入 [官网](https://lutris.net/) 在右上角搜索你想玩的游戏。点击进入游戏页面后，可以看到在相应版本右侧有一个 install 按钮，点击后即可拉起 Lurtis 进行安装。玩游戏前要先装好 [驱动](https://github.com/lutris/docs/blob/master/InstallingDrivers.md) 和 [依赖](https://github.com/lutris/docs/blob/master/WineDependencies.md)。
+Lutris 基于 Wine，提供了大量游戏在 Linux 下的解决方案。其为你已经配置好了 Wine 相关的一切配置，你只需要安装游玩即可。一般极少需要额外配置。进入 [官网](https://lutris.net/) 在右上角搜索你想玩的游戏。点击进入游戏页面后，可以看到在相应版本右侧有一个 install 按钮，点击后即可拉起 Lurtis 进行安装。玩游戏前要先装好 [驱动](https://github.com/lutris/docs/blob/master/InstallingDrivers.md) 和 [依赖](https://github.com/lutris/docs/blob/master/WineDependencies.md)。注意，此两个文档中没有列出 vkd3d 与 lib32-vkd3d 两个可选安装项，然而目前大多数大型游戏均需安装此两个包，读者需按需添加安装。同时在 lutris 中，需要根据容器种类选择开启 Esync 或 Fsync。
 
 在 Lutris 的各个游戏页面，一般有玩家上传的报告，如你遇到不能运行的状况，可以详细翻阅一下历史 Issue,包括已经标记为已解决的。
 
