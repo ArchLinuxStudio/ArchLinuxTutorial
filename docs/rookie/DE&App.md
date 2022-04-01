@@ -171,8 +171,8 @@ AUR 为 archlinux user repository。任何用户都可以上传自己制作的 A
 执行如下命令安装 yay。
 
 ```bash
-wget https://archlinuxstudio.github.io/ArchLinuxTutorial/res/yay-bin-11.1.1-1-x86_64.pkg.tar.zst
-sudo pacman -U yay-bin-11.1.1-1-x86_64.pkg.tar.zst
+wget https://archlinuxstudio.github.io/ArchLinuxTutorial/res/yay-bin-11.1.2-1-x86_64.pkg.tar.zst
+sudo pacman -U yay-bin-11.1.2-1-x86_64.pkg.tar.zst
 ```
 
 > github.io 也被中国大陆政府封锁，只是封锁力度暂时还没有很大。如你在下载过程中卡住，可以尝试 ctrl+c 终止命令后重新尝试下载，也可尝试更换手机热点的网络环境再次进行下载，后文安装 Qv2ray 时同理。当你配置好全局代理后，你将不再需要担心任何网络封锁问题。我们将持续为本书读者提供突破互联网审查的可靠流程。
@@ -208,16 +208,17 @@ SDL_IM_MODULE=fcitx
 
 注销，重新登陆，就可以发现已经可以在各个软件中输入中文了
 
--------------------------------------------------------
-- RIME
-中州韵输入法引擎（英语：Rime Input Method Engine，又称Rime 输入法）是由佛振编写的开源中文输入法，目前项目网站、源代码均托管在GitHub。基于同一个核心架构，该输入法分为三个官方发行版：Linux 发行版中州韵（ibus-rime）、Windows发行版小狼毫（Weasel）、macOS 发行版鼠须管（Squirrel）。另有数个第三方发行版：Linux 发行版fcitx-rime、Windows发行版PRIME、macOS 发行版XIME、Android发行版同文输入法（Trime）、iOS发行版iRime。
+---
 
-这里介绍一下fcitx5-rime的安装方式
+- RIME
+  中州韵输入法引擎（英语：Rime Input Method Engine，又称 Rime 输入法）是由佛振编写的开源中文输入法，目前项目网站、源代码均托管在 GitHub。基于同一个核心架构，该输入法分为三个官方发行版：Linux 发行版中州韵（ibus-rime）、Windows 发行版小狼毫（Weasel）、macOS 发行版鼠须管（Squirrel）。另有数个第三方发行版：Linux 发行版 fcitx-rime、Windows 发行版 PRIME、macOS 发行版 XIME、Android 发行版同文输入法（Trime）、iOS 发行版 iRime。
+
+这里介绍一下 fcitx5-rime 的安装方式
 '''bash
-sudo pacman -S fcitx5-rime #不是fcitx-rime，因为fcitx与fcitx5有版本冲突 
+sudo pacman -S fcitx5-rime #不是 fcitx-rime，因为 fcitx 与 fcitx5 有版本冲突
 '''
-然后打开 打开 _系统设置_ > _区域设置_ > _输入法_ >,点击添加输入法，找到RIME，即可添加RIME输入法。
-RIME输入法默认是繁体字按 <key>Ctrl</key>+<key>~</key>,即可打开选单，使用键盘上的<key>←</key><key>→</key>，选择朙月拼音·简化字,回车。
+然后打开 打开 _系统设置_ > _区域设置_ > _输入法_ >,点击添加输入法，找到 RIME，即可添加 RIME 输入法。
+RIME 输入法默认是繁体字按 <key>Ctrl</key>+<key>~</key>,即可打开选单，使用键盘上的<key>←</key><key>→</key>，选择朙月拼音·简化字,回车。
 
 ## 12.配置系统默认编辑器
 
