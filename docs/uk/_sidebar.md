@@ -1,5 +1,5 @@
 - [**ArchTutorial - Arch Linux Studio**](uk/)
 
-- rookie
+- Start from Scratch
 
-  - [basic install](uk/rookie/basic_install)
+  - [Basic Install](uk/rookie/basic_install)

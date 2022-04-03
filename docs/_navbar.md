@@ -1,3 +1,3 @@
-- Translations
-  - [:cn: 中文](/)
-  - [:uk: English](/uk/)
+- 🌐 Languages / 譯
+  - [🇬🇧 English](/uk/)
+  - [🇹🇼 中文](/)

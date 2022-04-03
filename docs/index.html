@@ -130,8 +130,8 @@
         repo: 'https://github.com/ArchLinuxStudio/ArchLinuxTutorial',
         formatUpdated: '{YYYY}-{MM}-{DD}',
         pagination: {
-          previousText: '上一节',
-          nextText: '下一节',
+          previousText: 'Previous',
+          nextText: 'Next',
           crossChapter: true,
           crossChapterText: true,
         },
@@ -141,7 +141,7 @@
               let edit_url =
                 'https://github.com/ArchLinuxStudio/ArchLinuxTutorial/blob/master/docs/' +
                 vm.route.file;
-              let editHtml = '[📝 编辑本文](' + edit_url + ')\n';
+              let editHtml = '[📝 Edit This Page](' + edit_url + ')\n';
 
               let client_id = '296c581fc4b2a837a1e3';
               let client_secret = '7e7f0ad1809fa4a1915430ade04835f6849ab56a';
@@ -164,11 +164,11 @@
                     'date'
                   ].slice(0, 10);
                   document.getElementById('last-modified').textContent =
-                    '更新日期: ' + modified;
+                    'Update date: ' + modified;
                 });
 
               return (
-                '<span id="last-modified">更新日期: 获取中</span>' +
+                '<span id="last-modified">Update date: Fetching...</span>' +
                 '\n' +
                 html +
                 '\n----\n' +
@@ -217,6 +217,7 @@
         // facebook-like distraction free mode
         distractionFreeMode: false,
         id: decodeURI(location.hash.split('?')[0]),
+        language: 'en',
       };
       let gitalk = new Gitalk(props);
       // 哈希路由切换时 重新加载Gitalk
@@ -270,15 +271,15 @@
             seconds
         );
         Docsify.dom.find('.runtime').innerHTML =
-          'Arch Linux Studio已运行 ' +
+          'Arch Linux Studio has been running for ' +
           diffDays +
-          ' 天 ' +
+          ' days ' +
           diffHours +
-          ' 小时 ' +
+          ' hours ' +
           diffMinutes +
-          ' 分 ' +
+          ' minutes ' +
           diffSeconds +
-          ' 秒';
+          ' seconds';
       }
       // 先让网页加载完，否则 Docsify.dom.find('.runtime') == null
       setTimeout(siteTime, 500);

@@ -11,7 +11,7 @@ Arch Linux 安装使用教程，每日实时更新！包含从 Arch Linux 安装
   - 本书样式保持尽可能的简洁，以提升读者的网站加载速度。同时，我们认为花哨的样式不应存在于一本较为严肃的书籍中。
   - 无废话，只给出一套**我们认为**较为合适的路线，对于安装流程尽可能保持简洁，不会面面俱到。本书是 tutorial,不是 reference，定位与官方 wiki 不同。更多的内容请读者自行查看 Arch Wiki 或查阅相关资料。知其然知其所以然当然是正确的，但填入过多的内容不是一本 tutorial 所应该做的事。
   - 本书使用 docsify 以及 gitalk 开发，并且网站源码全部开源，可放心留言讨论。本网站亦不使用任何有害跟踪器脚本，所提供的文件下载不进行任何审计与监视，你可通过 [Brave 浏览器](https://brave.com/zh/)以及阅读源码进行检测验证。
-  - Linux 二次元电报交流群:[ArchLinuxStudio🇨🇦🏳️‍⚧️🏳️‍🌈](https://t.me/FSF_Ministry_of_Truth)。
+  - Linux 二次元交流群: [Telegram Group:ArchLinuxStudio🇨🇦🏳️‍⚧️🏳️‍🌈](https://t.me/FSF_Ministry_of_Truth) ||| [Matrix Group:ArchLinuxStudio🇨🇦🏳️‍⚧️🏳️‍🌈](https://matrix.to/#/#ArchLinuxStudio:matrix.org)。
 
 > **本书采用 CC BY-NC-ND 4.0 协议[[1]](https://github.com/ArchLinuxStudio/ArchLinuxTutorial/issues/68)。欢迎提交Pull requests，但是禁止商业用途与演绎。任何"下游文档"都是未经授权且违反协议的。**
 
@@ -21,7 +21,7 @@ Arch Linux 安装使用教程，每日实时更新！包含从 Arch Linux 安装
 
 简单来说，现在世界上流行的 PC 操作系统有三个，Windows，Linux 与 macOS。
 
-如果你是计算机相关专业的学生或者从业者，非常建议你使用 Linux 作为自己的日常系统。在使用 Linux 系统的过程中，可以无形中接触到各个方面的计算机知识，并且在未来的工作中也会为你带来相关方面的优势。 macOS 在一些方面（即大致为 BSD 与 GNU/Linux 各方面的区别 )与 Linux 的操作并不同，并且由于其封闭的特性，我们不建议使用。Windows 在很多编程环境的配制过程中异常痛苦，且会出现各种各样的问题，强烈不建议使用 Windows 进行编程(除非你学的就是 Windows 系统编程)。
+如果你是计算机相关专业的学生或者从业者，非常建议你使用 Linux 作为自己的日常系统。在使用 Linux 系统的过程中，可以无形中接触到各个方面的计算机知识，并且在未来的工作中也会为你带来相关方面的优势。 macOS 在一些方面（即大致为 BSD 与 GNU/Linux 各方面的区别 )与 Linux 的操作并不同，并且由于其封闭的特性，我们不建议使用。Windows 在很多编程环境的配制过程中异常痛苦，且会出现各种各样的问题。同时，和 macOS 一样，Windows 也是闭源的系统，强烈不建议使用 Windows 进行编程。
 
 更重要的是，GNU/Linux 是自由软件运动的相关重要产物。[自由软件运动(free software movement)](https://zh.wikipedia.org/wiki/%E8%87%AA%E7%94%B1%E8%BD%AF%E4%BB%B6%E8%BF%90%E5%8A%A8)拒绝专有软件并推广自由软件,它的终极目标在于解放网络世界中的每个人——即每个电脑用户。每个人都应拥有完全掌控所运行软件的权利。[自由软件](https://www.gnu.org/philosophy/free-sw.zh-cn.html)有如下四项原则：
 
