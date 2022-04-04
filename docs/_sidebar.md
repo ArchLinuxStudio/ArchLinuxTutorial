@@ -25,7 +25,7 @@
   - [游戏娱乐](/play&office/play)
   - [安卓刷机](/play&office/android)
 
-- 专有领域
+- 特殊领域
 
   - [加密货币挖矿](/exclusive/mine)
   - [直播与多媒体制作](/exclusive/media)
