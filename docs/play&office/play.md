@@ -60,6 +60,28 @@ Lutris 基于 Wine，提供了大量游戏在 Linux 下的解决方案。其为�
 
 安装使用原生 [Wine](https://wiki.archlinux.org/index.php/Wine) 也可运行 windows 游戏，但是很多情况下需要你自行处理 Windows 下的依赖问题，常用的工具是 [winetricks](https://archlinux.org/packages/multilib/x86_64/winetricks/)。这种方式费时费力，只运行无需处理依赖的小游戏或者 gal 还好。
 
+终端运行 winecfg，可以开启 wine 设置页面，按照终端提示可以安装缺少的包。
+
+## Galgame
+
+本小节对 Wine 运行 Galgame 可能存在的问题进行描述。
+
+如果存在某些语言的字体问题，最直接的方法是将所需要的字体放置于容器的字体目录中。wine 的默认目录为`~/.wine`。
+
+使用 Wine 运行游戏可能会出现 [GStreamer](https://wiki.archlinux.org/title/GStreamer) 插件缺失的问题，如
+
+```bash
+Missing decoder: Advanced Streaming Format (ASF) (video/x-ms-asf)
+```
+
+在按照 Wiki 安装好各个插件后，错误可能依然存在，这是因为大多 Galgame 需要 32 位兼容库，而目前 arch linux 官方 Multilib 仓库中的 gst32 位兼容库并不完整，如目前缺失`lib32-gst-plugins-ugly`这个包，此包目前只存在于 AUR 中，但是已经落后。ASF 存在于此包中，因此缺失导致此报错。
+
+Ref:
+
+- https://bbs.archlinux.org/viewtopic.php?id=249982
+- https://archlinux.org/packages/?q=gst
+- https://aur.archlinux.org/packages/lib32-gst-plugins-ugly
+
 ## 性能提升
 
 在进行某些游戏时，如《Total War: THREE KINGDOMS》，如遇到性能问题，可尝试调节 cpu 频率调节器[[1]](https://support.feralinteractive.com/docs/zh_cn/threekingdomstw/1.0.15/linux/faqs/?access=zooevrj6xb&utm_source=game_linux&utm_medium=link&utm_campaign=game_linux_threekingdomstw_support#i_linux_cpu_governor)。
