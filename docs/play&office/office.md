@@ -93,6 +93,12 @@ sudo pacman -S libreoffice-fresh   #尝鲜版
 yay -S onlyoffice-bin
 ```
 
+一些老式的 chm 文档的阅读，可以安装`kchmviewer`。
+
+```bash
+sudo pacman -S kchmviewer
+```
+
 ## 打印机
 
 对于日常办公来说，打印机是非常必要的。除此之外，我们建议读者维持一份纸质的密码，包括你可以将你虚拟货币钱包中的私钥打印出来保存，这是非常好的一个方案。对于打印机的品牌，我们建议使用惠普打印机。其对于 Linux 的支持非常到位，可以去其[网站](https://hplipopensource.com/)查看所支持的设备等详情。在 Arch Linux 上，安装包 hplip 即可。
