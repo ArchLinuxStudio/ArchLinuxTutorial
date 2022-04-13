@@ -160,7 +160,7 @@ speedtest-cli
 
 在启动图形界面的情况下，Nvidia 显卡超频较为简单，具体请参考[arch wiki](https://wiki.archlinux.org/title/NVIDIA/Tips_and_tricks#Overclocking_and_cooling)。本节讲述在不启动图形界面的情况下，也即 headless 环境下 Nvidia 显卡的超频操作。
 
-以太坊相关一般的超频思路是：超显存，降核心，尝试限制最大功率。
+以太坊相关一般的超频思路是：超显存，降/锁核心，有必要的情况下限制最大功率。
 
 较为完整的步骤可以参考文章[Linux 透過命令行對顯示卡超頻](https://jybb.me/linux-overclock-graphic-card-via-cli)，按照其中的步骤执行即可。这里列出一些需要额外注意的事项:
 
@@ -168,6 +168,7 @@ speedtest-cli
 - 在超频时对不同 perf 级别进行设置时，一般[4]的值对应的是当前偏好的最大性能等级。nvidia-smi 中显示的等级似乎并不和此处的数字对应。如果不确定当前等级，可以从 1 到 4 依次尝试。
 - 如果你仍不确定 perf 等级，可以直接使用对应所有等级的调整，如`GPUMemoryTransferRateOffsetAllPerformanceLevels`以及`GPUGraphicsClockOffsetAllPerformanceLevels`。
 - 如果在终端直接执行超频命令，nvidia-settings 的-a 选项后续的参数可以不加单引号包裹，但是如果在脚本中执行，需要用单引号包裹参数。
+- 通过此命令锁定某个显卡的核心频率: `nvidia-smi -i 0 -lgc 1075`。此命令将第零张显卡的核心频率限制为 1075。注意，如将频率限制过高，但是功率或性能不足的情况下，频率会下降，并最终稳定在一个低于所设置的锁定频率的值上。
 - 即使是相同型号的显卡，显存的体质、类型都可能不同。所以你需要根据自己显卡的实际体质来慢慢调整，找到最稳定的超频参数，网络上现有的超频参数仅能做一个大致的参考。
 - 显卡的灯光问题，很多 20，30 系新显卡采用 I2C 控制，而英伟达 linux 驱动不支持，传统的通过`GPULogoBrightness`参数控制已经不能生效。详见[github issue](https://github.com/NVIDIA/nvidia-settings/issues/48)
 
@@ -175,6 +176,7 @@ Ref:
 
 - [ethminer overlock guide](https://github.com/ethereum-mining/ethminer/issues/456#issuecomment-370224878)
 - [NVIDIA-SMI 系列命令总结](https://blog.csdn.net/handsome_bear/article/details/80903477)
+- [nvidia-smi: Control Your GPUs](https://www.microway.com/hpc-tech-tips/nvidia-smi_control-your-gpus/)
 
 ## AMD 显卡 headless 环境超频 TODO
 
