@@ -10,7 +10,8 @@
 </p>
 
 [![Badge](https://img.shields.io/badge/link-ArchLinuxTutorial-%230088cc.svg)](https://archlinuxstudio.github.io/ArchLinuxTutorial)
-[![Join telegram community and chat about arch linux](https://img.shields.io/discord/628978428019736619?label=&logo=telegram&logoColor=ffffff&color=7389D8&labelColor=6A7EC2&cacheSeconds=60)](https://t.me/FSF_Ministry_of_Truth)
+[![Join matrix community and chat about arch linux](https://img.shields.io/matrix/ArchLinuxStudio:matrix.org?label=matrix&logo=matrix&logoColor=ffffff&color=7389D8&labelColor=6A7EC2&cacheSeconds=60&server_fqdn=matrix.org)](https://matrix.to/#/#ArchLinuxStudio:matrix.org)
+[![Join telegram community and chat about arch linux](https://img.shields.io/discord/628978428019736619?label=telegram&logo=telegram&logoColor=ffffff&color=7389D8&labelColor=6A7EC2&cacheSeconds=60)](https://t.me/FSF_Ministry_of_Truth)
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FArchLinuxStudio%2FArchLinuxTutorial&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 [![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 [![Lines](https://img.shields.io/tokei/lines/github/ArchLinuxStudio/ArchLinuxTutorial)](https://img.shields.io/tokei/lines/github/ArchLinuxStudio/ArchLinuxTutorial)
