@@ -178,7 +178,14 @@ Ref:
 - [NVIDIA-SMI 系列命令总结](https://blog.csdn.net/handsome_bear/article/details/80903477)
 - [nvidia-smi: Control Your GPUs](https://www.microway.com/hpc-tech-tips/nvidia-smi_control-your-gpus/)
 
-## AMD 显卡 headless 环境超频 TODO
+## AMD 显卡 headless 环境超频
+
+AMD 显卡 headless 环境下超频相较 Nvidia 显卡则容易很多，参考 wiki 即可，对于超频工具，推荐使用[amdgpu-clocks-git](https://aur.archlinux.org/packages/amdgpu-clocks-git)。
+
+Ref:
+
+- [AMD RX 470(D) Linux 挖矿](https://reimu.moe/2021/03/10/AMD-RX470-D-Linux-Mining/)
+- [Arch wiki](https://wiki.archlinux.org/title/AMDGPU#Overclocking)
 
 ---
 
