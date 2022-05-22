@@ -101,10 +101,12 @@ sudo pacman -S kchmviewer
 
 ## 打印机
 
-对于日常办公来说，打印机是非常必要的。除此之外，我们建议读者维持一份纸质的密码，包括你可以将你虚拟货币钱包中的私钥打印出来保存，这是非常好的一个方案。对于打印机的品牌，我们建议使用惠普打印机。其对于 Linux 的支持非常到位，可以去其[网站](https://hplipopensource.com/)查看所支持的设备等详情。在 Arch Linux 上，安装包 hplip 即可。
+对于日常办公来说，打印机是非常必要的。除此之外，我们建议读者维持一份纸质的密码，包括你可以将你虚拟货币钱包中的私钥打印出来保存，这是非常好的一个方案。对于打印机的品牌，我们建议使用惠普打印机。其对于 Linux 的支持非常全面，可以去其[网站](https://hplipopensource.com/)查看所支持的设备等详情。在 Arch Linux 上，安装包 hplip 以及 cups ，启动服务后即可使用。
 
 ```bash
 sudo pacman -S hplip
+sudo pacman -S cups
+sudo systemctl enable --now cups.service
 ```
 
 ## 笔记本
