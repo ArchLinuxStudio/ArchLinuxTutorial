@@ -88,7 +88,9 @@ Ref:
 
 ## 性能监控
 
-和微星的 Afterburner 软件中性能显示的部分类似，Linux 上也有一款同类软件可以监控游戏中的电脑性能，名为[MangoHud](https://github.com/flightlessmango/MangoHud)。使用方式可参见此项目的 readme。此外，官方提供图形化的参数设置软件 [GOverlay](https://github.com/benjamimgois/goverlay#arch--manjaro--other-arch-derivatives)，可以自行选择安装。
+和微星的 Afterburner 软件中性能显示的部分类似，Linux 上也有一款同类软件可以监控游戏中的电脑性能，名为[MangoHud](https://github.com/flightlessmango/MangoHud)。使用方式可参见此项目的 readme。在 ArchLinux 中，安装包 [mangohud-x11](https://aur.archlinux.org/packages/mangohud-x11)以及[lib32-mangohud-x11](https://aur.archlinux.org/packages/lib32-mangohud-x11)。
+
+此外，MangoHud 官方提供图形化的参数设置软件 [GOverlay](https://github.com/benjamimgois/goverlay#arch--manjaro--other-arch-derivatives)，可以自行选择安装。
 
 ## 可选内核更换
 
