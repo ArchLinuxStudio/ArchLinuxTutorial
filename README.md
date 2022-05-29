@@ -3,7 +3,7 @@
 </br>
 <h1>Arch Linux 安装使用教程</h1>
 
-每日实时更新！本书包含从 Arch Linux 安装，科学上网，魔法充能，到显卡驱动，日常软件的使用等，另附媒体制作，编程等你可能需要的全部内容。让 Arch Linux 成为你的常用系统吧！提供在线网页文档。
+每日实时更新！本书包含从 Arch Linux 安装，科学上网，魔法充能，到显卡驱动，日常软件的使用等，另附媒体制作，编程，加密货币在 ArchLinux 上的使用等你可能需要的全部内容。让 Arch Linux 成为你的常用系统吧！提供在线网页文档。
 
 本项目隶属于 ArchLinuxStudio，一个加拿大社区组织。ArchLinuxStudio 不是官方 ArchLinux 本身。
 
@@ -19,6 +19,7 @@
 [![Donate with Bitcoin](https://en.cryptobadges.io/badge/micro/1Lth3oca4WnMnTnwHBcDLkEqniA2pBxkeC)](https://en.cryptobadges.io/donate/1Lth3oca4WnMnTnwHBcDLkEqniA2pBxkeC)
 [![Donate with Ethereum](https://en.cryptobadges.io/badge/micro/0x5A218a8d570d9947f42e0a4916ece7a60A181c2d)](https://en.cryptobadges.io/donate/0x5A218a8d570d9947f42e0a4916ece7a60A181c2d)
 [![Donate with Litecoin](https://en.cryptobadges.io/badge/micro/LdJXzaSzzrAxfKJdj5effRLcC7k1TbuXJ8)](https://en.cryptobadges.io/donate/LdJXzaSzzrAxfKJdj5effRLcC7k1TbuXJ8)
+[![Donate with Monero](https://img.shields.io/badge/monero-FF6600?logo=monero&label=Donate&logoColor=white)](/)
 
 <!-- shields not support telegram online count now, use sample discord instead temporarily -->
 
@@ -32,7 +33,7 @@
   - 本书样式保持尽可能的简洁，以提升读者的网站加载速度。同时，我们认为花哨的样式不应存在于一本较为严肃的书籍中。
   - 无废话，只给出一套**我们认为**较为合适的路线，对于安装流程尽可能保持简洁，不会面面俱到。本书是 tutorial,不是 reference，定位与官方 wiki 不同。更多的内容请读者自行查看 Arch Wiki 或查阅相关资料。知其然知其所以然当然是正确的，但填入过多的内容不是一本 tutorial 所应该做的事。
   - 本书使用 docsify 以及 gitalk 开发，并且网站源码全部开源，可放心留言讨论。本网站亦不使用任何有害跟踪器脚本，所提供的文件下载不进行任何审计与监视，你可通过 [Brave 浏览器](https://brave.com/zh/)以及阅读源码进行检测验证。
-  - Linux 二次元电报交流群:[ArchLinuxStudio🇨🇦🏳️‍⚧️🏳️‍🌈](https://t.me/FSF_Ministry_of_Truth)。
+  - Linux & ACG [Telegram Group:ArchLinuxStudio🇨🇦🏳️‍⚧️🏳️‍🌈](https://t.me/FSF_Ministry_of_Truth) ||| [Matrix Group:ArchLinuxStudio🇨🇦🏳️‍⚧️🏳️‍🌈](https://matrix.to/#/#ArchLinuxStudio:matrix.org)。
 
 > **本书采用 CC BY-NC-ND 4.0 协议[[1]](https://github.com/ArchLinuxStudio/ArchLinuxTutorial/issues/68)。欢迎提交Pull requests，但是禁止商业用途与演绎。任何"下游文档"都是未经授权且违反协议的。**
 
@@ -49,6 +50,8 @@
 [![Donate with Ethereum](https://en.cryptobadges.io/badge/big/0x5A218a8d570d9947f42e0a4916ece7a60A181c2d?showBalance=true)](https://en.cryptobadges.io/donate/0x5A218a8d570d9947f42e0a4916ece7a60A181c2d)
 
 [![Donate with Litecoin](https://en.cryptobadges.io/badge/big/LdJXzaSzzrAxfKJdj5effRLcC7k1TbuXJ8?showBalance=true)](https://en.cryptobadges.io/donate/LdJXzaSzzrAxfKJdj5effRLcC7k1TbuXJ8)
+
+Donate with Monero: 43KJJZztPtBC7k8ZjJpuw7bThW1mUH6N947TeNxvsSHD7DywRN365WZ7qpSxVopSd7cg4PFjMuUewjfvATUtTKGQLMboU36
 
 ## Star 历史
 
