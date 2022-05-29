@@ -1,0 +1,2 @@
+- Please make sure all your changes are verified by yourself.
+- Please assign task to ryosukeeeeee.
