@@ -2,7 +2,7 @@
 
 > Notice: English translation is still in progress, documentation is now incomplete. Welcome to submit pull requests for translations.
 
-Arch Linux installation and usage tutorials, updated daily in real time! From Arch Linux installation, breaking through internet censorship and blockades, transparent proxies, graphics drivers, everyday software use and more, plus everything you might need for media production, programming and more. Make Arch Linux your go-to system!
+Arch Linux installation and usage tutorials, updated daily in real time! From Arch Linux installation, breaking through internet censorship and blockades, transparent proxies, graphics drivers, everyday software use and more, plus everything you might need for media production, programming, crypto currency usage in ArchLinux and more. Make Arch Linux your go-to system!
 
 This book provides some of our experience of using Linux over the years and teaches it to those who need it. Another part that is inseparable from Linux: [GNU](https://www.gnu.org/home.zh-cn.html).
 
@@ -48,6 +48,8 @@ Arch Linux allows you to customise your system with a high degree of freedom and
 If this book has been helpful to you, please recommend it to your friends who need it, this is the greatest support to us!
 
 We would be very grateful if receive digital currency donations. With your support, the ArchLinuxStudio community will become even more enriched and active.
+
+Donate with Monero: 43KJJZztPtBC7k8ZjJpuw7bThW1mUH6N947TeNxvsSHD7DywRN365WZ7qpSxVopSd7cg4PFjMuUewjfvATUtTKGQLMboU36
 
 [![Donate with Bitcoin](https://en.cryptobadges.io/badge/big/1Lth3oca4WnMnTnwHBcDLkEqniA2pBxkeC?showBalance=true)](https://en.cryptobadges.io/donate/1Lth3oca4WnMnTnwHBcDLkEqniA2pBxkeC)
 

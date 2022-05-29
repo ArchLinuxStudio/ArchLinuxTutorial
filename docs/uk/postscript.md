@@ -1,45 +1,23 @@
-# 后记
+# Postscript
 
-最近这些日子，"内卷"、"躺平"这些词又被一些群体炒的沸沸扬扬，想着之前一直想写的话，正好也该补上了。
+ArchLinuxStudio always puts the privacy and security of readers first, and continues to make efforts to promote the development of the free software movement, and this `ArchLinux Installation and Use Tutorial` is the initial project of the organization, and we will give the highest priority to ensuring its project quality. It will play a role in bringing more people into the world of free software.
 
-就像很多人说的一样，互联网公司的程序员是很累的，其实无论大小公司，都会很累。在大公司，你是螺丝钉，有不停的螺丝需要你来拧，同时大公司往往除了 KPI 之外，还会有 OKR 之类的东西存在，这些名义上不计入绩效考核的东西实际是干什么的，懂的人都懂，无需我多说。小公司更是，如果你是一个能力较强的人，那么你是需要担任多面手的角色的。
+What can free software bring to the masses? This is a question worth exploring in depth. Simply put, it gives enough respect to each user and gives users the right to choose. Proprietary software tramples on users' privacy, dignity, and does countless shameless and dirty acts. In the eyes of these proprietary software, users are just data that can be used, sold and oppressed at will, not a person.
 
-讲到这里，马上会有一些人开始用“你不够努力！”来开始指责了。或者是什么“你父辈比你吃的苦比你多多了，你这累一点算什么？”。其实说这种话的人无非两种，一种是身居高位或者已经家境殷实，没什么顾虑的人。一种是真正的啥比，没有经历过就开始指点江山了。下面从两个方面开始讲，一个方面是单纯的工作方面，另一个方面是个人生活方面，来讲述一些普遍真实的事情。
+However, what is even more dangerous is that in many totalitarian and authoritarian countries, commercial companies that own proprietary software are in cahoots with these totalitarian and authoritarian governments, not only monitoring people in all aspects, but also secretly arresting and secretly arresting pro-democracy activists and dissidents. persecution. Many times, whenever we witness such an incident, we will sigh that these people have not mastered the use of free software and have not realized the value of free software.
 
----
+> Where there is oppression, there is resistance.
 
-在工作上，我相信大多数的平庸之辈，进入大型互联网公司之后干的活都是非常无聊的工作，我不否认可以提升你所从事的方向的相关方面技术，但重要的是，你做的这些事情是否真的有意义？网络上流行过的带有戏谑成分的一句话可以从一定程度反应我的想法：“做 app 救不了中国”。当然，重点是“做 app 救不了...”，而不是"救中国”，没法救，我也根本救不了。一旦你进入工作后，会发现很多事情都是无用功，比如原来的某个领导喜欢一套东西，大家辛辛苦苦搞起来。然后后来哪天又来了个新领导，他觉得原来的东西，不行！他认为的东西，行！结果原来做好的一切都被推倒重来，又要加班暴肝好久。结果其实根本本质上是一个东西，甚至没有原来的好。类似的政治工作太多了，这些都让我觉得恶心。
+It is very ironic that this sentence, said today, will shame and fear some political parties in the world. Some people will think it is completely incomprehensible that people and organizations supporting the free software movement are concerned with politics, as if politics were an issue that had nothing to do with them. In fact, this view is very ignorant and stupid. The main goal of the free software movement is to guarantee the freedom and dignity that users deserve. However, in authoritarian countries, people are suppressed and oppressed in all aspects at the electoral level, the financial level, the network level, the speech level, etc., which makes the supporters of the free software movement unable to stand by. For the web, they have developed software that breaks internet blockades, such as V2ray and Shadowsocks, re-giving people the right to freely access the internet. For finance, they have developed the blockchain and the cryptocurrency system that grows on it, re-empowering people to truly control their own property, and to be free from the wealth plunder caused by the government's indiscriminate currency issuance. For administration, election and decision-making, the transparency and immutability of the blockchain ensures that everything is open, transparent and fair. In terms of speech, software such as Mammoth, Telegram, Matrix, etc. re-empowers people to freely express their opinions.
 
-再来说说同事关系，其实很简单，就是一切向钱看，所有人的一切动作，言语，都是为了绩效，为了钱，他们可以做出任何事情，你要有这种心里准备，一个一直和你相处很好的同事，可能随时做好向你的上级领导打小报告的准备。
+> If you listen to it, it will be bright, and if you believe in it, it will be dark.
 
-互联网公司的绩效基本都是半年制，也就是说每半年你都要对其余人评价，其余人也会评价你。看似时间很长，其实很短暂，这就造成很多人要抓住一切机会来提升自己的绩效，拉低别人的绩效，这是保证自己收入的必须要做的事情。半年很短，工作上能**真正**做出的成果一定是极为有限的，其余人对你的了解也是极为有限的，因为不可能所有人都对你的工作都了解，那么造成的必然结果就是，这种绩效考核在很大程度上，人情考核以及日常的"谋略"与表演都是需要重点关注，大下功夫的。
+This Chinese idiom is very applicable in many ways. Write the code, and after reading the source code of as many similar projects as possible, you will have a better grasp of the project you need to do. Watching news, only by listening to reports from various countries and media in the world, and combining your own thinking, can you come to a more rational conclusion. When making a decision, only after listening to the opinions of the relevant personnel, can a more reasonable and rational decision be made in the interests of more people. However, in authoritarian and totalitarian countries. We don't see any such possibility. The blockade of the Internet makes it difficult or impossible for people in these countries to obtain the world's news information, the latest software and technology, and can only hear and see what authoritarian and totalitarian governments want them to see. Cover people's eyes, ears, and finally sew their mouths. In this case, people will only be more and more deceived, and eventually become extreme and stupid. **We can't do it to see it all, and to be indifferent and stand idly by. **
 
-以上几点都是冰山一角而已，没有人想要讲述太多了。从这些事情来看，它根本就不是什么奋斗与不奋斗的问题，而是已经到了一个极为病态的程度，每个人在这个环境中人格，精神，都是不正常的。因为所有人做出的行为都是有原因的，那就是为了钱。
+In fact, there is almost no monetary income for everything we do, which is incomprehensible to many people who believe in the philosophy of putting money first. Of course, this just shows that we are fundamentally different from these people. A scholar must be courageous and have a long way to go. Many people's ambition is to make money, but not here.
 
-讲到这里，还会有一类自觉满腹经纶的人用“存在即合理”这句话来反驳。“存在即合理”这句被很多人奉为圭臬的话其实是一句不知道是哪个带文豪“浓缩”来的"精华"。每个人都追求钱，这是正常的吗？明显是不正常的，但是是谁造成的呢？
-
----
-
-工作部分讲完，再来说说生活部分。工作的时间基本是一周六天，然后每天晚上九点到十点下班，如果你家离得远，那么恭喜你，到家洗漱完已经快十二点了。早上基本是睡到不能再睡的最后一刻再去上班，一般是九点左右。我觉得这也不用我再说什么了。。。因为事实就在这里，没什么好说的，这种作息，你基本除了工作啥也干不成。谈恋爱？别闹了。休息那天睡到自然醒，洗衣服，收拾屋子，吃饭，躺尸一会，一天就这么过去了，非常快啊～～～
-
-就像知乎某热帖一样，如果你只有一级，每天能拿 500 点经验，升级要 100000000 点经验，这个游戏你还会不会玩下去了，我想是个脑子正常的人的反应都是：老子不玩了，摆烂呗。普通家庭在中国某超一线城市如果想扎根生活下去，面临的感受是极为类似的。理论上来说，如果掏空家中所有的积蓄，再加上收入，再贷款个三十年，还是可以在这个城市买一套 60 平米左右的房子的，也即：可以扎根了。但是你真的想这么做吗？原因主要有几点。第一，这样风险实在太大了，全部家当外加半辈子都投到一个房子里，风险有多大不用我多说。第二，这样的话，一辈子就都被绑定在这个房子上了，你也没有任何机会做想做的事情了，这值得吗？第三，家与城市的距离有多远？你与家人相聚的时间还能有几个月？用手指都能数过来。
-
-还有人会说，可以去一个房价没那么离谱的城市生活啊，其实这并没有什么两样，因为就算换个城市，工作还是那个环境，房价会好一些，但也不会好多少，而且在那种城市，你想找到一个你薪资满意，同时工作合适的机会，还是挺难的，互联网行业，好的工作都集中在超一线城市，大家都知道的。
-
-这种生活是你们想要的吗？
+Later, there will be other tutorials to meet readers, and ArchLinuxStudio will continue to develop various free software and various tools that can achieve "Equal Internet access for all." It's just that due to human and economic reasons, we can't guarantee the speed of the update, but we can guarantee that our speed may be very slow, but it will never stop.
 
 ---
 
----
-
----
-
-在这个已经被资本牢牢统治的世界，《钱》早已被奉为成功与否的唯一标准。这样的世界人是否还应有除了赚钱以外的其他理想？是否**还能有**除了赚钱以外的其他理想？我们认为当然是应该和能够的，尽管很多人并不能理解和体会。我们的理想是每个人都应该有自由使用软件的权利，这不仅仅只局限在计算机行业内，而是在现代生活中与每个人所应享有的权利息息相关。直到我们多年前接触到自由软件运动，其所倡导的理念与我们之前的想法不谋而合。捧着手机刷抖音的你，不会知道这些软件在背后做了多少令人作呕的事情。这些专有软件也同时将无数人牢牢绑定在了它们的系统中，成为它们手中作恶的资本。另外提一点，有趣的是，我们在提到类似事情的时候，总会有人说到: "你看美国也是怎样怎样的..."。我们也没说美国好呀，您急什么？我们是不是某些人口中的“心怀叵测的境外势力”😅？
-
-专有软件作恶、威权政府审计和监控，与冠绝全球的 Great Firewall 并驾齐驱，"我们赢了！"
-
-这本`ArchLinux 安装使用教程`是本组织的初始项目，其质量一定会得到保障。随后也会有其他教程与各位见面，同时 ArchLinuxStudio 也会继续开发各类自由软件、以及能够做到"Equal Internet access for all."的各类工具。士不可以不弘毅，任重而道远，很多人的志向是赚钱，但在这里不是。
-
----
-
-"萧瑟秋风今又是，换了人间。"
+Proprietary software for evil, totalitarian government surveillance, arrest and persecution, keep pace with the world's largest Great Firewall, "We won 🎉!"

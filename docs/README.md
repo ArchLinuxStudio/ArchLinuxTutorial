@@ -1,6 +1,6 @@
 # Arch Linux 安装使用教程 - ArchTutorial - Arch Linux Studio <!-- {docsify-ignore-all} -->
 
-Arch Linux 安装使用教程，每日实时更新！包含从 Arch Linux 安装，科学上网，透明代理，显卡驱动，日常软件的使用等，另附媒体制作，编程等你可能需要的全部内容。让 Arch Linux 成为你的常用系统吧！
+Arch Linux 安装使用教程，每日实时更新！包含从 Arch Linux 安装，科学上网，透明代理，显卡驱动，日常软件的使用等，另附媒体制作，编程，加密货币在 ArchLinux 上的使用等你可能需要的全部内容。让 Arch Linux 成为你的常用系统吧！
 
 本书提供我们多年使用 Linux 的一些经验，并教与需要的人。与 Linux 密不可分的另一部分: [GNU](https://www.gnu.org/home.zh-cn.html)  
 新读者请确保你已经按照步骤完成了`新手上路`章节中的**全部内容**后再向下阅读，否则可能会出现问题。
@@ -45,6 +45,8 @@ Arch Linux 可以以超高的自由度来定制自己的系统，并且其拥有
 如果本书对你有所帮助，请推荐给你身边有所需要的朋友们，这是对我们最大的支持！
 
 如果能接受到虚拟货币捐赠，我们将非常感谢。有你的支持，ArchLinuxStudio 社区将变得更加充实与活跃。
+
+Donate with Monero: 43KJJZztPtBC7k8ZjJpuw7bThW1mUH6N947TeNxvsSHD7DywRN365WZ7qpSxVopSd7cg4PFjMuUewjfvATUtTKGQLMboU36
 
 [![Donate with Bitcoin](https://en.cryptobadges.io/badge/big/1Lth3oca4WnMnTnwHBcDLkEqniA2pBxkeC?showBalance=true)](https://en.cryptobadges.io/donate/1Lth3oca4WnMnTnwHBcDLkEqniA2pBxkeC)
 
