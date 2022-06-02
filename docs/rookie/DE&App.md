@@ -120,6 +120,7 @@ sudo systemctl enable --now NetworkManager                                  #确
 接下来安装一些基础功能包。
 
 ```bash
+sudo pacman -S sof-firmware alsa-firmware alsa-ucm-conf                     #一些可能需要的声音固件
 sudo pacman -S ntfs-3g                                                      #识别NTFS格式的硬盘
 sudo pacman -S adobe-source-han-serif-cn-fonts wqy-zenhei                   #安装几个开源中文字体 一般装上文泉驿就能解决大多wine应用中文方块的问题
 sudo pacman -S noto-fonts-cjk noto-fonts-emoji noto-fonts-extra             #安装谷歌开源字体及表情
