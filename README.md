@@ -19,7 +19,7 @@
 [![Donate with Bitcoin](https://en.cryptobadges.io/badge/micro/1Lth3oca4WnMnTnwHBcDLkEqniA2pBxkeC)](https://en.cryptobadges.io/donate/1Lth3oca4WnMnTnwHBcDLkEqniA2pBxkeC)
 [![Donate with Ethereum](https://en.cryptobadges.io/badge/micro/0x5A218a8d570d9947f42e0a4916ece7a60A181c2d)](https://en.cryptobadges.io/donate/0x5A218a8d570d9947f42e0a4916ece7a60A181c2d)
 [![Donate with Litecoin](https://en.cryptobadges.io/badge/micro/LdJXzaSzzrAxfKJdj5effRLcC7k1TbuXJ8)](https://en.cryptobadges.io/donate/LdJXzaSzzrAxfKJdj5effRLcC7k1TbuXJ8)
-[![Donate with Monero](https://img.shields.io/badge/monero-FF6600?logo=monero&label=Donate&logoColor=white)](/)
+[![Donate with Monero](https://img.shields.io/badge/monero-FF6600?logo=monero&label=Donate&logoColor=white)](https://github.com/ArchLinuxStudio/ArchLinuxTutorial)
 
 <!-- shields not support telegram online count now, use sample discord instead temporarily -->
 

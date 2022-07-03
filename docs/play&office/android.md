@@ -61,6 +61,10 @@ $ adb shell #打开adb shell
 $ adb root #在手机已经root的情况下打开root权限的adb shell
 ```
 
+## 解锁 root 权限
+
+使用 Magisk 以解锁 root 权限。在其[官方 release 界面](https://github.com/topjohnwu/Magisk/releases)下载 Magisk apk 文件，将其重命名为.zip 后缀。然后将其拷贝到手机中，最后进入 twrp 刷入此 zip 包即可。
+
 ## 有关华为设备
 
 如果你没有在 18 年华为关闭 bl 锁码申请前拿到密码，那刷机在现在将变得基本不可能，尤其是近一年左右的新设备。
