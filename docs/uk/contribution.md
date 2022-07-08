@@ -1,36 +1,36 @@
-# 贡献文档与代码 <!-- {docsify-ignore-all} -->
+# Contribution <!-- {docsify-ignore-all} -->
 
-点击本文右上角的 github 图标，即可查看本工程。在每一页的最下方也有`编辑本文`的链接，点击即可跳转到 github 编辑。
+Click the github icon in the upper right corner of this article to view this project. There is also a link to `edit this article` at the bottom of each page, click to jump to github for editing.
 
-本书的大纲目录由项目组成员把控，文章内容可自由编辑。本书主线内容以实用为主旨，只提供一条我们认为当前较优的、简洁的安装主线。冗余且无意义的内容不被接受。
+The outline directory of this book is controlled by the project team members, and the content of the article can be edited freely. The main line of this book is based on practicality, and only provides a simple and concise installation line that we think is currently better. Redundant and meaningless content will not be accepted.
 
-对于项目资源的添加，如图片，非必要 js 文件，非必要 css 文件等均不被接受。因为某些国家对于 github 的封锁和限制，导致直连下如有此类文件会更大的拖慢网页加载速度。
+The addition of project resources, such as images, non-essential js files, and non-essential css files, are not accepted. Because of the blockade and restrictions on github in some countries, such files under direct connection will greatly slow down the loading speed of web pages.
 
-本项目最初采用 CC BY-SA 4.0 许可，最终改用 CC BY-NC-ND 4.0 许可，原因参见[Why we changed the license to CC BY-NC-ND 4.0](https://github.com/ArchLinuxStudio/ArchLinuxTutorial/issues/68)。
+This project was originally licensed under the CC BY-SA 4.0 license, and eventually switched to the CC BY-NC-ND 4.0 license, see [Why we changed the license to CC BY-NC-ND 4.0](https://github.com/ArchLinuxStudio/ArchLinuxTutorial/issues/68).
 
-## 文档贡献
+## Documentation contribution
 
-文档贡献非常简单，你只需要拥有一个编辑器，将工程 fork，修改，提交 pull request 即可。
+Documentation contribution is very simple, you only need to have an editor, fork the project, modify it, and submit a pull request. Note that if you submit changes in one language, please also submit changes in the other language.
 
-## 格式约定
+## Format convention
 
-本系列文档的理念是不必过于苛求格式，因为内容才是真正重要的东西。但是也有少量规范必需遵守，否则会影响阅读。
+The philosophy of this series of documents is that you don't have to be too strict about formatting, because the content is what really matters. But there are also a few specifications that must be followed, otherwise reading will be affected.
 
-- 使用 OSS code 进行开发，配合 Prettier 插件默认配置进行格式化代码，写完部分文档后使用 ctrl+s 自动格式化保存。
-- 每个 md 文档标题按层级编排内容，大标题为#，其次##，再次###，以此类推。
-- 代表片段需用 markdown 语法包裹，并指定代码类型，如 bash。
-- 一般情况下，请尽量正常使用句号、顿号、引号、冒号等标点符号。
-- 需要引起注意的部分可使用 markdown 引用语法。
-- 专有名词可使用行内代码``语法进行提示，其比加粗更为明显。
-- 行内代码请使用行内代码进行提示。
+- Use OSS code for development, format the code with the default configuration of the Prettier plugin, and use ctrl+s to automatically format and save after writing some documents.
+- Each md document title organizes the content hierarchically, the main title is #, followed by ##, then ###, and so on.
+- means that the fragment needs to be wrapped in markdown syntax and specify the code type, such as bash.
+- In general, please try to use punctuation such as periods, commas, quotation marks, and colons as normal.
+- Use markdown citation syntax for parts that need attention.
+- Proper nouns can be hinted using inline code `` syntax, which is more obvious than bold.
+- Inline code Please use inline code for hints.
 
-## 代码贡献
+## Code contribution
 
-本工程使用 [docsify](https://docsify.js.org/#/) 编写而成。如果想贡献相关代码请先阅读 docsify 的项目文档。
+This project is written using [docsify](https://docsify.js.org/#/). If you want to contribute related code, please read the docsify project documentation first.
 
-本工程使用 yarn 管理依赖，结构非常简单。如果没有接触过，你可能需要简单了解一下[yarn](https://classic.yarnpkg.com/en/)
+This project uses yarn to manage dependencies, and the structure is very simple. If you have not been exposed to it, you may need to briefly understand [yarn](https://classic.yarnpkg.com/en/)
 
-本地调试
+Local debugging:
 
 ```bash
 yarn install

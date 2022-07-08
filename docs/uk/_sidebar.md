@@ -14,7 +14,7 @@
   - [Try To Be an Admin](uk/advanced/beAdmin)
   - [Power Control](uk/advanced/undervoltage)
   - [System Beautification](uk/advanced/beauty)
-  - [Troubleshooting](/advanced/troubleshooting)
+  - [Troubleshooting](uk/advanced/troubleshooting)
 
 - Entertainment & Office
 
@@ -25,7 +25,7 @@
 
 - Special Areas
 
-  - [Cryptocurrency Mining](uk/exclusive/mine)
+  - [Getting Started with Cryptocurrencies](uk/exclusive/mine)
   - [Streaming and Multimedia Production](uk/exclusive/media)
   - [Programming](uk/exclusive/code)
 

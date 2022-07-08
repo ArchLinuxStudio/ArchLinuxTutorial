@@ -6,7 +6,7 @@
 
 对于前端来说，一般需要浏览器以及 IDE(或编辑器) 即可，附加一些网络工具。
 
-关于 IDE(或编辑器),可以使用 [OSS code](https://www.archlinux.org/packages/community/x86_64/code/)，它是由官方仓库的生成的开源构建。[vscodium-bin](https://aur.archlinux.org/packages/vscodium-bin/)<sup>AUR</sup>是社区驱动的 vs code 版本，或者使用 [atom](https://archlinux.org/packages/community/x86_64/atom/)。
+关于 IDE(或编辑器),可以使用 [OSS code](https://www.archlinux.org/packages/community/x86_64/code/)，它是由官方仓库的生成的开源构建。[vscodium-bin](https://aur.archlinux.org/packages/vscodium-bin/)<sup>AUR</sup>是社区驱动的 vs code 版本。
 
 > 微软公司 Visual Studio Code 的二进制构建实际为专有软件。很多人在此存在误解。如此偷梁换柱的手段越来越被更多公司发掘使用。[[1]](https://carlchenet.com/you-think-the-visual-studio-code-binary-you-use-is-a-free-software-think-again/)
 

@@ -1,79 +1,122 @@
-# 加密货币挖矿
+# Getting Started with Cryptocurrencies
 
-本节描述如何在 Arch Linux 中进行加密货币挖矿。一提到加密货币与挖矿，很多中国读者对加密货币与挖矿有着很深的误解与偏见，这实际上与其国家政府及其控制的媒体、自媒体的宣传导向有关。我们不希望我们的读者被蒙蔽，所以在本文中将进行一些解释。
+This section will briefly describe some basic concepts of cryptocurrencies, and our interpretation. At the same time, readers will be taught how to enter the world of cryptocurrencies on Arch Linux. When it comes to cryptocurrency and mining, many Chinese readers have deep misunderstandings and prejudices about cryptocurrency and mining, which is actually related to the propaganda orientation of the national government and its controlled media and self-media. We don't want our readers to be fooled, so some explanation will be given in this article.
 
-为什么有人反对加密货币？第一，加密货币在某些威权政府中被视为会威胁其独裁统治的存在，是极其危险与不可控的，所以要进行全面禁止。第二，加密货币已经形成相当庞大的交易市场，其已经对传统的金融行业产生了一定的影响与冲击，所以以巴菲特为首的部分商界代表公开反对加密货币。第三，加密货币在恐怖主义、诈骗与洗钱方面的应用，以及加密货币不环保等较为边缘的理由。
+## What is cryptocurrency
 
-我们为何支持加密货币？第一，使用加密货币对于无处不在的监视与审计进行反抗。在一些国家中，各种应用广泛的支付手段已经被完全绑定实名，以及进行了全面的监视与审查，个人隐私丝毫没有保障。使用加密货币可以很好的保护你自身的隐私。即使不使用 XMR 等能够高度保证隐私的加密货币，仅仅只使用(正确的使用)普通加密货币也能在很大程度上保障你个人的隐私。第二，加密货币可以作为对抗法币的不稳定性，资产多样化的一种工具。即使很多政府以及各类名流不断的对加密货币进行禁止和否定，加密货币依然安然度过了十余个年头。法币是否稳定？这个问题读者可以自行思考一些国家二十年来法币购买力的变化，一些国家全面禁止加密货币起因何在？读者们应该能够有自己的理解。持有在全世界广泛流通的加密货币，能够提升你在抵御法币风险时的能力，保障自身的权益。第三，即使没有加密货币，恐怖主义、诈骗与洗钱仍然广泛存在于世界，不能因为加密货币可以用于这些用途，就将其归罪与加密货币，这是荒唐的逻辑，提出此类观点的人或组织一般都存在其他的目的。
+Cryptocurrency is a medium of exchange that uses cryptographic principles to secure transactions and control the creation of transaction units. This Wikipedia-style description is more difficult to understand. We try to describe in simpler language. The originator of cryptocurrencies is Bitcoin (BTC), which originated in 2009. In the genesis block of Bitcoin, the sentence `The Times 03/Jan/2009 Chancellor on brink of second bailout for banks.` is embedded. This satirizes the traditional financial industry, while stating the position of the founder Satoshi Nakamoto. Cryptocurrencies that conform to the concept of Bitcoin generally have the following characteristics.
 
-我们为何支持加密货币挖矿？由于我们的读者大多来自中国，他们通过正规且安全的渠道购买加密货币的手段已经越来越少，从 2022 年目前来看，他们可以获取加密货币的途径只有以下几种：
+- Decentralization, the distribution and decision-making of currency is not determined by centralized organizations, such as governments, banks and other organizations in any centralized form. By participating in mining, you can get a share of your own income.
+- Under the premise of correct use, the personal privacy of users can generally be protected to a great extent.
+- The currency itself is **truly** held by its owner, truly realizing the inviolability of private property. The owner of the currency holds the private key, and others without the private key cannot seize, freeze, or confiscate their cryptocurrency assets.
 
-- 使用仍允许中国用户进行交易的交易所进行买入
-- 线下交易
-- 通过挖矿获取
+## Why use cryptocurrency
 
-通过简单的搜索即可发现，目前仍可使用的交易所，某些具有强劲的政府背景，这样的交易所几乎无法保证安全。即使你可以通过此类交易所进行买入与转出，与你实名认证相关的持有、交易、提现到链的记录也可以被轻松获取。实际上，你不应该使用任何中心化交易所。
+As supporters of the free software movement, we also support the use of cryptocurrencies for the following reasons:
 
-线下交易则是更难，而且风险更高的方式，这一点应该无需赘述。
+- First, use cryptocurrencies to resist ubiquitous surveillance and auditing. In some countries, various payment methods that are widely used have been completely bound with real names, and comprehensive surveillance and review have been carried out, and personal privacy is not guaranteed at all. Using cryptocurrencies is a great way to protect your own privacy. Even if you don't use cryptocurrencies such as XMR that can guarantee a high degree of privacy, just using (correctly used) ordinary cryptocurrencies can protect your personal privacy to a large extent.
+- Second, since fiat currencies in some countries have little or no credit, the use of cryptocurrencies provides protection against this risk as a tool for asset diversification. Even though many governments and various celebrities continue to ban and deny cryptocurrencies, cryptocurrencies have survived more than ten years. Is fiat currency stable? Readers of this question can think about the changes in the purchasing power of fiat currency in some countries over the past few decades. What is the reason for some countries to completely ban cryptocurrencies? Readers should be able to have their own understanding. Holding cryptocurrencies that are widely circulated around the world can improve your ability to resist legal currency risks and protect your rights.
+- Third, even without cryptocurrencies, terrorism, fraud and money laundering are still widespread in the world. Just because cryptocurrencies can be used for these purposes, it cannot be blamed on cryptocurrencies. This is absurd logic. People or organizations generally have other purposes.
 
-所以综上所述，挖矿是对于处在被压迫的国家或地区的人们**唯一**安全且方便的获取加密货币的方式。
+Why are some people against cryptocurrencies?
 
-如果你对于加密货币一无所知，可以参考[币安学院](https://academy.binance.com/zh/search?page=1)的系列文章入门，数百篇从低阶到高阶的文章可以供你阅读。
+- First, cryptocurrencies are seen in some totalitarian governments as a threat to their dictatorship. They are extremely dangerous and uncontrollable, so a total ban is required.
+- Second, cryptocurrencies have formed a relatively large trading market, which has had a certain impact and impact on the traditional financial industry, so some business representatives led by Buffett are openly opposed to cryptocurrencies.
+- Third, the use of cryptocurrencies in terrorism, fraud and money laundering, and the more marginal reasons that cryptocurrencies are not environmentally friendly.
 
-## 注意事项
+## Enter the world of cryptocurrencies on Arch Linux
 
-在进行挖矿前，在安全方面与使用方面，均有一些重要事项需要提前提醒：
+### Wallet and address
 
-- 由于个别国家对于加密货币的全面禁止与管制，在进行挖矿的设备上需要使用全局代理，包括代理 DNS。这不仅能够使你连接到矿池等网站，也可以帮助你隐藏自己正在访问加密货币相关网站的动作，从而避开 ISP 或者政府相关部门的监视。这里可以使用 v2raya，它可以使你通过浏览器远程管理挖矿设备的网络，而不用在挖矿设备上安装任何图形化界面程序。
-- 在添加新设备之后，可能需要移除主板 BIOS 电池来放电，注意在放电后系统时间会重置，这会导致 v2ray 无法使用。这种情况下记得先重新校准系统时间。
-- 控制你进行挖矿场所的电费使用情况在一个合理范围内。如果电费使用情况过于离谱，可能会引起某些政府部门的怀疑和监视。
-- 主板 BIOS 设置中，需要开启`Above 4G Decoding`选项以支持多张(一般为 4 张以上)图形显示卡。此设置一般存在于 PCIE 设置中。此设置启用芯片组 64bit 兼容性硬件物理寻址，在关闭时 BIOS 只能使用 32bit 硬件物理寻址。
+If you want to use cryptocurrency, you first need to have a wallet. Currently, the most widely used browser wallet is [Metamask](https://metamask.io/), which can be used by installing the Metamask plugin in the extension store of the browser you are using. The browser wallet allows you to conveniently use the current massive decentralized programs, including many financial applications, communities, games, etc., but generally speaking, its security is not as good as other non-custodial wallets and cold wallets.
 
-## 钱包与地址
+The selection of wallets and the acquisition of addresses on Arch Linux are described in detail in the chapter of [Modern Privacy Protection Guide](https://archlinuxstudio.github.io/ModernSecurityProtectionGuide/#/anonymous_pay), and will not be repeated in this article.
 
-关于在 Arch Linux 上钱包的选择与地址的获取，在[现代隐私保护指南](https://archlinuxstudio.github.io/ModernSecurityProtectionGuide/#/anonymous_pay)的章节中有详细描述，本文不再赘述。
+### Mining
 
-## 选择矿池
+Mining is the most direct way to enter the cryptocurrency world, this section describes how to do cryptocurrency mining in Arch Linux.
 
-在获得自己的加密货币地址后，要进行矿池的选择。简单来说，加密货币矿工自行进行挖矿，效率是较为低下的。加入矿池，并进行分成是更具效率的挖矿方式。矿池有非常多，有着各自不同的手续费收取方式以及收取比例。对于新手来讲，选择[unmineable](https://unmineable.com/)矿池是不错的选择，它的界面简单易用。
+Since most of our readers are from China, they have fewer and fewer means of purchasing cryptocurrencies through formal and secure channels. From the current point of view in 2022, there are only the following ways for them to obtain cryptocurrencies:
 
-在进入矿池后，可以选择你需要进行挖矿的币种。注意，这里可以选择的一些实际不能挖矿的币种，不是你实际进行此币种的挖矿操作，而是你进行 Ethereum 等可以挖掘币种的挖矿，然后 unmineable 矿池将收益转化成你所选择的币种再支付给你。
+- Buy using exchanges that still allow Chinese users to trade
+- Offline transactions
+- Obtained by mining
 
-## 使用工具挖矿
+A simple search reveals that there are exchanges that are still in use today, some with strong government backgrounds, with little guarantee of security. Even if you can buy and transfer through such exchanges, the records of holding, trading, and withdrawing to the chain related to your real-name authentication can be easily obtained. Actually, you should not use any centralized exchange.
 
-挖矿工具也有很多以供选择，本文主要讲述 xmrig 用于 CPU 挖矿，LoLMiner 进行 AMD GPU 挖矿、以及 t-rex 进行 Nvidia GPU 挖矿。[ethminer](https://github.com/ethereum-mining/ethminer)则是使用 GPL-3.0 协议的自由软件，是一款通用的以太坊挖矿软件。一般来说，使用 GPU 进行 Ethereum 挖矿效率更高。
+Offline transactions are a more difficult and riskier way, which should not need to be repeated.
 
-### xmrig
+So to sum up, mining is the only safe and convenient way for people in oppressed countries to obtain cryptocurrency.
 
-xmrig 可从[github 下载地址](https://github.com/xmrig/xmrig/releases)自行下载，也可从 [AUR](https://aur.archlinux.org/packages/?O=0&SeB=nd&K=xmrig&outdated=&SB=n&SO=a&PP=50&do_Search=Go) 安装。xmrig 是使用 GPL-3.0 许可的自由软件。xmrig-cuda 是 xmrig cuda backends 的插件，你可以根据需要自行选择。在安装完成后，可以使用如下命令进行挖矿。如下命令在亚洲矿池使用 RandomX 进行 TRX 的挖矿。
+If you don't know anything about cryptocurrencies, you can refer to the [Binance Academy](https://academy.binance.com/en/search?page=1) series of articles to get started, hundreds of articles ranging from low-level to high-level articles are available for you to read.
+
+---
+
+Before mining, there are some important matters that need to be reminded in advance in terms of safety and use:
+
+- Due to the comprehensive prohibition and regulation of cryptocurrencies in individual countries, a global proxy, including proxy DNS, is required on the mining equipment. This not only allows you to connect to websites such as mining pools, but also helps you hide your activity on cryptocurrency-related websites from being monitored by ISPs or government agencies. Here you can use v2rayA, which allows you to remotely manage the network of mining rigs through a browser without installing any GUI program on the mining rig.
+- After adding a new device, it may be necessary to remove the motherboard BIOS battery to discharge, note that the system time will reset after discharge, which will make v2ray unusable. In this case, remember to recalibrate the system time first.
+- Control the electricity usage of your mining site within a reasonable range. If the electricity bill usage is too outrageous, it may arouse suspicion and surveillance by some government departments.
+- In the motherboard BIOS settings, you need to enable the `Above 4G Decoding` option to support multiple (usually 4 or more) graphics cards. This setting is normally present in PCIE settings. This setting enables chipset 64bit compatibility hardware physical addressing, when turned off the BIOS can only use 32bit hardware physical addressing.
+- In the motherboard BIOS settings, adjust the PCI-E speed to Gen2 or Gen1. Otherwise, the problem of not recognizing the graphics card may occur.
+
+---
+
+After obtaining your own cryptocurrency address, you need to choose a mining pool. To put it simply, cryptocurrency miners mine on their own, which is inefficient. Joining a mining pool and splitting is a more efficient way of mining. There are many mining pools, each with different fee collection methods and charging ratios. For beginners, choosing the [unmineable](https://unmineable.com/) mining pool is a good choice, and its interface is simple and easy to use.
+
+After entering the mining pool, you can choose the currency you need to mine. Note that some of the coins that you can choose here are not actually mineable. It is not that you actually perform the mining operation of this currency, but that you mine the coins that can be mined such as Ethereum, and then the unmineable mining pool will convert the income into you. The chosen currency is then paid to you. For specific operations, please refer to the article on the unmineable website. After reaching the minimum amount required to withdraw, you can initiate a withdrawal in the mining pool. There is a certain waiting time for withdrawal, please be patient.
+
+---
+
+When mining with an Nvidia graphics card, you need to install [cuda](https://archlinux.org/packages/community/x86_64/cuda/) first.
+
+When mining with an AMD graphics card, if you use the AMD open source mesa driver, you may not be able to run the mining software. The solution is to temporarily use the proprietary AMD driver [opencl-amd](https://aur.archlinux.org/packages/opencl-amd/). However the latest version of the opencl-amd driver in AUR may still not work, if you encounter this problem, the solution is to use the [older version 20.45 driver](https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=opencl-amd&id=99929da87153c0f36a2a9497c38221c12307ecfc). After downloading PKGBUILD, use makepkg to generate the package and install it. This may be required when using other AMD mining programs.
+
+There are also many mining tools to choose from. [ethminer](https://github.com/ethereum-mining/ethminer) is free software using the GPL-3.0 protocol and is a general-purpose Ethereum mining software. In general, Ethereum mining is more efficient with GPUs. There are also some popular proprietary mining software such as LoLMiner and T-Rex. For specific operations, please refer to their official documentation.
+
+[xmrig](https://github.com/xmrig/xmrig) can be used for XMR mining. xmrig is free software licensed under GPL-3.0. xmrig-cuda is a plugin for xmrig cuda backends, you can choose according to your needs.
+
+---
+
+Generally speaking, the mining program needs to be set to automatically restart and start automatically. For this, you can use supervisor to achieve this. First, install and start.
 
 ```bash
-xmrig -o rx-asia.unmineable.com:3333 -u TRX:TWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.miner1 -p x --1g
+sudo pacman -S supervisor
+sudo systemctl enable --now supervisord.service
 ```
 
-其中部分参数含义同上， --1g 参数为开启 1g 大页面的支持。
+Then, create a configuration file in the target directory, such as `/etc/supervisor.d/eth.ini`, and then restart the supervisord service for the configuration to take effect. In this way, the requirements of automatic restart and boot-up can be realized. Below is a sample configuration file.
 
-### T-Rex
-
-使用 Nvidia 显卡挖矿时，需要首先安装 [cuda](https://archlinux.org/packages/community/x86_64/cuda/)。
-
-T-Rex 可从[github 下载地址](https://github.com/trexminer/T-Rex/releases)自行下载，也可从 [AUR](https://aur.archlinux.org/packages/trex-bin/) 安装。T-Rex 是专有软件。在安装完成后，可以使用如下命令进行挖矿。如下命令在亚洲矿池使用 ethash 进行 TRX 的挖矿。
-
-```bash
-./t-rex -a ethash -o ethash-asia.unmineable.com:3333 -u TRX:TWxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.miner1 -p x
+```ini
+[program:eth]
+directory=/home/testuser
+command=YOUR_MINE_COMMAND
+autostart=true
+autorestart=true
 ```
 
-其中-a 参数指定算法。-o 指定矿池的 ip 和端口号，这些参数你可以在矿池页面找到。-u 参数指定币种、收币地址、主机名、以及优惠码，其中收币地址需要更换成你自身的地址，而使用优惠码可以减免 0.25%的手续费。
+### Fan speed regulation in headless conditions
 
-需要注意的是，t-rex 运行后会在本机 127.0.0.1:4067 开启控制面板，你可在其中进行各类信息的查看。如果想要在其他机器访问挖矿机器面板，则需额外指定`--api-bind-http 0.0.0.0:4067`参数，这样一来你就可以达到目的。
+Adjusting the fan speed of the graphics card is a tricky thing when it is not connected to the monitor, that is, headless.
 
-使用英伟达显卡挖矿也需要额外对风扇转速进行设置，否则风扇不会根据温度来调整转速，即使温度较高，也近会运行在较低的转速，这个问题在进行深度学习等操作时仍然存在。如果你启动了图形化界面，则可通过 nvidia-settings 进行转速设置。英伟达显卡的转速设置依赖 X server 造成的，所以默认情况下，如果不启动 X server 则无法进行风扇调速。此时可以使用工具[coolgpus](https://github.com/andyljones/coolgpus)，其工作原理是，它会为每个 GPU 设置一个临时 X server。然后，它每隔几秒钟循环查看一次 GPU，并根据它们的温度设置风扇速度。当脚本终止时，它会将风扇的控制权返回给驱动程序并清理 X server。pip 安装的 coolgpus 位于`~/.local/bin/coolgpus`。
+Set the fan speed of AMD graphics card. Install the software amdgpu-fan and enable the service. amdgpu-fan will automatically adjust the fan speed according to the graphics card temperature. Note that [the current version of AUR](https://github.com/zzkW35/amdgpu-fan/issues/2) has a problem that the boot cannot be automatically started to take effect. According to [Issue](https://github.com/zzkW35 /amdgpu-fan/issues/2), its upstream [source repository] (https://github.com/chestm007/amdgpu-fan) does not have this problem.
+
+```
+yay -S amdgpu-fan
+sudo systemctl enable --now amdgpu-fan
+```
+
+For more information on setting the fan speed of AMD graphics cards, please refer to [Arch Wiki](https://wiki.archlinux.org/title/fan_speed_control#AMDGPU_sysfs_fan_control).
+
+---
+
+Mining with NVIDIA graphics cards also requires additional fan speed settings, otherwise the fan will not adjust the speed according to the temperature. Even if the temperature is high, it will run at a low speed. This problem still exists when deep learning and other operations are performed. . If you start the GUI, you can set the speed through nvidia-settings. The speed setting of the Nvidia graphics card depends on the X server, so by default, if the X server is not activated, the fan speed cannot be adjusted. The tool [coolgpus](https://github.com/andyljones/coolgpus) is available at this point, which works by setting up a temporary X server per GPU. It then cycles through the GPUs every few seconds and sets fan speeds based on their temperatures. When the script terminates, it returns control of the fan to the driver and cleans up the X server. The coolgpus installed by pip is located at `~/.local/bin/coolgpus`.
 
 - https://ximikang.icu/2021/03/09/ubuntu%E7%B3%BB%E7%BB%9F%E8%B0%83%E8%8A%82GPU%E9%A3%8E%E6%89%87%E8%BD%AC%E9%80%9F
 
 ---
 
-coolgpus 在一些显卡无法生效，这种情况下可以使用[set_gpu_fans_public](https://github.com/boris-dimitrov/set_gpu_fans_public)。下载 set_gpu_fans_public 后，需要更改其 cool_gpu 以及 nvscmd 两个脚本中 `nvidia-smi`以及`nvidia-settings` 命令的路径为正确路径，除此之外还需修改 cool_gpu 中 dir 的路径为正确路径。随后需要安装包[xorg-xinit](https://archlinux.org/packages/extra/x86_64/xorg-xinit/)。最后创建符号链接，在位于 /opt 其目录中用 tcsh 启动，详见其代码注释。
+coolgpus does not work for some graphics cards, in this case, you can use [set_gpu_fans_public](https://github.com/boris-dimitrov/set_gpu_fans_public). After downloading set_gpu_fans_public, you need to change the paths of the `nvidia-smi` and `nvidia-settings` commands in the two scripts of cool_gpu and nvscmd to the correct path. In addition, you need to modify the path of the dir in cool_gpu to the correct path. The package [xorg-xinit](https://archlinux.org/packages/extra/x86_64/xorg-xinit/) is then required to be installed. Finally, create a symbolic link and start it with tcsh in its directory located in /opt, see its code comments for details.
 
 - https://www.codeleading.com/article/26244997267/
 - https://www.jianshu.com/p/ab956df5e40c
@@ -88,87 +131,79 @@ Ref:
 - https://github.com/iaalm/GPUFanSpeed
 - https://www.google.com/search?q=TOC-Faking-a-Head-for-a-Headless-X-Server+347
 
-### lolMiner
+### Graphics card overclocking in headless conditions
 
-lolMiner 是专有软件。
+In the case of starting the graphical interface, overclocking the Nvidia graphics card is relatively simple, please refer to [arch wiki](https://wiki.archlinux.org/title/NVIDIA/Tips_and_tricks#Overclocking_and_cooling) for details. This section describes overclocking Nvidia graphics cards in a headless environment without starting the GUI.
 
-在使用 AMD 显卡进行挖矿时，如果你使用 AMD 开源 mesa 驱动则有可能无法运行挖矿软件。解决方案是使用专有 AMD 驱动 [opencl-amd](https://aur.archlinux.org/packages/opencl-amd/)。然而在 AUR 中最新版本的 opencl-amd 驱动仍可能无法作用，如果你遇到此问题，解决方案是使用[旧版的 20.45 版本的驱动程序](https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=opencl-amd&id=99929da87153c0f36a2a9497c38221c12307ecfc)。将 PKGBUILD 下载后使用 makepkg 生成包并安装。使用其他 AMD 挖矿程序时均可能需要此操作。
+The general overclocking ideas related to Ethereum are: overclocking memory, down/locking the core, and limiting the maximum power if necessary.
 
-接下来需要对 AMD 显卡的风扇风速进行设定。安装软件 amdgpu-fan 并启用服务即可。amdgpu-fan 会根据显卡温度自动调整风扇转速。注意，[AUR 当前的版本](https://github.com/zzkW35/amdgpu-fan/issues/2)存在开机无法自动启动生效的问题，根据[Issue](https://github.com/zzkW35/amdgpu-fan/issues/2)描述，其上游[源仓库](https://github.com/chestm007/amdgpu-fan)不存在此问题。
+For more complete steps, please refer to the article [Linux Overclocking Graphics Card Via Command Line](https://jybb.me/linux-overclock-graphic-card-via-cli), and follow the steps. Here are some additional considerations:
 
-```
-yay -S amdgpu-fan
-sudo systemctl enable --now amdgpu-fan
-```
+- When editing `/etc/X11/xorg.conf`, the value of `ConnectedMonitor` needs to be filled in according to the actual value in your own generated file. In ArchLinux its value is generally `Monitor0` instead of `DFP-0`.
+- When setting different perf levels during overclocking, generally the value of [4] corresponds to the current preferred maximum performance level. The ratings shown in nvidia-smi do not seem to correspond to the numbers here. If you are not sure about your current level, try it from 1 to 4.
+- If you are still not sure about the perf level, you can directly use the adjustments corresponding to all levels, such as `GPUMemoryTransferRateOffsetAllPerformanceLevels` and `GPUGraphicsClockOffsetAllPerformanceLevels`.
+- If the overclocking command is executed directly in the terminal, the parameters following the -a option of nvidia-settings can be wrapped without single quotes, but if executed in a script, the parameters need to be wrapped with single quotes.
+- Lock the core frequency of a graphics card with this command: `nvidia-smi -i 0 -lgc 1075`. This command limits the core frequency of the zeroth graphics card to 1075. Note that if the frequency limit is set too high, but the power or performance is insufficient, the frequency will drop and eventually settle at a value below the set lock frequency.
+- Even with the same model of graphics card, the physique and type of video memory may be different. Therefore, you need to adjust slowly according to the actual physique of your graphics card to find the most stable overclocking parameters. The existing overclocking parameters on the Internet can only be used as a rough reference.
+- The lighting problem of the graphics card, many 20, 30 series new graphics cards use I2C control, but the NVIDIA linux driver does not support it, the traditional control through the `GPULogoBrightness` parameter can no longer take effect. See [github issue](https://github.com/NVIDIA/nvidia-settings/issues/48)
+- If overclocking is not possible, try restarting the lightdm service and overclocking again.
 
-关于更多 AMD 显卡风扇转速的设置方法可参考 [Arch Wiki](https://wiki.archlinux.org/title/fan_speed_control#AMDGPU_sysfs_fan_control).
+Ref:
 
-下载 [lolMiner](https://github.com/Lolliedieb/lolMiner-releases) 并运行：
+- [ethminer overlock guide](https://github.com/ethereum-mining/ethminer/issues/456#issuecomment-370224878)
+- [NVIDIA-SMI 系列命令总结](https://blog.csdn.net/handsome_bear/article/details/80903477)
+- [nvidia-smi: Control Your GPUs](https://www.microway.com/hpc-tech-tips/nvidia-smi_control-your-gpus/)
 
-```bash
-./lolMiner --algo ETHASH --pool ethash-asia.unmineable.com:3333 --user ETH:0xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.miner1 --ethstratum ETHPROXY pause --apihost 0.0.0.0  --apiport YOUR_PORT
-```
+---
 
-## 提现
+AMD graphics cards are much easier to overclock than Nvidia graphics cards in a headless environment. Just refer to the wiki. For overclocking tools, it is recommended to use [amdgpu-clocks-git](https://aur.archlinux.org/packages/amdgpu-clocks-git).
 
-在达到要求提现的最小限额后，你即可在矿池发起提现。提现有一定等待时间，需要耐心等待。
+Ref:
 
-## 防火墙防护
+- [AMD RX 470(D) Linux 挖矿](https://reimu.moe/2021/03/10/AMD-RX470-D-Linux-Mining/)
+- [Arch wiki](https://wiki.archlinux.org/title/AMDGPU#Overclocking)
 
-如果你在内网环境中启用一些监控面板以便使用，则需要注意开启防火墙防护，因为你的内网中的设备，可能存在恶意软件，对网络中的端口、服务进行扫描、监视并上报。
+---
 
-这里采用 ufw 工具进行防火墙防护。第一，因为其使用简单，第二，因为 ufw 与 v2raya 无冲突，可正常使用。firewalld 默认情况下无法与 v2raya 同时正常使用。
+### Firewall Protection
+
+If you enable some monitoring panels for use in the intranet environment, you need to pay attention to opening the firewall protection, because the devices in your intranet may have malware, scan, monitor and report the ports and services in the network.
+
+The ufw tool is used here for firewall protection. First, because it is easy to use, and second, because ufw does not conflict with v2raya, it can be used normally. firewalld does not work properly with v2raya by default.
 
 ```bash
 sudo pacman -S ufw
 sudo systemctl enable --now ufw
 
-sudo ufw default deny #默认拒绝
+sudo ufw default deny #default deny
 
-sudo ufw allow from YOUR_TRUST_LAN_IP #只允许你信任的内网 ip 连接
-sudo ufw allow ssh #允许 ssh 以便内网以及外网通过 nps 的ssh连接
-sudo ufw allow 8024 #允许 nps 的默认网桥通信端口工作
+sudo ufw allow from YOUR_TRUST_LAN_IP #Only allow connections from your trusted intranet ip
+sudo ufw allow ssh #Allow ssh so that the internal network and the external network can connect through nps ssh
+sudo ufw allow 8024 #Allow the default bridge communication port of nps to work
 
-sudo ufw enable #设置完成后启用
-sudo ufw status #检查状态
+sudo ufw enable #Enable after setting is complete
+sudo ufw status #Check status
 ```
 
 Ref: https://wiki.archlinux.org/title/Uncomplicated_Firewall
 
-## 辅助命令
+### Auxiliary commands
 
-你可用如下命令查看识别到的显卡编号，此命令将列出真正被系统识别可用的显卡编号。
+You can use the following command to check the identified graphics card numbers, this command will list the graphics card numbers that are actually recognized by the system.
 
 ```bash
 ls /sys/class/drm | grep "^card[[:digit:]]$"
 ```
 
-你可用如下命令查看各个显卡设备的详情
+You can use the following command to view the details of each graphics card device
 
 ```bash
 sudo lspci -vnn | grep VGA -A 12
 ```
 
-你可用[speedtest-cli](https://archlinux.org/packages/community/any/speedtest-cli/)在终端下测试网速情况
+You can use [speedtest-cli](https://archlinux.org/packages/community/any/speedtest-cli/) to test the network speed in the terminal
 
 ```bash
 sudo pacman -S speedtest-cli
 speedtest-cli
 ```
-
----
-
-## 附加说明
-
-TRON 网络自身会屏蔽一些 IP 地址，经过我们验证的有亚洲香港，新加坡，未经过我们验证的可能也有其他地区。如果你使用这些被屏蔽的地区的代理来使用 TRON 网络，操作 TRON 钱包，你可能会遇到如下的问题。在你想要给某人发送 TRON 钱包中的货币时，如 USDT,你的余额可能从你的余额的实际数值突然跳转至 0，这将使你无法继续发送货币给对方，解决办法如下。
-
-使用一个欧盟地区的代理来进行以下操作。
-
-1. 先从你的原有钱包里导出 TRON 钱包的私钥。
-2. 在设置中重新下载备份文件。
-3. 使用一个你未曾使用过加密货币钱包如 Guarda 的浏览器，重新进入钱包，选择"Restore or Import"选项
-4. 选择"Import by currency"，然后将刚刚得到的 TRON 钱包的私钥填入其中
-
-做完如上步骤后，再发送 USDT 即可一切正常。
-
-另外一个可能的问题是，导入巨量的钱包时，上述问题可能重现。

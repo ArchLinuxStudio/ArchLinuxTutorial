@@ -14,6 +14,7 @@
 
 电子邮件: archlinuxstudio@tutamail.com  
 Telegram 电报群: [ArchLinuxStudio🇨🇦🏳️‍⚧️🏳️‍🌈](https://t.me/FSF_Ministry_of_Truth)
+Matrix 群组: [Matrix Group:ArchLinuxStudio🇨🇦🏳️‍⚧️🏳️‍🌈](https://matrix.to/#/#ArchLinuxStudio:matrix.org)
 
 ## 更新日志
 

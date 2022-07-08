@@ -1,63 +1,61 @@
-# 编程软件
+# Programming
 
-很多人不清楚的是，Linux 几乎是最适合编程的操作系统，其对于各个方向的编程支持非常到位(微软与苹果的专有系统编程除外)，可以为你省去很多痛苦。本文介绍各个编程方向优质的软件介绍。我们建议读者使用自由软件进行编程工作，本节也仅列出自由软件。
+What many people don't know is that Linux is almost the most suitable operating system for programming, and its programming support for all directions is in place (except Microsoft and Apple's proprietary system programming), which can save you a lot of pain. This article introduces high-quality software introductions in various programming directions. We recommend that readers use free software for programming, and only free software is listed in this section.
 
-## 前端编程
+## Front-end programming
 
-对于前端来说，一般需要浏览器以及 IDE(或编辑器) 即可，附加一些网络工具。
+For the front end, a browser and IDE (or editor) are generally required, with some network tools attached.
 
-关于 IDE(或编辑器),可以使用 [OSS code](https://www.archlinux.org/packages/community/x86_64/code/)，它是由官方仓库的生成的开源构建。[vscodium-bin](https://aur.archlinux.org/packages/vscodium-bin/)<sup>AUR</sup>是社区驱动的 vs code 版本，或者使用 [atom](https://archlinux.org/packages/community/x86_64/atom/)。
+For IDE (or editor), you can use [OSS code](https://www.archlinux.org/packages/community/x86_64/code/), which is an open source build generated from the official repository. [vscodium-bin](https://aur.archlinux.org/packages/vscodium-bin/)<sup>AUR</sup> is a community driven version of vs code.
 
-> 微软公司 Visual Studio Code 的二进制构建实际为专有软件。很多人在此存在误解。如此偷梁换柱的手段越来越被更多公司发掘使用。[[1]](https://carlchenet.com/you-think-the-visual-studio-code-binary-you-use-is-a-free-software-think-again/)
+> Binary builds of Microsoft Visual Studio Code are actually proprietary software. Many people have misunderstandings here. Such tricks are increasingly being explored and used by more companies. [[1]](https://carlchenet.com/you-think-the-visual-studio-code-binary-you-use-is-a-free-software-think-again/)
 
-浏览器方面有 [firefox](https://archlinux.org/packages/extra/x86_64/firefox/)，[chromium](https://archlinux.org/packages/extra/x86_64/chromium/)，[firefox-developer-edition](https://www.archlinux.org/packages/community/x86_64/firefox-developer-edition/)，[brave](https://aur.archlinux.org/packages/brave-dev-bin/)<sup>AUR</sup>等众多软件可供选择。
+On the browser side there are [firefox](https://archlinux.org/packages/extra/x86_64/firefox/), [chromium](https://archlinux.org/packages/extra/x86_64/chromium/), [firefox -developer-edition](https://www.archlinux.org/packages/community/x86_64/firefox-developer-edition/), [brave](https://aur.archlinux.org/packages/brave-dev-bin/)<sup>AUR</sup> and many other software to choose from.
 
-网络工具常使用 [httptoolkit](https://aur.archlinux.org/packages/httptoolkit/)<sup>AUR</sup>(作为 charles 的代替)，以及 [wireshark-qt](https://archlinux.org/packages/community/x86_64/wireshark-qt/)。
+Network tools often use [httptoolkit](https://aur.archlinux.org/packages/httptoolkit/)<sup>AUR</sup> (as a replacement for charles), and [wireshark-qt](https://archlinux.org/packages/community/x86_64/wireshark-qt/).
 
-至于 [yarn](https://www.archlinux.org/packages/community/any/yarn/)、[npm](https://www.archlinux.org/packages/community/any/npm/) 等前端常用工具，也均可用 pacman 安装。
+As for front-ends such as [yarn](https://www.archlinux.org/packages/community/any/yarn/), [npm](https://www.archlinux.org/packages/community/any/npm/) Common tools can also be installed with pacman.
 
-<!-- > OSS code 存在的问题：[官方 wiki](https://wiki.archlinux.org/index.php/Visual_Studio_Code)。一个普遍问题是删文件 UI 会卡住很久，原因是 electron 在 linux 下默认使用 `gio` 删除，但是 KDE 用户一般都不装这个。解决办法是把 `ELECTRON_TRASH=kioclient5` 环境变量加在~/.pam_environment 里。 -->
+## Back-end programming
 
-## 后端编程
+Jetbrains' open source IDE can be found in the official archlinux repository, such as [IntelliJ Idea](https://www.archlinux.org/packages/community/x86_64/intellij-idea-community-edition/), [PyCharm](https://www.archlinux.org/packages/community/x86_64/pycharm-community-edition/), et al.
+More traditional IDEs include [Netbeans](https://www.archlinux.org/packages/community/any/netbeans/) and eclipse, which has multiple versions and can be searched in the AUR.
 
-Jetbrains 公司开源的 IDE 可在 archlinux 官方仓库中找到，如[IntelliJ Idea](https://www.archlinux.org/packages/community/x86_64/intellij-idea-community-edition/)，[PyCharm](https://www.archlinux.org/packages/community/x86_64/pycharm-community-edition/)，等。
-较为传统的 IDE 有 [Netbeans](https://www.archlinux.org/packages/community/any/netbeans/) 以及 eclipse，eclipse 有多种版本，可在 AUR 中自行搜索。
+There is no need to say much about the programming language itself, except that the C language and C++ are supported by the installed system, java, node, etc. can be easily installed.
 
-关于编程语言自身，更是不必多说，除了 c 语言和 c++安装好系统即支持外，java, node，等都可以被轻易安装。
+In addition to the default installed gcc, you can also install clang and llvm for use
 
-除了默认安装好的 gcc，也可以安装 clang 以及 llvm 以供使用
-
-关于数据库相关软件，也有多种选择。
+When it comes to database-related software, there are also a variety of options.
 
 - [Mysql Workbench](https://www.archlinux.org/packages/community/x86_64/mysql-workbench/)
 - [pgadmin4](https://www.archlinux.org/packages/community/x86_64/pgadmin4/)
 - [dbeaver](https://www.archlinux.org/packages/community/x86_64/dbeaver/)
 - [robo3t](https://aur.archlinux.org/packages/robo3t-bin/)<sup>AUR</sup>
 - [redis-desktop-manager](https://aur.archlinux.org/packages/redis-desktop-manager/)<sup>AUR</sup>
-- [rdm-bin](https://aur.archlinux.org/packages/rdm-bin/)<sup>AUR</sup> 如果上面的编译有问题，可用这个 bin 版本
+- [rdm-bin](https://aur.archlinux.org/packages/rdm-bin/)<sup>AUR</sup> If there is a problem with the above compilation, use this bin version
 
-针对大数据方面，可安装[hadoop](https://aur.archlinux.org/packages/hadoop/)<sup>AUR</sup>等包。如有包长期没有更新或包不存在，如 hbase 和 hive，则只能去官网自行下载并配置。
+For big data, packages such as [hadoop](https://aur.archlinux.org/packages/hadoop/)<sup>AUR</sup> can be installed. If the package has not been updated for a long time or the package does not exist, such as hbase and hive, you can only go to the official website to download and configure it yourself.
 
-关于软件测试，[junit](https://archlinux.org/packages/extra/any/junit/)等常见软件也可轻松安装，配合你喜欢的 IDE 来使用。
+Regarding software testing, common software such as [junit](https://archlinux.org/packages/extra/any/junit/) can also be easily installed and used with your favorite IDE.
 
-## 安卓客户端编程
+## Android client programming
 
-目前来说，安卓开发已经统一到了 [Android Studio](https://aur.archlinux.org/packages/android-studio/)<sup>AUR</sup> 进行开发。当然传统的 Eclipse 也可以用来使用。常用的安卓模拟器则也可使用[Anbox](https://wiki.archlinux.org/title/Anbox#Installation)或 [Waydriod](https://wiki.archlinux.org/title/Waydroid#Installation)。
+At present, Android development has been unified to [Android Studio](https://aur.archlinux.org/packages/android-studio/)<sup>AUR</sup> for development. Of course traditional Eclipse can also be used. Common Android emulators can also use [Anbox](https://wiki.archlinux.org/title/Anbox#Installation) or [Waydriod](https://wiki.archlinux.org/title/Waydroid#Installation) .
 
-## 桌面应用编程
+## Desktop application programming
 
-目前桌面开发较为流行的是 [electron](https://archlinux.org/packages/community/x86_64/electron/) 和 [Qt](https://archlinux.org/packages/extra/x86_64/qt6-base/) 应用。electron 可直接用 OSS Code 进行开发，Qt 应用使用 [Qt Creator](https://www.archlinux.org/packages/extra/x86_64/qtcreator/) 进行开发。
+At present, the more popular desktop development is [electron](https://archlinux.org/packages/community/x86_64/electron/) and [Qt](https://archlinux.org/packages/extra/x86_64/qt6-base/) application. Electron can be developed directly with OSS Code, and Qt applications can be developed with [Qt Creator](https://www.archlinux.org/packages/extra/x86_64/qtcreator/).
 
-## 机器学习与深度学习
+## Machine Learning and Deep Learning
 
-针对机器学习方面的编程，IDE 可使用同后端编程中一样的软件。机器学习常用的[jupyter-notebook](https://archlinux.org/packages/community/any/jupyter-notebook/) 以及所需要的相关库如[numpy](https://archlinux.org/packages/extra/x86_64/python-numpy/)、[sklearn](https://archlinux.org/packages/community/x86_64/python-scikit-learn/)、[pandas](https://archlinux.org/packages/community/x86_64/python-pandas/)等，也均可在源中找到。同时,[tensorflow](https://archlinux.org/packages/community/x86_64/tensorflow/)、[pytorch](https://archlinux.org/packages/?sort=&q=python-pytorch&maintainer=&flagged=)以及其相关的 cuda 支持包等深度学习相关的包也均可安装使用。
+For programming in machine learning, the IDE can use the same software as in backend programming. Machine learning commonly used [jupyter-notebook](https://archlinux.org/packages/community/any/jupyter-notebook/) and required related libraries such as [numpy](https://archlinux.org/packages/extra/x86_64/python-numpy/), [sklearn](https://archlinux.org/packages/community/x86_64/python-scikit-learn/), [pandas](https://archlinux.org/packages/community/x86_64/python-pandas/), etc., can also be found in the source. Meanwhile, [tensorflow](https://archlinux.org/packages/community/x86_64/tensorflow/), [pytorch](https://archlinux.org/packages/?sort=&q=python-pytorch&maintainer=&flagged=) And deep learning related packages such as its related cuda support package can also be installed and used.
 
-## 科学计算
+## Scientific Computing
 
-[SageMath](https://www.sagemath.org/)(原名 Sage)是免费的、自由的数学软件，支持代数、几何、数论、密码学、数值计算和相关领域的研究和教学，可作为 MATLAB 的替代。Sage 的开发模式和 Sage 本身的技术都非常强调开放性、社区性、合作性和协作性：我们在制造汽车，而不是重新发明轮子。Sagemath 的总体目标是为"4M"（即 Maple、Mathematica、Magma 和 Matlab）提供一个可行的、免费的、自由的替代品。SageMath 为目前科学计算领域的大多数开源软件/库统一重写了接口，提供了一种类兼容 python 的语法，可以说集开源数学软件之大成。目前已可部分替代"4M"。
+[SageMath](https://www.sagemath.org/) (formerly Sage) is free, liberating mathematical software that supports research and teaching in algebra, geometry, number theory, cryptography, numerical computing, and related fields, and is available as Alternative to MATLAB. Both Sage's development model and Sage's own technology place a strong emphasis on openness, community, cooperation, and collaboration: we're building cars, not reinventing the wheel. The overall goal of Sagemath is to provide a viable, free, free alternative to the "4M" (i.e. Maple, Mathematica, Magma, and Matlab). SageMath rewrites the interface for most open source software/libraries in the field of scientific computing, and provides a python-compatible syntax, which can be said to be the culmination of open source mathematical software. At present, it can partially replace "4M".
 
-[Arch Wiki](https://wiki.archlinux.org/title/SageMath) ||| [中文教程及文档](https://www.osgeo.cn/sagemath/index.html)
+[Arch Wiki](https://wiki.archlinux.org/title/SageMath) ||| [Chinese Tutorial and Documentation](https://www.osgeo.cn/sagemath/index.html)
 
-## 逆向工程
+## Reverse Engineering
 
-可安装知名的[ghidra](https://archlinux.org/packages/community/x86_64/ghidra/)作为 IDA 的替代，更多替代选项可参考[alternativeto](https://alternativeto.net/software/ida/)。除此之外再介绍一个好用的十六进制编辑器[Bless](https://archlinux.org/packages/community/any/bless/)。
+The well-known [ghidra](https://archlinux.org/packages/community/x86_64/ghidra/) can be installed as an alternative to IDA. For more alternative options, please refer to [alternativeto](https://alternativeto.net/software/ida/). In addition, introduce a useful hex editor [Bless](https://archlinux.org/packages/community/any/bless/).
