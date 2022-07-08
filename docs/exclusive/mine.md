@@ -76,6 +76,25 @@
 
 [xmrig](https://github.com/xmrig/xmrig) 可用于 XMR 的挖矿。xmrig 是使用 GPL-3.0 许可的自由软件。xmrig-cuda 是 xmrig cuda backends 的插件，你可以根据需要自行选择。
 
+---
+
+一般来说，挖矿程序需要设置为自动重启与开机自启，对于这点可以使用 supervisor 来实现，首先进行安装与启动
+
+```bash
+sudo pacman -S supervisor
+sudo systemctl enable --now supervisord.service
+```
+
+随后，在目标目录下建立配置文件，如`/etc/supervisor.d/eth.ini`，随后重启 supervisord 服务使配置生效。这样即可实现自动重启与开机自启的需求。如下是一个样例配置文件。
+
+```ini
+[program:eth]
+directory=/home/testuser
+command=YOUR_MINE_COMMAND
+autostart=true
+autorestart=true
+```
+
 ### Headless 条件下的风扇转速调节
 
 在不接入显示器，也即 Headless 的条件下，显卡风扇转速的调节是一件棘手的事情。
