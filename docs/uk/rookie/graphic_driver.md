@@ -1,62 +1,62 @@
-# 显卡驱动
+# Graphics card driver
 
-现在是 2022 年，显卡驱动的安装在 Arch Linux 上已经变得非常容易。本文区分核芯显卡和独立显卡两大类描述显卡驱动的安装。**注意，确保你已经按照本教程之前的章节安装配置好科学上网、安装好必要的包后再向下进行，不要多个教程混着看，你可能漏掉了本教程前置步骤中的某些操作，从而造成问题。**
+It's 2022 and the installation of graphics card drivers has become very easy on Arch Linux. This article distinguishes between core graphics cards and discrete graphics cards to describe the installation of graphics card drivers. **Note, make sure that you have installed and configured the scientific Internet according to the previous chapters of this tutorial, installed the necessary packages before proceeding down. certain operations, causing problems.**
 
-> 所有 AMD 显卡建议使用开源驱动。英伟达显卡建议使用闭源驱动，因为逆向工程的开源驱动性能过于低下，本文也只描述英伟达闭源驱动安装。如果你支持自由软件运动，请尽可能使用具有官方支持开源驱动的英特尔和 AMD 显卡。
+> Open source drivers are recommended for all AMD graphics cards. It is recommended to use closed source drivers for NVIDIA graphics cards, because the performance of open source drivers for reverse engineering is too low, and this article only describes the installation of NVIDIA closed source drivers. If you support the free software movement, use Intel and AMD graphics cards with officially supported open source drivers whenever possible.
 
-## 核芯显卡
+## HD Graphics
 
-### 英特尔核芯显卡
+### Intel HD Graphics
 
-[官网文档](https://wiki.archlinux.org/index.php/Intel_graphics)
+[Official website documentation](https://wiki.archlinux.org/index.php/Intel_graphics)
 
-英特尔核芯显卡安装如下几个包即可。
+Intel HD Graphics can install the following packages.
 
 ```bash
 sudo pacman -S mesa lib32-mesa vulkan-intel lib32-vulkan-intel
 ```
 
-> `xf86-video-intel`arch wiki 里写的很多发行版不建议安装它，而应使用 xorg 的 modesetting 驱动(也就是什么都不用装的意思)。经过我们测试目前确实是默认 modesetting 驱动较为稳定。
+> Many distributions written in the `xf86-video-intel`arch wiki do not recommend installing it, but use xorg's modesetting driver (that is, don't need to install anything). After our test, it is true that the default modesetting driver is relatively stable.
 
-注意，只有 Intel HD 4000 及以上的核显才支持 vulkan。
+Note that vulkan is only supported on Intel HD 4000 and above.
 
-### AMD 核芯显卡
+### AMD HD Graphics
 
-对于具有核芯显卡的 AMD 处理器，需要先确定核显架构(Architecture)是什么，再决定安装什么驱动。推荐在 [techpowerup 网站](https://www.techpowerup.com/)进行查询，信息非常全面。在确定了显卡架构后，再根据架构对照[这个文档](https://wiki.archlinux.org/index.php/Xorg#AMD)决定安装什么驱动。**对于 GCN2.0 及以下架构的老显卡，直接安装开源 ATI 驱动即可，原本闭源的老旧的 Catalyst 驱动在 2021 年已被废弃。GCN2.0 及以下架构的老显卡也不要使用开源的 AMDGPU 驱动，因为其仅处于实验性质，需要各种自定义内核编译选项与配置，非常麻烦，得不偿失。**对于新型号，即 GCN3 架构及更新型的核芯显卡，直接安装开源驱动 AMDGPU 即可，也就是以下这几个包。
+For AMD processors with HD graphics, you need to first determine what the graphics architecture is, and then decide what drivers to install. It is recommended to check on the [techpowerup website](https://www.techpowerup.com/), the information is very comprehensive. After determining the graphics card architecture, then decide what driver to install based on the architecture comparison [this document](https://wiki.archlinux.org/index.php/Xorg#AMD). **For old graphics cards with GCN2.0 and below architecture, you can directly install the open source ATI driver. The old closed source Catalyst driver will be abandoned in 2021. Do not use the open source AMDGPU driver for old graphics cards with GCN2.0 and below architectures, because it is only experimental and requires various custom kernel compilation options and configurations, which is very troublesome and not worth the loss.** For new models, namely GCN3 architecture and newer core graphics cards, you can directly install the open source driver AMDGPU, which is the following packages.
 
 ```bash
 sudo pacman -S mesa lib32-mesa xf86-video-amdgpu vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib32-libva-mesa-driver mesa-vdpau lib32-mesa-vdpau
 ```
 
-- 比如你的笔记本 cpu 是目前常见的 AMD R7 4800U，那么它的核显为 Vega 8。通过查询，可知其为 GCN 5.0 架构，那么对照 arch 官方文档，你可选择安装 AMDGPU 开源驱动。
-- 再比如你的台式机 cpu 是目前常见的 锐龙 5 3400G，那么它的核显为 Vega 11。通过查询，可知其为 GCN 5.0 架构，那么对照 arch 官方文档，你可选择安装 AMDGPU 开源驱动。
-- 再老一些的 apu A10-9700 处理器 ，它的核显为 Radeon R7。通过查询，可知其为 GCN 2.0 架构，那么对照 arch 官方文档，你选择安装 ATI 开源驱动。
+- For example, if your notebook cpu is the common AMD R7 4800U, then its core display is Vega 8. Through the query, it can be seen that it is the GCN 5.0 architecture, then you can choose to install the AMDGPU open source driver according to the official arch documentation.
+- For another example, if your desktop cpu is the currently common Ryzen 5 3400G, then its core display is Vega 11. Through the query, it can be seen that it is the GCN 5.0 architecture, then you can choose to install the AMDGPU open source driver according to the official arch documentation.
+- The older apu A10-9700 processor has a Radeon R7 core. Through the query, it can be seen that it is the GCN 2.0 architecture, then according to the official arch documentation, you choose to install the ATI open source driver.
 
-## 独立显卡
+## Discrete graphics card
 
-这部分会分为仅有独立显卡(无核显)与同时拥有独立显卡和核芯显卡两种情况进行讲解。
+This part will be divided into two cases where there is only a discrete graphics card (no core graphics) and both discrete graphics and core graphics.
 
-### 英伟达独立显卡
+### NVIDIA discrete graphics card
 
-较新型号的独立显卡直接安装如下几个包即可。[官方文档](https://wiki.archlinux.org/index.php/NVIDIA)
+Newer models of discrete graphics cards can directly install the following packages. [Official Documentation](https://wiki.archlinux.org/index.php/NVIDIA)
 
 ```bash
-sudo pacman -S nvidia nvidia-settings lib32-nvidia-utils #必须安装
+sudo pacman -S nvidia nvidia-settings lib32-nvidia-utils #must be installed
 ```
 
-如果是 GeForce 630 以上到 GeForce 920 以下的老卡，安装 [nvidia-470xx-dkms](https://aur.archlinux.org/packages/nvidia-470xx-dkms/)<sup>AUR</sup>及其 32 位支持包。使用 dkms 驱动同时需要 headers。
+If it is an old card from GeForce 630 or above to GeForce 920 or below, install [nvidia-470xx-dkms](https://aur.archlinux.org/packages/nvidia-470xx-dkms/)<sup>AUR</sup> and Its 32-bit support package. Using the dkms driver also requires headers.
 
 ```bash
 yay -S nvidia-470xx-dkms nvidia-settings lib32-nvidia-470xx-utils linux-headers
 ```
 
-如果是 GeForce 630 以下到 GeForce 400 系列的老卡，安装 [nvidia-390xx-dkms](https://aur.archlinux.org/packages/nvidia-390xx-dkms/)<sup>AUR</sup>及其 32 位支持包。使用 dkms 驱动同时需要 headers。
+For older cards from GeForce 630 to GeForce 400 series, install [nvidia-390xx-dkms](https://aur.archlinux.org/packages/nvidia-390xx-dkms/)<sup>AUR</sup> and Its 32-bit support package. Using the dkms driver also requires headers.
 
 ```bash
 yay -S nvidia-390xx-dkms nvidia-settings lib32-nvidia-390xx-utils linux-headers
 ```
 
-再老的显卡直接使用[开源驱动](https://wiki.archlinux.org/index.php/Nouveau)即可。
+The old graphics card can directly use the [open source driver](https://wiki.archlinux.org/index.php/Nouveau).
 
 ```bash
 sudo pacman -S mesa lib32-mesa xf86-video-nouveau
@@ -64,108 +64,108 @@ sudo pacman -S mesa lib32-mesa xf86-video-nouveau
 
 ---
 
-**在同时拥有核芯显卡和英伟达独立显卡的笔记本上安装驱动是大多数人关注的事情，这里着重讲述。**
+**Installing drivers on laptops with both HD Graphics and Nvidia discrete graphics is something that most people care about, and I will focus on it here.**
 
-> 再次提醒请按照本书前置章节配置好系统后再进行，不要多个教程混看，**尤其是一些过时的教程**。尤其需要注意的是确保 base-devel 包的安装以及配置好科学上网软件，以及使用 X11 模式。
+> Once again, please refer to the previous chapters of this book to configure the system before proceeding. Do not mix up multiple tutorials, **especially some outdated tutorials**. Special attention should be paid to ensure that the base-devel package is installed, the scientific Internet software is configured, and the X11 mode is used.
 
-[英伟达双显卡模式官方文档](https://wiki.archlinux.org/index.php/NVIDIA_Optimus) /// [optimus-manager 官方文档](https://github.com/Askannz/optimus-manager/wiki)
+[NVIDIA dual graphics card mode official documentation](https://wiki.archlinux.org/index.php/NVIDIA_Optimus) /// [optimus-manager official documentation](https://github.com/Askannz/optimus-manager/wiki)
 
-若为同时拥有核芯显卡与英伟达独显的笔记本电脑，同样需要按照上述步骤先安装各个软件包。除此之外还需要安装 optimus-manager。可以在核芯显卡和独立显卡间轻松切换。optimus-manager 提供三种模式，分别为仅用独显，仅用核显，和 hybrid 动态切换模式。
+If it is a notebook computer with both a core graphics card and an NVIDIA graphics card, you also need to install each software package according to the above steps. In addition to this, optimus-manager needs to be installed. Easily switch between HD graphics and discrete graphics. optimus-manager provides three modes, which are using only discrete graphics, only using core graphics, and hybrid dynamic switching mode.
 
 ```bash
 yay -S optimus-manager optimus-manager-qt
 ```
 
-安装完成后重启即可使用。optimus-manager 安装完成后会默认 enable optimus-manager 的服务，你可在重启前检查其状态，若没有 enable 则手动将其 enable。重启后在菜单栏搜索 optimus-manager 点击即可使用。可在其设置中设置开机自动启动。
+After the installation is complete, it can be used by restarting. After optimus-manager is installed, the service of optimus-manager will be enabled by default. You can check its status before restarting, and enable it manually if it is not enabled. After restarting, search for optimus-manager in the menu bar and click to use it. It can be set to automatically start at boot in its settings.
 
 ```bash
 sudo systemctl enable optimus-manager
 ```
 
-此时你应该已经可以进行显卡切换了，如果有问题，请详细阅读 optimus-manager 的文档，里面有详细的描述。由于各类问题太多，本文不进行描述，optimus-manager 的文档很详尽，请自行查看。此处仅列出几项较为重要的注意事项:
+At this point, you should be able to switch the graphics card. If there is any problem, please read the documentation of optimus-manager, which has a detailed description. Since there are too many types of problems, this article will not describe them. The documentation of optimus-manager is very detailed, please check it yourself. Here are just a few of the more important considerations:
 
-- 如果需要在独显和核显模式间切换，要注意你没安装各类 GPU 监控插件，它们会阻止显卡切换，导致不可预料的错误。
-- 不要使用 Nvidia Control Panel 中的`Save to X Configuration file`按钮。会导致配置冲突。
-- 在显卡之间的切换时，重新登陆后如在 splash screen 卡住或者黑屏，可以尝试在 tty1 tty2 之间进行切换。
-- 如果你在安装 optimus manager 并重启后，直接黑屏卡死，不能进入系统，很有可能是遇到了常见的"ACPI ISSUE"，简单来说，这是笔记本制造商的实现问题。可以尝试在内核启动参数中加入`acpi_osi=! acpi_osi="Windows 2009"` 后再尝试。[[1]](https://github.com/Askannz/optimus-manager/wiki/FAQ,-common-issues,-troubleshooting#when-i-switch-gpus-my-system-completely-locks-up-i-cannot-even-switch-to-a-tty-with-ctrlaltfx)
+- If you need to switch between discrete graphics and core graphics mode, pay attention that you do not install various GPU monitoring plug-ins, they will prevent graphics card switching and cause unpredictable errors.
+- Do not use the `Save to X Configuration file` button in the Nvidia Control Panel. will result in a configuration conflict.
+- When switching between graphics cards, if the splash screen is stuck or black screen after re-login, you can try switching between tty1 and tty2.
+- If after installing optimus manager and restarting, you are stuck on a black screen and cannot enter the system, it is very likely that you have encountered the common "ACPI ISSUE". In short, this is an implementation problem of the notebook manufacturer. You can try adding `acpi_osi=! acpi_osi="Windows 2009"` to the kernel boot parameters and try again. [[1]](https://github.com/Askannz/optimus-manager/wiki/FAQ,-common-issues,-troubleshooting#when-i-switch-gpus-my-system-completely-locks-up-i-cannot-even-switch-to-a-tty-with-ctrlaltfx)
 
-最后详细说下动态切换模式。本质上其还是使用官方的 [PRIME](https://wiki.archlinux.org/index.php/PRIME#PRIME_render_offload)对闭源驱动的方法进行切换。需要设置三个环境变量，或者用 nvidia-prime 包提供的命令 prime-run，二者本质也是一样的，都是设置三个环境变量。
+Finally, let\'s talk about the dynamic switching mode in detail. In essence, it still uses the official [PRIME](https://wiki.archlinux.org/index.php/PRIME#PRIME_render_offload) method to switch the closed source drive. You need to set three environment variables, or use the command prime-run provided by the nvidia-prime package. The essence of both is the same, and three environment variables are set.
 
 ```bash
 sudo pacman -S nvidia-prime
-prime-run some_program #使用prime-run前缀来用独显运行某些程序
+prime-run some_program #Use the prime-run prefix to run some programs with a discrete graphics
 ```
 
-对于 AMD 核显+N 卡独显的读者，optimus-manager 对于这套组合的支持目前已经发布，最新可用版本为 1.4。
+For readers of AMD core graphics + N card independent graphics, optimus-manager's support for this combination has been released, and the latest available version is 1.4.
 
 ---
 
-**如果你不是强烈追求能效控制以及注重电池寿命的用户，那么可以不用往下看了，如果你是，那么需要针对你的硬件以及笔记本型号尝试正确的电源管理方式。此部分的设置可能导致黑屏，并且尝试过程可能较长，也会遇到各类问题，请根据你个人的操作水平自行斟酌是否操作**
+**If you are not a user who strongly pursues energy efficiency control and pays attention to battery life, then you can look no further. If you are, then you need to try the correct power management method for your hardware and notebook model. The settings in this part may cause a black screen, and the trial process may be long, and various problems may also be encountered. Please decide whether to operate it according to your personal operation level**
 
-电源控制做的事情是，在只用核显的模式下，确保正确关闭独立显卡。而在混合模式下，绝大多数情况下 Nvidia 模块实际是始终开启的，电源控制并不生效。这件事情其实很复杂，因为对于不同的显卡型号，以及笔记本型号的组合，可行的方案都是不同的。笼统来说，最广泛适用的办法是 bbswitch。但仍不建议上来就按照此方式安装使用，因为某些特定的硬件就是会出问题，也就是黑屏。这里建议按照 optimus-manager 官方的文档一步一步来，按步骤尝试，最后找到属于你自己的电脑合适的电源管理方式。**此[文档](https://github.com/Askannz/optimus-manager/wiki/A-guide--to-power-management-options)必须详细阅读！**
+What the power control does is ensure that the discrete graphics card is properly turned off in a graphics-only mode. In hybrid mode, the Nvidia module is actually always on in most cases, and the power control does not take effect. This thing is actually very complicated, because for different graphics card models and combinations of notebook models, the feasible solutions are different. In general, the most widely applicable approach is bbswitch. But it is still not recommended to install and use it in this way, because some specific hardware will cause problems, that is, black screen. It is recommended to follow the official documentation of optimus-manager step by step, try step by step, and finally find a suitable power management method for your own computer. **This [documentation](https://github.com/Askannz/optimus-manager/wiki/A-guide--to-power-management-options) must be read in detail!**
 
-针对大多数笔记本适用的 Bbswitch,此处进行安装使用的讲解。首先安装包 bbswitch。若使用其它内核，则安装包 bbswitch-dkms。
-
-```bash
-sudo pacman -S bbswitch #安装 bbswitch 切换方式
-```
-
-接下来右键点击 optimus-manager 的托盘设置，在 Optimus 选项卡中的 switch method 选择 Bbswitch 即可。
-
-### AMD 独立显卡
-
-AMD 独立显卡的驱动安装步骤实际上 AMD 核芯显卡是相同的，都需要先确定架构，然后选定正确的驱动安装即可。真正需要关注的是如何在核芯显卡和独立显卡间进行切换。可以使用 [PRIME](https://wiki.archlinux.org/title/PRIME#For_open_source_drivers_-_PRIME) 对开源驱动的双显卡切换方式。
-
-此外，可以使用 `glmark2`，`DRI_PRIME=1 glmark2` 分别对核显和独显进行测试，选择分数更高的一个进行使用。可以在 steam 游戏的启动前缀中加入`DRI_PRIME=1 mangohud %command%`来使用独显。(关于 [mangohud](/play/software?id=性能监控))。
-
-笔记本上使用独立显卡运行 steam 游戏的另一个例子。
+For Bbswitch suitable for most notebooks, here are the instructions for installation and use. First install the package bbswitch. If using other kernels, install the package bbswitch-dkms.
 
 ```bash
-DRI_PRIME=1 steam steam://rungameid/570 #运行dota2
-DRI_PRIME=1 steam steam://rungameid/730 #运行cs go
+sudo pacman -S bbswitch #Install bbswitch switch mode
 ```
 
-## 性能测试
+Next, right-click on the tray settings of optimus-manager and select Bbswitch from the switch method in the Optimus tab.
 
-[官方文档](https://wiki.archlinux.org/index.php/benchmarking)。
+### AMD discrete graphics
 
-最传统和广为人知的方式为使用`glxgears`命令进行测试，其属于[mesa-utils](https://www.archlinux.org/packages/extra/x86_64/mesa-demos/)包。但其仅仅只能提供简单的测试场景及帧数显示，只测试了当前 OpenGL 功能的一小部分，功能明显不足。我们推荐如下两种工具。
+The driver installation steps for AMD discrete graphics cards are actually the same for AMD core graphics cards. You need to determine the architecture first, and then select the correct driver to install. What really needs attention is how to switch between HD graphics and discrete graphics. You can use [PRIME](https://wiki.archlinux.org/title/PRIME#For_open_source_drivers_-_PRIME) to switch between dual graphics cards for open source drivers.
+
+In addition, you can use `glmark2`, `DRI_PRIME=1 glmark2` to test the nuclear display and the independent display respectively, and choose the one with a higher score to use. Dedicated graphics can be used by adding `DRI_PRIME=1 mangohud %command%` to the startup prefix of steam games. (About [mangohud](/play/software?id=performancemonitoring)).
+
+Another example of running steam games on a laptop with a discrete graphics card.
+
+```bash
+DRI_PRIME=1 steam steam://rungameid/570 #Run dota2
+DRI_PRIME=1 steam steam://rungameid/730 #Run cs go
+```
+
+## Performance Testing
+
+[Official Documentation](https://wiki.archlinux.org/index.php/benchmarking).
+
+The most traditional and well-known way is to use the `glxgears` command for testing, which belongs to the [mesa-utils](https://www.archlinux.org/packages/extra/x86_64/mesa-demos/) package. However, it can only provide a simple test scene and frame number display, and only test a small part of the current OpenGL functions, which is obviously insufficient. We recommend the following two tools.
 
 ### glmark2
 
-glmark 提供了一系列丰富的测试，涉及图形单元性能（缓冲，建筑，照明，纹理等）的不同方面，允许进行更全面和有意义的测试。 每次测试单独计算帧速率。 最终，用户根据以前的所有测试获得了一个成绩分数。在 archlinux 上属于包[glmark2](https://aur.archlinux.org/packages/glmark2/)<sup>AUR</sup>
+glmark provides a rich set of tests covering different aspects of graphics unit performance (buffering, architecture, lighting, textures, etc.), allowing for more comprehensive and meaningful testing. Frame rate is calculated separately for each test. Ultimately, the user receives a score based on all previous tests. On archlinux belongs to package [glmark2](https://aur.archlinux.org/packages/glmark2/)<sup>AUR</sup>
 
 ### Unigine benchmark
 
-Unigine 3D 引擎是一个更全面的基准测试工具。 截止目前有五个版本，从旧到新分别是
+The Unigine 3D engine is a more comprehensive benchmarking tool. There are five versions so far, from old to new are
 
-- sanctuary(2007)
-- tropics(2008)
-- heaven(2009)
-- valley(2013)
-- superposition(2017)
+- sanctuary (2007)
+- tropics (2008)
+- heaven (2009)
+- valley (2013)
+- superposition (2017)
 
-可从[AUR](https://aur.archlinux.org/packages/?O=0&K=Unigine)下载全部版本。它们均为专有软件。
+The full version can be downloaded from [AUR](https://aur.archlinux.org/packages/?O=0&K=Unigine). They are all proprietary software.
 
-## 显卡信息查看
+## Graphics card information view
 
-对于英伟达显卡，nvidia-settings 这个包即可全面的展示显卡相关信息。
+For NVIDIA graphics cards, the nvidia-settings package can comprehensively display graphics card-related information.
 
-对于 AMD 显卡，稍微麻烦一些，通过 yay 安装 radeon-profile-git 这个包，同时安装其依赖 radeon-profile-daemon，最后启动这个进程。即可以图形化的方式查看 amd 显卡信息。[github 项目地址](https://github.com/marazmista/radeon-profile)
+For AMD graphics cards, it is a little more troublesome, install the radeon-profile-git package through yay, and install its dependent radeon-profile-daemon, and finally start the process. That is, you can view the amd graphics card information in a graphical way. [github project address](https://github.com/marazmista/radeon-profile)
 
 ```bash
 sudo systemctl enable --now radeon-profile-daemon.service
 ```
 
-注意，不要对左下角的 auto low high 进行更改 有 bug 会卡死。同时，显存占用在某些型号显卡上展示可能有误。
+Be careful, don't make changes to auto low high in the lower left corner, there are bugs and it will get stuck. At the same time, the display of video memory usage may be wrong on some models of graphics cards.
 
-## 后续
+## follow up
 
-如果作为一个普通使用者，到这里你的系统已经配置完毕了。不会命令行也没太大关系，你可以慢慢探索 KDE 这个桌面环境，记住时常用如下命令或 Discover 软件更新系统即可。
+If you are an ordinary user, your system has been configured here. It doesn't matter if you don't know the command line, you can slowly explore the KDE desktop environment, remember to use the following commands or the Discover software to update the system.
 
 ```bash
-sudo pacman -Syyu #更新官方仓库
-yay -Syyu #同时更新官方仓库与AUR
+sudo pacman -Syyu #Update the official repository
+yay -Syyu #Update the official repository and AUR at the same time
 ```
 
-接下来你可以查阅娱乐、办公、多媒体等章节了解更多使用软件的安装与使用。如果你需要成为一名较为专业的人员，那么请阅读进阶、以及编程等章节。
+Next, you can refer to the entertainment, office, multimedia and other chapters to learn more about the installation and use of the software. If you need to become a more professional person, then please read the advanced, and programming chapters.

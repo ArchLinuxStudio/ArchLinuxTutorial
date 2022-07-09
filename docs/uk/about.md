@@ -18,8 +18,7 @@ Matrix group: [Matrix Group:ArchLinuxStudio🇨🇦🏳️‍⚧️🏳️‍�
 
 ## Changelog
 
-<!-- - 0.5.0 Added related content about cryptocurrency -->
-
+- 0.5.0 Finish English translation. Added related content about cryptocurrency. 2022.7.9
 - 0.4.0 Provides a better installation process for readers in areas where the Internet is blocked. Optimized multiple chapters. 2021.12.25
 - 0.3.0 Updated for 2021 changes. 2021.5.15
 - 0.2.0 comprehensive improvement and revision as the first version officially released to the outside world. 2021.4.11

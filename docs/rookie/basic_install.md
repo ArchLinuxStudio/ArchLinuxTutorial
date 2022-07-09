@@ -88,7 +88,7 @@ quit                        #最后quit退出parted命令行交互
 
 ```
 
-接下来使用 cfdisk 命令对磁盘分区。进入 cfdisk 后的操作很直观，用键盘即可操作分配各个分区的大小与格式。一般建议将 EFI 分区设置为磁盘的第一个分区，据说有些主板如果不将 EFI 设置为第一个分区，可能有不兼容的问题。其中 EFI 分区选择`EFI System`类型，其余两个分区选择`Linux filesystem`类型。如果你还是不会操作，可参见配套视频中的详细操作。
+接下来使用 cfdisk 命令对磁盘分区。进入 cfdisk 后的操作很直观，用键盘的方向键、Tab 键、回车键配合即可操作分配各个分区的大小与格式。一般建议将 EFI 分区设置为磁盘的第一个分区，据说有些主板如果不将 EFI 设置为第一个分区，可能有不兼容的问题。其中 EFI 分区选择`EFI System`类型，其余两个分区选择`Linux filesystem`类型。
 
 ```bash
 cfdisk /dev/sdx #来执行分区操作,分配各个分区大小，类型
@@ -97,7 +97,7 @@ fdisk -l #分区结束后， 复查磁盘情况
 
 ## 5.格式化
 
-建立好分区后，需要对分区用合适的文件系统进行格式化。这里用`mkfs.ext4`命令格式化根分区与 home 分区，用`mkfs.vfat`命令格式化 EFI 分区。如下命令中的 sdax 中，x 代表分区的序号。格式化命令要与上一步分区中生成的分区名字对应才可以。如果你还是不会操作，可参见配套视频中的详细操作。
+建立好分区后，需要对分区用合适的文件系统进行格式化。这里用`mkfs.ext4`命令格式化根分区与 home 分区，用`mkfs.vfat`命令格式化 EFI 分区。如下命令中的 sdax 中，x 代表分区的序号。格式化命令要与上一步分区中生成的分区名字对应才可以。
 
 磁盘若事先有数据，会提示你: 'proceed any way?' 按 y 回车继续即可。
 
@@ -109,7 +109,7 @@ mkfs.vfat  /dev/sdax            #格式化efi分区
 ## 6.挂载
 
 在挂载时，挂载是有顺序的，先挂载根分区，再挂载 EFI 分区。
-这里的 sdax 只是例子，具体根据你的实际情况来，如果你还是无法理解，请注意配套视频中的操作。
+这里的 sdax 只是例子，具体根据你自身的实际分区情况来。
 
 ```bash
 mount /dev/sdax  /mnt
@@ -201,7 +201,11 @@ hwclock --systohc
 
 Locale 决定了地域、货币、时区日期的格式、字符排列方式和其他本地化标准。
 
-编辑 /etc/locale.gen，去掉 en_US.UTF-8 所在行以及 zh_CN.UTF-8 所在行的注释符号（#）。
+首先使用 vim 编辑 /etc/locale.gen，去掉 en_US.UTF-8 所在行以及 zh_CN.UTF-8 所在行的注释符号（#）。这里需要使用 vim 的寻找以及编辑功能，如果你忘记了，请翻到上一节复习 vim 的操作。
+
+```bash
+vim /etc/locale.gen
+```
 
 然后使用如下命令生成 locale。
 
@@ -209,7 +213,7 @@ Locale 决定了地域、货币、时区日期的格式、字符排列方式和�
 locale-gen
 ```
 
-向 /etc/locale.conf 导入内容
+最后向 /etc/locale.conf 导入内容
 
 ```bash
 echo 'LANG=en_US.UTF-8'  > /etc/locale.conf
@@ -261,7 +265,7 @@ pacman -S grub efibootmgr   #grub是启动引导器，efibootmgr被 grub 脚本�
 grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
 ```
 
-接下来编辑/etc/default/grub 文件，去掉`GRUB_CMDLINE_LINUX_DEFAULT`一行中最后的 quiet 参数，同时把 log level 的数值从 3 改成 5。这样是为了后续如果出现系统错误，方便排错。同时在同一行加入 nowatchdog 参数，这可以显著提高开关机速度。不会 vim 的读者注意视频中的操作。
+接下来编辑/etc/default/grub 文件，去掉`GRUB_CMDLINE_LINUX_DEFAULT`一行中最后的 quiet 参数，同时把 log level 的数值从 3 改成 5。这样是为了后续如果出现系统错误，方便排错。同时在同一行加入 nowatchdog 参数，这可以显著提高开关机速度。这里需要使用 vim 的编辑功能，如果你忘记了，请翻到上一节复习 vim 的操作。
 
 ```bash
 vim /etc/default/grub

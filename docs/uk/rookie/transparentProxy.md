@@ -1,92 +1,92 @@
-# 使用 Qv2ray+cgproxy 配置透明代理
+# Configure transparent proxy using Qv2ray+cgproxy
 
-全局代理，也即透明代理。本节所述为真正的，操作系统级别的代理，而不是仅仅针对浏览器中全部网址的"全局代理"。之所以叫做透明代理，是因为这种系统级别的代理对于操作系统中的各个应用相当于是透明的，应用们感知不到代理的存在。之所以叫做全局代理，很明显意为操作系统级别的、全局的代理。这两个词汇在中文环境中经常同时使用，并且全局代理一词容易引起混淆。
+Global proxy, also known as transparent proxy. This section describes true, OS-level proxies, not just "global proxies" for all URLs in the browser. The reason why it is called a transparent proxy is that this system-level proxy is transparent to each application in the operating system, and the applications cannot perceive the existence of the proxy. The reason why it is called a global proxy obviously means an operating system-level, global proxy. These two terms are often used together in the Chinese context, and the term global agent can easily cause confusion.
 
-本节主体原文收集自 [Qv2ray 用户组](https://t.me/Qv2ray_chat)，并非原创，我们仅在其基础上进行更新、完善与修正。[cgproxy 项目地址](https://github.com/springzfx/cgproxy)。
+The main text of this section is collected from [Qv2ray User Group](https://t.me/Qv2ray_chat), not original, we only update, improve and revise it based on it. [cgproxy project address](https://github.com/springzfx/cgproxy).
 
-## 安装与设置
+## Installation and setup
 
-1. 安装`cgproxy`软件。可直接在 [AUR](https://aur.archlinux.org/packages/cgproxy/) 上安装。由于中国大陆政府封锁 Github 的原因，你很可能没有办法用正常 yay 的方式通过 AUR 安装 cgproxy，所以 ArchLinuxStudio 提供一组可以直接安装的包以供你使用。
+1. Install the `cgproxy` software. Installable directly at [AUR](https://aur.archlinux.org/packages/cgproxy/). Due to the reason that the Chinese mainland government blocks Github, you may not be able to install cgproxy through AUR in the normal yay way, so ArchLinuxStudio provides a set of packages that can be installed directly for you to use.
 
 ```bash
 wget https://archlinuxstudio.github.io/ArchLinuxTutorial/res/cgproxy-0.19-1-x86_64.pkg.tar.zst
 sudo pacman -U cgproxy-0.19-1-x86_64.pkg.tar.zst
 ```
 
-> github.io 也被中国大陆政府封锁，只是封锁力度暂时还没有很大。如你在此过程中卡住，可以尝试 ctrl+c 终止命令后重新尝试下载，也可尝试更换手机热点的网络环境再次进行下载。当你配置好全局代理后，你将不再需要担心任何网络封锁问题。我们将持续为本书读者提供突破互联网审查的可靠流程。
+> github.io is also blocked by the Chinese mainland government, but the blockade has not been very strong for the time being. If you get stuck during this process, you can try ctrl+c to terminate the command and try the download again, or you can try to change the network environment of the mobile phone hotspot to download again. When you configure the global proxy, you will no longer need to worry about any network blocking issues. We will continue to provide readers of this book with a reliable process for breaking through Internet censorship.
 
-2. 在 Qv2ray 的“首选项-入站设置”的下方启用任意门设置选项。
+2. Enable any door settings option in Qv2ray under Preferences - Inbound Settings.
 
-   - 监听 ipv4 地址可填`127.0.0.1` 或 `0.0.0.0`，建议前者。若需双栈代理，则在监听 ipv6 地址填上`::1`（如果监听 ipv4 填了 0.0.0.0 则可不填）。
-   - 嗅探选择 Full，Destination Override 的三项均勾选。
-   - 模式选择“tproxy”。
-   <!-- - 如果希望在透明代理环境里让 v2ray 的内置 dns 接管本地 dns，则勾选`连接设置`选项卡下的“dns 拦截”。注意，在透明代理环境下，如果系统 dns 或 v2ray 的内置 dns 配置不当，可能导致系统无法解析域名从而无法正常上网。详见后文说明。 -->
+   - The listening ipv4 address can be filled with `127.0.0.1` or `0.0.0.0`, the former is recommended. If a dual-stack proxy is required, fill in `::1` in the monitoring ipv6 address (if the monitoring ipv4 is filled with 0.0.0.0, you can leave it blank).
+   - Select Full for sniffing, and check all three of Destination Override.
+   - Mode select "tproxy".
+   <!-- - If you want v2ray's built-in dns to take over the local dns in a transparent proxy environment, check "dns interception" under the `Connection Settings` tab. Note that in a transparent proxy environment, if the system dns or the built-in dns of v2ray is not configured properly, the system may not be able to resolve the domain name and thus cannot access the Internet normally. See the description below for details. -->
 
-   如果是复杂配置，则需要手动添加相应的 dokodemo-door 入站。由于目前版本复杂配置并没有提供 tproxy 选项，因此 tproxy 模式需要通过编辑 json 来实现。
+   If it is a complex configuration, you need to manually add the corresponding dokodemo-door inbound. Since the current version of the complex configuration does not provide the tproxy option, the tproxy mode needs to be implemented by editing json.
 
-3. 配置`cgproxy`，编辑`/etc/cgproxy/config.json`：
+3. To configure `cgproxy`, edit `/etc/cgproxy/config.json`:
 
-   - **在`cgroup_proxy`中括号里加上"/"（包含引号）**，`port`改为 Qv2ray 首选项里的透明代理的端口。
-   - `cgproxy`默认配置是代理所有 tcp 和 udp，ipv4 和 ipv6 的流量，如果不希望代理其中的某种（些）流量，则将对应的`enable_xxx`改为 false。注意这里的配置要和 Qv2ray 选项里的配置一致（如，Qv2ray 选项里没有勾选 udp，则这里务必把`enable_udp`改为 false）。
-   - 如果希望当本机作为网关设备时为连接到本机网关的其他设备（如连接到本机开设的 wifi 热点的设备）也提供透明代理，则把`enable_gateway`改为 true。
+   - \*\*Add "/" (including quotation marks) in brackets in `cgroup_proxy`, `port` is changed to the port of the transparent proxy in Qv2ray preferences.
+   - The default configuration of `cgproxy` is to proxy all tcp and udp, ipv4 and ipv6 traffic. If you do not want to proxy some (some) traffic, change the corresponding `enable_xxx` to false. Note that the configuration here should be consistent with the configuration in Qv2ray options (for example, if udp is not checked in Qv2ray options, be sure to change `enable_udp` to false).
+   - If you want to provide a transparent proxy for other devices connected to the local gateway (such as devices connected to the wifi hotspot opened by the local machine) when the local machine acts as a gateway device, change `enable_gateway` to true.
 
-4. （重要）透明代理的基本原理是拦截系统发出的所有流量，并将这些流量转到代理工具里，从而实现让系统所有流量都走代理的目的。此时，为了避免流量出现死循环（即代理工具发出的流量又转回到代理工具里），需要将代理工具排除在透明代理环境外面。有两种方式可以实现这一点：
+4. (Important) The basic principle of transparent proxy is to intercept all the traffic sent by the system and transfer these traffic to the proxy tool, so as to realize the purpose of letting all the traffic of the system go through the proxy. At this time, in order to avoid an infinite loop of traffic (that is, the traffic sent by the proxy tool is transferred back to the proxy tool), the proxy tool needs to be excluded from the transparent proxy environment. There are two ways to achieve this:
 
-   - 通过`execsnoop`监控代理工具的启动，并自动将其移至透明代理环境外面：
+   - Monitor the startup of the proxy tool via `execsnoop` ​​and automatically move it out of the transparent proxy environment:
 
-     - `cgproxy`软件自带`execsnoop`支持，以上`cgproxy`测试过的发行版均可支持。
-     - 编辑`/etc/cgproxy/config.json`，在`program_noproxy`中括号里加上"v2ray","qv2ray"（包含引号和逗号），以使`qv2ray`和`v2ray`发出的流量不经过透明代理。如果你的`v2ray`或`qv2ray`不在`PATH`里，则需要填写它们的绝对路径。
+     - The `cgproxy` software comes with `execsnoop` ​​support, which can be supported by the above `cgproxy` tested distributions.
+     - Edit `/etc/cgproxy/config.json`, add "v2ray", "qv2ray" (including quotes and commas) in brackets in `program_noproxy`, so that the traffic from `qv2ray` and `v2ray` is not transparent acting. If your `v2ray` or `qv2ray` are not in `PATH`, you need to fill in their absolute path.
 
-   - 在每次连接代理节点时，让`qv2ray`自己把自己移到透明代理环境外面：
+   - Let `qv2ray` move itself out of the transparent proxy environment every time you connect to a proxy node:
 
-     - 安装 Qvplugin-Command 插件，在插件设置里的“pre-connection”栏里加上一句
+     - Install the Qvplugin-Command plugin and add a sentence to the "pre-connection" column in the plugin settings
 
        ```
        sh -c "cgnoproxy --pid $(pgrep -x qv2ray)"
        ```
 
-       即可。
+       That's it.
 
-5. （重要）如果启用了 udp 的透明代理（dns 也是 udp），则给 v2ray 二进制文件加上相应的特权：
+5. (Important) If transparent proxy for udp is enabled (dns is also udp), add the appropriate privileges to the v2ray binary:
 
    ```
    sudo setcap "cap_net_admin,cap_net_bind_service=ep" /usr/bin/v2ray
    ```
 
-   否则 udp 的透明代理可能会出问题。
+   Otherwise udp's transparent proxy may have problems.
 
-   > 如果每次更新了 v2ray 二进制文件，都需要重新执行此命令。
+   > This command needs to be re-executed every time the v2ray binaries are updated.
 
-6. 启动透明代理服务：`systemctl start cgproxy.service`或`systemctl enable --now cgproxy.service`。
+6. Start the transparent proxy service: `systemctl start cgproxy.service` or `systemctl enable --now cgproxy.service`.
 
-以上步骤完成后，透明代理应该能正常使用了。
+After the above steps are completed, the transparent proxy should be able to be used normally.
 
-## dns 配置说明
+## DNS configuration instructions
 
-如果勾选了“dns 拦截”，且启用了 dns 和 udp 的透明代理，则 v2ray 会拦截对系统 dns 的请求，并将其转发到 v2ray 的内置 dns 里，即让 v2ray 内置 dns 接管系统 dns。但 v2ray 内置 dns 是会遵循路由规则的。
+If "dns interception" is checked and the transparent proxy of dns and udp is enabled, v2ray will intercept the request to the system dns and forward it to the built-in dns of v2ray, that is, let the built-in dns of v2ray take over the system dns. But v2ray built-in dns will follow routing rules.
 
-如果没勾选“dns 拦截”，则 v2ray 虽然不会让内置 dns 接管系统 dns，但如果启用了 dns 和 udp 的透明代理，则系统 dns 也会走透明代理进 v2ray，并遵循 v2ray 的路由规则。
+If "dns interception" is not checked, although v2ray will not let the built-in dns take over the system dns, but if the transparent proxy of dns and udp is enabled, the system dns will also go through the transparent proxy into v2ray and follow the routing rules of v2ray.
 
-因此，在启用了 dns 和 udp 的透明代理时，若系统 dns 或 v2ray 的内置 dns 配置不当，可能导致 dns 请求发不出去，从而影响正常上网。
+Therefore, when the transparent proxy of dns and udp is enabled, if the dns of the system or the built-in dns of v2ray is not configured properly, it may cause the dns request to not be sent out, thus affecting the normal Internet access.
 
-由于 qv2ray 常见的路由规则是绕过国内 ip，国外 ip 均走代理。在这个情形中，以下两个配置是典型的有问题的 dns 配置方式：
+Because the common routing rule of qv2ray is to bypass domestic ip, foreign ip all go through proxy. In this case, the following two configurations are typical problematic dns configurations:
 
-- 配置了国外普通 dns 作为首选，但代理本身不支持 udp（此时 dns 查询的 udp 流量出不去，dns 无法查询）
-- 配置了使用域名的 doh 作为首选。此时 doh 的域名无法被解析，从而 doh 也无法使用。
+- The foreign common dns is configured as the first choice, but the proxy itself does not support udp (at this time, the udp traffic queried by dns cannot go out, and dns cannot be queried)
+- Doh is configured to use the domain name as the preference. At this time, the domain name of doh cannot be resolved, so doh cannot be used.
 
-一般而言，如果并不在意将 dns 查询发给谁，那么，在绕过国内 ip 的情况下，只需要配置一个国内普通 dns 作为首选即可保证不会出问题。若代理本身不支持 udp，又希望使用国外 dns，则可以考虑使用使用 ip 的 doh（如`https://1.1.1.1/dns-query`等）。
+Generally speaking, if you don't care who you send the dns query to, then in the case of bypassing the domestic ip, you only need to configure a domestic ordinary dns as the first choice to ensure that there will be no problems. If the proxy itself does not support udp and wants to use foreign dns, you can consider using doh using ip (such as `https://1.1.1.1/dns-query`, etc.).
 
-如果需要更复杂的 dns 配置，建议参考[上游文档](https://www.v2ray.com/chapter_02/04_dns.html)，并选择合适的不会影响正常上网的 dns 配置。
+If more complex dns configuration is required, it is recommended to refer to [upstream documentation](https://www.v2ray.com/chapter_02/04_dns.html), and select an appropriate dns configuration that will not affect normal Internet access.
 
 ---
 
-在显示的为 firefox 等应用设置代理时，因为这些应用程序知道代理的存在，所以不会发出 DNS 请求。而透明代理的情况下，各应用感知不到代理的存在，所以会发出自己的 dns 请求。
+When proxying is shown for apps like firefox, DNS requests are not made because those apps are aware of the proxy's existence. In the case of a transparent proxy, each application cannot perceive the existence of the proxy, so it will send its own dns request.
 
-这时通过 cgproxy 可将全部 tcp/udp 的流量(包括 DNS 查询)转给 v2ray。由于这种情况下，一定会有 DNS 查询流量的产生，所以为了保证本机不发出任何 DNS 请求(这是为了隐私和安全)，需要进行以下设置。此时需要分两种情况讨论。
+At this time, all tcp/udp traffic (including DNS queries) can be forwarded to v2ray through cgproxy. In this case, there must be DNS query traffic, so in order to ensure that the machine does not issue any DNS requests (this is for privacy and security), the following settings are required. At this point, two situations need to be discussed.
 
-- 如果不进行任何 v2ray 的内置 DNS 设置以及 DNS 拦截，那么 DNS 流量会使用本机的 DNS 设置如 8.8.8.8 发出，这种情况不论如何配置 v2ray（全局或者分流），只要保证对于 8.8.8.8 的请求能够通过代理发出即可。
+- If you do not perform any v2ray's built-in DNS settings and DNS interception, then DNS traffic will be sent out using the local DNS settings such as 8.8.8.8. In this case, no matter how v2ray is configured (global or diverted), as long as you ensure that the 8.8.8.8 The request can be made through the proxy.
 
-- 如果 v2ray 通过形如如下路由规则，拦截经由 dokodemo-door 接收到的 dns 流量到 dns outbounds，那么 v2ray 是可以导向 DNS 查询流量到"dns-out"的 out bound 的，也即 dns-outbound 进行的"拦截"和"重新转发"。
+- If v2ray intercepts dns traffic received through dokodemo-door to dns outbounds through routing rules like the following, then v2ray can direct DNS query traffic to the out bound of "dns-out", that is, dns-outbound "Intercept" and "Re-forward".
 
   ```json
   rules:
@@ -101,52 +101,52 @@ sudo pacman -U cgproxy-0.19-1-x86_64.pkg.tar.zst
   },
   ```
 
-  此时 dns outbound 应该调用内置 DNS 设置进行解析，假如 v2ray 内置 DNS 设置为 1.1.1.1,此时原有对于 8.8.8.8 的 DNS 请求就会转而向 1.1.1.1 请求(随后对 1.1.1.1 的请求还是会遵循你的路由规则的)，并将结果返回给应用端。你可以通过开启 qv2ray 更详细的日志级别进行验证。
+  At this time, dns outbound should call the built-in DNS settings for resolution. If the v2ray built-in DNS is set to 1.1.1.1, the original DNS request for 8.8.8.8 will turn to 1.1.1.1 request (then the request for 1.1.1.1). will still follow your routing rules) and return the result to the application. You can verify by turning on qv2ray's more verbose log level.
 
-如果只是为了阻止本机发 dns 请求，完全可以不使用 fakedns。fakedns 在透明代理的条件下确实可以减少一次 dns 请求，理论上确实会快一点。但是也在有的文章指出如果所有域名都伪造 dns 返回可能会有问题。
+If it is just to prevent the local machine from sending dns requests, fakedns can be completely omitted. Fakedns can indeed reduce a dns request under the condition of transparent proxy, which is indeed faster in theory. But there are also some articles that point out that there may be problems if all domain names are forged dns returns.
 
-题外话：使用 clientIP 可解决使用代理服务器解析 DNS 若返回国外 CDN 的网址时网速慢的情况，但是前提是你信任代理服务器和 DNS 服务器接收你的本地 IP,为了你的安全，不建议使用。
+Digression: Using clientIP can solve the problem of using a proxy server to resolve DNS. If the network speed is slow when returning the URL of a foreign CDN, but the premise is that you trust the proxy server and DNS server to receive your local IP. For your security, it is not recommended to use it.
 
-## 常见问题
+## Common problem
 
-- 启用透明代理后无法访问任何外网，且 v2ray 的 cpu 占用率飙升
+- After enabling the transparent proxy, it is impossible to access any external network, and the cpu usage of v2ray soars
 
-  可能是流量陷入死循环了，检查第 4 步有没有正确配置。如果配置没问题，执行`systemctl status cgproxy.service`看下有没有诸如`info: process noproxy pid msg: xxx`之类的输出。如果没有，则说明 cgproxy 软件或 execsnoop 没有正常工作。注意 cgproxy 软件需要 cgroup v2。
+  Maybe the traffic is stuck in an infinite loop, check if step 4 is configured correctly. If the configuration is OK, execute `systemctl status cgproxy.service` to see if there is any output such as `info: process noproxy pid msg: xxx`. If not, the cgproxy software or execsnoop is not working properly. Note that cgproxy software requires cgroup v2.
 
-  尝试退出 qv2ray，随后在终端里执行`cgnoproxy qv2ray`看是否恢复正常，如恢复正常，说明 cgproxy 正常工作，只是 execsnoop 没有正常工作。由于 execsnoop 一定程度上依赖于内核，非上述 cgproxy 测试过的发行版用户，建议使用第 4 步中的第 2 种方法。另外，对 kde 用户，5.19+版的 plasma 会给从 krunner 里启动的程序额外设置 cgroup，尽管 cgproxy 软件考虑到了这一点，但仍有极少数场合可能出现 plasma 设置的 cgroup 覆盖掉了 cgproxy 设置的 cgroup 的情况，此时通常重启一下 qv2ray 即可。
+  Try to exit qv2ray, and then execute `cgnoproxy qv2ray` in the terminal to see if it returns to normal. If it returns to normal, it means that cgproxy is working normally, but execsnoop is not working normally. Since execsnoop is somewhat dependent on the kernel, users of distros not tested with cgproxy above are advised to use method 2 in step 4. In addition, for kde users, the 5.19+ version of plasma will set additional cgroups for programs started from krunner. Although the cgproxy software takes this into account, there are still rare occasions where the cgroups set by plasma may override the cgroups set by cgproxy. In this case, you can usually restart qv2ray at this time.
 
-- 启用透明代理后，无法访问（部分）域名
+- When transparent proxy is enabled, (some) domains cannot be accessed
 
-  可能是 dns 无法解析（部分）域名。一般这种故障只发生在启用了 dns 及 udp 透明代理的时候。
+  It may be that dns cannot resolve (part of) the domain name. Generally, this kind of failure only occurs when dns and udp transparent proxy are enabled.
 
-  终端里执行`dig 无法访问的域名`看下报什么错：
+  Execute `dig unreachable domain name` in the terminal to see what error is reported:
 
-  - 若出现类似`reply from unexpected source: 192.168.0.100#42050, expected 8.8.8.8#53`的报错，则检查第 5 步的有没有正确配置。
+  - If an error like `reply from unexpected source: 192.168.0.100#42050, expected 8.8.8.8#53` appears, check if the configuration in step 5 is correct.
 
-  - 若出现类似`connection timed out; no servers could be reache`的报错，则说明 dns 查询的流量出不去，此时往往是系统 dns 或 v2ray 内置 dns 配置不当。请检查是否出现了前文提到的几种不当配置。如果没有勾选“dns 拦截”，则此时 v2ray 虽然不会用内置 dns 接管系统 dns，但它仍然会让系统 dns 走透明代理，从而遵循 v2ray 的路由规则，此时需要检查系统 dns 是否是前文提到的那几种不当配置。
+  - If an error like `connection timed out; no servers could be reach` appears, it means that the traffic of the dns query cannot go out. In this case, the system dns or the built-in dns of v2ray is often misconfigured. Please check whether there are several improper configurations mentioned above. If "dns interception" is not checked, at this time, although v2ray will not use the built-in dns to take over the system dns, it will still let the system dns go through a transparent proxy, so as to follow the routing rules of v2ray. At this time, it is necessary to check whether the system dns is the previous one. The kinds of improper configurations mentioned.
 
-- 能不能分应用代理（如，下载 BT 时不能走代理）
+- Can you use proxy application (for example, you can't use proxy when downloading BT)
 
-  对于本机的程序，可以，可通过两种方式实现：
+  For native programs, yes, it can be implemented in two ways:
 
-  - 通过`cgnoproxy`实现：如，在命令行中执行`cgnoproxy qbittorrent`，启动的 qbittorrent 程序就不会走透明代理。又如，在命令行中执行`cgnoproxy --pid 12345`，执行之后 pid 为 12345 的程序就不再走透明代理。这种方式可支持任何应用。
-  - 通过`/etc/cgproxy/config.json`实现：在配置里的`program_noproxy`中括号里加上相应的应用即可。这种方式只支持可执行文件，不支持各种脚本。如希望把 clash 与 kde connect 加入 noproxy 规则，则在把此字段补全成["v2ray", "qv2ray", "clash", "/usr/lib/kdeconnectd"]即可。注意修改`config.json`之后，需要重启 cgproxy 服务才能生效，执行`systemctl restart cgproxy.service`即可。
+  - Implemented through `cgnoproxy`: For example, by executing `cgnoproxy qbittorrent` on the command line, the launched qbittorrent program will not go through the transparent proxy. For another example, if `cgnoproxy --pid 12345` is executed on the command line, the program with the pid of 12345 will no longer go through the transparent proxy after execution. Any application can be supported in this way.
+  - Implemented through `/etc/cgproxy/config.json`: add the corresponding application in the brackets of `program_noproxy` in the configuration. This method only supports executable files and does not support various scripts. If you want to add clash and kde connect to the noproxy rule, you can complete this field as ["v2ray", "qv2ray", "clash", "/usr/lib/kdeconnectd"]. Note that after modifying `config.json`, you need to restart the cgproxy service to take effect, execute `systemctl restart cgproxy.service`.
 
-  对于当本机作为网关设备时为连接到本机网关的其他设备，不行，那些设备的所有流量（到本机的流量除外）都必然会走代理。
+  For other devices connected to the local gateway when the local machine is used as a gateway device, no, all traffic of those devices (except the traffic to the local machine) will inevitably go through the proxy.
 
-- 透明代理环境中响应速度变慢
+- Slow response time in transparent proxy environment
 
-  由于 iptables 是在域名解析成 ip 之后，才对相应的流量进行重定向。因此，在透明代理环境中，访问一个域名 s 可能会需要解析至少 2 次 dns（系统解析一次，重定向到 v2ray 之后 v2ray 分流模块再解析一次）。因此，响应理论上是会变慢一点的，变慢的幅度取决于系统 dns 及 v2ray 的 dns 的响应速度。
+  Because iptables redirects the corresponding traffic after the domain name is resolved into ip. Therefore, in a transparent proxy environment, accessing a domain name s may require at least 2 DNS resolutions (the system resolves once, and the v2ray offloading module resolves again after redirecting to v2ray). Therefore, the response is theoretically slower, and the magnitude of the slowdown depends on the response speed of the system dns and v2ray's dns.
 
-- 开启 UDP 支持后报错`too many open files`
+- Error `too many open files` is reported after enabling UDP support
 
-  核心问题是，Linux 系统定义了一系列限制，其中一种限制是最大打开文件数，并且有软限制和硬限制，具体的限制结果可以通过`ulimit -Sa`和`ulimit -Ha`查看。一般来说 arch 默认的软限制 open files 的值为 1024，这个数值太小。硬限制的 open files 的值为 524288，这个数值够大了。打开网页过多，或者开启 udp 加速的时候，连接数（打开的文件数）很容易超过 1024 这个数，所以就被限制住了。解决办法很简单，只需要修改系统级别的关于这个限制的配置文件，在/etc/security/limits.conf 文件的最末尾，加上下面这行，然后重启即可：
+  The core problem is that the Linux system defines a series of limits, one of which is the maximum number of open files, and there are soft limits and hard limits. The specific limit results can be viewed through `ulimit -Sa` and `ulimit -Ha`. Generally speaking, the default soft limit open files value of arch is 1024, which is too small. The hard limit for open files is 524288, which is large enough. When you open too many web pages or turn on udp acceleration, the number of connections (the number of open files) can easily exceed the number of 1024, so it is limited. The solution is very simple, just modify the system-level configuration file about this limit, add the following line at the end of the /etc/security/limits.conf file, and then restart:
 
   ```bash
-  *   soft    nofile  8192  #不要落下了最前面的星号
+  * soft nofile 8192 #Don't drop the first asterisk
   ```
 
-- 使用 docker/libvirt 时与 cgproxy 不能正常使用。解决方法见[cgproxy issue3](https://github.com/springzfx/cgproxy/issues/3#issuecomment-637309706)
+- Does not work properly with cgproxy when using docker/libvirt. For the solution, see [cgproxy issue3](https://github.com/springzfx/cgproxy/issues/3#issuecomment-637309706)
 
 ---
 

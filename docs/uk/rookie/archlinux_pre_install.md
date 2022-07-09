@@ -1,79 +1,79 @@
-# 安装前的准备
+# Preparation before installation
 
-由于当前 UEFI 已普及十余年，安装将全部以 UEFI+GPT 的形式进行，传统 BIOS 方式不再赘述。
+Since UEFI has been popular for more than ten years, the installation will be carried out in the form of UEFI+GPT, and the traditional BIOS method will not be repeated.
 
-## 0.终端编辑器 vim 的使用
+## 0. Use of terminal editor vim
 
-在安装 Arch Linux 的过程中，需要使用到 vim 编辑器，如果你不会使用，这里首先进行一个简要的介绍，你需要掌握如下基本操作。实践的环境可以找一个在线的 Linux 体验环境进行 vim 的尝试。
-
-```bash
-vim 1.txt   #创建并编辑名为1.txt的文件
-```
-
-你可以看到进入了一个空的界面。此时你处在 vim 的`命令模式`。在`命令模式`下，可以用一些快捷指令来对文本进行操作。
-现在我们输入`a`进入 vim 的`编辑模式`，此时输入任意文本，即可进行编辑。
-在输入完成后，我们按下 Esc 键，即可从`编辑模式`退出到`命令模式`。此时输入`:wq`即可保存并退出 vim。
-下面介绍一些在命令模式下常用的命令
+In the process of installing Arch Linux, you need to use the vim editor. If you don't know how to use it, here is a brief introduction. You need to master the following basic operations. For a practical environment, you can find an online Linux experience environment to try vim, such as [copy.sh](https://copy.sh/v86/?profile=archlinux). Note that because it is an online environment, the performance is poor, and you need to wait patiently when executing the vim command.
 
 ```bash
-:wq     # 保存退出
-:q!     # 不保存，强制退出
-dd      # 删除一行
-2dd     # 删除两行
-gg      # 回到文本第一行
-shift+g  # 转到文本最后一行
-/xxx    # 在文中搜索内容'xxx' 回车搜索，按n键转到下一个
-?xxx   # 反向搜索
+vim 1.txt #Create and edit a file named 1.txt
 ```
 
-拓展链接：需要完整教程的读者可以在终端中输入命令`vimtutor`来学习完整的 vim 教程。
+You can see that an empty interface is entered. You are now in vim's `command mode`. In `command mode`, you can use some shortcuts to manipulate text.
+Now we enter `a` to enter vim's `edit mode`, enter any text at this time, and you can edit it.
+After the input is complete, we can press the Esc key to exit from `edit mode` to `command mode`. At this point, enter `:wq` to save and exit vim.
+Here are some commonly used commands in command mode
 
-## 1.确保网络环境
+```bash
+:wq # save and exit
+:q! # do not save, force quit
+dd # delete a line
+2dd # delete two lines
+gg # go back to the first line of text
+shift+g # go to the last line of text
+/xxx # Search for the content 'xxx' in the text, press Enter to search, press the n key to go to the next one
+?xxx # reverse search
+```
 
-如果你可以使用路由器分接出来的网线，以 dhcp 的方式直接上网，那么不用准备什么。如果你的环境只能使用无线网络安装，需要事先把自己所用的 wifi 名称改成自己能记住的英文名称。因为**安装时无法显示和输入中文名的 wifi**，你会看到一堆不知道是什么的方块，并且在安装过程中你将没有办法输入中文的无线名称进行连接。虽然通过一些繁琐的步骤可以解决终端中文的问题，但是显然这么做在安装 Arch Linux 时毫无必要。
+Extended link: Readers who need a complete tutorial can enter the command `vimtutor` in the terminal to learn the complete vim tutorial.
 
-其次，有些笔记本电脑上存在无线网卡的硬件开关或者键盘控制，开机后安装前需要**确保你的无线网卡硬件开关处于打开状态**。
+## 1. Ensure the network environment
 
-## 2.刻录启动优盘
+If you can use the network cable from the router to directly access the Internet by dhcp, then you don't need to prepare anything. If your environment can only use wireless network installation, you need to change the wifi name you use to an English name you can remember in advance. Because **installation cannot display and enter the Chinese name of the wifi**, you will see a bunch of blocks that you don't know what it is, and during the installation process you will not be able to enter the Chinese name of the wifi to connect. Although some tedious steps can solve the problem of terminal Chinese, it is obviously unnecessary to do so when installing Arch Linux.
 
-准备一个 2G 以上的优盘，刻录一个安装启动盘。安装镜像 iso 在[下载页面](https://archlinux.org/download/)下载，你需要选择通过磁力链接或 torrent 下载，下载完成后，还需要在 archlinux 下载页面下载`PGP signature`签名文件(不要从镜像源下载签名文件)，将签名文件和 iso 镜像置于同一文件夹，随后进行对镜像的签名校验，以保证下载的镜像是完整，无错误的，未被篡改的。执行以下命令，确保输出完好的签名。具体镜像名根据名字自行修改。
+Secondly, there are hardware switches or keyboard controls for wireless network cards on some laptops. After booting, you need to ensure that your wireless network card hardware switches are turned on before installation.
+
+## 2. Burn the bootable USB
+
+Prepare a USB disk with a size of more than 2G, and burn a boot disk for installation. Install the mirror iso to download at the [download page](https://archlinux.org/download/), you need to choose to download through a magnet link or torrent, after the download is complete, you also need to download the `PGP signature` signature file on the archlinux download page ( Do not download the signature file from the mirror source), put the signature file and the iso image in the same folder, and then perform the signature verification of the image to ensure that the downloaded image is complete, error-free and untampered. If you are using Linux, execute the following command to make sure the output is well signed. The specific image name can be modified according to the name. If you use another system, please search for a way to verify the signature by yourself.
 
 ```bash
 gpg --keyserver-options auto-key-retrieve --verify archlinux-202x.0x.01-x86_64.iso.sig
 ```
 
-注意，这里的签名校验**非常重要**，这可以保证你的安装镜像是未被篡改的，同时可以保证你在使用安装盘安装系统时，用正确的公钥校验安装包。
+Note that the signature verification here is **very important**, which can ensure that your installation image has not been tampered with, and can also ensure that you use the correct public key to verify the installation package when you use the installation disk to install the system.
 
 ---
 
-Windows 下推荐使用[ventoy](https://www.ventoy.net/cn/doc_start.html)或者[Rufus](https://rufus.ie/)或者[etcher](https://github.com/balena-io/etcher)进行优盘刻录。三者皆为自由软件。具体操作请自行查阅，都非常简单。
+It is recommended to use [ventoy](https://www.ventoy.net/cn/doc_start.html) or [Rufus](https://rufus.ie/) or [etcher](https://github.com/balena-io/etcher) to burn to USB. All three are free software. Please check the specific operation by yourself, it is very simple.
 
-Linux 下可以直接用 dd 命令进行刻录。注意 of 的参数为 sdx,不是 sdx1 sdx2 等。
+Under Linux, you can directly use the dd command to burn. Note that the parameter of of is sdx, not sdx1 sdx2 etc.
 
 ```bash
 sudo dd bs=4M if=/path/to/archlinux.iso of=/dev/sdx status=progress oflag=sync
 ```
 
-> bs=4M 指定一个较为合理的文件输入输出块大小。  
-> status=progress 用来输出刻录过程总的信息。  
-> oflag=sync 用来控制写入数据时的行为特征。确保命令结束时数据及元数据真正写入磁盘，而不是刚写入缓存就返回。
+> bs=4M specifies a reasonable file input and output block size.
+> status=progress is used to output general information about the burning process.
+> oflag=sync is used to control behavior when writing data. Make sure that the data and metadata are actually written to disk at the end of the command, rather than just being written to the cache and returning.
 
-## 3.进入主板 BIOS 进行设置
+## 3. Enter the motherboard BIOS to set
 
-插入优盘并开机。在开机的时候，按下 F2/F8/F10/DEL 等(取决与你的主板型号，具体请查阅你主板的相关信息)按键，进入主板的 BIOS 设置界面。
+Insert the USB stick and turn it on. When booting, press F2/F8/F10/DEL (depending on your motherboard model, please refer to the relevant information of your motherboard) to enter the motherboard's BIOS setting interface.
 
-## 4.关闭主板设置中的 Secure Boot
+## 4. Turn off Secure Boot in the motherboard settings
 
-在类似名为 `security` 的选项卡中，找到一项名为 Secure Boot(名称可能略有差异)的选项，选择 Disable 将其禁用。
+In a tab like `security`, find an option called Secure Boot (the name may vary slightly), select Disable to disable it.
 
-## 5.调整启动方式为 UEFI
+## 5. Adjust the boot method to UEFI
 
-在某些旧的主板里，需要调整启动模式为 UEFI,而非传统的 BIOS/CSM。在类似名为 `boot` 的选项卡中，找到类似名为 Boot Mode 的选项，确保将其调整为 UEFI only，而非 legacy/CSM。
+In some old motherboards, it is necessary to adjust the boot mode to UEFI instead of traditional BIOS/CSM. In a tab called something like `boot`, find an option called something like Boot Mode, make sure to adjust it to UEFI only, not legacy/CSM.
 
-## 6.调整硬盘启动顺序
+## 6. Adjust the hard disk boot order
 
-在类似名为 `boot` 的选项卡中，找到类似名为 Boot Options(名称可能略有差异)的设置选项，将 USB 优盘的启动顺序调至首位。
+In a tab called `boot`, find a setting option called Boot Options (the name may be slightly different), and adjust the boot order of the USB stick to the first place.
 
-## 7.准备安装
+## 7. Ready to install
 
-最后保存 BIOS 设置并退出，一般的按键是 F10。此时系统重启，不出意外你应该已经进入 archlinux 的安装界面。
+Finally, save the BIOS settings and exit, the general key is F10. At this point, the system restarts, and you should have entered the installation interface of archlinux.
