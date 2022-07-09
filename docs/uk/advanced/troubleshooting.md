@@ -1,84 +1,80 @@
-# 常见问题排除与解决
+# Troubleshooting and solutions
 
-本节描述一些在日常使用过程中你有很大概率可能遇到的问题，并提供解决方法。
+This section describes some of the problems that you are likely to encounter in daily use, and provides solutions.
 
-### 鼠标出现按键不灵敏或失灵的现象
+### The mouse button is insensitive or malfunctioning
 
-一般来说大多数鼠标都是即插即用的，但 5.14 内核前后更新后可能遇到失灵的情况。根据自身鼠标品牌安装对应的驱动即可解决。[[1]](https://openrazer.github.io/#arch)
+Generally speaking, most mice are plug and play, but may experience failure after the 5.14 kernel update. It can be solved by installing the corresponding driver according to your own mouse brand. [[1]](https://openrazer.github.io/#arch)
 
-### 某些笔记本设备安装后没有声音
+### It takes a long time to shut down when shutting down
 
-安装包`sof-firmware`。
+Generally, a message in the form of `A stop job is running for...(1m30s)` will appear on the screen. This is a common problem that the shutdown is stuck for 1 minute and 30 seconds. Generally speaking, this situation is caused by a certain A process is unwilling to stop when it is shut down, and needs to wait until the timeout period is reached to force it to stop. The general solution is to adjust and shorten this waiting time. It is recommended to adjust it from 1 minute and 30 seconds to 30 seconds. 30 seconds is enough for almost all processes to end normally.
 
-### 关机时卡住很久才能关机
-
-一般屏幕会出现形如`A stop job is running for...(1m30s)`的信息，这是经常会遇到的关机卡住 1 分 30 秒的问题，一般来说这种情况是出现了某个进程在关机时不愿停止，需要等到超时时间到达强行停止。通用的解决办法是调整缩短这个等待时间，建议从 1 分 30 秒调整至 30 秒，30 秒已经足够几乎所有进程正常结束。
-
-编辑 `/etc/systemd/system.conf`
+Edit `/etc/systemd/system.conf`
 
 ```bash
 sudo vim /etc/systemd/system.conf
 ```
 
-找到其中`DefaultTimeoutStopSec`一项，将其前方的井号去掉，并赋值为 30s 即可。最后执行 daemon-reload 使其生效。
+Find the `DefaultTimeoutStopSec` item, remove the pound sign in front of it, and assign the value to 30s. Finally execute daemon-reload to make it take effect.
 
 ```bash
 sudo systemctl daemon-reload
 ```
 
-上述解决方案其实只是将这个等待时间缩小了，并没有解决实际问题。如果你想排查问题真正的原因所在，在关机时如果出现了`A stop job is running for...(1m30s)`的信息，耐心等待其结束关机，然后重新启动电脑，执行以下命令：
+The above solution actually only reduces this waiting time, and does not solve the actual problem. If you want to troubleshoot the real cause of the problem, if the message `A stop job is running for...(1m30s)` appears during shutdown, wait patiently for the shutdown to end, then restart the computer and execute the following commands:
 
 ```bash
 journalctl -p5
 ```
 
-按/(斜杠键)搜索`Killing`关键字，找到你关机的时间附近所在的匹配行，你可以在附近看到到底是哪一个进程导致了 timeout,然后再去排查这个进程有什么问题即可。
+Press / (slash key) to search for the `Killing` keyword, find the matching line near the time you shut down, you can see which process caused the timeout nearby, and then check what is wrong with this process. Can.
 
-ref: [[1](https://forum.manjaro.org/t/a-stop-job-is-running-for-user-manager-for-uid-1000-during-shutdown/37799)][[2](https://unix.stackexchange.com/questions/273876/a-stop-job-is-running-for-session-c2-of-user)]
+ref: [[1](https://forum.manjaro.org/t/a-stop-job-is-running-for-user-manager-for-uid-1000-during-shutdown/37799)][[ 2](https://unix.stackexchange.com/questions/273876/a-stop-job-is-running-for-session-c2-of-user)]
 
-### 磁盘容量不足的处理方式
+### How to deal with insufficient disk capacity
 
-一般使用 LVM 安装 Linux 系统则不用担心这种情况发生。但是我们使用的是传统的 ext4 经典分区方式。这种情况下一般建议在安装的开始就将根目录设置的大一些，如 100G。如果/home 分区大小不够了，可以新安装一块硬盘，将其挂载到你想要的位置，再按照`基础安装`的步骤中重新 genfstab 一下就行了。
+Generally use LVM to install Linux system without worrying about this happening. But we are using the traditional ext4 classic partitioning method. In this case, it is generally recommended to set the root directory larger at the beginning of the installation, such as 100G. If the size of the /home partition is not enough, you can install a new hard disk, mount it to the location you want, and then follow the steps of `basic installation` to re-genfstab it.
 
-除此之外，如果根目录容量不足，可以不定期清理一下 pacman 的缓存，详见[archwiki](https://wiki.archlinux.org/title/Pacman#Cleaning_the_package_cache)。太长不看的可以直接用下面这一行命令清理没有安装的所有缓存的包，和没有被使用的同步数据库。
+In addition, if the root directory capacity is insufficient, you can clean the pacman cache from time to time, see [archwiki](https://wiki.archlinux.org/title/Pacman#Cleaning_the_package_cache) for details. If it is too long to read, you can directly use the following command to clean up all cached packages that are not installed, and the synchronization database that is not used.
 
 ```bash
 sudo pacman -Sc
 ```
 
-### 软件的降级
+### Software downgrade
 
-在 archlinux 上 偶尔会出现某一个包的最新版本有各种问题的情况，此时需要降级该包以正常使用，包可以是普通软件，也可以是内核。
+Occasionally, on archlinux, the latest version of a certain package has various problems. At this time, the package needs to be downgraded for normal use. The package can be ordinary software or kernel.
 
 ```bash
 yay -S downgrade
 ```
 
-安装此包即可，使用方法也很简单，downgrade 后加上需要降级的包名即可，随后会提示你选择需要降级到的版本，点选即可。
+Just install this package, and the usage method is also very simple. Just add the package name to be downgraded after downgrade, and then you will be prompted to select the version to be downgraded to, just click.
 
-### 升级系统时出现形如 unable to lock database 的错误
+### An error like unable to lock database occurs when upgrading the system
 
-可能存在升级系统时异常关机或程序异常退出的情况，或者多个 pacman 的相关程序在同时执行。移除 pacman 的 db 锁即可
+There may be abnormal shutdown or abnormal program exit when the system is upgraded, or multiple pacman related programs are executed at the same time. Just remove the db lock of pacman
 
 ```bash
 sudo rm /var/lib/pacman/db.lck
 ```
 
-### 手动开关混成器
+### Manual switch mixer
 
-有时混成器会因为某些原因需要手动开启或关闭，但是目前在 KDE 下混成器在设置里无法在不关机的情况下直接关闭，下面命令提供手动开关混成器的效果。[[1]](https://unix.stackexchange.com/questions/597736/disabling-kwin-compositor-from-command-line)
+Sometimes the mixer needs to be turned on or off manually for some reason, but currently the mixer cannot be turned off directly in the settings under KDE without shutting down. The following command provides the effect of manually switching the mixer on and off. [[1]](https://unix.stackexchange.com/questions/597736/disabling-kwin-compositor-from-command-line)
 
 ```bash
-qdbus org.kde.KWin /Compositor suspend  #禁用
+qdbus org.kde.KWin /Compositor suspend #disable
 
-qdbus org.kde.KWin /Compositor resume   #开启
+qdbus org.kde.KWin /Compositor resume #Open
 
 
 ```
 
-### 屏幕溢出: overscan
+### Screen overflow: overscan
 
-在连接一些老式的显示设备时，可能与出现[overscan](https://en.wikipedia.org/wiki/Overscan)的现象，简单来说就是电视屏幕四圈会有一圈溢出了，不显示出来。对于英特尔核芯显卡，可以选择 intel panel fitter 的方式[[1]](https://askubuntu.com/questions/508358/overscanning-picture-problem-using-hdmi-with-intel-graphics)。最后就是要加入到一个 service 里开机自动启动，并且是在 DE 加载完成后执行[[2]](https://unix.stackexchange.com/questions/397853/how-to-set-a-systemd-unit-to-start-after-loading-the-desktop)。
+When connecting some old-fashioned display devices, the phenomenon of [overscan](https://en.wikipedia.org/wiki/Overscan) may appear. Simply put, the TV screen will overflow in four circles, and it will not be displayed. . For Intel HD graphics, you can choose intel panel fitter [[1]](https://askubuntu.com/questions/508358/overscanning-picture-problem-using-hdmi-with-intel-graphics). The last thing is to add to a service to automatically start at boot, and execute [[2]](https://unix.stackexchange.com/questions/397853/how-to-set-a-systemd-unit-to-start-after-loading-the-desktop).
 
 ```
 sudo intel_panel_fitter -p A -x 1230 -y 700

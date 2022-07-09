@@ -31,7 +31,7 @@ mkdir new_folder    # 新建文件夹new_folder
 sudo some command   # 使普通用户以root权限执行某些命令
 ```
 
-拓展链接：推荐阅读在线进阶书籍 [Linux 命令行与 Shell 脚本教程](https://archlinuxstudio.github.io/ShellTutorial/#/)。 随后也将提供与此书配套的教学视频 [Linux 命令行与 Shell 教程](https://www.youtube.com/channel/UCVO7lXKucA6z3O37WV7FG5w/videos)<sup>TODO</sup>。
+拓展链接：推荐阅读在线进阶书籍 [Linux 命令行与 Shell 脚本教程](https://archlinuxstudio.github.io/ShellTutorial/#/)。
 
 ## Pacman 包管理
 
@@ -57,32 +57,6 @@ yay -S octopi #包管理器前端界面
 ```
 
 拓展链接: [官方文档](https://wiki.archlinux.org/index.php/Pacman)
-
-## 终端编辑器的使用
-
-你需要掌握一个能在终端中进行文本编辑的软件，这里介绍 vim。
-
-```bash
-vim 1.txt   #创建并编辑名为1.txt的文件
-```
-
-你可以看到进入了一个空的界面。此时你处在 vim 的`命令模式`。在`命令模式`下，可以用一些快捷指令来对文本进行操作。
-现在我们输入`a`进入 vim 的`编辑模式`，此时输入任意文本，即可进行编辑。
-在输入完成后，我们按下 Esc 键，即可从`编辑模式`退出到`命令模式`。此时输入`:wq`即可保存并退出 vim。
-下面介绍一些在命令模式下常用的命令
-
-```bash
-:wq     # 保存退出
-:q!     # 不保存，强制退出
-dd      # 删除一行
-2dd     # 删除两行
-gg      # 回到文本第一行
-shift+g  # 转到文本最后一行
-/xxx    # 在文中搜索内容'xxx' 回车搜索，按n键转到下一个
-?xxx   # 反向搜索
-```
-
-拓展链接：需要完整教程的读者可以在终端中输入命令`vimtutor`来学习完整的 vim 教程。
 
 ## 系统服务的操作与介绍
 
@@ -168,7 +142,7 @@ rsync foo.txt me@server:/home/me/   # 最基础的复制文件 与scp的操作�
 rsync -a bar/ me@server:/home/me/   # -a 标记实现目录复制等 比scp -r 能更好的处理符号链接等情况
 ```
 
-关于全盘备份，请阅读[官方文档](https://wiki.archlinux.org/index.php/Rsync#Full_system_backup)。如果你寻求一种图形化的操作方式，可以自行尝试[Timeshift](https://aur.archlinux.org/packages/timeshift/)<sup>AUR</sup>。
+关于全盘备份，请阅读[官方文档](https://wiki.archlinux.org/index.php/Rsync#Full_system_backup)。
 
 ## 文件解压缩
 

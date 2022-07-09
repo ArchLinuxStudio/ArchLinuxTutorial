@@ -40,7 +40,7 @@ ref: [[1]](https://www.reddit.com/r/intel/comments/8ubdsg/undervolting_intel_i5_
 
 ### AMD
 
-我没有设备，未能验证。可按照 wiki 中使用 amdctl 尝试降压。
+可按照 wiki 中使用 amdctl 尝试降压。
 
 ## 降低功率墙
 

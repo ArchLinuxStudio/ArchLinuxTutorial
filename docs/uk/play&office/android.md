@@ -1,4 +1,4 @@
-# 安卓刷机
+# Android Flashing
 
 [Arch Wiki Android Doc](https://wiki.archlinux.org/index.php/android)
 

@@ -23,7 +23,7 @@ Matrix group: [Matrix Group:ArchLinuxStudio🇨🇦🏳️‍⚧️🏳️‍�
 - 0.4.0 Provides a better installation process for readers in areas where the Internet is blocked. Optimized multiple chapters. 2021.12.25
 - 0.3.0 Updated for 2021 changes. 2021.5.15
 - 0.2.0 comprehensive improvement and revision as the first version officially released to the outside world. 2021.4.11
-- The first version of 0.1.0 that is initially available The commit time is no longer available due to post-reorganization.
+- 0.1.0 The first version that is initially available. The commit time is no longer available due to post-reorganization.
 - 0.0.0 project started. 2020.9.1
 
 ## Acknowledgements
