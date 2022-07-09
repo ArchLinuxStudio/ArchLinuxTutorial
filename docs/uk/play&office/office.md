@@ -1,193 +1,201 @@
-# 办公日常
+# Office Routine
 
-本章记录日常办公需要用到的软件及配置。同时包括各类即时通讯软件和网盘、远程协助等软件的配置与使用。
+This chapter records the software and configuration required for daily office work. At the same time, it includes the configuration and use of various instant messaging software, network disk, remote assistance and other software.
 
-> QQ 与微信等中国国内知名闭源专有 IM 软件均存在不同程度的间谍行为(实际上不仅仅是 IM 软件，几乎所有你能见到的中国国内大型互联网 APP 均有严重的间谍行为，美其名曰:用户行为监测或用户画像描述)。收集用户信息，扫描用户手机存储内容，监控粘贴版内容，记录手机安装 APP 列表等无耻行为几乎已经成为业内公开的秘密。除了自身作恶，这类专有间谍软件还与威权政府狼狈为奸，迫害与追捕民运人士以及异议人士。同时，腾讯一直以来不遗余力的封杀第三方客户端，导致始终没有一个稳定可用的版本。腾讯于 2020 年出品了官方版本 LinuxQQ，其品质可以用惨不忍睹形容。**我们不支持你使用 QQ 或微信这类专有间谍通讯软件作为你的主要通讯方式。本教程亦不提供任何支持。**
+> Well-known closed-source proprietary IM software in China, such as QQ and WeChat, have different degrees of espionage (actually, not only IM software, but almost all large domestic Internet APPs you can see in China have serious espionage behavior. Its name is: user behavior monitoring or user portrait description). Shameless acts such as collecting user information, scanning user mobile phone storage, monitoring pasted content, and recording mobile phone installed APP lists have almost become open secrets in the industry. In addition to its own evildoing, this type of proprietary spyware also works with authoritarian governments to persecute and hunt down pro-democracy activists and dissidents. At the same time, Tencent has spared no effort to block third-party clients, resulting in no stable and usable version. Tencent released the official version of LinuxQQ in 2020, and its quality can be described as appalling. **We do not support your use of proprietary spy messenger software such as QQ or WeChat as your primary means of communication. This tutorial also does not provide any support. **
 
-> 欧盟于近些年出台了[GDPR 通用数据保护条例](https://en.wikipedia.org/wiki/General_Data_Protection_Regulation)，国内各大知名互联网软件公司在开发海外版软件时均需严格遵守上传数据、用户隐私等规定。然而在开发中国国内版时，则尽可能上传其能获取到的全部用户个人隐私数据，这是无耻且邪恶的。我们希望尽可能多的人抵制使用这种专有软件。
+> The European Union has promulgated the [GDPR General Data Protection Regulation](https://en.wikipedia.org/wiki/General_Data_Protection_Regulation) in recent years, and major domestic well-known Internet software companies must strictly abide by the uploaded data when developing overseas software , user privacy and other regulations. However, when developing the Chinese domestic version, it uploads all the personal privacy data that it can obtain as much as possible, which is shameless and evil. We want as many people as possible to resist using this proprietary software.
 
-> 希望所有人抵制或放弃此类恶意专有软件是不现实的，如果你不能舍弃使用这些软件，我们只能希望你可以在一个较为安全的隔离环境中使用它们，如一个不存在任何敏感个人信息的隔离物理设备中使用。使用自由开源的，注重隐私保护的通讯软件始终是正确的选择。
+> It is unrealistic to hope that everyone will boycott or give up such malicious proprietary software, if you cannot give up using these software, we can only hope that you can use them in a relatively safe and isolated environment, such as one without any sensitive individuals Information is used in isolated physical devices. Using free and open source, privacy-conscious messaging software is always the right choice.
 
-## 即时通讯
+## Instant messaging
 
-**我们强烈建议你使用开源自由的通讯软件，这是为了你自身的自由，也是为了身边人的自由。**
+**We strongly recommend that you use open source and free communication software for your own freedom and the freedom of those around you.**
 
-### 即时通讯软件的分类
+### Classification of instant messaging software
 
-除了 p2p 的模式，即时通讯软件分为客户端软件与服务端软件。你应该选择开源的客户端软件来使用。而对于服务端，除非你打算自行部署服务器程序，否则讨论某个即时通讯软件的服务端是否开源毫无意义，因为永远也没有人知道被部署的是否是被声称的那一份代码。
+In addition to the p2p mode, instant messaging software is divided into client software and server software. You should choose open source client software to use. As for the server, unless you plan to deploy the server program yourself, it is meaningless to discuss whether the server of an instant messaging software is open source, because no one will ever know whether the deployed code is the claimed code.
 
-除了自身是否是开源自由的软件外，即时通讯软件从其服务端部署的形式上，可以分为三类。
+In addition to whether it is an open source and free software, instant messaging software can be divided into three categories in the form of its server deployment.
 
-- 第一类是完全中心化的通讯软件，这些软件的服务器被运营企业完全控制，并为用户提供服务。典型的例子有微信、QQ、Telegram、Signal 以及 Keybase 等。
-- 第二类是分布式的，联邦式的通讯软件，这些软件的运营企业或组织一般会提供官方的服务器，但是同时支持任何人或组织自行部署服务器。同时这些服务器之间可以互相通讯。典型的例子如基于 Matrix 的通讯软件 Element。
-- 第三类是完全去中心化，p2p 的通讯软件。这些软件基本无需任何服务器进行服务的提供(可能有少量的引导节点，但其除了引导不提供任何服务)，而是通讯双方直接和对方进行通讯沟通。这是一种最自由，但同时提供功能较为有限的模式。典型的例子如基于 Tox 协议的通讯软件 qTox。
+- The first category is completely centralized communication software, the server of these software is fully controlled by the operating company and provides services to users. Typical examples are WeChat, QQ, Telegram, Signal, and Keybase.
+- The second category is distributed, federated communication software. The operating companies or organizations of these software generally provide official servers, but at the same time support any person or organization to deploy servers by themselves. At the same time, these servers can communicate with each other. A typical example is the Matrix-based communication software Element.
+- The third category is completely decentralized, p2p communication software. These software basically do not need any server to provide services (there may be a small number of bootstrap nodes, but they do not provide any services except bootstrap), but the two communicating parties communicate directly with each other. This is the most liberal mode, but at the same time offers more limited functionality. A typical example is the communication software qTox based on the Tox protocol.
 
-下面介绍一些我们较为推荐的通讯软件。
+Below are some of our recommended communication software.
 
 ### Telegram
 
-Telegram，中文名一般称为电报，是一个在世界广泛应用的开源通讯软件，注重隐私保护和单人通讯加密。我们一向提醒读者不应该相信企业不作恶，但是某些极少数的企业在经过时间的检验后确实证明它们是较为值得信赖的，如 Lavabit 以及 Telegram。如过你没有进行极度敏感的活动，那么 Telegram 目前看来是值得信赖的。使用 Telegram 请不要使用+86 的中国境内电话号码注册，**请务必使用虚拟电话注册**，这是为了你的安全着想。如果你可以使用加密货币购买谷歌语音虚拟电话账户，可在[群组](https://t.me/FSF_Ministry_of_Truth)中说明"我想购买谷歌语音账户"，会有我们的管理员与你私聊，协助完成你的购买。注册完成后，需要在 Telegram 设置中的`Privacy and Security`中进行如下设置来保障你的隐私安全:
+Telegram, commonly known as Telegram in Chinese, is an open source communication software widely used in the world, focusing on privacy protection and single-person communication encryption. We always remind readers that companies should not be trusted to be evil, but some very few companies have proven themselves to be more trustworthy over time, such as Lavabit and Telegram. If you haven't done extremely sensitive activities, Telegram seems to be trustworthy for now. Please do not use the +86 phone number in China to register with Telegram, **please register with a virtual phone**, this is for your safety. If you can buy a Google Voice virtual phone account with cryptocurrency, you can say "I want to buy a Google Voice account" in the [group](https://t.me/FSF_Ministry_of_Truth), and our administrator will chat with you privately chat to assist with your purchase. After registration, you need to set the following settings in `Privacy and Security` in Telegram settings to ensure your privacy:
 
-- Phone number 中的 Who can see my phone number 设置为 Nobody；
-- Phone number 中的 Who can find me by my number 设置为 My contacts；
-- 把 Contacts 一节中的 Sync contact 关闭 (仅能在手机端操作);
-- 把 Contacts 一节中的 Suggest Frequent Contacts 关闭 (仅能在手机端操作);
-- 点击 Contacts 一节中的 Delete synced contacts，这样即使之前有联系人，也无法再次关联到你(仅能在手机端操作);
+- Who can see my phone number in Phone number is set to Nobody;
+- Who can find me by my number in Phone number is set to My contacts;
+- Turn off Sync contact in Contacts section (only on mobile);
+- Turn off Suggest Frequent Contacts in the Contacts section (mobile only);
+- Click Delete synced contacts in the Contacts section, so that even if there is a contact before, it cannot be linked to you again (only on mobile);
 
-> 注意，上述的三个仅能在手机端操作，建议在 Arch Linux 中的安卓模拟器中完成。或者在一个纯净的，刷入开源可信的 ROM 的，并未安装任何中国的闭源间谍软件的手机上操作，这是因为如果你使用了中国手机厂商的闭源操作系统以及闭源间谍软件，它们是可以获取你安装 Telegram 的行为的，并有可能与威权政府合作对你进行进一步的监视甚至抓捕。
+> Note that the above three can only be operated on the mobile phone, it is recommended to complete the Android emulator in Arch Linux. Or operate it on a clean, open-source trusted ROM that doesn't have any Chinese closed-source spyware installed, because if you use a Chinese phone manufacturer's closed-source operating system and closed-source spyware , they can capture your installation of Telegram, and may cooperate with authoritarian governments to further monitor or even arrest you.
 
-通过以下命令在 Arch Linux 上安装 Telegram:
+Install Telegram on Arch Linux with the following command:
 
 ```bash
 sudo pacman -S telegram-desktop
 ```
 
-> 任何技术始终都是双刃剑。Telegram 上进行恐怖活动和诈骗活动是事实，Telegram 官方也在进行持续封禁。但是不能因为这些原因就否定或质疑其存在的意义。Telegram 同时为处于威权和独裁国家中的异议人士与民运人士提供了可靠的平台进行通讯和活动。你一定不想成为这些独裁国家政府的帮凶。
+> Any technology is always a double-edged sword. It is a fact that terrorist activities and scams are carried out on Telegram, and Telegram officials are also carrying out continuous bans. But the significance of its existence cannot be denied or questioned for these reasons. Telegram also provides a reliable platform for dissidents and pro-democracy activists in authoritarian and authoritarian countries to communicate and operate. You definitely don't want to be an accomplice to the governments of these dictatorships.
+
+Finally, if the device you are currently using is very sensitive, you will need to turn off automatic media downloads in Settings, Advanced. In fact, the safest way is to use Telegram without installing it on sensitive devices.
 
 ### Element
 
-Element 是一款基于开源 Matrix 协议的分布式、联邦式的即时通讯应用客户端。它所对应的服务端 synapse 同样是自由软件，你可以自行部署服务端程序。
+Element is a distributed, federated instant messaging application client based on the open source Matrix protocol. Its corresponding server-side synapse is also free software, and you can deploy the server-side program yourself.
 
 ```bash
 sudo pacman -S element-desktop
 ```
 
-Element 相较于 Telegram 的最大优势是其服务端程序是开源自由的，并且可以自行部署。如果进行自行部署，这样可以保障你在与他人进行通讯时，不仅可以确定你使用的客户端是安全的，同时也能确定使用的服务端是安全的。除此之外，Element 支持群组聊天的端对端加密，这也是 Telegram 所不支持的。
+The biggest advantage of Element over Telegram is that its server program is open source and free, and can be deployed by itself. If you deploy it yourself, you can ensure that when you communicate with others, you can not only be sure that the client you are using is secure, but also that the server you are using is secure. In addition to this, Element supports end-to-end encryption of group chats, which Telegram does not.
 
-由此可以看出，从部署的形势来看，Element 比 Telegram，在自行部署服务端的情况下可以获得更高强度的安全性。如果你从事极度敏感的线上活动，使用 Element 并自行部署 synapse 是比 Telegram 更好的选择。但是，在部署服务器程序的同时也要付出更多的精力与资金进行维护。
+It can be seen from the deployment situation that Element can achieve higher security than Telegram by deploying its own server. If you are doing extremely sensitive online activities, using Element and deploying synapse yourself is a better option than Telegram. However, when deploying the server program, more energy and money must be expended to maintain it.
 
-Element 官方也提供了官方的服务器 matrix.org 以供用户免费使用。如果其部署的服务确实是其宣称的那部分代码，那么这些服务器在端对端加密的情况下仅能获取一些用户的元数据。如上线时间以及交流对象等。如果自行部署服务器，这些元数据也将掌控在你自己手中。需要提醒的是，如果自行部署了服务器，还对于隐私安全要求程度很高，那么在自行部署的服务器上存在的端对端加密群组中的成员应该均在你自己的服务器上进行注册，在其他服务器，如 matrix.org 中注册的用户应该被禁止加入你自己的群组。因为如果他们加入，你自行部署的服务器上的群组中的元数据以及加密聊天数据会流转至其他服务器，这是一种危险。
-
-我们可能在未来提供自行部署 synapse 的教程。
+Element also provides the official server matrix.org for free use by users. If the services they deploy are indeed the parts of the code they claim to be, then those servers will only be able to access some of the user's metadata with end-to-end encryption. Such as online time and communication objects. If you deploy the server yourself, this metadata is also in your own hands. It should be reminded that if you deploy the server yourself and have high requirements for privacy and security, then the members of the end-to-end encryption group that exists on the self-deployed server should all be registered on your own server. Users registered on other servers, such as matrix.org, should be banned from joining your own groups. Because if they join, the metadata and encrypted chat data in the group on your self-deployed server will flow to other servers, which is a danger.
 
 ### qTox
 
-qTox 是一款基于 tox 协议制作的端对端加密即时通讯工具。除了 tox 的基本功能，qTox 还实现了离线消息发送的功能。tox 最初的想法就是创建一个即时通讯工具，无需使用中央服务器即可运行，并且点对点，端到端加密，保证用户通信的保密性和安全性。然而正是由于它的这种特性，qTox 提供的功能较为有限，如 qTox 中的群组，如果有人下线，那么他就无法接收到离线期间的群组信息。
+qTox is an end-to-end encrypted instant messaging tool based on the tox protocol. In addition to the basic functions of tox, qTox also implements the function of offline message sending. The original idea of ​​tox was to create an instant messenger that could run without the use of a central server, with peer-to-peer, end-to-end encryption, to ensure the confidentiality and security of user communications. However, it is precisely because of its characteristics that qTox provides limited functions, such as groups in qTox. If someone goes offline, he cannot receive group information during the offline period.
 
 ```bash
 sudo pacman -S qtox
 ```
 
-qTox 在注册时会生成 Tox ID,这个 ID 用来添加好友，并且在此 ID 中存在注册时的用户 IP 信息，用来作为未来进行连接的一种方式。qTox 的连接方式如下，首先 qTox 会去连接一些[启动节点](https://nodes.tox.chat/)，这些启动节点会获取你当前的 IP 并为你提供你想要通讯的对象的 IP。如果启动节点没有你想要通讯的对象的 IP，那么则会尝试使用对方 Tox ID 中的 IP 进行连接。如果均无法建连，则失败。qTox 在中国被屏蔽的原因可能是因为中国政府屏蔽了所有启动节点，同时由于大多数人没有稳定可达的公网 IP,所以导致在不翻墙时无法正确建连。
+qTox will generate a Tox ID when registering, this ID is used to add friends, and the user IP information at the time of registration exists in this ID, which is used as a way to connect in the future. The connection method of qTox is as follows. First, qTox will connect to some [startup nodes](https://nodes.tox.chat/), these startup nodes will obtain your current IP and provide you with the IP of the object you want to communicate with . If the initiating node does not have the IP of the object you want to communicate with, it will try to connect using the IP in the peer's Tox ID. If the connection cannot be established, it will fail. The reason why qTox is blocked in China may be because the Chinese government blocks all startup nodes, and because most people do not have a stable and reachable public network IP, it is impossible to establish a connection correctly without overturning the wall.
 
 ### IRC
 
-IRC，因特网中继聊天，是一种古老的交流方式，在开源社区中仍被广泛使用，常用的客户端有 WeeChat，以及 Emacs 的 erc。
+IRC, Internet Relay Chat, is an ancient communication method that is still widely used in the open source community. Common clients include WeeChat and Emacs' erc.
 
 ```bash
 sudo pacman -S weechat
 ```
 
-### 屏幕分享
+### Screen sharing
 
-除了上述软件，对于另外一些手机通讯软件在电脑上的投屏可以尝试使用[scrcpy](https://archlinux.org/packages/community/x86_64/scrcpy/)。
-也可以使用 [KDE Connect](https://archlinux.org/packages/extra/x86_64/kdeconnect/) 在电脑上获取 Android 通知。
+In addition to the above software, you can try to use [scrcpy](https://archlinux.org/packages/community/x86_64/scrcpy/) for screen projection of other mobile communication software on the computer.
+You can also use [KDE Connect](https://archlinux.org/packages/extra/x86_64/kdeconnect/) to get Android notifications on your computer.
 
-## 办公套件
+## Office kit
 
-主要两个选择是 [LibreOffice](https://wiki.archlinux.org/index.php/LibreOffice)以及[onlyoffice](<https://aur.archlinux.org/packages/onlyoffice-bin/)>)<sup>AUR</sup>。 我们建议你使用开源的 LibreOffice 以及 onlyoffice，而不是专有软件 WPS,前两者其目前的安装已经非常简单。
+The main two options are [LibreOffice](https://wiki.archlinux.org/index.php/LibreOffice) and [onlyoffice](<https://aur.archlinux.org/packages/onlyoffice-bin/)>) <sup>AUR</sup>. We recommend that you use the open source LibreOffice and onlyoffice, rather than the proprietary software WPS, the first two of which are currently very easy to install.
 
 ```bash
-sudo pacman -S libreoffice-still   #稳定版
-sudo pacman -S libreoffice-fresh   #尝鲜版
+sudo pacman -S libreoffice-still #stable
+sudo pacman -S libreoffice-fresh #Trial version
 yay -S onlyoffice-bin
 ```
 
-## 打印机
+To read some old chm documentation, install `kchmviewer`.
 
-对于日常办公来说，打印机是非常必要的。除此之外，我们建议读者维持一份纸质的密码，包括你可以将你加密货币钱包中的私钥打印出来保存，这是非常好的一个方案。对于打印机的品牌，我们建议使用惠普打印机。其对于 Linux 的支持非常到位，可以去其[网站](https://hplipopensource.com/)查看所支持的设备等详情。在 Arch Linux 上，安装包 hplip 即可。
+```bash
+sudo pacman -S kchmviewer
+```
+
+## Printer
+
+For daily office, a printer is very necessary. In addition, we recommend readers to maintain a paper password, including that you can print out the private key in your cryptocurrency wallet and save it, which is a very good solution. For the brand of printer, we recommend using HP printers. Its support for Linux is very comprehensive, you can go to its [website](https://hplipopensource.com/) to check the supported devices and other details. On Arch Linux, install the packages hplip and cups and use them after starting the service.
 
 ```bash
 sudo pacman -S hplip
+sudo pacman -S cups
+sudo systemctl enable --now cups.service
 ```
 
-## 笔记本
+## Notebook
 
-Joplin 是一个简单的 markdown 笔记本，具有标签和层级等基础功能。并且具有 cli 和 desktop 两个版本。其 LICENSE 为 MIT 。
+Joplin is a simple markdown notebook with basic features like tags and hierarchies. And has two versions of cli and desktop. Its LICENSE is MIT .
 
 ```
-yay -S joplin # cli
-yay -S joplin-desktop # desktop
+yay -S joplin #cli
+yay -S joplin-desktop #desktop
 ```
 
-Trilium 是一个开源的 electron 笔记软件，它支持 markdown 还有 evernote 格式的导入，并且支持 markdown 和 html 的导出格式。其本身具有标签、无限层级、关系图以及历史记录等功能，基于 CKEditor 所见即所得的 markdown 编辑器。并且支持在服务器上自己搭建。其 LICENSE 为 AGPL 3.0 。
+Trilium is an open source electronic note-taking software, which supports the import of markdown and evernote formats, and supports the export of markdown and html formats. It has functions such as labels, unlimited levels, relationship diagrams, and history records, based on CKEditor's WYSIWYG markdown editor. And support to build your own on the server. Its LICENSE is AGPL 3.0 .
 
 ```
 yay -S trilium-bin
 yay -S trilium-server-bin
 ```
 
-## 电子书
+## eBooks
 
-pdf 可直接用浏览器打开，也可选用其他专用的阅读软件，如[okular](https://archlinux.org/packages/extra/x86_64/okular/)或者[calibre](https://archlinux.org/packages/community/x86_64/calibre/)。okular 在打开大型 epub 时会非常卡顿,并且图片模糊不清，[Foliate](https://archlinux.org/packages/community/x86_64/foliate/) 是阅读 epub 的更佳选择。
+The pdf can be opened directly with a browser, or other dedicated reading software, such as [okular](https://archlinux.org/packages/extra/x86_64/okular/) or [calibre](https://archlinux.org/packages/community/x86_64/calibre/). okular can be very laggy when opening large epubs, and the pictures are blurry, [Foliate](https://archlinux.org/packages/community/x86_64/foliate/) is a better choice for reading epubs.
 
-## RSS 阅读器
+## RSS reader
 
-RSS 阅读器 newsflash 是 feedreader 的精神继承者，支持本地 RSS 源和 RSS API 的读取，由 Rust 写成。 目前 feedreader 已经不再维护。也可使用 liferea。
+The RSS reader newsflash is the spiritual successor to feedreader, supports reading of native RSS feeds and the RSS API, and is written in Rust. Currently feedreader is no longer maintained. You can also use liferea.
 
 ```
 sudo pacman -S newsflash
 ```
 
-## 文献管理
+## Document management
 
-JabRef 是 java 编写的并且与 LaTeX 协作较好的开源文献管理软件，可以与 vim, Emacs 协作，并通过 bib 格式管理文献。
+JabRef is an open source document management software written in java and works well with LaTeX. It can cooperate with vim, Emacs, and manage documents in bib format.
 
 ```
 yay -S jabref
 ```
 
-Zotero 是一个开源的，基于 Firefox 解决方案的应用，其可以通过 VSCode 插件和 vim 插件进行引用。beta 版本具有笔记和内置 PDF 阅读器功能。
+Zotero is an open-source, Firefox-based solution that can be referenced via the VSCode plugin and vim plugin. The beta version features note taking and built-in PDF reader.
 
 ```
 yay -S zotero
-yay -S zotero-beta #具有笔记和内置 PDF 阅读器
+yay -S zotero-beta # with notes and built-in PDF reader
 ```
 
-## 截图
+## Screenshot
 
-推荐使用 flameshot 火焰截图
+It is recommended to use flameshot flame screenshots
 
 ```
 sudo pacman -S flameshot
 ```
 
-快捷键的命令是`flameshot gui`，可在 KDE 设置中加入设置快捷键为你所熟悉的键位。或者尝试另一种流行的 KDE 出品的截图软件 [spectacle](https://archlinux.org/packages/extra/x86_64/spectacle/)
+The command for the shortcut key is `flameshot gui`, which can be added to the KDE settings to set the shortcut keys to the keys you are familiar with. Or try another popular screenshot software from KDE [spectacle](https://archlinux.org/packages/extra/x86_64/spectacle/)
 
-## 下载存储
+## Download & storage
 
-> 不要使用任何墙国国内的网盘存储你的个人数据，他们可以根据"相关条款与规定"，或者"自我阉割"的精神觉悟随意处置你的所有数据，在仔细阅读过他们的用户协议后，你会觉得毛骨悚然。墙国网盘只能用来存储无关紧要的垃圾数据。
+> Do not use any domestic network disk to store your personal data, they can dispose of all your data at will according to the "relevant terms and regulations", or the spiritual awareness of "self-castration", after carefully reading their user agreement , you will feel creepy. The wall country network disk can only be used to store irrelevant junk data.
 
-> 不要使用迅雷、旋风等墙国类似软件。关于 BT 的原理及迅雷的恶行可参考文章[为什么国内 BT 环境如此恶劣？](https://zhuanlan.zhihu.com/p/87193566)
+> Do not use similar software such as Thunder and Cyclone. Regarding the principle of BT and the evil deeds of Thunder, you can refer to the article [Why is the China BT environment so bad? ](https://zhuanlan.zhihu.com/p/87193566)
 
-- [Mega](https://aur.archlinux.org/packages/megasync/)<sup>AUR</sup> 新西兰注重隐私的老牌网盘，也可直接使用 [web 版本](https://mega.nz/fm/dashboard)
-  > Mega 网盘也许存在一些争议，但是选择 Mega 还是选择一些和威权政府合作非常愉快的网盘，结论非常明显。
-- [onedrive](https://aur.archlinux.org/packages/onedrive-abraunegg/)<sup>AUR</sup> 微软创办的网盘业务，linux 下存在一个命令行客户端
-- [qbtorrent-enhance-version](https://aur.archlinux.org/packages/qbittorrent-enhanced/)<sup>AUR</sup> 老牌 BT 客户端增强版，支持填入 tracker 的 URL 网址进行拉取，配合[TrackersListCollection 项目](https://github.com/XIU2/TrackersListCollection)使用更佳。
+- [Mega](https://aur.archlinux.org/packages/megasync/)<sup>AUR</sup> New Zealand's old privacy-conscious online disk, you can also use the [web version](https://mega.nz/fm/dashboard)
+  > There may be some controversies about the Mega network disk, but choosing Mega is still choosing some network disks that cooperate with authoritarian governments very happily. The conclusion is very obvious.
+- [onedrive](https://aur.archlinux.org/packages/onedrive-abraunegg/)<sup>AUR</sup> The online disk business founded by Microsoft, there is a command line client under linux
+- [qbtorrent-enhance-version](https://aur.archlinux.org/packages/qbittorrent-enhanced/)<sup>AUR</sup> Enhanced version of the old BT client, support filling in the tracker URL for pulling It is better to use it with the [TrackersListCollection project](https://github.com/XIU2/TrackersListCollection).
 
-## 图片浏览
+## Picture Viewer
 
-在桌面环境与必要应用一节中已经安装了 [gwenview](https://archlinux.org/packages/extra/x86_64/gwenview/)，它基本可以满足日常看图的需求。如果另需快速看图软件，可以尝试以下软件。
+[gwenview](https://archlinux.org/packages/extra/x86_64/gwenview/) has been installed in the section on desktop environment and necessary applications, which can basically meet the needs of daily picture viewing. If you need another quick viewing software, you can try the following software.
 
 - [feh](https://www.archlinux.org/packages/extra/x86_64/feh/)
 - [nomacs](https://www.archlinux.org/packages/community/x86_64/nomacs/)
 
-## 常用系统组件
+## Common System Components
 
-日常办公中所需要用到的各类小工具有很多实现，其中 KDE 的套件中就有很多，可以自行查询，此处仅列出几个常用的例子。
+There are many implementations of various gadgets needed in daily office work, among which there are many in KDE's suites, which can be inquired by yourself. Here are just a few commonly used examples.
 
-- [Kcalc](https://archlinux.org/packages/extra/x86_64/kcalc/) 计算器
-- [Kamoso](https://archlinux.org/packages/extra/x86_64/kamoso/) 相机
-- [Cheese](https://archlinux.org/packages/extra/x86_64/kamoso/) 茄子相机
-- [KTimer](https://archlinux.org/packages/extra/x86_64/ktimer/) 倒计时执行器
+- [Kcalc](https://archlinux.org/packages/extra/x86_64/kcalc/) calculator
+- [Kamoso](https://archlinux.org/packages/extra/x86_64/kamoso/) camera
+- [Cheese](https://archlinux.org/packages/extra/x86_64/kamoso/) Eggplant Camera
+- [KTimer](https://archlinux.org/packages/extra/x86_64/ktimer/) countdown executor
 
-## 远程协助
+## Remote Assistance
 
-如需连接 windows 远程机器，你可以使用开源的[freerdp](https://archlinux.org/packages/community/x86_64/freerdp/)协议，配合开源实现[Xrdp](https://wiki.archlinux.org/title/Xrdp)，或者[Rdesktop](https://wiki.archlinux.org/title/Rdesktop)即可。
+To connect to a Windows remote machine, you can use the open source [freerdp](https://archlinux.org/packages/community/x86_64/freerdp/) protocol, in conjunction with the open source implementation [Xrdp](https://wiki.archlinux.org/title/Xrdp), or [Rdesktop](https://wiki.archlinux.org/title/Rdesktop).
 
-如需链接 Linux 服务器，大多数场景使用 ssh 即可。
+To connect to a Linux server, ssh is sufficient for most scenarios.
 
-如果以上解决方案不能满足你，那么可以尝试免费使用的专有软件[teamviewer](https://aur.archlinux.org/packages/teamviewer/)<sup>AUR</sup>，其完善的功能基本可以满足全部需求。需要注意安装后需按照提示启动服务。
+If the above solutions do not satisfy you, then you can try the free proprietary software [teamviewer](https://aur.archlinux.org/packages/teamviewer/)<sup>AUR</sup>, its perfect function is basically Can meet all needs. It should be noted that after installation, you need to start the service according to the prompts.
 
 ```bash
 sudo systemctl enable --now teamviewerd

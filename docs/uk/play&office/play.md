@@ -1,109 +1,133 @@
-# 娱乐软件
+# Games amd entertainment
 
-## 网游网络加速
+## Online game network acceleration
 
-对于在 Linux 上玩网游，网络加速一直是一个难题，尤其是在玩一些外服网游的时候。这里提供一些思路来在 Linux 下对网游加速。
+For playing online games on Linux, network acceleration has always been a problem, especially when playing some online games on external servers. Here are some ideas to speed up online games under Linux.
 
-- 一些机场会提供网游游戏节点，这些节点专门为游戏优化，限制流量并且提高倍率，一般可以得到较好的加速效果。在 Linux 中配合 [透明代理](/advanced/transparentProxy)，同时开启对 UDP 流量的代理加速，即可以得到优化网游网速的效果。
-- 一些中端或者高端的路由器，会内置一些市面上常见的网游加速器，如果你的路由器有这个功能，那可以直接使用路由器内置的加速器加速本机的网游流量。或者你也可以使用 openwrt 配合安装支持 openwrt 的加速器插件。不要使用网易 uu 路由器加速插件，它会错误的将 Linux PC 识别为安卓手机，根据它的逻辑，如果设备被识别为手机，那只能加速手游而不能加速 PC 游戏。目前，网易 uu 加速器已将 Linux PC 移出识别范围，如有需求，请使用其他品牌的路由器加速插件。
-- 在虚拟机或 wine 执行市面上常见的网游加速客户端，理论上也是可以起到加速效果的。但是目前来说执行起来较为复杂，理论上是可行的，未来可能会有更方便的工具出现。关于原理可以参考[Wine 待研究课题：让 Windows 版网游加速器的虚拟网卡模式可在 Linux 下工作](https://hu60.cn/q.php/xsBEbMHq-5hkgyEFTaIlwB-00AAA/bbs.topic.95016.html)以及[在 Linux 中通过虚拟机使用 Windows 版网游加速器](https://hu60.cn/q.php/bbs.topic.95932.html)
+- Some airports will provide game nodes for online games. These nodes are specially optimized for games, restricting traffic and increasing the magnification. Generally, a better acceleration effect can be obtained. Cooperate with [transparent proxy](/advanced/transparentProxy) in Linux, and enable proxy acceleration for UDP traffic at the same time, you can get the effect of optimizing the network speed of online games.
+- Some mid-range or high-end routers have built-in online game accelerators that are common in the market. If your router has this function, you can directly use the built-in accelerator of the router to accelerate the online game traffic of the machine. Or you can also use openwrt to install accelerator plugins that support openwrt. Do not use the NetEase uu router acceleration plug-in, it will mistakenly identify the Linux PC as an Android phone. According to its logic, if the device is identified as a mobile phone, it can only accelerate mobile games but not PC games. At present, the NetEase uu accelerator has removed the Linux PC from the recognition scope. If necessary, please use other brands of router acceleration plug-ins.
+- Executing common online game acceleration clients on the market in a virtual machine or wine can theoretically accelerate. But at present, it is more complicated to implement, which is theoretically feasible, and more convenient tools may appear in the future. For the principle, please refer to [Wine to be researched topic: Make the virtual network card mode of the Windows version of the online game accelerator work under Linux](https://hu60.cn/q.php/xsBEbMHq-5hkgyEFTaIlwB-00AAA/bbs.topic.95016.html) and [Using the Windows version of the online game accelerator through a virtual machine in Linux](https://hu60.cn/q.php/bbs.topic.95932.html)
 
-## 原生仓库游戏
+## Native Linux game
 
-Arch Linux 官方仓库和 AUR 中存在一些原生支持的游戏，列举如下
+There are some natively supported games in Arch Linux official repository and AUR, listed below
 
-- [shattered-pixel-dungeon](https://aur.archlinux.org/packages/shattered-pixel-dungeon/) 破碎像素地牢 生存游戏
-- [0ad](https://archlinux.org/packages/community/x86_64/0ad/) 被誉为开源帝国时代
-- [openra](https://archlinux.org/packages/community/any/openra/) 红警 1 的开源实现
+- [shattered-pixel-dungeon](https://aur.archlinux.org/packages/shattered-pixel-dungeon/) Shattered Pixel Dungeon Survival Game
+- [0ad](https://archlinux.org/packages/community/x86_64/0ad/) Known as the Age of Open Source Empires
+- [openra](https://archlinux.org/packages/community/any/openra/) Open source implementation of Red Alert 1
 
 ## Steam
 
-[官方文档](https://wiki.archlinux.org/index.php/Steam)
+[Arch Wiki: Steam](https://wiki.archlinux.org/index.php/Steam)
 
-一些字体和驱动已经在`新手上路`章节中配置完成。若有安装问题请自查。
+Some fonts and drivers have already been configured in the `Getting Started` section. If you have installation problems, please check yourself.
 
-此外，如果某些游戏启动或者游玩有问题，可以用终端使用`steam`命令启动 steam 客户端，并观察游戏崩溃时的终端报错。一般都是缺少某种依赖造成的，可以根据具体情况自行安装依赖。同时，archlinux 官方文档也提供了一个 [查错页面](https://wiki.archlinux.org/index.php/Steam/Game-specific_troubleshooting)，记录了一些游戏崩溃的解决方式。
+In addition, if some games have problems starting or playing, you can use the terminal to use the `steam` command to start the steam client, and observe the terminal error when the game crashes. Generally, it is caused by the lack of a certain dependency, and you can install the dependency yourself according to the specific situation. At the same time, the official archlinux documentation also provides a [error page](https://wiki.archlinux.org/index.php/Steam/Game-specific_troubleshooting), which records some solutions to game crashes.
 
-安装 Steam<sup>专有</sup>：
+To install Steam <sup>Proprietary</sup>:
 
 ```bash
 sudo pacman -S steam
 ```
 
-steam 上的游戏可分为有 Linux 原生支持的，以及通过[Steam Play](https://wiki.archlinux.org/index.php/Steam#Proton_Steam-Play)游玩的两大类。Steam Play(Proton) 基于 Wine,可以让你在 Linux 上游玩只支持 Windows 平台的游戏。关于非 Linux 平台的游戏，通过 Steam Play 运行的可玩程度，可通过[protondb](https://www.protondb.com/)这个网站进行查询。如果玩某个游戏出现问题，在这个网站里你也可以找到玩家发布的各个游戏的修正方式。有时最新版 Proton 可能存在问题，这时自行尝试其他版本即可。
+Games on steam can be divided into two categories: those with native Linux support, and those played through [Steam Play](https://wiki.archlinux.org/index.php/Steam#Proton_Steam-Play). Steam Play (Proton) is based on Wine and allows you to play Windows-only games on Linux. Regarding the degree of playability of games on non-Linux platforms running through Steam Play, you can check the website [protondb](https://www.protondb.com/). If you have a problem with a game, you can also find fixes for each game posted by players on this site. Sometimes there may be problems with the latest version of Proton, in which case you can try other versions yourself.
 
-另外，github 上还存在一些官方 Proton 的 fork 版本，如 [Proton GE](https://github.com/GloriousEggroll/proton-ge-custom)，可以支持一些额外的，官方暂不支持或支持不完善的游戏。使用方式也很简单，根据官方文档，下载 release 的压缩包到指定位置，重启 steam 后即可选择特定版本的 GE proton。
+In addition, there are also some official Proton fork versions on github, such as [Proton GE](https://github.com/GloriousEggroll/proton-ge-custom), which can support some additional ones, which are not officially supported or are not fully supported. game. The usage method is also very simple. According to the official documentation, download the compressed package of the release to the specified location, and restart steam to select a specific version of GE proton.
 
-如有些游戏启动器启动不了，可以去游戏目录尝试直接执行游戏本体的可执行文件。
+If some game launchers cannot be started, you can go to the game directory and try to directly execute the executable file of the game itself.
 
-有问题还可以去 github 查询。如 V 社的 [csgo 仓库](https://github.com/ValveSoftware/csgo-osx-linux/issues)
+If you have any questions, you can also go to github to query. For example, Valve's [csgo repository](https://github.com/ValveSoftware/csgo-osx-linux/issues)
 
-最近的 steam 官方的 proton 不能正确检测系统的 fsync,依然以 esync 模式启动游戏。更换 GE 版本的 proton 可以正确检测并使用 fsync 模式启动游戏。
+The recent steam official proton can not correctly detect the system's fsync, and still start the game in esync mode. Replacing the GE version of the proton correctly detects and launches the game with fsync mode.
 
-> 游戏锁区解决办法：让你的 steam 处于一个国家的代理下，如日本。先随便加一个游戏到购物车，在购物车右上角国家地区改成日本，再去访问已锁区的游戏，就可以浏览购买了。
+> Game lock solution: keep your steam under the proxy of a country, such as Japan. First add a game to the shopping cart, change the country and region in the upper right corner of the shopping cart to Japan, and then go to the locked game, you can browse and purchase.
 
 ## Lutris
 
-Lutris 基于 Wine，提供了大量游戏在 Linux 下的解决方案。其为你已经配置好了 Wine 相关的一切配置，你只需要安装游玩即可。一般极少需要额外配置。进入 [官网](https://lutris.net/) 在右上角搜索你想玩的游戏。点击进入游戏页面后，可以看到在相应版本右侧有一个 install 按钮，点击后即可拉起 Lurtis 进行安装。玩游戏前要先装好 [驱动](https://github.com/lutris/docs/blob/master/InstallingDrivers.md) 和 [依赖](https://github.com/lutris/docs/blob/master/WineDependencies.md)。注意，此两个文档中没有列出 vkd3d 与 lib32-vkd3d 两个可选安装项，然而目前大多数大型游戏均需安装此两个包，读者需按需添加安装。同时在 lutris 中，需要根据容器种类选择开启 Esync 或 Fsync。
+Based on Wine, Lutris provides solutions for a large number of games under Linux. It has already configured everything related to Wine for you, you only need to install and play. Generally very little additional configuration is required. Go to the [official website](https://lutris.net/) and search for the game you want to play in the upper right corner. After clicking to enter the game page, you can see that there is an install button on the right side of the corresponding version. After clicking, you can pull up Lurtis to install it. Before playing the game, you must install the [driver](https://github.com/lutris/docs/blob/master/InstallingDrivers.md) and [dependency](https://github.com/lutris/docs/blob/master/WineDependencies.md). Note that the two optional installation items vkd3d and lib32-vkd3d are not listed in these two documents. However, most large-scale games currently need to install these two packages, and readers need to add and install them as needed. At the same time, in lutris, you need to choose to open Esync or Fsync according to the container type.
 
-在 Lutris 的各个游戏页面，一般有玩家上传的报告，如你遇到不能运行的状况，可以详细翻阅一下历史 Issue,包括已经标记为已解决的。
+On each game page of Lutris, there are generally reports uploaded by players. If you encounter a situation that cannot be run, you can read the historical issues in detail, including those that have been marked as resolved.
 
-如果你发现还是无法登陆某些游戏，检查你的代理设置。比如你是国服的帐号，但是代理挂的是日本的，那是无法登陆的，可以换一个香港的代理再尝试。
+If you find that you are still unable to log into certain games, check your proxy settings. For example, if you have an account of the national server, but the proxy is linked to Japan, it is impossible to log in. You can change to a Hong Kong proxy and try again.
 
-如果无法更新游戏，在需要更新游戏的时候，将 Wine 版本设置为系统的 Wine staging 版本，如果最新的 wine-staging 版本仍然闪退，可以退回到以前可用的容器版本。如果依旧无法更新，可以尝试重新安装游戏启动器。在更新完毕后，需要启动游戏时，再将 wine 版本设置为 Lutris 自带的版本。
+If you can't update the game, when you need to update the game, set the Wine version to the system's Wine staging version. If the latest wine-staging version still crashes, you can go back to the previously available container version. If you still can't update, you can try reinstalling the game launcher. After the update is complete, when you need to start the game, set the wine version to the version that comes with Lutris.
 
-如遇到无法启动闪退的情况，可以尝试在命令行启动 Lutris，再启动游戏即可，玄学、不知道原因。如果启动器中启动游戏还是闪退，可以尝试把 Lutris 容器的启动文件从启动器改到游戏本体的可执行文件。还有另一个更通用的方式，可以使用 Lutris 的功能 `Run EXE inside wine prefix`，然后选择游戏本体就可以通过验证玩游戏了。`Run EXE inside wine prefix` 的位置在 Lutris 下方，点击小酒杯，最后一个。
+If you encounter a situation where you cannot start the flashback, you can try to start Lutris on the command line, and then start the game. If starting the game in the launcher still crashes, you can try to change the startup file of the Lutris container from the launcher to the executable file of the game itself. There is another more general way, you can use the Lutris function `Run EXE inside wine prefix`, and then select the game body to pass the verification to play the game. The location of `Run EXE inside wine prefix` is below Lutris, click on the wine glass, the last one.
 
-如果习惯使用各类游戏插件，也可以安装在同一个容器里，一般功能是可以正常使用的。
+If you are used to using various game plug-ins, you can also install them in the same container, and the general functions can be used normally.
 
-## 原生 Wine
+## Wine
 
-安装使用原生 [Wine](https://wiki.archlinux.org/index.php/Wine) 也可运行 windows 游戏，但是很多情况下需要你自行处理 Windows 下的依赖问题，常用的工具是 [winetricks](https://archlinux.org/packages/multilib/x86_64/winetricks/)。这种方式费时费力，只运行无需处理依赖的小游戏或者 gal 还好。
+Installing and using native [Wine](https://wiki.archlinux.org/index.php/Wine) can also run windows games, but in many cases you need to deal with the dependency problems under Windows by yourself. The commonly used tool is [winetricks](https://archlinux.org/packages/multilib/x86_64/winetricks/). This method is time-consuming and labor-intensive, and it is fine to only run small games or gals that do not need to deal with dependencies.
 
-## 性能提升
+Run winecfg on the terminal, you can open the wine settings page, and follow the terminal prompts to install the missing packages.
 
-在进行某些游戏时，如《Total War: THREE KINGDOMS》，如遇到性能问题，可尝试调节 cpu 频率调节器[[1]](https://support.feralinteractive.com/docs/zh_cn/threekingdomstw/1.0.15/linux/faqs/?access=zooevrj6xb&utm_source=game_linux&utm_medium=link&utm_campaign=game_linux_threekingdomstw_support#i_linux_cpu_governor)。
+## Galgame
 
-## 性能监控
+This section describes possible problems with running Galgame with Wine.
 
-和微星的 Afterburner 软件中性能显示的部分类似，Linux 上也有一款同类软件可以监控游戏中的电脑性能，名为[MangoHud](https://github.com/flightlessmango/MangoHud)。使用方式可参见此项目的 readme。此外，官方提供图形化的参数设置软件 [GOverlay](https://github.com/benjamimgois/goverlay#arch--manjaro--other-arch-derivatives)，可以自行选择安装。
+If there are font problems for some languages, the most straightforward way is to place the required fonts in the container's font directory. The default directory for wine is `~/.wine`.
 
-## 可选内核更换
+Running games with Wine may have issues with missing [GStreamer](https://wiki.archlinux.org/title/GStreamer) plugins, such as
 
-一般来说，采用了 fsync 的 patch 的内核游戏性能会更好。尤其在一些采用.Net 的 wine 游戏中，fsync 会有明显的性能提升[[1]](https://github.com/ValveSoftware/Proton/issues/3706#issuecomment-636632984)。目前 Linux 内核并没有加入 fsync 功能，可以更换 zen 内核。
+```bash
+Missing decoder: Advanced Streaming Format (ASF) (video/x-ms-asf)
+```
+
+After installing each plug-in according to the Wiki, the error may still exist, this is because most Galgame requires 32-bit compatible library, and the gst32-bit compatible library in the official Multilib repository of arch linux is not complete, such as the missing `lib32-gst- plugins-ugly` this package, this package currently only exists in the AUR, but has fallen behind. ASF is present in this package, so the absence causes this error.
+
+Ref:
+
+- https://bbs.archlinux.org/viewtopic.php?id=249982
+- https://archlinux.org/packages/?q=gst
+- https://aur.archlinux.org/packages/lib32-gst-plugins-ugly
+
+## Performance improvement
+
+When playing some games, such as "Total War: THREE KINGDOMS", if you encounter performance problems, you can try to adjust the cpu frequency regulator[[1]](https://support.feralinteractive.com/docs/zh_cn/threekingdomstw/1.0.15/linux/faqs/?access=zooevrj6xb&utm_source=game_linux&utm_medium=link&utm_campaign=game_linux_threekingdomstw_support#i_linux_cpu_governor).
+
+## Performance monitoring
+
+Similar to the performance display part of MSI's Afterburner software, there is also a similar software on Linux that can monitor computer performance in games, named [MangoHud](https://github.com/flightlessmango/MangoHud). The usage can be found in the readme of this project. In ArchLinux, install the packages [mangohud](https://aur.archlinux.org/packages/mangohud) and [lib32-mangohud](https://aur.archlinux.org/packages/lib32-mangohud).
+
+In addition, MangoHud officially provides a graphical parameter setting software [GOverlay](https://github.com/benjamimgois/goverlay#arch--manjaro--other-arch-derivatives), which can be installed by yourself.
+
+## Optional kernel replacement
+
+In general, kernel games with patches that use fsync will perform better. Especially in some wine games using .Net, fsync will have a significant performance improvement[[1]](https://github.com/ValveSoftware/Proton/issues/3706#issuecomment-636632984). At present, the fsync function is not added to the Linux kernel, and the zen kernel can be replaced.
 
 ```bash
 sudo pacman -S linux-zen linux-zen-headers
 ```
 
-安装完毕后重新更新一下 grub 即可。
+After the installation is complete, update grub again.
 
 ```bash
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-> 如果你使用英伟达显卡，记得更换驱动为相应的 dkms 版本。一般来说较新的显卡安装 nvidia-dkms 即可。
+> If you use NVIDIA graphics card, remember to change the driver to the corresponding dkms version. Generally speaking, newer graphics cards can install nvidia-dkms.
 
-## 游戏手柄
+## Gamepad
 
-一般情况下手柄通过数据线连接计算机即可直接使用。支持无线的手柄（DUALSHOCK® 3、DUALSHOCK® 4、Xbox 360、Xbox One、8BitDo 等）也可以通过蓝牙直接连接，无需额外操作。
+Under normal circumstances, the handle can be used directly by connecting to the computer through a data cable. Handles that support wireless (DUALSHOCK® 3, DUALSHOCK® 4, Xbox 360, Xbox One, 8BitDo, etc.) can also be connected directly via Bluetooth without additional operation.
 
-虽然无线手柄一般情况下可以通过蓝牙直连，但是通常这样会有较大的延迟。使用 [Xbox 无线适配器](https://www.microsoftstore.com.cn/accessories/microsoft-xbox-wireless-adapter) 以获得近乎有线的低延迟体验。
+Although wireless controllers can generally be directly connected via Bluetooth, there is usually a large delay in doing so. Use the [Xbox Wireless Adapter](https://www.microsoftstore.com.cn/accessories/microsoft-xbox-wireless-adapter) for a near-wired low-latency experience.
 
-为了在 Arch Linux 下使用 Xbox 无线适配器，需要安装第三方开源驱动 [xow](https://github.com/medusalix/xow)。
+In order to use the Xbox Wireless Adapter under Arch Linux, a third-party open source driver [xow](https://github.com/medusalix/xow) needs to be installed.
 
-1. 安装 [xow](https://aur.archlinux.org/packages/xow-git/)<sup>AUR</sup>：
+1. Install [xow](https://aur.archlinux.org/packages/xow-git/)<sup>AUR</sup>:
 
    ```sh
    yay -S xow
    ```
 
-2. 启动 `xcow` 服务：
+2. Start the `xcow` service:
 
    ```sh
    sudo systemctl enable xow.service
    ```
 
-3. 重启计算机，插入 Xbox 无线适配器并和 Xbox 手柄配对即可
+3. Restart the computer, insert the Xbox wireless adapter and pair with the Xbox controller
 
-实际体验和 Windows 下并无差异。对延迟敏感的音游（如 [喵斯快跑](https://store.steampowered.com/app/774171/Muse_Dash/)）在游戏设置中微调偏移值即可。
+The actual experience is no different from that under Windows. Latency-sensitive audio games (such as [Meow Run](https://store.steampowered.com/app/774171/Muse_Dash/)) can fine-tune the offset value in the game settings.

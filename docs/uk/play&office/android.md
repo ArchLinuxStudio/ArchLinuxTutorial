@@ -1,81 +1,81 @@
 # 安卓刷机
 
-[Arch Wiki 安卓文档](https://wiki.archlinux.org/index.php/android)
+[Arch Wiki Android Doc](https://wiki.archlinux.org/index.php/android)
 
-## 为什么要刷机
+## Why need Android Flashing
 
-在目前市面上可见的各个手机品牌中，除了其自己魔改的闭源安卓手机系统外，几乎任何一个品牌都会预装上一系列的出厂应用，如浏览器，通讯录，应用市场等。这些应用均为闭源软件，由各个手机厂商开发提供。这里就存在严重的问题，这些魔改系统以及闭源应用软件可能会进行各种间谍功能，对使用者进行监控以及审计。据报告，小米以及华为手机均会对用户的搜索以及浏览进行上报，匹配到关键词如"西藏自由"，"台湾独立"，"民主自由"等词即会进行加密上报，这些关键词可能有成百上千个。由于此类原因，使得使用者必须对手机的系统进行重新刷入，选择一个开源可靠的 ROM 刷入手机可以保障自己的隐私及安全。在硬件层面，也存在审计与监控的可能性，但是目前尚未知明确且可靠的报告，如有条件，可选择非人身所在国家品牌的手机。
+Among the mobile phone brands currently available on the market, in addition to its own magic-modified closed-source Android mobile phone system, almost any brand will be pre-installed with a series of factory applications, such as browsers, contacts, and application markets. These applications are all closed-source software developed and provided by various mobile phone manufacturers. There is a serious problem here. These magic-modified systems and closed-source application software may perform various espionage functions to monitor and audit users. According to reports, both Xiaomi and Huawei mobile phones will report users' searches and browsing, and if keywords such as "Tibet freedom", "Taiwan independence", "democracy and freedom" are matched, they will be encrypted and reported. These keywords may have Hundreds of thousands. Due to such reasons, users must re-flash the system of the mobile phone. Choosing an open source and reliable ROM to flash the mobile phone can protect their privacy and security. At the hardware level, there is also the possibility of auditing and monitoring, but there is no clear and reliable report yet.
 
-> 华为鸿蒙与小米的 MIUI 等厂商存在着与威权政府合作的风险，并且这种风险目前来看越来越大，操作系统层面来看，整合所谓"反诈系统"几乎已经是箭在弦上的事情。是否会有硬件级别的监控和审计，目前尚无明确证据。为了你的隐私与安全，如果这些厂商的手机无法自行刷入安全的 ROM，那么你需要拒绝使用这些厂商的产品。
+> Manufacturers such as Huawei Hongmeng and Xiaomi's MIUI have the risk of cooperating with authoritarian governments, and this risk is currently increasing. From the perspective of the operating system, the integration of the so-called "anti-fraud system" is almost a matter of the arrow. Whether there will be hardware-level monitoring and auditing, there is no clear evidence yet. For your privacy and security, if these manufacturers' phones cannot be flashed into secure ROMs by themselves, then you need to refuse to use these manufacturers' products.
 
-买手机最好买知名度大的品牌，较热门的机型，这样在刷机时可以方便的找到官方的 twrp 和知名的 ROM 包，如[魔趣](https://download.mokeedev.com/)，[LineageOS](https://lineageos.org/)，[crDroid](https://crdroid.net/), [Resurrection Remix](https://resurrectionremix.com/)，[PixelExperience](https://download.pixelexperience.org/devices)等。如果是较冷门的品牌，官方可能没有提供 ROM，只能在网上自行寻找个人改造过的 twrp 和上述 ROM 包的 unofficial ROM，搜索的方式一般为手机的代号+ROM。这种个人改造版本的安全性比较难说，而且还可能有更多的 bug。也有可能你翻遍全网，也找不到冷门机型能用（指好用的、非硬件提供商的官方 ROM）的 twrp 和 ROM。硬件方面，一般推荐买高通骁龙的 cpu,不要买联发科的，因为更多 ROM 的版本都是适配高通硬件的。
+It is best to buy a mobile phone with a well-known brand and a popular model, so that you can easily find the official twrp and well-known ROM packages when flashing the phone, such as [Mojo](https://download.mokeedev.com/) , [LineageOS](https://lineageos.org/), [crDroid](https://crdroid.net/), [Resurrection Remix](https://resurrectionremix.com/), [PixelExperience](https://download.pixelexperience.org/devices) etc. If it is a relatively unpopular brand, the official may not provide ROM, and you can only find the personal modified twrp and the unofficial ROM of the above ROM package on the Internet. The search method is generally the code name of the mobile phone + ROM. The security of such a personal modification is more difficult to say, and it may also have more bugs. It is also possible that you have searched the whole network, but you cannot find twrp and ROM that can be used by unpopular models (referring to easy-to-use, non-hardware provider's official ROM). In terms of hardware, it is generally recommended to buy Qualcomm Snapdragon cpu, not MediaTek, because more ROM versions are compatible with Qualcomm hardware.
 
-首先需要安装 linux 上的安卓工具包
+First you need to install the android toolkit on linux
 
 ```bash
 sudo pacman -S android-tools
 ```
 
-## 解锁 bootloader
+## Unlock bootloader
 
-再次提醒要购买或使用有可能解锁 bootloader 的手机品牌。一般来说像小米这种品牌，官方会提供解锁 bootloader 的途径和工具，但是这些工具基本只能在 windows 下用。这时候你就只能用一台 windows 操作，或者使用虚拟机。
+Again, a reminder to buy or use a phone brand that might unlock the bootloader. Generally speaking, for brands like Xiaomi, the official will provide ways and tools to unlock the bootloader, but these tools can only be used under windows. At this time, you can only use a windows operation, or use a virtual machine.
 
-除此之外，如果你能获取，或通过很 hack 的方式拿到 bootloader 的解锁码，那么也可以使用 adb 在 fastboot 模式下进行解锁。
+In addition, if you can get, or get the unlock code of the bootloader in a very hacky way, you can also use adb to unlock it in fastboot mode.
 
 ```bash
-$ adb reboot bootloader #手机先链接电脑，重启到fastboot
-$ fastboot oem unlock xxxxxxx #在fastboot模式下解锁，要加上正确的bl码才能解锁，否则会报错
+$ adb reboot bootloader #The mobile phone first connects to the computer and restarts to fastboot
+$ fastboot oem unlock xxxxxxx #Unlock in fastboot mode, you must add the correct bl code to unlock, otherwise an error will be reported
 FAILED (remote: 'check password failed!')
 fastboot: error: Command failed
 ```
 
-## 刷入 twrp 并进行刷机
+## Flash twrp and ROM
 
-没有官方 twrp 的设备，可以在[unofficialtwrp](https://unofficialtwrp.com/devices/)查看下是否有。
+There is no official twrp device, you can check it at [unofficialtwrp](https://unofficialtwrp.com/devices/).
 
-如果没有相关信息有几个论坛和网站可以看看
+If there is no relevant information, there are several forums and websites you can look at
 
 - xda https://forum.xda-developers.com/
-- https://androidfilehost.com/ 搜索 开发代号 + 你想要的系统名字
+- https://androidfilehost.com/ search development code + system name you want
 
-一般 twrp 的版本和 ROM 包有对应关系，刷机前先确认你的两个版本是兼容的，否则刷机过程可能报奇怪的错误，如 unable to mount /system
+Generally, the version of twrp has a corresponding relationship with the ROM package. Before flashing, make sure that your two versions are compatible, otherwise the flashing process may report strange errors, such as unable to mount /system
 
-去下载你机型对应的 twrp。在[官网](https://twrp.me/Devices/)搜索你的机型，下载。如果没有看到你的机型说明官方不支持，你需要自行搜索别人修改的版本。将手机连接电脑，注意要连到 USB2.0 的接口，否则可能有兼容性问题。
+Go to download the twrp corresponding to your model. Search for your model on the [official website](https://twrp.me/Devices/) and download it. If you don't see your model, it means that it is not officially supported, and you need to search for the version modified by others. Connect the phone to the computer, be careful to connect it to the USB2.0 interface, otherwise there may be compatibility problems.
 
-让手机进入 fastboot 模式，在电脑打开终端，执行
+Put the phone into fastboot mode, open the terminal on the computer, and execute
 
 ```bash
 fastboot flash recovery ./path/of/your-twrp.img
 ```
 
-看到终端执行完毕的时候，就可以让手机重启了。这里注意，执行`fastboot reboot`可以重启，但是许多设备会在首次启动时自动覆盖替换你刷入的自定义 recovery，这样直接重启会报错不是官方系统等类似信息。为防止这种情况，在手机上通过硬件按键重启进入 recovery，TWRP 将给 ROM 打 patch，以防止 ROM 替换 TWRP。[[1]](https://twrp.me/xiaomi/xiaomimi5.html)
+When you see the terminal has finished executing, you can restart the phone. Note here that executing `fastboot reboot` can restart, but many devices will automatically overwrite and replace the custom recovery you flashed at the first boot, so a direct restart will report an error that it is not an official system and similar information. To prevent this, reboot into recovery via a hardware key on the phone, and TWRP will patch the ROM to prevent the ROM from replacing TWRP. [[1]](https://twrp.me/xiaomi/xiaomimi5.html)
 
-剩下的步骤就是普通的进入 twrp,双清，刷机即可。
+The remaining steps are to simply enter twrp, double-clear, and flash.
 
-> 有时双清或者进入 twrp 可能看到报错，用高级清理，从 ext4 改一下格式，再改回 ext4 可能就解决了
+> Sometimes double-clear or enter twrp may see an error, use advanced cleaning, change the format from ext4, and then change back to ext4 may be solved
 
-更多命令：
+More commands:
 
 ```bash
-$ adb shell #打开adb shell
-$ adb root #在手机已经root的情况下打开root权限的adb shell
+$ adb shell #Open adb shell
+$ adb root #Open adb shell with root privileges when the phone is already rooted
 ```
 
-## 有关华为设备
+## About Huawei equipment
 
-如果你没有在 18 年华为关闭 bl 锁码申请前拿到密码，那刷机在现在将变得基本不可能，尤其是近一年左右的新设备。
+If you didn't get the password before Huawei closed the bl lock code application in 2018, then flashing will become basically impossible now, especially for new devices in the past year or so.
 
-老一些的设备可以尝试一下如下方法。
+For older devices, try the following methods.
 
-下载 DC-unlocker 花四欧元，下载到电脑上检测设备，登陆，然后尝试解锁读取 bl 码。不是所有设备都能成功，有些机型虽然在其支持列表里，也没有成功。流程大致可以参考[这个](https://www.forece.net/post/4886.htm)。查到的原因是安卓 8 之后某个安全补丁后，DC unlocker 已经不能读到 bl 码。看 DC 之后的更新能否解决这个问题吧。
+Download DC-unlocker for four euros, download it to your computer, check the device, log in, and try to unlock it to read the bl code. Not all devices will be successful, and some models, although on their support list, have not been successful. The process can be roughly referred to [this](https://www.forece.net/post/4886.htm). The reason found is that after a security patch after Android 8, DC unlocker can no longer read the bl code. Let's see if the update after DC can fix this problem.
 
-还有另一个办法是先降级，然后在用 DC 解锁。通过 Firmware Finder 降级的方式，经过尝试后也无法成功，拿不到检测的更新了，据说是 **EMUI8.0.0.129** 后封死了其他渠道回滚。[资料 1](https://club.huawei.com/thread-15361104-1-1.html)[资料 2](https://cn.ui.vmall.com/thread-19813753-1-1.html)[资料 3](https://www.cnblogs.com/lsgxeva/p/13469490.html)
+Another way is to downgrade first and then unlock with DC. Downgrading through Firmware Finder can't be successful after trying, and can't get the detected update. It is said that **EMUI8.0.0.129** blocked other channels and rolled back. [Document 1](https://club.huawei.com/thread-15361104-1-1.html)[Document 2](https://cn.ui.vmall.com/thread-19813753-1-1.html)[Document 3](https://www.cnblogs.com/lsgxeva/p/13469490.html)
 
-淘宝卖码的反馈华为较新机型无法解锁拿到 BL。
+The feedback from Taobao's selling code is that Huawei's newer models cannot be unlocked to get BL.
 
-还有一个自行拿十六进制里 bl 码的[教程](https://www.52pojie.cn/thread-816065-1-1.html)，前提是必须先拿到 root,这在新机型上基本也不可能了。旧机型可以尝试。在 linux 上检查十六进制可用这个软件[Bless](https://www.archlinux.org/packages/community/any/bless/)
+There is also a [tutorial](https://www.52pojie.cn/thread-816065-1-1.html) to get the bl code in the hexadecimal by yourself, the premise is that you must get root first, which is in the new machine Basically impossible. You can try older models. Checking hex on linux is available with this software [Bless](https://www.archlinux.org/packages/community/any/bless/)
 
-最后有 github 项目[PotatoNV](https://github.com/mashed-potatoes/PotatoNV)可以参考，其声称可以解锁部分机型的 bootloader。Linux 下的版本:[PotatoNV-crossplatform](https://github.com/mashed-potatoes/PotatoNV-crossplatform)
+Finally, there is a github project [PotatoNV](https://github.com/mashed-potatoes/PotatoNV) for reference, which claims to unlock the bootloader of some models. Version under Linux: [PotatoNV-crossplatform](https://github.com/mashed-potatoes/PotatoNV-crossplatform)
 
 ---
 
