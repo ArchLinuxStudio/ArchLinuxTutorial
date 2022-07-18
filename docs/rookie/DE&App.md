@@ -114,6 +114,8 @@ pacman -Syyu
 ```bash
 sudo systemctl disable iwd                                                  #确保iwd开机处于关闭状态，其无线连接会与NetworkManager冲突
 sudo systemctl stop iwd                                                     #同上，立即关闭iwd
+sudo systemctl disable dhcpcd
+sudo systemctl stop dhcpcd                                                  # 立即关闭dhcpcd
 sudo systemctl enable --now NetworkManager                                  #确保先启动NetworkManager，并进行网络连接 若iwd已经与NetworkManager冲突 则执行完上一步重启一下电脑即可。
 ```
 
