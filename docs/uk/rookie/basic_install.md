@@ -141,6 +141,7 @@ If it's not as fast, you can manually specify another mirror source. For a compl
 > If your network is already in proxy mode when you install arch linux, you can choose a mirror source from a non-authoritarian country that is close to your proxy location to use. If there is no proxy in the network environment when you install arch linux, then after the installation, you need to replace the mirror source of a non-authoritative country as soon as possible to use it. Some of the more high-quality international sources are listed below.
 
 ```bash
+Server = https://mirror.archlinux.tw/ArchLinux/$repo/os/$arch   #East Asia: Republic of China
 Server = https://mirror.0xem.ma/arch/$repo/os/$arch #North America:Canada
 Server = https://mirror.aktkn.sg/archlinux/$repo/os/$arch #Southeast Asia:Singapore
 Server = https://archlinux.uk.mirror.allworldit.com/archlinux/$repo/os/$arch #Europe Region: UK
