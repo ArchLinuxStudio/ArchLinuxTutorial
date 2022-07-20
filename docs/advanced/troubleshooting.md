@@ -2,6 +2,14 @@
 
 本节描述一些在日常使用过程中你有很大概率可能遇到的问题，并提供解决方法。
 
+### 使用 BIOS+GPT 模式安装 Arch Linux
+
+虽然使用传统 BIOS 模式安装的场景已经越来越少，但是在某些特殊场景，如在 VPS 上安装 Arch Linux,可能依然需要使用到 BIOS 模式。本小节讲述在使用 BIOS+GPT 模式安装时，与 UEFI+GPT 模式安装的不同点，其中绝大多数步骤是相同的。
+
+- 安装前，在主板的 BIOS 设置中，或在 VPS 的启动设置中(如有)，将启动模式调整为传统 BIOS 模式启动。
+- 在分区时，需要额外分出一个 2M 大小的 BIOS boot 模式的分区，此分区无需进行格式化与挂载。
+- 在安装引导程序时，对应的命令修改为: `grub-install --target=i386-pc /dev/vda` 以及 `grub-mkconfig -o /boot/grub/grub.cfg`。其中，第一条命令中的`/dev/vda`为安装 GRUB 的磁盘，而非分区。具体的名字根据安装者的实际情况进行更改。
+
 ### 鼠标出现按键不灵敏或失灵的现象
 
 一般来说大多数鼠标都是即插即用的，但 5.14 内核前后更新后可能遇到失灵的情况。根据自身鼠标品牌安装对应的驱动即可解决。[[1]](https://openrazer.github.io/#arch)
@@ -79,3 +87,9 @@ qdbus org.kde.KWin /Compositor resume   #开启
 ```
 sudo intel_panel_fitter -p A -x 1230 -y 700
 ```
+
+---
+
+## Ref
+
+- [[1]GUID 分区表*(GPT)*特殊操作](<https://wiki.archlinux.org/title/GRUB_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#GUID%E5%88%86%E5%8C%BA%E8%A1%A8_(GPT)_%E7%89%B9%E6%AE%8A%E6%93%8D%E4%BD%9C>)

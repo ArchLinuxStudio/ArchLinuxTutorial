@@ -2,6 +2,14 @@
 
 This section describes some of the problems that you are likely to encounter in daily use, and provides solutions.
 
+### Install Arch Linux using BIOS+GPT mode
+
+Although there are fewer and fewer installation scenarios using traditional BIOS mode, in some special scenarios, such as installing Arch Linux on a VPS, it may still be necessary to use BIOS mode. This section describes the differences between installing in BIOS+GPT mode and UEFI+GPT mode, and most of the steps are the same.
+
+- Before installation, in the motherboard's BIOS settings, or in the VPS's boot settings (if any), adjust the boot mode to Legacy BIOS mode boot.
+- When partitioning, you need to separate a 2M BIOS boot mode partition, this partition does not need to be formatted and mounted.
+- When installing the bootloader, the corresponding commands are modified to: `grub-install --target=i386-pc /dev/vda` and `grub-mkconfig -o /boot/grub/grub.cfg`. Among them, `/dev/vda` in the first command is the disk where GRUB is installed, not a partition. The specific name is changed according to the actual situation of the installer.
+
 ### The mouse button is insensitive or malfunctioning
 
 Generally speaking, most mice are plug and play, but may experience failure after the 5.14 kernel update. It can be solved by installing the corresponding driver according to your own mouse brand. [[1]](https://openrazer.github.io/#arch)
@@ -79,3 +87,9 @@ When connecting some old-fashioned display devices, the phenomenon of [overscan]
 ```
 sudo intel_panel_fitter -p A -x 1230 -y 700
 ```
+
+---
+
+## Ref
+
+- [[1]GUID 分区表*(GPT)*特殊操作](<https://wiki.archlinux.org/title/GRUB_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#GUID%E5%88%86%E5%8C%BA%E8%A1%A8_(GPT)_%E7%89%B9%E6%AE%8A%E6%93%8D%E4%BD%9C>)
