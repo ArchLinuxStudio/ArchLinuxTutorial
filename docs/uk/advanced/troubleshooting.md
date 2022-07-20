@@ -10,6 +10,44 @@ Although there are fewer and fewer installation scenarios using traditional BIOS
 - When partitioning, you need to separate a 2M BIOS boot mode partition, this partition does not need to be formatted and mounted.
 - When installing the bootloader, the corresponding commands are modified to: `grub-install --target=i386-pc /dev/vda` and `grub-mkconfig -o /boot/grub/grub.cfg`. Among them, `/dev/vda` in the first command is the disk where GRUB is installed, not a partition. The specific name is changed according to the actual situation of the installer.
 
+### Static IP Settings
+
+Although the use of tools that can automatically obtain IP addresses can cover most scenarios, there are still some special scenarios, such as campus networks, VPS and other environments that require static IP settings. This section gives a brief way to set a static IP. If you need to set a static IP, you need to disable the tools that automatically obtain IP such as dhcpcd or NetworkManager.
+
+```bash
+sudo systemctl stop dhcpcd NetworkManager
+sudo systemctl disable dhcpcd NetworkManager
+```
+
+Next enable systemd-networkd
+
+```bash
+sudo systemctl enable --now systemd-networkd
+```
+
+Use the `ip ad` command to view the name of the current network card, for example, the name ens3 is used here. Then create the configuration file `/etc/systemd/network/10-static-ens3.network`. Then fill in the content in it. The ip address and gateway need to be obtained from your network provider. The DNS settings also need to be set in `/etc/resolv.conf` in the same way as above.
+
+```conf
+[Match]
+Name=ens3
+
+[Network]
+Address=YOUR_IPV4_ADDRESS/MASK
+Gateway=YOUR_IPV4_GATEWAY
+DNS=8.8.8.8
+
+[Network]
+Address=YOUR_IPV6_ADDRESS/MASK
+Gateway=YOUR_IPV6_GATEWAY
+DNS=2001:4860:4860::8888
+```
+
+Finally, restart the service.
+
+```bash
+sudo systemctl restart systemd-networkd
+```
+
 ### The mouse button is insensitive or malfunctioning
 
 Generally speaking, most mice are plug and play, but may experience failure after the 5.14 kernel update. It can be solved by installing the corresponding driver according to your own mouse brand. [[1]](https://openrazer.github.io/#arch)

@@ -10,6 +10,44 @@
 - 在分区时，需要额外分出一个 2M 大小的 BIOS boot 模式的分区，此分区无需进行格式化与挂载。
 - 在安装引导程序时，对应的命令修改为: `grub-install --target=i386-pc /dev/vda` 以及 `grub-mkconfig -o /boot/grub/grub.cfg`。其中，第一条命令中的`/dev/vda`为安装 GRUB 的磁盘，而非分区。具体的名字根据安装者的实际情况进行更改。
 
+### 静态 IP 设置
+
+虽然使用可以自动获取 ip 地址的工具可以覆盖绝大多数场景，但是仍有部分特殊场景，如校园网，VPS 等环境下需要进行静态 IP 的设置。本小节给出一个简略的设置静态 IP 的方式。如需要设置静态 IP,需要首先禁用 dhcpcd 或 NetworkManager 等自动获取 ip 的工具。
+
+```bash
+sudo systemctl stop dhcpcd NetworkManager
+sudo systemctl disable dhcpcd NetworkManager
+```
+
+接下来启用 systemd-networkd
+
+```bash
+sudo systemctl enable --now systemd-networkd
+```
+
+使用`ip ad`命令查看当前网卡的名字，如这里使用名字 ens3。随后创建配置文件`/etc/systemd/network/10-static-ens3.network`。接下来在其中填入内容。其中的 ip 地址和网关需要从你的网络提供商处获取。其中的 DNS 设置同样需要在`/etc/resolv.conf`中按照前文中的方式进行设置。
+
+```conf
+[Match]
+Name=ens3
+
+[Network]
+Address=YOUR_IPV4_ADDRESS/MASK
+Gateway=YOUR_IPV4_GATEWAY
+DNS=8.8.8.8
+
+[Network]
+Address=YOUR_IPV6_ADDRESS/MASK
+Gateway=YOUR_IPV6_GATEWAY
+DNS=2001:4860:4860::8888
+```
+
+最后，重启服务即可。
+
+```bash
+sudo systemctl restart systemd-networkd
+```
+
 ### 鼠标出现按键不灵敏或失灵的现象
 
 一般来说大多数鼠标都是即插即用的，但 5.14 内核前后更新后可能遇到失灵的情况。根据自身鼠标品牌安装对应的驱动即可解决。[[1]](https://openrazer.github.io/#arch)
