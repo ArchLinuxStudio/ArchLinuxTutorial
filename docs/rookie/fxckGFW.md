@@ -31,7 +31,7 @@ vmess://xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 如果购买机场的订阅服务，可以参考它们的订阅流程以获取节点。在我们列出一些较为可信的机场服务以供选择，但是**我们不提供任何担保**。需要提醒的是，机场服务属于灰色产业，随时有停止服务的可能，购买建议以月付进行购买以避免过大损失。关于机场审计规则，我们的观点是"我可以不看，但是你不可以封禁"。对于机场审计程度，读者可根据自身实际情况自行评估。
 
-- [GLaDOS](https://www.glados.one/landing/9FMKX-GYLMK-ZYIZW-5U3T0) After registering by email, use the activation code `9FMKX-GYLMK-ZYIZW-5U3T0` to activate the account, after activation, you can get free 5 days and 10GB trial. The advantage of GLaDOS is that it can be used for free, and the operation time is longer, which is more credible. In addition to that, GLaDOS is one of the few airports with a Trojan node. The downside is that the speed is not very good. For its audit rules, you can enter the background panel to view it yourself after registering an account. According to our tests, it is not audited strictly in accordance with the auditing rules.
+- [GLaDOS](https://www.glados.one/landing/9FMKX-GYLMK-ZYIZW-5U3T0) 在使用邮箱注册后，使用激活码`9FMKX-GYLMK-ZYIZW-5U3T0`激活账号后即可获得 5 天免费试用时长和 10GB 试用流量。 GLaDOS 的优点是可以免费使用，运行时间较长，比较可信。 除此之外，GLaDOS 是少数拥有 Trojan 节点的机场之一。 缺点是速度算不上非常快。 其审核规则，注册账号后可以进入后台面板自行查看。 根据我们的测试，它没有严格按照审计规则进行审计。
 
 ---
 
