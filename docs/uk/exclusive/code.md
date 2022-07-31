@@ -31,7 +31,7 @@ When it comes to database-related software, there are also a variety of options.
 - [pgadmin4](https://www.archlinux.org/packages/community/x86_64/pgadmin4/)
 - [dbeaver](https://www.archlinux.org/packages/community/x86_64/dbeaver/)
 - [robo3t](https://aur.archlinux.org/packages/robo3t-bin/)<sup>AUR</sup>
-- [redis-desktop-manager](https://aur.archlinux.org/packages/redis-desktop-manager/)<sup>AUR</sup>
+- [RESP.app](https://aur.archlinux.org/packages/resp-app/)<sup>AUR</sup> (pre redis-desktop-manager)
 - [rdm-bin](https://aur.archlinux.org/packages/rdm-bin/)<sup>AUR</sup> If there is a problem with the above compilation, use this bin version
 
 For big data, packages such as [hadoop](https://aur.archlinux.org/packages/hadoop/)<sup>AUR</sup> can be installed. If the package has not been updated for a long time or the package does not exist, such as hbase and hive, you can only go to the official website to download and configure it yourself.

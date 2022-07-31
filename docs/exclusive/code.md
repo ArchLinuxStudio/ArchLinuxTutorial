@@ -33,7 +33,7 @@ Jetbrains 公司开源的 IDE 可在 archlinux 官方仓库中找到，如[Intel
 - [pgadmin4](https://www.archlinux.org/packages/community/x86_64/pgadmin4/)
 - [dbeaver](https://www.archlinux.org/packages/community/x86_64/dbeaver/)
 - [robo3t](https://aur.archlinux.org/packages/robo3t-bin/)<sup>AUR</sup>
-- [redis-desktop-manager](https://aur.archlinux.org/packages/redis-desktop-manager/)<sup>AUR</sup>
+- [RESP.app](https://aur.archlinux.org/packages/resp-app/)<sup>AUR</sup> （原 redis-desktop-manager）
 - [rdm-bin](https://aur.archlinux.org/packages/rdm-bin/)<sup>AUR</sup> 如果上面的编译有问题，可用这个 bin 版本
 
 针对大数据方面，可安装[hadoop](https://aur.archlinux.org/packages/hadoop/)<sup>AUR</sup>等包。如有包长期没有更新或包不存在，如 hbase 和 hive，则只能去官网自行下载并配置。
