@@ -8,7 +8,7 @@
 
 > 华为鸿蒙与小米的 MIUI 等厂商存在着与威权政府合作的风险，并且这种风险目前来看越来越大，操作系统层面来看，整合所谓"反诈系统"几乎已经是箭在弦上的事情。是否会有硬件级别的监控和审计，目前尚无明确证据。为了你的隐私与安全，如果这些厂商的手机无法自行刷入安全的 ROM，那么你需要拒绝使用这些厂商的产品。
 
-买手机最好买知名度大的品牌，较热门的机型，这样在刷机时可以方便的找到官方的 twrp 和知名的 ROM 包，如[魔趣](https://download.mokeedev.com/)，[LineageOS](https://lineageos.org/)，[crDroid](https://crdroid.net/), [Resurrection Remix](https://resurrectionremix.com/)，[PixelExperience](https://download.pixelexperience.org/devices)等。如果是较冷门的品牌，官方可能没有提供 ROM，只能在网上自行寻找个人改造过的 twrp 和上述 ROM 包的 unofficial ROM，搜索的方式一般为手机的代号+ROM。这种个人改造版本的安全性比较难说，而且还可能有更多的 bug。也有可能你翻遍全网，也找不到冷门机型能用（指好用的、非硬件提供商的官方 ROM）的 twrp 和 ROM。硬件方面，一般推荐买高通骁龙的 cpu,不要买联发科的，因为更多 ROM 的版本都是适配高通硬件的。
+买手机最好买知名度大的品牌，较热门的机型，这样在刷机时可以方便的找到官方的 twrp 和知名的 ROM 包，如[魔趣](https://download.mokeedev.com/)，[LineageOS](https://lineageos.org/)，[crDroid](https://crdroid.net/), [Resurrection Remix](https://resurrectionremix.com/)，[PixelExperience](https://download.pixelexperience.org/devices),[grapheneos](https://grapheneos.org/)等。如果是较冷门的品牌，官方可能没有提供 ROM，只能在网上自行寻找个人改造过的 twrp 和上述 ROM 包的 unofficial ROM，搜索的方式一般为手机的代号+ROM。这种个人改造版本的安全性比较难说，而且还可能有更多的 bug。也有可能你翻遍全网，也找不到冷门机型能用（指好用的、非硬件提供商的官方 ROM）的 twrp 和 ROM。硬件方面，一般推荐买高通骁龙的 cpu,不要买联发科的，因为更多 ROM 的版本都是适配高通硬件的。
 
 首先需要安装 linux 上的安卓工具包
 
