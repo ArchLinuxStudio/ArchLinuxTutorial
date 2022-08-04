@@ -156,6 +156,8 @@ Required base package
 pacstrap /mnt base base-devel linux linux-headers linux-firmware #base-devel is required to install the AUR package
 ```
 
+> If there is an error related to the keyring during installation, refer to this article [GnuPG-2.1 and the pacman keyring](https://archlinux.org/news/gnupg-21-and-the-pacman-keyring/) and execute the commands.
+
 Required functional software
 
 ```bash

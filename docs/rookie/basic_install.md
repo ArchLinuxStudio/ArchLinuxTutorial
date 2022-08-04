@@ -156,6 +156,8 @@ Server = https://mirrors.cat.net/archlinux/$repo/os/$arch    #东亚地区:日�
 pacstrap /mnt base base-devel linux linux-headers linux-firmware  #base-devel在AUR包的安装是必须的
 ```
 
+> 若安装时出现密钥环相关错误，参考此文章[GnuPG-2.1 and the pacman keyring](https://archlinux.org/news/gnupg-21-and-the-pacman-keyring/)并执行其中的命令。
+
 必须的功能性软件
 
 ```bash
