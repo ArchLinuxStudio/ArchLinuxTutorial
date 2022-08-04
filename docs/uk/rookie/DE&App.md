@@ -193,3 +193,5 @@ If you want to connect a bluetooth audio device, you need to install `pulseaudio
 sudo pacman -S pulseaudio-bluetooth
 pulseaudio -k
 ```
+
+To set the bluetooth device to automatically start at boot, edit the `/etc/bluetooth/main.conf` file and set `AutoEnable` to true.
