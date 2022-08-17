@@ -156,6 +156,8 @@ Required base package
 pacstrap /mnt base base-devel linux linux-headers linux-firmware #base-devel is required to install the AUR package
 ```
 
+> Note that at present, it is necessary to ensure that the pacman-init.service service is started before executing the pacstrap or pacman command to install the package, otherwise an error will be raised and the installation process cannot be performed. Use the `systemctl status pacman-init.service` command to check the current service status. For more content, refer to the [post] in bbs (https://bbs.archlinux.org/viewtopic.php?id=278518&p=2)
+
 > If there is an error related to the keyring during installation, refer to this article [GnuPG-2.1 and the pacman keyring](https://archlinux.org/news/gnupg-21-and-the-pacman-keyring/) and execute the commands.
 
 Required functional software

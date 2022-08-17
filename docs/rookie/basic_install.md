@@ -156,6 +156,8 @@ Server = https://mirrors.cat.net/archlinux/$repo/os/$arch    #东亚地区:日�
 pacstrap /mnt base base-devel linux linux-headers linux-firmware  #base-devel在AUR包的安装是必须的
 ```
 
+> 注意，目前需要首先确保等待 pacman-init.service 服务启动后，才能执行 pacstrap 或 pacman 命令安装包，否则会引发错误使得安装过程无法进行。使用`systemctl status pacman-init.service`命令来检查当前服务状态。更多内容参考 bbs 中的[帖子](https://bbs.archlinux.org/viewtopic.php?id=278518&p=2)
+
 > 若安装时出现密钥环相关错误，参考此文章[GnuPG-2.1 and the pacman keyring](https://archlinux.org/news/gnupg-21-and-the-pacman-keyring/)并执行其中的命令。
 
 必须的功能性软件
