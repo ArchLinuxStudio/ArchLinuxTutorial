@@ -50,12 +50,13 @@ b 站直播时的弹幕可以使用[弹幕库](https://www.danmaku.live/),这个
 
 - [Kwave](https://archlinux.org/packages/extra/x86_64/kwave/) Kwave 是 KDE 开发的一款自由开源的音频编辑软件，可以录制、播放、导入和编辑许多音频文件，包括多声道文件。
 - [lmms](https://archlinux.org/packages/community/x86_64/lmms/) LMMS 是免费自由开源并且跨平台的作曲工具。通过制作旋律和节拍，合成和混合音频，安排音频片段等方法创作音乐。
-- [carla](https://archlinux.org/packages/community/x86_64/carla/)
+- [carla](https://archlinux.org/packages/community/x86_64/carla/) Carla 是一个功能齐全的模块化音频插件主机，支持许多音频驱动程序和插件格式。
 - [Ardour](https://archlinux.org/packages/community/x86_64/ardour/) Ardour 是一款自由开源的让你可以在 Linux 上录音、编辑和混音的软件。
-- [vcvrack](https://aur.archlinux.org/packages/vcvrack-bin/) VCV Rack 是一款开源可视化、模块化的音响合成器。
+- [vcvrack](https://aur.archlinux.org/packages/vcvrack-bin/) VCV Rack 是一款开源、可视化、模块化的音响合成器。
 - [Mixxx](https://archlinux.org/packages/community/x86_64/mixxx/) Mixxx 集成了 DJ 使用数字音乐文件进行创造性现场混音所需的工具。
 - [MuseScore](https://archlinux.org/packages/community/x86_64/lmms/) MuseScore 是 Muse Group 开发的一个跨平台的自由开源制谱软件。
 - [SoundConverter](https://archlinux.org/packages/community/any/soundconverter/) SoundConverter 是 GNOME 桌面的音频文件转换器（这不影响在 Plasma 桌面环境下使用）。
+- [Reaper](https://archlinux.org/packages/community/x86_64/reaper/) REAPER 是一个完整的计算机数字音频制作软件，提供完整的多轨音频和 MIDI 录音、编辑、处理、混音和母带制作工具集。 
 
 ## UI/UX 设计
 
