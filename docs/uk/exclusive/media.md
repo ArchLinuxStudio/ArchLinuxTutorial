@@ -50,12 +50,13 @@ Professional audio production can use the following software.
 
 - [Kwave](https://archlinux.org/packages/extra/x86_64/kwave/) Kwave is a free and open source audio editing software developed by KDE, which can record, play, import and edit many audio files, including many soundtrack file.
 - [lmms](https://archlinux.org/packages/community/x86_64/lmms/) LMMS is a free, open source and cross-platform composition tool. Create music by crafting melodies and beats, synthesizing and mixing audio, arranging audio clips, and more.
-- [carla](https://archlinux.org/packages/community/x86_64/carla/)
+- [carla](https://archlinux.org/packages/community/x86_64/carla/) Carla is a fully-featured modular audio plugin host, with support for many audio drivers and plugin formats.
 - [Ardour](https://archlinux.org/packages/community/x86_64/ardour/) Ardour is a free and open source software that allows you to record, edit and mix on Linux.
 - [vcvrack](https://aur.archlinux.org/packages/vcvrack-bin/) VCV Rack is an open source visual, modular sound synthesizer.
 - [Mixxx](https://archlinux.org/packages/community/x86_64/mixxx/) Mixxx integrates the tools DJs need for creative live mixing using digital music files.
 - [MuseScore](https://archlinux.org/packages/community/x86_64/lmms/) MuseScore is a cross-platform free and open source notation software developed by Muse Group.
 - [SoundConverter](https://archlinux.org/packages/community/any/soundconverter/) SoundConverter is an audio file converter for the GNOME desktop (this does not affect use in the Plasma desktop environment).
+- [Reaper](https://archlinux.org/packages/community/x86_64/reaper/) REAPER is a complete digital audio production application for computers, offering a full multitrack audio and MIDI recording, editing, processing, mixing and mastering toolset. 
 
 ## UI/UX Design
 
