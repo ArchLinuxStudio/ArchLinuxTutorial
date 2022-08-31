@@ -32,6 +32,8 @@
 
 关于在 Arch Linux 上钱包的选择与地址的获取，在[现代隐私保护指南](https://archlinuxstudio.github.io/ModernSecurityProtectionGuide/#/anonymous_pay)的章节中有详细描述，本文不再赘述。
 
+如果你需要匿名购买加密货币的渠道，可以考虑使用[localmonero](https://localmonero.co/)提供的购买门罗币的服务。在购买后门罗币地址间的互转是匿名的，对外部不可见的。如需转换门罗币至其他币种，以使用非中国大陆的加密货币兑换平台如[changenow](https://changenow.io/)。
+
 ### 挖矿
 
 挖矿是进入加密货币世界最直接的方式，本节描述如何在 Arch Linux 中进行加密货币挖矿。

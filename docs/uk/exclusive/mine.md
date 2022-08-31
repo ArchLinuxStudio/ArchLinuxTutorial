@@ -32,6 +32,8 @@ If you want to use cryptocurrency, you first need to have a wallet. Currently, t
 
 The selection of wallets and the acquisition of addresses on Arch Linux are described in detail in the chapter of [Modern Privacy Protection Guide](https://archlinuxstudio.github.io/ModernSecurityProtectionGuide/#/anonymous_pay), and will not be repeated in this article.
 
+If you need a channel to buy cryptocurrencies anonymously, consider using the service provided by [localmonero](https://localmonero.co/) to buy monero. The transfer between Monero addresses after purchase is anonymous and invisible to the outside world. To convert Monero to other currencies, use a non-mainland Chinese cryptocurrency exchange platform such as [changenow](https://changenow.io/).
+
 ### Mining
 
 Mining is the most direct way to enter the cryptocurrency world, this section describes how to do cryptocurrency mining in Arch Linux.
