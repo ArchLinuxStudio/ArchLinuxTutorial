@@ -46,12 +46,9 @@ Arch Linux 可以以超高的自由度来定制自己的系统，并且其拥有
 
 如果能接受到加密货币捐赠，我们将非常感谢。有你的支持，ArchLinuxStudio 社区将变得更加充实与活跃。
 
-[![Donate with Bitcoin](https://en.cryptobadges.io/badge/big/1Lth3oca4WnMnTnwHBcDLkEqniA2pBxkeC?showBalance=true)](https://en.cryptobadges.io/donate/1Lth3oca4WnMnTnwHBcDLkEqniA2pBxkeC)
-
-[![Donate with Ethereum](https://en.cryptobadges.io/badge/big/0x5A218a8d570d9947f42e0a4916ece7a60A181c2d?showBalance=true)](https://en.cryptobadges.io/donate/0x5A218a8d570d9947f42e0a4916ece7a60A181c2d)
-
-[![Donate with Litecoin](https://en.cryptobadges.io/badge/big/LdJXzaSzzrAxfKJdj5effRLcC7k1TbuXJ8?showBalance=true)](https://en.cryptobadges.io/donate/LdJXzaSzzrAxfKJdj5effRLcC7k1TbuXJ8)
-
-[![Donate with Monero](https://en.cryptobadges.io/badge/big/43KJJZztPtBC7k8ZjJpuw7bThW1mUH6N947TeNxvsSHD7DywRN365WZ7qpSxVopSd7cg4PFjMuUewjfvATUtTKGQLMboU36?showBalance=true)](https://en.cryptobadges.io/donate/43KJJZztPtBC7k8ZjJpuw7bThW1mUH6N947TeNxvsSHD7DywRN365WZ7qpSxVopSd7cg4PFjMuUewjfvATUtTKGQLMboU36)
+- Donate with Bitcoin: `1Lth3oca4WnMnTnwHBcDLkEqniA2pBxkeC`
+- Donate with Ethereum: `0x5A218a8d570d9947f42e0a4916ece7a60A181c2d`
+- Donate with Litecoin: `LdJXzaSzzrAxfKJdj5effRLcC7k1TbuXJ8`
+- Donate with Monero: `43KJJZztPtBC7k8ZjJpuw7bThW1mUH6N947TeNxvsSHD7DywRN365WZ7qpSxVopSd7cg4PFjMuUewjfvATUtTKGQLMboU36`
 
 <!-- windows是最好的Linux发行版？It's only a BORING joke. -->
