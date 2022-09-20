@@ -133,7 +133,7 @@ DRI_PRIME=1 steam steam://rungameid/730 #运行cs go
 
 ### glmark2
 
-glmark 提供了一系列丰富的测试，涉及图形单元性能（缓冲，建筑，照明，纹理等）的不同方面，允许进行更全面和有意义的测试。 每次测试单独计算帧速率。 最终，用户根据以前的所有测试获得了一个成绩分数。在 archlinux 上属于包[glmark2](https://aur.archlinux.org/packages/glmark2/)<sup>AUR</sup>
+glmark 提供了一系列丰富的测试，涉及图形单元性能（缓冲，建筑，照明，纹理等）的不同方面，允许进行更全面和有意义的测试。 每次测试单独计算帧速率。 最终，用户根据以前的所有测试获得了一个成绩分数。在 archlinux 上属于包[glmark2](https://aur.archlinux.org/packages/glmark2-git)<sup>AUR</sup>
 
 ### Unigine benchmark
 

@@ -133,7 +133,7 @@ The most traditional and well-known way is to use the `glxgears` command for tes
 
 ### glmark2
 
-glmark provides a rich set of tests covering different aspects of graphics unit performance (buffering, architecture, lighting, textures, etc.), allowing for more comprehensive and meaningful testing. Frame rate is calculated separately for each test. Ultimately, the user receives a score based on all previous tests. On archlinux belongs to package [glmark2](https://aur.archlinux.org/packages/glmark2/)<sup>AUR</sup>
+glmark provides a rich set of tests covering different aspects of graphics unit performance (buffering, architecture, lighting, textures, etc.), allowing for more comprehensive and meaningful testing. Frame rate is calculated separately for each test. Ultimately, the user receives a score based on all previous tests. On archlinux belongs to package [glmark2](https://aur.archlinux.org/packages/glmark2-git)<sup>AUR</sup>
 
 ### Unigine benchmark
 
