@@ -73,7 +73,7 @@ $ adb root #在手机已经root的情况下打开root权限的adb shell
 
 下载 DC-unlocker 花四欧元，下载到电脑上检测设备，登陆，然后尝试解锁读取 bl 码。不是所有设备都能成功，有些机型虽然在其支持列表里，也没有成功。流程大致可以参考[这个](https://www.forece.net/post/4886.htm)。查到的原因是安卓 8 之后某个安全补丁后，DC unlocker 已经不能读到 bl 码。看 DC 之后的更新能否解决这个问题吧。
 
-还有另一个办法是先降级，然后在用 DC 解锁。通过 Firmware Finder 降级的方式，经过尝试后也无法成功，拿不到检测的更新了，据说是 **EMUI8.0.0.129** 后封死了其他渠道回滚。[资料 1](https://club.huawei.com/thread-15361104-1-1.html)[资料 2](https://cn.ui.vmall.com/thread-19813753-1-1.html)[资料 3](https://www.cnblogs.com/lsgxeva/p/13469490.html)
+还有另一个办法是先降级，然后再用 DC 解锁。通过 Firmware Finder 降级的方式，经过尝试后也无法成功，拿不到检测的更新了，据说是 **EMUI8.0.0.129** 后封死了其他渠道回滚。[资料 1](https://club.huawei.com/thread-15361104-1-1.html)[资料 2](https://cn.ui.vmall.com/thread-19813753-1-1.html)[资料 3](https://www.cnblogs.com/lsgxeva/p/13469490.html)
 
 淘宝卖码的反馈华为较新机型无法解锁拿到 BL。
 
