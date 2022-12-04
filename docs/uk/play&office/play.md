@@ -86,6 +86,8 @@ Ref:
 
 When playing some games, such as "Total War: THREE KINGDOMS", if you encounter performance problems, you can try to adjust the cpu frequency regulator[[1]](https://support.feralinteractive.com/docs/zh_cn/threekingdomstw/1.0.15/linux/faqs/?access=zooevrj6xb&utm_source=game_linux&utm_medium=link&utm_campaign=game_linux_threekingdomstw_support#i_linux_cpu_governor).
 
+[GameMode](https://github.com/FeralInteractive/gamemode) is a comprehensive game performance adjustment software, which provides a variety of game performance optimization functions. If necessary, you can check the github page for details.
+
 ## Performance monitoring
 
 Similar to the performance display part of MSI's Afterburner software, there is also a similar software on Linux that can monitor computer performance in games, named [MangoHud](https://github.com/flightlessmango/MangoHud). The usage can be found in the readme of this project. In ArchLinux, install the packages [mangohud](https://aur.archlinux.org/packages/mangohud) and [lib32-mangohud](https://aur.archlinux.org/packages/lib32-mangohud).

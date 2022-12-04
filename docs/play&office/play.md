@@ -86,6 +86,8 @@ Ref:
 
 在进行某些游戏时，如《Total War: THREE KINGDOMS》，如遇到性能问题，可尝试调节 cpu 频率调节器[[1]](https://support.feralinteractive.com/docs/zh_cn/threekingdomstw/1.0.15/linux/faqs/?access=zooevrj6xb&utm_source=game_linux&utm_medium=link&utm_campaign=game_linux_threekingdomstw_support#i_linux_cpu_governor)。
 
+[GameMode](https://github.com/FeralInteractive/gamemode) 是一款综合性的游戏性能调整软件，其提供了多种游戏性能优化功能。如有需要可以查询 github 页面查看详情。
+
 ## 性能监控
 
 和微星的 Afterburner 软件中性能显示的部分类似，Linux 上也有一款同类软件可以监控游戏中的电脑性能，名为[MangoHud](https://github.com/flightlessmango/MangoHud)。使用方式可参见此项目的 readme。在 ArchLinux 中，安装包 [mangohud](https://aur.archlinux.org/packages/mangohud)以及[lib32-mangohud](https://aur.archlinux.org/packages/lib32-mangohud)。
