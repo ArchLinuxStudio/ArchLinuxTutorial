@@ -90,7 +90,7 @@ sudo pacman -Sc
 
 ### 软件的降级
 
-在 archlinux 上 偶尔会出现某一个包的最新版本有各种问题的情况，此时需要降级该包以正常使用，包可以是普通软件，也可以是内核。
+在 archlinux 上 偶尔会出现某一个包的最新版本有各种问题的情况，如某些软件过新, 而一些依赖并没有支持,比如[virtualbox 在 linux5.18 内核下的崩溃](https://bugs.archlinux.org/task/74900)，此时需要降级该包以正常使用。包可以是普通软件，也可以是内核。
 
 ```bash
 yay -S downgrade

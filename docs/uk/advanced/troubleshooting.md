@@ -90,7 +90,7 @@ sudo pacman -Sc
 
 ### Software downgrade
 
-Occasionally, on archlinux, the latest version of a certain package has various problems. At this time, the package needs to be downgraded for normal use. The package can be ordinary software or kernel.
+Occasionally, on archlinux, the latest version of a certain package has various problems, such as some software is too new, and some dependencies are not supported, such as [virtualbox crash under linux5.18 kernel](https:// bugs.archlinux.org/task/74900), at which point the package needs to be downgraded for normal use. A package can be either normal software or the kernel.
 
 ```bash
 yay -S downgrade
