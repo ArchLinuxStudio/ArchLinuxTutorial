@@ -6,7 +6,7 @@
 
 在目前市面上可见的各个手机品牌中，除了其自己魔改的闭源安卓手机系统外，几乎任何一个品牌都会预装上一系列的出厂应用，如浏览器，通讯录，应用市场等。这些应用均为闭源软件，由各个手机厂商开发提供。这里就存在严重的问题，这些魔改系统以及闭源应用软件可能会进行各种间谍功能，对使用者进行监控以及审计。据报告，小米以及华为手机均会对用户的搜索以及浏览进行上报，匹配到关键词如"西藏自由"，"台湾独立"，"民主自由"等词即会进行加密上报，这些关键词可能有成百上千个。由于此类原因，使得使用者必须对手机的系统进行重新刷入，选择一个开源可靠的 ROM 刷入手机可以保障自己的隐私及安全。在硬件层面，也存在审计与监控的可能性，但是目前尚未知明确且可靠的报告，如有条件，可选择非人身所在国家品牌的手机。
 
-> 华为鸿蒙与小米的 MIUI 等厂商存在着与威权政府合作的风险，并且这种风险目前来看越来越大，操作系统层面来看，整合所谓"反诈系统"几乎已经是箭在弦上的事情。是否会有硬件级别的监控和审计，目前尚无明确证据。为了你的隐私与安全，如果这些厂商的手机无法自行刷入安全的 ROM，那么你需要拒绝使用这些厂商的产品。
+> 华为鸿蒙与小米的 MIUI 等中国大陆厂商存在着与威权政府合作的风险，并且这种风险目前来看越来越大，操作系统层面来看，整合所谓"反诈系统"几乎已经是箭在弦上的事情。是否会有硬件级别的监控和审计，目前尚无明确证据。为了你的隐私与安全，如果这些厂商的手机无法自行刷入安全的 ROM，那么你需要拒绝使用这些厂商的产品。
 
 买手机最好买知名度大的品牌，较热门的机型，这样在刷机时可以方便的找到官方的 twrp 和知名的 ROM 包，如[魔趣](https://download.mokeedev.com/)，[LineageOS](https://lineageos.org/)，[crDroid](https://crdroid.net/), [Resurrection Remix](https://resurrectionremix.com/)，[PixelExperience](https://download.pixelexperience.org/devices),[grapheneos](https://grapheneos.org/)等。如果是较冷门的品牌，官方可能没有提供 ROM，只能在网上自行寻找个人改造过的 twrp 和上述 ROM 包的 unofficial ROM，搜索的方式一般为手机的代号+ROM。这种个人改造版本的安全性比较难说，而且还可能有更多的 bug。也有可能你翻遍全网，也找不到冷门机型能用（指好用的、非硬件提供商的官方 ROM）的 twrp 和 ROM。硬件方面，一般推荐买高通骁龙的 cpu,不要买联发科的，因为更多 ROM 的版本都是适配高通硬件的。
 
@@ -64,24 +64,6 @@ $ adb root #在手机已经root的情况下打开root权限的adb shell
 ## 解锁 root 权限
 
 使用 Magisk 以解锁 root 权限。在其[官方 release 界面](https://github.com/topjohnwu/Magisk/releases)下载 Magisk apk 文件，将其重命名为.zip 后缀。然后将其拷贝到手机中，最后进入 twrp 刷入此 zip 包即可。
-
-## 有关华为设备
-
-如果你没有在 18 年华为关闭 bl 锁码申请前拿到密码，那刷机在现在将变得基本不可能，尤其是近一年左右的新设备。
-
-老一些的设备可以尝试一下如下方法。
-
-下载 DC-unlocker 花四欧元，下载到电脑上检测设备，登陆，然后尝试解锁读取 bl 码。不是所有设备都能成功，有些机型虽然在其支持列表里，也没有成功。流程大致可以参考[这个](https://www.forece.net/post/4886.htm)。查到的原因是安卓 8 之后某个安全补丁后，DC unlocker 已经不能读到 bl 码。看 DC 之后的更新能否解决这个问题吧。
-
-还有另一个办法是先降级，然后在用 DC 解锁。通过 Firmware Finder 降级的方式，经过尝试后也无法成功，拿不到检测的更新了，据说是 **EMUI8.0.0.129** 后封死了其他渠道回滚。[资料 1](https://club.huawei.com/thread-15361104-1-1.html)[资料 2](https://cn.ui.vmall.com/thread-19813753-1-1.html)[资料 3](https://www.cnblogs.com/lsgxeva/p/13469490.html)
-
-淘宝卖码的反馈华为较新机型无法解锁拿到 BL。
-
-还有一个自行拿十六进制里 bl 码的[教程](https://www.52pojie.cn/thread-816065-1-1.html)，前提是必须先拿到 root,这在新机型上基本也不可能了。旧机型可以尝试。在 linux 上检查十六进制可用这个软件[Bless](https://www.archlinux.org/packages/community/any/bless/)
-
-最后有 github 项目[PotatoNV](https://github.com/mashed-potatoes/PotatoNV)可以参考，其声称可以解锁部分机型的 bootloader。Linux 下的版本:[PotatoNV-crossplatform](https://github.com/mashed-potatoes/PotatoNV-crossplatform)
-
----
 
 Ref:
 
