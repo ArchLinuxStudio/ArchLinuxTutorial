@@ -26,7 +26,7 @@
 
 ### Telegram
 
-Telegram，中文名一般称为电报，是一个在世界广泛应用的开源通讯软件，注重隐私保护和单人通讯加密。我们一向提醒读者不应该相信企业不作恶，但是某些极少数的企业在经过时间的检验后确实证明它们是较为值得信赖的，如 Lavabit 以及 Telegram。如过你没有进行极度敏感的活动，那么 Telegram 目前看来是值得信赖的。使用 Telegram 请不要使用+86 的中国境内电话号码注册，**请务必使用虚拟电话注册**，这是为了你的安全着想。如果你可以使用加密货币购买谷歌语音虚拟电话账户，可在[群组](https://t.me/FSF_Ministry_of_Truth)中说明"我想购买谷歌语音账户"，会有我们的管理员与你私聊，协助完成你的购买。或者，你也可以直接联系我们的[管理员](https://t.me/LI_Li_C)进行购买。注册完成后，需要在 Telegram 设置中的`Privacy and Security`中进行如下设置来保障你的隐私安全:
+Telegram，中文名一般称为电报，是一个在世界广泛应用的开源通讯软件，注重隐私保护和单人通讯加密。我们一向提醒读者不应该相信企业不作恶，但是某些极少数的企业在经过时间的检验后确实证明它们是较为值得信赖的，如 Lavabit 以及 Telegram。如过你没有进行极度敏感的活动，那么 Telegram 目前看来是值得信赖的。使用 Telegram 请不要使用+86 的中国境内电话号码注册，**请务必使用虚拟电话注册**，这是为了你的安全着想。如果你可以使用加密货币购买谷歌语音虚拟电话账户，可在[群组](https://t.me/FSF_Ministry_of_Truth)中说明"我想购买谷歌语音账户"，会有我们的管理员与你私聊，协助完成你的购买。或者，你也可以直接联系我们的[管理员](https://t.me/LLC_XMR)进行购买。注册完成后，需要在 Telegram 设置中的`Privacy and Security`中进行如下设置来保障你的隐私安全:
 
 - Phone number 中的 Who can see my phone number 设置为 Nobody；
 - Phone number 中的 Who can find me by my number 设置为 My contacts；
