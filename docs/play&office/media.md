@@ -21,7 +21,7 @@ yay -S listen1-desktop-appimage
 [Electron Netease Cloud Music](https://github.com/Rocket1184/electron-netease-cloud-music) 是一款用 Electron 和 Vue 编写的网易云音乐 Linux 客户端，支持歌曲下载，这是它的优势，但是曲库没有前两款软件齐全。
 
 ```bash
-sudo pacman -S electron-netease-cloud-music
+yay -S electron-netease-cloud-music
 ```
 [FeelUOwn](https://github.com/feeluown/FeelUOwn) 是一个符合 Unix 哲学的跨平台的音乐播放器，安装简单，新手友好，默认提供国内各音乐平台插件。
 
