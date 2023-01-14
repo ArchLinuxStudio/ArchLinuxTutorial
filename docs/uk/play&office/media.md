@@ -21,7 +21,7 @@ yay -S listen1-desktop-appimage
 [Electron Netease Cloud Music](https://github.com/Rocket1184/electron-netease-cloud-music) is a Netease Cloud Music Linux client written with Electron and Vue, which supports song download, which is its advantage , but the music library is not as complete as the first two software.
 
 ```bash
-sudo pacman -S electron-netease-cloud-music
+yay -S electron-netease-cloud-music
 ```
 
 [FeelUOwn](https://github.com/feeluown/FeelUOwn) is a cross-platform music player that conforms to the Unix philosophy. It is easy to install, novice-friendly, and provides plug-ins for various domestic music platforms by default.
