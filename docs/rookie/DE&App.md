@@ -157,7 +157,7 @@ sudo chattr +i /etc/resolv.conf
 
 打开 _System Settings_ > _Regional Settings_ > _Language_ -> _Add languages_ 中选择中文加入，再拖拽到第一位，Apply。
 
-再将此页面种的其余设置项种的值设为`中文-简体中文(zh_CN)`，最后重新登陆即可。
+再将此页面中的其余设置项中的值设为`中文-简体中文(zh_CN)`，最后重新登陆即可。
 
 > 很多人会错误的更改设置项中的值为中文蒙古(mn_CN)，默认，或者其他值，这会导致系统中一半英文一半中文。这里的值要保持默认的 en_US 或 zh_CN,或者改为你在 locale.gen 中添加的任意一种语言。
 
