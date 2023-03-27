@@ -38,7 +38,9 @@ sudo pacman -S mesa lib32-mesa xf86-video-amdgpu vulkan-radeon lib32-vulkan-rade
 
 ### 英伟达独立显卡
 
-较新型号的独立显卡直接安装如下几个包即可。[官方文档](https://wiki.archlinux.org/index.php/NVIDIA)
+本节建议查看官方文档，此处只列出主要的显卡系列。[官方文档](https://wiki.archlinux.org/index.php/NVIDIA)
+
+较新型号的独立显卡直接安装如下几个包即可。
 
 ```bash
 sudo pacman -S nvidia nvidia-settings lib32-nvidia-utils #必须安装
@@ -60,6 +62,14 @@ yay -S nvidia-390xx-dkms nvidia-settings lib32-nvidia-390xx-utils linux-headers
 
 ```bash
 sudo pacman -S mesa lib32-mesa xf86-video-nouveau
+```
+
+#### 注意事项
+
+- 如果安装驱动后内核冲突，把 kms 从 `/etc/mkinitcpio.conf` 里的 HOOKS 数组中移除，并重新生成 initramfs。 这能防止 initramfs 包含 nouveau 模块，以确保内核在早启动阶段不会加载它。
+
+```
+mkinitcpio -p linux
 ```
 
 ---

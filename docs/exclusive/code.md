@@ -18,7 +18,11 @@
 
 ## 后端编程
 
-Jetbrains 公司开源的 IDE 可在 archlinux 官方仓库中找到，如[IntelliJ Idea](https://www.archlinux.org/packages/community/x86_64/intellij-idea-community-edition/)，[PyCharm](https://www.archlinux.org/packages/community/x86_64/pycharm-community-edition/)，等。
+Jetbrains 公司开源的 IDE 可在 archlinux 官方仓库中找到，如[IntelliJ Idea](https://www.archlinux.org/packages/community/x86_64/intellij-idea-community-edition/)，[PyCharm](https://www.archlinux.org/packages/community/x86_64/pycharm-community-edition/)等。  
+无开源版本的 Jetbrains 产品也可以在 AUR 社区中找到，如[rubymine](https://aur.archlinux.org/packages/rubymine)，[webstorm](https://aur.archlinux.org/packages/webstorm)。但可能只提供了安装而未提供卸载，如[jetbrains-toolbox](https://aur.archlinux.org/packages/jetbrains-toolbox)
+
+> Jetbrains 产品在 linux 下输入法均会产生光标不跟随的现象，Jetbrains 一直未修复该 bug，解决办法为[替换 jbr](https://github.com/RikudouPatrickstar/JetBrainsRuntime-for-Linux-x64)
+
 较为传统的 IDE 有 [Netbeans](https://www.archlinux.org/packages/community/any/netbeans/) 以及 eclipse，eclipse 有多种版本，可在 AUR 中自行搜索。
 
 关于编程语言自身，更是不必多说，除了 c 语言和 c++安装好系统即支持外，java, node，等都可以被轻易安装。
