@@ -31,6 +31,15 @@ mkdir new_folder    # 新建文件夹new_folder
 sudo some command   # 使普通用户以root权限执行某些命令
 ```
 
+bash 终端设置路径为 `~/.bashrc`
+
+```
+$include /etc/inputrc # 引入全局bash配置
+set completion-ignore-case on # 补全路径忽略大小写
+set horizontal-scroll-mode Off # 允许提示换行
+set bell-style none # 关闭提示警告音
+```
+
 拓展链接：推荐阅读在线进阶书籍 [Linux 命令行与 Shell 脚本教程](https://archlinuxstudio.github.io/ShellTutorial/#/)。
 
 ## Pacman 包管理

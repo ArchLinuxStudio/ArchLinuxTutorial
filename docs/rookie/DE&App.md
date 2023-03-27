@@ -165,7 +165,7 @@ sudo chattr +i /etc/resolv.conf
 
 AUR 为 archlinux user repository。任何用户都可以上传自己制作的 AUR 包，这也是 Arch Linux 可用软件众多的原因。由于任何人都可上传，也存在对应的风险，一般选用大众认可的包即可。
 
-使用 [yay](https://github.com/Jguer/yay) 可以安装 AUR 中的包。由于[中国大陆政府封锁 Github](https://zh.wikipedia.org/wiki/%E5%AF%B9GitHub%E7%9A%84%E5%AE%A1%E6%9F%A5%E5%92%8C%E5%B0%81%E9%94%81#%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD)的原因，你很可能没有办法用 yay 官方仓库中正常的方式安装 yay，所以 ArchLinuxStudio 提供一份可以直接安装的 bin 包以供你在安装时暂时使用。
+使用 [yay](https://github.com/Jguer/yay) 或 [paru](https://github.com/Morganamilo/paru) 可以安装 AUR 中的包。由于[中国大陆政府封锁 Github](https://zh.wikipedia.org/wiki/%E5%AF%B9GitHub%E7%9A%84%E5%AE%A1%E6%9F%A5%E5%92%8C%E5%B0%81%E9%94%81#%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD)的原因，你很可能没有办法用 yay 官方仓库中正常的方式安装 yay，所以 ArchLinuxStudio 提供一份可以直接安装的 bin 包以供你在安装时暂时使用。
 
 执行如下命令安装 yay。
 
