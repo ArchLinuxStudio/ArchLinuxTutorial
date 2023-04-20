@@ -16,7 +16,7 @@ vim 1.txt   #创建并编辑名为1.txt的文件
 下面介绍一些在命令模式下常用的命令
 
 ```bash
-:wq     # 保存退出
+:x      # 保存退出
 :q!     # 不保存，强制退出
 dd      # 删除一行
 2dd     # 删除两行
@@ -48,15 +48,11 @@ gpg --keyserver-options auto-key-retrieve --verify archlinux-202x.0x.01-x86_64.i
 
 Windows 下推荐使用[ventoy](https://www.ventoy.net/cn/doc_start.html)或者[Rufus](https://rufus.ie/)或者[etcher](https://github.com/balena-io/etcher)进行优盘刻录。三者皆为自由软件。具体操作请自行查阅，都非常简单。
 
-Linux 下可以直接用 dd 命令进行刻录。注意 of 的参数为 sdx,不是 sdx1 sdx2 等。
+Linux 下可以直接用 `cp` 命令进行刻录。注意 of 的参数为 sdx,不是 sdx1 sdx2 等。
 
 ```bash
-sudo dd bs=4M if=/path/to/archlinux.iso of=/dev/sdx status=progress oflag=sync
+sudo cp path/to/archlinux.iso /dev/sdx
 ```
-
-> bs=4M 指定一个较为合理的文件输入输出块大小。  
-> status=progress 用来输出刻录过程总的信息。  
-> oflag=sync 用来控制写入数据时的行为特征。确保命令结束时数据及元数据真正写入磁盘，而不是刚写入缓存就返回。
 
 ## 3.进入主板 BIOS 进行设置
 
