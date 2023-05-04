@@ -80,8 +80,18 @@ sudo pacman -S weechat
 
 ### 屏幕分享
 
-除了上述软件，对于另外一些手机通讯软件在电脑上的投屏可以尝试使用[scrcpy](https://archlinux.org/packages/community/x86_64/scrcpy/)。
-也可以使用 [KDE Connect](https://archlinux.org/packages/extra/x86_64/kdeconnect/) 在电脑上获取 Android 通知。
+手机通讯软件在电脑上的投屏可以尝试使用[scrcpy](https://archlinux.org/packages/community/x86_64/scrcpy/)。
+
+```
+sudo pacman -S scrcpy
+```
+
+也建议使用 [KDE Connect](https://archlinux.org/packages/extra/x86_64/kdeconnect/) 实现多端设备互联。
+
+```
+sudo pacman -S kdeconnect
+sudo pacman -S sshfs # 文件系统挂载，Dolphin完美集成
+```
 
 ## 办公套件
 
@@ -123,6 +133,12 @@ Trilium 是一个开源的 electron 笔记软件，它支持 markdown 还有 eve
 ```
 yay -S trilium-bin
 yay -S trilium-server-bin
+```
+
+VNote 是一个专注于 Markdown 的基于 Qt 的开源免费的笔记应用。其 LICENSE 为 LGPL-3.0 。
+
+```
+yay -S vnote
 ```
 
 ## 电子书
