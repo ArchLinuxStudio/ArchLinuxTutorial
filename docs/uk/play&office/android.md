@@ -61,7 +61,25 @@ $ adb shell #Open adb shell
 $ adb root #Open adb shell with root privileges when the phone is already rooted
 ```
 
----
+## Remove the network restriction prompt
+
+Google has introduced the "Captive Portal" mechanism since Android 5.0, which is mainly used to detect whether the WiFI network authentication is normal. The default detection access is the server outside the Google wall. When using native Android, which is common in the world, this service will prompt that the network is restricted in the wall environment, even if services such as Shadowsocks have been turned on. To solve this problem, you can use the adb command to modify the server to detect access to google.cn.
+
+```
+adb shell settings put global captive_portal_server www.google.cn
+adb shell settings put global captive_portal_https_url https://www.google.cn/generate_204
+adb shell settings put global captive_portal_mode 0
+```
+
+Finally, switch to the flight mode and switch back to solve it.
+
+## Flash into Google Suite
+
+In some scenarios, you need to flash into the Google suite because you need to use Google play. Optional projects are [opengapps](https://opengapps.org/), [nikgapps](https://nikgapps.com/) and [suites provided by lineageos](https://wiki.lineageos.org/gapps). opengapps updates seem to have stalled at the moment. nikgapps can be customized.
+
+## Unlock root privileges
+
+Use Magisk to unlock root privileges. Download the Magisk apk file from its [official release interface](https://github.com/topjohnwu/Magisk/releases), and rename it to a .zip suffix. Then copy it to the phone, and finally enter twrp to flash the zip package.
 
 Ref:
 

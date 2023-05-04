@@ -61,6 +61,22 @@ $ adb shell #打开adb shell
 $ adb root #在手机已经root的情况下打开root权限的adb shell
 ```
 
+## 去除网络限制提示
+
+谷歌从 Android 5.0 开始就引入了「Captive Portal」机制，主要用来检测 WiFI 网络认证是否正常，默认检测访问的是谷歌墙外服务器。在使用国际上常见的类原生安卓时，身处墙内环境此服务会提示网络受限，即使已经开启 Shadowsocks 等服务。针对此问题可使用 adb 命令修改检测访问的服务器为 google.cn 解决。
+
+```
+adb shell settings put global captive_portal_server www.google.cn
+adb shell settings put global captive_portal_https_url https://www.google.cn/generate_204
+adb shell settings put global captive_portal_mode 0
+```
+
+最后切换一下飞行模式再切回即可解决。
+
+## 刷入谷歌套件
+
+一些场景下因为需要使用 Google play,需要刷入谷歌套件。可选的项目有[opengapps](https://opengapps.org/)、[nikgapps](https://nikgapps.com/)以及[lineageos 提供的套件](https://wiki.lineageos.org/gapps)。opengapps 目前更新似乎已经陷入停滞。nikgapps 可以自行定制。
+
 ## 解锁 root 权限
 
 使用 Magisk 以解锁 root 权限。在其[官方 release 界面](https://github.com/topjohnwu/Magisk/releases)下载 Magisk apk 文件，将其重命名为.zip 后缀。然后将其拷贝到手机中，最后进入 twrp 刷入此 zip 包即可。
