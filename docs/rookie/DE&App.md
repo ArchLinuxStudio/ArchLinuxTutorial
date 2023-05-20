@@ -247,6 +247,20 @@ pulseaudio -k
 
 设置开机自动启用蓝牙设备，编辑`/etc/bluetooth/main.conf`文件，将`AutoEnable`设置为 true 即可。
 
+博通（Broadcom）网卡在 Linux 下的支持度很差，无论是无线还是蓝牙模块。对于无线功能来说，一般直接安装 broadcom-wl 包即可。
+
+```bash
+sudo pacman -S broadcom-wl
+```
+
+对于蓝牙模块，需要查阅[broadcom-bt-firmware](https://github.com/winterheart/broadcom-bt-firmware)仓库，在 brcm 文件夹中找到适合于自己网卡型号的 hcd 文件，将其下载并置于 `/lib/firmware/brcm` 文件夹中后重启即可。如果你无法确认自己的网卡型号对应哪一个 hcd 文件，那就全部下载并置于文件夹中。
+
+ref:
+
+- [Broadcom wireless ArchWiki](https://wiki.archlinux.org/title/broadcom_wireless)
+- [Fix WiFi and Bluetooth problems in ArcoLinux or Arch Linux](https://kaneis.wordpress.com/2020/12/16/fix-bluetooth-problem-not-scanning-any-devices-in-arcolinux-or-arch-linux-with-broadcom-bluetooth-usb-dongle-or-broadcom-half-mini-card-bcm94352-hmb-azurewave-aw-ce123h-supports-wifi-ac-and-bt4le/)
+- [ [Broadcom BCM4352] A fix for empty bluetooth scan/visibility](https://bbs.archlinux.org/viewtopic.php?id=228561)
+
 <!-- ## 11.异型字体设置
 
 个人的设置是英文使用 Hack，中文使用 Noto Sans CJK SC。可以在系统设置->外观->字体中进行设置。如遇到`门复关`等字形现实为日型字体，有关用户全局级别更改日文异型字的设置，可参考[官方文档](<https://wiki.archlinux.org/index.php/Localization_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)/Simplified_Chinese_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#%E4%BF%AE%E6%AD%A3%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%E6%98%BE%E7%A4%BA%E4%B8%BA%E5%BC%82%E4%BD%93%EF%BC%88%E6%97%A5%E6%96%87%EF%BC%89%E5%AD%97%E5%BD%A2>) -->

@@ -195,3 +195,17 @@ pulseaudio -k
 ```
 
 To set the bluetooth device to automatically start at boot, edit the `/etc/bluetooth/main.conf` file and set `AutoEnable` to true.
+
+Broadcom network cards are poorly supported under Linux, both wireless and bluetooth modules. For the wireless function, generally install the broadcom-wl package directly.
+
+```bash
+sudo pacman -S broadcom-wl
+```
+
+For the Bluetooth module, you need to consult the [broadcom-bt-firmware](https://github.com/winterheart/broadcom-bt-firmware) warehouse, find the hcd file suitable for your network card model in the brcm folder, and download it And put it in the `/lib/firmware/brcm` folder and restart it. If you can't confirm which hcd file corresponds to your network card model, then download all of them and put them in a folder.
+
+ref:
+
+- [Broadcom wireless ArchWiki](https://wiki.archlinux.org/title/broadcom_wireless)
+- [Fix WiFi and Bluetooth problems in ArcoLinux or Arch Linux](https://kaneis.wordpress.com/2020/12/16/fix-bluetooth-problem-not-scanning-any-devices-in-arcolinux-or-arch-linux-with-broadcom-bluetooth-usb-dongle-or-broadcom-half-mini-card-bcm94352-hmb-azurewave-aw-ce123h-supports-wifi-ac-and-bt4le/)
+- [ [Broadcom BCM4352] A fix for empty bluetooth scan/visibility](https://bbs.archlinux.org/viewtopic.php?id=228561)
