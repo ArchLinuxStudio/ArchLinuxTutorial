@@ -170,11 +170,11 @@ AUR 为 archlinux user repository。任何用户都可以上传自己制作的 A
 执行如下命令安装 yay。
 
 ```bash
-wget https://archlinuxstudio.github.io/ArchLinuxTutorial/res/yay-bin-11.1.2-1-x86_64.pkg.tar.zst
+wget https://raw.githubusercontent.com/ArchLinuxStudio/ArchLinuxTutorial/master/docs/res/yay-bin-11.1.2-1-x86_64.pkg.tar.zst
 sudo pacman -U yay-bin-11.1.2-1-x86_64.pkg.tar.zst
 ```
 
-> github.io 也被中国大陆政府封锁，只是封锁力度暂时还没有很大。如你在下载过程中卡住，可以尝试 ctrl+c 终止命令后重新尝试下载，也可尝试更换手机热点的网络环境再次进行下载，后文安装 Qv2ray 时同理。当你配置好全局代理后，你将不再需要担心任何网络封锁问题。我们将持续为本书读者提供突破互联网审查的可靠流程。
+> github.io 与 raw.githubusercontent.com 也被中国大陆政府封锁，只是封锁力度暂时还没有很大。如你在下载过程中卡住，可以尝试 ctrl+c 终止命令后重新尝试下载，也可尝试更换手机热点的网络环境再次进行下载，后文安装 Qv2ray 时同理。当你配置好全局代理后，你将不再需要担心任何网络封锁问题。我们将持续为本书读者提供突破互联网审查的可靠流程。
 
 ## 11.安装输入法
 

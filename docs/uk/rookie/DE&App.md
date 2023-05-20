@@ -162,11 +162,11 @@ Use [yay](https://github.com/Jguer/yay) to install packages from the AUR. Due to
 Execute the following command to install yay.
 
 ```bash
-wget https://archlinuxstudio.github.io/ArchLinuxTutorial/res/yay-bin-11.1.2-1-x86_64.pkg.tar.zst
+wget https://raw.githubusercontent.com/ArchLinuxStudio/ArchLinuxTutorial/master/docs/res/yay-bin-11.1.2-1-x86_64.pkg.tar.zst
 sudo pacman -U yay-bin-11.1.2-1-x86_64.pkg.tar.zst
 ```
 
-> github.io is also blocked by the Chinese mainland government, but the blockade has not been very strong for the time being. If you get stuck during the download process, you can try ctrl+c to terminate the command and try the download again, or you can try to change the network environment of the mobile hotspot to download again. The same is true when installing Qv2ray later. When you configure the global proxy, you will no longer need to worry about any network blocking issues. We will continue to provide readers of this book with a reliable process for breaking through Internet censorship.
+> github.io and raw.githubusercontent.com are also blocked by the Chinese mainland government, but the blockade has not been very strong for the time being. If you get stuck during the download process, you can try ctrl+c to terminate the command and try the download again, or you can try to change the network environment of the mobile hotspot to download again. The same is true when installing Qv2ray later. When you configure the global proxy, you will no longer need to worry about any network blocking issues. We will continue to provide readers of this book with a reliable process for breaking through Internet censorship.
 
 ## 10. Configure the system default editor
 
