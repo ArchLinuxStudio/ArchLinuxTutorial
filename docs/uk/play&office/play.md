@@ -90,7 +90,7 @@ When playing some games, such as "Total War: THREE KINGDOMS", if you encounter p
 
 ## Performance monitoring
 
-Similar to the performance display part of MSI's Afterburner software, there is also a similar software on Linux that can monitor computer performance in games, named [MangoHud](https://github.com/flightlessmango/MangoHud). The usage can be found in the readme of this project. In ArchLinux, install the packages [mangohud](https://aur.archlinux.org/packages/mangohud) and [lib32-mangohud](https://aur.archlinux.org/packages/lib32-mangohud).
+Similar to the performance display part of MSI's Afterburner software, there is also a similar software on Linux that can monitor computer performance in games, named [MangoHud](https://github.com/flightlessmango/MangoHud). The usage can be found in the readme of this project. In ArchLinux, install the packages mangohud and lib32-mangohud.
 
 In addition, MangoHud officially provides a graphical parameter setting software [GOverlay](https://github.com/benjamimgois/goverlay#arch--manjaro--other-arch-derivatives), which can be installed by yourself.
 
