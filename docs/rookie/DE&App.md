@@ -36,7 +36,7 @@ EDITOR=vim visudo  # 需要以 root 用户运行 visudo 命令
 找到下面这样的一行，把前面的注释符号 `#` 去掉，`:wq` 保存并退出即可。
 
 ```sudoers
-#%wheel ALL=(ALL) ALL
+#%wheel ALL=(ALL:ALL) ALL
 ```
 
 这里稍微解释一下
