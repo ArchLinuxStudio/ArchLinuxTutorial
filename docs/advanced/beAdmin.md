@@ -171,7 +171,7 @@ sudo smartctl -A /dev/sda   #硬盘
 sudo smartctl -d sat -A /dev/sdc #usb设备
 ```
 
-磁盘空间分析可直接使用 dh 命令，也可使用 [Filelight](https://archlinux.org/packages/extra/x86_64/filelight/)图形化界面直观查看磁盘占用情况
+磁盘空间分析可直接使用 df 命令，也可使用 [Filelight](https://archlinux.org/packages/extra/x86_64/filelight/)图形化界面直观查看磁盘占用情况
 
 ```bash
 df -h
