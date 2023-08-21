@@ -49,7 +49,4 @@ If this book has been helpful to you, please recommend it to your friends who ne
 
 We would be very grateful if receive digital currency donations. With your support, the ArchLinuxStudio community will become even more enriched and active.
 
-- Donate with Bitcoin: `1Lth3oca4WnMnTnwHBcDLkEqniA2pBxkeC`
-- Donate with Ethereum: `0x5A218a8d570d9947f42e0a4916ece7a60A181c2d`
-- Donate with Litecoin: `LdJXzaSzzrAxfKJdj5effRLcC7k1TbuXJ8`
 - Donate with Monero: `43KJJZztPtBC7k8ZjJpuw7bThW1mUH6N947TeNxvsSHD7DywRN365WZ7qpSxVopSd7cg4PFjMuUewjfvATUtTKGQLMboU36`
