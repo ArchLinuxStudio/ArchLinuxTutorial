@@ -13,7 +13,7 @@ For playing online games on Linux, network acceleration has always been a proble
 There are some natively supported games in Arch Linux official repository and AUR, listed below
 
 - [shattered-pixel-dungeon](https://aur.archlinux.org/packages/shattered-pixel-dungeon/) Shattered Pixel Dungeon Survival Game
-- [0ad](https://archlinux.org/packages/community/x86_64/0ad/) Known as the Age of Open Source Empires
+- [0ad](https://archlinux.org/packages/extra/x86_64/0ad/) Known as the Age of Open Source Empires
 - [openra](https://archlinux.org/packages/community/any/openra/) Open source implementation of Red Alert 1
 
 ## Steam

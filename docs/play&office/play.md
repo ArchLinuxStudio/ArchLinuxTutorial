@@ -13,7 +13,7 @@
 Arch Linux 官方仓库和 AUR 中存在一些原生支持的游戏，列举如下
 
 - [shattered-pixel-dungeon](https://aur.archlinux.org/packages/shattered-pixel-dungeon/) 破碎像素地牢 生存游戏
-- [0ad](https://archlinux.org/packages/community/x86_64/0ad/) 被誉为开源帝国时代
+- [0ad](https://archlinux.org/packages/extra/x86_64/0ad/) 被誉为开源帝国时代
 - [openra](https://archlinux.org/packages/community/any/openra/) 红警 1 的开源实现
 
 ## Steam
