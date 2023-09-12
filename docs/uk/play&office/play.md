@@ -133,3 +133,13 @@ In order to use the Xbox Wireless Adapter under Arch Linux, a third-party open s
 3. Restart the computer, insert the Xbox wireless adapter and pair with the Xbox controller
 
 The actual experience is no different from that under Windows. Latency-sensitive audio games (such as [Meow Run](https://store.steampowered.com/app/774171/Muse_Dash/)) can fine-tune the offset value in the game settings.
+
+## Gamescope
+
+Gamescope is an independent compositor supported by Valve specifically for game development. It can solve the display problems of some games. For example, when some games open the virtual desktop, although they can be windowed into full screen, they still cannot expand to full screen (still the original low resolution of the game). Gamescope works with lutris. It's still early days for Gamescope.
+
+Note that NVIDIA graphics cards must use NVIDIA closed source drivers when using Gamescope, and nvidia-open open source drivers are not supported. In addition, the kernel parameter `nvidia-drm.modeset=1` must be added.
+
+Gamescope's predecessor was Xephyr, which is now on hold.
+
+See the Gamescope documentation for details: https://wiki.archlinux.org/title/Gamescope

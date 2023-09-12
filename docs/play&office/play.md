@@ -133,3 +133,15 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 3. 重启计算机，插入 Xbox 无线适配器并和 Xbox 手柄配对即可
 
 实际体验和 Windows 下并无差异。对延迟敏感的音游（如 [喵斯快跑](https://store.steampowered.com/app/774171/Muse_Dash/)）在游戏设置中微调偏移值即可。
+
+## Gamescope
+
+Gamescope 是 Valve 支持的专门针对游戏开发的独立合成器，其可以解决一些游戏的显示问题，如部分游戏在开启虚拟桌面时，虽然能全屏窗口化，但是依旧不能达到全屏展开的程度（依旧是原来游戏的低分辨率）。Gamescope 可在 lutris 中配合使用。目前 Gamescope 仍处于早期阶段。
+
+注意英伟达显卡使用 Gamescope 必须使用英伟达闭源驱动，nvidia-open 开源驱动不受支持。除此之外必须添加内核参数`nvidia-drm.modeset=1`。
+
+Gamescope 的前任是 Xephyr,现已处于停滞状态。
+
+详情查阅 Gamescope 文档：https://wiki.archlinux.org/title/Gamescope
+
+---
