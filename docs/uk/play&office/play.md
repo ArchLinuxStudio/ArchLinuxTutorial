@@ -143,3 +143,13 @@ Note that NVIDIA graphics cards must use NVIDIA closed source drivers when using
 Gamescope's predecessor was Xephyr, which is now on hold.
 
 See the Gamescope documentation for details: https://wiki.archlinux.org/title/Gamescope
+
+## protonhax
+
+Sometimes, you need to run other programs besides the game in the Proton container, such as cheat engine, etc. Currently Proton cannot meet this requirement. [protonhax](https://github.com/aoleg94/protonhax) is used here to run other programs in the same Proton container as the game.
+
+```bash
+yay -S protonhax
+```
+
+Set `protonhax init %COMMAND%` in the game running parameters, and then execute `protonhax ls` to obtain the running game appid. Finally use `protonhax run <appid> <path/to/program>` to run other programs in the target container. For more usage, please refer to the project warehouse page.

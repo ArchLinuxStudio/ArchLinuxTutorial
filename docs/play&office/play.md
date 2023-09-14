@@ -144,4 +144,12 @@ Gamescope 的前任是 Xephyr,现已处于停滞状态。
 
 详情查阅 Gamescope 文档：https://wiki.archlinux.org/title/Gamescope
 
----
+## protonhax
+
+有时，需要在 Proton 容器中运行游戏以外的其他程序，如修改器等。目前 Proton 默认无法满足此需求。这里使用 [protonhax](https://github.com/aoleg94/protonhax) 来完成在与游戏同一 Proton 容器这种运行其他程序。
+
+```bash
+yay -S protonhax
+```
+
+在游戏运行参数中设置`protonhax init %COMMAND%`,随后执行`protonhax ls`获取正在运行的游戏 appid。最后使用` protonhax run <appid> <path/to/program>`在目标容器中运行其他程序。更多用法可参考项目仓库页面。
