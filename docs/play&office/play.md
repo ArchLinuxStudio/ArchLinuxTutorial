@@ -153,3 +153,5 @@ yay -S protonhax
 ```
 
 在游戏运行参数中设置`protonhax init %COMMAND%`,随后执行`protonhax ls`获取正在运行的游戏 appid。最后使用` protonhax run <appid> <path/to/program>`在目标容器中运行其他程序。更多用法可参考项目仓库页面。
+
+Ref: https://www.reddit.com/r/linux_gaming/comments/pxs5es/running_a_second_program_inside_a_proton_prefix/?rdt=44318
