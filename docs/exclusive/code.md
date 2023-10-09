@@ -6,7 +6,7 @@
 
 对于前端来说，一般需要浏览器以及 IDE(或编辑器) 即可，附加一些网络工具。
 
-关于 IDE(或编辑器),可以使用 [OSS code](https://www.archlinux.org/packages/community/x86_64/code/)，它是由官方仓库的生成的开源构建。[vscodium-bin](https://aur.archlinux.org/packages/vscodium-bin/)<sup>AUR</sup>是社区驱动的 vs code 版本。
+关于 IDE(或编辑器),可以使用 [OSS code](https://archlinux.org/packages/extra/x86_64/code/)，它是由官方仓库的生成的开源构建。[vscodium-bin](https://aur.archlinux.org/packages/vscodium-bin/)<sup>AUR</sup>是社区驱动的 vs code 版本。
 
 > 微软公司 Visual Studio Code 的二进制构建实际为专有软件。很多人在此存在误解。如此偷梁换柱的手段越来越被更多公司发掘使用。[[1]](https://carlchenet.com/you-think-the-visual-studio-code-binary-you-use-is-a-free-software-think-again/)
 
@@ -62,4 +62,4 @@ Jetbrains 公司开源的 IDE 可在 archlinux 官方仓库中找到，如[Intel
 
 ## 逆向工程
 
-可安装知名的[ghidra](https://archlinux.org/packages/community/x86_64/ghidra/)作为 IDA 的替代，更多替代选项可参考[alternativeto](https://alternativeto.net/software/ida/)。除此之外再介绍一个好用的十六进制编辑器[Bless](https://archlinux.org/packages/community/any/bless/)。
+可安装知名的[ghidra](https://archlinux.org/packages/extra/x86_64/ghidra/)作为 IDA 的替代，更多替代选项可参考[alternativeto](https://alternativeto.net/software/ida/)。除此之外再介绍一个好用的十六进制编辑器[Bless](https://archlinux.org/packages/community/any/bless/)。
