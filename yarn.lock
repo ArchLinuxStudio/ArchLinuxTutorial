@@ -337,30 +337,15 @@ docsify-server-renderer@>=4.10.0:
     node-fetch "^2.6.0"
     resolve-pathname "^3.0.0"
 
-docsify@^4.12.0:
-  version "4.12.1"
-  resolved "https://registry.yarnpkg.com/docsify/-/docsify-4.12.1.tgz#46c15a4c101397185835f7e6bdad7bd6cd02896b"
-  integrity sha512-7v4UlCYLTmb83leJLIlheQlQ8kDTbTxcpMttRg0Uf92Nl//m0AcKFHoLLo5HHS4UhnO0KhDV8SKCdTR279zI9A==
+docsify@^4.12.0, docsify@^4.12.2:
+  version "4.13.1"
+  resolved "https://registry.yarnpkg.com/docsify/-/docsify-4.13.1.tgz#5ad89d3c0529d336bd1d1c20a664db129afd607a"
+  integrity sha512-BsDypTBhw0mfslw9kZgAspCMZSM+sUIIDg5K/t1hNLkvbem9h64ZQc71e1IpY+iWsi/KdeqfazDfg52y2Lmm0A==
   dependencies:
-    dompurify "^2.2.6"
     marked "^1.2.9"
     medium-zoom "^1.0.6"
     opencollective-postinstall "^2.0.2"
-    prismjs "^1.23.0"
-    strip-indent "^3.0.0"
-    tinydate "^1.3.0"
-    tweezer.js "^1.4.0"
-
-docsify@^4.12.2:
-  version "4.12.2"
-  resolved "https://registry.npmmirror.com/docsify/-/docsify-4.12.2.tgz#749115d2ff7d358780ea865e01f4a0162423d67f"
-  integrity sha512-hpRez5upcvkYigT2zD8P5kH5t9HpSWL8yn/ZU/g04/WfAfxVNW6CPUVOOF1EsQUDxTRuyNTFOb6uUv+tPij3tg==
-  dependencies:
-    dompurify "^2.3.1"
-    marked "^1.2.9"
-    medium-zoom "^1.0.6"
-    opencollective-postinstall "^2.0.2"
-    prismjs "^1.23.0"
+    prismjs "^1.27.0"
     strip-indent "^3.0.0"
     tinydate "^1.3.0"
     tweezer.js "^1.4.0"
@@ -369,11 +354,6 @@ dompurify@^2.2.6:
   version "2.2.6"
   resolved "https://registry.yarnpkg.com/dompurify/-/dompurify-2.2.6.tgz#54945dc5c0b45ce5ae228705777e8e59d7b2edc4"
   integrity sha512-7b7ZArhhH0SP6W2R9cqK6RjaU82FZ2UPM7RO8qN1b1wyvC/NY1FNWcX1Pu00fFOAnzEORtwXe4bPaClg6pUybQ==
-
-dompurify@^2.3.1:
-  version "2.3.6"
-  resolved "https://registry.npmmirror.com/dompurify/-/dompurify-2.3.6.tgz#2e019d7d7617aacac07cbbe3d88ae3ad354cf875"
-  integrity sha512-OFP2u/3T1R5CEgWCEONuJ1a5+MFKnOYpkywpUSxv/dj1LeBT1erK+JwM7zK0ROy2BRhqVCf0LRw/kHqKuMkVGg==
 
 dot-prop@^5.2.0:
   version "5.3.0"
@@ -943,10 +923,10 @@ prepend-http@^2.0.0:
   resolved "https://registry.yarnpkg.com/prepend-http/-/prepend-http-2.0.0.tgz#e92434bfa5ea8c19f41cdfd401d741a3c819d897"
   integrity sha1-6SQ0v6XqjBn0HN/UAddBo8gZ2Jc=
 
-prismjs@^1.23.0:
-  version "1.28.0"
-  resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.28.0.tgz#0d8f561fa0f7cf6ebca901747828b149147044b6"
-  integrity sha512-8aaXdYvl1F7iC7Xm1spqSaY/OJBpYW3v+KJ+F17iYxvdc8sfjW194COK5wVhMZX45tGteiBQgdvD/nhxcRwylw==
+prismjs@^1.27.0:
+  version "1.29.0"
+  resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.29.0.tgz#f113555a8fa9b57c35e637bba27509dcf802dd12"
+  integrity sha512-Kx/1w86q/epKcmte75LNrEoT+lX8pBpavuAbvJWRXar7Hz8jrtF+e3vY751p0R8H9HdArwaCTNDDzHg/ScJK1Q==
 
 pump@^3.0.0:
   version "3.0.0"
