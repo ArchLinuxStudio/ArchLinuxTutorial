@@ -47,3 +47,5 @@
 ## Star 历史
 
 [![Stargazers over time](https://starchart.cc/ArchLinuxStudio/ArchLinuxTutorial.svg)](https://starchart.cc/ArchLinuxStudio/ArchLinuxTutorial)
+
+## 8964 天安门
