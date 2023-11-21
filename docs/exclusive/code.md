@@ -10,20 +10,20 @@
 
 > 微软公司 Visual Studio Code 的二进制构建实际为专有软件。很多人在此存在误解。如此偷梁换柱的手段越来越被更多公司发掘使用。[[1]](https://carlchenet.com/you-think-the-visual-studio-code-binary-you-use-is-a-free-software-think-again/)
 
-浏览器方面有 [firefox](https://archlinux.org/packages/extra/x86_64/firefox/)，[chromium](https://archlinux.org/packages/extra/x86_64/chromium/)，[firefox-developer-edition](https://www.archlinux.org/packages/community/x86_64/firefox-developer-edition/)，[brave](https://aur.archlinux.org/packages/brave-dev-bin/)<sup>AUR</sup>等众多软件可供选择。
+浏览器方面有 [firefox](https://archlinux.org/packages/extra/x86_64/firefox/)，[chromium](https://archlinux.org/packages/extra/x86_64/chromium/)，[firefox-developer-edition](https://archlinux.org/packages/extra/x86_64/firefox-developer-edition/)，[brave](https://aur.archlinux.org/packages/brave-dev-bin/)<sup>AUR</sup>等众多软件可供选择。
 
-网络工具常使用 [httptoolkit](https://aur.archlinux.org/packages/httptoolkit/)<sup>AUR</sup>(作为 charles 的代替)，以及 [wireshark-qt](https://archlinux.org/packages/community/x86_64/wireshark-qt/)。
+网络工具常使用 [httptoolkit](https://aur.archlinux.org/packages/httptoolkit/)<sup>AUR</sup>(作为 charles 的代替)，以及 [wireshark-qt](https://archlinux.org/packages/extra/x86_64/wireshark-qt/)。
 
-至于 [yarn](https://www.archlinux.org/packages/community/any/yarn/)、[npm](https://www.archlinux.org/packages/community/any/npm/) 等前端常用工具，也均可用 pacman 安装。
+至于 [yarn](https://archlinux.org/packages/extra/any/yarn/)、[npm](https://archlinux.org/packages/extra/any/npm/) 等前端常用工具，也均可用 pacman 安装。
 
 ## 后端编程
 
-Jetbrains 公司开源的 IDE 可在 archlinux 官方仓库中找到，如[IntelliJ Idea](https://www.archlinux.org/packages/community/x86_64/intellij-idea-community-edition/)，[PyCharm](https://www.archlinux.org/packages/community/x86_64/pycharm-community-edition/)等。  
+Jetbrains 公司开源的 IDE 可在 archlinux 官方仓库中找到，如[IntelliJ Idea](https://archlinux.org/packages/extra/x86_64/intellij-idea-community-edition/)，[PyCharm](https://archlinux.org/packages/extra/x86_64/pycharm-community-edition/)等。  
 无开源版本的 Jetbrains 产品也可以在 AUR 社区中找到，如[rubymine](https://aur.archlinux.org/packages/rubymine)，[webstorm](https://aur.archlinux.org/packages/webstorm)。但可能只提供了安装而未提供卸载，如[jetbrains-toolbox](https://aur.archlinux.org/packages/jetbrains-toolbox)
 
 > Jetbrains 产品在 linux 下输入法均会产生光标不跟随的现象，Jetbrains 一直未修复该 bug，解决办法为[替换 jbr](https://github.com/RikudouPatrickstar/JetBrainsRuntime-for-Linux-x64)
 
-较为传统的 IDE 有 [Netbeans](https://www.archlinux.org/packages/community/any/netbeans/) 以及 eclipse，eclipse 有多种版本，可在 AUR 中自行搜索。
+较为传统的 IDE 有 [Netbeans](https://archlinux.org/packages/extra/any/netbeans/) 以及 eclipse，eclipse 有多种版本，可在 AUR 中自行搜索。
 
 关于编程语言自身，更是不必多说，除了 c 语言和 c++安装好系统即支持外，java, node，等都可以被轻易安装。
 
@@ -31,9 +31,9 @@ Jetbrains 公司开源的 IDE 可在 archlinux 官方仓库中找到，如[Intel
 
 关于数据库相关软件，也有多种选择。
 
-- [Mysql Workbench](https://www.archlinux.org/packages/community/x86_64/mysql-workbench/)
-- [pgadmin4](https://www.archlinux.org/packages/community/x86_64/pgadmin4/)
-- [dbeaver](https://www.archlinux.org/packages/community/x86_64/dbeaver/)
+- [Mysql Workbench](https://archlinux.org/packages/extra/x86_64/mysql-workbench/)
+- [pgadmin4](https://archlinux.org/packages/extra/x86_64/pgadmin4/)
+- [dbeaver](https://archlinux.org/packages/extra/x86_64/dbeaver/)
 - [robo3t](https://aur.archlinux.org/packages/robo3t-bin/)<sup>AUR</sup>
 - [RESP.app](https://aur.archlinux.org/packages/resp-app/)<sup>AUR</sup> （原 redis-desktop-manager）
 - [rdm-bin](https://aur.archlinux.org/packages/rdm-bin/)<sup>AUR</sup> 如果上面的编译有问题，可用这个 bin 版本
@@ -48,11 +48,11 @@ Jetbrains 公司开源的 IDE 可在 archlinux 官方仓库中找到，如[Intel
 
 ## 桌面应用编程
 
-目前桌面开发较为流行的是 [electron](https://archlinux.org/packages/community/x86_64/electron/) 和 [Qt](https://archlinux.org/packages/extra/x86_64/qt6-base/) 应用。electron 可直接用 OSS Code 进行开发，Qt 应用使用 [Qt Creator](https://www.archlinux.org/packages/extra/x86_64/qtcreator/) 进行开发。
+目前桌面开发较为流行的是 [electron](https://archlinux.org/packages/extra/x86_64/electron/) 和 [Qt](https://archlinux.org/packages/extra/x86_64/qt6-base/) 应用。electron 可直接用 OSS Code 进行开发，Qt 应用使用 [Qt Creator](https://archlinux.org/packages/extra/x86_64/qtcreator/) 进行开发。
 
 ## 机器学习与深度学习
 
-针对机器学习方面的编程，IDE 可使用同后端编程中一样的软件。机器学习常用的[jupyter-notebook](https://archlinux.org/packages/community/any/jupyter-notebook/) 以及所需要的相关库如[numpy](https://archlinux.org/packages/extra/x86_64/python-numpy/)、[sklearn](https://archlinux.org/packages/community/x86_64/python-scikit-learn/)、[pandas](https://archlinux.org/packages/community/x86_64/python-pandas/)等，也均可在源中找到。同时,[tensorflow](https://archlinux.org/packages/community/x86_64/tensorflow/)、[pytorch](https://archlinux.org/packages/?sort=&q=python-pytorch&maintainer=&flagged=)以及其相关的 cuda 支持包等深度学习相关的包也均可安装使用。
+针对机器学习方面的编程，IDE 可使用同后端编程中一样的软件。机器学习常用的[jupyter-notebook](https://archlinux.org/packages/extra/any/jupyter-notebook/) 以及所需要的相关库如[numpy](https://archlinux.org/packages/extra/x86_64/python-numpy/)、[sklearn](https://archlinux.org/packages/extra/x86_64/python-scikit-learn/)、[pandas](https://archlinux.org/packages/extra/x86_64/python-pandas/)等，也均可在源中找到。同时,[tensorflow](https://archlinux.org/packages/extra/x86_64/tensorflow/)、[pytorch](https://archlinux.org/packages/?sort=&q=python-pytorch&maintainer=&flagged=)以及其相关的 cuda 支持包等深度学习相关的包也均可安装使用。
 
 ## 科学计算
 
@@ -62,4 +62,4 @@ Jetbrains 公司开源的 IDE 可在 archlinux 官方仓库中找到，如[Intel
 
 ## 逆向工程
 
-可安装知名的[ghidra](https://archlinux.org/packages/extra/x86_64/ghidra/)作为 IDA 的替代，更多替代选项可参考[alternativeto](https://alternativeto.net/software/ida/)。除此之外再介绍一个好用的十六进制编辑器[Bless](https://archlinux.org/packages/community/any/bless/)。
+可安装知名的[ghidra](https://archlinux.org/packages/extra/x86_64/ghidra/)作为 IDA 的替代，更多替代选项可参考[alternativeto](https://alternativeto.net/software/ida/)。除此之外再介绍一个好用的十六进制编辑器[Bless](https://archlinux.org/packages/extra/any/bless/)。
