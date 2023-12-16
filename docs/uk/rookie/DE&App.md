@@ -178,7 +178,9 @@ export EDITOR='vim'
 
 This eliminates the need to specify `EDITOR=vim` every time you execute a command.
 
-## 11. Enable Bluetooth (if any)
+## 11. Enable Bluetooth
+
+For Bluetooth and wireless network cards, Intel products are recommended under Linux. Broadcom and Realtek products perform very poorly in Linux in terms of compatibility and stability, which will cause a lot of unnecessary troubles, such as poor or no support for drivers and BLE.
 
 If you have a bluetooth device, you need to install the bluetooth package and enable the bluetooth service. Then you can add devices and connections in the system settings.
 
