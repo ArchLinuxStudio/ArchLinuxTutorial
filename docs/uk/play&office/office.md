@@ -80,12 +80,12 @@ sudo pacman -S weechat
 
 ### Screen sharing
 
-In addition to the above software, you can try to use [scrcpy](https://archlinux.org/packages/community/x86_64/scrcpy/) for screen projection of other mobile communication software on the computer.
+In addition to the above software, you can try to use [scrcpy](https://archlinux.org/packages/extra/x86_64/scrcpy/) for screen projection of other mobile communication software on the computer.
 You can also use [KDE Connect](https://archlinux.org/packages/extra/x86_64/kdeconnect/) to get Android notifications on your computer.
 
 ## Office kit
 
-The main two options are [LibreOffice](https://wiki.archlinux.org/index.php/LibreOffice) and [onlyoffice](<https://aur.archlinux.org/packages/onlyoffice-bin/)>) <sup>AUR</sup>. We recommend that you use the open source LibreOffice and onlyoffice, rather than the proprietary software WPS, the first two of which are currently very easy to install.
+The main two options are [LibreOffice](https://wiki.archlinux.org/index.php/LibreOffice) and [onlyoffice](https://aur.archlinux.org/packages/onlyoffice-bin/) <sup>AUR</sup>. We recommend that you use the open source LibreOffice and onlyoffice, rather than the proprietary software WPS, the first two of which are currently very easy to install.
 
 ```bash
 sudo pacman -S libreoffice-still #stable
@@ -127,7 +127,7 @@ yay -S trilium-server-bin
 
 ## eBooks
 
-The pdf can be opened directly with a browser, or other dedicated reading software, such as [okular](https://archlinux.org/packages/extra/x86_64/okular/) or [calibre](https://archlinux.org/packages/community/x86_64/calibre/). okular can be very laggy when opening large epubs, and the pictures are blurry, [Foliate](https://archlinux.org/packages/community/x86_64/foliate/) is a better choice for reading epubs.
+The pdf can be opened directly with a browser, or other dedicated reading software, such as [okular](https://archlinux.org/packages/extra/x86_64/okular/) or [calibre](https://archlinux.org/packages/extra/x86_64/calibre/). okular can be very laggy when opening large epubs, and the pictures are blurry, [Foliate](https://archlinux.org/packages/extra/x86_64/foliate/) is a better choice for reading epubs.
 
 ## RSS reader
 
@@ -178,7 +178,7 @@ The command for the shortcut key is `flameshot gui`, which can be added to the K
 [gwenview](https://archlinux.org/packages/extra/x86_64/gwenview/) has been installed in the section on desktop environment and necessary applications, which can basically meet the needs of daily picture viewing. If you need another quick viewing software, you can try the following software.
 
 - [feh](https://www.archlinux.org/packages/extra/x86_64/feh/)
-- [nomacs](https://www.archlinux.org/packages/community/x86_64/nomacs/)
+- [nomacs](https://aur.archlinux.org/packages/nomacs)
 
 ## Common System Components
 
@@ -191,7 +191,7 @@ There are many implementations of various gadgets needed in daily office work, a
 
 ## Remote Assistance
 
-To connect to a Windows remote machine, you can use the open source [freerdp](https://archlinux.org/packages/community/x86_64/freerdp/) protocol, in conjunction with the open source implementation [Xrdp](https://wiki.archlinux.org/title/Xrdp), or [Rdesktop](https://wiki.archlinux.org/title/Rdesktop).
+To connect to a Windows remote machine, you can use the open source [freerdp](https://archlinux.org/packages/extra/x86_64/freerdp/) protocol, in conjunction with the open source implementation [Xrdp](https://wiki.archlinux.org/title/Xrdp), or [Rdesktop](https://wiki.archlinux.org/title/Rdesktop).
 
 To connect to a Linux server, ssh is sufficient for most scenarios.
 
