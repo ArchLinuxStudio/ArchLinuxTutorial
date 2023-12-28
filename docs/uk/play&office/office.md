@@ -80,12 +80,12 @@ sudo pacman -S weechat
 
 ### Screen sharing
 
-In addition to the above software, you can try to use [scrcpy](https://archlinux.org/packages/community/x86_64/scrcpy/) for screen projection of other mobile communication software on the computer.
+In addition to the above software, you can try to use [scrcpy](https://archlinux.org/packages/extra/x86_64/scrcpy/) for screen projection of other mobile communication software on the computer.
 You can also use [KDE Connect](https://archlinux.org/packages/extra/x86_64/kdeconnect/) to get Android notifications on your computer.
 
 ## Office kit
 
-The main two options are [LibreOffice](https://wiki.archlinux.org/index.php/LibreOffice) and [onlyoffice](<https://aur.archlinux.org/packages/onlyoffice-bin/)>) <sup>AUR</sup>. We recommend that you use the open source LibreOffice and onlyoffice, rather than the proprietary software WPS, the first two of which are currently very easy to install.
+The main two options are [LibreOffice](https://wiki.archlinux.org/index.php/LibreOffice) and [onlyoffice](https://aur.archlinux.org/packages/onlyoffice-bin/) <sup>AUR</sup>. We recommend that you use the open source LibreOffice and onlyoffice, rather than the proprietary software WPS, the first two of which are currently very easy to install.
 
 ```bash
 sudo pacman -S libreoffice-still #stable
