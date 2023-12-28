@@ -194,7 +194,7 @@ sudo pacman -S flameshot
 在桌面环境与必要应用一节中已经安装了 [gwenview](https://archlinux.org/packages/extra/x86_64/gwenview/)，它基本可以满足日常看图的需求。如果另需快速看图软件，可以尝试以下软件。
 
 - [feh](https://www.archlinux.org/packages/extra/x86_64/feh/)
-- [nomacs](https://www.archlinux.org/packages/community/x86_64/nomacs/)
+- [nomacs](https://aur.archlinux.org/packages/nomacs)
 
 ## 常用系统组件
 
@@ -207,7 +207,7 @@ sudo pacman -S flameshot
 
 ## 远程协助
 
-如需连接 windows 远程机器，你可以使用开源的[freerdp](https://archlinux.org/packages/community/x86_64/freerdp/)协议，配合开源实现[Xrdp](https://wiki.archlinux.org/title/Xrdp)，或者[Rdesktop](https://wiki.archlinux.org/title/Rdesktop)即可。
+如需连接 windows 远程机器，你可以使用开源的[freerdp](https://archlinux.org/packages/extra/x86_64/freerdp/)协议，配合开源实现[Xrdp](https://wiki.archlinux.org/title/Xrdp)，或者[Rdesktop](https://wiki.archlinux.org/title/Rdesktop)即可。
 
 如需链接 Linux 服务器，大多数场景使用 ssh 即可。
 
