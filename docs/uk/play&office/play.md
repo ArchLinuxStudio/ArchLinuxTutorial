@@ -85,6 +85,7 @@ Ref:
 - https://bbs.archlinux.org/viewtopic.php?id=249982
 - https://archlinux.org/packages/?q=gst
 - https://aur.archlinux.org/packages/lib32-gst-plugins-ugly
+- https://docs.usebottles.com/faq/video-gstreamer-problems
 
 ## Performance improvement
 

@@ -120,21 +120,21 @@
       window.$docsify = {
         loadNavbar: true,
         search: {
-          placeholder: '搜索...',
+          placeholder: "搜索...",
         },
-        name: 'Arch Linux 安装使用教程 - ArchTutorial - Arch Linux Studio',
+        name: "Arch Linux 安装使用教程 - ArchTutorial - Arch Linux Studio",
         loadSidebar: true,
         auto2top: true,
-        logo: './arch.svg',
+        logo: "./arch.svg",
         topMargin: 90,
         notFoundPage: true,
         subMaxLevel: 4,
-        themeColor: 'rgb(23,147,209)',
-        repo: 'https://github.com/ArchLinuxStudio/ArchLinuxTutorial',
-        formatUpdated: '{YYYY}-{MM}-{DD}',
+        themeColor: "rgb(23,147,209)",
+        repo: "https://github.com/ArchLinuxStudio/ArchLinuxTutorial",
+        formatUpdated: "{YYYY}-{MM}-{DD}",
         pagination: {
-          previousText: 'Previous',
-          nextText: 'Next',
+          previousText: "Previous",
+          nextText: "Next",
           crossChapter: true,
           crossChapterText: true,
         },
@@ -142,15 +142,15 @@
           function (hook, vm) {
             hook.beforeEach(function (html) {
               let edit_url =
-                'https://github.com/ArchLinuxStudio/ArchLinuxTutorial/blob/master/docs/' +
+                "https://github.com/ArchLinuxStudio/ArchLinuxTutorial/blob/master/docs/" +
                 vm.route.file;
-              let editHtml = '[📝 Edit This Page](' + edit_url + ')\n';
+              let editHtml = "[📝 Edit This Page](" + edit_url + ")\n";
 
-              let client_id = '296c581fc4b2a837a1e3';
-              let client_secret = '7e7f0ad1809fa4a1915430ade04835f6849ab56a';
+              let client_id = "296c581fc4b2a837a1e3";
+              let client_secret = "7e7f0ad1809fa4a1915430ade04835f6849ab56a";
 
               let date_url =
-                'https://api.github.com/repos/ArchLinuxStudio/ArchLinuxTutorial/commits?per_page=1&path=docs/' +
+                "https://api.github.com/repos/ArchLinuxStudio/ArchLinuxTutorial/commits?per_page=1&path=docs/" +
                 vm.config.basePath +
                 encodeURIComponent(vm.route.file);
 
@@ -163,18 +163,18 @@
                   return response.json();
                 })
                 .then((commits) => {
-                  let modified = commits[0]['commit']['committer'][
-                    'date'
+                  let modified = commits[0]["commit"]["committer"][
+                    "date"
                   ].slice(0, 10);
-                  document.getElementById('last-modified').textContent =
-                    'Update date: ' + modified;
+                  document.getElementById("last-modified").textContent =
+                    "Update date: " + modified;
                 });
 
               return (
                 '<span id="last-modified">Update date: Fetching...</span>' +
-                '\n' +
+                "\n" +
                 html +
-                '\n----\n' +
+                "\n----\n" +
                 editHtml
               );
             });
@@ -182,11 +182,11 @@
             hook.mounted(function () {
               // 添加网站运行时间
               let dom = Docsify.dom;
-              let runTimeNode = dom.create('div');
-              runTimeNode.className = 'runtime';
+              let runTimeNode = dom.create("div");
+              runTimeNode.className = "runtime";
               runTimeNode.style =
-                'color: #8590a6;max-width: 80%;margin: 0 auto 20px;padding: 0 15px 0 15px;';
-              dom.appendTo(dom.find('.content'), runTimeNode);
+                "color: #8590a6;max-width: 80%;margin: 0 auto 20px;padding: 0 15px 0 15px;";
+              dom.appendTo(dom.find(".content"), runTimeNode);
             });
           },
         ],
@@ -209,37 +209,37 @@
     <script>
       addBackToTop({
         diameter: 56,
-        backgroundColor: 'rgb(23,147,209)',
-        textColor: '#fff',
+        backgroundColor: "rgb(23,147,209)",
+        textColor: "#fff",
       });
     </script>
 
     <script>
-      let client_id = '296c581fc4b2a837a1e3';
-      let client_secret = '7e7f0ad1809fa4a1915430ade04835f6849ab56a';
+      let client_id = "296c581fc4b2a837a1e3";
+      let client_secret = "7e7f0ad1809fa4a1915430ade04835f6849ab56a";
 
       let props = {
         clientID: client_id,
         clientSecret: client_secret,
-        repo: 'ArchLinuxTutorialComments',
-        owner: 'ArchLinuxStudio',
-        admin: ['ryosukeeeeee'],
+        repo: "ArchLinuxTutorialComments",
+        owner: "ArchLinuxStudio",
+        admin: ["ryosukeeeeee"],
         // facebook-like distraction free mode
         distractionFreeMode: false,
-        id: decodeURI(location.hash.split('?')[0]),
-        language: 'en',
+        id: decodeURI(location.hash.split("?")[0]),
+        language: "en",
       };
       let gitalk = new Gitalk(props);
       // 哈希路由切换时 重新加载Gitalk
-      window.addEventListener('hashchange', onHashChange);
+      window.addEventListener("hashchange", onHashChange);
       function onHashChange() {
-        props.id = decodeURI(location.hash.split('?')[0]); //如果不切分，在docsify里面的各个段落都会生成新的评论issue
+        props.id = decodeURI(location.hash.split("?")[0]); //如果不切分，在docsify里面的各个段落都会生成新的评论issue
       }
     </script>
     <script>
       function change_search_plugin_order() {
-        let search_plugin = document.getElementsByClassName('search')[0];
-        let app_name = document.getElementsByClassName('app-name')[0];
+        let search_plugin = document.getElementsByClassName("search")[0];
+        let app_name = document.getElementsByClassName("app-name")[0];
         search_plugin.parentNode.insertBefore(app_name, search_plugin);
       }
       setTimeout(change_search_plugin_order, 1);
@@ -261,7 +261,7 @@
         let todayMinute = today.getMinutes();
         let todaySecond = today.getSeconds();
 
-        let t1 = Date.UTC(2020, 09, 1, 0, 0, 0);
+        let t1 = Date.UTC(2020, 9, 1, 0, 0, 0);
         let t2 = Date.UTC(
           todayYear,
           todayMonth,
@@ -280,16 +280,16 @@
           (diff - diffDays * days - diffHours * hours - diffMinutes * minutes) /
             seconds
         );
-        Docsify.dom.find('.runtime').innerHTML =
-          'Arch Linux Studio has been running for ' +
+        Docsify.dom.find(".runtime").innerHTML =
+          "Arch Linux Studio has been running for " +
           diffDays +
-          ' days ' +
+          " days " +
           diffHours +
-          ' hours ' +
+          " hours " +
           diffMinutes +
-          ' minutes ' +
+          " minutes " +
           diffSeconds +
-          ' seconds';
+          " seconds";
       }
       // 先让网页加载完，否则 Docsify.dom.find('.runtime') == null
       setTimeout(siteTime, 500);
