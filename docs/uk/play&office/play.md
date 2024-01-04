@@ -74,7 +74,11 @@ Running games with Wine may have issues with missing [GStreamer](https://wiki.ar
 Missing decoder: Advanced Streaming Format (ASF) (video/x-ms-asf)
 ```
 
-After installing each plug-in according to the Wiki, the error may still exist, this is because most Galgame requires 32-bit compatible library, and the gst32-bit compatible library in the official Multilib repository of arch linux is not complete, such as the missing `lib32-gst- plugins-ugly` this package, this package currently only exists in the AUR, but has fallen behind. ASF is present in this package, so the absence causes this error.
+After installing each plug-in according to the Wiki, the error may still exist. This is because most Galgames require 32-bit compatibility libraries, and the current gst32-bit compatibility library in the official Arch Linux Multilib warehouse is not complete. For example, `lib32-gst- The plugins-ugly` package currently only exists in the AUR, but its PKGBUILD currently has many problems that prevent it from being successfully installed directly. ASF exists in this package, so its absence causes this error. The solution is as follows:
+
+First, one of the dependencies of lib32-gst-plugins-ugly, lib32-lv2, has a build spell check problem. After cloning the `lib32-lv2` warehouse locally, modify its PKGBUILD file, delete the check part, and then use `makepkg -si` to install it manually.
+
+Next, `lib32-gst-plugins-ugly` depends on another package `lib32-shaderc`. There is also an error in the construction of this package, and it is not necessary, so directly in `lib32-gst-plugins-ugly` Delete it from the PKGBUILD and then install it manually.
 
 Ref:
 

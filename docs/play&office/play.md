@@ -74,7 +74,11 @@ Lutris 基于 Wine，提供了大量游戏在 Linux 下的解决方案。其为�
 Missing decoder: Advanced Streaming Format (ASF) (video/x-ms-asf)
 ```
 
-在按照 Wiki 安装好各个插件后，错误可能依然存在，这是因为大多 Galgame 需要 32 位兼容库，而目前 arch linux 官方 Multilib 仓库中的 gst32 位兼容库并不完整，如目前缺失`lib32-gst-plugins-ugly`这个包，此包目前只存在于 AUR 中，但是已经落后。ASF 存在于此包中，因此缺失导致此报错。
+在按照 Wiki 安装好各个插件后，错误可能依然存在，这是因为大多 Galgame 需要 32 位兼容库，而目前 arch linux 官方 Multilib 仓库中的 gst32 位兼容库并不完整，如目前缺失`lib32-gst-plugins-ugly`这个包，此包目前只存在于 AUR 中，但是目前其 PKGBUILD 存在诸多问题导致无法直接安装成功。ASF 存在于此包中，因此缺失导致此报错。解决方式如下：
+
+首先，`lib32-gst-plugins-ugly`的依赖之一`lib32-lv2`存在构建拼写检查问题。将`lib32-lv2`仓库 clone 到本地后，修改其 PKGBUILD 文件，将其中的 check 部分删除，然后使用`makepkg -si`手动安装即可。
+
+接下来，`lib32-gst-plugins-ugly`依赖了另一个包`lib32-shaderc`，这个包的构建同样存在错误，并且它并不是必要的，所以直接在`lib32-gst-plugins-ugly`的 PKGBUILD 中将其删除，然后手动安装即可。
 
 Ref:
 
