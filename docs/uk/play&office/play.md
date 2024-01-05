@@ -89,6 +89,10 @@ Ref:
 
 ## Performance improvement
 
+Turning off KDE's Compositor can significantly improve game performance and solve problems such as unstable screen tearing.
+
+ref: https://linux-gaming.kwindu.eu/index.php?title=Improving_performance
+
 When playing some games, such as "Total War: THREE KINGDOMS", if you encounter performance problems, you can try to adjust the cpu frequency regulator[[1]](https://support.feralinteractive.com/docs/zh_cn/threekingdomstw/1.0.15/linux/faqs/?access=zooevrj6xb&utm_source=game_linux&utm_medium=link&utm_campaign=game_linux_threekingdomstw_support#i_linux_cpu_governor).
 
 [GameMode](https://github.com/FeralInteractive/gamemode) is a comprehensive game performance adjustment software, which provides a variety of game performance optimization functions. If necessary, you can check the github page for details.

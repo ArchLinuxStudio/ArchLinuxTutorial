@@ -89,6 +89,10 @@ Ref:
 
 ## 性能提升
 
+关闭 KDE 的合成器(Compositor)能显著提升游戏性能，解决画面撕裂不稳定等问题。
+
+ref: https://linux-gaming.kwindu.eu/index.php?title=Improving_performance
+
 在进行某些游戏时，如《Total War: THREE KINGDOMS》，如遇到性能问题，可尝试调节 cpu 频率调节器[[1]](https://support.feralinteractive.com/docs/zh_cn/threekingdomstw/1.0.15/linux/faqs/?access=zooevrj6xb&utm_source=game_linux&utm_medium=link&utm_campaign=game_linux_threekingdomstw_support#i_linux_cpu_governor)。
 
 [GameMode](https://github.com/FeralInteractive/gamemode) 是一款综合性的游戏性能调整软件，其提供了多种游戏性能优化功能。如有需要可以查询 github 页面查看详情。
