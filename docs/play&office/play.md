@@ -121,27 +121,40 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 ## 游戏手柄
 
-一般情况下手柄通过数据线连接计算机即可直接使用。支持无线的手柄（DUALSHOCK® 3、DUALSHOCK® 4、Xbox 360、Xbox One、8BitDo 等）也可以通过蓝牙直接连接，无需额外操作。
+在 Arch Linux 中兼容性最好的手柄是 Xbox 手柄，其余手柄不建议使用。如果你使用无线适配器连接，安装使用[xone](https://github.com/medusalix/xone)。如果你使用蓝牙连接，安装使用[xpadneo](https://aur.archlinux.org/packages/xpadneo-dkms)。对于蓝牙连接，需要进行额外配置。
 
-虽然无线手柄一般情况下可以通过蓝牙直连，但是通常这样会有较大的延迟。使用 [Xbox 无线适配器](https://www.microsoftstore.com.cn/accessories/microsoft-xbox-wireless-adapter) 以获得近乎有线的低延迟体验。
+1. 首先需要启用 UserspaceHID，如果不这样做，手柄将无法正常连接，并开始循环连接和断开连接，并且 Xbox 按钮将不断闪烁。编辑配置文件：
 
-为了在 Arch Linux 下使用 Xbox 无线适配器，需要安装第三方开源驱动 [xow](https://github.com/medusalix/xow)。
+```bash
+vim /etc/bluetooth/input.conf
+```
 
-1. 安装 [xow](https://aur.archlinux.org/packages/xow-git/)<sup>AUR</sup>：
+去掉`UserspaceHID`的注释并将值改为 true。
 
-   ```sh
-   yay -S xow
-   ```
+2. 接下来在主蓝牙配置文件中进行一些设置，以便 xpadneo 能够按预期工作，还需要解决输入延迟问题。编辑主文件：
 
-2. 启动 `xcow` 服务：
+```bash
+vim /etc/bluetooth/main.conf
+```
 
-   ```sh
-   sudo systemctl enable xow.service
-   ```
+将以下参数改为以下值
 
-3. 重启计算机，插入 Xbox 无线适配器并和 Xbox 手柄配对即可
+```bash
+[General]
+Privacy = device
+JustWorksRepairing = always
+Class = 0x000100
+FastConnectable = true
 
-实际体验和 Windows 下并无差异。对延迟敏感的音游（如 [喵斯快跑](https://store.steampowered.com/app/774171/Muse_Dash/)）在游戏设置中微调偏移值即可。
+[LE]
+MinConnectionInterval=7
+MaxConnectionInterval=9
+ConnectionLatency=0
+```
+
+最后重启电脑，进行连接即可。
+
+ref: https://www.reddit.com/r/linux_gaming/comments/smxqm2/how_to_use_xpadneo_with_an_xbox_series_controller/
 
 ## Gamescope
 

@@ -121,27 +121,41 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 ## Gamepad
 
-Under normal circumstances, the handle can be used directly by connecting to the computer through a data cable. Handles that support wireless (DUALSHOCK® 3, DUALSHOCK® 4, Xbox 360, Xbox One, 8BitDo, etc.) can also be connected directly via Bluetooth without additional operation.
+The most compatible controller in Arch Linux is the Xbox controller, and the use of other controllers is not recommended. If you are using a wireless adapter to connect, install it using [xone](https://github.com/medusalix/xone). If you use a Bluetooth connection, install it using [xpadneo](https://aur.archlinux.org/packages/xpadneo-dkms). For Bluetooth connectivity, additional configuration is required.
 
-Although wireless controllers can generally be directly connected via Bluetooth, there is usually a large delay in doing so. Use the [Xbox Wireless Adapter](https://www.microsoftstore.com.cn/accessories/microsoft-xbox-wireless-adapter) for a near-wired low-latency experience.
+1. First you need to enable UserspaceHID, if you don't do this, the controller will not connect properly and will start to cycle connecting and disconnecting, and the Xbox button will keep flashing. Edit configuration file:
 
-In order to use the Xbox Wireless Adapter under Arch Linux, a third-party open source driver [xow](https://github.com/medusalix/xow) needs to be installed.
+```bash
+vim /etc/bluetooth/input.conf
 
-1. Install [xow](https://aur.archlinux.org/packages/xow-git/)<sup>AUR</sup>:
+```
 
-   ```sh
-   yay -S xow
-   ```
+Uncomment `UserspaceHID` and change the value to true.
 
-2. Start the `xcow` service:
+2. Next make some settings in the main bluetooth profile so xpadneo can work as expected, also need to resolve the input lag issue. Edit the main file:
 
-   ```sh
-   sudo systemctl enable xow.service
-   ```
+```bash
+vim /etc/bluetooth/main.conf
+```
 
-3. Restart the computer, insert the Xbox wireless adapter and pair with the Xbox controller
+Change the following parameters to the following values
 
-The actual experience is no different from that under Windows. Latency-sensitive audio games (such as [Meow Run](https://store.steampowered.com/app/774171/Muse_Dash/)) can fine-tune the offset value in the game settings.
+```bash
+[General]
+Privacy=device
+JustWorksRepairing = always
+Class = 0x000100
+FastConnectable = true
+
+[LE]
+MinConnectionInterval=7
+MaxConnectionInterval=9
+ConnectionLatency=0
+```
+
+Finally, restart the computer and connect.
+
+ref: https://www.reddit.com/r/linux_gaming/comments/smxqm2/how_to_use_xpadneo_with_an_xbox_series_controller/
 
 ## Gamescope
 
