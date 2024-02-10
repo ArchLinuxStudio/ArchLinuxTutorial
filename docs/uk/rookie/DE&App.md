@@ -189,13 +189,6 @@ sudo pacman -S bluez bluez-utils
 sudo systemctl enable --now bluetooth
 ```
 
-If you want to connect a bluetooth audio device, you need to install `pulseaudio-bluetooth` and restart `pulseaudio`.
-
-```bash
-sudo pacman -S pulseaudio-bluetooth
-pulseaudio -k
-```
-
 To set the bluetooth device to automatically start at boot, edit the `/etc/bluetooth/main.conf` file and set `AutoEnable` to true.
 
 Broadcom network cards are poorly supported under Linux, both wireless and bluetooth modules. For the wireless function, generally install the broadcom-wl package directly.

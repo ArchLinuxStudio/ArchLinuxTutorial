@@ -240,13 +240,6 @@ sudo pacman -S bluez bluez-utils
 sudo systemctl enable --now bluetooth
 ```
 
-如果要连接蓝牙音频设备，需要安装 `pulseaudio-bluetooth` 并重启 `pulseaudio`。
-
-```bash
-sudo pacman -S pulseaudio-bluetooth
-pulseaudio -k
-```
-
 设置开机自动启用蓝牙设备，编辑`/etc/bluetooth/main.conf`文件，将`AutoEnable`设置为 true 即可。
 
 博通（Broadcom）网卡在 Linux 下的支持度很差，无论是无线还是蓝牙模块。对于无线功能来说，一般直接安装 broadcom-wl 包即可。

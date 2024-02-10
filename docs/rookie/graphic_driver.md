@@ -64,14 +64,6 @@ yay -S nvidia-390xx-dkms nvidia-settings lib32-nvidia-390xx-utils linux-headers
 sudo pacman -S mesa lib32-mesa xf86-video-nouveau
 ```
 
-#### 注意事项
-
-- 如果安装驱动后内核冲突，把 kms 从 `/etc/mkinitcpio.conf` 里的 HOOKS 数组中移除，并重新生成 initramfs。 这能防止 initramfs 包含 nouveau 模块，以确保内核在早启动阶段不会加载它。
-
-```
-mkinitcpio -p linux
-```
-
 ---
 
 **在同时拥有核芯显卡和英伟达独立显卡的笔记本上安装驱动是大多数人关注的事情，这里着重讲述。**
