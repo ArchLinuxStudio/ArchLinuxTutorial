@@ -238,7 +238,7 @@ sudo pacman -S bluez bluez-utils
 sudo systemctl enable --now bluetooth
 ```
 
-设置开机自动启用蓝牙设备，编辑`/etc/bluetooth/main.conf`文件，将`AutoEnable`设置为 true 即可。
+设置开机自动启用蓝牙设备，编辑`/etc/bluetooth/main.conf`文件，将`AutoEnable`设置为 true 即可。如果一些设备依然无法实现开机自动连接，尝试继续将`Experimental`以及`KernelExperimental`两项的值设置为 true。
 
 博通（Broadcom）网卡在 Linux 下的支持度很差，无论是无线还是蓝牙模块。对于无线功能来说，一般直接安装 broadcom-wl 包即可。
 
