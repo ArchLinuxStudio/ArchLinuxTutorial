@@ -227,14 +227,14 @@ export EDITOR='vim'
 
 这样就不用在每次执行命令时都指定一遍 `EDITOR=vim` 了。
 
-## 13.启用蓝牙(若有)
+## 13.启用蓝牙相关功能
 
 对于蓝牙及无线网卡，在 Linux 下推荐使用英特尔产品。博通以及瑞昱产品在兼容性，稳定性方面在 Linux 中表现很差，会带来很多不必要的麻烦，如在驱动，BLE 方面的支持很差或者没有。
 
-如果你有蓝牙设备，需要安装蓝牙软件包并启用蓝牙服务。随后在系统设置中进行添加设备与连接即可。
+如果你有蓝牙设备，需要安装蓝牙软件包并启用蓝牙服务。随后在系统设置中进行添加设备与连接即可。注意，文件传输功能现在需要额外安装包`bluez-obex`，其功能与 2024 年已从 `bluez` 包中分离出来。
 
 ```bash
-sudo pacman -S bluez bluez-utils
+sudo pacman -S bluez bluez-utils bluez-obex
 sudo systemctl enable --now bluetooth
 ```
 
