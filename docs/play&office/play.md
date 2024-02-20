@@ -80,6 +80,8 @@ Missing decoder: Advanced Streaming Format (ASF) (video/x-ms-asf)
 
 接下来，`lib32-gst-plugins-ugly`依赖了另一个包`lib32-shaderc`，这个包的构建同样存在错误，并且它并不是必要的，所以直接在`lib32-gst-plugins-ugly`的 PKGBUILD 中将其删除，然后手动安装即可。
 
+最后，通过 ldd 命令查询，目前`lib32-gst-plugins-ugly`中的 libgstlibav.so 所使用的 libvpx.so.8 无法找到，原因是因为目前`lib32-libvpx`包中的 libvpx.so 已经更新为 libvpx.so.9。由此在/usr/lib32 文件夹中创建指向 libvpx.so.9.0.0 的名为 libvpx.so.8 的符号链接即可解决。后续由于版本不匹配的类似问题均可依次类比解决。
+
 Ref:
 
 - https://bbs.archlinux.org/viewtopic.php?id=249982
