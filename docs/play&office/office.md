@@ -216,3 +216,7 @@ sudo pacman -S flameshot
 ```bash
 sudo systemctl enable --now teamviewerd
 ```
+
+## 病毒防护
+
+人们往往认为 Linux 由于其完美的设计和开源特性不易感染病毒，从而不用安装防毒软件，这其实是不正确的。随着 Linux 的普及，更多针对 Linux 的病毒在陆续涌现。除此之外，随着 Wine 以及 Proton 越来越多的应用，Windows 系统上病毒的威胁性也在 Linux 系统中持续提高。在 Arch Linux 中，可以使用[ClamAV](https://wiki.archlinux.org/title/ClamAV)对系统进行扫描，进而删除存在的病毒文件。根据 wiki 说明，添加更多病毒特征库后会可以进行更加完善的病毒扫描，注意，如果你的文件系统非常巨大，扫描过程可能长达数十小时。如果你有意使用付费闭源软件，根据我们的调查，目前针对个人 Linux PC 端，仍在更新且较为完善的软件是[Dr.Web](https://products.drweb.cn/home/linux/),俗称大蜘蛛，你可自行决定是否使用。
