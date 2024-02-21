@@ -10,7 +10,7 @@ Arch Linux 安装使用教程，每日实时更新！包含从 Arch Linux 安装
   - 本书为处于互联网被封锁和审查地区的读者提供完善且可靠的科学上网流程，如果有人认为其是"不和谐的"，我们表示非常遗憾。
   - 本书样式保持尽可能的简洁，以提升读者的网站加载速度。同时，我们认为花哨的样式不应存在于一本较为严肃的书籍中。
   - 无废话，只给出一套**我们认为**较为合适的路线，对于安装流程尽可能保持简洁，不会面面俱到。本书是 tutorial,不是 reference，定位与官方 wiki 不同。更多的内容请读者自行查看 Arch Wiki 或查阅相关资料。知其然知其所以然当然是正确的，但填入过多的内容不是一本 tutorial 所应该做的事。
-  - 本书使用 docsify 以及 gitalk 开发，并且网站源码全部开源，可放心留言讨论。本网站亦不使用任何有害跟踪器脚本，所提供的文件下载不进行任何审计与监视，你可通过 [Brave 浏览器](https://brave.com/zh/)以及阅读源码进行检测验证。
+  - 本书使用 docsify 以及 gitalk 开发，并且网站源码全部开源，可放心留言讨论。本网站亦不使用任何有害跟踪器脚本，所提供的文件下载不进行任何审计与监视，你可通过 [Brave 浏览器](https://brave.com/zh/)的跟踪器检测以及阅读源码进行检测验证。
   - Linux 二次元交流群: [Telegram Group:ArchLinuxStudio🇨🇦🏳️‍⚧️🏳️‍🌈](https://t.me/FSF_Ministry_of_Truth) ||| [Matrix Group:ArchLinuxStudio🇨🇦🏳️‍⚧️🏳️‍🌈](https://matrix.to/#/#ArchLinuxStudio:matrix.org)。
 
 > **本书采用 CC BY-NC-ND 4.0 协议[[1]](https://github.com/ArchLinuxStudio/ArchLinuxTutorial/issues/68)。欢迎提交Pull requests，但是禁止商业用途与演绎。任何"下游文档"都是未经授权且违反协议的。**
