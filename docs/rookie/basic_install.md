@@ -276,6 +276,8 @@ grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
 vim /etc/default/grub
 ```
 
+使用 N 卡的用户需要注意，KDE6 默认使用 wayland session 为默认，如果你需要使用 wayland,则需开启 DRM。同样编辑/etc/default/grub 文件，在`GRUB_CMDLINE_LINUX_DEFAULT`一行中最后的加入参数：nvidia_drm.modeset=1
+
 最后生成 GRUB 所需的配置文件
 
 ```bash

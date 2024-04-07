@@ -278,6 +278,8 @@ vim /etc/default/grub
 
 Finally generate the configuration files required by GRUB
 
+Users using Nvidia cards need to note that KDE6 uses wayland session by default. If you need to use wayland, you need to enable DRM. Also edit the /etc/default/grub file and add the last parameter in the `GRUB_CMDLINE_LINUX_DEFAULT` line: nvidia_drm.modeset=1
+
 ```bash
 grub-mkconfig -o /boot/grub/grub.cfg
 ```

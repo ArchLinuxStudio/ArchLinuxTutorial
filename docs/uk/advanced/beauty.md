@@ -42,7 +42,6 @@ The welcome screen after the login interface can be beautified. _System Settings
 Right-click an empty space on the taskbar, select Edit Panel, and add widgets.
 
 - Netspeed widget network speed component, this is very practical
-- simple system monitor system information
 - todolist task component
 
 Then you can pin the software you often use to the taskbar.
