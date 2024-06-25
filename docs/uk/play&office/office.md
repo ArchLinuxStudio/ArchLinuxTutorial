@@ -104,6 +104,7 @@ sudo pacman -S kchmviewer
 For daily office, a printer is very necessary. In addition, we recommend readers to maintain a paper password, including that you can print out the private key in your cryptocurrency wallet and save it, which is a very good solution. For the brand of printer, we recommend using HP printers. Its support for Linux is very comprehensive, you can go to its [website](https://hplipopensource.com/) to check the supported devices and other details. On Arch Linux, install the packages hplip and cups and use them after starting the service.
 
 ```bash
+sudo pacman -S system-config-printer
 sudo pacman -S hplip
 sudo pacman -S cups
 sudo systemctl enable --now cups.service
