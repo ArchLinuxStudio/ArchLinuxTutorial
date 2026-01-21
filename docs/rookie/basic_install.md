@@ -141,7 +141,7 @@ Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
 > 如果你在安装 arch linux 时的网络已经处于代理模式下，可以选择一个与你代理位置较近的，非威权国家的镜像源来使用。如果你在安装 arch linux 时的网络环境没有代理，那么在安装结束后，需要尽快更换一个非威权国家的镜像源来使用。如下列举一些较为优质的国际源。
 
 ```bash
-Server = https://mirror.archlinux.tw/ArchLinux/$repo/os/$arch   #东亚地区:中华民国
+Server = https://mirror.archlinux.tw/ArchLinux/$repo/os/$arch   #东亚地区:中国台湾省
 Server = https://mirror.0xem.ma/arch/$repo/os/$arch    #北美洲地区:加拿大
 Server = https://mirror.aktkn.sg/archlinux/$repo/os/$arch    #东南亚地区:新加坡
 Server = https://archlinux.uk.mirror.allworldit.com/archlinux/$repo/os/$arch    #欧洲地区:英国
