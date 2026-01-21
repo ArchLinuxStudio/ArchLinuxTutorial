@@ -3,7 +3,7 @@
 </br>
 <h1>Arch Linux 安装使用教程</h1>
 
-每日实时更新！本书包含从 Arch Linux 安装，科学上网，魔法充能，到显卡驱动，日常软件的使用等，另附媒体制作，编程，加密货币在 ArchLinux 上的使用等你可能需要的全部内容。让 Arch Linux 成为你的常用系统吧！提供在线网页文档。
+不定时随缘更新！本书包含从 Arch Linux 安装，科学上网，魔法充能，到显卡驱动，日常软件的使用等，另附媒体制作，编程，加密货币在 ArchLinux 上的使用等你可能需要的全部内容。让 Arch Linux 成为你的常用系统吧！提供在线网页文档。
 
 本项目隶属于 ArchLinuxStudio，一个加拿大社区组织。ArchLinuxStudio 不是官方 ArchLinux 本身。
 
@@ -11,10 +11,10 @@
 
 [![Badge](https://img.shields.io/badge/link-ArchLinuxTutorial-%230088cc.svg)](https://archlinuxstudio.github.io/ArchLinuxTutorial)
 [![Join matrix community and chat about arch linux](https://img.shields.io/matrix/ArchLinuxStudio:matrix.org?label=matrix&logo=matrix&logoColor=ffffff&color=7389D8&labelColor=6A7EC2&cacheSeconds=60&server_fqdn=matrix.org)](https://matrix.to/#/#ArchLinuxStudio:matrix.org)
-[![Join telegram community and chat about arch linux](https://img.shields.io/discord/628978428019736619?label=telegram&logo=telegram&logoColor=ffffff&color=7389D8&labelColor=6A7EC2&cacheSeconds=60)](https://t.me/FSF_Ministry_of_Truth)
-[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FArchLinuxStudio%2FArchLinuxTutorial&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
+[![Telegram Badge](https://telegram-badge.vercel.app/api/telegram-badge?channelId=@FSF_Ministry_of_Truth)](https://t.me/FSF_Ministry_of_Truth)
+[![Hits](https://hits.sh/github.com/ArchLinuxStudio/ArchLinuxTutorial.svg?label=Today%20Views&logo=github&color=blue&labelColor=grey)](https://hits.sh/github.com/ArchLinuxStudio/ArchLinuxTutorial)
 [![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
-[![Lines](https://img.shields.io/tokei/lines/github/ArchLinuxStudio/ArchLinuxTutorial)](https://img.shields.io/tokei/lines/github/ArchLinuxStudio/ArchLinuxTutorial)
+[![Lines of Code](https://img.shields.io/endpoint?url=https%3A%2F%2Ftokei.kojix2.net%2Fbadge%2Fgithub%2FArchLinuxStudio%2FArchLinuxTutorial%2Flines)](https://tokei.kojix2.net/github/ArchLinuxStudio/ArchLinuxTutorial)
 [![lastcommit](https://img.shields.io/github/last-commit/ArchLinuxStudio/ArchLinuxTutorial)](https://img.shields.io/github/last-commit/ArchLinuxStudio/ArchLinuxTutorial)
 [![Donate with Monero](https://img.shields.io/static/v1?label=DonatewithXMR&message=43KJJZztPtBC7k8ZjJpuw7bThW1mUH6N947TeNxvsSHD7DywRN365WZ7qpSxVopSd7cg4PFjMuUewjfvATUtTKGQLMboU36&color=ea6521)]()
 
@@ -28,7 +28,7 @@
   - 我们始终将读者的隐私和安全放在首位，使用自由软件可以为你提供相当幅度上的保障。提出所谓的"实用"或"避免意识形态争议"而对自由软件运动进行质疑的人或组织是愚蠢且邪恶的。
   - 本书为处于互联网被封锁和审查地区的读者提供完善且可靠的科学上网流程，如果有人认为其是"不和谐的"，我们表示非常遗憾。
   - 本书样式保持尽可能的简洁，以提升读者的网站加载速度。同时，我们认为花哨的样式不应存在于一本较为严肃的书籍中。
-  - 无废话，只给出一套**我们认为**较为合适的路线，对于安装流程尽可能保持简洁，不会面面俱到。本书是 tutorial,不是 reference，定位与官方 wiki 不同。更多的内容请读者自行查看 Arch Wiki 或查阅相关资料。知其然知其所以然当然是正确的，但填入过多的内容不是一本 tutorial 所应该做的事。
+  - 无废话，只给出一套**我们认为**较为合适的路线，对于安装流程尽可能保持简洁，不会面面俱到。本书是 tutorial,不是 reference，定位与官方 wiki 不同。更多的内容请读者自行查看 Arch Wiki 或善用 ChatGPT 和网络查阅相关资料。知其然知其所以然当然是正确的，但填入过多的内容不是一本 tutorial 所应该做的事。
   - 本书使用 docsify 以及 gitalk 开发，并且网站源码全部开源，可放心留言讨论。本网站亦不使用任何有害跟踪器脚本，所提供的文件下载不进行任何审计与监视，你可通过 [Brave 浏览器](https://brave.com/zh/)的跟踪器检测以及阅读源码进行检测验证。
   - Linux & ACG [Telegram Group:ArchLinuxStudio🇨🇦🏳️‍⚧️🏳️‍🌈](https://t.me/FSF_Ministry_of_Truth) ||| [Matrix Group:ArchLinuxStudio🇨🇦🏳️‍⚧️🏳️‍🌈](https://matrix.to/#/#ArchLinuxStudio:matrix.org)。
 
