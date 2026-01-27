@@ -247,4 +247,7 @@ Ref: [[1]](https://www.dedoimedo.com/computers/windows-10-usb-media-linux.html)
 
 卸载所有内容（需要一段时间）
 
-ref: https://web.archive.org/web/20250705040832/https://nixaid.com/bootable-usb-windows-linux/
+ref:
+
+- https://web.archive.org/web/20250705040832/https://nixaid.com/bootable-usb-windows-linux/
+- https://www.reddit.com/r/linux4noobs/comments/1d17crd/guide_to_creating_windows_11_usb_on_linux/?tl=zh-hans
