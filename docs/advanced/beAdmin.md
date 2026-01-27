@@ -192,7 +192,7 @@ sudo dmidecode
 
 ## 制作 windows10 启动盘
 
-你可能在 linux 下，有时需要制作 win10 的启动盘。
+你可能在 linux 下，有时需要制作 win10 的启动盘。在以往，在 linux 下制作一个 win10 启动盘还是很简单的，但是随着近几年微软的更新，其 iso 安装镜像中存在一个名为`install.wim`的文件，其大小已经超出了 4GB，超出了 fat32 所要求的单个文件最大 4GB 的限制。这使得必须用额外的步骤才能制作一个启动盘。这里依旧使用 fat32 格式是因为其兼容性是最好的，ntfs 的 uefi 启动盘很多情况下不被识别。
 
 首先和基础安装中的部分步骤类似，首先用 parted 命令创建 U 盘的分区 label 为 gpt。接下来用 cfdisk 命令创建新分区，在 Type 中选择 Microsoft basic data。接下来使用 mkfs.vfat 命令格式化所创建的分区。这样 U 盘就准备好了。
 
