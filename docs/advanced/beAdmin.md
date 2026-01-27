@@ -246,3 +246,5 @@ Ref: [[1]](https://www.dedoimedo.com/computers/windows-10-usb-media-linux.html)
 将所有内容复制到 INSTALL 分区
 
 卸载所有内容（需要一段时间）
+
+ref: https://web.archive.org/web/20250705040832/https://nixaid.com/bootable-usb-windows-linux/
