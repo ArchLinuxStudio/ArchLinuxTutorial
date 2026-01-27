@@ -192,7 +192,7 @@ sudo dmidecode
 
 ## 制作 windows10 启动盘
 
-你可能在 linux 下，有时需要制作 win10 的启动盘。在以往，在 linux 下制作一个 win10 启动盘还是很简单的，但是随着近几年微软的更新，其 iso 安装镜像中存在一个名为`install.wim`的文件，其大小已经超出了 4GB，超出了 fat32 所要求的单个文件最大 4GB 的限制。这使得必须用额外的步骤才能制作一个启动盘。这里依旧使用 fat32 格式是因为其兼容性是最好的，ntfs 的 uefi 启动盘很多情况下不被识别。
+你可能在 linux 下，有时需要制作 win10 的启动盘。
 
 首先和基础安装中的部分步骤类似，首先用 parted 命令创建 U 盘的分区 label 为 gpt。接下来用 cfdisk 命令创建新分区，在 Type 中选择 Microsoft basic data。接下来使用 mkfs.vfat 命令格式化所创建的分区。这样 U 盘就准备好了。
 
@@ -224,3 +224,25 @@ sudo wimlib-imagex optimize install.wim --solid
 最后把全部文件复制到 U 盘中即可。
 
 Ref: [[1]](https://www.dedoimedo.com/computers/windows-10-usb-media-linux.html)
+
+## 制作 windows11 启动盘
+
+从微软下载 Windows 11 ISO 并用 sha256sum验证校验和
+
+准备 U 盘：
+
+制作分区表 (GPT)
+
+制作一个 1024MiB 的 FAT32 分区，标签为 BOOT
+
+制作一个 NTFS 分区，标签为 INSTALL
+
+挂载 Windows 11 ISO 并复制文件：
+
+将除 sources 文件夹外的所有内容复制到 BOOT 分区。
+
+将 boot.wim 从 sources 文件夹复制到 BOOT 分区，但保留目录结构（所以它应该仍然在名为 sources的文件夹中）
+
+将所有内容复制到 INSTALL 分区
+
+卸载所有内容（需要一段时间）

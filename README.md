@@ -12,7 +12,7 @@
 [![Badge](https://img.shields.io/badge/link-ArchLinuxTutorial-%230088cc.svg)](https://archlinuxstudio.github.io/ArchLinuxTutorial)
 [![Join matrix community and chat about arch linux](https://img.shields.io/matrix/ArchLinuxStudio:matrix.org?label=matrix&logo=matrix&logoColor=ffffff&color=7389D8&labelColor=6A7EC2&cacheSeconds=60&server_fqdn=matrix.org)](https://matrix.to/#/#ArchLinuxStudio:matrix.org)
 [![Telegram Badge](https://telegram-badge.vercel.app/api/telegram-badge?channelId=@FSF_Ministry_of_Truth)](https://t.me/FSF_Ministry_of_Truth)
-[![Hits](https://hits.sh/github.com/ArchLinuxStudio/ArchLinuxTutorial.svg?label=Today%20Views&logo=github&color=blue&labelColor=grey)](https://hits.sh/github.com/ArchLinuxStudio/ArchLinuxTutorial)
+[![Hits](https://hits.sh/github.com/ArchLinuxStudio/ArchLinuxTutorial.svg?label=Views%20Since%202026&logo=github&color=blue&labelColor=grey)](https://hits.sh/github.com/ArchLinuxStudio/ArchLinuxTutorial)
 [![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 [![Lines of Code](https://img.shields.io/endpoint?url=https%3A%2F%2Ftokei.kojix2.net%2Fbadge%2Fgithub%2FArchLinuxStudio%2FArchLinuxTutorial%2Flines)](https://tokei.kojix2.net/github/ArchLinuxStudio/ArchLinuxTutorial)
 [![lastcommit](https://img.shields.io/github/last-commit/ArchLinuxStudio/ArchLinuxTutorial)](https://img.shields.io/github/last-commit/ArchLinuxStudio/ArchLinuxTutorial)
