@@ -1,8 +1,12 @@
 # 显卡驱动
 
-现在是 2022 年，显卡驱动的安装在 Arch Linux 上已经变得非常容易。本文区分核芯显卡和独立显卡两大类描述显卡驱动的安装。**注意，确保你已经按照本教程之前的章节安装配置好科学上网、安装好必要的包后再向下进行，不要多个教程混着看，你可能漏掉了本教程前置步骤中的某些操作，从而造成问题。**
+当前，显卡驱动的安装在 Arch Linux 上已经变得非常容易。本文区分核芯显卡和独立显卡两大类描述显卡驱动的安装。**注意，确保你已经按照本教程之前的章节安装好必要的系统包后再配置你的显卡驱动，不要多个教程混着看，你可能漏掉了本教程前置步骤中的某些操作，这可能会造成问题。**
 
-> 所有 AMD 显卡建议使用开源驱动。英伟达显卡建议使用闭源驱动，因为逆向工程的开源驱动性能过于低下，本文也只描述英伟达闭源驱动安装。如果你支持自由软件运动，请尽可能使用具有官方支持开源驱动的英特尔和 AMD 显卡。
+>下面的配置部分需要使用 AUR，从 Github 上下载文件。在国内的网络环境下，可能极慢或无法下载。如果你需要执行其中使用 AUR 的命令（含有“yay”字样），请确保你按照前面所述的步骤配置好科学上网。
+
+> 所有英特尔和 AMD 显卡，由于他们本身释出了开源的驱动，它们的发挥同专有的的驱动并没有明显的区别。不论在任何情况下建议使用自由开源的驱动。
+> 对于英伟达显卡，由于其官方并没有释出自由的驱动程序，现有的英伟达显卡自由驱动程序 Nouveau 是根据逆向工程研发的。它不支持英伟达显卡的 CUDA 特性，3D 性能发挥也许不如英伟达的专有驱动。但是自由的显卡驱动没有难以预测的后门和暗箱操作，可以保障你的计算机隐私和安全。**如果你是政治活动者且你要使用该计算机进行敏感的政治活动，强烈建议你使用自由的驱动程序。**同时，英伟达的显卡驱动兼容性也不尽人意，使用 Wayland 时问题尤其突出，但是 Nouveau 广泛运用于各种 GNU/Linux 发行版，作为内核模块被 Linux 内核原生支持，且自身积极稳定更新以适配 GNU/Linux 上系统运行库的快速迭代，因此它可能具有更好的稳定性（要知道，Arch Linux上很大一部分“滚挂”由英伟达专有驱动引起。）你可以按需选择使用专有驱动或自由的英伟达显卡驱动 Nouveau。
+> 如果你非常需要在确保软件自由可控的同时保障性能发挥，请尽可能使用具有官方支持自由驱动的英特尔和 AMD 显卡。
 
 ## 核芯显卡
 
@@ -38,7 +42,29 @@ sudo pacman -S mesa lib32-mesa xf86-video-amdgpu vulkan-radeon lib32-vulkan-rade
 
 ### 英伟达独立显卡
 
-本节建议查看官方文档，此处只列出主要的显卡系列。[官方文档](https://wiki.archlinux.org/index.php/NVIDIA)
+#### 安装自由的驱动
+
+您可以安装自由的英伟达显卡驱动软件 Nouveau。**如果你的设备用于执行非常敏感的活动，我们强烈建议你安装自由的驱动。**
+
+通过如下命令安装：
+
+```bash
+sudo pacman -S mesa xf86-video-nouveau lib32-mesa libva-mesa-driver mesa-vdpau
+```
+
+其中`xf86-video-nouveau`是 2D 驱动；`nouveau-fw`是英伟达固件，用来进行视频硬解码；`libva-mesa-driver`是 vaapi 视频硬解码库；`mesa-vdpau`是vdpau 视频硬解码库。
+
+然后,执行以下指令重新生成 initramfs 以确保驱动在下次启动后加载。
+
+```bash
+sudo mkinitcpio -P
+```
+
+#### 安装专有的驱动
+
+如果你没有敏感的需求并且关注显卡性能的释放，你可以使用非自由的驱动。它们可能面临不稳定的问题，它们也可能导致你的计算机系统不再安全和隐秘。
+
+本教程的内容并不全面，建议你查阅官方文档。在这里，我们只列出主要的显卡系列。[查阅官方文档](https://wiki.archlinux.org/index.php/NVIDIA)
 
 较新型号的独立显卡直接安装如下几个包即可。
 
@@ -58,21 +84,54 @@ yay -S nvidia-470xx-dkms nvidia-settings lib32-nvidia-470xx-utils linux-headers
 yay -S nvidia-390xx-dkms nvidia-settings lib32-nvidia-390xx-utils linux-headers
 ```
 
-再老的显卡直接使用[开源驱动](https://wiki.archlinux.org/index.php/Nouveau)即可。
+>如果你是全新安装，你可以直接执行上述命令，并通过执行命令`sudo mkinitcpio -P`重新生成 initramfs。但是请注意，如果你事前已经安装了 Nouveau，请禁用它，然后再安装专有的驱动。
+>我们前面只讲述了安装 GRUB 启动引导器。以它为例，按如下方式处理内核参数来禁用 Nouveau。
+
+**在GRUB配置禁用 Nouveau**
+
+打开 GRUB 配置文件。在`GRUB_CMDLINE_LINUX_DEFAULT`后面的引号内，添加`module_blacklist=nouveau`参数。
+```bash
+sudo vim /etc/default/grub # vim 可换为 nano，也可整体去掉 sudo 换成 kate（如果已安装），它们是更友好的。
+```
+
+**禁用SDDM**
+
+**请注意，Nouveau这一显卡驱动程序已被禁用（包括既有的基础内核模块）**，这意味如果你没有核显或集成显卡，**你的电脑上将没有任何显示驱动**，它将导致未知的显示问题。为规避风险，请**禁用登陆管理器SDDM、窗口管理器等的自动启动。**
+```bash
+sudo systemctl disable sddm
+```
+
+**更新引导**
 
 ```bash
-sudo pacman -S mesa lib32-mesa xf86-video-nouveau
+sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
+当你重启后，你将进入命令行界面。和你刚刚安装系统时候如出一辙。
+
+**安装英伟达专有驱动**
+
+在命令行界面下，按照“基础安装”中的方式连接互联网，执行上述安装英伟达专有驱动的命令。
+然后,执行以下指令重新生成 initramfs 以确保驱动在下次启动后加载。
+```bash
+sudo mkinitcpio -P
+```
+
+**重启SDDM并重启操作系统**
+
+```bash
+sudo systemctl ensable sddm &&sudo systemctl reboot
+```
+恭喜你成功安装了英伟达专有驱动！
 
 ---
 
 **在同时拥有核芯显卡和英伟达独立显卡的笔记本上安装驱动是大多数人关注的事情，这里着重讲述。**
 
-> 再次提醒请按照本书前置章节配置好系统后再进行，不要多个教程混看，**尤其是一些过时的教程**。尤其需要注意的是确保 base-devel 包的安装以及配置好科学上网软件，以及使用 X11 模式。
+> 再次提醒请按照本书前置章节配置好系统后再进行，不要多个教程混看，**尤其是一些过时的教程**。尤其需要注意的是确保 base-devel 包的安装以及使用 X11 模式。
 
 [英伟达双显卡模式官方文档](https://wiki.archlinux.org/index.php/NVIDIA_Optimus) /// [optimus-manager 官方文档](https://github.com/Askannz/optimus-manager/wiki)
 
-若为同时拥有核芯显卡与英伟达独显的笔记本电脑，同样需要按照上述步骤先安装各个软件包。除此之外还需要安装 optimus-manager。可以在核芯显卡和独立显卡间轻松切换。optimus-manager 提供三种模式，分别为仅用独显，仅用核显，和 hybrid 动态切换模式。
+若为同时拥有核芯显卡与 Nvidia 独立的笔记本电脑，同样需要按照上述步骤先安装各个软件包。除此之外还需要安装 optimus-manager。可以在核芯显卡和独立显卡间轻松切换。optimus-manager 提供三种模式，分别为仅用独显，仅用核显，和 hybrid 动态切换模式。
 
 ```bash
 yay -S optimus-manager optimus-manager-qt
