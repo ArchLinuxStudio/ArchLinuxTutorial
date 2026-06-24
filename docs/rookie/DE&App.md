@@ -60,14 +60,10 @@ nobody       ALL=(root) NOPASSWD: /usr/sbin/rndc reload
 pacman -S plasma-meta konsole dolphin  #安装plasma-meta元软件包以及终端和文件管理器
 ```
 
-## 4.配置 greeter sddm
+## 4.安装 Plasma Login Manager
 
-<!-- pacman -S sddm //包含在plasma-meta了 不用单独装
-但是plasma-desktop 没有 还是要装
--->
-
-```
-systemctl enable sddm
+```bash
+pacman -S plasma-login-manager
 ```
 
 ## 5.设置交换文件 swap(可选)
@@ -122,14 +118,14 @@ sudo systemctl enable --now NetworkManager                                  #确
 ```bash
 sudo pacman -S sof-firmware alsa-firmware alsa-ucm-conf                     #一些可能需要的声音固件
 sudo pacman -S ntfs-3g                                                      #识别NTFS格式的硬盘
-sudo pacman -S adobe-source-han-serif-cn-fonts wqy-zenhei                   #安装几个开源中文字体 一般装上文泉驿就能解决大多wine应用中文方块的问题
+sudo pacman -S ttf-sarasa-gothic                                            #安装几个开源中文字体 一般装上文泉驿就能解决大多wine应用中文方块的问题
 sudo pacman -S noto-fonts-cjk noto-fonts-emoji noto-fonts-extra             #安装谷歌开源字体及表情
 sudo pacman -S firefox chromium                                             #安装常用的火狐、谷歌浏览器
 sudo pacman -S ark                                                          #与dolphin同用右键解压
 sudo pacman -S p7zip unrar unarchiver lzop lrzip                            #安装ark可选依赖
-sudo pacman -S packagekit-qt5 packagekit appstream-qt appstream             #确保Discover(软件中心）可用 需重启
+sudo pacman -S packagekit-qt6 packagekit appstream-qt appstream             #确保Discover(软件中心）可用 需重启
 sudo pacman -S gwenview                                                     #图片查看器
-sudo pacman -S git wget kate bind                                                #一些工具
+sudo pacman -S git wget kate bind curl                                                #一些工具
 ```
 
 > 不要安装过多字体：在字体超过 255 种时，某些 QT 程序可能无法正确显示某些表情和符号，详见链接[2](https://wiki.archlinux.org/title/fonts#Emoji_and_symbols)。
@@ -186,6 +182,7 @@ sudo pacman -S fcitx5-anthy #日文输入引擎
 yay -S fcitx5-pinyin-moegirl #萌娘百科词库 由于中国大陆政府对github封锁，你可能在此卡住。如卡住，可根据后文设置好代理后再安装
 sudo pacman -S fcitx5-pinyin-zhwiki #中文维基百科词库
 sudo pacman -S fcitx5-material-color #主题
+sudo pacman -S fcitx5-rime #rime实现
 ```
 
 设置环境变量：编辑文件 `EDITOR=vim sudoedit /etc/environment` 加入以下内容。konsole 以及 dolphin 都需要这些环境变量，倒是 chrome 和 firefox 都不需要就可以输入中文
@@ -211,9 +208,11 @@ SDL_IM_MODULE=fcitx
   中州韵输入法引擎（英语：Rime Input Method Engine，又称 Rime 输入法）是由佛振编写的开源中文输入法，目前项目网站、源代码均托管在 GitHub。基于同一个核心架构，该输入法分为三个官方发行版：Linux 发行版中州韵（ibus-rime）、Windows 发行版小狼毫（Weasel）、macOS 发行版鼠须管（Squirrel）。另有数个第三方发行版：Linux 发行版 fcitx-rime、Windows 发行版 PRIME、macOS 发行版 XIME、Android 发行版同文输入法（Trime）、iOS 发行版 iRime。
 
 这里介绍一下 fcitx5-rime 的安装方式
-'''bash
+
+```bash
 sudo pacman -S fcitx5-rime #不是 fcitx-rime，因为 fcitx 与 fcitx5 有版本冲突
-'''
+```
+
 然后打开 打开 _系统设置_ > _区域设置_ > _输入法_ >,点击添加输入法，找到 RIME，即可添加 RIME 输入法。
 RIME 输入法默认是繁体字按 <key>Ctrl</key>+<key>~</key>,即可打开选单，使用键盘上的<key>←</key><key>→</key>，选择朙月拼音·简化字,回车。
 

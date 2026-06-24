@@ -14,6 +14,7 @@
 
 ```bash
 sudo pacman -S mesa lib32-mesa vulkan-intel lib32-vulkan-intel
+sudo pacman -S libva-intel-driver intel-media-driver #前者适用于旧的cpu
 ```
 
 > `xf86-video-intel`arch wiki 里写的很多发行版不建议安装它，而应使用 xorg 的 modesetting 驱动(也就是什么都不用装的意思)。经过我们测试目前确实是默认 modesetting 驱动较为稳定。
@@ -44,6 +45,7 @@ sudo pacman -S mesa lib32-mesa xf86-video-amdgpu vulkan-radeon lib32-vulkan-rade
 
 ```bash
 sudo pacman -S nvidia nvidia-settings lib32-nvidia-utils #必须安装
+sudo pacman -S libva-nvidia-driver #nvidia vaapi实现
 ```
 
 如果是 GeForce 630 以上到 GeForce 920 以下的老卡，安装 [nvidia-470xx-dkms](https://aur.archlinux.org/packages/nvidia-470xx-dkms/)<sup>AUR</sup>及其 32 位支持包。使用 dkms 驱动同时需要 headers。
@@ -62,6 +64,38 @@ yay -S nvidia-390xx-dkms nvidia-settings lib32-nvidia-390xx-utils linux-headers
 
 ```bash
 sudo pacman -S mesa lib32-mesa xf86-video-nouveau
+```
+
+---
+
+#### 现代版拥有 intel 与 nvidia 双显卡笔记本的解决办法
+
+**默认intel核显为主要使用显卡的情况**
+
+需要在 `/etc/environment` 写入以下环境变量以使程序默认使用核显:
+
+```bash
+__GLX_VENDOR_LIBRARY_NAME=mesa
+LIBVA_DRIVER_NAME=iHD #旧cpu为i965
+VK_DRIVER_FILES=/usr/share/vulkan/icd.d/intel_icd.x86_64.json
+__EGL_VENDOR_LIBRARY_FILENAMES=/usr/share/glvnd/egl_vendor.d/50_mesa.json
+#添加EGL变量可以防止某些进程一直占用独显，导致无法进入RTD-3待机状态
+ANV_DEBUG=video-decode,video-encode
+#启用intel核显的vulkan video decode
+```
+
+如果需要使用独显安装 `nvidia-prime` 包，使用 `prime-run <command>` 命令运行。
+
+少数情况下需要对其进行修改，文件位于 `/usr/bin/prime-run `:
+
+```bash
+VK_DRIVER_FILES=/usr/share/vulkan/icd.d/nvidia_icd.json __EGL_VENDOR_LIBRARY_FILENAMES=/usr/share/glvnd/egl_vendor.d/10_nvidia.json LIBVA_DRIVER_NAME=nvidia __NV_PRIME_RENDER_OFFLOAD=1 __VK_LAYER_NV_optimus=NVIDIA_only __GLX_VENDOR_LIBRARY_NAME=nvidia "$@"
+```
+
+针对笔记本`nvidia` 独显需要额外 boost 功耗的情况:
+
+```bash
+sudo systemctl enable --now nvidia-powerd.service 
 ```
 
 ---
