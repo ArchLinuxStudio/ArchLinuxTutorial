@@ -13,8 +13,8 @@
     "node": ">=20"
   },
   "scripts": {
-    "dev": "node scripts/sync-vendor.mjs && node node_modules/serve/build/main.js docs -l 3000 --no-clipboard",
-    "start": "node scripts/sync-vendor.mjs && node node_modules/serve/build/main.js docs -l 3000 --no-clipboard",
+    "dev": "node scripts/sync-vendor.mjs && node scripts/generate-last-updated.mjs && node node_modules/serve/build/main.js docs -l 3000 --no-clipboard",
+    "start": "node scripts/sync-vendor.mjs && node scripts/generate-last-updated.mjs && node node_modules/serve/build/main.js docs -l 3000 --no-clipboard",
     "sync:vendor": "node scripts/sync-vendor.mjs",
     "check": "node scripts/validate-site.mjs",
     "build": "node scripts/sync-vendor.mjs && node scripts/build.mjs"

@@ -3,7 +3,7 @@
 
   const REPOSITORY = "https://github.com/ArchLinuxStudio/ArchLinuxTutorial";
   const THEME_STORAGE_KEY = "archtutorial-theme";
-  const updateCache = new Map();
+  let lastUpdatedManifestPromise;
   let activeMarkdown = "";
   let activeFile = "README.md";
 
@@ -78,30 +78,21 @@
   }
 
   async function fetchLastUpdated(file) {
-    const normalized = normalizeFile(file);
-    if (updateCache.has(normalized)) return updateCache.get(normalized);
-
-    const storageKey = `archtutorial-updated:${normalized}`;
-    const cached = sessionStorage.getItem(storageKey);
-    if (cached) {
-      updateCache.set(normalized, cached);
-      return cached;
+    if (!lastUpdatedManifestPromise) {
+      lastUpdatedManifestPromise = fetch(new URL("last-updated.json", document.baseURI), {
+        cache: "no-cache",
+        headers: { Accept: "application/json" },
+      }).then((response) => {
+        if (!response.ok) throw new Error(`Last-updated metadata responded with ${response.status}`);
+        return response.json();
+      });
     }
 
-    const endpoint =
-      "https://api.github.com/repos/ArchLinuxStudio/ArchLinuxTutorial/commits" +
-      `?per_page=1&path=docs/${encodedFilePath(normalized)}`;
-    const response = await fetch(endpoint, {
-      headers: { Accept: "application/vnd.github+json" },
-    });
-    if (!response.ok) throw new Error(`GitHub responded with ${response.status}`);
-
-    const commits = await response.json();
-    const date = commits?.[0]?.commit?.committer?.date?.slice(0, 10);
-    if (!date) throw new Error("No commit date returned");
-
-    updateCache.set(normalized, date);
-    sessionStorage.setItem(storageKey, date);
+    const dates = await lastUpdatedManifestPromise;
+    const date = dates[normalizeFile(file)];
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(date || "")) {
+      throw new Error(`No last-updated date for ${file}`);
+    }
     return date;
   }
 
@@ -313,6 +304,9 @@
     homepage: "README.md",
     loadNavbar: false,
     loadSidebar: true,
+    alias: {
+      "/.*/_sidebar.md": "/_sidebar.md",
+    },
     auto2top: true,
     routerMode: "hash",
     notFoundPage: true,
@@ -321,7 +315,6 @@
     topMargin: 88,
     externalLinkTarget: "_blank",
     externalLinkRel: "noopener noreferrer",
-    formatUpdated: "{YYYY}-{MM}-{DD}",
     search: {
       paths: "auto",
       depth: 4,

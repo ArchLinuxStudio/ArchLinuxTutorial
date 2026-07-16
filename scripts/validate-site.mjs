@@ -21,12 +21,20 @@ const files = walk(docsDirectory);
 const markdownFiles = files.filter((file) => extname(file).toLowerCase() === ".md");
 const index = readFileSync(resolve(docsDirectory, "index.html"), "utf8");
 const siteScript = readFileSync(resolve(docsDirectory, "scripts/site.js"), "utf8");
+const workflow = readFileSync(resolve(root, ".github/workflows/pages.yml"), "utf8");
+const packageSource = readFileSync(resolve(root, "package.json"), "utf8");
 
 assert(markdownFiles.length === 23, `Expected 23 Chinese Markdown files, found ${markdownFiles.length}.`);
 assert(index.includes('lang="zh-CN"'), "The document language must remain zh-CN.");
 assert(index.includes("./vendor/docsify.min.js"), "The local Docsify bundle is not linked.");
 assert(index.includes("./scripts/site.js"), "The site controller is not linked.");
 assert(!/darkreader|unpkg\.com|fonts\.googleapis\.com/i.test(index), "Unexpected remote UI dependency found in index.html.");
+assert(siteScript.includes('new URL("last-updated.json", document.baseURI)'), "Local last-updated metadata is not loaded.");
+assert(!siteScript.includes("api.github.com/repos/"), "Last-updated dates must not depend on the GitHub API at runtime.");
+assert(siteScript.includes('"/.*/_sidebar.md": "/_sidebar.md"'), "Nested routes must reuse the root sidebar.");
+assert(!siteScript.includes("formatUpdated:"), "Unused Docsify update formatting must stay removed.");
+assert(workflow.includes("fetch-depth: 0"), "The deployment checkout must include full Git history.");
+assert(packageSource.includes("scripts/generate-last-updated.mjs"), "The local preview does not generate last-updated metadata.");
 
 const commentInvariants = [
   'clientID: "296c581fc4b2a837a1e3"',
