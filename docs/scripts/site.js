@@ -312,7 +312,6 @@
     notFoundPage: true,
     subMaxLevel: 3,
     maxLevel: 4,
-    topMargin: 88,
     externalLinkTarget: "_blank",
     externalLinkRel: "noopener noreferrer",
     search: {
