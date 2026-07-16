@@ -15,7 +15,7 @@
     admin: ["ryosukeeeeee"],
     distractionFreeMode: false,
     id: decodeURI(window.location.hash.split("?")[0]),
-    language: "en",
+    language: "zh-CN",
   });
 
   function normalizeFile(file) {
@@ -24,10 +24,6 @@
 
   function currentRoute() {
     return decodeURI(window.location.hash.split("?")[0].replace(/^#/, "") || "/");
-  }
-
-  function isEnglishRoute() {
-    return currentRoute() === "/uk" || currentRoute().startsWith("/uk/");
   }
 
   function readingMinutes(markdown) {
@@ -49,51 +45,31 @@
   }
 
   function editUrl(file) {
-    const sourceFile = normalizeFile(file).replace(/^uk\//, "");
-    return `${REPOSITORY}/edit/master/docs/${encodedFilePath(sourceFile)}`;
+    return `${REPOSITORY}/edit/master/docs/${encodedFilePath(file)}`;
   }
 
   function articleChrome() {
-    const english = isEnglishRoute();
     const minutes = readingMinutes(activeMarkdown);
-    const readingLabel = english ? `${minutes} min read` : `约 ${minutes} 分钟阅读`;
-    const updateLabel = english ? "Updated: fetching…" : "更新于：正在获取…";
-    const editLabel = english ? "Edit this page on GitHub" : "在 GitHub 上编辑此页";
-    const discussionTitle = english ? "Community discussion" : "社区讨论";
-    const discussionText = english
-      ? "Sign in with GitHub to join the discussion for this page."
-      : "使用 GitHub 登录，参与当前页面的讨论。";
-    const chineseRoute = currentRoute().replace(/^\/uk(?=\/|$)/, "") || "/";
-    const translationNotice = english
-      ? `
-        <aside class="translation-notice" aria-label="Translation notice">
-          <strong>Machine-translated from Chinese.</strong>
-          <span>The Chinese page is authoritative.</span>
-          <a href="#${chineseRoute}">Read the source</a>
-        </aside>
-      `
-      : "";
 
     return {
       before: `
-        <div class="article-meta" aria-label="Page information">
-          <span class="article-meta__item article-reading-time">${readingLabel}</span>
+        <div class="article-meta" aria-label="页面信息">
+          <span class="article-meta__item article-reading-time">约 ${minutes} 分钟阅读</span>
           <span class="article-meta__separator" aria-hidden="true"></span>
-          <span class="article-meta__item article-updated" data-file="${normalizeFile(activeFile)}">${updateLabel}</span>
+          <span class="article-meta__item article-updated" data-file="${normalizeFile(activeFile)}">更新于：正在获取…</span>
         </div>
-        ${translationNotice}
       `,
       after: `
         <footer class="article-footer">
-          <p>${english ? "Found a problem or an outdated step?" : "发现错误或过时步骤？"}</p>
-          <a href="${editUrl(activeFile)}" target="_blank" rel="noopener noreferrer">${editLabel} <span aria-hidden="true">↗</span></a>
+          <p>发现错误或过时步骤？</p>
+          <a href="${editUrl(activeFile)}" target="_blank" rel="noopener noreferrer">在 GitHub 上编辑此页 <span aria-hidden="true">↗</span></a>
         </footer>
-        <nav class="page-navigation" aria-label="${english ? "Previous and next pages" : "上一篇与下一篇"}"></nav>
+        <nav class="page-navigation" aria-label="上一篇与下一篇"></nav>
         <section class="comments-section" aria-labelledby="comments-title">
           <div class="comments-heading">
-            <p class="eyebrow">${english ? "GitHub Comments" : "GitHub Comments"}</p>
-            <h2 id="comments-title">${discussionTitle}</h2>
-            <p>${discussionText}</p>
+            <p class="eyebrow">GitHub 评论</p>
+            <h2 id="comments-title">社区讨论</h2>
+            <p>使用 GitHub 登录，参与当前页面的讨论。</p>
           </div>
           <div id="gitalk-container" aria-live="polite"></div>
         </section>
@@ -134,13 +110,12 @@
     if (!element) return;
 
     const file = element.dataset.file;
-    const english = isEnglishRoute();
     fetchLastUpdated(file)
       .then((date) => {
-        element.textContent = english ? `Updated: ${date}` : `更新于：${date}`;
+        element.textContent = `更新于：${date}`;
       })
       .catch(() => {
-        element.textContent = english ? "Update date unavailable" : "更新日期暂不可用";
+        element.textContent = "更新日期暂不可用";
       });
   }
 
@@ -151,18 +126,18 @@
       const button = document.createElement("button");
       button.className = "copy-code";
       button.type = "button";
-      button.textContent = isEnglishRoute() ? "Copy" : "复制";
-      button.setAttribute("aria-label", isEnglishRoute() ? "Copy code" : "复制代码");
+      button.textContent = "复制";
+      button.setAttribute("aria-label", "复制代码");
       button.addEventListener("click", async () => {
         const code = block.querySelector("code")?.textContent || "";
         try {
           await navigator.clipboard.writeText(code);
-          button.textContent = isEnglishRoute() ? "Copied" : "已复制";
+          button.textContent = "已复制";
         } catch {
-          button.textContent = isEnglishRoute() ? "Failed" : "复制失败";
+          button.textContent = "复制失败";
         }
         window.setTimeout(() => {
-          button.textContent = isEnglishRoute() ? "Copy" : "复制";
+          button.textContent = "复制";
         }, 1600);
       });
       block.append(button);
@@ -176,7 +151,7 @@
       wrapper.className = "table-scroll";
       wrapper.tabIndex = 0;
       wrapper.setAttribute("role", "region");
-      wrapper.setAttribute("aria-label", isEnglishRoute() ? "Scrollable table" : "可横向滚动的表格");
+      wrapper.setAttribute("aria-label", "可横向滚动的表格");
       table.before(wrapper);
       wrapper.append(table);
     });
@@ -205,10 +180,9 @@
     });
     if (currentIndex < 0) return;
 
-    const english = isEnglishRoute();
     const items = [
-      { source: links[currentIndex - 1], className: "previous", label: english ? "Previous" : "上一篇", arrow: "←" },
-      { source: links[currentIndex + 1], className: "next", label: english ? "Next" : "下一篇", arrow: "→" },
+      { source: links[currentIndex - 1], className: "previous", label: "上一篇", arrow: "←" },
+      { source: links[currentIndex + 1], className: "next", label: "下一篇", arrow: "→" },
     ];
 
     for (const item of items) {
@@ -230,9 +204,7 @@
     const container = document.getElementById("gitalk-container");
     if (!container) return;
     if (typeof window.Gitalk !== "function") {
-      container.textContent = isEnglishRoute()
-        ? "Comments are temporarily unavailable."
-        : "评论暂时无法加载。";
+      container.textContent = "评论暂时无法加载。";
       return;
     }
 
@@ -240,25 +212,7 @@
       const gitalk = new window.Gitalk(commentOptions());
       gitalk.render("gitalk-container");
     } catch {
-      container.textContent = isEnglishRoute()
-        ? "Comments are temporarily unavailable."
-        : "评论暂时无法加载。";
-    }
-  }
-
-  function updateLanguageControls() {
-    const english = isEnglishRoute();
-    const route = currentRoute();
-    const languageLink = document.querySelector(".language-switch");
-
-    document.documentElement.lang = english ? "en" : "zh-CN";
-    if (languageLink) {
-      const target = english
-        ? route.replace(/^\/uk(?=\/|$)/, "") || "/"
-        : `/uk${route === "/" ? "/" : route}`;
-      languageLink.href = `#${target}`;
-      languageLink.textContent = english ? "中" : "EN";
-      languageLink.setAttribute("aria-label", english ? "切换到中文" : "Switch to English");
+      container.textContent = "评论暂时无法加载。";
     }
   }
 
@@ -342,7 +296,6 @@
     });
 
     hook.doneEach(() => {
-      updateLanguageControls();
       updateLastModified();
       enhanceCodeBlocks();
       enhanceTables();

@@ -1,3 +1,0 @@
-- 🌐 Languages / 譯
-  - [🇬🇧 English](/uk/)
-  - [🇹🇼 中文](/)

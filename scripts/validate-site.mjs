@@ -1,5 +1,5 @@
 import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
-import { dirname, extname, join, relative, resolve, sep } from "node:path";
+import { dirname, extname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
@@ -8,7 +8,7 @@ const failures = [];
 
 function walk(directory) {
   return readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
-    const path = join(directory, entry.name);
+    const path = resolve(directory, entry.name);
     return entry.isDirectory() ? walk(path) : [path];
   });
 }
@@ -21,26 +21,8 @@ const files = walk(docsDirectory);
 const markdownFiles = files.filter((file) => extname(file).toLowerCase() === ".md");
 const index = readFileSync(resolve(docsDirectory, "index.html"), "utf8");
 const siteScript = readFileSync(resolve(docsDirectory, "scripts/site.js"), "utf8");
-const translationConfig = JSON.parse(
-  readFileSync(resolve(root, "i18n.config.json"), "utf8"),
-);
-const englishDirectory = resolve(root, translationConfig.outputDirectory);
-const englishPrefix = `${englishDirectory}${sep}`;
-const excludedTranslationFiles = new Set(translationConfig.excludeFiles ?? []);
-const chineseMarkdown = markdownFiles
-  .filter((file) => !file.startsWith(englishPrefix))
-  .map((file) => relative(docsDirectory, file).replaceAll("\\", "/"))
-  .filter((file) => !excludedTranslationFiles.has(file))
-  .sort();
-const englishMarkdown = markdownFiles
-  .filter((file) => file.startsWith(englishPrefix))
-  .map((file) => relative(englishDirectory, file).replaceAll("\\", "/"))
-  .sort();
 
-assert(
-  JSON.stringify(chineseMarkdown) === JSON.stringify(englishMarkdown),
-  "Chinese and generated English Markdown file sets are out of sync. Run yarn translate.",
-);
+assert(markdownFiles.length === 23, `Expected 23 Chinese Markdown files, found ${markdownFiles.length}.`);
 assert(index.includes('lang="zh-CN"'), "The document language must remain zh-CN.");
 assert(index.includes("./vendor/docsify.min.js"), "The local Docsify bundle is not linked.");
 assert(index.includes("./scripts/site.js"), "The site controller is not linked.");
@@ -59,20 +41,17 @@ for (const invariant of commentInvariants) {
   assert(siteScript.includes(invariant), `Gitalk invariant missing: ${invariant}`);
 }
 
-const sidebarFiles = [resolve(docsDirectory, "_sidebar.md"), resolve(docsDirectory, "uk/_sidebar.md")];
+const sidebar = resolve(docsDirectory, "_sidebar.md");
 const internalLinkPattern = /\]\((\/[^)#?]+)(?:[?#][^)]*)?\)/g;
-
-for (const sidebar of sidebarFiles) {
-  const source = readFileSync(sidebar, "utf8").replace(/<!--[\s\S]*?-->/g, "");
-  for (const match of source.matchAll(internalLinkPattern)) {
-    const route = decodeURIComponent(match[1]).replace(/^\//, "");
-    const candidates = !route
-      ? [resolve(docsDirectory, "README.md")]
-      : extname(route).toLowerCase() === ".md"
-        ? [resolve(docsDirectory, route)]
-        : [resolve(docsDirectory, `${route}.md`), resolve(docsDirectory, route, "README.md")];
-    assert(candidates.some(existsSync), `Broken sidebar route ${match[1]} in ${relative(root, sidebar)}.`);
-  }
+const sidebarSource = readFileSync(sidebar, "utf8").replace(/<!--[\s\S]*?-->/g, "");
+for (const match of sidebarSource.matchAll(internalLinkPattern)) {
+  const route = decodeURIComponent(match[1]).replace(/^\//, "");
+  const candidates = !route
+    ? [resolve(docsDirectory, "README.md")]
+    : extname(route).toLowerCase() === ".md"
+      ? [resolve(docsDirectory, route)]
+      : [resolve(docsDirectory, `${route}.md`), resolve(docsDirectory, route, "README.md")];
+  assert(candidates.some(existsSync), `Broken sidebar route ${match[1]}.`);
 }
 
 for (const required of [
@@ -95,4 +74,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log(`Site validation passed (${markdownFiles.length} content files checked).`);
+console.log(`Site validation passed (${markdownFiles.length} Chinese content files checked).`);

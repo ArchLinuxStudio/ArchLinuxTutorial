@@ -16,9 +16,7 @@
     "dev": "node scripts/sync-vendor.mjs && node node_modules/serve/build/main.js docs -l 3000 --no-clipboard",
     "start": "node scripts/sync-vendor.mjs && node node_modules/serve/build/main.js docs -l 3000 --no-clipboard",
     "sync:vendor": "node scripts/sync-vendor.mjs",
-    "translate": "node scripts/translate-docs.mjs",
-    "test:i18n": "node scripts/test-i18n.mjs",
-    "check": "node scripts/validate-site.mjs && node scripts/test-i18n.mjs",
+    "check": "node scripts/validate-site.mjs",
     "build": "node scripts/sync-vendor.mjs && node scripts/build.mjs"
   },
   "dependencies": {
@@ -27,9 +25,6 @@
     "prismjs": "1.30.0"
   },
   "devDependencies": {
-    "remark-gfm": "4.0.1",
-    "remark-parse": "11.0.0",
-    "serve": "14.2.6",
-    "unified": "11.0.5"
+    "serve": "14.2.6"
   }
 }

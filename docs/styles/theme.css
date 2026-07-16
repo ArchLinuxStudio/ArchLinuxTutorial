@@ -1203,31 +1203,6 @@ main:has(> .sidebar.show) > .content {
   background: var(--line-strong);
 }
 
-.translation-notice {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 5px 9px;
-  margin: 0 0 28px;
-  padding: 11px 14px;
-  border: 1px solid color-mix(in srgb, var(--arch-blue) 30%, var(--line));
-  border-radius: var(--radius-sm);
-  color: var(--ink-secondary);
-  background: var(--arch-blue-soft);
-  font-size: 13px;
-  line-height: 1.55;
-}
-
-.translation-notice strong {
-  color: var(--ink);
-}
-
-.translation-notice a {
-  margin-left: auto;
-  font-weight: 700;
-  white-space: nowrap;
-}
-
 .article-footer {
   display: flex;
   align-items: center;
