@@ -23,6 +23,7 @@ const index = readFileSync(resolve(docsDirectory, "index.html"), "utf8");
 const siteScript = readFileSync(resolve(docsDirectory, "scripts/site.js"), "utf8");
 const workflow = readFileSync(resolve(root, ".github/workflows/pages.yml"), "utf8");
 const packageSource = readFileSync(resolve(root, "package.json"), "utf8");
+const lastUpdated = JSON.parse(readFileSync(resolve(docsDirectory, "last-updated.json"), "utf8"));
 
 assert(markdownFiles.length === 23, `Expected 23 Chinese Markdown files, found ${markdownFiles.length}.`);
 assert(index.includes('lang="zh-CN"'), "The document language must remain zh-CN.");
@@ -36,6 +37,17 @@ assert(!siteScript.includes("formatUpdated:"), "Unused Docsify update formatting
 assert(!siteScript.includes("topMargin:"), "Deprecated topMargin must not offset chapter navigation.");
 assert(workflow.includes("fetch-depth: 0"), "The deployment checkout must include full Git history.");
 assert(packageSource.includes("scripts/generate-last-updated.mjs"), "The local preview does not generate last-updated metadata.");
+
+const expectedMetadataFiles = markdownFiles
+  .map((file) => file.slice(docsDirectory.length + 1).replaceAll("\\", "/"))
+  .sort();
+assert(
+  JSON.stringify(Object.keys(lastUpdated).sort()) === JSON.stringify(expectedMetadataFiles),
+  "Last-updated metadata must cover every Chinese Markdown file.",
+);
+for (const [file, date] of Object.entries(lastUpdated)) {
+  assert(/^\d{4}-\d{2}-\d{2}$/.test(date), `Invalid last-updated date for ${file}.`);
+}
 
 const commentInvariants = [
   'clientID: "296c581fc4b2a837a1e3"',
