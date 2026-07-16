@@ -4,6 +4,7 @@
   const REPOSITORY = "https://github.com/ArchLinuxStudio/ArchLinuxTutorial";
   const THEME_STORAGE_KEY = "archtutorial-theme";
   let lastUpdatedManifestPromise;
+  let scrollUiFrame = 0;
   let activeMarkdown = "";
   let activeFile = "README.md";
 
@@ -236,6 +237,14 @@
     if (backToTop) backToTop.classList.toggle("is-visible", window.scrollY > 560);
   }
 
+  function scheduleScrollUiUpdate() {
+    if (scrollUiFrame) return;
+    scrollUiFrame = window.requestAnimationFrame(() => {
+      scrollUiFrame = 0;
+      updateScrollUi();
+    });
+  }
+
   function bindGlobalInteractions() {
     const mobileSidebarQuery = window.matchMedia("(max-width: 900px)");
 
@@ -243,8 +252,8 @@
     document.querySelector(".back-to-top")?.addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
-    window.addEventListener("scroll", updateScrollUi, { passive: true });
-    window.addEventListener("resize", updateScrollUi, { passive: true });
+    window.addEventListener("scroll", scheduleScrollUiUpdate, { passive: true });
+    window.addEventListener("resize", scheduleScrollUiUpdate, { passive: true });
     document.addEventListener("keydown", (event) => {
       const tag = event.target?.tagName;
       const isTyping = tag === "INPUT" || tag === "TEXTAREA" || event.target?.isContentEditable;

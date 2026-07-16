@@ -8,14 +8,14 @@
   --ink-tertiary: #7b8996;
   --surface: #ffffff;
   --surface-soft: #f5f8fb;
-  --surface-raised: rgba(255, 255, 255, 0.86);
+  --surface-raised: #ffffff;
   --line: #dce5ec;
   --line-strong: #c9d7e1;
   --code-surface: #111b25;
   --code-ink: #e8f0f6;
   --selection: rgba(23, 147, 209, 0.2);
   --shadow-sm: 0 1px 2px rgba(17, 33, 45, 0.05);
-  --shadow-md: 0 12px 32px rgba(27, 48, 63, 0.09);
+  --shadow-md: 0 8px 24px rgba(27, 48, 63, 0.08);
   --header-height: 66px;
   --sidebar-width: 304px;
   --content-width: 880px;
@@ -37,14 +37,14 @@
   --ink-tertiary: #7f909e;
   --surface: #0f171f;
   --surface-soft: #0b1118;
-  --surface-raised: rgba(15, 23, 31, 0.88);
+  --surface-raised: #0f171f;
   --line: #26343f;
   --line-strong: #344550;
   --code-surface: #070c11;
   --code-ink: #e6edf3;
   --selection: rgba(72, 183, 237, 0.25);
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.22);
-  --shadow-md: 0 18px 44px rgba(0, 0, 0, 0.28);
+  --shadow-md: 0 10px 28px rgba(0, 0, 0, 0.24);
 }
 
 *,
@@ -63,9 +63,7 @@ body {
   min-width: 320px;
   margin: 0;
   color: var(--ink);
-  background:
-    radial-gradient(circle at 82% 0, rgba(23, 147, 209, 0.075), transparent 29rem),
-    var(--surface-soft);
+  background: var(--surface-soft);
   font-family: var(--font-sans);
   font-size: 16px;
   line-height: 1.72;
@@ -143,7 +141,6 @@ input:focus-visible,
   border-bottom: 1px solid color-mix(in srgb, var(--line) 78%, transparent);
   background: var(--surface-raised);
   box-shadow: var(--shadow-sm);
-  backdrop-filter: blur(18px) saturate(150%);
 }
 
 .site-brand {
@@ -253,7 +250,6 @@ input:focus-visible,
   background: linear-gradient(90deg, var(--arch-blue-strong), #60c7f5);
   transform: scaleX(0);
   transform-origin: left;
-  will-change: transform;
 }
 
 .app-nav {
@@ -1389,7 +1385,6 @@ main:has(> .sidebar.show) > .content {
   color: var(--ink-secondary);
   background: var(--surface-raised);
   box-shadow: var(--shadow-md);
-  backdrop-filter: blur(14px);
   cursor: pointer;
   visibility: hidden;
   opacity: 0;
@@ -1508,7 +1503,6 @@ main:has(> .sidebar.show) > .content {
     z-index: 40;
     inset: var(--header-height) 0 0 var(--sidebar-width);
     background: rgba(6, 13, 18, 0.35);
-    backdrop-filter: blur(2px);
     cursor: pointer;
     pointer-events: auto;
   }

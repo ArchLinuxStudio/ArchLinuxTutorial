@@ -21,6 +21,7 @@ const files = walk(docsDirectory);
 const markdownFiles = files.filter((file) => extname(file).toLowerCase() === ".md");
 const index = readFileSync(resolve(docsDirectory, "index.html"), "utf8");
 const siteScript = readFileSync(resolve(docsDirectory, "scripts/site.js"), "utf8");
+const theme = readFileSync(resolve(docsDirectory, "styles/theme.css"), "utf8");
 const workflow = readFileSync(resolve(root, ".github/workflows/pages.yml"), "utf8");
 const packageSource = readFileSync(resolve(root, "package.json"), "utf8");
 const lastUpdated = JSON.parse(readFileSync(resolve(docsDirectory, "last-updated.json"), "utf8"));
@@ -35,6 +36,9 @@ assert(!siteScript.includes("api.github.com/repos/"), "Last-updated dates must n
 assert(siteScript.includes('"/.*/_sidebar.md": "/_sidebar.md"'), "Nested routes must reuse the root sidebar.");
 assert(!siteScript.includes("formatUpdated:"), "Unused Docsify update formatting must stay removed.");
 assert(!siteScript.includes("topMargin:"), "Deprecated topMargin must not offset chapter navigation.");
+assert(!theme.includes("backdrop-filter:"), "Backdrop filters must stay disabled for low-end GPU compatibility.");
+assert(!theme.includes("will-change:"), "Persistent compositor hints must stay disabled.");
+assert(siteScript.includes("scheduleScrollUiUpdate"), "Scroll UI updates must be frame-throttled.");
 assert(workflow.includes("fetch-depth: 0"), "The deployment checkout must include full Git history.");
 assert(packageSource.includes("scripts/generate-last-updated.mjs"), "The local preview does not generate last-updated metadata.");
 
