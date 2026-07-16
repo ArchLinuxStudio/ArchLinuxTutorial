@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -26,6 +26,8 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
 
       - name: Set up Node.js
         uses: actions/setup-node@v6
@@ -35,6 +37,17 @@ jobs:
 
       - name: Install dependencies
         run: corepack yarn install --frozen-lockfile
+
+      - name: Synchronize English documentation
+        env:
+          AZURE_TRANSLATOR_KEY: ${{ secrets.AZURE_TRANSLATOR_KEY }}
+          AZURE_TRANSLATOR_REGION: ${{ vars.AZURE_TRANSLATOR_REGION }}
+        run: |
+          if [ -z "$AZURE_TRANSLATOR_KEY" ]; then
+            echo "::warning::AZURE_TRANSLATOR_KEY is not configured; using the checked-in English pages."
+            exit 0
+          fi
+          corepack yarn translate
 
       - name: Build site
         run: corepack yarn build
@@ -50,3 +63,17 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Save generated English documentation
+        run: |
+          git add -- docs/uk
+          if [ -f .i18n-cache/azure-en.json ]; then
+            git add -- .i18n-cache/azure-en.json
+          fi
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore(i18n): sync generated English documentation"
+          git push

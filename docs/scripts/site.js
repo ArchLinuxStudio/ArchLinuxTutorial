@@ -49,7 +49,8 @@
   }
 
   function editUrl(file) {
-    return `${REPOSITORY}/edit/master/docs/${encodedFilePath(file)}`;
+    const sourceFile = normalizeFile(file).replace(/^uk\//, "");
+    return `${REPOSITORY}/edit/master/docs/${encodedFilePath(sourceFile)}`;
   }
 
   function articleChrome() {
@@ -62,6 +63,16 @@
     const discussionText = english
       ? "Sign in with GitHub to join the discussion for this page."
       : "使用 GitHub 登录，参与当前页面的讨论。";
+    const chineseRoute = currentRoute().replace(/^\/uk(?=\/|$)/, "") || "/";
+    const translationNotice = english
+      ? `
+        <aside class="translation-notice" aria-label="Translation notice">
+          <strong>Machine-translated from Chinese.</strong>
+          <span>The Chinese page is authoritative.</span>
+          <a href="#${chineseRoute}">Read the source</a>
+        </aside>
+      `
+      : "";
 
     return {
       before: `
@@ -70,6 +81,7 @@
           <span class="article-meta__separator" aria-hidden="true"></span>
           <span class="article-meta__item article-updated" data-file="${normalizeFile(activeFile)}">${updateLabel}</span>
         </div>
+        ${translationNotice}
       `,
       after: `
         <footer class="article-footer">

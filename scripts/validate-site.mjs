@@ -1,5 +1,5 @@
 import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
-import { dirname, extname, join, relative, resolve } from "node:path";
+import { dirname, extname, join, relative, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
@@ -21,8 +21,26 @@ const files = walk(docsDirectory);
 const markdownFiles = files.filter((file) => extname(file).toLowerCase() === ".md");
 const index = readFileSync(resolve(docsDirectory, "index.html"), "utf8");
 const siteScript = readFileSync(resolve(docsDirectory, "scripts/site.js"), "utf8");
+const translationConfig = JSON.parse(
+  readFileSync(resolve(root, "i18n.config.json"), "utf8"),
+);
+const englishDirectory = resolve(root, translationConfig.outputDirectory);
+const englishPrefix = `${englishDirectory}${sep}`;
+const excludedTranslationFiles = new Set(translationConfig.excludeFiles ?? []);
+const chineseMarkdown = markdownFiles
+  .filter((file) => !file.startsWith(englishPrefix))
+  .map((file) => relative(docsDirectory, file).replaceAll("\\", "/"))
+  .filter((file) => !excludedTranslationFiles.has(file))
+  .sort();
+const englishMarkdown = markdownFiles
+  .filter((file) => file.startsWith(englishPrefix))
+  .map((file) => relative(englishDirectory, file).replaceAll("\\", "/"))
+  .sort();
 
-assert(markdownFiles.length === 46, `Expected 46 Markdown files, found ${markdownFiles.length}.`);
+assert(
+  JSON.stringify(chineseMarkdown) === JSON.stringify(englishMarkdown),
+  "Chinese and generated English Markdown file sets are out of sync. Run yarn translate.",
+);
 assert(index.includes('lang="zh-CN"'), "The document language must remain zh-CN.");
 assert(index.includes("./vendor/docsify.min.js"), "The local Docsify bundle is not linked.");
 assert(index.includes("./scripts/site.js"), "The site controller is not linked.");
