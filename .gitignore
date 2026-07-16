@@ -1,5 +1,8 @@
 node_modules/
 dist/
+__pycache__/
+.venv*/
+.argos-runtime/
 *.log
 .env
 .env.*

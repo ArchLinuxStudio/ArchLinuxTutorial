@@ -1,61 +1,67 @@
-# Programming
+<!-- AUTO-GENERATED: edit the corresponding Chinese document instead. -->
 
-What many people don't know is that Linux is almost the most suitable operating system for programming, and its programming support for all directions is in place (except Microsoft and Apple's proprietary system programming), which can save you a lot of pain. This article introduces high-quality software introductions in various programming directions. We recommend that readers use free software for programming, and only free software is listed in this section.
+# Programming software
+
+It is not clear to many that Linux is almost the most suitable operating system for programming, and that its programming support for all directions (except for Microsoft and Apple's proprietary system programming) can save you much pain. This paper presents a high-quality software presentation on programming directions. We suggest that readers use free software for programming, and this section only lists free software.
 
 ## Front-end programming
 
-For the front end, a browser and IDE (or editor) are generally required, with some network tools attached.
+For the front end, a browser and an IDE (or editor) are generally needed, with some additional web tools.
 
-For IDE (or editor), you can use [OSS code](https://www.archlinux.org/packages/community/x86_64/code/), which is an open source build generated from the official repository. [vscodium-bin](https://aur.archlinux.org/packages/vscodium-bin/)<sup>AUR</sup> is a community driven version of vs code.
+For IDE (or editor), you can use[OSS code](https://archlinux.org/packages/extra/x86_64/code/), it is constructed from open sources generated from official warehouses.[vscodium-bin](https://aur.archlinux.org/packages/vscodium-bin/)<sup>AUR</sup>is a community-driven vs code version.
 
-> Binary builds of Microsoft Visual Studio Code are actually proprietary software. Many people have misunderstandings here. Such tricks are increasingly being explored and used by more companies. [[1]](https://carlchenet.com/you-think-the-visual-studio-code-binary-you-use-is-a-free-software-think-again/)
+> Microsoft has a binary construction that is actually proprietary. There are many misunderstandings here. More and more companies are finding ways to steal the beams.[[1]](https://carlchenet.com/you-think-the-visual-studio-code-binary-you-use-is-a-free-software-think-again/)
 
-On the browser side there are [firefox](https://archlinux.org/packages/extra/x86_64/firefox/), [chromium](https://archlinux.org/packages/extra/x86_64/chromium/), [firefox -developer-edition](https://www.archlinux.org/packages/community/x86_64/firefox-developer-edition/), [brave](https://aur.archlinux.org/packages/brave-dev-bin/)<sup>AUR</sup> and many other software to choose from.
+In the browser.[firefox](https://archlinux.org/packages/extra/x86_64/firefox/)I don't know.[chromium](https://archlinux.org/packages/extra/x86_64/chromium/)I don't know.[firefox-developer-edition](https://archlinux.org/packages/extra/x86_64/firefox-developer-edition/)I don't know.[brave](https://aur.archlinux.org/packages/brave-dev-bin/)<sup>AUR</sup>Many software options are available.
 
-Network tools often use [httptoolkit](https://aur.archlinux.org/packages/httptoolkit/)<sup>AUR</sup> (as a replacement for charles), and [wireshark-qt](https://archlinux.org/packages/community/x86_64/wireshark-qt/).
+Network tools are often used[httptoolkit](https://aur.archlinux.org/packages/httptoolkit/)<sup>AUR</sup>(in lieu of charles), and[wireshark-qt](https://archlinux.org/packages/extra/x86_64/wireshark-qt/)I don't know.
 
-As for front-ends such as [yarn](https://www.archlinux.org/packages/community/any/yarn/), [npm](https://www.archlinux.org/packages/community/any/npm/) Common tools can also be installed with pacman.
+And...[yarn](https://archlinux.org/packages/extra/any/yarn/)I don't know.[npm](https://archlinux.org/packages/extra/any/npm/)When the front end is used, you can also install it with a pacman.
 
-## Back-end programming
+## Backend Programming
 
-Jetbrains' open source IDE can be found in the official archlinux repository, such as [IntelliJ Idea](https://www.archlinux.org/packages/community/x86_64/intellij-idea-community-edition/), [PyCharm](https://www.archlinux.org/packages/community/x86_64/pycharm-community-edition/), et al.
-More traditional IDEs include [Netbeans](https://www.archlinux.org/packages/community/any/netbeans/) and eclipse, which has multiple versions and can be searched in the AUR.
+Open source IDE of Jetbrains can be found at archlinux official repository if[IntelliJ Idea](https://archlinux.org/packages/extra/x86_64/intellij-idea-community-edition/)I don't know.[PyCharm](https://archlinux.org/packages/extra/x86_64/pycharm-community-edition/)Wait.  
+Unopen-sourced Jetbrains products can also be found in the AUR community, e.g.[rubymine](https://aur.archlinux.org/packages/rubymine)I don't know.[webstorm](https://aur.archlinux.org/packages/webstorm)I don't know. However, only installation but not unloading may be provided, e.g.[jetbrains-toolbox](https://aur.archlinux.org/packages/jetbrains-toolbox)
 
-There is no need to say much about the programming language itself, except that the C language and C++ are supported by the installed system, java, node, etc. can be easily installed.
+> The Jetbrains product input method under linux will cause the cursor not to follow, and Jetbrains has not repaired the bug and the solution is:[Replace jbr](https://github.com/RikudouPatrickstar/JetBrainsRuntime-for-Linux-x64)
 
-In addition to the default installed gcc, you can also install clang and llvm for use
+More traditional IDE.[Netbeans](https://archlinux.org/packages/extra/any/netbeans/)and eclipse, eclipse has many versions that can be searched for in the AUR.
 
-When it comes to database-related software, there are also a variety of options.
+With regard to programming languages themselves, let alone, except for c language and c++, which are supported by installed systems, java, node, etc. can be easily installed.
 
-- [Mysql Workbench](https://www.archlinux.org/packages/community/x86_64/mysql-workbench/)
-- [pgadmin4](https://www.archlinux.org/packages/community/x86_64/pgadmin4/)
-- [dbeaver](https://www.archlinux.org/packages/community/x86_64/dbeaver/)
+Can install clang and llvm in addition to the default installed gcc
+
+There are also various options for database-related software.
+
+- [Mysql Workbench](https://archlinux.org/packages/extra/x86_64/mysql-workbench/)
+- [pgadmin4](https://archlinux.org/packages/extra/x86_64/pgadmin4/)
+- [dbeaver](https://archlinux.org/packages/extra/x86_64/dbeaver/)
 - [robo3t](https://aur.archlinux.org/packages/robo3t-bin/)<sup>AUR</sup>
-- [RESP.app](https://aur.archlinux.org/packages/resp-app/)<sup>AUR</sup> (pre redis-desktop-manager)
-- [rdm-bin](https://aur.archlinux.org/packages/rdm-bin/)<sup>AUR</sup> If there is a problem with the above compilation, use this bin version
+- [RESP.app](https://aur.archlinux.org/packages/resp-app/)<sup>AUR</sup>(old redis-desktop-manager)
+- [rdm-bin](https://aur.archlinux.org/packages/rdm-bin/)<sup>AUR</sup>Use this bin version if there is a problem with the compilation.
 
-For big data, packages such as [hadoop](https://aur.archlinux.org/packages/hadoop/)<sup>AUR</sup> can be installed. If the package has not been updated for a long time or the package does not exist, such as hbase and hive, you can only go to the official website to download and configure it yourself.
+Installable for big data[hadoop](https://aur.archlinux.org/packages/hadoop/)<sup>AUR</sup>Wait a bag. If the package has not been updated for a long time or the package does not exist, such as hbase and hive, it can only be downloaded and configured on the official web.
 
-Regarding software testing, common software such as [junit](https://archlinux.org/packages/extra/any/junit/) can also be easily installed and used with your favorite IDE.
+About software testing,[junit](https://archlinux.org/packages/extra/any/junit/)It'll be easy to install the usual software, to match your favorite IDE.
 
-## Android client programming
+## Andre Client Programming
 
-At present, Android development has been unified to [Android Studio](https://aur.archlinux.org/packages/android-studio/)<sup>AUR</sup> for development. Of course traditional Eclipse can also be used. Common Android emulators can also use [Anbox](https://wiki.archlinux.org/title/Anbox#Installation) or [Waydriod](https://wiki.archlinux.org/title/Waydroid#Installation) .
+So far, Andre's development has been consolidated.[Android Studio](https://aur.archlinux.org/packages/android-studio/)<sup>AUR</sup>Development. Of course traditional Eclipse can also be used. The commonly used Andre emulator is also available.[Anbox](https://wiki.archlinux.org/title/Anbox#Installation)or[Waydriod](https://wiki.archlinux.org/title/Waydroid#Installation)I don't know.
 
-## Desktop application programming
+## Desktop Application Programming
 
-At present, the more popular desktop development is [electron](https://archlinux.org/packages/community/x86_64/electron/) and [Qt](https://archlinux.org/packages/extra/x86_64/qt6-base/) application. Electron can be developed directly with OSS Code, and Qt applications can be developed with [Qt Creator](https://www.archlinux.org/packages/extra/x86_64/qtcreator/).
+The current trend in desktop development is that[electron](https://archlinux.org/packages/extra/x86_64/electron/)and[Qt](https://archlinux.org/packages/extra/x86_64/qt6-base/)Apply. Electron can be developed directly with OSS Code, Qt application[Qt Creator](https://archlinux.org/packages/extra/x86_64/qtcreator/)Development.
 
-## Machine Learning and Deep Learning
+## Machine and in-depth learning
 
-For programming in machine learning, the IDE can use the same software as in backend programming. Machine learning commonly used [jupyter-notebook](https://archlinux.org/packages/community/any/jupyter-notebook/) and required related libraries such as [numpy](https://archlinux.org/packages/extra/x86_64/python-numpy/), [sklearn](https://archlinux.org/packages/community/x86_64/python-scikit-learn/), [pandas](https://archlinux.org/packages/community/x86_64/python-pandas/), etc., can also be found in the source. Meanwhile, [tensorflow](https://archlinux.org/packages/community/x86_64/tensorflow/), [pytorch](https://archlinux.org/packages/?sort=&q=python-pytorch&maintainer=&flagged=) And deep learning related packages such as its related cuda support package can also be installed and used.
+For machine learning programming, IDE can use the same software as the back-end programming. Machine learning.[jupyter-notebook](https://archlinux.org/packages/extra/any/jupyter-notebook/)And the relevant libraries that are needed[numpy](https://archlinux.org/packages/extra/x86_64/python-numpy/)I don't know.[sklearn](https://archlinux.org/packages/extra/x86_64/python-scikit-learn/)I don't know.[pandas](https://archlinux.org/packages/extra/x86_64/python-pandas/)Wait, you can also find it in the source. In the meantime,[tensorflow](https://archlinux.org/packages/extra/x86_64/tensorflow/)I don't know.[pytorch](https://archlinux.org/packages/?sort=&q=python-pytorch&maintainer=&flagged=)In-depth learning-related packages, such as the associated cuda support packages, can also be installed.
 
-## Scientific Computing
+## Scientific calculations
 
-[SageMath](https://www.sagemath.org/) (formerly Sage) is free, liberating mathematical software that supports research and teaching in algebra, geometry, number theory, cryptography, numerical computing, and related fields, and is available as Alternative to MATLAB. Both Sage's development model and Sage's own technology place a strong emphasis on openness, community, cooperation, and collaboration: we're building cars, not reinventing the wheel. The overall goal of Sagemath is to provide a viable, free, free alternative to the "4M" (i.e. Maple, Mathematica, Magma, and Matlab). SageMath rewrites the interface for most open source software/libraries in the field of scientific computing, and provides a python-compatible syntax, which can be said to be the culmination of open source mathematical software. At present, it can partially replace "4M".
+[SageMath](https://www.sagemath.org/)Free, free mathematical software (named Sage) that supports research and teaching in algebra, geometry, numerics, cipherics, numerical computations and related fields can be used as an alternative to MATLAB. Sage's development model and Sage's own technology place great emphasis on openness, community, cooperation and collaboration: we are making cars, not re-engineering wheels. The overall objective of Sagemath is to provide a viable, free and free alternative to "4M" (i.e. Maple, Mathematica, Magma and Matlab). SageMath provides a uniform rewrite interface for most open-source software/registers in the current field of scientific computing, providing a type-compatible python syntax that can be described as a major achievement of the integration of open-source mathematical software. There is now a partial replacement for "4M".
 
-[Arch Wiki](https://wiki.archlinux.org/title/SageMath) ||| [Chinese Tutorial and Documentation](https://www.osgeo.cn/sagemath/index.html)
+[Arch Wiki](https://wiki.archlinux.org/title/SageMath) ||| [Chinese tutorials and documents](https://www.osgeo.cn/sagemath/index.html)
 
-## Reverse Engineering
+## Reverse Project
 
-The well-known [ghidra](https://archlinux.org/packages/community/x86_64/ghidra/) can be installed as an alternative to IDA. For more alternative options, please refer to [alternativeto](https://alternativeto.net/software/ida/). In addition, introduce a useful hex editor [Bless](https://archlinux.org/packages/community/any/bless/).
+Can install famous[ghidra](https://archlinux.org/packages/extra/x86_64/ghidra/)As an alternative to IDA, more alternative options are available[alternativeto](https://alternativeto.net/software/ida/)I don't know. Besides, introduce a good hexadecimal editor. Device[Bless](https://archlinux.org/packages/extra/any/bless/)I don't know.

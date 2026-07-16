@@ -1,84 +1,88 @@
-# Games amd entertainment
+<!-- AUTO-GENERATED: edit the corresponding Chinese document instead. -->
 
-## Online game network acceleration
+# Entertainment software
 
-For playing online games on Linux, network acceleration has always been a problem, especially when playing some online games on external servers. Here are some ideas to speed up online games under Linux.
+## Webwalk speeds up.
 
-- Some airports will provide game nodes for online games. These nodes are specially optimized for games, restricting traffic and increasing the magnification. Generally, a better acceleration effect can be obtained. Cooperate with [transparent proxy](/advanced/transparentProxy) in Linux, and enable proxy acceleration for UDP traffic at the same time, you can get the effect of optimizing the network speed of online games.
-- Some mid-range or high-end routers have built-in online game accelerators that are common in the market. If your router has this function, you can directly use the built-in accelerator of the router to accelerate the online game traffic of the machine. Or you can also use openwrt to install accelerator plugins that support openwrt. Do not use the NetEase uu router acceleration plug-in, it will mistakenly identify the Linux PC as an Android phone. According to its logic, if the device is identified as a mobile phone, it can only accelerate mobile games but not PC games. At present, the NetEase uu accelerator has removed the Linux PC from the recognition scope. If necessary, please use other brands of router acceleration plug-ins.
-- Executing common online game acceleration clients on the market in a virtual machine or wine can theoretically accelerate. But at present, it is more complicated to implement, which is theoretically feasible, and more convenient tools may appear in the future. For the principle, please refer to [Wine to be researched topic: Make the virtual network card mode of the Windows version of the online game accelerator work under Linux](https://hu60.cn/q.php/xsBEbMHq-5hkgyEFTaIlwB-00AAA/bbs.topic.95016.html) and [Using the Windows version of the online game accelerator through a virtual machine in Linux](https://hu60.cn/q.php/bbs.topic.95932.html)
+Network acceleration has been a challenge for Internet trips on Linux, especially when some of the clothes are on the Net. Here's some ideas to speed up the Internet under Linux.
 
-## Native Linux game
+- Some airports provide Internet games nodes, which are specifically designed to optimize games, limit traffic and increase multipliers, and generally have a better acceleration effect. Cooperate in Linux[Transparent Agent](/uk/advanced/transparentProxy), while opening proxy acceleration for UDP traffic, you can optimize Internet speed.
+- Some mid-end or high-end routers will incorporate some of the network accelerators that are common on the market. If you have this function on the router, you can directly use the internal accelerator accelerator to speed up the flow of your network. Or you can use openwrt to cooperate with the installation of accelerator plugins that support openwrt. Do not use the easy uu router acceleration plugin, which wrongly identifies Linux PC as an Android mobile phone, and according to its logic, if the device is identified as a cell phone, it can only speed up hand-swam and not the PC game. Currently, the web-based uu accelerator has removed Linux PC from the identification range, using other branded router accelerators if needed.
+- Webwalking, which is common on the market at virtual machines or at Wine, can also theoretically accelerate the result. At present, however, implementation is complex and theoretically feasible, and more convenient tools may emerge in the future. It's about the principles.[Wine to study: Allows the Windows version of the web accelerator to work under Linux](https://hu60.cn/q.php/xsBEbMHq-5hkgyEFTaIlwB-00AAA/bbs.topic.95016.html)and[Use Windows version web accelerator in Linux via virtual machine](https://hu60.cn/q.php/bbs.topic.95932.html)
 
-There are some natively supported games in Arch Linux official repository and AUR, listed below
+## Native Warehouse Game
 
-- [shattered-pixel-dungeon](https://aur.archlinux.org/packages/shattered-pixel-dungeon/) Shattered Pixel Dungeon Survival Game
-- [0ad](https://archlinux.org/packages/extra/x86_64/0ad/) Known as the Age of Open Source Empires
-- [openra](https://archlinux.org/packages/community/any/openra/) Open source implementation of Red Alert 1
+Arch Linux Official Repository and AUR have some original supported games listed below
+
+- [shattered-pixel-dungeon](https://aur.archlinux.org/packages/shattered-pixel-dungeon/)Broken pixel dungeon, survival game
+- [0ad](https://archlinux.org/packages/extra/x86_64/0ad/)Called the Open Age of the Empire.
+- [openra](https://archlinux.org/packages/community/any/openra/)Open source of Red 1 achieved
 
 ## Steam
 
-[Arch Wiki: Steam](https://wiki.archlinux.org/index.php/Steam)
+[Official documents](https://wiki.archlinux.org/index.php/Steam)
 
-Some fonts and drivers have already been configured in the `Getting Started` section. If you have installation problems, please check yourself.
+Some fonts and drivers already`新手上路`chapter. Please check yourself if there are installation problems.
 
-In addition, if some games have problems starting or playing, you can use the terminal to use the `steam` command to start the steam client, and observe the terminal error when the game crashes. Generally, it is caused by the lack of a certain dependency, and you can install the dependency yourself according to the specific situation. At the same time, the official archlinux documentation also provides a [error page](https://wiki.archlinux.org/index.php/Steam/Game-specific_troubleshooting), which records some solutions to game crashes.
+In addition, certain games can be used as end-uses if there are problems with starting or playing`steam`Commands to start the steam client and to observe terminal error when the game crashes. It is generally the result of a lack of some kind of dependency, which can be installed on its own, depending on the circumstances. In the meantime,archlinuxThe official file also provides one.[Wrong Page](https://wiki.archlinux.org/index.php/Steam/Game-specific_troubleshooting)Record some game crash solutions.
 
-To install Steam <sup>Proprietary</sup>:
+Install Steam<sup>Monochrome</sup>:
 
 ```bash
 sudo pacman -S steam
 ```
 
-Games on steam can be divided into two categories: those with native Linux support, and those played through [Steam Play](https://wiki.archlinux.org/index.php/Steam#Proton_Steam-Play). Steam Play (Proton) is based on Wine and allows you to play Windows-only games on Linux. Regarding the degree of playability of games on non-Linux platforms running through Steam Play, you can check the website [protondb](https://www.protondb.com/). If you have a problem with a game, you can also find fixes for each game posted by players on this site. Sometimes there may be problems with the latest version of Proton, in which case you can try other versions yourself.
+The game on steam can be divided into those supported by Linux, and through[Steam Play](https://wiki.archlinux.org/index.php/Steam#Proton_Steam-Play)Play two categories. Steam Play (Proton) is based on Wine, which allows you to play a game upstream of Linux that only supports Windows platforms. A game on a non-Linux platform with a level of playability running through Steam Play, by[protondb](https://www.protondb.com/)This site is consulted. If there's a problem with playing a game, you can also find a way to modify the games that the players publish. Sometimes the latest version of Proton may have problems, so you can try other versions yourself.
 
-In addition, there are also some official Proton fork versions on github, such as [Proton GE](https://github.com/GloriousEggroll/proton-ge-custom), which can support some additional ones, which are not officially supported or are not fully supported. game. The usage method is also very simple. According to the official documentation, download the compressed package of the release to the specified location, and restart steam to select a specific version of GE proton.
+In addition, there are official Proton versions of fork on github, such as[Proton GE](https://github.com/GloriousEggroll/proton-ge-custom), some extra games can be supported, officially not supporting or supporting imperfect games. It is also simple to use, according to official documents, to download releasing packages to a given location and to select a specific version of the GE programton after restarting steam.
 
-If some game launchers cannot be started, you can go to the game directory and try to directly execute the executable file of the game itself.
+If some game starters cannot start, you can try to directly execute the actionable files of the game body in the game directory.
 
-If you have any questions, you can also go to github to query. For example, Valve's [csgo repository](https://github.com/ValveSoftware/csgo-osx-linux/issues)
+There's something you can ask for. Like V Society[csgo repository](https://github.com/ValveSoftware/csgo-osx-linux/issues)
 
-The recent steam official proton can not correctly detect the system's fsync, and still start the game in esync mode. Replacing the GE version of the proton correctly detects and launches the game with fsync mode.
+The recent steam official proton cannot correctly detect the system fsync, still starts the game in esync mode. The program that replaces the GE version can correctly detect and start the game using fsync mode.
 
-> Game lock solution: keep your steam under the proxy of a country, such as Japan. First add a game to the shopping cart, change the country and region in the upper right corner of the shopping cart to Japan, and then go to the locked game, you can browse and purchase.
+> Game lock-up solution: Keep your steam under an agent of a country like Japan. Add a game to the shopping cart, change it to Japan in the upper right corner of the shopping cart, and then visit the game in the locked area, so you can browse and buy.
 
 ## Lutris
 
-Based on Wine, Lutris provides solutions for a large number of games under Linux. It has already configured everything related to Wine for you, you only need to install and play. Generally very little additional configuration is required. Go to the [official website](https://lutris.net/) and search for the game you want to play in the upper right corner. After clicking to enter the game page, you can see that there is an install button on the right side of the corresponding version. After clicking, you can pull up Lurtis to install it. Before playing the game, you must install the [driver](https://github.com/lutris/docs/blob/master/InstallingDrivers.md) and [dependency](https://github.com/lutris/docs/blob/master/WineDependencies.md). Note that the two optional installation items vkd3d and lib32-vkd3d are not listed in these two documents. However, most large-scale games currently need to install these two packages, and readers need to add and install them as needed. At the same time, in lutris, you need to choose to open Esync or Fsync according to the container type.
+Lutris, based on Wine, offers a large number of game solutions under Linux. It's all you've got for Wine, all you need to do is set up a game. Usually, additional configurations are rarely required. Enter[Network of officials](https://lutris.net/)Search the top right for the game you want to play. Click on the game page to see an install button on the right side of the corresponding version, and when you click, you can pull up Lurtis for installation. Let's do this before we play.[Driver](https://github.com/lutris/docs/blob/master/InstallingDrivers.md)and[Dependency](https://github.com/lutris/docs/blob/master/WineDependencies.md)I don't know. Note that the two documents do not list the two optional installation items vkd3d and lib32-vkd3d, but most large games are currently required to install both packages and readers need to add them as needed. At the same time, in Lutris, the choice is to open Esync or Fsync according to the type of container.
 
-On each game page of Lutris, there are generally reports uploaded by players. If you encounter a situation that cannot be run, you can read the historical issues in detail, including those that have been marked as resolved.
+In Lutris, there are generally player uploads on various games pages. If you cannot run, you can look at the history of Issue, including those already marked as solved.
 
-If you find that you are still unable to log into certain games, check your proxy settings. For example, if you have an account of the national server, but the proxy is linked to Japan, it is impossible to log in. You can change to a Hong Kong proxy and try again.
+Check your proxy settings if you find it still impossible to land some games. For example, you're a national uniform account, but the agent is Japanese. It's unlandable and can try again with a Hong Kong agent.
 
-If you can't update the game, when you need to update the game, set the Wine version to the system's Wine staging version. If the latest wine-staging version still crashes, you can go back to the previously available container version. If you still can't update, you can try reinstalling the game launcher. After the update is complete, when you need to start the game, set the wine version to the version that comes with Lutris.
+If you cannot update the game, set the Wine version to the system's Wine status version when you need to update the game. If the latest Wine-Stagging version is still flashing, you can return to the previously available container version. If it is still not possible to update, try to re-install the game starter. When the game needs to be started after updating, set the wine version to a Lutris custom version.
 
-If you encounter a situation where you cannot start the flashback, you can try to start Lutris on the command line, and then start the game. If starting the game in the launcher still crashes, you can try to change the startup file of the Lutris container from the launcher to the executable file of the game itself. There is another more general way, you can use the Lutris function `Run EXE inside wine prefix`, and then select the game body to pass the verification to play the game. The location of `Run EXE inside wine prefix` is below Lutris, click on the wine glass, the last one.
+If you can't start a flashback, you can try to start Lutris on the command line and then start the game. If the game starts in the starter or goes off, you can try to change the Lutris container starter file from the starter to the executable of the game body. There's another more general way to use Lutris.`Run EXE inside wine prefix`, and then choose the game body to pass the validation.`Run EXE inside wine prefix`The position is below Lutris, click on the glass, last.
 
-If you are used to using various game plug-ins, you can also install them in the same container, and the general functions can be used normally.
+It is also possible to install in the same container if the various game plugins are customarily used.
 
-## Wine
+## Native Wine
 
-Installing and using native [Wine](https://wiki.archlinux.org/index.php/Wine) can also run windows games, but in many cases you need to deal with the dependency problems under Windows by yourself. The commonly used tool is [winetricks](https://archlinux.org/packages/multilib/x86_64/winetricks/). This method is time-consuming and labor-intensive, and it is fine to only run small games or gals that do not need to deal with dependencies.
+Installation with Native[Wine](https://wiki.archlinux.org/index.php/Wine)You can also run the Windows game, but in many cases you have to deal with your dependence under Windows.[winetricks](https://archlinux.org/packages/multilib/x86_64/winetricks/)I don't know. It's a time-consuming and labor-intensive way to run small games or gals that don't have to deal with dependency.
 
-Run winecfg on the terminal, you can open the wine settings page, and follow the terminal prompts to install the missing packages.
+Terminal runs Winecfg, which opens the wine settings page, and installs the missing packages according to the terminal hint.
 
 ## Galgame
 
-This section describes possible problems with running Galgame with Wine.
+This subsection describes possible problems with Wine running Galgame.
 
-If there are font problems for some languages, the most straightforward way is to place the required fonts in the container's font directory. The default directory for wine is `~/.wine`.
+If there is a font problem in some languages, the most immediate method is to place the required font in the font directory of the container. The default directory for Wine is`~/.wine`I don't know.
 
-Running games with Wine may have issues with missing [GStreamer](https://wiki.archlinux.org/title/GStreamer) plugins, such as
+Play games with Wine may appear[GStreamer](https://wiki.archlinux.org/title/GStreamer)Problems with missing plugins, e.g.
 
 ```bash
 Missing decoder: Advanced Streaming Format (ASF) (video/x-ms-asf)
 ```
 
-After installing each plug-in according to the Wiki, the error may still exist. This is because most Galgames require 32-bit compatibility libraries, and the current gst32-bit compatibility library in the official Arch Linux Multilib warehouse is not complete. For example, `lib32-gst- The plugins-ugly` package currently only exists in the AUR, but its PKGBUILD currently has many problems that prevent it from being successfully installed directly. ASF exists in this package, so its absence causes this error. The solution is as follows:
+Errors may remain after installation of various plugins according to Wiki, as most Galgame needs 32-bit compatibility libraries, while the current gst32-bit compatibility libraries in Arch Linux official Multilib repository are incomplete, such as currently missing`lib32-gst-plugins-ugly`This package, which currently exists only in AUR, has several problems with its PKGBUILD that make it impossible to install it directly. The ASF exists in this package and the missing cause this error. The solution is as follows:
 
-First, one of the dependencies of lib32-gst-plugins-ugly, lib32-lv2, has a build spell check problem. After cloning the `lib32-lv2` warehouse locally, modify its PKGBUILD file, delete the check part, and then use `makepkg -si` to install it manually.
+First of all,`lib32-gst-plugins-ugly`One of the dependents.`lib32-lv2`There is a build spell check problem. Will`lib32-lv2`Repository line changes its PKGBUILD file when it arrives locally, removes its check section and then uses`makepkg -si`Manually install it.
 
-Next, `lib32-gst-plugins-ugly` depends on another package `lib32-shaderc`. There is also an error in the construction of this package, and it is not necessary, so directly in `lib32-gst-plugins-ugly` Delete it from the PKGBUILD and then install it manually.
+Next,`lib32-gst-plugins-ugly`He relied on another bag.`lib32-shaderc`The package was built with the same error, and it wasn't necessary, so it was directly`lib32-gst-plugins-ugly`, and then manually install it.
+
+Finally, query by Idd command, currently`lib32-gst-plugins-ugly`libvpx.so.8 is not available because of the current`lib32-libvpx`libvpx.so in the package has been updated to libvpx.so.9. This will solve the problem by creating a symbol link to libvpx.so.9.0.0 in/usr/lib32 folders. Similar problems could be resolved in descending order as the version did not match.
 
 Ref:
 
@@ -87,62 +91,61 @@ Ref:
 - https://aur.archlinux.org/packages/lib32-gst-plugins-ugly
 - https://docs.usebottles.com/faq/video-gstreamer-problems
 
-## Performance improvement
+## Performance enhancement
 
-Turning off KDE's Compositor can significantly improve game performance and solve problems such as unstable screen tearing.
+Turning off KDE 's synthesiser (Compositor) will significantly improve game performance and solve problems such as tearing images apart.
 
 ref: https://linux-gaming.kwindu.eu/index.php?title=Improving_performance
 
-When playing some games, such as "Total War: THREE KINGDOMS", if you encounter performance problems, you can try to adjust the cpu frequency regulator[[1]](https://support.feralinteractive.com/docs/zh_cn/threekingdomstw/1.0.15/linux/faqs/?access=zooevrj6xb&utm_source=game_linux&utm_medium=link&utm_campaign=game_linux_threekingdomstw_support#i_linux_cpu_governor).
+Some games, such as Total War: THREE KINGDOMS, can try to regulate the cpu frequency regulator if they encounter performance problems[[1]](https://support.feralinteractive.com/docs/zh_cn/threekingdomstw/1.0.15/linux/faqs/?access=zooevrj6xb&utm_source=game_linux&utm_medium=link&utm_campaign=game_linux_threekingdomstw_support#i_linux_cpu_governor)I don't know.
 
-[GameMode](https://github.com/FeralInteractive/gamemode) is a comprehensive game performance adjustment software, which provides a variety of game performance optimization functions. If necessary, you can check the github page for details.
+[GameMode](https://github.com/FeralInteractive/gamemode)It is a comprehensive game performance adjustment software that provides multiple game performance optimization functions. You can look for details on the gethub page if you want.
 
 ## Performance monitoring
 
-Similar to the performance display part of MSI's Afterburner software, there is also a similar software on Linux that can monitor computer performance in games, named [MangoHud](https://github.com/flightlessmango/MangoHud). The usage can be found in the readme of this project. In ArchLinux, install the packages mangohud and lib32-mangohud.
+Similar to the performances shown in the microstar Afterburner software, Linux has a similar software that monitors the computer performances in the game called[MangoHud](https://github.com/flightlessmango/MangoHud)I don't know. Usage can be found on this item readme. In ArchLinux, install packages mangohud and lib32-mangohud.
 
-In addition, MangoHud officially provides a graphical parameter setting software [GOverlay](https://github.com/benjamimgois/goverlay#arch--manjaro--other-arch-derivatives), which can be installed by yourself.
+In addition, MangoHud officially provides graphical parameter setting software[GOverlay](https://github.com/benjamimgois/goverlay#arch--manjaro--other-arch-derivatives), you can choose to install it.
 
-## Optional kernel replacement
+## Optional core replacement
 
-In general, kernel games with patches that use fsync will perform better. Especially in some wine games using .Net, fsync will have a significant performance improvement[[1]](https://github.com/ValveSoftware/Proton/issues/3706#issuecomment-636632984). At present, the fsync function is not added to the Linux kernel, and the zen kernel can be replaced.
+Generally, a kernel game using fsync's patch will perform better. Especially in some of the .Net-based wine games, fsyncs will be clearly enhanced.[[1]](https://github.com/ValveSoftware/Proton/issues/3706#issuecomment-636632984)I don't know. Currently, the Linux kernel does not have a fsync function and can replace the zen kernel.
 
 ```bash
 sudo pacman -S linux-zen linux-zen-headers
 ```
 
-After the installation is complete, update grub again.
+grub can be updated once installed.
 
 ```bash
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-> If you use NVIDIA graphics card, remember to change the driver to the corresponding dkms version. Generally speaking, newer graphics cards can install nvidia-dkms.
+> Remember to replace the driver with the corresponding dkms version, if you use the British Wyda spectrometer. Generally, newer graphic cards can be installed with nvidia-dkms.
 
-## Gamepad
+## Game handle
 
-The most compatible controller in Arch Linux is the Xbox controller, and the use of other controllers is not recommended. If you are using a wireless adapter to connect, install it using [xone](https://github.com/medusalix/xone). If you use a Bluetooth connection, install it using [xpadneo](https://aur.archlinux.org/packages/xpadneo-dkms). For Bluetooth connectivity, additional configuration is required.
+The best handle for compatibility in Arch Linux is the Xbox handle, the rest of which is not recommended. If you connect with a wireless adapter, install it.[xone](https://github.com/medusalix/xone)I don't know. If you use Bluetooth connection, install[xpadneo](https://aur.archlinux.org/packages/xpadneo-dkms)I don't know. For Bluetooth connection, additional configuration is required.
 
-1. First you need to enable UserspaceHID, if you don't do this, the controller will not connect properly and will start to cycle connecting and disconnecting, and the Xbox button will keep flashing. Edit configuration file:
+1. The UserspaceHID first needs to be enabled, if not, the handle will not be properly connected and will start to recycle and disconnect, and the Xbox button will continue to blink. Edit profile:
 
 ```bash
 vim /etc/bluetooth/input.conf
-
 ```
 
-Uncomment `UserspaceHID` and change the value to true.
+Get rid of it.`UserspaceHID`, and replace the value with the true.
 
-2. Next make some settings in the main bluetooth profile so xpadneo can work as expected, also need to resolve the input lag issue. Edit the main file:
+2. This is followed by some settings in the main bluetooth configuration file so that xpadneo can work as expected and the input delay needs to be resolved. Edit main file:
 
 ```bash
 vim /etc/bluetooth/main.conf
 ```
 
-Change the following parameters to the following values
+Replace the following parameter with the following value
 
 ```bash
 [General]
-Privacy=device
+Privacy = device
 JustWorksRepairing = always
 Class = 0x000100
 FastConnectable = true
@@ -153,28 +156,28 @@ MaxConnectionInterval=9
 ConnectionLatency=0
 ```
 
-Finally, restart the computer and connect.
+Finally restart the computer and connect it.
 
 ref: https://www.reddit.com/r/linux_gaming/comments/smxqm2/how_to_use_xpadneo_with_an_xbox_series_controller/
 
 ## Gamescope
 
-Gamescope is an independent compositor supported by Valve specifically for game development. It can solve the display problems of some games. For example, when some games open the virtual desktop, although they can be windowed into full screen, they still cannot expand to full screen (still the original low resolution of the game). Gamescope works with lutris. It's still early days for Gamescope.
+Gamescope is an independent compositer of game development supported by Valve, which solves the problem of displaying some games, such as some that are fully screened when they open virtual desktops, but still do not reach full screen expansion (which remains the low resolution of the original game). Gamescope can be used in lutis. Gamescope is still in its early stages.
 
-Note that NVIDIA graphics cards must use NVIDIA closed source drivers when using Gamescope, and nvidia-open open source drivers are not supported. In addition, the kernel parameter `nvidia-drm.modeset=1` must be added.
+Note that Emescope must be driven by a closed source, a nvidia-open open source not supported. Besides, you have to add kernel parameters.`nvidia-drm.modeset=1`I don't know.
 
-Gamescope's predecessor was Xephyr, which is now on hold.
+Gamescap's predecessor, Xephyr, is at a standstill.
 
-See the Gamescope documentation for details: https://wiki.archlinux.org/title/Gamescope
+See Gamescope documents for details:https://wiki.archlinux.org/title/Gamescope
 
 ## protonhax
 
-Sometimes, you need to run other programs besides the game in the Proton container, such as cheat engine, etc. Currently Proton cannot meet this requirement. [protonhax](https://github.com/aoleg94/protonhax) is used here to run other programs in the same Proton container as the game.
+Sometimes it is necessary to run other programs in the Proton container, such as the modifyr. The current Proton default does not meet this demand. Use here[protonhax](https://github.com/aoleg94/protonhax)to complete this other running program in the same Proton container as the game.
 
 ```bash
 yay -S protonhax
 ```
 
-Set `protonhax init %COMMAND%` in the game running parameters, and then execute `protonhax ls` to obtain the running game appid. Finally use `protonhax run <appid> <path/to/program>` to run other programs in the target container. For more usage, please refer to the project warehouse page.
+Set in Game Run Parameter`protonhax init %COMMAND%`Implementation`protonhax ls`Gets the game running. Last used` protonhax run <appid> <path/to/program>`Run other programs in the target packaging. More use can be made of project warehouse pages.
 
 Ref: https://www.reddit.com/r/linux_gaming/comments/pxs5es/running_a_second_program_inside_a_proton_prefix/?rdt=44318

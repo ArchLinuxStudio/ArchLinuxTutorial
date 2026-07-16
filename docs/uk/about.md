@@ -1,30 +1,31 @@
-# About & Acknowledgements <!-- {docsify-ignore-all} -->
+<!-- AUTO-GENERATED: edit the corresponding Chinese document instead. -->
 
-## About
+# About & Acknowledgement<!-- {docsify-ignore-all} -->
 
-Here are some additional explanations for this book.
+## Additional explanation
 
-First of all, let me explain the difference between the positioning and the official document. The official Chinese documentation is indeed very complete, but its positioning is the official Wiki, so it is already necessary to do everything in detail. But this kind of overly detailed documentation can make newbies get lost in link after link, and they need guidance more than a dictionary. The positioning of this article is a guide, and what we think is the current better solution. In addition, most of the official Chinese documents are translated from English documents, and there are cases where the translation is not timely. There are a few cases where the translation is wrong or the meaning is unclear.
+Here are some additional explanations for the book.
 
-There are a lot of similar documents on the Internet, why do you need such a document? Technological changes are changing with each passing day. Whether it is the operating system itself or valuable software, some online tutorials are mostly in disrepair. Everyone knows that the timeliness of Internet knowledge is very important. The flag of this book is that it will be updated as long as it is alive. And determined to achieve a better position in the Chinese community.
+First of all, the difference between positioning and official documents. The official Chinese document is indeed complete, but it is located in the official Wiki, so that nothing needs to be done. But this document, which is too detailed, can lead newers to lose their way in one link after another, and they need more guidance than dictionaries. The location of this paper is a guide, as well as what we consider to be a better way forward. Furthermore, most of the official Chinese documents are translated from English and there are delays in translation. There are also a few instances of mistranslation or ambiguity.
 
-Many people still think that Linux is not suitable as an operating system for everyday use. Let's be honest, the Linux desktop really wasn't usable in the first decade of this century. But now the time is after 2021, and the Linux desktop and ecology have made great progress. Whether it is office, light entertainment or programming, it can basically meet the needs.
+There's a lot of similar documents on the Internet. Why do you need one? Technological changes are rapid, both in the operating system itself and in the valuable software, and some online tutorials are largely out of repair, and it is important to know that Internet knowledge is time-sensitive. The Flag of this book is always updated as long as you're alive. The Chinese language is a good place for the Chinese community.
 
-For any questions and suggestions about this book, you can send us an email, or you can leave a message directly at the bottom of this page.
+Many still think Linux is not suitable for day-to-day operating systems. To be honest, the Linux desktop did not really work well in the first decade of this century. But now it's 2021, and Linux's desktop and ecology are making great strides. Both office space, light entertainment and programming are generally sufficient.
 
-Email: archlinuxstudio@tutamail.com  
-Telegram group: [ArchLinuxStudio🇨🇦🏳️‍⚧️🏳️‍🌈](https://t.me/FSF_Ministry_of_Truth)  
-Matrix group: [Matrix Group:ArchLinuxStudio🇨🇦🏳️‍⚧️🏳️‍🌈](https://matrix.to/#/#ArchLinuxStudio:matrix.org)
+Any questions or suggestions about the existence of the book can be sent to us by email or by leaving messages directly below this page.
 
-## Changelog
+E-mail:archlinuxstudio@tutamail.com  
+Telegram Cable:[ArchLinuxStudio🇨🇦🏳️‍⚧️🏳️‍🌈](https://t.me/FSF_Ministry_of_Truth)Matrix Group:[Matrix Group:ArchLinuxStudio🇨🇦🏳️‍⚧️🏳️‍🌈](https://matrix.to/#/#ArchLinuxStudio:matrix.org)
 
-- 0.5.0 Finish English translation. Added related content about cryptocurrency. 2022.7.9
-- 0.4.0 Provides a better installation process for readers in areas where the Internet is blocked. Optimized multiple chapters. 2021.12.25
-- 0.3.0 Updated for 2021 changes. 2021.5.15
-- 0.2.0 comprehensive improvement and revision as the first version officially released to the outside world. 2021.4.11
-- 0.1.0 The first version that is initially available. The commit time is no longer available due to post-reorganization.
-- 0.0.0 project started. 2020.9.1
+## Update Log
 
-## Acknowledgements
+- 0.5.0 The contents of encrypted currency have been added to the entire book and translated in English 2022.7.9
+- 0.4.0 Improved installation process for readers in closed areas of the Internet Optimizing multiple chapters. 2021.12.25
+- 0.3.0 Update based on changes in 2021. 2021.5.15
+- 0.2. Full refinement and revision as the first official external edition. 2021.4.11
+- 0.1. The first version, which is initially available, is no longer available as a result of the after-action re-engineering process.
+- 0.00 Project initiation. 2020.9.1
 
-Salute to all free software developers, evangelists and pioneers.
+## Acknowledgement
+
+To all free software developers, preachers and pioneers.

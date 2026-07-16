@@ -14,7 +14,7 @@ if (isDirectRun) {
         `English documentation synchronized (${stats.sourceFiles} files).`,
         `${stats.textSegments} translatable segments:`,
         `${stats.cacheHits} cache hits,`,
-        `${stats.cacheMisses} API translations,`,
+        `${stats.cacheMisses} local translations,`,
         `${stats.deletedFiles} deleted pages.`,
       ].join(" "),
     );

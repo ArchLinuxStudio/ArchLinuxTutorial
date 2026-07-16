@@ -1,59 +1,61 @@
-# School of Magic
+<!-- AUTO-GENERATED: edit the corresponding Chinese document instead. -->
 
-> **[Right to access the Internet](https://en.wikipedia.org/wiki/%E8%A8%AA%E5%95%8F%E4%BA%92%E8%81%AF%E7%B6%B2%E6%AC%8A) believes that all people must have access to the Internet in order to exercise and enjoy their freedom of speech, freedom of communication, freedom of opinion, and other fundamental human rights. Any country or region that unreasonably restricts personal access to the Internet is a violation of basic human rights.**
+# The Magic Academy.
 
-**For your personal safety, do not use the Science Internet Client on any device with spyware proprietary software. These devices can be cell phones, PCs, etc. On mobile phones, there is precedent for authoritarian government regulators to easily get a list of the apps you have installed, and to correlate and query what you do and say through various means, and take further control. In theory, this is entirely possible on PC devices as well. If you must use WeChat, QQ and other proprietary software with espionage properties, please use it in a completely isolated physical device. Please read [Modern Privacy Protection Guide](https://archlinuxstudio.github.io/ModernSecurityProtectionGuide/#/) for more content, it is very important for your security!**
+> **[Access to the Internet](https://zh.wikipedia.org/wiki/%E8%A8%AA%E5%95%8F%E4%BA%92%E8%81%AF%E7%B6%B2%E6%AC%8A)All persons must be able to access the Internet in order to exercise and enjoy their freedom of expression, communication, opinion and other fundamental human rights. Unjustified restrictions on individual access to the Internet in any country or region are a violation of fundamental human rights.**
 
-This section describes how to surf the web scientifically under linux. This section and subsequent global proxy chapters are **must read**. If you do not configure Scientific Internet, then you will encounter various problems in daily use, whether it is blocked resources or codes, or consulting related problem materials, you may not be able to download and browse. Everyone **must** configure Science Internet before proceeding.
+**For your safety, do not use science online clients on any equipment with proprietary software of a spy nature. These devices can be cell phones, PC, etc. On the mobile phone, the authorities of a powerful government have easy access to the list of applications that you have installed, and can link and consult by various means about what you do and what you say and take further control, which is a precedent. Theoretically, this possibility also exists on PC equipment. If you have to use proprietary software of a spy nature such as QQ, use it in a completely isolated physical device. Read more.[Modern privacy protection guidelines](https://archlinuxstudio.github.io/ModernSecurityProtectionGuide/#/)It's very important to your safety!**
 
-## 1. Preparation of nodes
+This section describes how scientific Internet access can take place under linux. This section and subsequent global proxy chapters**Other Organiser**I don't know. If science is not configured to go online, you will encounter problems in your daily use, whether it be blocked resources or codes or access to relevant information, and you may be unable to download and browse. Everyone.**Yes.**Let's get science online and continue.
 
-Simply put, a node is a mysterious link in the form of the following. No matter how you get these links, if you already have them, you can directly read the following section.
+## Preparation of nodes
+
+Simply put, nodes are mystical links like the following, regardless of how you get these connections, and if you already have them, you can read the following subsection directly.
 
 ```txt
-ss://xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-vmess://xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+ss://xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+vmess://xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
-If you don't have these connections, you can deploy it yourself or buy a subscription to the airport.
+If you do not have these connections, you can deploy or purchase airport subscriptions.
 
-If you deploy it yourself, you need to purchase a server on the free Internet and build a node yourself. This is not within the scope of this article, and only three high-quality articles from the GFW Report are provided for reference. But these articles have been blocked by GFW. We will provide some solutions to this problem later.
+If you are self-deployed, you need to buy and build your own servers on the Free Internet, which is outside the scope of this paper and provides only three high-quality articles from the GFW Report. But these articles have been blocked by the GFW. We will then provide some solutions to this problem.
 
 <!-- TODO GFW fucked GFW report! -->
 
-- [How to deploy an anti-blocking Shadowsocks-libev server](https://gfw.report/blog/ss_tutorial/en/)
-- [A practical guide to defending against GFW active detection](https://gfw.report/blog/ss_advise/en/)
-- [How Shadowsocks is detected and blocked](https://gfw.report/talks/imc20/en/)
+- [How to deploy a Shadowsocks-libev server against the blockade](https://gfw.report/blog/ss_tutorial/zh/)
+- [Defense GFT Practical Guide to Active Detection](https://gfw.report/blog/ss_advise/zh/)
+- [How did Shadowsocks be tested and blocked?](https://gfw.report/talks/imc20/zh/)
 
-For server purchases, we provide a URL for reference: https://bitcoin-vps.com/ . bitcoin-vps provides a very detailed and up-to-date list of server providers that support the use of cryptocurrencies for payments to varying degrees, such as Bitcoin, Ethereum, and more. The advantage of paying with cryptocurrencies is that, with proper operation, you can fully protect your privacy. It is not safe to use real-name payment methods such as Alipay to purchase similar services. We hope that readers can recognize the value of cryptocurrencies in all aspects and realize that cryptocurrencies can exist as your privacy protectors.
-
----
-
-If you purchase subscription services for airports, you can refer to their subscription process to get nodes. We have listed some of the more trusted airport services to choose from, but **WE DO NOT GIVE ANY WARRANTY**. It should be reminded that the airport service is a gray industry, and it is possible to stop the service at any time. It is recommended to pay monthly to avoid excessive losses. Regarding airport audit rules, our view is "I can not read, but you can't ban". As for the degree of airport audit, readers can make their own assessments according to their own actual situation.
-
-- [GLaDOS](https://www.glados.rocks/landing/9FMKX-GYLMK-ZYIZW-5U3T0) After registration, use the activation code `9FMKX-GYLMK-ZYIZW-5U3T0` to activate the account and get free time. The advantage of GLaDOS is that it can be used for free upon check-in, and it operates for a long time and is more credible. In addition to that, GLaDOS is one of the few airports with a Trojan node. The downside is that the speed isn't great. For its audit rules, you can enter the background panel to view it yourself after registering an account. According to our tests, it is not audited strictly in accordance with the auditing rules.
+For server purchases, we provide a web site for information:https://bitcoin-vps.com/I don't know. Bitcoin-vps provides a very detailed and up-to-date list of servers that support, to varying degrees, the use of encrypted currency for payment, such as bitcoin, the Ether Workshop, etc. The advantage of using encrypted currency is that, on the basis of proper operation, you can fully guarantee your privacy. It is not safe to buy similar services by using real-name means of payment such as money, and we hope that readers will recognize the value of encrypted money in every respect and the existence of encrypted money as your privacy protector.
 
 ---
 
-If you don't want to spend any money, you can install software like [Psiphon](https://psiphon3.com/zh/index.html). Psiphon is free software.
+If you purchase airport subscriptions, you can consult their subscription process to get nodes. We'll list some of the more credible airfield services for options, but...**We don't give any guarantees.**I don't know. It should be recalled that airport services are in the grey industry, with the possibility of stopping services at any time, and are recommended for purchase on a monthly basis to avoid excessive losses. With regard to airport auditing rules, our point is, "I can't look, but you can't ban it." The level of airport audit can be assessed by the reader on its own merits.
 
-If you use Psiphon, you can easily send an empty email to get@psiphon3.com to get the Psiphon download link. Psiphon application currently only supports Windows\Android\IOS\MacOS platform. When you can access the free Internet on these platforms, you can go to various channels to search for available nodes and proxy resources, such as [this](https://t.me/wtovpn) or [this](https://t.me/TG_Mtproxy_1). Note that using public nodes is at your own risk.
+- [GLaDOS](https://www.glados.rocks/landing/9FMKX-GYLMK-ZYIZW-5U3T0)After registration in mailbox, use active code`9FMKX-GYLMK-ZYIZW-5U3T0`Upon activation of the account number, you can get a free trial run of five days and a 10-GB trial flow. GlaDOS has the advantage of being free of charge, operating longer and more credible. Besides, GlaDOS is one of the few airports with Trojan node. The disadvantage is that speed is not very fast. Its audit rules allow for self-examination by entering the rear panel after registration. Based on our tests, it did not conduct audits strictly in accordance with the audit rules.
+
+---
+
+If you don't want to spend anything, you can install it.[Saifeng.](https://psiphon3.com/zh/index.html)This kind of software. Saif is free software.
+
+If you use racing, it's easy to send empty mail. Present.get@psiphon3.comto get a download of the link. Xyphoon applications currently only support Windows\Android\IOS\MacOS platforms. When you have access to the free Internet on these platforms, you can search for available nodes and proxy resources through various channels, such as:[Here.](https://t.me/wtovpn)Or...[Here.](https://t.me/TG_Mtproxy_1)I don't know. Note that the use of a public node entails taking the risk itself.
 
 ## 2. Installation
 
-Qv2ray and V2rayA are two excellent general-purpose clients for scientific internet available on Linux. You can install both as a backup. Among them, V2rayA is a browser client, which can be accessed remotely on the browser side in a headless environment such as a server. Qv2ray is a classic C/S architecture desktop software developed with QT.
+Qv2ray and V2rayA are two excellent scientific Internet users available on Linux. You can install both for backup. V2rayA is a browser client that can be accessed remotely at the browser end in a server, such as a headless environment. Qv2ray is a classic C/S architecture desktop-end software developed using QT.
 
-<!-- Each step in this section will be covered separately for Qv2ray 3.0 and V2rayA. -->
+<!-- 本节的每个步骤都将分为 Qv2ray 3.0 和 V2rayA 分别讲述。 -->
 
 ### v2ray
 
-v2ray is a prerequisite for using Qv2ray and V2rayA. It needs to be installed first. In the previous section [Selection of Mirror Sources](uk/rookie/basic_install?id=_7-mirror-source-selection), we mentioned that readers should replace mirror sources in non-authoritarian countries as soon as possible to ensure their own security, ** here Before installing v2ray is the last time you can switch to a mirror source in a non-authoritarian country**. Install v2ray using a secure mirror source.
+v2ray is a prerequisite for using Qv2ray and V2rayA. Installation is required first. In front.[Mirror Source Selection](/uk/rookie/basic_install?id=_7镜像源的选择)In one section, we mention that readers should change the mirror sources of non-authoritarian countries as soon as possible to ensure their own safety.**This is the last time you've changed the mirror source of a non-powerful country before you install v2ray here.**I don't know. Install v2ray using a secure mirror source.
 
 ```bash
 sudo pacman -S v2ray
 ```
 
-If there is no faster or accessible secure mirror source to install v2ray in your network environment, you can execute the following command to install the v2ray installation package provided by ArchLinuxStudio.
+If, in your network environment, there is no faster or accessible security mirror source to install v2ray, you can execute the following order to install the ArchLinuxStudio v2ray package for you.
 
 ```bash
 wget https://archlinuxstudio.github.io/ArchLinuxTutorial/res/v2ray-4.44.0-1-x86_64.pkg.tar.zst
@@ -62,18 +64,18 @@ sudo pacman -U v2ray-4.44.0-1-x86_64.pkg.tar.zst
 
 ### V2rayA
 
-V2rayA is a browser client that is very convenient to use. Since the author provides the download address in the wall, it can be installed directly in AUR. The service needs to be started after installation. V2rayA is updated frequently, developed actively, and its installation and use process are more friendly to novices. It is recommended for newcomers to use V2rayA for scientific Internet access.
+V2rayA is a browser client that is very user-friendly. As the author provides a downloading address inside the wall, it can be installed directly in the AUR. The service needs to be activated after installation. V2rayA is frequently updated, developed and active, and its installation and use processes are more user-friendly, recommending new people to use V2rayA for scientific Internet access.
 
 ```bash
 yay -S v2raya-bin
 sudo systemctl enable --now v2raya
 ```
 
-Then search for v2raya in the KDE menu and click to open the browser page. After logging in, you can use it by adding a subscription. For more usage methods, please see [Official Documentation](https://v2raya.org/) and [Project Address](https://github.com/v2rayA/v2rayA)
+Then search for v2raya in the KDE menu and click on the browser page. Click to add a subscription to it. See more ways to use it.[Official documents](https://v2raya.org/)and[Project Address](https://github.com/v2rayA/v2rayA)
 
 ### Qv2ray 3.0
 
-For the same reasons as described in the previous section, due to the [Mainland Chinese government blocks Github](https://zh.wikipedia.org/wiki/%E5%AF%B9GitHub%E7%9A%84%E5%AE%A1%E6%9F%A5%E5%92%8C%E5%B0%81%E9%94%81#%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD), you probably cannot install [Qv2ray 3.0](https://github.com/Shadowsocks-NET/Qv2ray) through AUR in the normal yay way, so ArchLinuxStudio provides a set of ready-to-install packages for you to use. The bin repository of Qv2ray3.0 is at the AUR address: [qv2ray-static-nightly-bin](https://aur.archlinux.org/packages/qv2ray-static-nightly-bin). The dynamic link repository of Qv2ray3.0 is at the AUR address: [qv2ray-git](https://aur.archlinux.org/packages/qv2ray-git). The installation and use of Qv2ray is more complicated and is not recommended for novice users. It should be reminded that if you use a dynamically linked Qv2ray, you will need to manually rebuild Qv2ray after its related dependencies are updated.
+for the same reasons as in the previous section[China mainland government blockade Github](https://zh.wikipedia.org/wiki/%E5%AF%B9GitHub%E7%9A%84%E5%AE%A1%E6%9F%A5%E5%92%8C%E5%B0%81%E9%94%81#%E4%B8%AD%E5%8D%8E%E4%BA%BA%E6%B0%91%E5%85%B1%E5%92%8C%E5%9B%BD), you may not be able to install it through AUR in a normal way[Qv2ray 3.0](https://github.com/Shadowsocks-NET/Qv2ray), so ArchLinuxStudio provides a package that can be installed directly for you. The bin repository for Qv2ray3.0 is the address of the AUR:[qv2ray-static-nightly-bin](https://aur.archlinux.org/packages/qv2ray-static-nightly-bin)I don't know. The dynamic link repository for Qv2ray3.0 is the address of AUR:[qv2ray-git](https://aur.archlinux.org/packages/qv2ray-git)I don't know. The installation and use of Qv2ray is complex and not recommended for start-up. You need to be reminded that if you use the dynamic link Qv2ray, you need to rebuild Qv2ray manually after it is updated.
 
 ```bash
 wget https://archlinuxstudio.github.io/ArchLinuxTutorial/res/qv2ray-git-3.0.0.rc1.r36.g0f1bf651-1-x86_64.pkg.tar.zst
@@ -83,34 +85,34 @@ wget https://archlinuxstudio.github.io/ArchLinuxTutorial/res/uvw-2.11.0_libuv_v1
 sudo pacman -U *.pkg.tar.zst
 ```
 
-> github.io is also blocked by the Chinese mainland government, but the blockade has not been very strong for the time being. If you get stuck during this process, you can try ctrl+c to terminate the command and try the download again, or you can try to change the network environment of the mobile phone hotspot to download again. When you configure the global proxy, you will no longer need to worry about any network blocking issues. We will continue to provide readers of this book with a reliable process for breaking through Internet censorship.
+> Gythub.io is also under blockade by the mainland Chinese government, although the blockade is not strong yet. If you are stuck in this process, you can try to download the ctrl+c command again, or try to retick the network environment of the mobile phone hotspot. When you have a global agent, you will no longer have to worry about any cyber-blocking. We will continue to provide readers of this book with a reliable process for breaking through Internet censorship.
 
-After installation, in Plugins, select V2ray V4 support, and set V2ray. Now that you can use it, you need to import the existing links or subscriptions according to the official documentation. For the rest of the details, please read [Qv2ray's documentation](https://qv2ray.net/). There are a few things to note:
+When installed in Plugins, select V2ray V4 support and make V2ray settings. Now that you're ready to use, you need to import existing links or subscriptions from official documents, with more details to read.[Document for Qv2ray](https://qv2ray.net/)I don't know. The following are some of the concerns:
 
-- The form of VMESS MD5 and non-0 AlterID in Qv2ray3.0 is no longer supported. If the AlterID issued by your airport or node is non-0, it cannot be used. If the server supports it, you can change the AlterID to 0 to use the VMessAEAD form.
-- Qv2ray3.0 has changed the airport's default subscription type to Specification: SIP008. If your airport subscription type is base64, you need to change SIP008 to base64 in Group->Subscription Settings->Subscription Type, otherwise you will not get any nodes in the subscription link.
-- **If** you have used an old version of Qv2ray 2.x before, you need to delete the old version of Qv2ray and the incompatible configuration, and the old version of Qv2ray and the new version of Qv2ray cannot coexist.
+- The form VMESS MD5 and non-0 AlterID in Qv2ray3.0 is no longer supported if the AlterID that comes from your airport or node is not 0 and cannot be used. If the service supports, you can change AlterID to 0 to use VMessAEAD.
+- Qv2ray3.0 has changed the default subscription type at the airport to the norm: SIP008. If your airport subscription type is base64, you need to change SIP008 to base64 in the group-> Subscription Settings-> Subscription type, otherwise you will not be able to get a node in any subscription link.
+- **If**You have previously used an old version of 2.x Qv2ray, and you need to delete the old version of Qv2ray and the incompatible configuration, while the old version of Qv2ray cannot coexist with the new version of Qv2ray.
   ```bash
   rm -rf ~/.config/qv2ray
   sudo pacman -R qv2ray-dev-git
   ```
-- Qv2ray 3.0 is not compatible with the old plug-ins, the old Qv2ray 2.x old plug-ins cannot be used. Currently, Qv2ray 3.0 integrates the support of VMess, Shadowsocks and Trojan, and provides support for command line plugins, speed measurement plugins, Trojan-Go and Naive through [Plugin Repository](https://github.com/Shadowsocks-NET/QvPlugins). If you need to use one of the plugins, you need to compile it yourself and put it in the target directory `~.config/qv2ray/plugins/`. At the same time, ArchLinuxStudio also provides pre-compiled plug-ins for your convenience. The Trojan-Go plugin does not seem to be working properly at present, and the hostname and port cannot be resolved normally [[1]](https://github.com/Shadowsocks-NET/QvPlugins/issues/1). Of course, you can also compile the plugin yourself, uncomment the plugin you need to compile in CMakeLists.txt, and then compile it. For the compilation steps, please refer to the [workflow file](https://github.com/Shadowsocks-NET/QvPlugins/actions/runs/1156038253/workflow) of Actions of QvPlugins .
+- Qv2ray 3.0 is not compatible with the old version of the plugin and the old Qv2ray 2.x version is not usable. Now Qv2ray 3.0 is supported by VMess, Shadowsocks and Trojan and is passed[Plugin repository](https://github.com/Shadowsocks-NET/QvPlugins)Provides command line plugins, speed measurement plugins, Trojan-Go and Naive support. If you need to use the plugin, you need to compile it and place it in the target directory.`~.config/qv2ray/plugins/`I don't know. Also, ArchLinuxStudio provides pre-compiled plugins for your convenience. Of which trojan-Go plugins do not seem to be currently in use, with hostname and port not being properly parsed[[1]](https://github.com/Shadowsocks-NET/QvPlugins/issues/1)I don't know. Of course, you can also compile your own plugins and remove the comments on the plugins you need to compile in CMakeLists.txt and then compile them. The steps to compile are based on QvPlugins' Actions.[workflow file](https://github.com/Shadowsocks-NET/QvPlugins/actions/runs/1156038253/workflow)I don't know.
   - [Command Line Plugin](https://archlinuxstudio.github.io/ArchLinuxTutorial/res/QvPlugins/libQvPlugin-Command.so)
-  - [Speed ​​Test Plugin](https://archlinuxstudio.github.io/ArchLinuxTutorial/res/QvPlugins/libQvPlugin-LatencyTest.so)
+  - [Speed Plugin](https://archlinuxstudio.github.io/ArchLinuxTutorial/res/QvPlugins/libQvPlugin-LatencyTest.so)
   - [Trojan-Go](https://archlinuxstudio.github.io/ArchLinuxTutorial/res/QvPlugins/libQvPlugin-TrojanGo.so)
   - [Naive](https://archlinuxstudio.github.io/ArchLinuxTutorial/res/QvPlugins/libQvPlugin-NaiveProxy.so)
 
-## 3. Preliminary settings for the proxy
+## 3. Preliminary placement of agents
 
-After going through the above steps, you should already have the SOCKS5 proxy and the address and port of the HTTP proxy. This section describes how to set up a proxy for some programs individually, but it should be reminded that this is not the recommended way to use it. If you are a daily heavy user of Linux, you should use the global proxy method that will be described later.
+After the above steps, you should have the addresses and ports of SOCKS5 and HTTP agents. This sub-section describes how to set up separate program agents, but it needs to be reminded that this is not our recommended method of use, and if you are a daily heavy user of Linux, you should use the global agent approach that will be described later.
 
-After the node is linked, you can set the proxy in KDE's `System Settings` -> `Network Settings` -> `Proxy`. Note that the proxy configuration in `system settings` is not followed by all applications in the KDE desktop environment. After testing, applications such as chrome/chromium/brave browsers and steam will follow KDE's system proxy settings. Applications that do not follow the system settings proxy also require separate proxy configuration. The following describes how to configure agents individually in several commonly used software.
+After the node link you can use in KDE`系统设置` -> `网络设置` -> `代理`. Attention.`系统设置`The proxy configuration is not always followed in the KDE desktop environment, and applications such as chrome/chromium/brave browsers and steam will follow the KDE system agent settings. Applications that do not follow the system settings agent also require a separate proxy configuration. The manner in which the agents are individually configured in several commonly used software is described below.
 
-- Firefox browser
-  There is a proxy configuration in the settings options of the Firefox browser itself, and you can configure it.
+- Firefox Browser  
+  A proxy configuration exists in the fire fox browser ' s own settings and is sufficient.
 
-- Terminal
-  The proxy mode of the current terminal can be set through the export command. For example, using resources such as tldr or github raw requires setting an https proxy.
+- Terminal  
+  You can set the current terminal proxy through an export command. For example, the use of resources such as tldr or github Raw requires the setting up of the https proxy.
 
   ```bash
   export https_proxy=http://127.0.0.1:8889
@@ -118,37 +120,37 @@ After the node is linked, you can set the proxy in KDE's `System Settings` -> `N
   export all_proxy=http://127.0.0.1:8889
   ```
 
-  > The names of environment variables recognized by different terminal commands are different. For example, all_proxy is valid for curl, but not for wget. For details, please refer to the man page of each command.
+  > Environmental variables that are identified in different terminal commands differ, e. g. all proxy is valid for curl, while wget is not. See the man page of each command.
 
-- code OSS
-  File => Preferences => Settings
-  Search for proxy and fill in the http proxy address in it
+- code OSS  
+   File => Preference => Settings  
+   Search for proxy, fill in the http proxy address
 
--proxychains-ng
-If for an application, KDE's global proxy does not take effect, exporting the ALL_PROXY variable in the terminal and then starting the application proxy from the terminal does not take effect, and the application itself does not have the option to configure the proxy. At this time, you can try to use proxychains-ng, it The proxy can be configured for a one-line command. It is a preloaded hook that allows to redirect TCP traffic for existing dynamic linkers through one or more SOCKS or HTTP proxies.
+- proxychains-ng  
+  If the global agent for KDE is not effective for an application, nor is the application agent activated at the terminal with the AL PROXY variable at the terminal, and the application does not have its own option to configure the agent, then try using proxychains-ng, which can configure the one-line command agent. It is a preloaded Hook allowing TCP traffic to be redirected through one or more SONKS or HTTP agents to existing dynamic link programs.
 
-```bash
-sudo pacman -S proxychains-ng
-sudo vim /etc/proxychains.conf
-```
+  ```bash
+  sudo pacman -S proxychains-ng
+  sudo vim /etc/proxychains.conf
+  ```
 
-Change the last line in the configuration file to the ip and port of the local proxy, such as `socks5 127.0.0.1 1089`
+  Change the last line of the profile to the ip and port of the local agent, e. g.`socks5 127.0.0.1 1089`
 
-proxychains cannot support yay and some other programs, see [Incompatible with proxychains](https://github.com/Jguer/yay/issues/429)[proxychains4 with Go lang](https://github.com/rofl0r/proxychains-ng/issues/199). A transparent proxy can be used in this case.
+  Proxychains cannot support yay and other programs, as detailed[Incompatible with proxychains](https://github.com/Jguer/yay/issues/429)[proxychains4 with Go lang](https://github.com/rofl0r/proxychains-ng/issues/199)I don't know. In this case, transparent agents can be used.
 
-## 4. A more comprehensive system-level global proxy
+## 4. More comprehensive system-level global agent
 
-As can be seen from the above sections, it is very troublesome to set up a proxy for each software separately. If you use Linux as the main force, it is also necessary to configure a transparent proxy. If you use V2rayA, you can easily turn on the global proxy in the settings. If your technical level is not high, it is recommended that you use V2rayA's global proxy directly. If you use Qv2ray, please read the following section [Transparent Proxy](uk/rookie/transparentProxy).
+As can be seen from the above sections, it is difficult to set up separate agents for each software. If you use Linux as the main force, then it is necessary to have transparent agents, and if you use V2rayA, then you can easily open the global agent in the settings. If you're not technical enough, suggest you use V2rayA's global agent directly. If you use Qv2ray, read the following[Transparent Agent](rookie/transparentProxy)Section.
 
-In the case of global proxy, with UDP support turned on, DNS requests will also be intercepted and imported into v2ray, a more detailed description will be given in the next section.
+In the case of a global agent, open UDP support and the DNS request will also be intercepted and imported into v2ray, a more detailed description will be given in the following section.
 
-## 5. Why do we not recommend the use of offload proxies? What are the possible dangers of offloading proxies?
+## Why do we not recommend the use of diversion agents? What's the danger of diversion?
 
-In most scenarios, the shunt proxy refers to using a direct connection method when accessing domestic resources, and using a proxy connection when accessing foreign resources that are blocked. This way of using the network can be very convenient, but there are obvious dangers, but the public is almost unaware of the problem.
+In most scenarios, diversion agents are used in direct connection when visiting domestic resources, and in connection with visits to resources that are walled abroad. The use of such networks is indeed very convenient, but there are obvious dangers, yet the public is almost unaware of the problem.
 
-It is very easy to leak your own private information, including but not limited to IP address, browser and hardware fingerprint (which can almost uniquely mark your user's fingerprint), etc., and can use the information you use. The proxy IP corresponds to your own real IP.
+The way you use a diversion agent is very easy to divulge your own privacy information, including, but not limited to, IP addresses, browsers and hardware fingerprints (almost the only one that can mark your user's fingerprints), and to match your agent IP with your own real IP.
 
-For example, one of the most common examples is that a foreign website uses a Baidu statistics script. At this time, the corresponding information between your proxy IP and real IP can be easily matched by such a website, which is very dangerous.
-Another example is some malicious emails. For example, you are using a foreign email service and receive a malicious email. This email contains some domestic resources such as pictures, so your real IP and other information can also be easily obtained.
+One of the most common examples, for example, is the use of a 100-degree statistical script on a website outside the country, where it is very dangerous that your agent IP can easily be matched with real IP information.
+Another example is some kind of malicious mail, such as you're using a mail box service abroad to receive a malicious mail, where some domestic resources are embedded, like pictures, so you can easily access information like your real IP.
 
-There are more real examples than the above two, there are many similar situations. We have always fought for the privacy and security of the public, and we hope that in the future you will be able to forgo the use of shunt proxy network connections.
+There are more than two real examples, and there are many similar cases. We have been fighting for the privacy and security of the public, hoping that in the future you can abandon the use of network connections with diversion agents.

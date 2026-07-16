@@ -1,92 +1,94 @@
-# Configure transparent proxy using Qv2ray+cgproxy
+<!-- AUTO-GENERATED: edit the corresponding Chinese document instead. -->
 
-Global proxy, also known as transparent proxy. This section describes true, OS-level proxies, not just "global proxies" for all URLs in the browser. The reason why it is called a transparent proxy is that this system-level proxy is transparent to each application in the operating system, and the applications cannot perceive the existence of the proxy. The reason why it is called a global proxy obviously means an operating system-level, global proxy. These two terms are often used together in the Chinese context, and the term global agent can easily cause confusion.
+# Use Qv2ray+cgproxy to configure transparent agents
 
-The main text of this section is collected from [Qv2ray User Group](https://t.me/Qv2ray_chat), not original, we only update, improve and revise it based on it. [cgproxy project address](https://github.com/springzfx/cgproxy).
+Global Agent, Transparent Agent. This section refers to real, operating system-level agents rather than only "global agents" for all web sites in the browser. Transparent agents are called transparent agents because the system-level agents are not aware of their presence because they are equally transparent in their application in the operating system. It is clearly intended to be a global agent at the operating system level. The two terms are often used simultaneously in the Chinese context and the term global agent is prone to confusion.
 
-## Installation and setup
+The main body of this section is from[Qv2ray user Group](https://t.me/Qv2ray_chat)It is not the original; it is the basis on which we update, refine and amend.[cgproxy project address](https://github.com/springzfx/cgproxy)I don't know.
 
-1. Install the `cgproxy` software. Installable directly at [AUR](https://aur.archlinux.org/packages/cgproxy/). Due to the reason that the Chinese mainland government blocks Github, you may not be able to install cgproxy through AUR in the normal yay way, so ArchLinuxStudio provides a set of packages that can be installed directly for you to use.
+## Installation and Settings
+
+1. Install`cgproxy`Software. It's right there.[AUR](https://aur.archlinux.org/packages/cgproxy/)Install on it. Because the mainland Chinese government has blocked Github, you may not be able to install cgproxy through the AUR in a normal way, so ArchLinuxStudio provides a package that can be installed directly for your use.
 
 ```bash
 wget https://archlinuxstudio.github.io/ArchLinuxTutorial/res/cgproxy-0.19-1-x86_64.pkg.tar.zst
 sudo pacman -U cgproxy-0.19-1-x86_64.pkg.tar.zst
 ```
 
-> github.io is also blocked by the Chinese mainland government, but the blockade has not been very strong for the time being. If you get stuck during this process, you can try ctrl+c to terminate the command and try the download again, or you can try to change the network environment of the mobile phone hotspot to download again. When you configure the global proxy, you will no longer need to worry about any network blocking issues. We will continue to provide readers of this book with a reliable process for breaking through Internet censorship.
+> Gythub.io is also under blockade by the mainland Chinese government, although the blockade is not strong yet. If you are stuck in this process, you can try to download the ctrl+c command again, or try to retick the network environment of the mobile phone hotspot. When you have a global agent, you will no longer have to worry about any cyber-blocking. We will continue to provide readers of this book with a reliable process for breaking through Internet censorship.
 
-2. Enable any door settings option in Qv2ray under Preferences - Inbound Settings.
+2. Enables any door setting options at the bottom of Qv2ray's Preferences - Enter Settings.
 
-   - The listening ipv4 address can be filled with `127.0.0.1` or `0.0.0.0`, the former is recommended. If a dual-stack proxy is required, fill in `::1` in the monitoring ipv6 address (if the monitoring ipv4 is filled with 0.0.0.0, you can leave it blank).
-   - Select Full for sniffing, and check all three of Destination Override.
-   - Mode select "tproxy".
-   <!-- - If you want v2ray's built-in dns to take over the local dns in a transparent proxy environment, check "dns interception" under the `Connection Settings` tab. Note that in a transparent proxy environment, if the system dns or the built-in dns of v2ray is not configured properly, the system may not be able to resolve the domain name and thus cannot access the Internet normally. See the description below for details. -->
+   - Listen to ipv4 addresses to fill in`127.0.0.1`or`0.0.0.0`The former is recommended. If you need a double inn agent, fill in the ipv6 address`::1`(If the listening ipv4 is filled with 0.0.0.0, it may not be filled in).
+   - Sniffing for Full, Destining Override's three selections.
+   - Mode selection "tproxy".
+   <!-- - 如果希望在透明代理环境里让 v2ray 的内置 dns 接管本地 dns，则勾选`连接设置`选项卡下的“dns 拦截”。注意，在透明代理环境下，如果系统 dns 或 v2ray 的内置 dns 配置不当，可能导致系统无法解析域名从而无法正常上网。详见后文说明。 -->
 
-   If it is a complex configuration, you need to manually add the corresponding dokodemo-door inbound. Since the current version of the complex configuration does not provide the tproxy option, the tproxy mode needs to be implemented by editing json.
+   If you have a complex configuration, you need to add the corresponding dokodemo-door manually. Since the current complex version of the configuration does not provide troxy options, the troxy mode needs to be done by editing json.
 
-3. To configure `cgproxy`, edit `/etc/cgproxy/config.json`:
+3. Configure`cgproxy`, Edit`/etc/cgproxy/config.json`:
 
-   - \*\*Add "/" (including quotation marks) in brackets in `cgroup_proxy`, `port` is changed to the port of the transparent proxy in Qv2ray preferences.
-   - The default configuration of `cgproxy` is to proxy all tcp and udp, ipv4 and ipv6 traffic. If you do not want to proxy some (some) traffic, change the corresponding `enable_xxx` to false. Note that the configuration here should be consistent with the configuration in Qv2ray options (for example, if udp is not checked in Qv2ray options, be sure to change `enable_udp` to false).
-   - If you want to provide a transparent proxy for other devices connected to the local gateway (such as devices connected to the wifi hotspot opened by the local machine) when the local machine acts as a gateway device, change `enable_gateway` to true.
+   - **Yes.`cgroup_proxy`Add "/" in parentheses (includes quotation marks)**I don't know.`port`Change to the port of the transparent agent in the Qv2ray preferences.
+   - `cgproxy`The default configuration is the flow of all tcp and udp, ipv4 and ipv6, which corresponds if you do not want to represent some of the traffic(s)`enable_xxx`was replaced by false. Note that the configuration here is consistent with the configuration in the Qv2ray option (e. g. Qv2ray does not tick udp in the Qv2ray option, and this must be`enable_udp`Replace with false.
+   - If it is hoped that other devices connected to this gateway (e.g., wifi hotspots connected to this device) will also be provided transparent agents when the machine acts as a gateway device, it will`enable_gateway`Change to True.
 
-4. (Important) The basic principle of transparent proxy is to intercept all the traffic sent by the system and transfer these traffic to the proxy tool, so as to realize the purpose of letting all the traffic of the system go through the proxy. At this time, in order to avoid an infinite loop of traffic (that is, the traffic sent by the proxy tool is transferred back to the proxy tool), the proxy tool needs to be excluded from the transparent proxy environment. There are two ways to achieve this:
+4. The rationale for (important) transparency agents is to intercept all flows from the system and transfer them to proxy tools, thus achieving the goal of making all flows from the system proxy. At this point, in order to avoid a dead-end cycle of traffic (i.e., the flow of proxy tools is then shifted back into proxy tools), the proxy tools need to be excluded from the transparent proxy environment. This can be achieved in two ways:
 
-   - Monitor the startup of the proxy tool via `execsnoop` ​​and automatically move it out of the transparent proxy environment:
+   - Pass.`execsnoop`Monitor the launch of proxy tools and automatically move them outside the transparent proxy environment:
 
-     - The `cgproxy` software comes with `execsnoop` ​​support, which can be supported by the above `cgproxy` tested distributions.
-     - Edit `/etc/cgproxy/config.json`, add "v2ray", "qv2ray" (including quotes and commas) in brackets in `program_noproxy`, so that the traffic from `qv2ray` and `v2ray` is not transparent acting. If your `v2ray` or `qv2ray` are not in `PATH`, you need to fill in their absolute path.
+     - `cgproxy`Bring your software.`execsnoop`Support, above`cgproxy`A tested distribution can be supported.
+     - Edit`/etc/cgproxy/config.json`Yes.`program_noproxy`Add "v2ray", "qv2ray" in parentheses to enable`qv2ray`and`v2ray`The flow is not channelled through transparent agents. If it's yours...`v2ray`or`qv2ray`No, I'm not.`PATH`, you have to fill out their absolute path.
 
-   - Let `qv2ray` move itself out of the transparent proxy environment every time you connect to a proxy node:
+   - On each connection to the proxy node, let`qv2ray`You move yourself outside the transparent proxy environment:
 
-     - Install the Qvplugin-Command plugin and add a sentence to the "pre-connection" column in the plugin settings
+     - Install Qvplugin-Command plugin, add a sentence to the "pre-convention" column in the plugin settings
 
        ```
        sh -c "cgnoproxy --pid $(pgrep -x qv2ray)"
        ```
 
-       That's it.
+       It's okay.
 
-5. (Important) If transparent proxy for udp is enabled (dns is also udp), add the appropriate privileges to the v2ray binary:
+5. (Immediate) If transparent agents (dns and drp) for udp are enabled, add the corresponding privileges to v2ray binary files:
 
    ```
    sudo setcap "cap_net_admin,cap_net_bind_service=ep" /usr/bin/v2ray
    ```
 
-   Otherwise udp's transparent proxy may have problems.
+   Otherwise, there might be problems with the udp transparency agent.
 
-   > This command needs to be re-executed every time the v2ray binaries are updated.
+   > This command needs to be re-executed every time a v2ray binary file is updated.
 
-6. Start the transparent proxy service: `systemctl start cgproxy.service` or `systemctl enable --now cgproxy.service`.
+6. Other Organiser`systemctl start cgproxy.service`or`systemctl enable --now cgproxy.service`I don't know.
 
-After the above steps are completed, the transparent proxy should be able to be used normally.
+Once these steps have been completed, transparent agents should be used properly.
 
-## DNS configuration instructions
+## dns profile description
 
-If "dns interception" is checked and the transparent proxy of dns and udp is enabled, v2ray will intercept the request to the system dns and forward it to the built-in dns of v2ray, that is, let the built-in dns of v2ray take over the system dns. But v2ray built-in dns will follow routing rules.
+If the "dns intercept" is ticked and transparent agents for dns and drp are enabled, v2ray intercepts requests for dns and forwards them to the built-in dns of v2ray, i.e. gives the built dns of v2ray to take over the system. But v2ray built-in dns will follow the route.
 
-If "dns interception" is not checked, although v2ray will not let the built-in dns take over the system dns, but if the transparent proxy of dns and udp is enabled, the system dns will also go through the transparent proxy into v2ray and follow the routing rules of v2ray.
+If the "dns intercept" is not ticked, then v2ray will not allow the built-in dns to take over the system dns, but if transparent agents for dns and drp are enabled, the system dns will follow the V2ray and follow the V2ray route.
 
-Therefore, when the transparent proxy of dns and udp is enabled, if the dns of the system or the built-in dns of v2ray is not configured properly, it may cause the dns request to not be sent out, thus affecting the normal Internet access.
+Therefore, when transparent agents for dns and drp are enabled, the system dns or v2ray's built-in dns are not properly configured, which may result in dns requests not being sent out, thus affecting normal Internet access.
 
-Because the common routing rule of qv2ray is to bypass domestic ip, foreign ip all go through proxy. In this case, the following two configurations are typical problematic dns configurations:
+Since qv2ray's common route rule is to bypass the domestic p, the foreign p is represented. In this case, the following two configurations are typical of problematic dns configurations:
 
-- The foreign common dns is configured as the first choice, but the proxy itself does not support udp (at this time, the udp traffic queried by dns cannot go out, and dns cannot be queried)
-- Doh is configured to use the domain name as the preference. At this time, the domain name of doh cannot be resolved, so doh cannot be used.
+- Configure normal Dns foreign preference, but the agent does not support dupp (dns query udp flow is not available at this time, dns cannot query)
+- Configures doh as the preferred use of domain names. Doh's domain name cannot be deciphered at this time, and therefore cannot be used.
 
-Generally speaking, if you don't care who you send the dns query to, then in the case of bypassing the domestic ip, you only need to configure a domestic ordinary dns as the first choice to ensure that there will be no problems. If the proxy itself does not support udp and wants to use foreign dns, you can consider using doh using ip (such as `https://1.1.1.1/dns-query`, etc.).
+In general, if the dns query is not intended to be sent to anyone, then, in the case of the circumvention of the domestic ip, it is only necessary to have a domestic ordinary dns as the preferred option to ensure that no problem arises. If the agent himself does not support dupp and wishes to use dns abroad, then use doh using ip (e. g.`https://1.1.1.1/dns-query`Wait.
 
-If more complex dns configuration is required, it is recommended to refer to [upstream documentation](https://www.v2ray.com/chapter_02/04_dns.html), and select an appropriate dns configuration that will not affect normal Internet access.
+If more complex dns configuration is needed, suggest reference[Upper Document](https://www.v2ray.com/chapter_02/04_dns.html), and select the appropriate dns configuration that does not affect normal Internet access.
 
 ---
 
-When proxying is shown for apps like firefox, DNS requests are not made because those apps are aware of the proxy's existence. In the case of a transparent proxy, each application cannot perceive the existence of the proxy, so it will send its own dns request.
+When displaying a setup agent for applications such as firefox, these applications do not make a DNS request because they know the agent exists. In the case of transparent agents, each application is unaware of their existence and therefore sends its own dns request.
 
-At this time, all tcp/udp traffic (including DNS queries) can be forwarded to v2ray through cgproxy. In this case, there must be DNS query traffic, so in order to ensure that the machine does not issue any DNS requests (this is for privacy and security), the following settings are required. At this point, two situations need to be discussed.
+This will transfer all tcp/dp traffic (including DNS queries) to v2ray via cgproxy. As the DNS query flow is bound to arise in this case, the following settings are required to ensure that no DNS requests are made (this is for privacy and security). At this point, there are two types of discussions.
 
-- If you do not perform any v2ray's built-in DNS settings and DNS interception, then DNS traffic will be sent out using the local DNS settings such as 8.8.8.8. In this case, no matter how v2ray is configured (global or diverted), as long as you ensure that the 8.8.8.8 The request can be made through the proxy.
+- If no v2ray built-in DNS settings and DNS intercepts are performed, then DNS traffic will be distributed using its own DNS set-up as 8.8.8.8, regardless of how the v2ray is configured (overall or split), as long as it is guaranteed that the request for 8.8.8.8.8 can be sent through the agent.
 
-- If v2ray intercepts dns traffic received through dokodemo-door to dns outbounds through routing rules like the following, then v2ray can direct DNS query traffic to the out bound of "dns-out", that is, dns-outbound "Intercept" and "Re-forward".
+- If the v2ray intercepts the dns traffic to dns outbounds via the following router rules, then v2ray can direct the DNS query flow out of dns-out, i.e. "stop" and "retransmittal" by dns-outbound.
 
   ```json
   rules:
@@ -101,55 +103,55 @@ At this time, all tcp/udp traffic (including DNS queries) can be forwarded to v2
   },
   ```
 
-  At this time, dns outbound should call the built-in DNS settings for resolution. If the v2ray built-in DNS is set to 1.1.1.1, the original DNS request for 8.8.8.8 will turn to 1.1.1.1 request (then the request for 1.1.1.1). will still follow your routing rules) and return the result to the application. You can verify by turning on qv2ray's more verbose log level.
+  At this point, dns outboard should call the built-in DNS settings for resolution, and if the v2ray built DNS is set to 1.1.1.1, then the original DNS request for 3.8.8.8 will turn to the 1.1.1 request (which will then follow your route rules for 1.1.1) and return the result to the application. You can verify by opening qv2ray more detailed log level.
 
-If it is just to prevent the local machine from sending dns requests, fakedns can be completely omitted. Fakedns can indeed reduce a dns request under the condition of transparent proxy, which is indeed faster in theory. But there are also some articles that point out that there may be problems if all domain names are forged dns returns.
+If it's just to stop this dns request, it's completely possible not to use fakedns. Makedns do reduce dns requests once under conditions of transparent representation, and in theory do. However, there are also articles that point out that the return of dns may be problematic if all domain names are forged.
 
-Digression: Using clientIP can solve the problem of using a proxy server to resolve DNS. If the network speed is slow when returning the URL of a foreign CDN, but the premise is that you trust the proxy server and DNS server to receive your local IP. For your security, it is not recommended to use it.
+Extracurricular remarks: Using a proxy server can solve the problem of the slowness of the network if you return to the CDN site abroad, but only if you trust the proxy server and the DNS server to receive your local IP, which is not recommended for your safety.
 
-## Common problem
+## Common problems
 
-- After enabling the transparent proxy, it is impossible to access any external network, and the cpu usage of v2ray soars
+- Unable to access any extranets when transparent agents are enabled, and v2ray cpu occupancy surges litres
 
-  Maybe the traffic is stuck in an infinite loop, check if step 4 is configured correctly. If the configuration is OK, execute `systemctl status cgproxy.service` to see if there is any output such as `info: process noproxy pid msg: xxx`. If not, the cgproxy software or execsnoop is not working properly. Note that cgproxy software requires cgroup v2.
+  Maybe the flow is in a dead cycle, checking step 4 for proper configuration. If the configuration is clear, execute.`systemctl status cgproxy.service`See if there's anything like that.`info: process noproxy pid msg: xxx`Something like that. If not, indicate that cgproxy software or execsnoop is not working properly. Note that cgproxy software requires cgroup v2.
 
-  Try to exit qv2ray, and then execute `cgnoproxy qv2ray` in the terminal to see if it returns to normal. If it returns to normal, it means that cgproxy is working normally, but execsnoop is not working normally. Since execsnoop is somewhat dependent on the kernel, users of distros not tested with cgproxy above are advised to use method 2 in step 4. In addition, for kde users, the 5.19+ version of plasma will set additional cgroups for programs started from krunner. Although the cgproxy software takes this into account, there are still rare occasions where the cgroups set by plasma may override the cgroups set by cgproxy. In this case, you can usually restart qv2ray at this time.
+  Try exit qv2ray, then execute in terminal`cgnoproxy qv2ray`See if it's back to normal, if it's back to normal, which means cgproxy works normally, except the execsnoop doesn't work normally. Since execsnoop relies to some extent on kernels, it is recommended to use step 2 of the above-mentioned cgproxy test. Also, for kde users, the plasma version of 5.19+ sets an extra cgroup for the program started from krunner, although the cgproxy software takes this into account, there are very few instances where the cgroup set by plasma may have covered the cgroxy set-up, and then reset the qv2ray.
 
-- When transparent proxy is enabled, (some) domains cannot be accessed
+- Unable to access (partial) domain name when transparent agent is enabled
 
-  It may be that dns cannot resolve (part of) the domain name. Generally, this kind of failure only occurs when dns and udp transparent proxy are enabled.
+  Could be dns cannot resolve (partial) domain names. Usually this failure occurs only when dns and drp transparent agents are enabled.
 
-  Execute `dig unreachable domain name` in the terminal to see what error is reported:
+  Organisation`dig 无法访问的域名`See what's wrong:
 
-  - If an error like `reply from unexpected source: 192.168.0.100#42050, expected 8.8.8.8#53` appears, check if the configuration in step 5 is correct.
+  - If it's similar`reply from unexpected source: 192.168.0.100#42050, expected 8.8.8.8#53`, check step 5 for proper configuration.
 
-  - If an error like `connection timed out; no servers could be reach` appears, it means that the traffic of the dns query cannot go out. In this case, the system dns or the built-in dns of v2ray is often misconfigured. Please check whether there are several improper configurations mentioned above. If "dns interception" is not checked, at this time, although v2ray will not use the built-in dns to take over the system dns, it will still let the system dns go through a transparent proxy, so as to follow the routing rules of v2ray. At this time, it is necessary to check whether the system dns is the previous one. The kinds of improper configurations mentioned.
+  - If it's similar`connection timed out; no servers could be reache`, which indicates that the flow of dns queries is not available, often at a time when the system dns or v2ray is insufficiently configured. Please check if there are several inappropriate configurations mentioned above. If the "dns intercept" is not ticked, then at this point v2ray, while not using the built-in dns to take over the system dns, it will still allow the system dns to walk transparent agents, thus following the v2ray route rules, and will need to check whether the system dns are the types of inappropriate configurations mentioned above.
 
-- Can you use proxy application (for example, you can't use proxy when downloading BT)
+- Whether the agent can be applied (e.g. not to leave when downloading BT)
 
-  For native programs, yes, it can be implemented in two ways:
+  This may be done in two ways:
 
-  - Implemented through `cgnoproxy`: For example, by executing `cgnoproxy qbittorrent` on the command line, the launched qbittorrent program will not go through the transparent proxy. For another example, if `cgnoproxy --pid 12345` is executed on the command line, the program with the pid of 12345 will no longer go through the transparent proxy after execution. Any application can be supported in this way.
-  - Implemented through `/etc/cgproxy/config.json`: add the corresponding application in the brackets of `program_noproxy` in the configuration. This method only supports executable files and does not support various scripts. If you want to add clash and kde connect to the noproxy rule, you can complete this field as ["v2ray", "qv2ray", "clash", "/usr/lib/kdeconnectd"]. Note that after modifying `config.json`, you need to restart the cgproxy service to take effect, execute `systemctl restart cgproxy.service`.
+  - Pass.`cgnoproxy`Achieved: e.g., executed in command line`cgnoproxy qbittorrent`The qbittorrent program that's started won't be transparent. For example, in the command line`cgnoproxy --pid 12345`After implementation, the pid 12345 program no longer uses transparent representation. This approach could support any application.
+  - Pass.`/etc/cgproxy/config.json`Achieved: in configuration`program_noproxy`Insert the corresponding application in brackets. This approach supports only enforceable documents and not scripts. If you want to add clash and kde connect to the noproxy rule, then complete the field with ["v2ray", "qv2ray", "clash", "/usr/lib/kdeconectd". Watch out for modifications.`config.json`After that, the cgproxy service needs to be restarted to be effective and implemented`systemctl restart cgproxy.service`It's okay.
 
-  For other devices connected to the local gateway when the local machine is used as a gateway device, no, all traffic of those devices (except the traffic to the local machine) will inevitably go through the proxy.
+  For other equipment that is connected to the gateway when it is used as a gateway device, it is not possible to do so, and all traffic to those devices (other than that to which they are connected) is bound to be represented.
 
-- Slow response time in transparent proxy environment
+- Slower response in a transparent proxy environment
 
-  Because iptables redirects the corresponding traffic after the domain name is resolved into ip. Therefore, in a transparent proxy environment, accessing a domain name s may require at least 2 DNS resolutions (the system resolves once, and the v2ray offloading module resolves again after redirecting to v2ray). Therefore, the response is theoretically slower, and the magnitude of the slowdown depends on the response speed of the system dns and v2ray's dns.
+  As iptables is re-directed only after the domain name is analyzed to ip. Therefore, in a transparent proxy environment, access to a domain name s may require the resolution of at least two dns (system resolution once, re-direction to v2ray after v2ray). The response is therefore theoretically slower, depending on the speed of the system dns and v2ray dns.
 
-- Error `too many open files` is reported after enabling UDP support
+- Report errors after opening UDP support`too many open files`
 
-  The core problem is that the Linux system defines a series of limits, one of which is the maximum number of open files, and there are soft limits and hard limits. The specific limit results can be viewed through `ulimit -Sa` and `ulimit -Ha`. Generally speaking, the default soft limit open files value of arch is 1024, which is too small. The hard limit for open files is 524288, which is large enough. When you open too many web pages or turn on udp acceleration, the number of connections (the number of open files) can easily exceed the number of 1024, so it is limited. The solution is very simple, just modify the system-level configuration file about this limit, add the following line at the end of the /etc/security/limits.conf file, and then restart:
+  The core issue is that the Linux system defines a series of limitations, one of which is the maximum number of files to open, with soft and hard limits, which can be achieved with a specific limitation result`ulimit -Sa`and`ulimit -Ha`Look. In general, the default soft limit for aarch is 1024, which is too small. The value of hard-limited open files is 524288, which is large enough. The number of connections (number of files opened) can easily exceed the number 1024, so it is restricted. The solution is simple, with only the following line added at the end of the system-level configuration file on this limitation, and then restart:
 
   ```bash
-  * soft nofile 8192 #Don't drop the first asterisk
+  *   soft    nofile  8192  #不要落下了最前面的星号
   ```
 
-- Does not work properly with cgproxy when using docker/libvirt. For the solution, see [cgproxy issue3](https://github.com/springzfx/cgproxy/issues/3#issuecomment-637309706)
+- Using docker/ libvirt is not properly used with cgproxy. See you at the solution.[cgproxy issue3](https://github.com/springzfx/cgproxy/issues/3#issuecomment-637309706)
 
 ---
 
 Ref:
 
-1. [漫谈各种黑科技式 DNS 技术在代理环境中的应用](https://tachyondevel.medium.com/%E6%BC%AB%E8%B0%88%E5%90%84%E7%A7%8D%E9%BB%91%E7%A7%91%E6%8A%80%E5%BC%8F-dns-%E6%8A%80%E6%9C%AF%E5%9C%A8%E4%BB%A3%E7%90%86%E7%8E%AF%E5%A2%83%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8-62c50e58cbd0)
+1. [Talk about all kinds of black technology DNS technology applications in proxy environments](https://tachyondevel.medium.com/%E6%BC%AB%E8%B0%88%E5%90%84%E7%A7%8D%E9%BB%91%E7%A7%91%E6%8A%80%E5%BC%8F-dns-%E6%8A%80%E6%9C%AF%E5%9C%A8%E4%BB%A3%E7%90%86%E7%8E%AF%E5%A2%83%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8-62c50e58cbd0)

@@ -1,8 +1,10 @@
 import assert from "node:assert/strict";
+import { EventEmitter } from "node:events";
 import { mkdtempSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { createAzureTranslator, syncTranslations } from "./i18n-core.mjs";
+import { PassThrough } from "node:stream";
+import { createArgosTranslator, syncTranslations } from "./i18n-core.mjs";
 
 const root = mkdtempSync(join(tmpdir(), "archtutorial-i18n-"));
 
@@ -17,47 +19,41 @@ function read(path) {
 }
 
 try {
-  const originalFetch = globalThis.fetch;
-  try {
-    let capturedRequest;
-    globalThis.fetch = async (url, options) => {
-      capturedRequest = { url: String(url), options };
-      const requestBody = JSON.parse(options.body);
-      return new Response(
-        JSON.stringify(
-          requestBody.map((item) => ({
-            translations: [{ text: `Translated: ${item.Text}`, to: "en" }],
-          })),
-        ),
-        { status: 200, headers: { "Content-Type": "application/json" } },
-      );
+  let capturedSpawn;
+  const spawnProcess = (command, arguments_, options) => {
+    capturedSpawn = { command, arguments_, options };
+    const child = new EventEmitter();
+    child.stdout = new PassThrough();
+    child.stderr = new PassThrough();
+    child.kill = () => {};
+    child.stdin = {
+      end(input) {
+        const payload = JSON.parse(input);
+        queueMicrotask(() => {
+          child.stdout.end(
+            JSON.stringify({
+              translations: payload.texts.map((text) => `Translated: ${text}`),
+            }),
+          );
+          child.emit("close", 0);
+        });
+      },
     };
-
-    const azureTranslator = createAzureTranslator({
-      apiUrl: "https://api.cognitive.microsofttranslator.com/translate",
-      apiKey: "test-key",
-      region: "global",
-      sourceLanguage: "zh-Hans",
-      targetLanguage: "en",
-    });
-    const azureResult = await azureTranslator(["你好"]);
-    assert.deepEqual(azureResult, ["Translated: 你好"]);
-    const requestUrl = new URL(capturedRequest.url);
-    assert.equal(requestUrl.searchParams.get("api-version"), "3.0");
-    assert.equal(requestUrl.searchParams.get("from"), "zh-Hans");
-    assert.equal(requestUrl.searchParams.get("to"), "en");
-    assert.equal(requestUrl.searchParams.get("textType"), "html");
-    assert.equal(
-      capturedRequest.options.headers["Ocp-Apim-Subscription-Key"],
-      "test-key",
-    );
-    assert.equal(
-      capturedRequest.options.headers["Ocp-Apim-Subscription-Region"],
-      "global",
-    );
-  } finally {
-    globalThis.fetch = originalFetch;
-  }
+    return child;
+  };
+  const argosTranslator = createArgosTranslator({
+    projectRoot: root,
+    pythonExecutable: "python-test",
+    sourceLanguage: "zh",
+    targetLanguage: "en",
+    modelPackage: "translate-zh_en",
+    modelVersion: "1.9",
+    spawnProcess,
+  });
+  assert.deepEqual(await argosTranslator(["你好"]), ["Translated: 你好"]);
+  assert.equal(capturedSpawn.command, "python-test");
+  assert.ok(capturedSpawn.arguments_.includes("translate-zh_en"));
+  assert.equal(capturedSpawn.options.env.ARGOS_DEVICE_TYPE, "cpu");
 
   write(
     "i18n.config.json",
@@ -65,8 +61,11 @@ try {
       sourceDirectory: "docs",
       outputDirectory: "docs/uk",
       cacheFile: ".i18n-cache/en.json",
-      sourceLanguage: "ZH",
-      targetLanguage: "EN",
+      translationEngine: "test-translator",
+      sourceLanguage: "zh",
+      targetLanguage: "en",
+      modelPackage: "translate-zh_en",
+      modelVersion: "test",
       excludeFiles: ["_navbar.md"],
       protectedTerms: ["Arch Linux", "pacman"],
     }),
@@ -93,10 +92,9 @@ try {
 
   const dictionary = new Map([
     ["中文首页", "Chinese home"],
-    [
-      '使用 <span class="notranslate">Arch Linux</span> 和 ',
-      'Use <span class="notranslate">Arch Linux</span> and ',
-    ],
+    ["使用 <x0> 和 ", "Use and "],
+    ["使用 ", "Use "],
+    [" 和 ", "and "],
     ["。", "."],
     ["阅读指南", "Read the guide"],
     ["截图", "Screenshot"],

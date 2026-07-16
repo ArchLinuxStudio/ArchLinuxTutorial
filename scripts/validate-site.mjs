@@ -66,9 +66,11 @@ for (const sidebar of sidebarFiles) {
   const source = readFileSync(sidebar, "utf8").replace(/<!--[\s\S]*?-->/g, "");
   for (const match of source.matchAll(internalLinkPattern)) {
     const route = decodeURIComponent(match[1]).replace(/^\//, "");
-    const candidates = route
-      ? [resolve(docsDirectory, `${route}.md`), resolve(docsDirectory, route, "README.md")]
-      : [resolve(docsDirectory, "README.md")];
+    const candidates = !route
+      ? [resolve(docsDirectory, "README.md")]
+      : extname(route).toLowerCase() === ".md"
+        ? [resolve(docsDirectory, route)]
+        : [resolve(docsDirectory, `${route}.md`), resolve(docsDirectory, route, "README.md")];
     assert(candidates.some(existsSync), `Broken sidebar route ${match[1]} in ${relative(root, sidebar)}.`);
   }
 }

@@ -1,64 +1,66 @@
-# Power Control
+<!-- AUTO-GENERATED: edit the corresponding Chinese document instead. -->
 
-For equipment with poor heat dissipation, power consumption control is very necessary. The power consumption control mentioned here does not mean to directly limit the frequency of the processor, but to probe the voltage of the processor to the maximum extent. While excavating the limit of the cpu physique, it can not only reduce heat, but also Maximize the effect of maintaining performance. In addition to the voltage drop, you can also try to reduce the power wall (also called TDP) of the processor. For example, considering this situation, when the CPU is at full turbo frequency, it does not need to be as much as the default. Power consumption to maintain, maybe reduce a few watts on the basis of the default power consumption, but also maintain full turbo frequency, so that the temperature can be further reduced. Limiting the power wall is different from lowering the voltage. If the parameters for limiting the power wall are low, it will inevitably lose more performance, but it is also a good method for equipment with poor heat dissipation.
+# Power control
 
-## Undervolting CPU
+For heat-dispersion equipment, power-use control is considered necessary. This means not limiting the frequency of the processor directly, but maximizing the downswing of the processor ' s voltage, while excavating the cpu body limits, as well as reducing heat and maximizing performance. In addition to the downtrenchment of the voltage, it may also be possible to try to reduce the power wall of the processor (often referred to as the TDP) by, for example, taking into account that, when cpu is full of wisdom, there is no need for the default amount of effort to sustain it, or perhaps to reduce it by a few watts on the basis of the default power consumption, which would further reduce the temperature. The restriction of power walls is different from the downward detection of voltage, and limiting the parameters of power walls would inevitably result in a greater loss of performance, but this is also a good way to spread overheating equipment.
 
-[Official reference documentation](https://wiki.archlinux.org/index.php/Undervolting_CPU)
+## -Turn down.
 
-Under normal operation, lowering the voltage will generally not harm the CPU, and it is generally recommended to try from 50 mV, adding an extra 10 mV for each step-down attempt. Just make sure that the tasks in the system are properly saved before lowering the voltage. It is a rumor that reducing the CPU voltage on the Internet will "shrink the anus" [[1]](https://www.zhihu.com/question/62335676).
+[Official reference documents](https://wiki.archlinux.org/index.php/Undervolting_CPU)
 
-### Intel 4th Gen Core Haswell and newer CPUs
+If properly operated, the reduction of voltage does not normally harm cpu, and it is generally recommended to try from 50 mV with an additional 10 mV at a time. Just ensure that all tasks in the system are properly preserved before the voltage is reduced. There's a rumor on the Internet that the reduction of the cpu voltage is a rumor.[[1]](https://www.zhihu.com/question/62335676)I don't know.
 
-Using intel-undervolt, as the documentation says, can be stepped down. The meanings of the five parameters in the step-down part of the configuration file are as follows:
+### Intel, four generations cool, Haswell and updated cpu
 
-- 0: cpu core voltage
-- 1: cpu core graphics card voltage
-- 2: cpu cache voltage
-- 3: System peripheral voltage, related to memory and other devices
-- 4: Analog I/O Voltage
+Use intel-undervolt, as stated in the document. The five parameters of the pressure-relief component in its configuration file mean the following:
 
-Generally speaking, only two voltages 0 and 2 can be adjusted.
+- 0:cpu core voltage
+- 1: cpu core card voltage
+- 2: cpu Cache voltage
+- 3: System perimeter voltage, associated with memory, etc.
+- 4: Simulation I/O voltage
 
-After adjusting the voltage and applying, you can try to use the tool [s-tui](https://archlinux.org/packages/community/any/s-tui/) to test the oven, and observe the temperature, frequency, TDP The data.
+In general, only 0 and 2 voltages can be adjusted.
 
-After adjusting to a suitable step-down configuration, start its corresponding service.
+After adjusting the voltage, use it.[s-tui](https://archlinux.org/packages/community/any/s-tui/)This tool is used to test the oven while observing temperature, frequency, TPP data.
+
+After adjusting to a suitable pressure-relief configuration, open the service.
 
 ```bash
 sudo systemctl enable --now intel-undervolt
 ```
 
-### Cpu before Intel 4th generation Haswell
+### Intel, 4rd generation of coolness.
 
-The arch official document mentioned that the second-generation Core and previous CPUs can use PHC to reduce voltage. After testing, it cannot be used directly on i7-2760QM. It is necessary to add `intel_pstate=disable` to the kernel startup parameters to correctly identify the phc driver. [Reference 1](https://wiki.archlinux.org/index.php/CPU_frequency_scaling), which can be verified with the command `cpupower frequency-info`. Next, try to reduce the voltage. According to the archwiki operation, the phc_vid file cannot be changed, and its content is always 0, even if it has been changed to another value with vim. Maybe the cpu/motherboard BIOS doesn't support downclocking. I read the official documentation of phc-intel, and its instructions only support Core, Core 2 and previous cpu series, not Core i, which contradicts the description of archwiki.
+Arch official documents mention that two generations of wise and former cpu can use PHC to depress pressure. Tested, not directly usable on i7-2760QM, need to be added to the inner core activation parameters`intel_pstate=disable`..to correctly identify phc-driver,[Reference 1](https://wiki.archlinux.org/index.php/CPU_frequency_scaling)command`cpupower frequency-info`Authentication. A pressure-relief attempt is then made to change the phc vid file to 0, even if it has been changed to another value using vim. Maybe cpu/master board BIOS doesn't support down frequency. Reads the phc-intel official document whose description only supports the cool, wise2 and previous cpu series and does not support the wise i, which contradicts the description of the arachwiki.
 
-For the three-generation Core Ivy bridge sandwiched in the middle, [there is a project](https://github.com/tiziw/iuvolt) says that the principle of intel-undervolt can be used to reduce voltage, but the test failed, so try to use PHC. still fails. At present, there should be no good way to step down the three-generation Core.
+Ivy Bridge,[Projects](https://github.com/tiziw/iuvolt)Says you can use the intel-undervolt principle for pressure relief, but the test failed and the attempt to use the PHC method failed. There should be no good way to bring down three generations of coolness.
 
-For older equipment bucks in this range, I won't spend more time exploring. If you know of a way to properly depressurize, please submit a PR, or [enter group discussion](https://t.me/FSF_Ministry_of_Truth).
+I will not spend more time exploring the pressure relief of old equipment in this range. If you know there's a way to depress, welcome to the PR, or[Group discussion](https://t.me/FSF_Ministry_of_Truth)I don't know.
 
 ref: [[1]](https://www.reddit.com/r/intel/comments/8ubdsg/undervolting_intel_i5_3230m/) [[2]](https://forum.thinkpads.com/viewtopic.php?t=128707)
 
 ### AMD
 
-Use amdctl in the wiki to try undervolting.
+You can try to depress the pressure according to wiki using amdctl.
 
-## Limit power wall
+## Lower power wall.
 
-For the adjustment of the power wall, some motherboards provide setting items in the BIOS that can be adjusted directly. For motherboards without setting items, some motherboards lock the instantaneous and long-term power wall, and in this case, the power wall cannot be adjusted. Some motherboard BIOS does not provide power wall adjustment items, but it can still be set through the command line. Use the following command to check whether the motherboard can adjust the power wall.
+For the adjustment of power walls, some main panels provide settings in BIOS that can be adjusted directly. For the main panel, which does not have an item, the main panel is the locking of the instant and long-term power wall, which cannot be adjusted. The master plate BIOS does not provide power wall adjustments, but can still be set by command line. The following command allows to see whether the main plate can adjust the power wall.
 
 ```bash
 grep . /sys/class/powercap/intel-rapl/intel-rapl:0/*
 ```
 
-If you see an enable value of 1 in the output like the following, you can adjust it. The first row represents the existing power wall limit.
+An adjustment can be made if the following value is found in the output. The current power wall limits for the first line of representation.
 
 ```bash
 /sys/class/powercap/intel-rapl/intel-rapl:0/constraint_0_power_limit_uw:100000000
 /sys/class/powercap/intel-rapl/intel-rapl:0/enabled:1
 ```
 
-The specific adjustment steps refer to [this link](https://askubuntu.com/questions/1226254/set-max-tdp-of-intel-h-series-cpu). I will translate it when I have time.
+Reference to specific adjustment steps[This link.](https://askubuntu.com/questions/1226254/set-max-tdp-of-intel-h-series-cpu)I don't know. I'll translate it when I have time.
 
 Ref: [[1]](https://askubuntu.com/questions/1231091/tee-constraint-0-power-limit-uw-no-data-available),[[2]](https://miloserdov.org/?p=1932),[[3]](https://zhuanlan.zhihu.com/p/25537264)
 
-In addition, intel-undervolt can also directly perform power wall limiting. If you see `package power limit is locked`, it means that this computer cannot change the power wall.
+In addition, intel-undervolt can directly limit power walls. As you can see`package power limit is locked`, which indicates that the computer cannot change the power wall.

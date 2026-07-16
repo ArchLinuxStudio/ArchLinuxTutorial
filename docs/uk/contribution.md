@@ -1,36 +1,38 @@
-# Contribution <!-- {docsify-ignore-all} -->
+<!-- AUTO-GENERATED: edit the corresponding Chinese document instead. -->
 
-Click the github icon in the upper right corner of this article to view this project. There is also a link to `edit this article` at the bottom of each page, click to jump to github for editing.
+# Contributing documents and codes<!-- {docsify-ignore-all} -->
 
-The outline directory of this book is controlled by the project team members, and the content of the article can be edited freely. The main line of this book is based on practicality, and only provides a simple and concise installation line that we think is currently better. Redundant and meaningless content will not be accepted.
+Click on the gthub icon on the top right corner of this document to view the project. At the bottom of every page.`编辑本文`, click to jump to gthub editor.
 
-The addition of project resources, such as images, non-essential js files, and non-essential css files, are not accepted. Because of the blockade and restrictions on github in some countries, such files under direct connection will greatly slow down the loading speed of web pages.
+The outline catalogue of the book is controlled by the project team members and the articles are freely edited. The contents of the book ' s main line, which is pragmatic in nature, provides only one installation main line that we consider to be more elegant and concise at present. Redundant and meaningless content is not accepted.
 
-This project was originally licensed under the CC BY-SA 4.0 license, and eventually switched to the CC BY-NC-ND 4.0 license, see [Why we changed the license to CC BY-NC-ND 4.0](https://github.com/ArchLinuxStudio/ArchLinuxTutorial/issues/68).
+Additions to project resources, such as pictures, non-essential js documents, non-essential css documents, etc., are not accepted. The blockades and restrictions imposed by certain countries on github have led to more slow-loading of web pages if such documents are available.
 
-## Documentation contribution
+This project was originally licensed by CC BY-SA 4.0 and eventually changed to CC BY-NC-ND 4.0 for the reasons given.[Why we changed the license to CC BY-NC-ND 4.0](https://github.com/ArchLinuxStudio/ArchLinuxTutorial/issues/68)I don't know.
 
-Documentation contribution is very simple, you only need to have an editor, fork the project, modify it, and submit a pull request. Note that if you submit changes in one language, please also submit changes in the other language.
+## Document Contribution
 
-## Format convention
+The document contribution is very simple. All you need to do is have an editor, put the project fork, modify, and submit the full request. Note that if you have submitted a relevant change to one language, please submit a corresponding change to another language.
 
-The philosophy of this series of documents is that you don't have to be too strict about formatting, because the content is what really matters. But there are also a few specifications that must be followed, otherwise reading will be affected.
+## Format engagement
 
-- Use OSS code for development, format the code with the default configuration of the Prettier plugin, and use ctrl+s to automatically format and save after writing some documents.
-- Each md document title organizes the content hierarchically, the main title is #, followed by ##, then ###, and so on.
-- means that the fragment needs to be wrapped in markdown syntax and specify the code type, such as bash.
-- In general, please try to use punctuation such as periods, commas, quotation marks, and colons as normal.
-- Use markdown citation syntax for parts that need attention.
-- Proper nouns can be hinted using inline code `` syntax, which is more obvious than bold.
-- Inline code Please use inline code for hints.
+The idea of this series document is not to be too demanding in format, because content is really important. But there are also a few norms that need to be followed, otherwise reading will be compromised.
 
-## Code contribution
+- Develops with OSS code to format code with Prettier plugin default configuration, and auto-formatizes with ctrl+s after writing some documents.
+- The title of each md document is organized by hierarchy, with the broad title #, sub#, again ##, and so on.
+- The representative clips need to be packaged in markdown syntax and specify the type of code, such as bash.
+- As a general rule, please use, to the extent possible, stop, quote, colon, etc.
+- The sections that require attention can be grammatically referenced.
+- Proprietary terms are more obvious than thick, and can be suggested using line code ``grammatics ' .
+- The line code is used to make a hint.
 
-This project is written using [docsify](https://docsify.js.org/#/). If you want to contribute related code, please read the docsify project documentation first.
+## Code Contribution
 
-This project uses yarn to manage dependencies, and the structure is very simple. If you have not been exposed to it, you may need to briefly understand [yarn](https://classic.yarnpkg.com/en/)
+Use of this project[docsify](https://docsify.js.org/#/)Prepared. Read the Docsify project document if you want to contribute the relevant code.
 
-Local debugging:
+This project is dependent on Yarn management and has a very simple structure. If there's no contact, you might want to get to know. Down[yarn](https://classic.yarnpkg.com/en/)
+
+Local Debug
 
 ```bash
 yarn install

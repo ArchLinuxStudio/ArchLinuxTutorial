@@ -1,218 +1,255 @@
-# Linux daily operations and basics
+<!-- AUTO-GENERATED: edit the corresponding Chinese document instead. -->
 
-After reading the `Beginners on the Road` chapter, your system is completely ready to use, the KDE desktop environment provides a powerful [GUI](https://en.wikipedia.org/wiki/Graphical_user_interface) for normal users. Press the `Windows` key (also often called the Meta key under Linux) to call out the menu bar, find `Settings`=>`System Settings`, you can find most of the system settings.
+# Linux day-to-day operations and basic knowledge
 
-But if you want to master your system with ease, you also need to read this article.
-If you want to learn more about the detailed knowledge of each section of this article, you can click on the extension links given in each section to learn.
-If you don't want to know in detail, the knowledge introduced in this chapter is enough for you to deal with daily use.
+After reading`新手上路`Chapters, your system is fully operational, and KDE desktop environment provides a powerful environment[GUI](https://zh.wikipedia.org/wiki/%E5%9B%BE%E5%BD%A2%E7%94%A8%E6%88%B7%E7%95%8C%E9%9D%A2)For ordinary users. Press`Windows`Key (Linux is also often called Meta Key) pops out of the menu bar and finds`设置`=>`系统设置`, most system settings can be found.
 
-## Must-learn Linux knowledge
+But if you want to control your system, you need to read what you know.
+If you want more detailed information on the various sections of this paper, you can learn by clicking on the outreach links given in each subsection.
+If you do not want to know more, the knowledge presented in this chapter will be sufficient for your daily use.
 
-Only the most basic and necessary Linux knowledge points and tips are introduced here.
+## You have to have Linux knowledge.
 
-1. In Linux, the file directory structure is completely different from Windows. There are drive letters such as C drive and D drive in Windows, but these divisions do not exist in Linux. The top-level directory is the root directory, and the path is _/_ , and is distinguished from one level to the next in a tree structure.
-2. For the tree file structure of Linux, there are relative paths and absolute paths. An absolute path represents a full path starting from the root path _/_, such as `/home/testuser/Download`. A relative path represents a partial path from the current directory to the target directory. For example, the current directory you are in is `/home/testuser`, then the relative path to switch to the absolute path `/home/testuser/Download` is `./Download`. Where `./` represents from the current directory, and then look down. In addition, the two periods of `..` represent the search to the upper layer. For example, your current path is `/home/testuser/Download`, and the relative path to `/home/testuser/Desktop` is `../Desktop`.
-3. Simply put, there are two types of users in Linux. The first type of user is the root user, also known as the super user, which has the highest authority in the system. The second type of users are ordinary users other than the root user, who can have different levels of permissions. Be very careful when using root privileges.
-4. In theory, any operation in the graphical interface can be completed with the corresponding command line command. If you open a program and report an error, try to find its corresponding startup command, execute this command in the terminal, and observe the error log output when it is running, consult relevant information, and solve the problem.
+Only basic, most necessary Linux knowledge points and small skills are presented here.
 
-## Terminal Operation Basics
+1. In Linux, the file directory structure is completely different from Windows. Windows exists with discs like C, D, and these divides do not exist in Linux. The top directory is the root directory with the path_/_, and is distinguished from one level down by a tree structure.
+2. For the tree file structure of Linux, there is a difference between the relative path and the absolute path. The absolute path is the root path._/_Start full path, e. g.`/home/testuser/Download`I don't know. Relative paths represent a partial path from the current directory to the target directory. Like the directory you're in right now.`/home/testuser`, switch to absolute path`/home/testuser/Download`is the relative path`./Download`I don't know. of which`./`represents the current directory, then search down. In addition,`..`These two lines mean looking up, like the path you're on.`/home/testuser/Download`Look up to find`/home/testuser/Desktop`is the relative path`../Desktop`I don't know.
+3. Simply put, there are two types of users in Linux. The first type of user is a root user, also known as a superuser, with the highest privileges in the system. The second type of user is an ordinary user with different levels of permission except for root users. Use root privileges with great care.
+4. In theory, any operation in a graphical interface can be performed with a corresponding command line command. If you open a program to report errors, try to find its corresponding start-up command, execute it in the terminal, and observe the error log output when it runs, access the relevant information and solve the problem.
 
-If you want to be proficient in Linux, you must master the common commands and usage of the terminal.
+## Terminal operating basis
+
+If you want to master Linux, you have to master the usual command and use of terminals.
 
 ```bash
-ls /some_path # View files and subfolders under a certain folder / represents the root directory, which is the top path of Linux and is an absolute path
-pwd # View the path where the current terminal is located
-cd /home/testuser # switch directory command, switch the current terminal to a certain path
-cp ./a.cpp ./b.cpp # Copy command Copy a.cpp in the current path as b.cpp ./ represents the path of the current folder, which is a relative path
-cp -r ./a ./b # copy the whole folder
-rm b.cpp # delete command delete b.cpp
-mv a.cpp b.cpp # move (rename) command to rename a.cpp to b.cpp
-mkdir new_folder # create a new folder new_folder
-sudo some command # Make ordinary users execute certain commands with root privileges
+ls /some_path       # 查看某个文件夹下的文件与子文件夹 /代表根目录，是Linux最顶端的路径，是绝对路径
+pwd                 # 查看当前终端所在路径
+cd /home/testuser   # 切换目录命令，将当前终端切换到某一个路径下
+cp ./a.cpp ./b.cpp  # 复制命令 将当前路径下的a.cpp复制一份为b.cpp ./代表当前文件夹所在路径，是相对路径
+cp -r ./a ./b       # 复制整体文件夹
+rm b.cpp            # 删除命令 删除b.cpp
+mv a.cpp b.cpp      # 移动(重命名)命令 将a.cpp更名为b.cpp
+mkdir new_folder    # 新建文件夹new_folder
+sudo some command   # 使普通用户以root权限执行某些命令
 ```
 
-Extension link: It is recommended to read the online advanced book [Linux Command Line and Shell Script Tutorial](https://archlinuxstudio.github.io/ShellTutorial/#/).
+Bash Terminal Set Path to`~/.bashrc`
+
+```
+$include /etc/inputrc # 引入全局bash配置
+set completion-ignore-case on # 补全路径忽略大小写
+set horizontal-scroll-mode Off # 允许提示换行
+set bell-style none # 关闭提示警告音
+```
+
+Outreach links: recommended reading of online progress books Nationality[Linux command line and Shell script teaching Cheng](https://archlinuxstudio.github.io/ShellTutorial/#/)I don't know.
 
 ## Pacman Package Management
 
-Pacman is the package manager for Arch Linux, it is used to install, remove, query software, etc.
+Pacman is Arch Linux 's package manager, which is used to install, delete, query software, etc.
 
 ```bash
-sudo pacman -S package_name # install the package
-sudo pacman -Syu package_name # Upgrade the system and install the software package. Arch Linux does not support partial upgrades. It is recommended to use this command to upgrade first and then install
-sudo pacman -Syu # upgrade system
-sudo pacman -Syyu # upgrade the system yy mark forced refresh u mark upgrade action
-sudo pacman -R package_name # remove the package
-sudo pacman -Rs package_name # remove the package and all its dependencies not used by other installed packages
-sudo pacman -Qdt # find orphaned packages Q is to query the local package database d mark dependent packages t mark unwanted packages dt merge marks orphaned packages
-sudo pacman -Rs $(pacman -Qtdq) # remove orphaned packages
-sudo pacman -Fy # update command to query file list database
-sudo pacman -F xxx # When you don't know which package a command belongs to, it is used to query which package a xxx command belongs to
+sudo pacman -S package_name     # 安装软件包
+sudo pacman -Syu package_name   # 升级系统并安装软件包，Arch Linux 不支持部分升级，建议用此命令先升级再安装
+sudo pacman -Syu                # 升级系统
+sudo pacman -Syyu               # 升级系统 yy标记强制刷新 u标记升级动作
+sudo pacman -R package_name     # 删除软件包
+sudo pacman -Rs package_name    # 删除软件包，及其所有没有被其他已安装软件包使用的依赖包
+sudo pacman -Qdt                # 找出孤立包 Q为查询本地软件包数据库 d标记依赖包 t标记不需要的包 dt合并标记孤立包
+sudo pacman -Rs $(pacman -Qtdq) # 删除孤立软件包
+sudo pacman -Fy                 # 更新命令查询文件列表数据库
+sudo pacman -F xxx              # 当不知道某个命令属于哪个包时，用来查询某个xxx命令属于哪个包
 ```
 
-An easy-to-use graphical package management software
+A good graphical package management software
 
 ```bash
-yay -S octopi #package manager front-end interface
+yay -S octopi #包管理器前端界面
 ```
 
-Extension link: [Official Documentation](https://wiki.archlinux.org/index.php/Pacman)
+Outreach links:[Official documents](https://wiki.archlinux.org/index.php/Pacman)
 
-## Operation and introduction of system services
+## Operation and presentation of system services
 
-There are various services running in the Linux system, and you need to master the way to query and change the status of the service. At the same time, it is best to have a general understanding of creating services. Here is the usage of the command `systemctl`. Take dhcpcd as an example
+The Linux system runs a variety of services, and you need to know how to query and change service status. At the same time, there is a general understanding of the best way to create services. Here are the orders.`systemctl`Usage. Take the example of dhcpcd
 
 ```bash
-systemctl start dhcpcd # start the service
-systemctl stop dhcpcd # stop the service
-systemctl restart dhcpcd # restart the service
-systemctl reload dhcpcd # Reload the service and its configuration file
-systemctl status dhcpcd # View service status
-systemctl enable dhcpcd # Set the boot service
-systemctl enable --now dhcpcd # Set the service to start on boot and start the unit immediately:
-systemctl disable dhcpcd # Cancel automatic startup at boot
-systemctl daemon-reload dhcpcd # Reload systemd configuration Scan for new or changed service units Will not reload changed configuration Use reload to load changed configuration
+systemctl start dhcpcd          # 启动服务
+systemctl stop dhcpcd           # 停止服务
+systemctl restart dhcpcd        # 重启服务
+systemctl reload dhcpcd         # 重新加载服务以及它的配置文件
+systemctl status dhcpcd         # 查看服务状态
+systemctl enable dhcpcd         # 设置开机启动服务
+systemctl enable --now dhcpcd   # 设置服务为开机启动并立即启动这个单元:
+systemctl disable dhcpcd        # 取消开机自动启动
+systemctl daemon-reload dhcpcd  # 重新载入 systemd 配置 扫描新增或变更的服务单元 不会重新加载变更的配置 加载变更的配置用 reload
 ```
 
-Extension link: [systemctl official documentation](https://wiki.archlinux.org/index.php/Systemd#Basic_systemctl_usage)  
-[systemd configuration file example explanation](https://www.freedesktop.org/software/systemd/man/systemd.service.html#Examples)
+Outreach links:[ssystemctl official document](https://wiki.archlinux.org/index.php/Systemd#Basic_systemctl_usage) [ssystemd profile sample explanation](https://www.freedesktop.org/software/systemd/man/systemd.service.html#Examples)
 
-## Edit system configuration files
+## Edit System Profile
 
-#### Edit configuration files with sudoedit
+#### Edit Profile with Sudoedit
 
-In the previous section "[Desktop Environment and Common Applications](../rookie/DE%26App.md)", we have edited the system configuration file several times. Their characteristics are that they are effective for all users in the system, are owned by the root user, and only the root user has write permissions, which requires us to use sudo to elevate to root permissions to edit them. It is easy to think of using the sudo command to run a text editor, taking vim as an example:
+In the front."[Desktop Environment and Usual Applications](../rookie/DE%26App.md)In the section, we have edited the system profile several times. They are characterised as valid for all users in the system, owned by root users, and only root users have write permissions, which requires us to edit them with sudo up to root privileges. It is easy to think of running text editor using sudo commands, for example:
 
 ```shell
-sudo vim the path to the file you want to edit
+sudo vim 你要编辑的文件的路径
 ```
 
-But this is not the best way because it violates the "[Least Privilege Principle](https://en.wikipedia.org/wiki/%E6%9C%80%E5%B0%8F%E6%9D%83%E9%99%90%E5%8E%9F%E5%88%99)". Because when we execute a command with sudo, the whole process gets root privileges. In other words, all vim operations, including all vim plugins, will run under root privileges, which is usually very dangerous. Some text editors will even refuse to run when they detect that they are running with root privileges to avoid dangerous actions.
+But it's not the best way, because it violates."[Minimum Permission Principle](https://zh.wikipedia.org/wiki/%E6%9C%80%E5%B0%8F%E6%9D%83%E9%99%90%E5%8E%9F%E5%88%99)I'm sorry. Because when we use sudo to execute an order, the whole process gets root privileges. That is, all operations of vim, even all vim plugins, are run under root, which is usually very dangerous. Some text editors refuse to run even when they detect themselves running with root privileges to avoid dangerous operations.
 
-On the other hand, just editing a file does not require such powerful permissions, we only need to have read and write permissions to this configuration file. And `sudoedit` (or `sudo -e`, which are completely equivalent) is the best practice for editing a system configuration file.
+Consider, in turn, that simply editing a document does not require such a strong mandate, and that all we need is the right to read and write in this configuration. And...`sudoedit`(or)`sudo -e`The two are fully equivalent) are best practices in editing a system configuration file.
 
 ```shell
-EDITOR=vim sudoedit the file to edit
+EDITOR=vim sudoedit 要编辑的文件
 ```
 
-The sudoedit command works roughly like this: it will first create a temporary file that ordinary users have the right to edit, copy the files to be edited into this temporary file with root permissions, and then according to environment variables such as EDITOR, ** as ordinary users **permission to run the text editor. After the text editor finishes editing and exits, it will overwrite the original configuration file with this edited temporary file with root privileges again.
+The sudoedit command works roughly this way: it creates a temporary file that ordinary users have the right to edit, copys the file to edit with root privileges to this temporary file, and then uses environmental variables like EDITOR.**With common user permissions**Runs the text editor. Once the text editor has finished and exited, it will again overwrite the original configuration with root privileges using this edited temporary file.
 
-For more information on sudoedit, see [sudo's manual](https://man.archlinux.org/man/sudo.8.en#e).
+For more information about sudoedit, see[Sudo's handbook](https://man.archlinux.org/man/sudo.8.en#e)I don't know.
 
-#### Syntax highlighting for configuration files
+#### Highlight profile
 
-Strictly speaking this is not a question about sudoedit but a question about text editors, but it is often encountered when editing files with sudoedit .
+Strictly speaking, it is not a question of sudoedit, but of a text editor, but it is often encountered when editing files with sudoedit.
 
-Because sudoedit creates a temporary file with a random name, the text editor may not recognize the file name and what syntax highlighting to enable. At this time, we need to actively tell the text editor what syntax to use. Taking vim as an example, you can set the syntax as follows in command line mode:
+Because Sudoedit will create a temporary file with a random name, the text editor may not know the file name and not know what syntax highlighting should be enabled. At this point we need to be proactive in informing the text editor about the syntax to use, for example, vim, which can be used in command line mode as follows:
 
 ```vim
-:set syntax=file syntax
+:set syntax=文件的语法
 ```
 
-Another problem is how to know the name of the grammar. On the one hand, we can use a search engine to search, or find it in vim's built-in plug-ins, but for those configuration files that ordinary users can also read, you can use vim to view it directly. At this time, vim will open the file in read-only mode. But syntax highlighting is enabled based on the filename. This just needs to be run in command line mode:
+Another question was how to know the grammatical name. On the one hand, we can search for the search engine, or we can find it in an inner plugin of the vim, but for those profiles that are also readable by ordinary users, we can look directly at it with the vim, which opens the file in read-only mode, but uses the syntax according to the filename. So you just have to run in command line mode:
 
 ```vim
 :set syntax
 ```
 
-You can view the highlighted syntax used by the current vim.
+can view the high-profile syntax currently used by the vim.
 
-#### Edit sudoers configuration file
+#### Edit sudoers profile
 
-Earlier we edited the sudoers configuration file. sudoers are a special case of system configuration files, and the best practice for editing them is not to use `sudoedit`, but the `visudo` command.
+Before we edit the sudoers profile. Sudoers is a special case of a system configuration file whose best practice for editing is not to use`sudoedit`But...`visudo`Command.
 
 ```shell
-sudo visudo # visudo needs to be run with root privileges. Edit /etc/sudoers by default
-sudo visudo -f The path to the sudoers file to be edited # You can also specify the file path
+sudo visudo  # visudo 需要使用 root 权限运行。默认编辑 /etc/sudoers
+sudo visudo -f 要编辑的sudoers文件的路径  # 也可以指定文件路径
 ```
 
-Similar to sudoedit, visudo will also copy the configuration file to be edited to a temporary file, and then call the text editor to edit, but the difference is that before starting to edit, visudo will also lock the sudoers file being edited, so that This avoids editing it by two people at the same time; and will check the syntax of sudoers after the edit is complete, rejecting the result of the edit if an error is found.
+Similar to sudoedit, it will copy the configuration file to be edited to a temporary file and then call the text editor to edit. The difference is that before editing starts, the visudo locks the sudoers file that is being edited so that two people can not edit it at the same time; and check the semantics of sudoers after editing has been completed, and if errors are found, the result of the editing will be rejected.
 
-This is because if a syntax error is encountered in the sudoers file, sudo will disable the entire sudoers configuration file for security reasons. In this case, if ordinary users accidentally change the sudoers file, they may lose the permission to use the sudo command, as if "closing the door and shutting themselves out", at this time, they need to log in directly with the root user or even need to Live USB first aid only. And visudo checks the syntax of sudoers to avoid this to a large extent.
+This is because if you encounter a grammatical error in a sudoers file, sudo, for security purposes, will render the entire sudoers profile invalid. In this way, if ordinary users inadvertently alter the sudoers files, there is a risk that they will lose access to the sudo command, as if they "close the door and shut themselves outside," and then they will need to log in directly with root users and even live USB first aid. And the fact that the visudo check the sudoers grammar can largely avoid this.
 
-On the other hand, visudo needs to be run as root, which means that its text editor actually runs as root as well, unlike sudoedit. For security, it can be configured to only use certain restricted "safe" text editors to edit the sudoers file. See the editor section in [ArchWiki](https://wiki.archlinux.org/title/Sudo#Using_visudo) and [sudoers manual](https://man.archlinux.org/man/sudoers.5) and [env_editor](https://man.archlinux.org/man/sudoers.5#env_editor) section.
+On the other hand, the visudo needs to run as root, which means that its text editor actually also operates as root, unlike sudoedit. To be safe, you can be configured to edit sudoers files using only some restricted " secure " text editor. For more details.[ArchWiki](https://wiki.archlinux.org/title/Sudo#Using_visudo)and[Sudoers Manual](https://man.archlinux.org/man/sudoers.5)and[env_editor](https://man.archlinux.org/man/sudoers.5#env_editor)Section.
 
-For more information about visudo, see the [Manual](https://man.archlinux.org/man/visudo.8).
+For more details about visudo[Handbook](https://man.archlinux.org/man/visudo.8)I don't know.
 
-## File transfer and system backup
+## File Transfer and System Backup
 
-Readers with a little Linux experience should know the [scp](<https://wiki.archlinux.org/index.php/SCP_and_SFTP#Secure_copy_protocol_(SCP)>) command. It is often used to transfer files between servers. But for now it should be replaced by a more modern tool [rsync](https://wiki.archlinux.org/index.php/Rsync) with new features like on-the-fly compression, delta transfer, etc. At the same time, `rsync` is also used for backup operations.
+A little bit, Linux.[scp](<https://wiki.archlinux.org/index.php/SCP_and_SFTP#Secure_copy_protocol_(SCP)>)This order. It is often used to transmit files between servers. But now it should be used more modernly.[rsync](https://wiki.archlinux.org/index.php/Rsync)Alternative, with new features such as instant compression, differential transmission. In the meantime,`rsync`It is also used for backup operations.
 
 ```bash
-rsync foo.txt me@server:/home/me/ # The most basic copy file is exactly the same as the scp operation
-rsync -a bar/ me@server:/home/me/ # The -a flag implements directory copying, etc. Better than scp -r to handle symbolic links, etc.
+rsync foo.txt me@server:/home/me/   # 最基础的复制文件 与scp的操作完全相同
+rsync -a bar/ me@server:/home/me/   # -a 标记实现目录复制等 比scp -r 能更好的处理符号链接等情况
 ```
 
-For full disk backup, please read the [official documentation](https://wiki.archlinux.org/index.php/Rsync#Full_system_backup).
+For a complete backup, read it.[Official documents](https://wiki.archlinux.org/index.php/Rsync#Full_system_backup)I don't know.
 
-## File decompression
+## File extraction
 
-In addition to the well-known tar command, the [ark](https://archlinux.org/packages/extra/x86_64/ark/) package we installed before can be directly decompressed with the dolphin file manager with an easy right-click, which is optional Dependency provides support for various compression formats, and you can choose to install it yourself. It should be noted that decompressing the compressed package under windows may cause garbled characters. Install unarchiver, one of the optional dependencies of ark, and use unar to avoid this problem.
+Except for the well-known tar command, we installed it before.[ark](https://archlinux.org/packages/extra/x86_64/ark/)The package can be decompressed directly with the easy right key of the dolfin file manager. The option depends on the support of the various compression formats that you can choose to install. It needs to be noted that the compressor package under the decompression window may be uncoded, and one of the options to install ark is unarchiver, using unar to avoid this problem.
 
 ```bash
 sudo pacman -S unarchiver
-unar-xxx.zip
+unar xxx.zip
 ```
 
 ## System hardware information detection
 
-Disk detection can be done using [smartmontools](https://archlinux.org/packages/extra/x86_64/smartmontools/)
+Disk Test Available[smartmontools](https://archlinux.org/packages/extra/x86_64/smartmontools/)
 
 ```bash
-sudo smartctl -A /dev/sda #hard disk
-sudo smartctl -d sat -A /dev/sdc #usb device
+sudo smartctl -A /dev/sda   #硬盘
+sudo smartctl -d sat -A /dev/sdc #usb设备
 ```
 
-Disk space analysis can directly use the dh command, or use the [Filelight](https://archlinux.org/packages/extra/x86_64/filelight/) graphical interface to visually check the disk usage
+Disk space analysis can directly use the df command or can also be used[Filelight](https://archlinux.org/packages/extra/x86_64/filelight/)Graphical interface visualize disk occupancy
 
 ```bash
 df -h
 ```
 
-The following two softwares can be used to view the information of cpu and graphics card
+cpu and graphic card information can be viewed using two softwares:
 
 ```bash
 yay -S cpu-x
 yay -S gpu-viewer
 ```
 
-Use [dmidecode](https://archlinux.org/packages/extra/x86_64/dmidecode/) to fully view most of the hardware information of the system, including hard-to-get memory frequency, motherboard BIOS, etc.
+Use[dmidecode](https://archlinux.org/packages/extra/x86_64/dmidecode/)A complete view of most of the system ' s hardware information, including the more difficult-to-access memory frequency, the master panel, the BIOS, etc.
 
 ```bash
 sudo dmidecode
 ```
 
-## Make windows 10 boot disk
+## Make Windows 10 starter
 
-You may be under linux, and sometimes you need to make a boot disk for win10. In the past, it was very simple to make a win10 boot disk under linux, but with the update of Microsoft in recent years, there is a file named `install.wim` in its iso installation image, and its size has exceeded 4GB. Exceeded the maximum 4GB limit for a single file required by fat32. This necessitates an extra step to make a bootable disk. The fat32 format is still used here because its compatibility is the best, and the uefi boot disk of ntfs is not recognized in many cases.
+You might have to make a win10 starter under the linux sometimes. In the past, it was easy to create a win10 starter under linux, but with the recent update of Microsoft, it iso has a name in its installation mirror.`install.wim`, the size of the file exceeds 4GB, exceeding the maximum 4GB limit for the single file required by fat32. This makes it necessary to take additional steps to create a start-up disk. The fat32 format is still used here because its compatibility is the best, and the ntfs' uefi starter is not recognized in many cases.
 
-First of all, similar to some steps in the basic installation, first use the parted command to create the partition label of the U disk as gpt. Next create a new partition with the cfdisk command and select Microsoft basic data in Type. Next use the mkfs.vfat command to format the created partition. The USB stick is now ready.
+The first steps are similar to those in the basic installation, first creating the partition label for the U-disk with a parted command. Creates a new partition next with a cfdisk command, select Microsoft Basic Data in Type. The created partition is then formatted using the mkfs.vfat command. So the U-disk is ready.
 
-Next download the iso image of win10 and extract it. In some file managers, you will get errors like the following.
+Next, download the win10 iso mirror and depress. In some file manager, you get the following error.
 
 ```bash
 This disc contains a "UDF" file system and requires an operating system
 that supports the ISO-13346 "UDF" file system specification.w
 ```
 
-In this case, you need to manually mount and copy it out
+In this case, it needs to be mounted manually and copied.
 
 ```bash
 mount -o loop /path/of/windows10.iso /mnt/your/mountpoint
 ```
 
-After getting the copied file, the last thing to do is to compress the install.wim file, here you need to install a package first
+Once the copied file is made, the last thing to do is compress the install.wim file.
 
 ```bash
 sudo pacman -S wimlib
 ```
 
-Next, compress, this step will last for a long time, wait patiently. When finished, you can see that the file has been compressed to 3.x GB.
+The compression is followed by a longer and patient process. Once completed, it can be seen that the file has been compressed to 3.x GB.
 
 ```bash
 sudo wimlib-imagex optimize install.wim --solid
 ```
 
-Finally, copy all the files to the U disk.
+Could not close temporary folder: %s
 
 Ref: [[1]](https://www.dedoimedo.com/computers/windows-10-usb-media-linux.html)
+
+## Create Windows11 startup disk
+
+Download Windows 11 ISO from Microsoft and verify checksum with Sha256sum
+
+Ready U-disk:
+
+Create partition tables (GPT)
+
+Creates a 1024MiB FAT32 partition, labeled BOOT
+
+Create a NTFS partition with the tag INSTALL
+
+Mount Windows 11 ISO and copy files:
+
+Copy all contents except the source folders to the BOOT partition.
+
+Copy Boot.wim folders from sources to BOOT partition, but keep directory structure (so it should still be in a folder named sources)
+
+Copy all contents to INSTALL Partition
+
+Unmount all content (takes some time)
+
+ref:
+
+- https://web.archive.org/web/20250705040832/https://nixaid.com/bootable-usb-windows-linux/
+- https://www.reddit.com/r/linux4noobs/comments/1d17crd/guide_to_creating_windows_11_usb_on_linux/?tl=zh-hans

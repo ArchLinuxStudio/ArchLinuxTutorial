@@ -1,31 +1,33 @@
-# Troubleshooting and solutions
+<!-- AUTO-GENERATED: edit the corresponding Chinese document instead. -->
 
-This section describes some of the problems that you are likely to encounter in daily use, and provides solutions.
+# Exclusion and resolution of common problems
+
+This section describes some of the problems you may encounter during your daily use with great probability and provides solutions.
 
 ### Install Arch Linux using BIOS+GPT mode
 
-Although there are fewer and fewer installation scenarios using traditional BIOS mode, in some special scenarios, such as installing Arch Linux on a VPS, it may still be necessary to use BIOS mode. This section describes the differences between installing in BIOS+GPT mode and UEFI+GPT mode, and most of the steps are the same.
+Although there are fewer scenarios installed using the traditional BIOS model, there may still be a need to use the BIOS model for certain special scenarios, such as the installation of Arch Linux on VPS. This subsection describes the difference between installation in the BIOS+GPT mode and installation in the UEFI+GPT mode, most of the steps being the same.
 
-- Before installation, in the motherboard's BIOS settings, or in the VPS's boot settings (if any), adjust the boot mode to Legacy BIOS mode boot.
-- When partitioning, you need to separate a 2M BIOS boot mode partition, this partition does not need to be formatted and mounted.
-- When installing the bootloader, the corresponding commands are modified to: `grub-install --target=i386-pc /dev/vda` and `grub-mkconfig -o /boot/grub/grub.cfg`. Among them, `/dev/vda` in the first command is the disk where GRUB is installed, not a partition. The specific name is changed according to the actual situation of the installer.
+- Prior to installation, in the BIOS settings of the main board, or in the VPS startup settings, if any, adjust the startup mode to the traditional BIOS mode.
+- An additional 2M BIOS Boot mode partition is required for partitions, which need not be formatted or mounted.
+- The corresponding command was amended to read:`grub-install --target=i386-pc /dev/vda`and`grub-mkconfig -o /boot/grub/grub.cfg`I don't know. Of which, in the first order,`/dev/vda`To install a GRUB disk instead of partitioning. The specific name is changed according to the actual circumstances of the installation.
 
 ### Static IP Settings
 
-Although the use of tools that can automatically obtain IP addresses can cover most scenarios, there are still some special scenarios, such as campus networks, VPS and other environments that require static IP settings. This section gives a brief way to set a static IP. If you need to set a static IP, you need to disable the tools that automatically obtain IP such as dhcpcd or NetworkManager.
+While most scenes are covered by the use of tools that automatically access the ip address, some special scenarios, such as campus networks and VPS, require static IP settings. This subsection gives a brief way to set static IPs. If static IPs are to be set, tools such as dhcpcd or NetworkManager need to be disabled to automatically access ip first.
 
 ```bash
 sudo systemctl stop dhcpcd NetworkManager
 sudo systemctl disable dhcpcd NetworkManager
 ```
 
-Next enable systemd-networkd
+Enable next stepmd-network
 
 ```bash
 sudo systemctl enable --now systemd-networkd
 ```
 
-Use the `ip ad` command to view the name of the current network card, for example, the name ens3 is used here. Then create the configuration file `/etc/systemd/network/10-static-ens3.network`. Then fill in the content in it. The ip address and gateway need to be obtained from your network provider. The DNS settings also need to be set in `/etc/resolv.conf` in the same way as above.
+Use`ip ad`Commands to view the name of the current card, e.g. by name ens3. Then create profile`/etc/systemd/network/10-static-ens3.network`I don't know. It is then filled in. Of which ip addresses and gateways need to be obtained from your network provider. The DNS settings are also required`/etc/resolv.conf`.
 
 ```conf
 [Match]
@@ -48,79 +50,79 @@ Finally, restart the service.
 sudo systemctl restart systemd-networkd
 ```
 
-### The mouse button is insensitive or malfunctioning
+### The mouse appears to be insensitive or inoperable
 
-Generally speaking, most mice are plug and play, but may experience failure after the 5.14 kernel update. It can be solved by installing the corresponding driver according to your own mouse brand. [[1]](https://openrazer.github.io/#arch)
+Generally, most of the mouse is plug-in, but 5.14 kernel updates may result in failure. It can be solved by installing the corresponding driver on your own mouse brand.[[1]](https://openrazer.github.io/#arch)
 
-### It takes a long time to shut down when shutting down
+### It's a long time before we can shut it down.
 
-Generally, a message in the form of `A stop job is running for...(1m30s)` will appear on the screen. This is a common problem that the shutdown is stuck for 1 minute and 30 seconds. Generally speaking, this situation is caused by a certain A process is unwilling to stop when it is shut down, and needs to wait until the timeout period is reached to force it to stop. The general solution is to adjust and shorten this waiting time. It is recommended to adjust it from 1 minute and 30 seconds to 30 seconds. 30 seconds is enough for almost all processes to end normally.
+Usually the screen will be like`A stop job is running for...(1m30s)`This information, which is often encountered as a problem of closing in 1 minute and 30 seconds, is generally a situation where a process does not want to stop when it is off and needs to wait until the time has elapsed to force a halt. The common solution is to adjust this waiting time to reduce it from 1 minute 30 seconds to 30 seconds, which is enough for almost all processes to end normally.
 
-Edit `/etc/systemd/system.conf`
+Edit`/etc/systemd/system.conf`
 
 ```bash
 sudo vim /etc/systemd/system.conf
 ```
 
-Find the `DefaultTimeoutStopSec` item, remove the pound sign in front of it, and assign the value to 30s. Finally execute daemon-reload to make it take effect.
+Find it.`DefaultTimeoutStopSec`One, remove its forward well number and give it 30s. Finally implement daemon-reload to make it effective.
 
 ```bash
 sudo systemctl daemon-reload
 ```
 
-The above solution actually only reduces this waiting time, and does not solve the actual problem. If you want to troubleshoot the real cause of the problem, if the message `A stop job is running for...(1m30s)` appears during shutdown, wait patiently for the shutdown to end, then restart the computer and execute the following commands:
+The above-mentioned solution simply reduced the waiting time and did not solve the real problem. If you want to figure out the real reason for the problem, if you turn it off,`A stop job is running for...(1m30s)`The information, patiently waiting for it to close down, then restart the computer and execute the following orders:
 
 ```bash
 journalctl -p5
 ```
 
-Press / (slash key) to search for the `Killing` keyword, find the matching line near the time you shut down, you can see which process caused the timeout nearby, and then check what is wrong with this process. Can.
+Press/ (Slash) search`Killing`Keywords, find the matching line in the vicinity of the time you shut down, and you can see in the vicinity which process caused the timeout and then go and check out what's wrong with the process.
 
-ref: [[1](https://forum.manjaro.org/t/a-stop-job-is-running-for-user-manager-for-uid-1000-during-shutdown/37799)][[ 2](https://unix.stackexchange.com/questions/273876/a-stop-job-is-running-for-session-c2-of-user)]
+ref: [[1](https://forum.manjaro.org/t/a-stop-job-is-running-for-user-manager-for-uid-1000-during-shutdown/37799)][[2](https://unix.stackexchange.com/questions/273876/a-stop-job-is-running-for-session-c2-of-user)]
 
-### How to deal with insufficient disk capacity
+### Processing methods with insufficient disk capacity
 
-Generally use LVM to install Linux system without worrying about this happening. But we are using the traditional ext4 classic partitioning method. In this case, it is generally recommended to set the root directory larger at the beginning of the installation, such as 100G. If the size of the /home partition is not enough, you can install a new hard disk, mount it to the location you want, and then follow the steps of `basic installation` to re-genfstab it.
+The use of LVM for the installation of Linux does not worry about this. But we use the traditional ext4 classic partition. In this case, it is generally recommended that the root directory be larger at the beginning of the installation, e.g. 100G. If the/home partition is not large enough, you can install a new hard drive to mount it in the location you want, then press`基础安装`The steps to reset the genfstab will suffice.
 
-In addition, if the root directory capacity is insufficient, you can clean the pacman cache from time to time, see [archwiki](https://wiki.archlinux.org/title/Pacman#Cleaning_the_package_cache) for details. If it is too long to read, you can directly use the following command to clean up all cached packages that are not installed, and the synchronization database that is not used.
+In addition to this, if the root directory is not sufficient, the cache of the pacman can be cleaned from time to time.[archwiki](https://wiki.archlinux.org/title/Pacman#Cleaning_the_package_cache)I don't know. It is too long to see that all cached packages that are not installed can be cleaned directly by using the following line command and the synchronized database that is not used.
 
 ```bash
 sudo pacman -Sc
 ```
 
-### Software downgrade
+### Reduction of software
 
-Occasionally, on archlinux, the latest version of a certain package has various problems, such as some software is too new, and some dependencies are not supported, such as [virtualbox crash under linux5.18 kernel](https:// bugs.archlinux.org/task/74900), at which point the package needs to be downgraded for normal use. A package can be either normal software or the kernel.
+On archlinux there are occasional problems with the latest version of a particular package, such as new software, and some dependence is not supported, for example[virtualbox crashed under kernel 5.18](https://bugs.archlinux.org/task/74900), the package needs to be downgraded for normal use. Packages can be either generic software or kernels.
 
 ```bash
 yay -S downgrade
 ```
 
-Just install this package, and the usage method is also very simple. Just add the package name to be downgraded after downgrade, and then you will be prompted to select the version to be downgraded to, just click.
+Installing this package is sufficient and the method used is simple, and downgrade is followed by the name of the package that needs to be downgraded, which then prompts you to select the version that needs downgraded and click on it.
 
-### An error like unable to lock database occurs when upgrading the system
+### Error while upgrading the system
 
-There may be abnormal shutdown or abnormal program exit when the system is upgraded, or multiple pacman related programs are executed at the same time. Just remove the db lock of pacman
+There may be cases of abnormal shutdowns or abnormal exits at the time of system upgrades, or multiple pacman-related programs are being executed simultaneously. Remove the db lock of Pacman
 
 ```bash
 sudo rm /var/lib/pacman/db.lck
 ```
 
-### Manual switch mixer
+### Manual Switch Composer
 
-Sometimes the mixer needs to be turned on or off manually for some reason, but currently the mixer cannot be turned off directly in the settings under KDE without shutting down. The following command provides the effect of manually switching the mixer on and off. [[1]](https://unix.stackexchange.com/questions/597736/disabling-kwin-compositor-from-command-line)
+Sometimes the mixer needs to be manually turned on or off for some reason, but it is not possible for the mixer under KDE to shut it down directly without turning it off. The following command provides the effect of manual switch mixers.[[1]](https://unix.stackexchange.com/questions/597736/disabling-kwin-compositor-from-command-line)
 
 ```bash
-qdbus org.kde.KWin /Compositor suspend #disable
+qdbus org.kde.KWin /Compositor suspend  #禁用
 
-qdbus org.kde.KWin /Compositor resume #Open
+qdbus org.kde.KWin /Compositor resume   #开启
 
 
 ```
 
 ### Screen overflow: overscan
 
-When connecting some old-fashioned display devices, the phenomenon of [overscan](https://en.wikipedia.org/wiki/Overscan) may appear. Simply put, the TV screen will overflow in four circles, and it will not be displayed. . For Intel HD graphics, you can choose intel panel fitter [[1]](https://askubuntu.com/questions/508358/overscanning-picture-problem-using-hdmi-with-intel-graphics). The last thing is to add to a service to automatically start at boot, and execute [[2]](https://unix.stackexchange.com/questions/397853/how-to-set-a-systemd-unit-to-start-after-loading-the-desktop).
+When connected to some old display device, it may appear[overscan](https://en.wikipedia.org/wiki/Overscan)The phenomenon, in short, is that there's gonna be a loop out of the screen, and it doesn't show. For Intel core card, select the intel panel field[[1]](https://askubuntu.com/questions/508358/overscanning-picture-problem-using-hdmi-with-intel-graphics)I don't know. Finally, you have to add a service to the start-up autostart and execute it after the loading of the DE.[[2]](https://unix.stackexchange.com/questions/397853/how-to-set-a-systemd-unit-to-start-after-loading-the-desktop)I don't know.
 
 ```
 sudo intel_panel_fitter -p A -x 1230 -y 700
@@ -130,4 +132,4 @@ sudo intel_panel_fitter -p A -x 1230 -y 700
 
 ## Ref
 
-- [[1]GUID 分区表*(GPT)*特殊操作](<https://wiki.archlinux.org/title/GRUB_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#GUID%E5%88%86%E5%8C%BA%E8%A1%A8_(GPT)_%E7%89%B9%E6%AE%8A%E6%93%8D%E4%BD%9C>)
+- [[1] GUID Partition Table* (GPT)* Special Operations](<https://wiki.archlinux.org/title/GRUB_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#GUID%E5%88%86%E5%8C%BA%E8%A1%A8_(GPT)_%E7%89%B9%E6%AE%8A%E6%93%8D%E4%BD%9C>)

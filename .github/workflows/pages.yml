@@ -18,7 +18,7 @@ jobs:
   deploy:
     name: Build and deploy
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 45
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -35,19 +35,27 @@ jobs:
           node-version: 24
           cache: yarn
 
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-i18n.txt
+
       - name: Install dependencies
         run: corepack yarn install --frozen-lockfile
 
+      - name: Install offline translation engine
+        run: python -m pip install --disable-pip-version-check -r requirements-i18n.txt
+
+      - name: Restore Argos language model
+        uses: actions/cache@v5
+        with:
+          path: ~/.local/share/argos-translate
+          key: argos-${{ runner.os }}-zh-en-1.9
+
       - name: Synchronize English documentation
-        env:
-          AZURE_TRANSLATOR_KEY: ${{ secrets.AZURE_TRANSLATOR_KEY }}
-          AZURE_TRANSLATOR_REGION: ${{ vars.AZURE_TRANSLATOR_REGION }}
-        run: |
-          if [ -z "$AZURE_TRANSLATOR_KEY" ]; then
-            echo "::warning::AZURE_TRANSLATOR_KEY is not configured; using the checked-in English pages."
-            exit 0
-          fi
-          corepack yarn translate
+        run: corepack yarn translate
 
       - name: Build site
         run: corepack yarn build
@@ -67,8 +75,8 @@ jobs:
       - name: Save generated English documentation
         run: |
           git add -- docs/uk
-          if [ -f .i18n-cache/azure-en.json ]; then
-            git add -- .i18n-cache/azure-en.json
+          if [ -f .i18n-cache/argos-zh-en.json ]; then
+            git add -- .i18n-cache/argos-zh-en.json
           fi
           if git diff --cached --quiet; then
             exit 0

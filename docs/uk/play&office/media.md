@@ -1,44 +1,45 @@
-# Audio & Video
+<!-- AUTO-GENERATED: edit the corresponding Chinese document instead. -->
 
-This section records related information about watching movies and listening to music on arch linux.
+# Video audio
 
-## Online music and audio player
+This section is recorded on Arch Linux watching videos and listening to music and other related information.
 
-To listen to online music, you can use [Netease Cloud Music](https://aur.archlinux.org/packages/netease-cloud-music/), [qq Music](https://aur.archlinux.org/packages/qqmusic-bin/) produced by NetEase or Tencent , but they are either in disrepair or of poor quality. Obviously these big companies are not willing to invest their energy in the Linux desktop, and we recommend you to use free software that is better maintained.
+## Online Audio and Audio Player
 
-[yesplaymusic](https://github.com/qier222/YesPlayMusic) is a full-platform open source music listening software, with high appearance, no social functions, and integration of whole network resources, it is recommended to use
+Online music listeners can use Internet access or e-mail products.[Internet cloud-like music](https://aur.archlinux.org/packages/netease-cloud-music/)I don't know.[qq Music](https://aur.archlinux.org/packages/qqmusic-bin/)However, they are both old and poor or of poor quality. Obviously, these big companies will not be willing to invest their energy on Linux desktops, and we recommend that you use free software to maintain better.
+
+[yesplaymusic](https://github.com/qier222/YesPlayMusic)It's a platform-wide open-source singing software with high-value, non-social features and a web-based resource integration recommended for use
 
 ```bash
 yay -S yesplaymusic
 ```
 
-[listen1](https://github.com/listen1/listen1_desktop) is an old-fashioned music listening software with complete functions. The same resources are integrated across the entire network. It is recommended to use
+[listen1](https://github.com/listen1/listen1_desktop)It's an old musical software, fully functional, and the same resources are integrated and recommended for use.
 
 ```bash
 yay -S listen1-desktop-appimage
 ```
 
-[Electron Netease Cloud Music](https://github.com/Rocket1184/electron-netease-cloud-music) is a Netease Cloud Music Linux client written with Electron and Vue, which supports song download, which is its advantage , but the music library is not as complete as the first two software.
+[Electron Netease Cloud Music](https://github.com/Rocket1184/electron-netease-cloud-music)It is an online cloudy music Linux client that supports the downloading of songs, written by Electron and Vue, which is its advantage, but the curve library is not fully equipped with the first two.
 
 ```bash
 yay -S electron-netease-cloud-music
 ```
-
-[FeelUOwn](https://github.com/feeluown/FeelUOwn) is a cross-platform music player that conforms to the Unix philosophy. It is easy to install, novice-friendly, and provides plug-ins for various domestic music platforms by default.
+[FeelUOwn](https://github.com/feeluown/FeelUOwn)It is a cross-platform music player with a simple, newer, newer setup, defaulting on the country ' s music platforms.
 
 ```bash
 yay -S feeluown
-# Install the following plugins as needed
+# 按需安装以下插件
 yay -S feeluown-local feeluown-netease feeluown-qqmusic feeluown-kuwo
 ```
 
-## Video player
+## Video Player
 
-Local audio and video playback generally uses vlc or mpv
+Use vlc or mpv for local audio and video play
 
 ```bash
-sudo pacman -S vlc #VLC player
-sudo pacman -S mpv #MPV player
+sudo pacman -S vlc #VLC 播放器
+sudo pacman -S mpv #MPV 播放器
 ```
 
-Besides, if you want to watch online video resources, [zy-player](https://aur.archlinux.org/packages/zy-player-bin/) is a good choice, it is a cross-platform Video resource player, integrates the whole network resources, can play some movies.
+Besides, if you want to watch online video resources,[zy-player](https://aur.archlinux.org/packages/zy-player-bin/)It's a good choice, it's a cross-platform video resource player that integrates the entire web resources and can play some movies.

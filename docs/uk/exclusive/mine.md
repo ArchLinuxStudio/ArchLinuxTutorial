@@ -1,93 +1,95 @@
-# Getting Started with Cryptocurrencies
+<!-- AUTO-GENERATED: edit the corresponding Chinese document instead. -->
 
-This section will briefly describe some basic concepts of cryptocurrencies, and our interpretation. At the same time, readers will be taught how to enter the world of cryptocurrencies on Arch Linux. When it comes to cryptocurrency and mining, many Chinese readers have deep misunderstandings and prejudices about cryptocurrency and mining, which is actually related to the propaganda orientation of the national government and its controlled media and self-media. We don't want our readers to be fooled, so some explanation will be given in this article.
+# Introduction to Encrypted Currency
 
-## What is cryptocurrency
+This section briefly describes some basic concepts of encrypted currency, as well as our interpretation. Meanwhile, readers will be taught how to enter the world of encrypted currency on Arch Linux. When it comes to encrypted money and mining, many readers in China have deep misperceptions and prejudices about encrypted money and mining, which are in fact related to their national government and the media they control, and to their media orientation. We do not want our readers to be blinded, so some explanations will be given in this paper.
 
-Cryptocurrency is a medium of exchange that uses cryptographic principles to secure transactions and control the creation of transaction units. This Wikipedia-style description is more difficult to understand. We try to describe in simpler language. The originator of cryptocurrencies is Bitcoin (BTC), which originated in 2009. In the genesis block of Bitcoin, the sentence `The Times 03/Jan/2009 Chancellor on brink of second bailout for banks.` is embedded. This satirizes the traditional financial industry, while stating the position of the founder Satoshi Nakamoto. Cryptocurrencies that conform to the concept of Bitcoin generally have the following characteristics.
+## What's an encrypted currency?
 
-- Decentralization, the distribution and decision-making of currency is not determined by centralized organizations, such as governments, banks and other organizations in any centralized form. By participating in mining, you can get a share of your own income.
-- Under the premise of correct use, the personal privacy of users can generally be protected to a great extent.
-- The currency itself is **truly** held by its owner, truly realizing the inviolability of private property. The owner of the currency holds the private key, and others without the private key cannot seize, freeze, or confiscate their cryptocurrency assets.
+Encryption money is a trade medium that uses the principle of cryptography to ensure the security of transactions and to control the creation of trading units. This Wikipedia-style description is difficult to understand. We try to describe it in simpler language. The encrypted currency's nostrils are bitcoin (BTC), which originated in 2009. In the creation block of bitcoin, a sentence is embedded.`The Times 03/Jan/2009 Chancellor on brink of second bailout for banks.`I don't know. This sarcasms the traditional financial sector and shows the wise position of the founders. Encrypted currencies that conform to the Bitcoin concept generally have the following characteristics.
 
-## Why use cryptocurrency
+- Decentrization, currency distribution and decision-making are not determined by any centralized form of organization such as government, banks, etc. Participation in mining leads to a share of the proceeds that belong to them.
+- Subject to proper use, the privacy of the user is generally protected to a great extent.
+- Currency itself**Really.**The inviolability of private property is truly realized by the possession of the owner. The owner of the currency holds a private key and other persons without a private key cannot seize, freeze or confiscate their encrypted monetary assets.
 
-As supporters of the free software movement, we also support the use of cryptocurrencies for the following reasons:
+## Why use encrypted currency?
 
-- First, use cryptocurrencies to resist ubiquitous surveillance and auditing. In some countries, various payment methods that are widely used have been completely bound with real names, and comprehensive surveillance and review have been carried out, and personal privacy is not guaranteed at all. Using cryptocurrencies is a great way to protect your own privacy. Even if you don't use cryptocurrencies such as XMR that can guarantee a high degree of privacy, just using (correctly used) ordinary cryptocurrencies can protect your personal privacy to a large extent.
-- Second, since fiat currencies in some countries have little or no credit, the use of cryptocurrencies provides protection against this risk as a tool for asset diversification. Even though many governments and various celebrities continue to ban and deny cryptocurrencies, cryptocurrencies have survived more than ten years. Is fiat currency stable? Readers of this question can think about the changes in the purchasing power of fiat currency in some countries over the past few decades. What is the reason for some countries to completely ban cryptocurrencies? Readers should be able to have their own understanding. Holding cryptocurrencies that are widely circulated around the world can improve your ability to resist legal currency risks and protect your rights.
-- Third, even without cryptocurrencies, terrorism, fraud and money laundering are still widespread in the world. Just because cryptocurrencies can be used for these purposes, it cannot be blamed on cryptocurrencies. This is absurd logic. People or organizations generally have other purposes.
+As supporters of the free software movement, we also support the use of encrypted currency for the following reasons:
 
-Why are some people against cryptocurrencies?
+- First, the use of encrypted currency to counter ubiquitous surveillance and auditing. In some countries, a variety of widely applied means of payment have been fully labelled, as well as comprehensive surveillance and review, with no guarantees of privacy. Using encrypted money can protect your own privacy. Even if you do not use encrypted currency such as XMR, which is highly secure of privacy, the mere use of an ordinary encrypted currency (the correct use) will largely guarantee your personal privacy.
+- Second, because some countries have no or little credit for their legal currency, the use of encrypted currencies can counteract this risk as a tool for asset diversification. Even though many governments and various elites continue to ban and deny encrypted money, it has been a good time for more than a decade. Is the French currency stable? The reader of this question is free to reflect on the changes in the purchasing power of some countries for decades, and what are the causes of the total ban on encrypted currency in some countries? Readers should be able to understand themselves. The possession of encrypted currency, which is widely circulated around the world, enhances your ability to defend yourself against the risks of French currency.
+- Thirdly, terrorism, fraud and money-laundering continue to be widespread in the world, even in the absence of encrypted currency, which cannot be blamed and encrypted money because it can be used for those purposes. This is a ridiculous logic, and the persons or organizations who present such views generally have other purposes.
 
-- First, cryptocurrencies are seen in some totalitarian governments as a threat to their dictatorship. They are extremely dangerous and uncontrollable, so a total ban is required.
-- Second, cryptocurrencies have formed a relatively large trading market, which has had a certain impact and impact on the traditional financial industry, so some business representatives led by Buffett are openly opposed to cryptocurrencies.
-- Third, the use of cryptocurrencies in terrorism, fraud and money laundering, and the more marginal reasons that cryptocurrencies are not environmentally friendly.
+Why would anyone object to encrypted money?
 
-## Enter the world of cryptocurrencies on Arch Linux
+- First, the use of encrypted currency in some totalitarian Governments, which is seen as threatening the existence of their dictatorship, is extremely dangerous and uncontrollable and requires a general ban.
+- Second, as encrypted money has formed a relatively large trading market that has had some impact and impact on the traditional financial sector, a segment of the business community, headed by Buffet, has openly opposed encrypted money.
+- Thirdly, the use of encrypted currency in terrorism, fraud and money-laundering, as well as the more marginal reasons for the unfriendly nature of encrypted currency, are the following:
 
-### Wallet and address
+## Enter the world of encrypted currencies on Arch Linux
 
-If you want to use cryptocurrency, you first need to have a wallet. Currently, the most widely used browser wallet is [Metamask](https://metamask.io/), which can be used by installing the Metamask plugin in the extension store of the browser you are using. The browser wallet allows you to conveniently use the current massive decentralized programs, including many financial applications, communities, games, etc., but generally speaking, its security is not as good as other non-custodial wallets and cold wallets.
+### Wallet and Address
 
-The selection of wallets and the acquisition of addresses on Arch Linux are described in detail in the chapter of [Modern Privacy Protection Guide](https://archlinuxstudio.github.io/ModernSecurityProtectionGuide/#/anonymous_pay), and will not be repeated in this article.
+If you want to use an encrypted currency, you must first have a wallet. The most widely used browser wallet is[Metamask](https://metamask.io/), install Metamask plugins in the extended store of the browser you use. The browser's wallet allows you to use the current mass decentrization program, which includes many financial applications, as well as communities, games, etc., but is generally not as safe as other non-host wallets and cold wallets.
 
-If you need a channel to buy cryptocurrencies anonymously, consider using the service provided by [localmonero](https://localmonero.co/) to buy monero. The transfer between Monero addresses after purchase is anonymous and invisible to the outside world. To convert Monero to other currencies, use a non-mainland Chinese cryptocurrency exchange platform such as [changenow](https://changenow.io/).
+About the selection of wallets and the acquisition of addresses on Arch Linux,[Modern privacy protection guidelines](https://archlinuxstudio.github.io/ModernSecurityProtectionGuide/#/anonymous_pay)This is described in detail in the section below.
+
+If you need access to an anonymous purchase of encrypted money, you can consider using it.[localmonero](https://localmonero.co/)Services provided for the purchase of Menrocoin. The exchange between the purchase of a back Menrocoin address is anonymous and invisible to the outside world. If you need to convert Monroe to another currency to use an encrypted currency exchange platform in non-Mainland China Like[changenow](https://changenow.io/)I don't know.
 
 ### Mining
 
-Mining is the most direct way to enter the cryptocurrency world, this section describes how to do cryptocurrency mining in Arch Linux.
+Mining is the most direct way into the world of encrypted currency, which is described in this section in Arch Linux.
 
-Since most of our readers are from China, they have fewer and fewer means of purchasing cryptocurrencies through formal and secure channels. From the current point of view in 2022, there are only the following ways for them to obtain cryptocurrencies:
+Since most of our readers are from China, they have become less and less able to purchase encrypted money through formal and secure channels, and there are only a few ways in which they can access it from the present time in 2022:
 
-- Buy using exchanges that still allow Chinese users to trade
+- Buying using an exchange that still allows Chinese users to trade
 - Offline transactions
-- Obtained by mining
+- Access through mining
 
-A simple search reveals that there are exchanges that are still in use today, some with strong government backgrounds, with little guarantee of security. Even if you can buy and transfer through such exchanges, the records of holding, trading, and withdrawing to the chain related to your real-name authentication can be easily obtained. Actually, you should not use any centralized exchange.
+A simple search reveals that some of the exchanges that are still available, some of which have a strong government background, have little security to offer. Even if you can buy and transfer through such an exchange, records of holding, trading and forwarding linked to your real name certification can be easily accessed. Actually, you shouldn't use any centralized exchanges.
 
-Offline transactions are a more difficult and riskier way, which should not need to be repeated.
+Offline trading is more difficult and risky, and should need not be repeated.
 
-So to sum up, mining is the only safe and convenient way for people in oppressed countries to obtain cryptocurrency.
+So in conclusion, mining is for people in oppressed countries or areas.**Unique**Secure and convenient access to encrypted currency.
 
-If you don't know anything about cryptocurrencies, you can refer to the [Binance Academy](https://academy.binance.com/en/search?page=1) series of articles to get started, hundreds of articles ranging from low-level to high-level articles are available for you to read.
-
----
-
-Before mining, there are some important matters that need to be reminded in advance in terms of safety and use:
-
-- Due to the comprehensive prohibition and regulation of cryptocurrencies in individual countries, a global proxy, including proxy DNS, is required on the mining equipment. This not only allows you to connect to websites such as mining pools, but also helps you hide your activity on cryptocurrency-related websites from being monitored by ISPs or government agencies. Here you can use v2rayA, which allows you to remotely manage the network of mining rigs through a browser without installing any GUI program on the mining rig.
-- After adding a new device, it may be necessary to remove the motherboard BIOS battery to discharge, note that the system time will reset after discharge, which will make v2ray unusable. In this case, remember to recalibrate the system time first.
-- Control the electricity usage of your mining site within a reasonable range. If the electricity bill usage is too outrageous, it may arouse suspicion and surveillance by some government departments.
-- In the motherboard BIOS settings, you need to enable the `Above 4G Decoding` option to support multiple (usually 4 or more) graphics cards. This setting is normally present in PCIE settings. This setting enables chipset 64bit compatibility hardware physical addressing, when turned off the BIOS can only use 32bit hardware physical addressing.
-- In the motherboard BIOS settings, adjust the PCI-E speed to Gen2 or Gen1. Otherwise, the problem of not recognizing the graphics card may occur.
+If you don't know anything about encrypted money, you can refer to it.[Cheonan College](https://academy.binance.com/zh/search?page=1)The first series of articles, hundreds of articles from the lower to the higher, can be read by you.
 
 ---
 
-After obtaining your own cryptocurrency address, you need to choose a mining pool. To put it simply, cryptocurrency miners mine on their own, which is inefficient. Joining a mining pool and splitting is a more efficient way of mining. There are many mining pools, each with different fee collection methods and charging ratios. For beginners, choosing the [unmineable](https://unmineable.com/) mining pool is a good choice, and its interface is simple and easy to use.
+There are a number of important security and use concerns before mining takes place:
 
-After entering the mining pool, you can choose the currency you need to mine. Note that some of the coins that you can choose here are not actually mineable. It is not that you actually perform the mining operation of this currency, but that you mine the coins that can be mined such as Ethereum, and then the unmineable mining pool will convert the income into you. The chosen currency is then paid to you. For specific operations, please refer to the article on the unmineable website. After reaching the minimum amount required to withdraw, you can initiate a withdrawal in the mining pool. There is a certain waiting time for withdrawal, please be patient.
-
----
-
-When mining with an Nvidia graphics card, you need to install [cuda](https://archlinux.org/packages/community/x86_64/cuda/) first.
-
-When mining with an AMD graphics card, if you use the AMD open source mesa driver, you may not be able to run the mining software. The solution is to temporarily use the proprietary AMD driver [opencl-amd](https://aur.archlinux.org/packages/opencl-amd/). However the latest version of the opencl-amd driver in AUR may still not work, if you encounter this problem, the solution is to use the [older version 20.45 driver](https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=opencl-amd&id=99929da87153c0f36a2a9497c38221c12307ecfc). After downloading PKGBUILD, use makepkg to generate the package and install it. This may be required when using other AMD mining programs.
-
-There are also many mining tools to choose from. [ethminer](https://github.com/ethereum-mining/ethminer) is free software using the GPL-3.0 protocol and is a general-purpose Ethereum mining software. In general, Ethereum mining is more efficient with GPUs. There are also some popular proprietary mining software such as LoLMiner and T-Rex. For specific operations, please refer to their official documentation.
-
-[xmrig](https://github.com/xmrig/xmrig) can be used for XMR mining. xmrig is free software licensed under GPL-3.0. xmrig-cuda is a plugin for xmrig cuda backends, you can choose according to your needs.
+- As a result of the general prohibition and control of encrypted currency in individual countries, global agents, including the agent DNS, are required for mining equipment. This not only connects you to websites like mine ponds, but also helps you to hide the moves you are making to access encrypted money-related websites, thus avoiding ISP or government-related surveillance. Here you can use v2rayA, which allows you to remotely manage the network of mining equipment via browsers without having to install any graphical interfaces on mining equipment.
+- With the addition of new equipment, the main panel BIOS batteries may need to be removed for discharge, noting that the system time will be reset after discharge, which will render v2ray unusable. In this case, the timing of the re-calibration of the system should be remembered.
+- Controlling the use of electricity at your mining sites is within a reasonable range. If electricity charges are used disproportionately, they may give rise to suspicion and surveillance by certain government departments.
+- Mainboard BIOS settings need to open`Above 4G Decoding`option to support multiple graphic display cards (usually more than four). This setting is generally in PCIE settings. This setup enables the physical location of the chip group 64bit compatible hardware, which will only be used by the BIOS when closing.
+- In the master BIOS settings, adjust the PCI-E rate to Gen2 or Gen1. Otherwise, problems could arise that could not be identified.
 
 ---
 
-Generally speaking, the mining program needs to be set to automatically restart and start automatically. For this, you can use supervisor to achieve this. First, install and start.
+After obtaining its own encrypted currency address, the choice of the mine pool is made. In short, it is less efficient for encrypted money miners to dig their own mines. Joining and dividing mines is a more efficient way of digging. There are a very large number of mine ponds, with different collection methods and rates. For starters, choose.[unmineable](https://unmineable.com/)The pond is a good choice, and its interface is simple.
+
+After entering the mine, you can choose the currency you need to dig. Note that you can choose some of the currencies that you can actually not dig, not the ones you actually dig for, but the ones you dig for, like, Etheium, and then unmineable ponds translate the proceeds into the currency you choose and then pay you. For specific operations, reference can be made to articles on unmineable websites. Once you have reached the minimum amount required, you can launch the cash at the mine. There must be some waiting time and patience.
+
+---
+
+When mining using Nvidia graphic cards needs to be installed first[cuda](https://archlinux.org/packages/community/x86_64/cuda/)I don't know.
+
+If you use an AMD open source mesa driver for mining, you may not be able to run mining software. The solution is to temporarily use the AMD driver[opencl-amd](https://aur.archlinux.org/packages/opencl-amd/)I don't know. However, the latest version of the opencl-amd driver in the AUR may not work, and if you encounter this problem, the solution is to use[Driver for old version 20.45](https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=opencl-amd&id=99929da87153c0f36a2a9497c38221c12307ecfc)I don't know. Use makepkg to generate and install a package after downloading PKGBUILD. This may be required when using other AMD mining programs.
+
+There are many options for mining tools.[ethminer](https://github.com/ethereum-mining/ethminer)It's a free software using GPL-3.0 protocols, a common software for mining in the Taifeng. Generally, the use of GPU for Etherum mining is more efficient. There are also popular proprietary mining software such as LoLMiner and T-Rex. Specific operations can refer to their official documents.
+
+[xmrig](https://github.com/xmrig/xmrig)Can be used for the XMR mine. xmrig is free software with GPL-3.0 license. xmrig-cuda is a plugin for xmrig cuda backends, which you can choose according to your needs.
+
+---
+
+In general, the mining process needs to be set up for automatic restart and start-up, and this can be done using subvisor, starting with installation and start-up.
 
 ```bash
 sudo pacman -S supervisor
 sudo systemctl enable --now supervisord.service
 ```
 
-Then, create a configuration file in the target directory, such as `/etc/supervisor.d/eth.ini`, and then restart the supervisord service for the configuration to take effect. In this way, the requirements of automatic restart and boot-up can be realized. Below is a sample configuration file.
+Then create profile under target directory, e.g.`/etc/supervisor.d/eth.ini`, then restart the subvisor service to make the configuration effective. This will enable the need for automatic restart and start-up. The following is a sample profile.
 
 ```ini
 [program:eth]
@@ -97,28 +99,28 @@ autostart=true
 autorestart=true
 ```
 
-### Fan speed regulation in headless conditions
+### Headless fan retrofit
 
-Adjusting the fan speed of the graphics card is a tricky thing when it is not connected to the monitor, that is, headless.
+Without access to the monitor, or Headless, the adjustment of the speed of the card fan is a difficult matter.
 
-Set the fan speed of AMD graphics card. Install the software amdgpu-fan and enable the service. amdgpu-fan will automatically adjust the fan speed according to the graphics card temperature. Note that [the current version of AUR](https://github.com/zzkW35/amdgpu-fan/issues/2) has a problem that the boot cannot be automatically started to take effect. According to [Issue](https://github.com/zzkW35 /amdgpu-fan/issues/2), its upstream [source repository] (https://github.com/chestm007/amdgpu-fan) does not have this problem.
+Set the fan speed of the AMD graphic card. Install software amdgpu-fan and enable service. Amdgpu-fan automatically adjusts the speed of a fan to the temperature of the graphic card. Attention.[AUR Current Version](https://github.com/zzkW35/amdgpu-fan/issues/2)There's a problem that can't automatically start effective.[Issue](https://github.com/zzkW35/amdgpu-fan/issues/2)Description, upstream[Source repository](https://github.com/chestm007/amdgpu-fan)There is no such problem.
 
 ```
 yay -S amdgpu-fan
 sudo systemctl enable --now amdgpu-fan
 ```
 
-For more information on setting the fan speed of AMD graphics cards, please refer to [Arch Wiki](https://wiki.archlinux.org/title/fan_speed_control#AMDGPU_sysfs_fan_control).
+Setup for more AMD card fans to speed[Arch Wiki](https://wiki.archlinux.org/title/fan_speed_control#AMDGPU_sysfs_fan_control).
 
 ---
 
-Mining with NVIDIA graphics cards also requires additional fan speed settings, otherwise the fan will not adjust the speed according to the temperature. Even if the temperature is high, it will run at a low speed. This problem still exists when deep learning and other operations are performed. . If you start the GUI, you can set the speed through nvidia-settings. The speed setting of the Nvidia graphics card depends on the X server, so by default, if the X server is not activated, the fan speed cannot be adjusted. The tool [coolgpus](https://github.com/andyljones/coolgpus) is available at this point, which works by setting up a temporary X server per GPU. It then cycles through the GPUs every few seconds and sets fan speeds based on their temperatures. When the script terminates, it returns control of the fan to the driver and cleans up the X server. The coolgpus installed by pip is located at `~/.local/bin/coolgpus`.
+The use of British Weedness Cards for mining also requires additional retrofitting of fans, which would otherwise not be adjusted to temperature, and which would run at near-low speeds even at higher temperatures, a problem that persists during operations such as in-depth learning. If you start a graphical interface, you can use nvidia-settings for speed settings. The velocity setup for the Yvesta spectrometer depends on X server, so by default, it is not possible to speed the fan without starting X server. Use tools at this time[coolgpus](https://github.com/andyljones/coolgpus)And the working principle is that it will set a temporary X server for each GPU. It then recycles the GPU every few seconds and sets the speed of the fans according to their temperature. When the script ends, it returns control of the fan to the driver and cleans up X server. Pip installed coolgpus at`~/.local/bin/coolgpus`I don't know.
 
 - https://ximikang.icu/2021/03/09/ubuntu%E7%B3%BB%E7%BB%9F%E8%B0%83%E8%8A%82GPU%E9%A3%8E%E6%89%87%E8%BD%AC%E9%80%9F
 
 ---
 
-coolgpus does not work for some graphics cards, in this case, you can use [set_gpu_fans_public](https://github.com/boris-dimitrov/set_gpu_fans_public). After downloading set_gpu_fans_public, you need to change the paths of the `nvidia-smi` and `nvidia-settings` commands in the two scripts of cool_gpu and nvscmd to the correct path. In addition, you need to modify the path of the dir in cool_gpu to the correct path. The package [xorg-xinit](https://archlinux.org/packages/extra/x86_64/xorg-xinit/) is then required to be installed. Finally, create a symbolic link and start it with tcsh in its directory located in /opt, see its code comments for details.
+Coolgpus is not effective in some graphic cards, which can be used in such cases[set_gpu_fans_public](https://github.com/boris-dimitrov/set_gpu_fans_public)I don't know. Download set gpu fans public will need to change its cool gpu and nvscmd scripts`nvidia-smi`and`nvidia-settings`The command path is the correct path, in addition to which you need to modify the path of dir in cool gpu. The package will then need to be installed[xorg-xinit](https://archlinux.org/packages/extra/x86_64/xorg-xinit/)I don't know. Finally create a symbol link, which is started with tcsh in its directory at /opt, as detailed in its code comment.
 
 - https://www.codeleading.com/article/26244997267/
 - https://www.jianshu.com/p/ab956df5e40c
@@ -133,77 +135,77 @@ Ref:
 - https://github.com/iaalm/GPUFanSpeed
 - https://www.google.com/search?q=TOC-Faking-a-Head-for-a-Headless-X-Server+347
 
-### Graphics card overclocking in headless conditions
+### High frequency of graphic cards under Headless conditions
 
-In the case of starting the graphical interface, overclocking the Nvidia graphics card is relatively simple, please refer to [arch wiki](https://wiki.archlinux.org/title/NVIDIA/Tips_and_tricks#Overclocking_and_cooling) for details. This section describes overclocking Nvidia graphics cards in a headless environment without starting the GUI.
+Nvidia graphic cards are easier to use when a graphical interface is launched.[arch wiki](https://wiki.archlinux.org/title/NVIDIA/Tips_and_tricks#Overclocking_and_cooling)I don't know. This section deals with the ultra-frequency operation of the Nvidia graphic card without starting a graphical interface, i.e. in a headless environment.
 
-The general overclocking ideas related to Ethereum are: overclocking memory, down/locking the core, and limiting the maximum power if necessary.
+The general ultra-frequency approach, which is related to the Taipei, is supervisible, drop/lock core, and limit maximum power if necessary.
 
-For more complete steps, please refer to the article [Linux Overclocking Graphics Card Via Command Line](https://jybb.me/linux-overclock-graphic-card-via-cli), and follow the steps. Here are some additional considerations:
+More complete steps to refer to articles[Linux display card ultra-frequency via command line](https://jybb.me/linux-overclock-graphic-card-via-cli)It is sufficient to follow the steps. A number of matters requiring additional attention are listed here:
 
-- When editing `/etc/X11/xorg.conf`, the value of `ConnectedMonitor` needs to be filled in according to the actual value in your own generated file. In ArchLinux its value is generally `Monitor0` instead of `DFP-0`.
-- When setting different perf levels during overclocking, generally the value of [4] corresponds to the current preferred maximum performance level. The ratings shown in nvidia-smi do not seem to correspond to the numbers here. If you are not sure about your current level, try it from 1 to 4.
-- If you are still not sure about the perf level, you can directly use the adjustments corresponding to all levels, such as `GPUMemoryTransferRateOffsetAllPerformanceLevels` and `GPUGraphicsClockOffsetAllPerformanceLevels`.
-- If the overclocking command is executed directly in the terminal, the parameters following the -a option of nvidia-settings can be wrapped without single quotes, but if executed in a script, the parameters need to be wrapped with single quotes.
-- Lock the core frequency of a graphics card with this command: `nvidia-smi -i 0 -lgc 1075`. This command limits the core frequency of the zeroth graphics card to 1075. Note that if the frequency limit is set too high, but the power or performance is insufficient, the frequency will drop and eventually settle at a value below the set lock frequency.
-- Even with the same model of graphics card, the physique and type of video memory may be different. Therefore, you need to adjust slowly according to the actual physique of your graphics card to find the most stable overclocking parameters. The existing overclocking parameters on the Internet can only be used as a rough reference.
-- The lighting problem of the graphics card, many 20, 30 series new graphics cards use I2C control, but the NVIDIA linux driver does not support it, the traditional control through the `GPULogoBrightness` parameter can no longer take effect. See [github issue](https://github.com/NVIDIA/nvidia-settings/issues/48)
-- If overclocking is not possible, try restarting the lightdm service and overclocking again.
+- Editing`/etc/X11/xorg.conf`I don't know.`ConnectedMonitor`. The value needs to be filled out according to the actual value of your own generated file. The value in ArchLinux is normally`Monitor0`Not...`DFP-0`I don't know.
+- When setting different perf levels at hyperfrequency, the normal [4] value corresponds to the maximum performance level of the current preference. The grades shown in nvidia-smi do not seem to correspond to the figures here. If the current level is not known, try sequentially from 1 to 4.
+- If you are still unsure of the perf level, you can directly use adjustments to all levels, such as`GPUMemoryTransferRateOffsetAllPerformanceLevels`and`GPUGraphicsClockOffsetAllPerformanceLevels`I don't know.
+- If an ultra-frequency command is executed directly at the terminal, the next parameters of the NVidia-settings --a option can be packaged without a single quote, but if implemented in a script, a single quote will be required.
+- This command locks the core frequency of a card:`nvidia-smi -i 0 -lgc 1075`I don't know. This command limits the core frequency of the zero card to 1075. Note that if the frequency is too limited but the power or performance is insufficient, the frequency decreases and eventually stabilizes at a value below the locked frequency set.
+- Even with the same type of graphic card, the visible mass and type may vary. So you need to slowly adjust to the actual body of your graphic card to find the most stable hyperfrequency parameters, which are available on the network only for a general reference.
+- The light problems of the graphic card, many, 20, 30, are I2C controlled by the new graphic card, while the British linux drive is not supported, traditional adoption`GPULogoBrightness`Parameter control is no longer effective. For more details.[github issue](https://github.com/NVIDIA/nvidia-settings/issues/48)
+- If an overfrequency cannot be performed, you can try to restart the lightdm service and then perform the overfrequency.
 
 Ref:
 
 - [ethminer overlock guide](https://github.com/ethereum-mining/ethminer/issues/456#issuecomment-370224878)
-- [NVIDIA-SMI 系列命令总结](https://blog.csdn.net/handsome_bear/article/details/80903477)
+- [Summary of NVIDIA-SMI series commands](https://blog.csdn.net/handsome_bear/article/details/80903477)
 - [nvidia-smi: Control Your GPUs](https://www.microway.com/hpc-tech-tips/nvidia-smi_control-your-gpus/)
 
 ---
 
-AMD graphics cards are much easier to overclock than Nvidia graphics cards in a headless environment. Just refer to the wiki. For overclocking tools, it is recommended to use [amdgpu-clocks-git](https://aur.archlinux.org/packages/amdgpu-clocks-git).
+The AMD graphic card is much easier to use than the Nvidia graphic card in the AMD graphics environment.[amdgpu-clocks-git](https://aur.archlinux.org/packages/amdgpu-clocks-git)I don't know.
 
 Ref:
 
-- [AMD RX 470(D) Linux 挖矿](https://reimu.moe/2021/03/10/AMD-RX470-D-Linux-Mining/)
+- [AMD RX 470(D) Linux Mining](https://reimu.moe/2021/03/10/AMD-RX470-D-Linux-Mining/)
 - [Arch wiki](https://wiki.archlinux.org/title/AMDGPU#Overclocking)
 
 ---
 
-### Firewall Protection
+### Firewall protection
 
-If you enable some monitoring panels for use in the intranet environment, you need to pay attention to opening the firewall protection, because the devices in your intranet may have malware, scan, monitor and report the ports and services in the network.
+If you use some of the monitoring panels in an intranet environment for use, care needs to be taken to open firewall protection, as the equipment in your intranet may have malicious software, scanning, monitoring and reporting of ports and services in the network.
 
-The ufw tool is used here for firewall protection. First, because it is easy to use, and second, because ufw does not conflict with v2raya, it can be used normally. firewalld does not work properly with v2raya by default.
+Firewall protection is used here using ufw tools. First, because it's simple, second, because ufw has no conflict with v2raya and can be used normally. Firwalld could not be used with v2raya by default.
 
 ```bash
 sudo pacman -S ufw
 sudo systemctl enable --now ufw
 
-sudo ufw default deny #default deny
+sudo ufw default deny #默认拒绝
 
-sudo ufw allow from YOUR_TRUST_LAN_IP #Only allow connections from your trusted intranet ip
-sudo ufw allow ssh #Allow ssh so that the internal network and the external network can connect through nps ssh
-sudo ufw allow 8024 #Allow the default bridge communication port of nps to work
+sudo ufw allow from YOUR_TRUST_LAN_IP #只允许你信任的内网 ip 连接
+sudo ufw allow ssh #允许 ssh 以便内网以及外网通过 nps 的ssh连接
+sudo ufw allow 8024 #允许 nps 的默认网桥通信端口工作
 
-sudo ufw enable #Enable after setting is complete
-sudo ufw status #Check status
+sudo ufw enable #设置完成后启用
+sudo ufw status #检查状态
 ```
 
 Ref: https://wiki.archlinux.org/title/Uncomplicated_Firewall
 
-### Auxiliary commands
+### Secondary command
 
-You can use the following command to check the identified graphics card numbers, this command will list the graphics card numbers that are actually recognized by the system.
+You can view the recognized graphic card number with the following command, which lists the number of the card that is actually recognized by the system.
 
 ```bash
 ls /sys/class/drm | grep "^card[[:digit:]]$"
 ```
 
-You can use the following command to view the details of each graphics card device
+You can check the details of each card device using the following command:
 
 ```bash
 sudo lspci -vnn | grep VGA -A 12
 ```
 
-You can use [speedtest-cli](https://archlinux.org/packages/community/any/speedtest-cli/) to test the network speed in the terminal
+You can use it.[speedtest-cli](https://archlinux.org/packages/community/any/speedtest-cli/)Test net speed below terminal
 
 ```bash
 sudo pacman -S speedtest-cli

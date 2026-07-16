@@ -1,34 +1,38 @@
-- [**ArchTutorial - Arch Linux Studio**](uk/)
+<!-- AUTO-GENERATED: edit the corresponding Chinese document instead. -->
 
-- Start from Scratch
+- [**Arch Linux installation use tutorial - ArchTutorial - Arch Linux Studio**](/uk/)
 
-  - [Pre-installation Preparation](uk/rookie/archlinux_pre_install)
-  - [Basic Install](uk/rookie/basic_install)
-  - [DE and Essential Applications](uk/rookie/DE&App)
-  - [Resisting the Internet Blockade](uk/rookie/fxckGFW)
-  - [Transparent Proxy](uk/rookie/transparentProxy)
-  - [Graphics Card Drivers](uk/rookie/graphic_driver)
+- New hands.
 
-- Advanced
+  - [Preparation for installation](/uk/rookie/archlinux_pre_install)
+  - [Basic installation](/uk/rookie/basic_install)
+  - [Desktop environment and necessary applications](/uk/rookie/DE&App)
+  - [The Magic Academy.](/uk/rookie/fxckGFW)
+  - [Global Agent](/uk/rookie/transparentProxy)
+  - [Card Drive](/uk/rookie/graphic_driver)
 
-  - [Try To Be an Admin](uk/advanced/beAdmin)
-  - [Power Control](uk/advanced/undervoltage)
-  - [System Beautification](uk/advanced/beauty)
-  - [Troubleshooting](uk/advanced/troubleshooting)
+- Progress
 
-- Entertainment & Office
+  - [Be an unqualified system administrator](/uk/advanced/beAdmin)
+  - [Power control](/uk/advanced/undervoltage)
+  - [System beautification](/uk/advanced/beauty)
+    <!-- - [AUR打包](/advanced/AUR) -->
+    <!-- - [WireGuard](https://wiki.archlinux.org/title/WireGuard) -->
+  - [Exclusion and resolution of common problems](/uk/advanced/troubleshooting)
 
-  - [Office Routine](uk/play&office/office)
-  - [Video and Audio](uk/play&office/media)
-  - [Games and Entertainment](uk/play&office/play)
-  - [Android Flashing](uk/play&office/android)
+- Recreation and office
 
-- Special Areas
+  - [Daily operations](/uk/play&office/office)
+  - [Video audio](/uk/play&office/media)
+  - [Play Entertainment](/uk/play&office/play)
+  - [Android brusher.](/uk/play&office/android)
 
-  - [Getting Started with Cryptocurrencies](uk/exclusive/mine)
-  - [Streaming and Multimedia Production](uk/exclusive/media)
-  - [Programming](uk/exclusive/code)
+- Special areas
 
-- [Contribution](uk/contribution.md)
-- [About & Acknowledgements](uk/about.md)
-- [Postscript](uk/postscript.md)
+  - [Introduction to Encrypted Currency](/uk/exclusive/mine)
+  - [Live and multimedia production](/uk/exclusive/media)
+  - [Programming](/uk/exclusive/code)
+
+- [Contributing documents and codes](/uk/contribution.md)
+- [About & Acknowledgement](/uk/about.md)
+- [Rear](/uk/postscript.md)

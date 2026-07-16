@@ -1,4 +1,5 @@
-import { createHash, randomUUID } from "node:crypto";
+import { spawn } from "node:child_process";
+import { createHash } from "node:crypto";
 import {
   existsSync,
   mkdirSync,
@@ -15,10 +16,7 @@ import remarkGfm from "remark-gfm";
 export const GENERATED_NOTICE =
   "<!-- AUTO-GENERATED: edit the corresponding Chinese document instead. -->";
 
-const CACHE_VERSION = 2;
-const REQUEST_LIMIT_CHARACTERS = 45_000;
-const REQUEST_TEXT_LIMIT = 100;
-const TRANSIENT_STATUS_CODES = new Set([408, 429, 500, 502, 503, 504]);
+const CACHE_VERSION = 4;
 const TRANSLATABLE_PATTERN =
   /[\u3400-\u9fff\uf900-\ufaff，。！？；：“”‘’（）【】《》、]/u;
 const ASSET_PATTERN = /\.(?:avif|gif|ico|jpe?g|pdf|png|svg|webp|zip)(?:[?#]|$)/iu;
@@ -53,55 +51,63 @@ function escapeRegExp(value) {
   return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
-function escapeXml(value) {
-  return value
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&apos;");
-}
-
-function decodeXml(value) {
-  return value
-    .replace(/&#x([0-9a-f]+);/giu, (_, digits) =>
-      String.fromCodePoint(Number.parseInt(digits, 16)),
-    )
-    .replace(/&#([0-9]+);/gu, (_, digits) =>
-      String.fromCodePoint(Number.parseInt(digits, 10)),
-    )
-    .replaceAll("&quot;", '"')
-    .replaceAll("&apos;", "'")
-    .replaceAll("&gt;", ">")
-    .replaceAll("&lt;", "<")
-    .replaceAll("&amp;", "&");
-}
-
 function protectTerms(value, protectedTerms) {
   const terms = [...protectedTerms]
     .filter(Boolean)
     .sort((left, right) => right.length - left.length);
-  if (!terms.length) return escapeXml(value);
+  if (!terms.length) return { value, matches: [] };
 
   const pattern = new RegExp(terms.map(escapeRegExp).join("|"), "giu");
   let cursor = 0;
-  let output = "";
+  let protectedValue = "";
+  const matches = [];
 
   for (const match of value.matchAll(pattern)) {
-    output += escapeXml(value.slice(cursor, match.index));
-    output += `<span class="notranslate">${escapeXml(match[0])}</span>`;
+    protectedValue += value.slice(cursor, match.index);
+    protectedValue += `<x${matches.length}>`;
+    matches.push(match[0]);
     cursor = match.index + match[0].length;
   }
 
-  return output + escapeXml(value.slice(cursor));
+  return {
+    value: protectedValue + value.slice(cursor),
+    matches,
+  };
 }
 
-function restoreTerms(value) {
-  return decodeXml(
-    value
-      .replace(/<span\b[^>]*\bclass=["'][^"']*\bnotranslate\b[^"']*["'][^>]*>/giu, "")
-      .replace(/<\/span>/giu, ""),
-  );
+function restoreTerms(value, matches) {
+  let restored = value;
+  for (const [index, term] of matches.entries()) {
+    const placeholder = `<x${index}>`;
+    const pieces = restored.split(placeholder);
+    if (pieces.length !== 2) {
+      return null;
+    }
+    restored = pieces.join(term);
+  }
+  return restored;
+}
+
+function splitProtectedTerms(value, protectedTerms) {
+  const terms = [...protectedTerms]
+    .filter(Boolean)
+    .sort((left, right) => right.length - left.length);
+  if (!terms.length) return [{ value, translate: true }];
+
+  const pattern = new RegExp(terms.map(escapeRegExp).join("|"), "giu");
+  const pieces = [];
+  let cursor = 0;
+  for (const match of value.matchAll(pattern)) {
+    if (match.index > cursor) {
+      pieces.push({ value: value.slice(cursor, match.index), translate: true });
+    }
+    pieces.push({ value: match[0], translate: false });
+    cursor = match.index + match[0].length;
+  }
+  if (cursor < value.length) {
+    pieces.push({ value: value.slice(cursor), translate: true });
+  }
+  return pieces;
 }
 
 function visit(node, parent, callback) {
@@ -186,6 +192,9 @@ export function analyzeMarkdown(source, sourceFile, config) {
     const cacheKey = hash(
       JSON.stringify({
         version: CACHE_VERSION,
+        translationEngine: config.translationEngine,
+        modelPackage: config.modelPackage,
+        modelVersion: config.modelVersion,
         sourceLanguage: config.sourceLanguage,
         targetLanguage: config.targetLanguage,
         protectedTerms: config.protectedTerms,
@@ -253,117 +262,153 @@ function applyReplacements(source, replacements, translations) {
   return output;
 }
 
-function createBatches(items, protectedTerms) {
-  const batches = [];
-  let current = [];
-  let currentCharacters = 0;
-
-  for (const item of items) {
-    const protectedText = protectTerms(item.value, protectedTerms);
-    const characters = protectedText.length;
-    if (characters > REQUEST_LIMIT_CHARACTERS) {
-      throw new Error("A single Markdown text segment exceeds the Azure request limit.");
-    }
-    if (
-      current.length >= REQUEST_TEXT_LIMIT ||
-      (current.length &&
-        currentCharacters + characters > REQUEST_LIMIT_CHARACTERS)
-    ) {
-      batches.push(current);
-      current = [];
-      currentCharacters = 0;
-    }
-    current.push({ ...item, protectedText });
-    currentCharacters += characters;
-  }
-
-  if (current.length) batches.push(current);
-  return batches;
-}
-
-function delay(milliseconds) {
-  return new Promise((resolveDelay) => setTimeout(resolveDelay, milliseconds));
-}
-
-export function createAzureTranslator({
-  apiUrl,
-  apiKey,
-  region,
+export function createArgosTranslator({
+  projectRoot,
+  pythonExecutable = process.env.ARGOS_PYTHON ||
+    (process.platform === "win32" ? "python" : "python3"),
+  scriptPath = "scripts/argos-translator.py",
   sourceLanguage,
   targetLanguage,
+  modelPackage,
+  modelVersion,
+  spawnProcess = spawn,
 }) {
-  if (!apiKey) {
-    throw new Error(
-      "AZURE_TRANSLATOR_KEY is required for uncached text. Add it as a GitHub Actions secret.",
-    );
+  const resolvedScriptPath = resolve(projectRoot, scriptPath);
+  return (texts) =>
+    new Promise((resolveTranslation, rejectTranslation) => {
+      const child = spawnProcess(
+        pythonExecutable,
+        [
+          resolvedScriptPath,
+          "--from",
+          sourceLanguage,
+          "--to",
+          targetLanguage,
+          "--model-package",
+          modelPackage,
+          "--model-version",
+          modelVersion,
+        ],
+        {
+          cwd: projectRoot,
+          env: { ...process.env, ARGOS_DEVICE_TYPE: process.env.ARGOS_DEVICE_TYPE || "cpu" },
+          stdio: ["pipe", "pipe", "pipe"],
+          windowsHide: true,
+        },
+      );
+      let stdout = "";
+      let stderr = "";
+      let finished = false;
+      const timeout = setTimeout(() => {
+        if (finished) return;
+        finished = true;
+        child.kill();
+        rejectTranslation(new Error("Argos translation timed out after 30 minutes."));
+      }, 30 * 60 * 1000);
+
+      child.stdout.setEncoding("utf8");
+      child.stderr.setEncoding("utf8");
+      child.stdout.on("data", (chunk) => {
+        stdout += chunk;
+      });
+      child.stderr.on("data", (chunk) => {
+        stderr = `${stderr}${chunk}`.slice(-12_000);
+      });
+      child.on("error", (error) => {
+        if (finished) return;
+        finished = true;
+        clearTimeout(timeout);
+        rejectTranslation(
+          new Error(`Unable to start Argos Translate with ${pythonExecutable}: ${error.message}`),
+        );
+      });
+      child.on("close", (code) => {
+        if (finished) return;
+        finished = true;
+        clearTimeout(timeout);
+        if (code !== 0) {
+          rejectTranslation(
+            new Error(stderr.trim() || `Argos Translate exited with code ${code}.`),
+          );
+          return;
+        }
+
+        try {
+          const payload = JSON.parse(stdout);
+          if (
+            !Array.isArray(payload.translations) ||
+            payload.translations.length !== texts.length ||
+            payload.translations.some((translation) => typeof translation !== "string")
+          ) {
+            throw new Error("unexpected translation result");
+          }
+          resolveTranslation(payload.translations);
+        } catch (error) {
+          rejectTranslation(
+            new Error(
+              `Argos Translate returned invalid JSON: ${error instanceof Error ? error.message : error}`,
+            ),
+          );
+        }
+      });
+
+      child.stdin.end(JSON.stringify({ texts }));
+    });
+}
+
+async function translateMisses(misses, protectedTerms, translateBatch) {
+  const plans = misses.map((item) => ({
+    item,
+    protected: protectTerms(item.value, protectedTerms),
+  }));
+  const translated = await translateBatch(
+    plans.map((plan) => plan.protected.value),
+  );
+  if (!Array.isArray(translated) || translated.length !== plans.length) {
+    throw new Error("Translation provider returned an invalid result.");
   }
 
-  return async (texts) => {
-    const url = new URL(apiUrl);
-    url.searchParams.set("api-version", "3.0");
-    url.searchParams.set("from", sourceLanguage);
-    url.searchParams.set("to", targetLanguage);
-    url.searchParams.set("textType", "html");
-    const headers = {
-      "Content-Type": "application/json; charset=UTF-8",
-      "Ocp-Apim-Subscription-Key": apiKey,
-      "X-ClientTraceId": randomUUID(),
-    };
-    if (region) headers["Ocp-Apim-Subscription-Region"] = region;
-    const body = texts.map((text) => ({ Text: text }));
+  const values = translated.map((value, index) =>
+    restoreTerms(value, plans[index].protected.matches),
+  );
+  const fallbackPlans = plans
+    .map((plan, index) => ({
+      index,
+      pieces: splitProtectedTerms(plan.item.value, protectedTerms),
+    }))
+    .filter((plan) => values[plan.index] === null);
 
-    for (let attempt = 0; attempt < 4; attempt += 1) {
-      let response;
-      try {
-        response = await fetch(url, {
-          method: "POST",
-          headers,
-          body: JSON.stringify(body),
-          signal: AbortSignal.timeout(30_000),
-        });
-      } catch (error) {
-        if (attempt === 3) {
-          throw new Error(
-            `Azure Translator request failed after retries: ${error instanceof Error ? error.message : error}`,
-          );
-        }
-        await delay(1000 * 2 ** attempt);
-        continue;
-      }
-
-      if (response.ok) {
-        const payload = await response.json();
-        const translations = Array.isArray(payload)
-          ? payload.map((item) => item.translations?.[0]?.text)
-          : null;
-        if (
-          !translations ||
-          translations.length !== texts.length ||
-          translations.some((translation) => typeof translation !== "string")
-        ) {
-          throw new Error(
-            "Azure Translator returned an unexpected number of translations.",
-          );
-        }
-        return translations;
-      }
-
-      const details = (await response.text()).slice(0, 500);
-      if (!TRANSIENT_STATUS_CODES.has(response.status) || attempt === 3) {
-        throw new Error(
-          `Azure Translator request failed (${response.status}): ${details}`,
-        );
-      }
-      const retryAfter = Number(response.headers.get("retry-after"));
-      await delay(
-        Number.isFinite(retryAfter) && retryAfter > 0
-          ? Math.min(retryAfter * 1000, 30_000)
-          : 1000 * 2 ** attempt,
-      );
+  if (fallbackPlans.length) {
+    const fallbackTexts = fallbackPlans.flatMap((plan) =>
+      plan.pieces.filter((piece) => piece.translate).map((piece) => piece.value),
+    );
+    const fallbackTranslations = fallbackTexts.length
+      ? await translateBatch(fallbackTexts)
+      : [];
+    if (
+      !Array.isArray(fallbackTranslations) ||
+      fallbackTranslations.length !== fallbackTexts.length
+    ) {
+      throw new Error("Translation provider returned an invalid fallback result.");
     }
 
-    throw new Error("Azure Translator request failed after retries.");
-  };
+    let cursor = 0;
+    for (const plan of fallbackPlans) {
+      values[plan.index] = plan.pieces
+        .map((piece) => {
+          if (!piece.translate) return piece.value;
+          const translation = fallbackTranslations[cursor];
+          cursor += 1;
+          return translation;
+        })
+        .join("");
+    }
+  }
+
+  return plans.map((plan, index) => ({
+    cacheKey: plan.item.cacheKey,
+    value: values[index],
+  }));
 }
 
 function removeEmptyDirectories(directory, keepDirectory) {
@@ -401,10 +446,11 @@ export async function syncTranslations({
     throw new Error("The translation output directory must be inside the source directory.");
   }
   const excluded = new Set(config.excludeFiles ?? []);
-  const cache = readJson(cachePath, { version: CACHE_VERSION, entries: {} });
-  if (cache.version !== CACHE_VERSION || typeof cache.entries !== "object") {
-    throw new Error(`Unsupported translation cache format in ${config.cacheFile}.`);
-  }
+  const savedCache = readJson(cachePath, { version: CACHE_VERSION, entries: {} });
+  const cache =
+    savedCache.version === CACHE_VERSION && typeof savedCache.entries === "object"
+      ? savedCache
+      : { version: CACHE_VERSION, entries: {} };
 
   const sourceFiles = walk(sourceDirectory)
     .filter((file) => extname(file).toLowerCase() === ".md")
@@ -440,22 +486,20 @@ export async function syncTranslations({
   if (misses.length) {
     const translator =
       translateBatch ??
-      createAzureTranslator({
-        apiUrl: process.env.AZURE_TRANSLATOR_ENDPOINT || config.apiUrl,
-        apiKey: process.env.AZURE_TRANSLATOR_KEY,
-        region: process.env.AZURE_TRANSLATOR_REGION,
+      createArgosTranslator({
+        projectRoot,
         sourceLanguage: config.sourceLanguage,
         targetLanguage: config.targetLanguage,
+        modelPackage: config.modelPackage,
+        modelVersion: config.modelVersion,
       });
-    const batches = createBatches(misses, config.protectedTerms ?? []);
-    for (const batch of batches) {
-      const translated = await translator(batch.map((item) => item.protectedText));
-      if (!Array.isArray(translated) || translated.length !== batch.length) {
-        throw new Error("Translation provider returned an invalid batch.");
-      }
-      translated.forEach((value, index) => {
-        cache.entries[batch[index].cacheKey] = restoreTerms(value);
-      });
+    const translatedMisses = await translateMisses(
+      misses,
+      config.protectedTerms ?? [],
+      translator,
+    );
+    for (const translated of translatedMisses) {
+      cache.entries[translated.cacheKey] = translated.value;
     }
   }
 
