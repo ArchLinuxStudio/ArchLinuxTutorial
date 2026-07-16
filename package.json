@@ -1,17 +1,30 @@
 {
-  "name": "arch_linux_tutorial",
+  "name": "archlinuxstudio-tutorial",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Arch Linux Studio 社区维护的 Arch Linux 安装与使用教程",
   "author": {
     "name": "ArchLinuxStudio",
     "url": "https://github.com/ArchLinuxStudio"
   },
-  "version": "0.5.0",
-  "private": false,
-  "dependencies": {
-    "docsify-cli": "^4.4.4"
+  "license": "CC-BY-NC-ND-4.0",
+  "packageManager": "yarn@1.22.22",
+  "engines": {
+    "node": ">=20"
   },
-  "devDependencies": {},
   "scripts": {
-    "start": "docsify serve docs"
+    "dev": "node scripts/sync-vendor.mjs && node node_modules/serve/build/main.js docs -l 3000 --no-clipboard",
+    "start": "node scripts/sync-vendor.mjs && node node_modules/serve/build/main.js docs -l 3000 --no-clipboard",
+    "sync:vendor": "node scripts/sync-vendor.mjs",
+    "check": "node scripts/validate-site.mjs",
+    "build": "node scripts/sync-vendor.mjs && node scripts/build.mjs"
   },
-  "license": "CC-BY-NC-ND-4.0"
+  "dependencies": {
+    "docsify": "5.0.0-rc.4",
+    "gitalk": "1.8.0",
+    "prismjs": "1.30.0"
+  },
+  "devDependencies": {
+    "serve": "14.2.6"
+  }
 }

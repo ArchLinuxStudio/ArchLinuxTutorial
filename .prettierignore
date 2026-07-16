@@ -1,1 +1,3 @@
-docs/resources/*
+docs/vendor/
+docs/res/
+yarn.lock
