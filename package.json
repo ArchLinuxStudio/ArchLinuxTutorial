@@ -20,7 +20,7 @@
     "build": "node scripts/sync-vendor.mjs && node scripts/build.mjs"
   },
   "dependencies": {
-    "docsify": "5.0.0-rc.4",
+    "docsify": "5.0.0",
     "gitalk": "1.8.0",
     "prismjs": "1.30.0"
   },
