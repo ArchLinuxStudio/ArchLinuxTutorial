@@ -338,14 +338,14 @@ dexie@^4.0.11:
   resolved "https://registry.yarnpkg.com/dexie/-/dexie-4.4.4.tgz#ed75e818e6cb4a131a6956095f96f6669cfab464"
   integrity sha512-jIwsYI8Os2hgnqc6O49YwFDKGc5v5QjGx0wPVp543ip1F53VFAKMLthV2pQosQcVTv3eAskTWYspOx195PM0FQ==
 
-docsify@5.0.0-rc.4:
-  version "5.0.0-rc.4"
-  resolved "https://registry.yarnpkg.com/docsify/-/docsify-5.0.0-rc.4.tgz#a2b12c3ab5194dc9f235807d7baa28750fbb3061"
-  integrity sha512-x8QyRzlKCyjwT/LttO4M65RUzLtgUgmeMYYbmbxvmXluKX1xa4kGd/48+p8/lak8apWuYxX3X0/5sLqmM9zyNQ==
+docsify@5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/docsify/-/docsify-5.0.0.tgz#5450d46305b42e51dcd845270bc8652924efa2aa"
+  integrity sha512-F2LBvsG/RkW9VZs91FPceZpJBilSC9EYCid0n1YhnQb3OOw63dk70d1ITPR2RPwxmPPcWFQ+TOtpdImilLWyGw==
   dependencies:
     common-tags "^1.8.0"
     dexie "^4.0.11"
-    marked "^17.0.1"
+    marked "^18.0.3"
     medium-zoom "^1.1.0"
     opencollective-postinstall "^2.0.2"
     prismjs "^1.29.0"
@@ -930,10 +930,10 @@ loose-envify@^1.0.0, loose-envify@^1.4.0:
   dependencies:
     js-tokens "^3.0.0 || ^4.0.0"
 
-marked@^17.0.1:
-  version "17.0.6"
-  resolved "https://registry.yarnpkg.com/marked/-/marked-17.0.6.tgz#2a97586a272d3be5880f198e020b74ad27cf86ba"
-  integrity sha512-gB0gkNafnonOw0obSTEGZTT86IuhILt2Wfx0mWH/1Au83kybTayroZ/V6nS25mN7u8ASy+5fMhgB3XPNrOZdmA==
+marked@^18.0.3:
+  version "18.0.7"
+  resolved "https://registry.yarnpkg.com/marked/-/marked-18.0.7.tgz#6d8d4dd777730263e7e25bedad56a26bb2809232"
+  integrity sha512-iDVQ5ldaiKXn6b2JroX5kgRfmwgqolW7NpaEzTl1k/2Zh1njIEN9yniyLV/mOvWwtsE8OGgkjsCYvijuPk1dtA==
 
 math-intrinsics@^1.1.0:
   version "1.1.0"
